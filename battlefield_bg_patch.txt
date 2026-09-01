@@ -1,0 +1,49 @@
+=== map_area.gd 패치 ===
+
+### 새 함수 추가 (CITY_MAP_POINTS 근처 아무데나, 또는 파일 끝)
+
+const BATTLEFIELD_CROP_SIZE: Vector2 = Vector2(480.0, 320.0)
+
+# 해당 영지 좌표를 중심으로 캠페인 지도 원본에서 잘라낸 AtlasTexture를 반환한다.
+# 전투 화면(battle_overlay.gd) 배경으로 쓰인다. 지도 텍스처가 아직 없거나
+# 좌표가 없으면 null을 반환한다.
+func get_battlefield_background(province_id: String) -> Texture2D:
+	if not CITY_MAP_POINTS.has(province_id):
+		return null
+
+	if map_background.texture == null:
+		return null
+
+	var center: Vector2 = CITY_MAP_POINTS[province_id]
+	var texture_size: Vector2 = Vector2(map_background.texture.get_size())
+
+	var half_crop: Vector2 = BATTLEFIELD_CROP_SIZE * 0.5
+	var top_left: Vector2 = Vector2(
+		clampf(center.x - half_crop.x, 0.0, maxf(0.0, texture_size.x - BATTLEFIELD_CROP_SIZE.x)),
+		clampf(center.y - half_crop.y, 0.0, maxf(0.0, texture_size.y - BATTLEFIELD_CROP_SIZE.y))
+	)
+
+	var atlas: AtlasTexture = AtlasTexture.new()
+	atlas.atlas = map_background.texture
+	atlas.region = Rect2(top_left, BATTLEFIELD_CROP_SIZE)
+
+	return atlas
+
+
+=== campaign_main.gd 패치 ===
+
+### _build_battle_setup_data() 안, return 딕셔너리에 한 줄 추가
+
+func _build_battle_setup_data(source_id: String, target_id: String) -> Dictionary:
+	var source: Dictionary = provinces[source_id]
+	var target: Dictionary = provinces[target_id]
+
+	return {
+		"attacker_faction": str(source["faction"]),
+		"defender_faction": str(target["faction"]),
+		"province_name": str(target["name"]),
+		"fortress": int(target["fortress"]),
+		"attacker_units": _build_battle_units(source_id),
+		"defender_units": _build_battle_units(target_id),
+		"background_texture": map_area.get_battlefield_background(target_id),   # <-- 추가
+	}

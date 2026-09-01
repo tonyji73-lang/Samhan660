@@ -1,0 +1,261 @@
+[gd_scene format=3 uid="uid://xjsfr4q4xnmk"]
+
+[ext_resource type="Script" uid="uid://b78soxd0htmpb" path="res://campaign_main.gd" id="1_aa4yi"]
+[ext_resource type="Script" uid="uid://c3uqurvrx84yn" path="res://scripts/map_area.gd" id="2_jkp7o"]
+
+[node name="CampaignMain" type="Control" unique_id=1330427578]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aa4yi")
+
+[node name="MainVBox" type="VBoxContainer" parent="." unique_id=1026816863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="HBoxContainer" parent="MainVBox" unique_id=1578752749]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="DateLabel" type="Label" parent="MainVBox/TopBar" unique_id=1005237604]
+layout_mode = 2
+text = "660년 봄 "
+
+[node name="GoldLabel" type="Label" parent="MainVBox/TopBar" unique_id=1449027317]
+layout_mode = 2
+text = "금: 1,000"
+
+[node name="FoodLabel" type="Label" parent="MainVBox/TopBar" unique_id=1478277254]
+layout_mode = 2
+text = "군량: 3,000"
+
+[node name="Spacer" type="Control" parent="MainVBox/TopBar" unique_id=1639835353]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SaveButton" type="Button" parent="MainVBox/TopBar" unique_id=122712551]
+custom_minimum_size = Vector2(90, 35)
+layout_mode = 2
+text = "저장"
+
+[node name="LoadButton" type="Button" parent="MainVBox/TopBar" unique_id=1507607044]
+custom_minimum_size = Vector2(90, 35)
+layout_mode = 2
+text = "불러오기"
+
+[node name="EndTurnButton" type="Button" parent="MainVBox/TopBar" unique_id=1198417881]
+custom_minimum_size = Vector2(100, 35)
+layout_mode = 2
+text = "턴 종료"
+
+[node name="Content" type="HSplitContainer" parent="MainVBox" unique_id=1945650163]
+layout_mode = 2
+size_flags_vertical = 3
+split_offsets = PackedInt32Array(750)
+split_offset = 750
+
+[node name="MapPanel" type="PanelContainer" parent="MainVBox/Content" unique_id=1437837032]
+custom_minimum_size = Vector2(750, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="MapArea" type="Control" parent="MainVBox/Content/MapPanel" unique_id=1788508654]
+clip_contents = true
+layout_mode = 2
+script = ExtResource("2_jkp7o")
+
+[node name="CampaignMapBackground" type="TextureRect" parent="MainVBox/Content/MapPanel/MapArea" unique_id=1319505405]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="PyongyangButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=568150130]
+layout_mode = 1
+offset_left = 410.0
+offset_top = 360.0
+offset_right = 540.0
+offset_bottom = 395.0
+text = "평양성 (고구려)"
+
+[node name="SabiButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=761739479]
+layout_mode = 1
+offset_left = 420.0
+offset_top = 670.0
+offset_right = 550.0
+offset_bottom = 705.0
+text = "사비성 (백제)"
+
+[node name="GeumseongButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=1041482528]
+layout_mode = 1
+offset_left = 760.0
+offset_top = 700.0
+offset_right = 890.0
+offset_bottom = 735.0
+text = "금성 (신라)"
+
+[node name="GungnaeButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=960094057]
+layout_mode = 1
+offset_left = 620.0
+offset_top = 260.0
+offset_right = 750.0
+offset_bottom = 295.0
+text = "국내성 (고구려)"
+
+[node name="AnsiButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=289976067]
+layout_mode = 1
+offset_left = 220.0
+offset_top = 205.0
+offset_right = 350.0
+offset_bottom = 240.0
+text = "안시성 (고구려)"
+
+[node name="UngjinButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=1678479726]
+layout_mode = 1
+offset_left = 450.0
+offset_top = 600.0
+offset_right = 580.0
+offset_bottom = 635.0
+text = "웅진성 (백제)"
+
+[node name="GosaButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=403311019]
+layout_mode = 1
+offset_left = 390.0
+offset_top = 750.0
+offset_right = 520.0
+offset_bottom = 785.0
+text = "고사 (백제)"
+
+[node name="GukwonButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=1852695318]
+layout_mode = 1
+offset_left = 580.0
+offset_top = 570.0
+offset_right = 710.0
+offset_bottom = 605.0
+text = "국원 (신라)"
+
+[node name="SabeolButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=1725417303]
+layout_mode = 1
+offset_left = 625.0
+offset_top = 650.0
+offset_right = 755.0
+offset_bottom = 685.0
+text = "사별 (신라)"
+
+[node name="ProvincePanel" type="PanelContainer" parent="MainVBox/Content" unique_id=2141073613]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ProvinceVBox" type="VBoxContainer" parent="MainVBox/Content/ProvincePanel" unique_id=323331976]
+layout_mode = 2
+
+[node name="ProvinceNameLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=403331358]
+layout_mode = 2
+text = "지역을 선택하세요"
+
+[node name="FactionLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=1781191417]
+layout_mode = 2
+text = "세력:-"
+
+[node name="GovernorLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=555769689]
+layout_mode = 2
+text = "태수:-"
+
+[node name="PopulationLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=889143895]
+layout_mode = 2
+text = "인구:0"
+
+[node name="AgricultureLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=1004934727]
+layout_mode = 2
+text = "농업:0"
+
+[node name="CommerceLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=147978597]
+layout_mode = 2
+text = "상업:0"
+
+[node name="PublicOrderLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=1575606240]
+layout_mode = 2
+text = "치안:0"
+
+[node name="TroopsLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=647059377]
+layout_mode = 2
+text = "병력:0"
+
+[node name="FortressLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=19487517]
+layout_mode = 2
+text = "성벽:0"
+
+[node name="OfficerTitleLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=781816334]
+layout_mode = 2
+text = "소속 장"
+
+[node name="OfficerList" type="ItemList" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=1800004972]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="OfficerDetailLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=1219517026]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+text = "장수를  선택하세요."
+
+[node name="DevelopButton" type="Button" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=1615079516]
+layout_mode = 2
+text = "농업 개발: 금 100"
+
+[node name="CommerceButton" type="Button" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=1905328945]
+layout_mode = 2
+text = "상업 개발: 금 100"
+
+[node name="RecruitButton" type="Button" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=705455409]
+layout_mode = 2
+text = "징병: 금 150 / 군량 200"
+
+[node name="AttackButton" type="Button" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=1160420438]
+layout_mode = 2
+text = "공격 준비"
+
+[node name="LogLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=990694890]
+layout_mode = 2
+text = "지역을 선택하세"
+
+[node name="GameOverOverlay" type="ColorRect" parent="." unique_id=898005710]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.3137255)
+
+[node name="GameOverCenter" type="CenterContainer" parent="GameOverOverlay" unique_id=82905392]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameOverVBox" type="VBoxContainer" parent="GameOverOverlay/GameOverCenter" unique_id=590792922]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="GameOverOverlay/GameOverCenter/GameOverVBox" unique_id=245666240]
+layout_mode = 2
+text = "게임 종료"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="GameOverOverlay/GameOverCenter/GameOverVBox" unique_id=881955936]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+text = "다시 시작"
