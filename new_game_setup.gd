@@ -227,7 +227,6 @@ static var ROAD_WAYPOINTS: Dictionary = Korea35Data.merge_world_dictionary(
 	WorldMapData.ROAD_WAYPOINTS, Korea35Data.get_road_waypoints()
 )
 
-<<<<<<< Updated upstream
 # 한국의 공식 PROVINCE_MAP_UV 값은 게임 데이터와 거리 계산에서 공유하므로
 # 변경하지 않습니다. 세력 선택용 고지도에서 한반도가 원본 기준보다 오른쪽에
 # 그려진 차이만 표시 단계에서 보정합니다.
@@ -243,7 +242,7 @@ const KOREA_DISPLAY_PROVINCES: Array[String] = [
 	"geumseong",
 ]
 const KOREA_DISPLAY_UV_OFFSET: Vector2 = Vector2(0.060, 0.000)
-=======
+
 
 static func _get_province_uv(province_id: String) -> Vector2:
 	if Korea35Data.PROVINCE_MAP_UV.has(province_id):
@@ -253,7 +252,6 @@ static func _get_province_uv(province_id: String) -> Vector2:
 		var world_uv: Vector2 = PROVINCE_MAP_UV[province_id]
 		return world_uv
 	return Vector2.ZERO
->>>>>>> Stashed changes
 
 
 var selected_faction_id: String = "silla"
