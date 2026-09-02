@@ -269,15 +269,11 @@ func _ensure_steppe_provinces(scenario_year: int) -> void:
 
 
 func _apply_year_factions(scenario_year: int) -> void:
-<<<<<<< Updated upstream
-	# 인구·병력·장수 등 다른 값은 건드리지 않고 "faction"만 갱신합니다.
-=======
 	_ensure_steppe_provinces(scenario_year)
 
 	# 인구·장수 등 다른 값은 건드리지 않고 소속·병력·성벽만 갱신합니다.
 	# provinces 전체를 대입하면 _apply_legacy_core_province_values()가
 	# 먼저 승계해둔 9개 핵심 도시의 수치가 지워집니다.
->>>>>>> Stashed changes
 	var year_factions: Dictionary = Korea35Data.get_factions_for_year(
 		scenario_year
 	)
