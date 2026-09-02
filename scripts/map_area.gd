@@ -519,6 +519,16 @@ var territory_material: ShaderMaterial
 var territory_palette_texture: ImageTexture
 var territory_palette_signature: String = ""
 var road_lines: Array[Line2D] = []
+<<<<<<< Updated upstream:scripts/map_area.gd
+=======
+# 지역 경계선. 각 항목은 [지역 id, 링 좌표, Line2D] 형태입니다.
+var border_lines: Array = []
+# 선택 불가한 배경 지역(중국·일본)의 경계선입니다. 세력 색 갱신 대상이
+# 아니므로 따로 보관합니다.
+var outside_border_lines: Array = []
+# 장거리 원정로. 각 항목은 [출발, 도착, 점선 Line2D 배열] 형태입니다.
+var strategic_lines: Array = []
+>>>>>>> Stashed changes:map_area.gd
 var city_labels: Dictionary = {}
 var map_zoom: float = MAP_MIN_ZOOM
 var map_pan_offset: Vector2 = Vector2.ZERO
@@ -609,6 +619,91 @@ func _build_map_details() -> void:
 		add_child(line)
 		road_lines.append(line)
 
+<<<<<<< Updated upstream:scripts/map_area.gd
+=======
+	_build_strategic_routes()
+	_build_region_borders()
+
+
+# 원정로는 즉시 인접 도로가 아니라 여러 턴에 걸쳐 이동하는 길입니다.
+# 일반 도로와 헷갈리지 않도록 점선으로 그립니다. Line2D는 점선을 직접
+# 지원하지 않으므로 짧은 선을 여러 개 만들어 번갈아 배치합니다.
+const STRATEGIC_DASH_COUNT: int = 26
+
+
+func _build_strategic_routes() -> void:
+	for route_value: Variant in WorldMapData.STRATEGIC_ROUTES:
+		var route: Array = route_value
+		if route.size() < 2:
+			continue
+
+		var from_id: String = str(route[0])
+		var to_id: String = str(route[1])
+		var dashes: Array[Line2D] = []
+		for dash_index: int in range(STRATEGIC_DASH_COUNT):
+			var line: Line2D = Line2D.new()
+			line.name = "%s_%s_Route_%d" % [from_id, to_id, dash_index]
+			line.default_color = Color(0.95, 0.72, 0.35, 0.95)
+			line.width = 4.0
+			line.antialiased = true
+			line.begin_cap_mode = Line2D.LINE_CAP_ROUND
+			line.end_cap_mode = Line2D.LINE_CAP_ROUND
+			# 일반 도로(-5)보다 살짝 아래에 둡니다.
+			line.z_index = -6
+			line.visible = false
+			add_child(line)
+			dashes.append(line)
+
+		strategic_lines.append([from_id, to_id, dashes])
+
+
+func _build_region_borders() -> void:
+	# 경계선을 마스크에 구워두면 줌에 따라 사라지거나 각집니다. 좌표를
+	# 들고 Line2D로 그리면 굵기가 화면 기준으로 일정하게 유지됩니다.
+	_add_border_rings(Korea35Data.REGION_BORDERS, true)
+
+	# 중국·일본은 캠페인 provinces에 없어 선택할 수 없는 배경 지역입니다.
+	# 한국과 같은 굵기로 그리면 플레이 가능한 영역처럼 보이므로 흐리게 둡니다.
+	_add_border_rings(WorldMapData.OUTSIDE_REGION_BORDERS, false)
+
+
+func _add_border_rings(source: Dictionary, playable: bool) -> void:
+	for province_id_value: Variant in source.keys():
+		var province_id: String = str(province_id_value)
+		var rings: Array = source[province_id]
+		for ring_index: int in range(rings.size()):
+			var ring: PackedVector2Array = rings[ring_index]
+			if ring.size() < 3:
+				continue
+
+			var line: Line2D = Line2D.new()
+			line.name = "%s_Border_%d" % [province_id.capitalize(), ring_index]
+			line.antialiased = true
+			line.joint_mode = Line2D.LINE_JOINT_ROUND
+			line.begin_cap_mode = Line2D.LINE_CAP_ROUND
+			line.end_cap_mode = Line2D.LINE_CAP_ROUND
+			line.closed = true
+			line.visible = false
+
+			if playable:
+				line.width = 1.6
+				# 어두운 지도 위에서 묻히지 않도록 밝은 색을 씁니다.
+				line.default_color = Color(0.93, 0.88, 0.74, 0.50)
+				# 영토 채움(-8)보다 위, 도로(-5)보다 아래에 둡니다.
+				line.z_index = -7
+			else:
+				line.width = 1.2
+				line.default_color = Color(0.88, 0.84, 0.72, 0.22)
+				line.z_index = -8
+
+			add_child(line)
+			# playable이 false면 세력 색 갱신 대상에서 제외합니다.
+			if playable:
+				border_lines.append([province_id, ring, line])
+			else:
+				outside_border_lines.append([province_id, ring, line])
+
+>>>>>>> Stashed changes:map_area.gd
 	for city_id_value: Variant in WORLD_CITY_NAMES.keys():
 		var city_id: String = str(city_id_value)
 		var label: Label = Label.new()
@@ -818,6 +913,21 @@ func _layout_map_details(map_rect: Rect2) -> void:
 		territory_overlay.position = map_rect.position
 		territory_overlay.size = map_rect.size
 
+<<<<<<< Updated upstream:scripts/map_area.gd
+=======
+	for entry_value: Variant in border_lines + outside_border_lines:
+		var entry: Array = entry_value
+		var ring: PackedVector2Array = entry[1]
+		var line: Line2D = entry[2]
+		var points: PackedVector2Array = PackedVector2Array()
+		for ring_uv: Vector2 in ring:
+			points.append(_map_uv_to_position(ring_uv, map_rect))
+		line.points = points
+		line.visible = true
+
+	_layout_strategic_routes(map_rect)
+
+>>>>>>> Stashed changes:map_area.gd
 	for index: int in range(WORLD_MAP_ROADS.size()):
 		if index >= road_lines.size():
 			break
@@ -851,6 +961,108 @@ func _layout_map_details(map_rect: Rect2) -> void:
 			+ Vector2(-63.0, 5.0)
 		).round()
 		label.visible = map_zoom >= MAP_DETAIL_ZOOM
+
+
+func _layout_strategic_routes(map_rect: Rect2) -> void:
+	for entry_value: Variant in strategic_lines:
+		var entry: Array = entry_value
+		var from_id: String = str(entry[0])
+		var to_id: String = str(entry[1])
+		var dashes: Array = entry[2]
+
+		if (
+			not WORLD_CITY_MAP_UV.has(from_id)
+			or not WORLD_CITY_MAP_UV.has(to_id)
+		):
+			for dash_value: Variant in dashes:
+				var hidden_line: Line2D = dash_value
+				hidden_line.visible = false
+			continue
+
+		var route_uvs: Array[Vector2] = []
+		route_uvs.append(WORLD_CITY_MAP_UV[from_id])
+		for waypoint_value: Variant in _get_route_waypoints(from_id, to_id):
+			var waypoint: Vector2 = waypoint_value
+			route_uvs.append(waypoint)
+		route_uvs.append(WORLD_CITY_MAP_UV[to_id])
+
+		var path: PackedVector2Array = _build_smooth_route_points(
+			route_uvs,
+			map_rect
+		)
+		# 점선 한 칸의 길이를 화면 기준으로 고정합니다. 개수를 고정하면
+		# 짧은 노선(툴강 북안-신성은 153px)에서 조각이 3px밖에 안 되어
+		# 점처럼 보입니다.
+		var path_length: float = 0.0
+		for point_index: int in range(path.size() - 1):
+			path_length += path[point_index].distance_to(path[point_index + 1])
+
+		var dash_pixels: float = 14.0
+		var wanted_dashes: int = clampi(
+			int(round(path_length / (dash_pixels * 2.0))),
+			2,
+			dashes.size()
+		)
+		var segment_count: int = wanted_dashes * 2
+
+		for dash_index: int in range(dashes.size()):
+			var line: Line2D = dashes[dash_index]
+			if dash_index >= wanted_dashes:
+				line.visible = false
+				continue
+			var start_ratio: float = float(dash_index * 2) / float(segment_count)
+			var end_ratio: float = float(dash_index * 2 + 1) / float(segment_count)
+			var dash_points: PackedVector2Array = _slice_polyline(
+				path,
+				start_ratio,
+				end_ratio
+			)
+			line.points = dash_points
+			line.visible = (
+				dash_points.size() >= 2
+				and map_zoom >= MAP_DETAIL_ZOOM
+			)
+
+
+func _slice_polyline(
+	path: PackedVector2Array,
+	start_ratio: float,
+	end_ratio: float
+) -> PackedVector2Array:
+	var result: PackedVector2Array = PackedVector2Array()
+	if path.size() < 2:
+		return result
+
+	var total: float = 0.0
+	for index: int in range(path.size() - 1):
+		total += path[index].distance_to(path[index + 1])
+	if total <= 0.0:
+		return result
+
+	var start_length: float = total * start_ratio
+	var end_length: float = total * end_ratio
+	var walked: float = 0.0
+
+	for index: int in range(path.size() - 1):
+		var a: Vector2 = path[index]
+		var b: Vector2 = path[index + 1]
+		var seg: float = a.distance_to(b)
+		if seg <= 0.0:
+			continue
+		var seg_end: float = walked + seg
+
+		if seg_end >= start_length and walked <= end_length:
+			var from_t: float = clampf((start_length - walked) / seg, 0.0, 1.0)
+			var to_t: float = clampf((end_length - walked) / seg, 0.0, 1.0)
+			if result.is_empty():
+				result.append(a.lerp(b, from_t))
+			result.append(a.lerp(b, to_t))
+
+		walked = seg_end
+		if walked > end_length:
+			break
+
+	return result
 
 
 func _map_uv_to_position(

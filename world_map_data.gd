@@ -545,7 +545,13 @@ const MAP_ROADS: Array = [
 # 일반 MAP_ROADS에서 분리했습니다. 향후 원정군 시스템은 이 자료의 이동비용을
 # 여러 턴에 걸쳐 소모한 뒤 목적지에 도착하도록 사용합니다.
 const STRATEGIC_ROUTES: Array = [
+	# 고비 남쪽 기슭에서 관중으로. 돌궐·설연타가 당의 본토를 노리던 축입니다.
 	["steppe_hun", "changan", "frontier"],
+	# 동몽골에서 요하 상류로 내려오는 길. 고구려가 돌궐·설연타와 통교하고
+	# 때로 충돌하던 통로입니다.
+	["steppe_tongluo", "shinseong", "frontier"],
+	# 흥안령 동쪽을 돌아 고구려 동북 변경에 닿는 길입니다.
+	["steppe_bayegu", "chaekseong", "frontier"],
 ]
 
 # 모든 노선에 중간점을 두어 직선 대신 지형을 따라 휘는 길로 보이게 합니다.
@@ -565,6 +571,14 @@ const ROAD_WAYPOINTS: Dictionary = {
 	"steppe_qibi_steppe_tongluo": [Vector2(0.335, 0.215), Vector2(0.375, 0.245)],
 	"steppe_adie_steppe_hun": [Vector2(0.145, 0.285), Vector2(0.155, 0.325)],
 	"steppe_hun_changan": [Vector2(0.090, 0.435), Vector2(0.105, 0.500), Vector2(0.115, 0.560)],
+	# 요하 상류와 흥안령 동록 원정로. 산지를 피해 골짜기를 따라가도록
+	# 지형 비용을 반영해 계산한 중간점입니다.
+	"steppe_tongluo_shinseong": [
+		Vector2(0.432, 0.240), Vector2(0.448, 0.259), Vector2(0.452, 0.284),
+	],
+	"steppe_bayegu_chaekseong": [
+		Vector2(0.581, 0.187), Vector2(0.583, 0.229), Vector2(0.582, 0.272),
+	],
 	"changan_luoyang": [Vector2(0.110, 0.635), Vector2(0.150, 0.600)],
 	"luoyang_shandong": [Vector2(0.225, 0.550), Vector2(0.275, 0.520)],
 	"shandong_pyongyang": [Vector2(0.365, 0.500), Vector2(0.420, 0.470), Vector2(0.470, 0.450)],
@@ -625,6 +639,24 @@ const ROUTE_RULES: Dictionary = {
 		"terrain": "long_frontier",
 		"movement_cost": 320,
 		"label": "고비 남로·당 변경 원정로",
+		"strategic_only": true
+	},
+	# 아래 두 노선의 이동비용은 지도상 거리에 비례해 정했습니다.
+	# steppe_hun_changan이 438px에 320이므로 비율 0.73을 그대로 적용했습니다.
+	# 초원 내부 도로(비율 0.2~0.4)보다 비싼 이유는 국경을 넘는 원정이기
+	# 때문이고, 그만큼 도착까지 여러 턴이 걸립니다.
+	"steppe_tongluo_shinseong":
+	{
+		"terrain": "long_frontier",
+		"movement_cost": 110,
+		"label": "요하 상류 원정로",
+		"strategic_only": true
+	},
+	"steppe_bayegu_chaekseong":
+	{
+		"terrain": "long_frontier",
+		"movement_cost": 170,
+		"label": "흥안령 동록 원정로",
 		"strategic_only": true
 	},
 }

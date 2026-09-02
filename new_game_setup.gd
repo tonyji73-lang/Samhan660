@@ -214,10 +214,20 @@ const MAP_MAX_ZOOM: float = 5.0
 const MAP_ZOOM_STEP: float = 1.18
 const MAP_DETAIL_ZOOM: float = 1.45
 const PROVINCE_MAP_UV: Dictionary = WorldMapData.PROVINCE_MAP_UV
-const PROVINCE_BASE_NAMES: Dictionary = WorldMapData.PROVINCE_NAMES
-const MAP_ROADS: Array = WorldMapData.MAP_ROADS
-const ROAD_WAYPOINTS: Dictionary = WorldMapData.ROAD_WAYPOINTS
+# 지도 자료는 플레이 화면(map_area.gd)과 같은 출처를 씁니다. 예전에는
+# world_map_data.gd의 옛 9지역 기준 자료를 그대로 써서, 도로가 11개만
+# 나오고 새로 추가한 항로·원정로가 설정 화면에만 빠지는 문제가 있었습니다.
+static var PROVINCE_BASE_NAMES: Dictionary = Korea35Data.merge_world_dictionary(
+	WorldMapData.PROVINCE_NAMES, Korea35Data.PROVINCE_NAMES
+)
+static var MAP_ROADS: Array = Korea35Data.get_world_roads(
+	WorldMapData.MAP_ROADS
+)
+static var ROAD_WAYPOINTS: Dictionary = Korea35Data.merge_world_dictionary(
+	WorldMapData.ROAD_WAYPOINTS, Korea35Data.get_road_waypoints()
+)
 
+<<<<<<< Updated upstream
 # 한국의 공식 PROVINCE_MAP_UV 값은 게임 데이터와 거리 계산에서 공유하므로
 # 변경하지 않습니다. 세력 선택용 고지도에서 한반도가 원본 기준보다 오른쪽에
 # 그려진 차이만 표시 단계에서 보정합니다.
@@ -233,6 +243,17 @@ const KOREA_DISPLAY_PROVINCES: Array[String] = [
 	"geumseong",
 ]
 const KOREA_DISPLAY_UV_OFFSET: Vector2 = Vector2(0.060, 0.000)
+=======
+
+static func _get_province_uv(province_id: String) -> Vector2:
+	if Korea35Data.PROVINCE_MAP_UV.has(province_id):
+		var korea_uv: Vector2 = Korea35Data.PROVINCE_MAP_UV[province_id]
+		return korea_uv
+	if PROVINCE_MAP_UV.has(province_id):
+		var world_uv: Vector2 = PROVINCE_MAP_UV[province_id]
+		return world_uv
+	return Vector2.ZERO
+>>>>>>> Stashed changes
 
 
 var selected_faction_id: String = "silla"
@@ -266,6 +287,9 @@ var map_territory_overlay: TextureRect
 var map_territory_material: ShaderMaterial
 var map_territory_palette_texture: ImageTexture
 var map_detail_layer: Control
+# 원정로 점선. 각 항목은 [출발, 도착, Line2D 배열] 형태입니다.
+const SETUP_STRATEGIC_DASH_COUNT: int = 22
+var map_strategic_lines: Array = []
 var map_road_lines: Array[Line2D] = []
 var map_city_labels: Dictionary = {}
 var map_zoom: float = MAP_MIN_ZOOM
@@ -1318,13 +1342,16 @@ func _map_uv_to_canvas(map_uv: Vector2) -> Vector2:
 
 
 func _get_display_map_uv(province_id: String, map_uv: Vector2) -> Vector2:
-	if province_id in KOREA_DISPLAY_PROVINCES:
-		return map_uv + KOREA_DISPLAY_UV_OFFSET
+	# 예전에는 한국 지역만 +0.060 만큼 오른쪽으로 밀었습니다. 설정 화면이
+	# 다른 고지도를 쓰던 시절의 보정인데, 지금은 플레이 화면과 같은 지도를
+	# 쓰고 _map_uv_to_canvas가 오버레이와 같은 COVERED 방식으로 계산하므로
+	# 보정할 것이 없습니다. 그대로 두면 영토 색칠과 마커가 어긋납니다.
 	return map_uv
 
 
 func _build_map_details() -> void:
 	map_road_lines.clear()
+	map_strategic_lines.clear()
 	map_city_labels.clear()
 
 	for road: Array in MAP_ROADS:
@@ -1346,6 +1373,30 @@ func _build_map_details() -> void:
 		line.set_meta("to_city", str(road[1]))
 		map_detail_layer.add_child(line)
 		map_road_lines.append(line)
+
+	# 원정로는 즉시 인접 도로가 아니라 여러 턴에 걸쳐 이동하는 길입니다.
+	# 플레이 화면과 같이 점선으로 구분해 그립니다.
+	for route_value: Variant in WorldMapData.STRATEGIC_ROUTES:
+		var route: Array = route_value
+		if route.size() < 2:
+			continue
+		var dashes: Array[Line2D] = []
+		for dash_index: int in range(SETUP_STRATEGIC_DASH_COUNT):
+			var dash: Line2D = Line2D.new()
+			dash.name = "%sTo%sRoute%d" % [
+				str(route[0]),
+				str(route[1]),
+				dash_index,
+			]
+			dash.width = 2.4
+			dash.default_color = Color(0.95, 0.72, 0.35, 0.9)
+			dash.antialiased = true
+			dash.begin_cap_mode = Line2D.LINE_CAP_ROUND
+			dash.end_cap_mode = Line2D.LINE_CAP_ROUND
+			dash.visible = false
+			map_detail_layer.add_child(dash)
+			dashes.append(dash)
+		map_strategic_lines.append([str(route[0]), str(route[1]), dashes])
 
 	for province_id_value: Variant in PROVINCE_MAP_UV.keys():
 		var province_id: String = str(province_id_value)
@@ -1485,11 +1536,6 @@ func _position_map_details() -> void:
 		if ROAD_WAYPOINTS.has(route_key):
 			for waypoint_value: Variant in ROAD_WAYPOINTS[route_key]:
 				var waypoint: Vector2 = waypoint_value
-				if (
-					from_id in KOREA_DISPLAY_PROVINCES
-					and to_id in KOREA_DISPLAY_PROVINCES
-				):
-					waypoint += KOREA_DISPLAY_UV_OFFSET
 				route_uvs.append(waypoint)
 
 		route_uvs.append(to_uv)
@@ -1504,6 +1550,99 @@ func _position_map_details() -> void:
 			)
 		)
 		city_label.position = pixel_position - Vector2(39.0, 21.0)
+
+	_position_strategic_routes()
+
+
+func _position_strategic_routes() -> void:
+	for entry_value: Variant in map_strategic_lines:
+		var entry: Array = entry_value
+		var from_id: String = str(entry[0])
+		var to_id: String = str(entry[1])
+		var dashes: Array = entry[2]
+
+		if (
+			not PROVINCE_MAP_UV.has(from_id)
+			and not Korea35Data.PROVINCE_MAP_UV.has(from_id)
+		):
+			continue
+
+		var route_uvs: Array[Vector2] = []
+		route_uvs.append(_get_province_uv(from_id))
+		var route_key: String = "%s_%s" % [from_id, to_id]
+		if ROAD_WAYPOINTS.has(route_key):
+			for waypoint_value: Variant in ROAD_WAYPOINTS[route_key]:
+				var waypoint: Vector2 = waypoint_value
+				route_uvs.append(waypoint)
+		route_uvs.append(_get_province_uv(to_id))
+
+		var path: PackedVector2Array = _build_smooth_map_route(route_uvs)
+		var path_length: float = 0.0
+		for point_index: int in range(path.size() - 1):
+			path_length += path[point_index].distance_to(path[point_index + 1])
+
+		# 점선 한 칸을 화면 기준 길이로 고정합니다. 개수를 고정하면 짧은
+		# 노선에서 조각이 몇 px밖에 안 되어 점처럼 보입니다.
+		var wanted: int = clampi(
+			int(round(path_length / 18.0)),
+			2,
+			dashes.size()
+		)
+		var segment_count: int = wanted * 2
+
+		for dash_index: int in range(dashes.size()):
+			var dash: Line2D = dashes[dash_index]
+			if dash_index >= wanted:
+				dash.visible = false
+				continue
+			var dash_points: PackedVector2Array = _slice_map_polyline(
+				path,
+				float(dash_index * 2) / float(segment_count),
+				float(dash_index * 2 + 1) / float(segment_count)
+			)
+			dash.points = dash_points
+			dash.visible = dash_points.size() >= 2
+
+
+func _slice_map_polyline(
+	path: PackedVector2Array,
+	start_ratio: float,
+	end_ratio: float
+) -> PackedVector2Array:
+	var result: PackedVector2Array = PackedVector2Array()
+	if path.size() < 2:
+		return result
+
+	var total: float = 0.0
+	for index: int in range(path.size() - 1):
+		total += path[index].distance_to(path[index + 1])
+	if total <= 0.0:
+		return result
+
+	var start_length: float = total * start_ratio
+	var end_length: float = total * end_ratio
+	var walked: float = 0.0
+
+	for index: int in range(path.size() - 1):
+		var a: Vector2 = path[index]
+		var b: Vector2 = path[index + 1]
+		var seg: float = a.distance_to(b)
+		if seg <= 0.0:
+			continue
+		var seg_end: float = walked + seg
+
+		if seg_end >= start_length and walked <= end_length:
+			var from_t: float = clampf((start_length - walked) / seg, 0.0, 1.0)
+			var to_t: float = clampf((end_length - walked) / seg, 0.0, 1.0)
+			if result.is_empty():
+				result.append(a.lerp(b, from_t))
+			result.append(a.lerp(b, to_t))
+
+		walked = seg_end
+		if walked > end_length:
+			break
+
+	return result
 
 
 func _build_smooth_map_route(

@@ -1,6 +1,9 @@
 extends Control
 
 const Korea35Data = preload("res://korea_35_data.gd")
+const WorldMapData = preload("res://world_map_data.gd")
+const ScenarioData = preload("res://scenario_data.gd")
+const SamhanStrategySystems = preload("res://samhan_strategy_systems.gd")
 
 const SAVE_PATH: String = "user://campaign_save_35_regions_v1.json"
 const SEASONS: Array[String] = ["봄", "여름", "가을", "겨울"]
@@ -142,6 +145,12 @@ var officers: Dictionary = {
 	"관창": {"name": "관창", "leadership": 72, "war": 90, "intelligence": 55, "politics": 45, "authority": 74},
 }
 
+# 장기 전략 백엔드. 혼인·출산·교육·인재 보충·외교 관계를 담당합니다.
+# samhan_strategy_systems.gd에 구현되어 있었으나 여태 아무 데서도
+# 호출되지 않아 죽어 있었습니다.
+var strategy: SamhanStrategySystems = SamhanStrategySystems.new()
+var strategy_state: Dictionary = {}
+
 var officers_by_province: Dictionary = {
 	"ansi": ["양만춘"],
 	"gungnae": ["고연무"],
@@ -235,8 +244,40 @@ func _apply_legacy_core_province_values() -> void:
 		provinces[province_id] = legacy_provinces[province_id].duplicate(true)
 
 
+func _ensure_steppe_provinces(scenario_year: int) -> void:
+	# 유목 9개 부족은 world_map_data.gd의 PROVINCE_TEMPLATES에 병력·목초지·
+	# 복속도가 이미 정의되어 있는데 캠페인이 읽지 않고 있었습니다. 여기서
+	# provinces에 편입해 실제 데이터로 쓰이게 합니다.
+	var diplomacy: Dictionary = WorldMapData.get_steppe_diplomacy(scenario_year)
+
+	for province_id: String in WorldMapData.STEPPE_PROVINCE_IDS:
+		if not WorldMapData.PROVINCE_TEMPLATES.has(province_id):
+			continue
+
+		var template: Dictionary = (
+			WorldMapData.PROVINCE_TEMPLATES[province_id].duplicate(true)
+		)
+		# 연도별 복속 상황을 덮어씁니다. 646년 이전엔 설연타 연맹권,
+		# 647년부터 당 기미부주, 661~662년 철륵 반란으로 복속도가 급락합니다.
+		if diplomacy.has(province_id):
+			var entry: Dictionary = diplomacy[province_id]
+			template["overlord"] = str(entry.get("overlord", ""))
+			template["submission"] = int(entry.get("submission", 60))
+			template["status"] = str(entry.get("status", ""))
+
+		provinces[province_id] = template
+
+
 func _apply_year_factions(scenario_year: int) -> void:
+<<<<<<< Updated upstream
 	# 인구·병력·장수 등 다른 값은 건드리지 않고 "faction"만 갱신합니다.
+=======
+	_ensure_steppe_provinces(scenario_year)
+
+	# 인구·장수 등 다른 값은 건드리지 않고 소속·병력·성벽만 갱신합니다.
+	# provinces 전체를 대입하면 _apply_legacy_core_province_values()가
+	# 먼저 승계해둔 9개 핵심 도시의 수치가 지워집니다.
+>>>>>>> Stashed changes
 	var year_factions: Dictionary = Korea35Data.get_factions_for_year(
 		scenario_year
 	)
@@ -306,14 +347,83 @@ func _apply_new_game_settings() -> void:
 		settings.get("scenario_id", "baekje_fall_660")
 	)
 	year = int(settings.get("scenario_year", 660))
+	var season_id: String = str(settings.get("scenario_season", "spring"))
+	season_index = int(SEASON_ID_TO_INDEX.get(season_id, 0))
+
 	# 선택한 연도에 맞춰 소속 세력만 다시 배치합니다.
 	# provinces 전체를 대입하면 _apply_legacy_core_province_values()가
 	# 먼저 승계해둔 9개 핵심 도시의 인구·병력·장수 수치가 지워집니다.
 	_apply_year_factions(year)
-	var season_id: String = str(settings.get("scenario_season", "spring"))
-	season_index = int(SEASON_ID_TO_INDEX.get(season_id, 0))
+	_apply_scenario_rulers()
 
 	_apply_difficulty_settings()
+
+	# 전략 상태는 provinces·officers·season_index가 모두 확정된 뒤에
+	# 만들어야 합니다.
+	_init_strategy_state()
+
+
+func _init_strategy_state() -> void:
+	# provinces와 officers가 확정된 뒤에 만들어야 합니다. 세력 목록과
+	# 수도를 이 자료에서 뽑아 쓰기 때문입니다.
+	strategy_state = strategy.create_initial_state(
+		year,
+		provinces,
+		officers,
+		officers_by_province,
+		_get_scenario_by_id(scenario_id),
+		season_index
+	)
+
+
+func _apply_scenario_rulers() -> void:
+	# legacy_provinces의 태수는 660년 기준으로 하드코딩되어 있어서, 632년을
+	# 골라도 금성 태수가 김춘추로 나왔습니다. 시나리오마다 군주와 수도가
+	# 정의되어 있으므로 그 값으로 수도의 태수를 덮어씁니다.
+	var scenario: Dictionary = _get_scenario_by_id(scenario_id)
+	if scenario.is_empty():
+		return
+
+	# 시나리오의 수도 이름(예: "금성")을 지역 id로 되찾기 위한 표입니다.
+	var name_to_id: Dictionary = {}
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if provinces.has(province_id):
+			name_to_id[str(provinces[province_id].get("name", ""))] = province_id
+
+	for faction_value: Variant in scenario.get("factions", []):
+		if typeof(faction_value) != TYPE_DICTIONARY:
+			continue
+		var faction_data: Dictionary = faction_value
+		var ruler: String = str(faction_data.get("ruler", ""))
+		var capital: String = str(faction_data.get("capital", ""))
+		if ruler == "" or capital == "":
+			continue
+
+		var capital_id: String = str(name_to_id.get(capital, ""))
+		# "금성"과 "금성·월성"처럼 표기가 다를 수 있어 부분 일치도 봅니다.
+		if capital_id == "":
+			for province_name: String in name_to_id.keys():
+				if province_name.begins_with(capital):
+					capital_id = str(name_to_id[province_name])
+					break
+		if capital_id == "" or not provinces.has(capital_id):
+			continue
+
+		provinces[capital_id]["governor"] = ruler
+		var officers: Array = provinces[capital_id].get("generals", [])
+		if officers is Array and not officers.has(ruler):
+			officers.insert(0, ruler)
+			provinces[capital_id]["generals"] = officers
+
+
+func _get_scenario_by_id(target_id: String) -> Dictionary:
+	for scenario_value: Variant in ScenarioData.SCENARIOS:
+		if typeof(scenario_value) != TYPE_DICTIONARY:
+			continue
+		var scenario: Dictionary = scenario_value
+		if str(scenario.get("id", "")) == target_id:
+			return scenario
+	return {}
 
 
 func _apply_difficulty_settings(
@@ -657,10 +767,12 @@ func resolve_attack(source_id: String, target_id: String) -> void:
 
 
 func player_controls_all_provinces() -> bool:
-	for province_value in provinces.values():
-		var province: Dictionary = province_value
-
-		if province["faction"] != player_faction:
+	# 통일 판정은 한반도 35개 지역만 봅니다. 유목 부족은 데이터로만
+	# 편입되어 있고 정복 대상이 아니므로 제외합니다.
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
+		if str(provinces[province_id].get("faction", "")) != player_faction:
 			return false
 
 	return true
@@ -745,6 +857,9 @@ func _on_end_turn_button_pressed() -> void:
 
 	var ai_message: String = run_enemy_ai_turns()
 
+	# 건설·연구·교역과, 봄에는 인재 보충·혼인·출산·자녀 성장을 처리합니다.
+	var strategy_message: String = _process_strategy_season()
+
 	update_top_bar()
 
 	if selected_province_id != "":
@@ -758,12 +873,41 @@ func _on_end_turn_button_pressed() -> void:
 	if ai_message != "":
 		log_label.text += "\n" + ai_message
 
+	if strategy_message != "":
+		log_label.text += "\n" + strategy_message
+
+
+func _process_strategy_season() -> String:
+	if strategy_state.is_empty():
+		return ""
+
+	var result: Dictionary = strategy.process_season(
+		strategy_state,
+		year,
+		season_index,
+		provinces,
+		officers_by_province,
+		_get_scenario_by_id(scenario_id)
+	)
+
+	# 교역 수익은 플레이어 세력 몫만 반영합니다.
+	var gold_delta: Dictionary = result.get("faction_gold_delta", {})
+	if gold_delta.has(player_faction):
+		gold = maxi(0, gold + int(gold_delta[player_faction]))
+
+	var messages: Array = result.get("messages", [])
+	if messages.is_empty():
+		return ""
+	return combine_messages(messages)
+
 
 func process_public_order() -> String:
-	var messages: Array[String] = []
+	var recovered_names: Array[String] = []
 
-	for province_id_value in provinces.keys():
-		var province_id: String = str(province_id_value)
+	# 치안 회복도 한반도 지역만 처리합니다.
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
 		var province: Dictionary = provinces[province_id]
 		var previous_order: int = int(province["public_order"])
 
@@ -774,12 +918,18 @@ func process_public_order() -> String:
 		province["public_order"] = recovered_order
 
 		if province["faction"] == player_faction:
-			messages.append(
-				"%s 치안: %d → %d"
-				% [province["name"], previous_order, recovered_order]
-			)
+			recovered_names.append(str(province["name"]))
 
-	return combine_messages(messages)
+	# 지역이 35개로 늘어난 뒤로는 지역마다 한 줄씩 찍으면 로그가 넘칩니다.
+	# 전투 같은 중요한 소식이 묻히므로 한 줄로 요약합니다.
+	if recovered_names.is_empty():
+		return ""
+	if recovered_names.size() <= 3:
+		return "치안 회복: %s" % ", ".join(recovered_names)
+	return "치안 회복: %s 외 %d곳" % [
+		", ".join(recovered_names.slice(0, 3)),
+		recovered_names.size() - 3,
+	]
 
 
 func get_public_order_income_rate(public_order: int) -> float:
@@ -798,14 +948,17 @@ func get_public_order_income_rate(public_order: int) -> float:
 func run_enemy_ai_turns() -> String:
 	var ai_province_ids: Array[String] = []
 
-	for province_id_value in provinces.keys():
-		var province_id: String = str(province_id_value)
-		var province: Dictionary = provinces[province_id]
-
-		if province["faction"] != player_faction:
+	# 유목 부족은 여기서 제외합니다. 초원과 요동을 잇는 길은
+	# STRATEGIC_ROUTES라서 여러 턴에 걸쳐 이동해야 하는데, 이 로직은
+	# 한 턴에 인접지를 치는 방식이라 그대로 두면 순간이동이 됩니다.
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
+		if str(provinces[province_id].get("faction", "")) != player_faction:
 			ai_province_ids.append(province_id)
 
 	var messages: Array[String] = []
+	var recruit_counts: Dictionary = {}
 
 	for source_id in ai_province_ids:
 		if not provinces.has(source_id):
@@ -831,11 +984,20 @@ func run_enemy_ai_turns() -> String:
 				messages.append(resolve_ai_attack(source_id, target_id))
 				continue
 
+		# 충원은 지역마다 찍지 않고 세력별로 합산합니다.
+		var faction_name: String = str(source["faction"])
+		recruit_counts[faction_name] = (
+			int(recruit_counts.get(faction_name, 0)) + 1
+		)
+
+	for faction_value: Variant in recruit_counts.keys():
+		var faction_name: String = str(faction_value)
+		var province_count: int = int(recruit_counts[faction_name])
 		messages.append(
-			"%s의 %s군이 병력 %d명을 충원했습니다."
+			"%s군이 %d곳에서 병력 %d명씩 충원했습니다."
 			% [
-				source["name"],
-				source["faction"],
+				faction_name,
+				province_count,
 				ai_recruitment_amount,
 			]
 		)
@@ -1040,6 +1202,7 @@ func _on_save_button_pressed() -> void:
 		"selected_province_id": selected_province_id,
 		"provinces": provinces,
 		"officers_by_province": officers_by_province,
+		"strategy_state": strategy_state,
 	}
 	var save_file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 
@@ -1102,11 +1265,25 @@ func _on_load_button_pressed() -> void:
 	var saved_provinces: Dictionary = save_data["provinces"]
 	provinces = saved_provinces.duplicate(true)
 
+	# 전략 상태를 되살립니다. 옛 세이브에는 없으므로 그때는 새로 만듭니다.
+	if typeof(save_data.get("strategy_state", null)) == TYPE_DICTIONARY:
+		strategy_state = strategy.normalize_loaded_state(
+			save_data["strategy_state"],
+			provinces
+		)
+	else:
+		strategy_state = {}
+
 	if typeof(save_data.get("officers_by_province", null)) == TYPE_DICTIONARY:
 		var saved_assignments: Dictionary = save_data["officers_by_province"]
 		officers_by_province = saved_assignments.duplicate(true)
 
 	_ensure_additional_officer_assignments()
+
+	# 옛 세이브에는 전략 상태가 없습니다. officers_by_province가 복원된
+	# 뒤에 만들어야 인재 배치가 제대로 잡힙니다.
+	if strategy_state.is_empty():
+		_init_strategy_state()
 
 	attack_source_id = ""
 	_apply_difficulty_settings(false)
