@@ -346,3 +346,13 @@ static func get_world_roads(world_roads: Array) -> Array:
 	result.append(["tsukushi", "geumseong", "sea"])
 	result.append(["tsukushi", "sogaya", "sea"])
 	return result
+
+
+# 한국 35개 지역의 국경선 폴리곤 데이터입니다. map_area.gd의
+# _build_region_borders()가 Korea35Data.REGION_BORDERS를 정적으로
+# 참조하기 때문에, 실제 좌표 데이터가 아직 없어도 컴파일이 되려면 이
+# 상수 자체는 있어야 합니다. 지금은 빈 상태라 한국 쪽 경계선은 안
+# 그려지고, 나중에 각 지역별 [PackedVector2Array, ...] 링 좌표를
+# 채워 넣으면 그때부터 국경선이 표시됩니다.
+# 형식: { "province_id": [PackedVector2Array(...), ...] }
+const REGION_BORDERS: Dictionary = {}
