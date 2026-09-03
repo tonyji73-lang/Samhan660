@@ -231,8 +231,15 @@ text = "징병: 금 150 / 군량 200"
 layout_mode = 2
 text = "공격 준비"
 
-[node name="LogLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=990694890]
+[node name="LogScroll" type="ScrollContainer" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=990694891]
+custom_minimum_size = Vector2(0, 140)
 layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="LogLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox/LogScroll" unique_id=990694890]
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
 text = "지역을 선택하세"
 
 [node name="GameOverOverlay" type="ColorRect" parent="." unique_id=898005710]

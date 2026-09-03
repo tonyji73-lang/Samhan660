@@ -189,7 +189,7 @@ var officers_by_province: Dictionary = {
 @onready var public_order_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/PublicOrderLabel
 @onready var troops_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/TroopsLabel
 @onready var fortress_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/FortressLabel
-@onready var log_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/LogLabel
+@onready var log_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/LogScroll/LogLabel
 
 @onready var develop_button: Button = $MainVBox/Content/ProvincePanel/ProvinceVBox/DevelopButton
 @onready var commerce_button: Button = $MainVBox/Content/ProvincePanel/ProvinceVBox/CommerceButton
@@ -1328,13 +1328,22 @@ func _refresh_map_markers() -> void:
 
 
 func combine_messages(messages: Array[String]) -> String:
+	# 인재 등용 · 병력 충원 같은 자동 처리 메시지가 영지 수만큼(수십 개)
+	# 한꺼번에 쏟아지면 LogLabel이 한없이 길어져서 레이아웃이 밀립니다.
+	# 화면에는 앞부분 몇 개만 보여주고 나머지는 개수로 요약합니다.
+	const MAX_VISIBLE_MESSAGES: int = 6
+
+	var visible_count: int = mini(messages.size(), MAX_VISIBLE_MESSAGES)
 	var combined_message: String = ""
 
-	for message in messages:
+	for index in range(visible_count):
 		if combined_message != "":
 			combined_message += "\n"
+		combined_message += messages[index]
 
-		combined_message += message
+	var hidden_count: int = messages.size() - visible_count
+	if hidden_count > 0:
+		combined_message += "\n… 외 %d건" % hidden_count
 
 	return combined_message
 
