@@ -587,11 +587,18 @@ func _configure_map_background() -> void:
 
 	map_background.modulate = Color.WHITE
 	map_background.self_modulate = Color.WHITE
-	var map_shader: Shader = Shader.new()
-	map_shader.code = MAP_BRIGHTNESS_SHADER_CODE
-	var map_material: ShaderMaterial = ShaderMaterial.new()
-	map_material.shader = map_shader
-	map_background.material = map_material
+
+	# TODO: MAP_BRIGHTNESS_SHADER_CODE 자체는 문법상 문제가 없는데, 이
+	# 환경(Godot 4.7 + D3D12 렌더러로 추정)에서 셰이더 컴파일이 실패해서
+	# 지도 자체가 안 뜨는 문제가 있었습니다. 원인 파악 전까지는 이 밝기/
+	# 대비/채도 보정 효과를 끄고 원본 텍스처를 그대로 씁니다. 렌더러를
+	# Vulkan으로 바꾸거나 원인을 찾으면 아래 세 줄의 주석을 풀어서 다시
+	# 켤 수 있습니다.
+	# var map_shader: Shader = Shader.new()
+	# map_shader.code = MAP_BRIGHTNESS_SHADER_CODE
+	# var map_material: ShaderMaterial = ShaderMaterial.new()
+	# map_material.shader = map_shader
+	# map_background.material = map_material
 	map_background.z_index = -10
 
 
