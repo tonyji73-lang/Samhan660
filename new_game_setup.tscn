@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://cejndid8kah1q"]
+[gd_scene load_steps=2 format=3 uid="uid://c3n7g5s2t8u4w"]
 
-[ext_resource type="Script" uid="uid://baqcdixhghr0j" path="res://new_game_setup.gd" id="1_setup_script"]
+[ext_resource type="Script" path="res://new_game_setup.gd" id="1_setup"]
 
-[node name="NewGameSetup" type="Control" unique_id=1005977953]
+[node name="NewGameSetup" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_setup_script")
+script = ExtResource("1_setup")

@@ -348,11 +348,11 @@ static func get_world_roads(world_roads: Array) -> Array:
 	return result
 
 
-# 한국 35개 지역의 국경선 폴리곤 데이터입니다. map_area.gd의
-# _build_region_borders()가 Korea35Data.REGION_BORDERS를 정적으로
-# 참조하기 때문에, 실제 좌표 데이터가 아직 없어도 컴파일이 되려면 이
-# 상수 자체는 있어야 합니다. 지금은 빈 상태라 한국 쪽 경계선은 안
-# 그려지고, 나중에 각 지역별 [PackedVector2Array, ...] 링 좌표를
-# 채워 넣으면 그때부터 국경선이 표시됩니다.
+# 한국 35개 지역의 국경선 폴리곤 데이터입니다. 지금은 실제 영토 마스크
+# 이미지(assets/maps/samhan660_territory_id_map_35.png)가 픽셀 단위로
+# 정확한 경계와 채움색을 그려주기 때문에(map_area.gd의
+# _build_territory_overlay() + TERRITORY_SHADER_CODE), 이 좌표 기반
+# 폴리곤은 비워둡니다. 두 개를 같이 채우면 부정확한 직선 폴리곤이 정확한
+# 마스크 경계 위에 겹쳐져 오히려 지저분해집니다.
 # 형식: { "province_id": [PackedVector2Array(...), ...] }
-const REGION_BORDERS: Dictionary = {}
+static var REGION_BORDERS: Dictionary = {}
