@@ -406,10 +406,10 @@ func _apply_scenario_rulers() -> void:
 			continue
 
 		provinces[capital_id]["governor"] = ruler
-		var officers: Array = provinces[capital_id].get("generals", [])
-		if officers is Array and not officers.has(ruler):
-			officers.insert(0, ruler)
-			provinces[capital_id]["generals"] = officers
+		var province_generals: Array = provinces[capital_id].get("generals", [])
+		if province_generals is Array and not province_generals.has(ruler):
+			province_generals.insert(0, ruler)
+			provinces[capital_id]["generals"] = province_generals
 
 
 func _get_scenario_by_id(target_id: String) -> Dictionary:
@@ -1078,10 +1078,10 @@ func resolve_ai_attack(source_id: String, target_id: String) -> String:
 			% [attacker["faction"], attacker_commander["name"], defender["name"]]
 		)
 
-	var attacker_losses: int = maxi(1000, int(float(attacker_troops) * 0.35))
+	var defeat_attacker_losses: int = maxi(1000, int(float(attacker_troops) * 0.35))
 	var defender_losses: int = maxi(500, int(float(attacker_troops) * 0.20))
 
-	attacker["troops"] = maxi(1000, attacker_troops - attacker_losses)
+	attacker["troops"] = maxi(1000, attacker_troops - defeat_attacker_losses)
 	defender["troops"] = maxi(1000, defender_troops - defender_losses)
 
 	return (

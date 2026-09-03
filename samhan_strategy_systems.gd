@@ -777,6 +777,7 @@ func get_building_quote(state: Dictionary, province_id: String, building_id: Str
 	var next_level: int = current_level + 1
 	if next_level > int(definition.get("max_level", 3)):
 		return {"ok": false, "reason": "이미 최고 단계입니다."}
+	@warning_ignore("integer_division")
 	return {
 		"ok": true,
 		"building_id": building_id,
@@ -931,6 +932,7 @@ func perform_diplomatic_action(
 	var politics: int = int(actor.get("politics", 50))
 	var intelligence: int = int(actor.get("intelligence", 50))
 	var authority: int = int(actor.get("authority", 50))
+	@warning_ignore("integer_division")
 	var chance: int = clampi(
 		45 + int((politics + intelligence + authority) / 12) + int(relation_value / 5),
 		15,
@@ -1169,6 +1171,7 @@ func _process_trade(state: Dictionary, provinces: Dictionary) -> Dictionary:
 		var buildings: Dictionary = state.get("province_buildings", {})
 		var market_level: int = int(buildings.get(origin_id, {}).get("market", 0)) + int(buildings.get(destination_id, {}).get("market", 0))
 		var commerce_value: int = int(provinces[origin_id].get("commerce", 50)) + int(provinces[destination_id].get("commerce", 50))
+		@warning_ignore("integer_division")
 		var income: int = maxi(
 			20,
 			int(commerce_value / 5) + market_level * 15 - int(route.get("risk", 10))
@@ -1305,6 +1308,7 @@ func _create_child(state: Dictionary, first: Dictionary, second: Dictionary, cur
 	var base_stats: Dictionary = {}
 	var potential: Dictionary = {}
 	for stat_key: String in STAT_KEYS:
+		@warning_ignore("integer_division")
 		var parent_average: int = int(
 			(int(first.get("stats", {}).get(stat_key, 55)) + int(second.get("stats", {}).get(stat_key, 55))) / 2
 		)
@@ -1383,6 +1387,7 @@ func _generate_unique_name(state: Dictionary, faction_name: String, current_year
 	for attempt: int in range(30):
 		var seed_value: int = absi(hash("name:%s:%d:%d:%d" % [faction_name, current_year, salt, attempt]))
 		var surname: String = str(surnames[seed_value % surnames.size()])
+		@warning_ignore("integer_division")
 		var given_index: int = int(seed_value / maxi(1, surnames.size())) % given_names.size()
 		var given_name: String = str(given_names[given_index])
 		var candidate: String = surname + given_name

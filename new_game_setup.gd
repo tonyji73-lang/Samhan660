@@ -1339,7 +1339,7 @@ func _map_uv_to_canvas(map_uv: Vector2) -> Vector2:
 	return image_origin + map_uv * rendered_size
 
 
-func _get_display_map_uv(province_id: String, map_uv: Vector2) -> Vector2:
+func _get_display_map_uv(_province_id: String, map_uv: Vector2) -> Vector2:
 	# 예전에는 한국 지역만 +0.060 만큼 오른쪽으로 밀었습니다. 설정 화면이
 	# 다른 고지도를 쓰던 시절의 보정인데, 지금은 플레이 화면과 같은 지도를
 	# 쓰고 _map_uv_to_canvas가 오버레이와 같은 COVERED 방식으로 계산하므로
