@@ -4,9 +4,13 @@ const Korea35Data = preload("res://korea_35_data.gd")
 const WorldMapData = preload("res://world_map_data.gd")
 const ScenarioData = preload("res://scenario_data.gd")
 const SamhanStrategySystems = preload("res://samhan_strategy_systems.gd")
+const DomesticOverlay = preload("res://domestic_overlay.gd")
 
 const SAVE_PATH: String = "user://campaign_save_35_regions_v1.json"
-const SEASONS: Array[String] = ["봄", "여름", "가을", "겨울"]
+const SEASONS: Array[String] = [
+	"1월", "2월", "3월", "4월", "5월", "6월",
+	"7월", "8월", "9월", "10월", "11월", "12월",
+]
 const ATTACK_FOOD_COST: int = 500
 const FACTION_ID_TO_NAME: Dictionary = {
 	"silla": "신라",
@@ -24,9 +28,9 @@ const DIFFICULTY_NAMES: Dictionary = {
 }
 const SEASON_ID_TO_INDEX: Dictionary = {
 	"spring": 0,
-	"summer": 1,
-	"autumn": 2,
-	"winter": 3,
+	"summer": 3,
+	"autumn": 6,
+	"winter": 9,
 }
 const REQUIRED_PROVINCE_IDS: Array[String] = Korea35Data.PROVINCE_IDS
 const REQUIRED_PROVINCE_FIELDS: Array[String] = [
@@ -57,6 +61,7 @@ var ai_recruitment_amount: int = 500
 var ai_attack_ratio: float = 3.5
 
 var selected_province_id: String = ""
+var domestic_overlay: Control = null
 var attack_source_id: String = ""
 
 # ==========================================
@@ -430,19 +435,19 @@ func _apply_difficulty_settings(
 			if apply_starting_resources:
 				gold = 1500
 				food = 4500
-			ai_recruitment_amount = 300
+			ai_recruitment_amount = 100
 			ai_attack_ratio = 4.0
 		"hard":
 			if apply_starting_resources:
 				gold = 800
 				food = 2500
-			ai_recruitment_amount = 800
+			ai_recruitment_amount = 270
 			ai_attack_ratio = 3.0
 		_:
 			if apply_starting_resources:
 				gold = 1000
 				food = 3000
-			ai_recruitment_amount = 500
+			ai_recruitment_amount = 170
 			ai_attack_ratio = 3.5
 
 
@@ -650,7 +655,9 @@ func _on_attack_button_pressed() -> void:
 		log_label.text = "공격에 필요한 군량 %d이 부족합니다." % ATTACK_FOOD_COST
 		return
 
-	resolve_attack(attack_source_id, selected_province_id)
+	food -= ATTACK_FOOD_COST
+	update_top_bar()
+	_launch_tactical_battle(attack_source_id, selected_province_id)
 
 
 func is_selected_province_player_owned() -> bool:
@@ -685,6 +692,9 @@ func get_best_commander(province_id: String) -> Dictionary:
 	return best_commander
 
 
+# 참고: 이제 플레이어 공격은 _launch_tactical_battle()이 처리하므로
+# 이 함수는 더 이상 UI에서 직접 호출되지 않는다. Auto Resolve 계산
+# 시스템으로 남겨둔다 (나중에 "자동 해결" 버튼 등에 재사용 가능).
 func resolve_attack(source_id: String, target_id: String) -> void:
 	var attacker: Dictionary = provinces[source_id]
 	var defender: Dictionary = provinces[target_id]
@@ -760,6 +770,218 @@ func resolve_attack(source_id: String, target_id: String) -> void:
 			"\n%s가 모든 영지를 통일했습니다!"
 			% player_faction
 		)
+
+
+# ==========================================
+# 전술 전투 (battle_overlay.gd)
+# ==========================================
+# 플레이어가 시작한 공격만 이 화면으로 간다. AI의 공격/AI끼리의 전투는
+# 기존 resolve_ai_attack()의 즉시 계산(Auto Resolve)을 그대로 쓴다.
+
+func _launch_tactical_battle(source_id: String, target_id: String) -> void:
+	var battle_layer: CanvasLayer = CanvasLayer.new()
+	battle_layer.name = "BattleLayer"
+	battle_layer.layer = 10
+	add_child(battle_layer)
+
+	var overlay: BattleOverlay = BattleOverlay.new()
+	battle_layer.add_child(overlay)
+
+	overlay.battle_finished.connect(
+		_on_tactical_battle_finished.bind(source_id, target_id, battle_layer)
+	)
+
+	var battle_data: Dictionary = _build_battle_setup_data(source_id, target_id)
+	overlay.setup_battle(battle_data)
+
+
+func _build_battle_setup_data(source_id: String, target_id: String) -> Dictionary:
+	var source: Dictionary = provinces[source_id]
+	var target: Dictionary = provinces[target_id]
+
+	return {
+		"attacker_faction": str(source["faction"]),
+		"defender_faction": str(target["faction"]),
+		"province_name": str(target["name"]),
+		"fortress": int(target["fortress"]),
+		"attacker_units": _build_battle_units(source_id),
+		"defender_units": _build_battle_units(target_id),
+		"background_texture": WorldMapData.get_battlefield_background(target_id),
+	}
+
+
+# 실제로 모병한 병종 구성(보병/궁병/기병 로스터)에서, 병력이 많은 순서로
+# count개의 카테고리를 뽑아 배틀 유닛에 하나씩 배정한다. 카테고리 종류가
+# count보다 적으면 순환해서 채운다. 로스터가 비어있으면(신규/미보고 영지)
+# 전부 보병으로 처리한다.
+func _dominant_troop_types(province_id: String, count: int) -> Array[String]:
+	var roster: Dictionary = strategy_get_unit_roster(province_id)
+	var entries: Array = []
+
+	for unit_id_value in roster.keys():
+		var unit_id: String = str(unit_id_value)
+		var unit: Dictionary = roster[unit_id]
+		var troops: int = int(unit.get("troops", 0))
+
+		if troops <= 0:
+			continue
+
+		entries.append({
+			"category": str(unit.get("category", unit_id)),
+			"troops": troops,
+		})
+
+	entries.sort_custom(func(a, b): return int(a["troops"]) > int(b["troops"]))
+
+	var result: Array[String] = []
+
+	for i in range(count):
+		if entries.is_empty():
+			result.append("infantry")
+		else:
+			result.append(str(entries[i % entries.size()]["category"]))
+
+	return result
+
+
+func strategy_get_unit_roster(province_id: String) -> Dictionary:
+	if not provinces.has(province_id):
+		return {}
+	strategy.reconcile_unit_roster(
+		strategy_state, province_id, int(provinces[province_id].get("troops", 0))
+	)
+	return strategy.get_unit_roster(strategy_state, province_id)
+
+
+# 영지에 배치된 장수 수만큼 부대로 나눈다 (장수 1명 = 부대 1개).
+# 병종은 스탯이 아니라 실제 모병 로스터를 기준으로 배정한다.
+func _build_battle_units(province_id: String) -> Array:
+	var province: Dictionary = provinces[province_id]
+	var province_officers: Array = officers_by_province.get(province_id, [])
+	var total_troops: int = int(province["troops"])
+
+	if province_officers.is_empty():
+		return [{
+			"name": str(province["governor"]),
+			"troops": maxi(1, total_troops),
+			"leadership": 50,
+			"war": 50,
+			"intelligence": 50,
+			"politics": 50,
+			"troop_type": "infantry",
+		}]
+
+	var unit_list: Array = []
+	var officer_count: int = province_officers.size()
+	var base_share: int = int(float(total_troops) / float(officer_count))
+	var remainder: int = total_troops - (base_share * officer_count)
+	var battle_troop_types: Array[String] = _dominant_troop_types(
+		province_id, officer_count
+	)
+
+	for i in range(officer_count):
+		var officer_name: String = str(province_officers[i])
+		var officer: Dictionary = officers.get(officer_name, {
+			"leadership": 50,
+			"war": 50,
+			"intelligence": 50,
+			"politics": 50,
+		})
+		var share: int = base_share
+
+		if i == 0:
+			share += remainder
+
+		unit_list.append({
+			"name": officer_name,
+			"troops": maxi(1, share),
+			"leadership": int(officer.get("leadership", 50)),
+			"war": int(officer.get("war", 50)),
+			"intelligence": int(officer.get("intelligence", 50)),
+			"politics": int(officer.get("politics", 50)),
+			"troop_type": battle_troop_types[i],
+		})
+
+	return unit_list
+
+
+func _on_tactical_battle_finished(
+	result: Dictionary,
+	source_id: String,
+	target_id: String,
+	battle_layer: CanvasLayer
+) -> void:
+	if not provinces.has(source_id) or not provinces.has(target_id):
+		return
+
+	var source: Dictionary = provinces[source_id]
+	var target: Dictionary = provinces[target_id]
+
+	var winner: String = str(result.get("winner", "defender"))
+	var attacker_survivors: int = maxi(0, int(result.get("attacker_survivors", 0)))
+	var defender_survivors: int = maxi(0, int(result.get("defender_survivors", 0)))
+	var winning_commander_name: String = str(
+		result.get("attacker_commander_name", "")
+	)
+
+	var defender_name: String = str(target["name"])
+	var defender_faction: String = str(target["faction"])
+
+	attack_source_id = ""
+
+	if winner == "attacker":
+		var occupation_force: int = maxi(500, int(float(attacker_survivors) * 0.6))
+		var source_garrison: int = maxi(500, attacker_survivors - occupation_force)
+
+		source["troops"] = source_garrison
+		target["troops"] = occupation_force
+		target["faction"] = player_faction
+		target["public_order"] = 35
+
+		var commander_name: String = winning_commander_name
+
+		if commander_name == "" or not officers.has(commander_name):
+			commander_name = str(
+				get_best_commander(source_id).get("name", target["governor"])
+			)
+
+		target["governor"] = commander_name
+		_move_commander_to_province(commander_name, source_id, target_id)
+
+		select_province(target_id)
+		log_label.text = (
+			"%s 점령 성공!\n%s -> %s (점령군 %d명)"
+			% [defender_name, defender_faction, player_faction, occupation_force]
+		)
+
+		if player_controls_all_provinces():
+			log_label.text += "\n%s가 모든 영지를 통일했습니다!" % player_faction
+	else:
+		source["troops"] = maxi(500, attacker_survivors)
+		target["troops"] = maxi(500, defender_survivors)
+
+		select_province(source_id)
+		log_label.text = (
+			"%s 공략에 실패했습니다.\n아군 잔존 병력: %d"
+			% [defender_name, int(source["troops"])]
+		)
+
+	update_top_bar()
+
+	if is_instance_valid(battle_layer):
+		battle_layer.queue_free()
+
+# ==========================================
+# 내정 화면 (domestic_overlay.gd)
+# ==========================================
+
+func _open_domestic_overlay(province_id: String, requested_tab: String = "") -> void:
+	if not is_instance_valid(domestic_overlay):
+		domestic_overlay = DomesticOverlay.new()
+		domestic_overlay.name = "DomesticOverlay"
+		add_child(domestic_overlay)
+
+	domestic_overlay.open_for_province(self, province_id, requested_tab)
 
 
 func player_controls_all_provinces() -> bool:
@@ -845,8 +1067,8 @@ func _on_end_turn_button_pressed() -> void:
 			continue
 
 		var income_rate: float = get_public_order_income_rate(int(province["public_order"]))
-		var gold_income: int = int(float(int(province["commerce"]) * 2) * income_rate)
-		var food_income: int = int(float(int(province["agriculture"]) * 3) * income_rate)
+		var gold_income: int = int(float(int(province["commerce"])) * (2.0 / 3.0) * income_rate)
+		var food_income: int = int(float(int(province["agriculture"])) * income_rate)
 
 		gold += gold_income
 		food += food_income
@@ -910,7 +1132,7 @@ func process_public_order() -> String:
 		if previous_order >= 100:
 			continue
 
-		var recovered_order: int = mini(100, previous_order + 5)
+		var recovered_order: int = mini(100, previous_order + 2)
 		province["public_order"] = recovered_order
 
 		if province["faction"] == player_faction:

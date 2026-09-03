@@ -315,18 +315,6 @@ const FACTION_COLORS: Dictionary = {
 }
 
 # Positions on samhan660_korea_focus_map_8192x4608.png.
-const CITY_MAP_UV: Dictionary = {
-	"ansi": Vector2(0.275, 0.145),
-	"gungnae": Vector2(0.405, 0.175),
-	"pyongyang": Vector2(0.415, 0.345),
-	"ungjin": Vector2(0.465, 0.610),
-	"sabi": Vector2(0.455, 0.660),
-	"gosa": Vector2(0.425, 0.725),
-	"gukwon": Vector2(0.515, 0.565),
-	"sabeol": Vector2(0.545, 0.645),
-	"geumseong": Vector2(0.595, 0.705)
-}
-
 const CITY_NAMES: Dictionary = {
 	"ansi": "안시성",
 	"gungnae": "국내성",
@@ -339,115 +327,10 @@ const CITY_NAMES: Dictionary = {
 	"geumseong": "금성"
 }
 
-const MAP_ROADS: Array = [
-	["ansi", "gungnae"],
-	["gungnae", "pyongyang"],
-	["pyongyang", "ungjin"],
-	["pyongyang", "gukwon"],
-	["ungjin", "sabi"],
-	["ungjin", "gukwon"],
-	["sabi", "gosa"],
-	["sabi", "geumseong"],
-	["gosa", "geumseong"],
-	["gukwon", "sabeol"],
-	["sabeol", "geumseong"]
-]
-
 # Intermediate points make each road follow a plausible valley or mountain
 # pass instead of drawing a modern-looking straight line between cities.
 # These are gameplay routes for the 8K campaign map, not a claim that every
 # bend is a documented seventh-century road.
-const ROAD_WAYPOINTS: Dictionary = {
-	"ansi_gungnae": [
-		Vector2(0.305, 0.128),
-		Vector2(0.335, 0.155),
-		Vector2(0.370, 0.142),
-		Vector2(0.392, 0.165)
-	],
-	"gungnae_pyongyang": [
-		Vector2(0.388, 0.215),
-		Vector2(0.410, 0.252),
-		Vector2(0.392, 0.292),
-		Vector2(0.408, 0.325)
-	],
-	"pyongyang_ungjin": [
-		Vector2(0.400, 0.392),
-		Vector2(0.430, 0.432),
-		Vector2(0.410, 0.485),
-		Vector2(0.445, 0.535),
-		Vector2(0.448, 0.580)
-	],
-	"pyongyang_gukwon": [
-		Vector2(0.438, 0.390),
-		Vector2(0.458, 0.438),
-		Vector2(0.482, 0.465),
-		Vector2(0.478, 0.515),
-		Vector2(0.505, 0.545)
-	],
-	"ungjin_sabi": [
-		Vector2(0.448, 0.625),
-		Vector2(0.463, 0.642)
-	],
-	"ungjin_gukwon": [
-		Vector2(0.472, 0.580),
-		Vector2(0.490, 0.598),
-		Vector2(0.504, 0.575)
-	],
-	"sabi_gosa": [
-		Vector2(0.438, 0.675),
-		Vector2(0.445, 0.697),
-		Vector2(0.430, 0.712)
-	],
-	"sabi_geumseong": [
-		Vector2(0.480, 0.678),
-		Vector2(0.505, 0.697),
-		Vector2(0.528, 0.678),
-		Vector2(0.553, 0.700),
-		Vector2(0.578, 0.687)
-	],
-	"gosa_geumseong": [
-		Vector2(0.448, 0.742),
-		Vector2(0.477, 0.720),
-		Vector2(0.505, 0.747),
-		Vector2(0.535, 0.720),
-		Vector2(0.565, 0.735)
-	],
-	"gukwon_sabeol": [
-		Vector2(0.528, 0.585),
-		Vector2(0.515, 0.610),
-		Vector2(0.535, 0.628)
-	],
-	"sabeol_geumseong": [
-		Vector2(0.565, 0.660),
-		Vector2(0.570, 0.683),
-		Vector2(0.585, 0.692)
-	]
-}
-
-const CITY_BUTTON_NAMES: Dictionary = {
-	"ansi": "AnsiButton",
-	"gungnae": "GungnaeButton",
-	"pyongyang": "PyongyangButton",
-	"ungjin": "UngjinButton",
-	"gukwon": "GukwonButton",
-	"sabi": "SabiButton",
-	"sabeol": "SabeolButton",
-	"gosa": "GosaButton",
-	"geumseong": "GeumseongButton"
-}
-
-const DEFAULT_GENERAL_NAMES: Dictionary = {
-	"ansi": "양만춘",
-	"gungnae": "고연무",
-	"pyongyang": "연개소문",
-	"ungjin": "흑치상지",
-	"gukwon": "김법민",
-	"sabi": "의자왕",
-	"sabeol": "품일",
-	"gosa": "부여태",
-	"geumseong": "김춘추"
-}
-
 # 아래 WORLD_* 상수는 옛 9영지 씬을 그대로 둔 채 새 세계지도 데이터를 사용하게 합니다.
 const WORLD_FACTION_COLORS: Dictionary = WorldMapData.FACTION_COLORS
 var WORLD_CITY_MAP_UV: Dictionary = Korea35Data.merge_world_dictionary(
@@ -714,9 +597,11 @@ func _add_border_rings(source: Dictionary, playable: bool) -> void:
 			Color("#21150d")
 		)
 		label.add_theme_constant_override("outline_size", 5)
-		# 마커 버튼은 장수가 있으면 10000, 선택 상태면 20000까지 올라갑니다.
-		# 라벨이 그보다 낮으면 초상화 뒤로 숨으므로 그 위로 올립니다.
-		label.z_index = 30000
+		# Godot의 z_index는 -4096 ~ 4096으로 제한됩니다. 이 범위를 넘는 값은
+		# 전부 4096으로 잘려서 서로 구분되지 않고, 그때는 씬 트리 순서가
+		# 우선순위가 됩니다. 라벨이 버튼보다 먼저 add_child 되므로 값을
+		# 크게 준다고 위로 오지 않습니다. 범위 안에서 최상단을 씁니다.
+		label.z_index = 4096
 		label.visible = false
 		add_child(label)
 		city_labels[city_id] = label
@@ -897,7 +782,9 @@ func _layout_city_buttons() -> void:
 			)
 		).round()
 		button.pivot_offset = marker_size * 0.5
-		button.z_index = int(marker_anchor.y)
+		# 남쪽 도시가 위로 오도록 y를 z로 씁니다. 줌인하면 y가 4096을 넘어
+		# 잘리면서 순서가 뒤죽박죽이 되므로 2500 이내로 눌러 담습니다.
+		button.z_index = clampi(int(marker_anchor.y), 0, 2500)
 
 	_layout_map_details(map_rect)
 
@@ -940,17 +827,81 @@ func _layout_map_details(map_rect: Rect2) -> void:
 		line.points = _build_smooth_route_points(route_uvs, map_rect)
 		line.visible = map_zoom >= MAP_DETAIL_ZOOM
 
+	# 라벨을 마커 아래 고정 위치에 찍으면 밀집 구역(금강 유역, 중부 내륙)에서
+	# 서로 겹쳐 읽을 수 없게 됩니다. 아래/위/오른쪽/왼쪽 순으로 후보를 두고,
+	# 이미 놓인 라벨과 부딪히지 않는 첫 자리를 고릅니다.
+	# 라벨은 z_index 4096으로 마커보다 위에 그려지고 5px 검은 외곽선이 있어,
+	# 초상화 위에 얹혀도 읽기는 합니다. 그래서 마커는 하드 제약이 아니라
+	# 동점 처리 기준으로만 씁니다. 라벨끼리 안 겹치는 자리가 여럿이면
+	# 그중 마커를 가장 덜 가리는 자리를 고릅니다. 마커를 하드 제약으로
+	# 두면 자리가 부족해져 라벨끼리 겹치는 쪽이 오히려 늘어납니다.
+	var placed_rects: Array[Rect2] = []
+	var marker_rects: Array[Rect2] = []
+	for city_id_value: Variant in city_buttons.keys():
+		var marker_button: Button = city_buttons[str(city_id_value)]
+		marker_rects.append(
+			Rect2(marker_button.position, marker_button.size)
+		)
+	var label_offsets: Array[Vector2] = [
+		Vector2(-63.0, 5.0),      # 아래 (기본)
+		Vector2(-63.0, -34.0),    # 위
+		Vector2(-8.0, -14.0),     # 오른쪽
+		Vector2(-118.0, -14.0),   # 왼쪽
+		Vector2(-63.0, 30.0),     # 더 아래
+		Vector2(-63.0, -58.0),    # 더 위
+	]
+
+	# 지도 위쪽에 있는 도시부터 배치해 순서를 고정합니다. 그러지 않으면
+	# Dictionary 순회 순서에 따라 매 프레임 라벨이 튈 수 있습니다.
+	var ordered_city_ids: Array[String] = []
 	for city_id_value: Variant in city_labels.keys():
-		var city_id: String = str(city_id_value)
+		ordered_city_ids.append(str(city_id_value))
+	ordered_city_ids.sort_custom(
+		func(a: String, b: String) -> bool:
+			var ua: Vector2 = WORLD_CITY_MAP_UV[a]
+			var ub: Vector2 = WORLD_CITY_MAP_UV[b]
+			if is_equal_approx(ua.y, ub.y):
+				return ua.x < ub.x
+			return ua.y < ub.y
+	)
+
+	for city_id: String in ordered_city_ids:
 		var label: Label = city_labels[city_id]
 		var city_position: Vector2 = _map_uv_to_position(
 			WORLD_CITY_MAP_UV[city_id],
 			map_rect
 		)
-		label.position = (
-			city_position
-			+ Vector2(-63.0, 5.0)
-		).round()
+
+		var chosen: Vector2 = city_position + label_offsets[0]
+		var best_score: Vector2 = Vector2(-1.0, -1.0)
+		for offset: Vector2 in label_offsets:
+			var candidate: Vector2 = city_position + offset
+			var candidate_rect: Rect2 = Rect2(candidate, label.size)
+
+			var label_overlap: float = 0.0
+			for taken: Rect2 in placed_rects:
+				var shared: Rect2 = candidate_rect.intersection(taken)
+				if shared.has_area():
+					label_overlap += shared.size.x * shared.size.y
+
+			var marker_overlap: float = 0.0
+			for marker_rect: Rect2 in marker_rects:
+				var shared_marker: Rect2 = candidate_rect.intersection(marker_rect)
+				if shared_marker.has_area():
+					marker_overlap += shared_marker.size.x * shared_marker.size.y
+
+			# 라벨 겹침을 먼저 보고, 같으면 마커를 덜 가리는 쪽을 고릅니다.
+			var score: Vector2 = Vector2(label_overlap, marker_overlap)
+			if (
+				best_score.x < 0.0
+				or score.x < best_score.x
+				or (is_equal_approx(score.x, best_score.x) and score.y < best_score.y)
+			):
+				best_score = score
+				chosen = candidate
+
+		placed_rects.append(Rect2(chosen, label.size))
+		label.position = chosen.round()
 		label.visible = map_zoom >= MAP_DETAIL_ZOOM
 
 
@@ -1242,13 +1193,14 @@ func _refresh_marker_data() -> void:
 		)
 
 		if is_selected:
-			button.z_index = 10000
+			button.z_index = 3000
 		elif marker.hovered_marker:
-			button.z_index = 20000
+			button.z_index = 3500
 		else:
-			button.z_index = int(
-				button.position.y
-					+ button.size.y
+			button.z_index = clampi(
+				int(button.position.y + button.size.y),
+				0,
+				2500
 			)
 
 
@@ -1323,6 +1275,76 @@ func _update_territory_colors(
 		territory_palette_texture
 	)
 
+	_refresh_border_colors(provinces_data, selected_faction_name)
+
+
+func _refresh_border_colors(
+	provinces_data: Dictionary,
+	selected_faction_name: String
+) -> void:
+	# 셰이더가 채움만 담당하므로 경계선 색은 여기서 직접 정합니다.
+	for entry_value: Variant in border_lines:
+		var entry: Array = entry_value
+		var province_id: String = str(entry[0])
+		var line: Line2D = entry[2]
+
+		var owner_name: String = ""
+		if provinces_data.has(province_id):
+			owner_name = str(
+				provinces_data[province_id].get("faction", "")
+			)
+
+		var faction_color: Color = Color("#77736b")
+		if WORLD_FACTION_COLORS.has(owner_name):
+			faction_color = WORLD_FACTION_COLORS[owner_name]
+
+		var selected_owner: bool = (
+			selected_faction_name != ""
+			and owner_name == selected_faction_name
+		)
+
+		if selected_owner:
+			line.default_color = faction_color.lightened(0.45)
+			line.default_color.a = 0.95
+			line.width = 2.8
+			line.z_index = -6
+		else:
+			line.default_color = Color(0.93, 0.88, 0.74, 0.50)
+			line.width = 1.6
+			line.z_index = -7
+
+
+const GENERIC_PORTRAIT_PREFIXES: Array[String] = [
+	# 7세기 변경 지휘관이라는 성격에 맞춰 남성 무장 비중을 높였습니다.
+	# 목록에 여러 번 넣는 것으로 가중치를 줍니다.
+	"warrior_male",
+	"warrior_male",
+	"warrior_male",
+	"strategist_male",
+	"strategist_male",
+	"warrior_female",
+	"strategist_female",
+]
+const GENERIC_PORTRAIT_VARIANTS: int = 8
+
+
+func _get_generic_portrait_path(general_name: String) -> String:
+	if general_name == "":
+		return ""
+
+	# 이름 글자를 더해 간단한 해시를 만듭니다. 무작위가 아니라 결정론적이라
+	# 게임을 다시 켜도 같은 인물은 같은 얼굴을 유지합니다.
+	var hash_value: int = 0
+	for character_code: int in general_name.to_utf8_buffer():
+		hash_value = (hash_value * 31 + character_code) % 100003
+
+	var prefix: String = GENERIC_PORTRAIT_PREFIXES[
+		hash_value % GENERIC_PORTRAIT_PREFIXES.size()
+	]
+	# 종류와 번호가 같은 값에서 나오지 않도록 다른 자리를 씁니다.
+	var variant: int = ((hash_value / 7) % GENERIC_PORTRAIT_VARIANTS) + 1
+	return "res://assets/portraits/%s_%02d.png" % [prefix, variant]
+
 
 func _get_portrait_texture(
 	general_name: String
@@ -1337,6 +1359,13 @@ func _get_portrait_texture(
 		portrait_path = str(
 			ScenarioData.RULER_PORTRAIT_PATHS[general_name]
 		)
+
+	if portrait_path == "":
+		# 실존 인물 초상화가 없는 태수에게는 무명 장수 그림을 씁니다.
+		# assets/portraits에 warrior/strategist 32장이 있는데 여태 코드에서
+		# 참조되지 않아 이름만 뜨고 얼굴이 없었습니다. 이름을 해시해서 고르므로
+		# 같은 인물에게는 항상 같은 얼굴이 나옵니다.
+		portrait_path = _get_generic_portrait_path(general_name)
 
 	if portrait_path == "":
 		portrait_cache[general_name] = null
@@ -1375,7 +1404,7 @@ func _on_marker_hover_changed(
 
 	if is_hovered:
 		button.scale = Vector2(1.10, 1.10)
-		button.z_index = 20000
+		button.z_index = 3500
 	else:
 		button.scale = Vector2.ONE
 		_layout_city_buttons()

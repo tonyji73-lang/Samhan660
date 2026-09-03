@@ -1,37 +1,57 @@
-[gd_scene format=3 uid="uid://b0tc7ctljmr70"]
+[gd_scene load_steps=3 format=3 uid="uid://bqk8n3x7y2w1v"]
 
-[ext_resource type="Script" uid="uid://cllp7inplspd5" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" path="res://main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://map_area.tscn" id="2_maparea"]
 
-[node name="Main" type="Control" unique_id=1639727705]
-layout_mode = 3
-anchors_preset = 15
+[node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ig7tw")
+script = ExtResource("1_main")
 
-[node name="Panel" type="Panel" parent="." unique_id=547917700]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MapArea" parent="." instance=ExtResource("2_maparea")]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBox" type="VBoxContainer" parent="Panel" unique_id=1863020362]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 340.0
+offset_bottom = 210.0
 
-[node name="TitleLabel" type="Label" parent="Panel/VBox" unique_id=1048307413]
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = 14.0
+offset_right = -14.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="TurnLabel" type="Label" parent="Panel/VBox"]
 layout_mode = 2
+text = "현재 턴: 1"
 
-[node name="TurnLabel" type="Label" parent="Panel/VBox" unique_id=529769251]
+[node name="ResourceLabel" type="Label" parent="Panel/VBox"]
 layout_mode = 2
+text = "금: 1000 / 군량: 3000"
 
-[node name="ResourceLabel" type="Label" parent="Panel/VBox" unique_id=645078746]
+[node name="LogLabel" type="Label" parent="Panel/VBox"]
 layout_mode = 2
+autowrap_mode = 3
+text = ""
 
-[node name="EndTurnButton" type="Button" parent="Panel/VBox" unique_id=1890626743]
+[node name="EndTurnButton" type="Button" parent="Panel/VBox"]
 layout_mode = 2
+text = "턴 종료"
 
-[node name="LogLabel" type="Label" parent="Panel/VBox" unique_id=48386166]
-layout_mode = 2
+[connection signal="pressed" from="Panel/VBox/EndTurnButton" to="." method="_on_end_turn_button_pressed"]

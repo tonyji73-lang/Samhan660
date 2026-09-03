@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://xjsfr4q4xnmk"]
 
-[ext_resource type="Script" uid="uid://b78soxd0htmpb" path="res://campaign_main.gd" id="1_aa4yi"]
-[ext_resource type="Script" uid="uid://c3uqurvrx84yn" path="res://scripts/map_area.gd" id="2_jkp7o"]
+[ext_resource type="Script" uid="uid://d0a0uhhmucnsa" path="res://campaign_main.gd" id="1_aa4yi"]
+[ext_resource type="Script" uid="uid://bftuww74m2mtc" path="res://map_area.gd" id="2_jkp7o"]
 
 [node name="CampaignMain" type="Control" unique_id=1330427578]
 layout_mode = 3
@@ -155,6 +155,214 @@ offset_top = 650.0
 offset_right = 755.0
 offset_bottom = 685.0
 text = "사별 (신라)"
+
+[node name="ShinseongButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2055719394]
+layout_mode = 1
+offset_left = 409.5
+offset_top = 217.0
+offset_right = 539.5
+offset_bottom = 252.0
+text = "신성"
+
+[node name="SokgunseongButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2087181277]
+layout_mode = 1
+offset_left = 373.5
+offset_top = 245.0
+offset_right = 503.5
+offset_bottom = 280.0
+text = "속군성"
+
+[node name="GeonanseongButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2033715525]
+layout_mode = 1
+offset_left = 387.0
+offset_top = 294.0
+offset_right = 517.0
+offset_bottom = 329.0
+text = "건안성"
+
+[node name="ChaekseongButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2015588099]
+layout_mode = 1
+offset_left = 526.5
+offset_top = 220.5
+offset_right = 656.5
+offset_bottom = 255.5
+text = "책성·동북 변경"
+
+[node name="BireyeolholButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2029117050]
+layout_mode = 1
+offset_left = 513.0
+offset_top = 266.0
+offset_right = 643.0
+offset_bottom = 301.0
+text = "비열홀"
+
+[node name="DaedonggangButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2011739695]
+layout_mode = 1
+offset_left = 436.5
+offset_top = 332.5
+offset_right = 566.5
+offset_bottom = 367.5
+text = "대동강 하류"
+
+[node name="GoksanButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2040859110]
+layout_mode = 1
+offset_left = 490.5
+offset_top = 318.5
+offset_right = 620.5
+offset_bottom = 353.5
+text = "곡산 내륙"
+
+[node name="HwanghaeButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2036139597]
+layout_mode = 1
+offset_left = 423.0
+offset_top = 343.0
+offset_right = 553.0
+offset_bottom = 378.0
+text = "황해 남부"
+
+[node name="BukhansanButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2065904822]
+layout_mode = 1
+offset_left = 454.5
+offset_top = 350.0
+offset_right = 584.5
+offset_bottom = 385.0
+text = "북한산성"
+
+[node name="DanghangseongButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2030938859]
+layout_mode = 1
+offset_left = 427.5
+offset_top = 367.5
+offset_right = 557.5
+offset_bottom = 402.5
+text = "당항성"
+
+[node name="SamnyeonsanseongButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2083509672]
+layout_mode = 1
+offset_left = 490.5
+offset_top = 360.5
+offset_right = 620.5
+offset_bottom = 395.5
+text = "삼년산성"
+
+[node name="HasllaButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2026250614]
+layout_mode = 1
+offset_left = 531.0
+offset_top = 336.0
+offset_right = 661.0
+offset_bottom = 371.0
+text = "하슬라"
+
+[node name="SiljikButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2012910088]
+layout_mode = 1
+offset_left = 540.0
+offset_top = 371.0
+offset_right = 670.0
+offset_bottom = 406.0
+text = "실직"
+
+[node name="ImjonseongButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2045116824]
+layout_mode = 1
+offset_left = 441.0
+offset_top = 378.0
+offset_right = 571.0
+offset_bottom = 413.0
+text = "임존성"
+
+[node name="GeummajeoButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2076590904]
+layout_mode = 1
+offset_left = 441.0
+offset_top = 413.0
+offset_right = 571.0
+offset_bottom = 448.0
+text = "금마저"
+
+[node name="JuryuseongButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2083273855]
+layout_mode = 1
+offset_left = 423.0
+offset_top = 437.5
+offset_right = 553.0
+offset_bottom = 472.5
+text = "주류성"
+
+[node name="YeongsangangButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2027833458]
+layout_mode = 1
+offset_left = 432.0
+offset_top = 465.5
+offset_right = 562.0
+offset_bottom = 500.5
+text = "영산강 권역"
+
+[node name="DalgubeolButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2039561563]
+layout_mode = 1
+offset_left = 504.0
+offset_top = 441.0
+offset_right = 634.0
+offset_bottom = 476.0
+text = "달구벌"
+
+[node name="DaegayaButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2030650606]
+layout_mode = 1
+offset_left = 477.0
+offset_top = 462.0
+offset_right = 607.0
+offset_bottom = 497.0
+text = "대가야"
+
+[node name="GeumgwanButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2051330231]
+layout_mode = 1
+offset_left = 513.0
+offset_top = 483.0
+offset_right = 643.0
+offset_bottom = 518.0
+text = "금관가야"
+
+[node name="SogayaButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2005484129]
+layout_mode = 1
+offset_left = 486.0
+offset_top = 483.0
+offset_right = 616.0
+offset_bottom = 518.0
+text = "소가야"
+
+[node name="TamnaButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2009287196]
+layout_mode = 1
+offset_left = 441.0
+offset_top = 553.0
+offset_right = 571.0
+offset_bottom = 588.0
+text = "탐라"
+
+[node name="UlleungButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2024874932]
+layout_mode = 1
+offset_left = 558.0
+offset_top = 385.0
+offset_right = 688.0
+offset_bottom = 420.0
+text = "울릉"
+
+[node name="GanghwaButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2081593760]
+layout_mode = 1
+offset_left = 409.5
+offset_top = 339.5
+offset_right = 539.5
+offset_bottom = 374.5
+text = "강화·한강 하구"
+
+[node name="JukryeongButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2041494767]
+layout_mode = 1
+offset_left = 517.5
+offset_top = 388.5
+offset_right = 647.5
+offset_bottom = 423.5
+text = "죽령 교통권"
+
+[node name="ChupungnyeongButton" type="Button" parent="MainVBox/Content/MapPanel/MapArea" unique_id=2018845097]
+layout_mode = 1
+offset_left = 486.0
+offset_top = 420.0
+offset_right = 616.0
+offset_bottom = 455.0
+text = "추풍령 교통권"
 
 [node name="ProvincePanel" type="PanelContainer" parent="MainVBox/Content" unique_id=2141073613]
 custom_minimum_size = Vector2(380, 0)
