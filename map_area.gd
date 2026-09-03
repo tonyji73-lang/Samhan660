@@ -659,7 +659,25 @@ func _build_region_borders() -> void:
 
 	# 중국·일본은 캠페인 provinces에 없어 선택할 수 없는 배경 지역입니다.
 	# 한국과 같은 굵기로 그리면 플레이 가능한 영역처럼 보이므로 흐리게 둡니다.
-	_add_border_rings(WorldMapData.OUTSIDE_REGION_BORDERS, false)
+	#
+	# world_map_data.gd가 예전 OUTSIDE_REGION_BORDERS(링 배열 형식)를
+	# PROVINCE_POLYGONS(지역당 Vector2 목록 하나짜리 형식)로 교체하면서
+	# 이 줄이 존재하지 않는 이름을 참조하게 됐고, 그 때문에 map_area.gd
+	# 전체가 로드되지 않아 지도가 아예 안 그려지고 있었습니다. 형식을 맞춰
+	# 변환해서 씁니다. 한국 지역 id는 REGION_BORDERS 쪽 몫이므로 제외합니다.
+	var outside_borders: Dictionary = {}
+	for region_id_value: Variant in WorldMapData.PROVINCE_POLYGONS.keys():
+		var region_id: String = str(region_id_value)
+		if Korea35Data.PROVINCE_IDS.has(region_id):
+			continue
+		var points_value: Variant = WorldMapData.PROVINCE_POLYGONS[region_id]
+		if typeof(points_value) != TYPE_ARRAY:
+			continue
+		var ring: PackedVector2Array = PackedVector2Array(points_value)
+		if ring.size() < 3:
+			continue
+		outside_borders[region_id] = [ring]
+	_add_border_rings(outside_borders, false)
 
 
 func _add_border_rings(source: Dictionary, playable: bool) -> void:
@@ -714,9 +732,11 @@ func _add_border_rings(source: Dictionary, playable: bool) -> void:
 			Color("#21150d")
 		)
 		label.add_theme_constant_override("outline_size", 5)
-		# 마커 버튼은 장수가 있으면 10000, 선택 상태면 20000까지 올라갑니다.
+		# 마커 버튼은 장수가 있으면 2500, 선택 상태면 3000까지 올라갑니다.
 		# 라벨이 그보다 낮으면 초상화 뒤로 숨으므로 그 위로 올립니다.
-		label.z_index = 30000
+		# (Godot의 z_index는 -4096~4096으로 강제 제한되므로, 예전에 쓰던
+		# 10000/20000/30000 같은 값은 전부 클램프 에러를 일으켰습니다.)
+		label.z_index = 3500
 		label.visible = false
 		add_child(label)
 		city_labels[city_id] = label
@@ -897,7 +917,9 @@ func _layout_city_buttons() -> void:
 			)
 		).round()
 		button.pivot_offset = marker_size * 0.5
-		button.z_index = int(marker_anchor.y)
+		# z_index는 -4096~4096으로 강제 제한되므로, 화면 좌표를 그대로 쓰면
+		# 확대했을 때 범위를 넘어 에러가 납니다. 0~2000 사이로 눌러서 씁니다.
+		button.z_index = clampi(int(marker_anchor.y), 0, 2000)
 
 	_layout_map_details(map_rect)
 
@@ -1241,14 +1263,19 @@ func _refresh_marker_data() -> void:
 			]
 		)
 
+		# z_index는 -4096~4096으로 강제 제한되므로 안전 범위 안에서만 씁니다.
 		if is_selected:
-			button.z_index = 10000
+			button.z_index = 2500
 		elif marker.hovered_marker:
-			button.z_index = 20000
+			button.z_index = 3000
 		else:
-			button.z_index = int(
-				button.position.y
-					+ button.size.y
+			button.z_index = clampi(
+				int(
+					button.position.y
+						+ button.size.y
+				),
+				0,
+				2000
 			)
 
 
@@ -1375,7 +1402,7 @@ func _on_marker_hover_changed(
 
 	if is_hovered:
 		button.scale = Vector2(1.10, 1.10)
-		button.z_index = 20000
+		button.z_index = 3000
 	else:
 		button.scale = Vector2.ONE
 		_layout_city_buttons()

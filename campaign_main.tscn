@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://xjsfr4q4xnmk"]
 
-[ext_resource type="Script" uid="uid://b78soxd0htmpb" path="res://campaign_main.gd" id="1_aa4yi"]
-[ext_resource type="Script" uid="uid://c3uqurvrx84yn" path="res://scripts/map_area.gd" id="2_jkp7o"]
+[ext_resource type="Script" uid="uid://d0a0uhhmucnsa" path="res://campaign_main.gd" id="1_aa4yi"]
+[ext_resource type="Script" uid="uid://bftuww74m2mtc" path="res://map_area.gd" id="2_jkp7o"]
 
 [node name="CampaignMain" type="Control" unique_id=1330427578]
 layout_mode = 3
