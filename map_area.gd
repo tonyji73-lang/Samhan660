@@ -1079,7 +1079,7 @@ func _layout_map_details(map_rect: Rect2) -> void:
 			city_position
 			+ Vector2(-63.0, 5.0)
 		).round()
-		label.visible = map_zoom >= MAP_DETAIL_ZOOM
+		label.visible = true
 
 
 func _layout_strategic_routes(map_rect: Rect2) -> void:
