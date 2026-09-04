@@ -276,6 +276,12 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("ui_cancel"):
 		return
+	if governor_transfer_confirmation.visible:
+		return
+	if transfer_panel.visible:
+		transfer_panel.close_panel()
+		get_viewport().set_input_as_handled()
+		return
 	if navigation_menu.get_popup().visible:
 		return
 	var confirmation_dialog: Window = navigation_menu.get_node_or_null(
@@ -844,6 +850,7 @@ func _on_transfer_button_pressed() -> void:
 		destinations,
 		int(source.get("troops", 0)),
 		available_officers,
+		str(source.get("governor", "")),
 		false,
 		false
 	)

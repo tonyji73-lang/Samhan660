@@ -5,6 +5,10 @@ signal canceled
 
 var source_province_id: String = ""
 
+const TARGET_PANEL_SIZE: Vector2 = Vector2(460.0, 500.0)
+const VIEWPORT_MARGIN: float = 16.0
+
+@onready var modal_panel: PanelContainer = $Center/Panel
 @onready var source_value: Label = %SourceValue
 @onready var destination_option: OptionButton = %DestinationOption
 @onready var troop_spin: SpinBox = %TroopSpin
@@ -16,6 +20,7 @@ var source_province_id: String = ""
 @onready var status_label: Label = %StatusLabel
 @onready var execute_button: Button = %ExecuteButton
 @onready var cancel_button: Button = %CancelButton
+@onready var close_button: Button = %CloseButton
 
 
 func _ready() -> void:
@@ -23,6 +28,9 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	execute_button.pressed.connect(_on_execute_pressed)
 	cancel_button.pressed.connect(close_panel)
+	close_button.pressed.connect(close_panel)
+	resized.connect(_fit_panel_to_viewport)
+	_fit_panel_to_viewport()
 
 
 func open_for_transfer(
@@ -31,6 +39,7 @@ func open_for_transfer(
 	destinations: Array[Dictionary],
 	available_troops: int,
 	available_officers: Array[String],
+	governor_name: String,
 	supports_food: bool = false,
 	supports_gold: bool = false
 ) -> void:
@@ -53,13 +62,16 @@ func open_for_transfer(
 
 	officer_list.clear()
 	for officer_name: String in available_officers:
-		officer_list.add_item(officer_name)
+		var display_name: String = officer_name
+		if officer_name == governor_name:
+			display_name += " (태수)"
+		officer_list.add_item(display_name)
 		officer_list.set_item_metadata(officer_list.item_count - 1, officer_name)
 
 	status_label.text = ""
 	execute_button.disabled = destinations.is_empty()
 	visible = true
-	reset_size()
+	_fit_panel_to_viewport()
 	execute_button.grab_focus()
 
 
@@ -71,6 +83,19 @@ func close_panel() -> void:
 
 func show_error(message: String) -> void:
 	status_label.text = message
+
+
+func _fit_panel_to_viewport() -> void:
+	if modal_panel == null:
+		return
+	var available_size: Vector2 = Vector2(
+		maxf(1.0, size.x - VIEWPORT_MARGIN * 2.0),
+		maxf(1.0, size.y - VIEWPORT_MARGIN * 2.0)
+	)
+	modal_panel.custom_minimum_size = Vector2(
+		minf(TARGET_PANEL_SIZE.x, available_size.x),
+		minf(TARGET_PANEL_SIZE.y, available_size.y)
+	)
 
 
 func _on_execute_pressed() -> void:
