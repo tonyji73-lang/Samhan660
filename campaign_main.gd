@@ -1067,7 +1067,7 @@ func run_enemy_ai_turns() -> String:
 	for province_id: String in Korea35Data.PROVINCE_IDS:
 		if not provinces.has(province_id):
 			continue
-		if str(provinces[province_id].get("faction", "")) != player_faction:
+		if _get_province_controller(provinces[province_id]) == CONTROLLER_AI:
 			ai_province_ids.append(province_id)
 
 	var messages: Array[String] = []
@@ -1079,7 +1079,7 @@ func run_enemy_ai_turns() -> String:
 
 		var source: Dictionary = provinces[source_id]
 
-		if source["faction"] == player_faction:
+		if _get_province_controller(source) != CONTROLLER_AI:
 			continue
 
 		source["troops"] = (
@@ -1118,6 +1118,14 @@ func run_enemy_ai_turns() -> String:
 	return combine_messages(messages)
 
 
+func _get_province_controller(province: Dictionary) -> String:
+	var faction_name: String = str(province.get("faction", ""))
+	var faction_id: String = ScenarioData.get_faction_id_by_name(
+		scenario_id, faction_name
+	)
+	return get_faction_controller(faction_id)
+
+
 func find_ai_target(source_id: String) -> String:
 	var neighbors: Array = province_connections.get(source_id, [])
 	var weakest_target_id: String = ""
@@ -1136,7 +1144,7 @@ func find_ai_target(source_id: String) -> String:
 			if neighbor["faction"] == source_faction:
 				continue
 		else:
-			if neighbor["faction"] != player_faction:
+			if _get_province_controller(neighbor) != CONTROLLER_PLAYER:
 				continue
 
 		var neighbor_troops: int = int(neighbor["troops"])
