@@ -221,11 +221,23 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 
-[node name="OfficerDetailLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=1219517026]
+[node name="OfficerDetailRow" type="HBoxContainer" parent="MainVBox/Content/ProvincePanel/ProvinceVBox"]
+layout_mode = 2
+
+[node name="OfficerDetailLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox/OfficerDetailRow" unique_id=1219517026]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-text = "장수를  선택하세요."
+size_flags_horizontal = 3
+text = "장수를 선택하세요."
+
+[node name="AppointGovernorButton" type="Button" parent="MainVBox/Content/ProvincePanel/ProvinceVBox/OfficerDetailRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+disabled = true
+tooltip_text = "선택한 장수를 이 성의 태수로 임명합니다."
+text = "태수 임명"
 
 [node name="DevelopButton" type="Button" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=1615079516]
 layout_mode = 2
@@ -263,6 +275,11 @@ text = "지역을 선택하세"
 [node name="GovernorTransferConfirmation" type="ConfirmationDialog" parent="."]
 title = "태수 이동 확인"
 ok_button_text = "이동"
+cancel_button_text = "취소"
+
+[node name="GovernorAppointmentConfirmation" type="ConfirmationDialog" parent="."]
+title = "태수 교체 확인"
+ok_button_text = "교체"
 cancel_button_text = "취소"
 
 [node name="GameOverOverlay" type="ColorRect" parent="." unique_id=898005710]

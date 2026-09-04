@@ -213,10 +213,13 @@ var officers_by_province: Dictionary = {
 
 @onready var officer_list: ItemList = %OfficerList
 @onready var officer_detail_label: Label = %OfficerDetailLabel
+@onready var appoint_governor_button: Button = %AppointGovernorButton
 @onready var transfer_panel: Control = $ProvinceTransferPanel
 @onready var governor_transfer_confirmation: ConfirmationDialog = $GovernorTransferConfirmation
+@onready var governor_appointment_confirmation: ConfirmationDialog = $GovernorAppointmentConfirmation
 
 var pending_governor_transfer: Dictionary = {}
+var pending_governor_appointment: Dictionary = {}
 var pending_transfer_orders: Array[Dictionary] = []
 
 
@@ -232,6 +235,10 @@ func _ready() -> void:
 	_connect_button_once(
 		officer_list.item_selected,
 		_on_officer_list_item_selected
+	)
+	_connect_button_once(
+		appoint_governor_button.pressed,
+		_on_appoint_governor_button_pressed
 	)
 	_connect_button_once(develop_button.pressed, _on_develop_button_pressed)
 	_connect_button_once(commerce_button.pressed, _on_commerce_button_pressed)
@@ -250,6 +257,14 @@ func _ready() -> void:
 	_connect_button_once(
 		governor_transfer_confirmation.canceled,
 		_on_governor_transfer_canceled
+	)
+	_connect_button_once(
+		governor_appointment_confirmation.confirmed,
+		_on_governor_appointment_confirmed
+	)
+	_connect_button_once(
+		governor_appointment_confirmation.canceled,
+		_on_governor_appointment_canceled
 	)
 	_connect_button_once(end_turn_button.pressed, _on_end_turn_button_pressed)
 
@@ -278,6 +293,8 @@ func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("ui_cancel"):
 		return
 	if governor_transfer_confirmation.visible:
+		return
+	if governor_appointment_confirmation.visible:
 		return
 	if transfer_panel.visible:
 		transfer_panel.close_panel()
@@ -688,6 +705,8 @@ func update_province_log(province_id: String) -> void:
 func update_officer_list(province_id: String) -> void:
 	officer_list.clear()
 	officer_detail_label.text = "장수를 선택하세요."
+	appoint_governor_button.disabled = true
+	appoint_governor_button.tooltip_text = "임명할 장수를 선택하세요."
 
 	var province_officers: Array = officers_by_province.get(province_id, [])
 
@@ -723,6 +742,133 @@ func _on_officer_list_item_selected(index: int) -> void:
 			officer["authority"],
 		]
 	)
+	var validation: Dictionary = validate_governor_appointment(
+		selected_province_id,
+		officer_name
+	)
+	appoint_governor_button.disabled = not bool(validation.get("ok", false))
+	appoint_governor_button.tooltip_text = str(
+		validation.get("reason", "선택한 장수를 이 성의 태수로 임명합니다.")
+	)
+
+
+func validate_governor_appointment(
+	province_id: String, officer_name: String
+) -> Dictionary:
+	if not provinces.has(province_id):
+		return {"ok": false, "reason": "존재하지 않는 영지입니다."}
+	var province: Dictionary = provinces[province_id]
+	var province_faction: String = str(province.get("faction", ""))
+	if province_faction != player_faction:
+		return {"ok": false, "reason": "플레이어 소유 영지에서만 태수를 임명할 수 있습니다."}
+	if officer_name == "" or not officers.has(officer_name):
+		return {"ok": false, "reason": "임명할 장수를 선택하세요."}
+	var assigned_province_id: String = _find_assigned_officer_province(officer_name)
+	if assigned_province_id != province_id:
+		return {"ok": false, "reason": "이 성에 소속된 장수만 태수로 임명할 수 있습니다."}
+	var officer_faction: String = _get_officer_faction(officer_name)
+	if officer_faction == "" or officer_faction != province_faction:
+		return {"ok": false, "reason": "장수와 성의 소속 세력이 일치해야 합니다."}
+	var current_governor: String = str(province.get("governor", ""))
+	if current_governor == officer_name:
+		return {"ok": false, "reason": "%s은(는) 이미 이 성의 태수입니다." % officer_name}
+	return {
+		"ok": true,
+		"reason": "선택한 장수를 이 성의 태수로 임명합니다.",
+		"current_governor": current_governor,
+		"requires_confirmation": not _is_vacant_governor(current_governor),
+	}
+
+
+func _find_assigned_officer_province(officer_name: String) -> String:
+	for province_id_value: Variant in officers_by_province.keys():
+		var province_id: String = str(province_id_value)
+		var province_officers: Array = officers_by_province.get(province_id, [])
+		if province_officers.has(officer_name):
+			return province_id
+	return ""
+
+
+func _get_officer_faction(officer_name: String) -> String:
+	var officer_metadata: Dictionary = strategy_state.get("officer_metadata", {})
+	if officer_metadata.has(officer_name):
+		var metadata: Dictionary = officer_metadata[officer_name]
+		return str(metadata.get("faction", ""))
+	var province_id: String = _find_assigned_officer_province(officer_name)
+	if provinces.has(province_id):
+		return str(provinces[province_id].get("faction", ""))
+	return ""
+
+
+func _is_vacant_governor(governor_name: String) -> bool:
+	return (
+		governor_name == ""
+		or governor_name == "태수 없음"
+		or governor_name == "수비대장"
+	)
+
+
+func _on_appoint_governor_button_pressed() -> void:
+	var selected_items: PackedInt32Array = officer_list.get_selected_items()
+	if selected_items.is_empty():
+		log_label.text = "임명할 장수를 선택하세요."
+		return
+	var officer_name: String = officer_list.get_item_text(selected_items[0])
+	var validation: Dictionary = validate_governor_appointment(
+		selected_province_id,
+		officer_name
+	)
+	if not bool(validation.get("ok", false)):
+		log_label.text = str(validation.get("reason", "태수로 임명할 수 없습니다."))
+		return
+	if bool(validation.get("requires_confirmation", false)):
+		pending_governor_appointment = {
+			"province_id": selected_province_id,
+			"officer_name": officer_name,
+		}
+		governor_appointment_confirmation.dialog_text = (
+			"현재 태수 %s을(를) %s(으)로 교체하시겠습니까?"
+			% [str(validation.get("current_governor", "")), officer_name]
+		)
+		governor_appointment_confirmation.popup_centered(Vector2i(460, 160))
+		return
+	_apply_governor_appointment(selected_province_id, officer_name)
+
+
+func _apply_governor_appointment(
+	province_id: String, officer_name: String
+) -> Dictionary:
+	var validation: Dictionary = validate_governor_appointment(province_id, officer_name)
+	if not bool(validation.get("ok", false)):
+		return validation
+	var previous_governor: String = str(provinces[province_id].get("governor", ""))
+	provinces[province_id]["governor"] = officer_name
+	select_province(province_id)
+	_refresh_map_markers()
+	log_label.text = "%s을(를) %s의 태수로 임명했습니다." % [
+		officer_name,
+		str(provinces[province_id].get("name", province_id)),
+	]
+	return {
+		"ok": true,
+		"previous_governor": previous_governor,
+		"governor": officer_name,
+	}
+
+
+func _on_governor_appointment_confirmed() -> void:
+	var request: Dictionary = pending_governor_appointment
+	pending_governor_appointment = {}
+	var result: Dictionary = _apply_governor_appointment(
+		str(request.get("province_id", "")),
+		str(request.get("officer_name", ""))
+	)
+	if not bool(result.get("ok", false)):
+		log_label.text = str(result.get("reason", "태수로 임명할 수 없습니다."))
+
+
+func _on_governor_appointment_canceled() -> void:
+	pending_governor_appointment = {}
 
 
 func update_attack_button(province_id: String) -> void:
