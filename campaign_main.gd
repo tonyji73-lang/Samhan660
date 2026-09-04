@@ -1439,21 +1439,10 @@ func _on_recruit_button_pressed() -> void:
 func _on_end_turn_button_pressed() -> void:
 	var season_changed: bool = _advance_month()
 
-	var transfer_message: String = process_pending_transfer_orders()
+	var economy_messages: Array[String] = process_monthly_commerce_income()
+	economy_messages.append_array(process_seasonal_harvest())
 	var public_order_message: String = process_public_order()
-
-	for province_value in provinces.values():
-		var province: Dictionary = province_value
-
-		if province["faction"] != player_faction:
-			continue
-
-		var income_rate: float = get_public_order_income_rate(int(province["public_order"]))
-		var gold_income: int = int(float(int(province["commerce"]) * 2) * income_rate)
-		var food_income: int = int(float(int(province["agriculture"]) * 3) * income_rate)
-
-		gold += gold_income
-		food += food_income
+	var transfer_message: String = process_pending_transfer_orders()
 
 	var ai_message: String = run_enemy_ai_turns()
 
@@ -1468,6 +1457,8 @@ func _on_end_turn_button_pressed() -> void:
 		select_province(selected_province_id)
 
 	log_label.text = "%d년 %d월이 되었습니다." % [year, month]
+	if not economy_messages.is_empty():
+		log_label.text += "\n" + combine_messages(economy_messages)
 	if transfer_message != "":
 		log_label.text += "\n" + transfer_message
 
@@ -1520,6 +1511,82 @@ func _process_strategy_season() -> String:
 	return combine_messages(messages)
 
 
+func get_public_order_efficiency(public_order: int) -> float:
+	return 0.5 + float(clampi(public_order, 0, 100)) / 200.0
+
+
+func calculate_monthly_commerce_income(province: Dictionary) -> int:
+	var population_in_thousands: float = (
+		float(maxi(0, int(province.get("population", 0)))) / 1000.0
+	)
+	var commerce: int = clampi(int(province.get("commerce", 0)), 0, 100)
+	var efficiency: float = get_public_order_efficiency(
+		int(province.get("public_order", 0))
+	)
+	return roundi(
+		population_in_thousands
+		* float(commerce) / 100.0
+		* efficiency
+		* 2.0
+	)
+
+
+func calculate_annual_harvest(province: Dictionary) -> int:
+	var population_in_thousands: float = (
+		float(maxi(0, int(province.get("population", 0)))) / 1000.0
+	)
+	var agriculture: int = clampi(int(province.get("agriculture", 0)), 0, 100)
+	var efficiency: float = get_public_order_efficiency(
+		int(province.get("public_order", 0))
+	)
+	return roundi(
+		population_in_thousands
+		* float(agriculture) / 100.0
+		* efficiency
+		* 100.0
+	)
+
+
+func process_monthly_commerce_income() -> Array[String]:
+	var messages: Array[String] = []
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
+		var province: Dictionary = provinces[province_id]
+		if _get_province_controller(province) != CONTROLLER_PLAYER:
+			continue
+		var income: int = calculate_monthly_commerce_income(province)
+		gold += income
+		messages.append("%s 상업세 +%d" % [str(province["name"]), income])
+	return messages
+
+
+func process_seasonal_harvest() -> Array[String]:
+	var harvest_rate: float = 0.0
+	if month == 9:
+		harvest_rate = 0.70
+	elif month == 10:
+		harvest_rate = 0.30
+	if harvest_rate <= 0.0:
+		return []
+
+	var messages: Array[String] = []
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
+		var province: Dictionary = provinces[province_id]
+		var controller: String = _get_province_controller(province)
+		if controller == CONTROLLER_INACTIVE:
+			continue
+		var harvest: int = roundi(
+			float(calculate_annual_harvest(province)) * harvest_rate
+		)
+		province["food_stock"] = int(province.get("food_stock", 0)) + harvest
+		if controller == CONTROLLER_PLAYER:
+			messages.append("%s 가을 수확 +%d" % [str(province["name"]), harvest])
+	return messages
+
+
 func process_public_order() -> String:
 	var recovered_names: Array[String] = []
 
@@ -1549,19 +1616,6 @@ func process_public_order() -> String:
 		", ".join(recovered_names.slice(0, 3)),
 		recovered_names.size() - 3,
 	]
-
-
-func get_public_order_income_rate(public_order: int) -> float:
-	if public_order >= 80:
-		return 1.0
-
-	if public_order >= 60:
-		return 0.75
-
-	if public_order >= 40:
-		return 0.50
-
-	return 0.25
 
 
 func run_enemy_ai_turns() -> String:
