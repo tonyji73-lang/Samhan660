@@ -8,6 +8,7 @@ const FloatingCityCardScene = preload("res://floating_city_card.tscn")
 signal city_card_domestic_requested(province_id: String)
 signal city_card_recruit_requested(province_id: String)
 signal city_card_sortie_requested(province_id: String)
+signal city_card_move_requested(province_id: String)
 signal city_card_detail_requested(province_id: String)
 
 const MAP_BRIGHTNESS_SHADER_CODE: String = """
@@ -578,6 +579,10 @@ func _build_floating_city_card() -> void:
 	floating_city_card.connect(
 		"sortie_requested",
 		_on_city_card_action.bind(city_card_sortie_requested)
+	)
+	floating_city_card.connect(
+		"move_requested",
+		_on_city_card_action.bind(city_card_move_requested)
 	)
 	floating_city_card.connect(
 		"detail_requested",

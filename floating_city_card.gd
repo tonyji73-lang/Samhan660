@@ -3,6 +3,7 @@ extends PanelContainer
 signal domestic_requested(province_id: String)
 signal recruit_requested(province_id: String)
 signal sortie_requested(province_id: String)
+signal move_requested(province_id: String)
 signal detail_requested(province_id: String)
 
 var province_id: String = ""
@@ -17,6 +18,7 @@ var province_id: String = ""
 @onready var domestic_button: Button = %DomesticButton
 @onready var recruit_button: Button = %RecruitButton
 @onready var sortie_button: Button = %SortieButton
+@onready var move_button: Button = %MoveButton
 @onready var detail_button: Button = %DetailButton
 
 
@@ -26,6 +28,7 @@ func _ready() -> void:
 	domestic_button.pressed.connect(_emit_action.bind(domestic_requested))
 	recruit_button.pressed.connect(_emit_action.bind(recruit_requested))
 	sortie_button.pressed.connect(_emit_action.bind(sortie_requested))
+	move_button.pressed.connect(_emit_action.bind(move_requested))
 	detail_button.pressed.connect(_emit_action.bind(detail_requested))
 
 
@@ -46,6 +49,7 @@ func configure(
 	domestic_button.disabled = not bool(action_states.get("domestic", true))
 	recruit_button.disabled = not bool(action_states.get("recruit", true))
 	sortie_button.disabled = not bool(action_states.get("sortie", true))
+	move_button.disabled = not bool(action_states.get("move", true))
 	detail_button.disabled = not bool(action_states.get("detail", true))
 
 
@@ -76,6 +80,6 @@ func _apply_style() -> void:
 	panel_style.shadow_size = 8
 	add_theme_stylebox_override("panel", panel_style)
 
-	for button: Button in [domestic_button, recruit_button, sortie_button, detail_button]:
-		button.custom_minimum_size = Vector2(58.0, 30.0)
+	for button: Button in [domestic_button, recruit_button, sortie_button, move_button, detail_button]:
+		button.custom_minimum_size = Vector2(46.0, 30.0)
 		button.focus_mode = Control.FOCUS_NONE
