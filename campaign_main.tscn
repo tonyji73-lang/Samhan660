@@ -208,6 +208,11 @@ text = "치안:0"
 layout_mode = 2
 text = "병력:0"
 
+[node name="FoodStockLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "군량: 0 / 0"
+
 [node name="FortressLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=19487517]
 layout_mode = 2
 text = "성벽:0"

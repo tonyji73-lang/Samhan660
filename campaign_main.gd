@@ -208,6 +208,7 @@ var officers_by_province: Dictionary = {
 @onready var commerce_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/CommerceLabel
 @onready var public_order_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/PublicOrderLabel
 @onready var troops_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/TroopsLabel
+@onready var food_stock_label: Label = %FoodStockLabel
 @onready var fortress_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/FortressLabel
 @onready var log_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/LogScroll/LogLabel
 
@@ -236,6 +237,7 @@ func _ready() -> void:
 	_apply_legacy_core_province_values()
 	_apply_new_game_settings()
 	_refresh_faction_controllers()
+	_ensure_province_food_economy()
 	_ensure_additional_officer_assignments()
 
 	_bind_city_buttons()
@@ -328,6 +330,49 @@ func _apply_legacy_core_province_values() -> void:
 		if not provinces.has(province_id):
 			continue
 		provinces[province_id] = legacy_provinces[province_id].duplicate(true)
+
+
+func _ensure_province_food_economy(legacy_player_food: int = -1) -> void:
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
+		var province: Dictionary = provinces[province_id]
+		var population_in_thousands: float = (
+			float(maxi(0, int(province.get("population", 0)))) / 1000.0
+		)
+		var agriculture: int = clampi(int(province.get("agriculture", 0)), 0, 100)
+		if not province.has("granary_capacity"):
+			province["granary_capacity"] = roundi(
+				3000.0
+				+ population_in_thousands * 30.0
+				+ float(agriculture) * 30.0
+			)
+		if not province.has("food_stock"):
+			if province.has("food"):
+				province["food_stock"] = maxi(0, int(province["food"]))
+			else:
+				province["food_stock"] = roundi(
+					float(int(province["granary_capacity"])) * 0.60
+				)
+		province["granary_capacity"] = maxi(0, int(province["granary_capacity"]))
+		province["food_stock"] = maxi(0, int(province["food_stock"]))
+
+	if legacy_player_food >= 0:
+		var starting_province_id: String = _get_starting_province_id()
+		if provinces.has(starting_province_id):
+			provinces[starting_province_id]["food_stock"] = legacy_player_food
+	food = _get_total_player_food_stock()
+
+
+func _get_total_player_food_stock() -> int:
+	var total: int = 0
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
+		if _get_province_controller(provinces[province_id]) != CONTROLLER_PLAYER:
+			continue
+		total += int(provinces[province_id].get("food_stock", 0))
+	return total
 
 
 func _ensure_steppe_provinces(scenario_year: int) -> void:
@@ -620,6 +665,10 @@ func select_province(province_id: String, show_floating_card: bool = true) -> vo
 	commerce_label.text = "상업: %d" % province["commerce"]
 	public_order_label.text = "치안: %d" % province["public_order"]
 	troops_label.text = "병력: %d" % province["troops"]
+	food_stock_label.text = "군량: %d / %d" % [
+		int(province.get("food_stock", 0)),
+		int(province.get("granary_capacity", 0)),
+	]
 	fortress_label.text = "성벽: %d" % province["fortress"]
 
 	update_officer_list(province_id)
@@ -972,7 +1021,10 @@ func _on_attack_button_pressed() -> void:
 		log_label.text = "아군 영지는 공격할 수 없습니다."
 		return
 
-	if food < ATTACK_FOOD_COST:
+	var source_food_stock: int = int(
+		provinces[attack_source_id].get("food_stock", 0)
+	)
+	if source_food_stock < ATTACK_FOOD_COST:
 		log_label.text = "공격에 필요한 군량 %d이 부족합니다." % ATTACK_FOOD_COST
 		return
 
@@ -1255,7 +1307,10 @@ func resolve_attack(source_id: String, target_id: String) -> void:
 		* (1.0 + float(defender_leadership) / 100.0 + float(fortress) / 200.0)
 	)
 
-	food -= ATTACK_FOOD_COST
+	attacker["food_stock"] = maxi(
+		0,
+		int(attacker.get("food_stock", 0)) - ATTACK_FOOD_COST
+	)
 	var result_message: String = ""
 
 	if attacker_power > defender_power:
@@ -1364,12 +1419,15 @@ func _on_recruit_button_pressed() -> void:
 		log_label.text = "플레이어 소유 영지에서만 징병할 수 있습니다."
 		return
 
-	if gold < 150 or food < 200:
+	var province_food_stock: int = int(
+		provinces[selected_province_id].get("food_stock", 0)
+	)
+	if gold < 150 or province_food_stock < 200:
 		log_label.text = "금 또는 군량이 부족합니다."
 		return
 
 	gold -= 150
-	food -= 200
+	provinces[selected_province_id]["food_stock"] = province_food_stock - 200
 	var current_troops: int = int(provinces[selected_province_id]["troops"])
 	provinces[selected_province_id]["troops"] = current_troops + 1000
 
@@ -1767,7 +1825,7 @@ func _on_save_button_pressed() -> void:
 		"month": month,
 		"season_index": season_index,
 		"gold": gold,
-		"food": food,
+		"food": _get_total_player_food_stock(),
 		"player_faction": player_faction,
 		"play_style": play_style,
 		"difficulty": difficulty,
@@ -1855,6 +1913,14 @@ func _on_load_button_pressed() -> void:
 
 	var saved_provinces: Dictionary = save_data["provinces"]
 	provinces = saved_provinces.duplicate(true)
+	var has_saved_food_stocks: bool = false
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if provinces.has(province_id) and provinces[province_id].has("food_stock"):
+			has_saved_food_stocks = true
+			break
+	_ensure_province_food_economy(
+		-1 if has_saved_food_stocks else food
+	)
 
 	# 전략 상태를 되살립니다. 옛 세이브에는 없으므로 그때는 새로 만듭니다.
 	if typeof(save_data.get("strategy_state", null)) == TYPE_DICTIONARY:
@@ -1967,4 +2033,5 @@ func update_top_bar() -> void:
 		]
 	)
 	gold_label.text = "금: %d" % gold
-	food_label.text = "군량: %d" % food
+	food = _get_total_player_food_stock()
+	food_label.text = "총 군량: %d" % food

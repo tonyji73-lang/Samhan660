@@ -244,11 +244,18 @@ static func get_province_templates() -> Dictionary:
 		var governor: String = str(DEFAULT_GENERAL_NAMES.get(province_id, "%s 수장" % PROVINCE_NAMES[province_id]))
 		var base_population: int = 55000 + (index % 6) * 9000
 		var base_troops: int = 7000 + (index % 5) * 1800
+		var agriculture: int = 55 + (index % 5) * 4
+		var population_in_thousands: float = float(base_population) / 1000.0
+		var granary_capacity: int = roundi(
+			3000.0 + population_in_thousands * 30.0 + float(agriculture) * 30.0
+		)
 		result[province_id] = {
 			"name": PROVINCE_NAMES[province_id], "faction": faction, "governor": governor,
-			"population": base_population, "agriculture": 55 + (index % 5) * 4,
+			"population": base_population, "agriculture": agriculture,
 			"commerce": 48 + (index % 6) * 4, "public_order": 68 + (index % 4) * 4,
 			"troops": base_troops, "fortress": 58 + (index % 6) * 5,
+			"food_stock": roundi(float(granary_capacity) * 0.60),
+			"granary_capacity": granary_capacity,
 		}
 	return result
 
