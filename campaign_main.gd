@@ -8,6 +8,9 @@ const SamhanStrategySystems = preload("res://samhan_strategy_systems.gd")
 const SAVE_PATH: String = "user://campaign_save_35_regions_v1.json"
 const SEASONS: Array[String] = ["봄", "여름", "가을", "겨울"]
 const ATTACK_FOOD_COST: int = 500
+const CONTROLLER_PLAYER: String = "PLAYER"
+const CONTROLLER_AI: String = "AI"
+const CONTROLLER_INACTIVE: String = "INACTIVE"
 
 @export_group("Project Paths")
 @export_file("*.tscn") var setup_scene_path: String = "res://new_game_setup.tscn"
@@ -54,6 +57,8 @@ var gold: int = 1000
 var food: int = 3000
 
 var player_faction: String = "신라"
+var player_faction_id: String = "silla"
+var faction_controllers: Dictionary = {}
 var play_style: String = "historical"
 var difficulty: String = "normal"
 var scenario_id: String = "baekje_fall_660"
@@ -212,6 +217,7 @@ var officers_by_province: Dictionary = {
 func _ready() -> void:
 	_apply_legacy_core_province_values()
 	_apply_new_game_settings()
+	_refresh_faction_controllers()
 	_ensure_additional_officer_assignments()
 
 	_bind_city_buttons()
@@ -390,9 +396,6 @@ func _apply_new_game_settings() -> void:
 		settings.get("difficulty", "normal")
 	)
 
-	if FACTION_ID_TO_NAME.has(faction_id):
-		player_faction = str(FACTION_ID_TO_NAME[faction_id])
-
 	if PLAY_STYLE_NAMES.has(requested_play_style):
 		play_style = requested_play_style
 
@@ -402,6 +405,9 @@ func _apply_new_game_settings() -> void:
 	scenario_id = str(
 		settings.get("scenario_id", "baekje_fall_660")
 	)
+	if ScenarioData.is_faction_playable_by_default(scenario_id, faction_id):
+		player_faction_id = faction_id
+		player_faction = ScenarioData.get_faction_name(scenario_id, faction_id)
 	year = int(settings.get("scenario_year", 660))
 	var season_id: String = str(settings.get("scenario_season", "spring"))
 	season_index = int(SEASON_ID_TO_INDEX.get(season_id, 0))
@@ -507,13 +513,25 @@ func _apply_difficulty_settings(
 
 
 func _get_starting_province_id() -> String:
-	match player_faction:
-		"백제":
-			return "sabi"
-		"고구려":
-			return "pyongyang"
-		_:
-			return "geumseong"
+	var starting_province: String = ScenarioData.get_starting_province(
+		scenario_id, player_faction_id
+	)
+	return starting_province if starting_province != "" else "geumseong"
+
+
+func _refresh_faction_controllers() -> void:
+	faction_controllers.clear()
+	for faction_id: String in ScenarioData.get_active_faction_ids(scenario_id):
+		var controller: String = CONTROLLER_INACTIVE
+		if faction_id == player_faction_id:
+			controller = CONTROLLER_PLAYER
+		elif ScenarioData.is_faction_ai_enabled(scenario_id, faction_id):
+			controller = CONTROLLER_AI
+		faction_controllers[faction_id] = controller
+
+
+func get_faction_controller(faction_id: String) -> String:
+	return str(faction_controllers.get(faction_id, CONTROLLER_INACTIVE))
 
 
 func select_province(province_id: String, show_floating_card: bool = true) -> void:
@@ -1049,7 +1067,7 @@ func run_enemy_ai_turns() -> String:
 	for province_id: String in Korea35Data.PROVINCE_IDS:
 		if not provinces.has(province_id):
 			continue
-		if str(provinces[province_id].get("faction", "")) != player_faction:
+		if _get_province_controller(provinces[province_id]) == CONTROLLER_AI:
 			ai_province_ids.append(province_id)
 
 	var messages: Array[String] = []
@@ -1061,7 +1079,7 @@ func run_enemy_ai_turns() -> String:
 
 		var source: Dictionary = provinces[source_id]
 
-		if source["faction"] == player_faction:
+		if _get_province_controller(source) != CONTROLLER_AI:
 			continue
 
 		source["troops"] = (
@@ -1100,6 +1118,14 @@ func run_enemy_ai_turns() -> String:
 	return combine_messages(messages)
 
 
+func _get_province_controller(province: Dictionary) -> String:
+	var faction_name: String = str(province.get("faction", ""))
+	var faction_id: String = ScenarioData.get_faction_id_by_name(
+		scenario_id, faction_name
+	)
+	return get_faction_controller(faction_id)
+
+
 func find_ai_target(source_id: String) -> String:
 	var neighbors: Array = province_connections.get(source_id, [])
 	var weakest_target_id: String = ""
@@ -1118,7 +1144,7 @@ func find_ai_target(source_id: String) -> String:
 			if neighbor["faction"] == source_faction:
 				continue
 		else:
-			if neighbor["faction"] != player_faction:
+			if _get_province_controller(neighbor) != CONTROLLER_PLAYER:
 				continue
 
 		var neighbor_troops: int = int(neighbor["troops"])
@@ -1350,6 +1376,13 @@ func _on_load_button_pressed() -> void:
 
 	if not FACTION_ID_TO_NAME.values().has(player_faction):
 		player_faction = "신라"
+	player_faction_id = ScenarioData.get_faction_id_by_name(
+		scenario_id, player_faction
+	)
+	if player_faction_id == "":
+		player_faction_id = "silla"
+		player_faction = ScenarioData.get_faction_name(scenario_id, player_faction_id)
+	_refresh_faction_controllers()
 
 	if not PLAY_STYLE_NAMES.has(play_style):
 		play_style = "historical"

@@ -1026,6 +1026,31 @@ const STEPPE_REBEL_FACTION_IDS: Array[String] = [
 	"tongluo",
 ]
 
+const FACTION_AVAILABILITY: Dictionary = {
+	"silla": {"playable_by_default": true, "unlockable": false, "ai_enabled": true},
+	"baekje": {"playable_by_default": true, "unlockable": false, "ai_enabled": true},
+	"goguryeo": {"playable_by_default": true, "unlockable": false, "ai_enabled": true},
+	"tang": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.tang", "ai_enabled": true},
+	"yamato": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.yamato", "ai_enabled": true},
+	"xueyantuo": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.xueyantuo", "ai_enabled": true},
+	"baekje_revival": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.baekje_revival", "ai_enabled": true},
+	"goguryeo_revival": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.goguryeo_revival", "ai_enabled": true},
+	"huihe": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.huihe", "ai_enabled": true},
+	"pugu": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.pugu", "ai_enabled": true},
+	"tongluo": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.tongluo", "ai_enabled": true},
+	"bayegu": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.bayegu", "ai_enabled": true},
+	"sijie": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.sijie", "ai_enabled": true},
+	"qibi": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.qibi", "ai_enabled": true},
+	"hun": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.hun", "ai_enabled": true},
+	"duolange": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.duolange", "ai_enabled": true},
+	"adie": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.adie", "ai_enabled": true},
+	"tsukushi": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.tsukushi", "ai_enabled": true},
+	"kibi": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.kibi", "ai_enabled": true},
+	"koshi_abe": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.koshi_abe", "ai_enabled": true},
+	"emishi": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.emishi", "ai_enabled": true},
+	"hayato": {"playable_by_default": false, "unlockable": true, "unlock_id": "faction.hayato", "ai_enabled": true},
+}
+
 const JAPAN_LOCAL_FACTIONS_660: Array[Dictionary] = [
 	{
 		"id": "tsukushi",
@@ -2006,6 +2031,20 @@ static func _apply_ruler_portrait(faction: Dictionary) -> void:
 		faction["portrait_paths"] = [RULER_PORTRAIT_PATHS[ruler_name]]
 
 
+static func _apply_faction_availability(faction: Dictionary) -> void:
+	var faction_id: String = str(faction.get("id", ""))
+	var metadata: Dictionary = FACTION_AVAILABILITY.get(faction_id, {})
+	faction["playable_by_default"] = bool(metadata.get("playable_by_default", false))
+	faction["unlockable"] = bool(metadata.get("unlockable", false))
+	faction["ai_enabled"] = bool(metadata.get("ai_enabled", true))
+	if metadata.has("unlock_id"):
+		faction["unlock_id"] = str(metadata["unlock_id"])
+	else:
+		faction.erase("unlock_id")
+	# Keep the legacy field as a derived compatibility value for existing UI callers.
+	faction["playable"] = bool(faction["playable_by_default"])
+
+
 static func _prepare_scenario(base_scenario: Dictionary) -> Dictionary:
 	var scenario: Dictionary = base_scenario.duplicate(true)
 	var year: int = int(scenario.get("year", 660))
@@ -2022,8 +2061,7 @@ static func _prepare_scenario(base_scenario: Dictionary) -> Dictionary:
 		if year >= 660 and faction_id == "huihe":
 			continue
 
-		faction["playable"] = true
-		faction.erase("availability_note")
+		_apply_faction_availability(faction)
 
 		match faction_id:
 			"tang":
@@ -2049,6 +2087,7 @@ static func _prepare_scenario(base_scenario: Dictionary) -> Dictionary:
 	if year >= 660:
 		for tribe: Dictionary in get_steppe_factions(year):
 			var prepared_tribe: Dictionary = tribe.duplicate(true)
+			_apply_faction_availability(prepared_tribe)
 			_apply_ruler_portrait(prepared_tribe)
 			var tribe_start: String = str(prepared_tribe["start_province"])
 			prepared_tribe["marker_uv"] = WorldMapData.PROVINCE_MAP_UV[tribe_start]
@@ -2056,6 +2095,7 @@ static func _prepare_scenario(base_scenario: Dictionary) -> Dictionary:
 
 	for local_faction: Dictionary in JAPAN_LOCAL_FACTIONS_660:
 		var prepared_local: Dictionary = local_faction.duplicate(true)
+		_apply_faction_availability(prepared_local)
 		var local_id: String = str(prepared_local.get("id", ""))
 		if (year < 658 or year > 664) and local_id == "koshi_abe":
 			prepared_local["name"] = "고시 호족권"
@@ -2105,6 +2145,27 @@ static func get_faction(scenario_id: String, faction_id: String) -> Dictionary:
 		if str(faction.get("id", "")) == faction_id:
 			return faction
 	return {}
+
+
+static func get_active_faction_ids(scenario_id: String) -> Array[String]:
+	var result: Array[String] = []
+	for faction_value: Variant in get_scenario(scenario_id).get("factions", []):
+		if typeof(faction_value) != TYPE_DICTIONARY:
+			continue
+		var faction_id: String = str((faction_value as Dictionary).get("id", ""))
+		if faction_id != "" and not result.has(faction_id):
+			result.append(faction_id)
+	return result
+
+
+static func is_faction_playable_by_default(scenario_id: String, faction_id: String) -> bool:
+	var faction: Dictionary = get_faction(scenario_id, faction_id)
+	return not faction.is_empty() and bool(faction.get("playable_by_default", false))
+
+
+static func is_faction_ai_enabled(scenario_id: String, faction_id: String) -> bool:
+	var faction: Dictionary = get_faction(scenario_id, faction_id)
+	return not faction.is_empty() and bool(faction.get("ai_enabled", false))
 
 
 static func get_officer_database() -> Dictionary:
@@ -2196,8 +2257,8 @@ static func get_faction_id_by_name(scenario_id: String, faction_name: String) ->
 			continue
 		var faction: Dictionary = faction_value
 		if str(faction.get("name", "")) == faction_name:
-			return str(faction.get("id", "silla"))
-	return "silla"
+			return str(faction.get("id", ""))
+	return ""
 
 
 static func get_starting_province(scenario_id: String, faction_id: String) -> String:
