@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0a0uhhmucnsa" path="res://campaign_main.gd" id="1_aa4yi"]
 [ext_resource type="Script" uid="uid://bftuww74m2mtc" path="res://map_area.gd" id="2_jkp7o"]
+[ext_resource type="PackedScene" path="res://campaign_navigation_menu.tscn" id="3_navigation"]
 
 [node name="CampaignMain" type="Control" unique_id=1330427578]
 layout_mode = 3
@@ -54,6 +55,8 @@ text = "불러오기"
 custom_minimum_size = Vector2(100, 35)
 layout_mode = 2
 text = "턴 종료"
+
+[node name="CampaignNavigationMenu" parent="MainVBox/TopBar" instance=ExtResource("3_navigation")]
 
 [node name="Content" type="HSplitContainer" parent="MainVBox" unique_id=1945650163]
 layout_mode = 2
@@ -157,12 +160,18 @@ offset_bottom = 685.0
 text = "사별 (신라)"
 
 [node name="ProvincePanel" type="PanelContainer" parent="MainVBox/Content" unique_id=2141073613]
+visible = false
 custom_minimum_size = Vector2(380, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="ProvinceVBox" type="VBoxContainer" parent="MainVBox/Content/ProvincePanel" unique_id=323331976]
 layout_mode = 2
+
+[node name="CloseDetailButton" type="Button" parent="MainVBox/Content/ProvincePanel/ProvinceVBox"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "상세 닫기"
 
 [node name="ProvinceNameLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=403331358]
 layout_mode = 2

@@ -8,6 +8,10 @@ const SamhanStrategySystems = preload("res://samhan_strategy_systems.gd")
 const SAVE_PATH: String = "user://campaign_save_35_regions_v1.json"
 const SEASONS: Array[String] = ["봄", "여름", "가을", "겨울"]
 const ATTACK_FOOD_COST: int = 500
+
+@export_group("Project Paths")
+@export_file("*.tscn") var setup_scene_path: String = "res://new_game_setup.tscn"
+@export_file("*.tscn") var title_scene_path: String = "res://title_screen.tscn"
 const FACTION_ID_TO_NAME: Dictionary = {
 	"silla": "신라",
 	"baekje": "백제",
@@ -168,6 +172,8 @@ var officers_by_province: Dictionary = {
 # ==========================================
 
 @onready var map_area: Control = $MainVBox/Content/MapPanel/MapArea
+@onready var province_panel: PanelContainer = $MainVBox/Content/ProvincePanel
+@onready var navigation_menu: MenuButton = $MainVBox/TopBar/CampaignNavigationMenu
 
 @onready var date_label: Label = $MainVBox/TopBar/DateLabel
 @onready var gold_label: Label = $MainVBox/TopBar/GoldLabel
@@ -195,6 +201,9 @@ var officers_by_province: Dictionary = {
 @onready var commerce_button: Button = $MainVBox/Content/ProvincePanel/ProvinceVBox/CommerceButton
 @onready var recruit_button: Button = $MainVBox/Content/ProvincePanel/ProvinceVBox/RecruitButton
 @onready var attack_button: Button = $MainVBox/Content/ProvincePanel/ProvinceVBox/AttackButton
+@onready var close_detail_button: Button = (
+	$MainVBox/Content/ProvincePanel/ProvinceVBox/CloseDetailButton
+)
 
 @onready var officer_list: ItemList = %OfficerList
 @onready var officer_detail_label: Label = %OfficerDetailLabel
@@ -206,6 +215,8 @@ func _ready() -> void:
 	_ensure_additional_officer_assignments()
 
 	_bind_city_buttons()
+	_connect_map_city_card()
+	_connect_navigation_menu()
 	_connect_button_once(
 		officer_list.item_selected,
 		_on_officer_list_item_selected
@@ -214,6 +225,7 @@ func _ready() -> void:
 	_connect_button_once(commerce_button.pressed, _on_commerce_button_pressed)
 	_connect_button_once(recruit_button.pressed, _on_recruit_button_pressed)
 	_connect_button_once(attack_button.pressed, _on_attack_button_pressed)
+	_connect_button_once(close_detail_button.pressed, _hide_province_detail)
 	_connect_button_once(end_turn_button.pressed, _on_end_turn_button_pressed)
 
 	if save_button != null:
@@ -222,9 +234,11 @@ func _ready() -> void:
 	if load_button != null:
 		_connect_button_once(load_button.pressed, _on_load_button_pressed)
 
+	province_panel.visible = false
+
 	update_top_bar()
 	var starting_province_id: String = _get_starting_province_id()
-	select_province(starting_province_id)
+	select_province(starting_province_id, false)
 	map_area.call_deferred("focus_on_province", starting_province_id, 2.15)
 	log_label.text = (
 		"%s · %s 난이도로 시작합니다."
@@ -308,6 +322,52 @@ func _bind_city_buttons() -> void:
 				"CampaignMain: MapArea에서 %s 버튼을 찾을 수 없습니다."
 				% button_name
 			)
+
+
+func _connect_map_city_card() -> void:
+	_connect_button_once(
+		map_area.city_card_domestic_requested,
+		_on_city_card_domestic_requested
+	)
+	_connect_button_once(
+		map_area.city_card_recruit_requested,
+		_on_city_card_recruit_requested
+	)
+	_connect_button_once(
+		map_area.city_card_sortie_requested,
+		_on_city_card_sortie_requested
+	)
+	_connect_button_once(
+		map_area.city_card_detail_requested,
+		_on_city_card_detail_requested
+	)
+
+
+func _connect_navigation_menu() -> void:
+	navigation_menu.connect("navigation_requested", _on_navigation_requested)
+	navigation_menu.connect("quit_requested", _on_navigation_quit_requested)
+
+
+func _on_navigation_requested(destination: String) -> void:
+	attack_source_id = ""
+	map_area.hide_city_card()
+	province_panel.visible = false
+
+	var root: Window = get_tree().root
+	if root.has_meta("new_game_settings"):
+		root.remove_meta("new_game_settings")
+
+	var target_path: String = title_scene_path
+	if destination == "setup":
+		target_path = setup_scene_path
+
+	var change_error: Error = get_tree().change_scene_to_file(target_path)
+	if change_error != OK:
+		log_label.text = "화면을 열 수 없습니다: %s" % target_path
+
+
+func _on_navigation_quit_requested() -> void:
+	get_tree().quit()
 
 
 func _apply_new_game_settings() -> void:
@@ -456,7 +516,7 @@ func _get_starting_province_id() -> String:
 			return "geumseong"
 
 
-func select_province(province_id: String) -> void:
+func select_province(province_id: String, show_floating_card: bool = true) -> void:
 	if not provinces.has(province_id):
 		return
 
@@ -482,6 +542,45 @@ func select_province(province_id: String) -> void:
 
 	update_attack_button(province_id)
 	update_province_log(province_id)
+	if show_floating_card:
+		map_area.show_city_card(
+			province_id,
+			province,
+			{
+				"domestic": player_owned,
+				"recruit": player_owned,
+				"sortie": not attack_button.disabled,
+				"detail": true,
+			}
+		)
+
+
+func _on_city_card_domestic_requested(province_id: String) -> void:
+	if province_id != selected_province_id:
+		select_province(province_id)
+	_on_develop_button_pressed()
+
+
+func _on_city_card_recruit_requested(province_id: String) -> void:
+	if province_id != selected_province_id:
+		select_province(province_id)
+	_on_recruit_button_pressed()
+
+
+func _on_city_card_sortie_requested(province_id: String) -> void:
+	if province_id != selected_province_id:
+		select_province(province_id)
+	_on_attack_button_pressed()
+
+
+func _on_city_card_detail_requested(province_id: String) -> void:
+	if province_id != selected_province_id:
+		select_province(province_id)
+	province_panel.visible = true
+
+
+func _hide_province_detail() -> void:
+	province_panel.visible = false
 
 
 func update_province_log(province_id: String) -> void:
