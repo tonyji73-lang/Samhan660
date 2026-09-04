@@ -13,8 +13,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aa4yi")
 
-[node name="CampaignNavigationMenu" parent="." instance=ExtResource("3_navigation")]
-
 [node name="MainVBox" type="VBoxContainer" parent="." unique_id=1026816863]
 layout_mode = 1
 anchors_preset = 15
@@ -57,6 +55,8 @@ text = "불러오기"
 custom_minimum_size = Vector2(100, 35)
 layout_mode = 2
 text = "턴 종료"
+
+[node name="CampaignNavigationMenu" parent="MainVBox/TopBar" instance=ExtResource("3_navigation")]
 
 [node name="Content" type="HSplitContainer" parent="MainVBox" unique_id=1945650163]
 layout_mode = 2

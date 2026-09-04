@@ -173,7 +173,7 @@ var officers_by_province: Dictionary = {
 
 @onready var map_area: Control = $MainVBox/Content/MapPanel/MapArea
 @onready var province_panel: PanelContainer = $MainVBox/Content/ProvincePanel
-@onready var navigation_menu: Control = $CampaignNavigationMenu
+@onready var navigation_menu: MenuButton = $MainVBox/TopBar/CampaignNavigationMenu
 
 @onready var date_label: Label = $MainVBox/TopBar/DateLabel
 @onready var gold_label: Label = $MainVBox/TopBar/GoldLabel
