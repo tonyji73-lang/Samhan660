@@ -206,12 +206,17 @@ var officers_by_province: Dictionary = {
 @onready var commerce_button: Button = $MainVBox/Content/ProvincePanel/ProvinceVBox/CommerceButton
 @onready var recruit_button: Button = $MainVBox/Content/ProvincePanel/ProvinceVBox/RecruitButton
 @onready var attack_button: Button = $MainVBox/Content/ProvincePanel/ProvinceVBox/AttackButton
+@onready var transfer_button: Button = $MainVBox/Content/ProvincePanel/ProvinceVBox/TransferButton
 @onready var close_detail_button: Button = (
 	$MainVBox/Content/ProvincePanel/ProvinceVBox/CloseDetailButton
 )
 
 @onready var officer_list: ItemList = %OfficerList
 @onready var officer_detail_label: Label = %OfficerDetailLabel
+@onready var transfer_panel: Control = $ProvinceTransferPanel
+@onready var governor_transfer_confirmation: ConfirmationDialog = $GovernorTransferConfirmation
+
+var pending_governor_transfer: Dictionary = {}
 
 
 func _ready() -> void:
@@ -231,7 +236,20 @@ func _ready() -> void:
 	_connect_button_once(commerce_button.pressed, _on_commerce_button_pressed)
 	_connect_button_once(recruit_button.pressed, _on_recruit_button_pressed)
 	_connect_button_once(attack_button.pressed, _on_attack_button_pressed)
+	_connect_button_once(transfer_button.pressed, _on_transfer_button_pressed)
 	_connect_button_once(close_detail_button.pressed, _hide_province_detail)
+	_connect_button_once(
+		transfer_panel.transfer_requested,
+		request_province_transfer
+	)
+	_connect_button_once(
+		governor_transfer_confirmation.confirmed,
+		_on_governor_transfer_confirmed
+	)
+	_connect_button_once(
+		governor_transfer_confirmation.canceled,
+		_on_governor_transfer_canceled
+	)
 	_connect_button_once(end_turn_button.pressed, _on_end_turn_button_pressed)
 
 	if save_button != null:
@@ -572,6 +590,7 @@ func select_province(province_id: String, show_floating_card: bool = true) -> vo
 	develop_button.disabled = not player_owned
 	commerce_button.disabled = not player_owned
 	recruit_button.disabled = not player_owned
+	transfer_button.disabled = not player_owned
 
 	update_attack_button(province_id)
 	update_province_log(province_id)
@@ -794,6 +813,175 @@ func is_selected_province_player_owned() -> bool:
 		return false
 
 	return provinces[selected_province_id]["faction"] == player_faction
+
+
+func _on_transfer_button_pressed() -> void:
+	if not is_selected_province_player_owned():
+		log_label.text = "플레이어 소유 영지에서만 지원할 수 있습니다."
+		return
+	var source: Dictionary = provinces[selected_province_id]
+	var destinations: Array[Dictionary] = []
+	for neighbor_value: Variant in province_connections.get(selected_province_id, []):
+		var neighbor_id: String = str(neighbor_value)
+		if not provinces.has(neighbor_id):
+			continue
+		var neighbor: Dictionary = provinces[neighbor_id]
+		if str(neighbor.get("faction", "")) != str(source.get("faction", "")):
+			continue
+		destinations.append(
+			{"id": neighbor_id, "name": str(neighbor.get("name", neighbor_id))}
+		)
+	destinations.sort_custom(
+		func(a: Dictionary, b: Dictionary) -> bool:
+			return str(a.get("name", "")) < str(b.get("name", ""))
+	)
+	var available_officers: Array[String] = []
+	for officer_value: Variant in officers_by_province.get(selected_province_id, []):
+		available_officers.append(str(officer_value))
+	transfer_panel.open_for_transfer(
+		selected_province_id,
+		str(source.get("name", selected_province_id)),
+		destinations,
+		int(source.get("troops", 0)),
+		available_officers,
+		false,
+		false
+	)
+
+
+func validate_province_transfer(request: Dictionary) -> Dictionary:
+	var source_id: String = str(request.get("source_id", ""))
+	var target_id: String = str(request.get("target_id", ""))
+	var troop_count: int = int(request.get("troops", 0))
+	var food_count: int = int(request.get("food", 0))
+	var gold_count: int = int(request.get("gold", 0))
+	var requested_officers: Array[String] = []
+	var seen_officers: Dictionary = {}
+	var officer_values: Variant = request.get("officers", [])
+	if typeof(officer_values) != TYPE_ARRAY:
+		return {"ok": false, "reason": "장수 이동 요청 형식이 올바르지 않습니다."}
+	for officer_value: Variant in officer_values:
+		var officer_name: String = str(officer_value)
+		if officer_name == "" or seen_officers.has(officer_name):
+			return {"ok": false, "reason": "장수 이동 목록이 올바르지 않습니다."}
+		seen_officers[officer_name] = true
+		requested_officers.append(officer_name)
+
+	if source_id == "" or target_id == "" or source_id == target_id:
+		return {"ok": false, "reason": "출발 성과 목적지를 확인하세요."}
+	if not provinces.has(source_id) or not provinces.has(target_id):
+		return {"ok": false, "reason": "존재하지 않는 영지입니다."}
+	var source: Dictionary = provinces[source_id]
+	var target: Dictionary = provinces[target_id]
+	if str(source.get("faction", "")) != player_faction:
+		return {"ok": false, "reason": "플레이어 소유 영지에서만 지원할 수 있습니다."}
+	if str(target.get("faction", "")) != str(source.get("faction", "")):
+		return {"ok": false, "reason": "같은 세력의 영지로만 지원할 수 있습니다."}
+	if not are_provinces_connected(source_id, target_id):
+		return {"ok": false, "reason": "직접 연결된 영지로만 지원할 수 있습니다."}
+	if troop_count < 0 or food_count < 0 or gold_count < 0:
+		return {"ok": false, "reason": "이동 수량은 음수일 수 없습니다."}
+	if food_count > 0 or gold_count > 0:
+		return {"ok": false, "reason": "금과 군량은 현재 세력 공용 자원이므로 이동할 수 없습니다."}
+	if troop_count > int(source.get("troops", 0)):
+		return {"ok": false, "reason": "출발 영지의 보유 병력보다 많이 이동할 수 없습니다."}
+	if troop_count == 0 and requested_officers.is_empty():
+		return {"ok": false, "reason": "병력 또는 이동할 장수를 선택하세요."}
+
+	var source_officers: Array = officers_by_province.get(source_id, [])
+	for officer_name: String in requested_officers:
+		if not source_officers.has(officer_name):
+			return {"ok": false, "reason": "%s은(는) 출발 영지에 배치되어 있지 않습니다." % officer_name}
+
+	var governor_name: String = str(source.get("governor", ""))
+	return {
+		"ok": true,
+		"requires_governor_confirmation": (
+			governor_name != ""
+			and governor_name != "태수 없음"
+			and requested_officers.has(governor_name)
+		),
+		"governor_name": governor_name,
+	}
+
+
+func request_province_transfer(request: Dictionary) -> void:
+	var validation: Dictionary = validate_province_transfer(request)
+	if not bool(validation.get("ok", false)):
+		transfer_panel.show_error(str(validation.get("reason", "이동할 수 없습니다.")))
+		return
+	if bool(validation.get("requires_governor_confirmation", false)):
+		pending_governor_transfer = request.duplicate(true)
+		var source_id: String = str(request.get("source_id", ""))
+		governor_transfer_confirmation.dialog_text = (
+			"%s은(는) 현재 %s의 태수입니다. 이동하면 태수 자리가 공석이 됩니다. 이동하시겠습니까?"
+			% [
+				str(validation.get("governor_name", "")),
+				str(provinces[source_id].get("name", source_id)),
+			]
+		)
+		governor_transfer_confirmation.popup_centered(Vector2i(480, 170))
+		return
+	apply_province_transfer(request, false)
+
+
+func apply_province_transfer(
+	request: Dictionary, governor_transfer_confirmed: bool = false
+) -> Dictionary:
+	var validation: Dictionary = validate_province_transfer(request)
+	if not bool(validation.get("ok", false)):
+		return validation
+	if (
+		bool(validation.get("requires_governor_confirmation", false))
+		and not governor_transfer_confirmed
+	):
+		return {"ok": false, "reason": "태수 이동 확인이 필요합니다."}
+
+	var source_id: String = str(request.get("source_id", ""))
+	var target_id: String = str(request.get("target_id", ""))
+	var troop_count: int = int(request.get("troops", 0))
+	var requested_officers: Array = request.get("officers", [])
+	provinces[source_id]["troops"] = int(provinces[source_id]["troops"]) - troop_count
+	provinces[target_id]["troops"] = int(provinces[target_id]["troops"]) + troop_count
+
+	var source_officers: Array = officers_by_province.get(source_id, []).duplicate()
+	var target_officers: Array = officers_by_province.get(target_id, []).duplicate()
+	for officer_value: Variant in requested_officers:
+		var officer_name: String = str(officer_value)
+		source_officers.erase(officer_name)
+		if not target_officers.has(officer_name):
+			target_officers.append(officer_name)
+	officers_by_province[source_id] = source_officers
+	officers_by_province[target_id] = target_officers
+	if bool(validation.get("requires_governor_confirmation", false)):
+		provinces[source_id]["governor"] = "태수 없음"
+
+	var parts: Array[String] = []
+	if troop_count > 0:
+		parts.append("병력 %d명" % troop_count)
+	for officer_value: Variant in requested_officers:
+		parts.append(str(officer_value))
+	var message: String = "%s에서 %s로 %s을(를) 이동시켰습니다." % [
+		str(provinces[source_id].get("name", source_id)),
+		str(provinces[target_id].get("name", target_id)),
+		", ".join(parts),
+	]
+	transfer_panel.close_panel()
+	select_province(selected_province_id)
+	log_label.text = message
+	return {"ok": true, "message": message}
+
+
+func _on_governor_transfer_confirmed() -> void:
+	var request: Dictionary = pending_governor_transfer
+	pending_governor_transfer = {}
+	var result: Dictionary = apply_province_transfer(request, true)
+	if not bool(result.get("ok", false)):
+		transfer_panel.show_error(str(result.get("reason", "이동할 수 없습니다.")))
+
+
+func _on_governor_transfer_canceled() -> void:
+	pending_governor_transfer = {}
 
 
 func get_best_commander(province_id: String) -> Dictionary:
