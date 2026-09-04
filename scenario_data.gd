@@ -2257,8 +2257,8 @@ static func get_faction_id_by_name(scenario_id: String, faction_name: String) ->
 			continue
 		var faction: Dictionary = faction_value
 		if str(faction.get("name", "")) == faction_name:
-			return str(faction.get("id", "silla"))
-	return "silla"
+			return str(faction.get("id", ""))
+	return ""
 
 
 static func get_starting_province(scenario_id: String, faction_id: String) -> String:
