@@ -819,6 +819,7 @@ func _build_footer_block() -> Control:
 
 func _create_faction_card(data: Dictionary) -> Button:
 	var faction_id: String = str(data.get("id", "silla"))
+	var selectable: bool = bool(data.get("playable_by_default", false))
 	var faction_color: Color = Color(str(data.get("color", "#d2a62f")))
 	var ruler_name: String = str(data.get("ruler", ""))
 	var ruler_title: String = str(data.get("ruler_title", ""))
@@ -834,6 +835,10 @@ func _create_faction_card(data: Dictionary) -> Button:
 		ScenarioData.get_age_text(ruler_name, _get_scenario_year()),
 	]
 	button.toggle_mode = true
+	button.set_meta("selectable", selectable)
+	button.disabled = not selectable
+	if not selectable:
+		button.tooltip_text = "현재는 AI 전용 세력입니다."
 	button.custom_minimum_size = Vector2(0.0, 82.0)
 	button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
@@ -903,6 +908,7 @@ func _create_map_marker(
 	data: Dictionary
 ) -> void:
 	var faction_id: String = str(data.get("id", "silla"))
+	var selectable: bool = bool(data.get("playable_by_default", false))
 	var faction_type: String = str(data.get("faction_type", ""))
 	var compact: bool = (
 		faction_type.contains("철륵")
@@ -919,6 +925,7 @@ func _create_map_marker(
 	marker.size = Vector2(marker_side, marker_side)
 	marker.pivot_offset = Vector2.ONE * marker_side * 0.5
 	marker.focus_mode = Control.FOCUS_NONE
+	marker.disabled = not selectable
 	var start_province: String = str(data.get("start_province", ""))
 	var marker_uv: Vector2 = data.get(
 		"marker_uv",
@@ -1087,6 +1094,8 @@ func _load_first_texture(paths_value: Variant) -> Texture2D:
 func _select_faction_from_map(faction_id: String) -> void:
 	if not faction_buttons.has(faction_id):
 		return
+	if not ScenarioData.is_faction_playable_by_default(_get_scenario_id(), faction_id):
+		return
 	selected_faction_id = faction_id
 	var faction_button: Button = faction_buttons[faction_id]
 	faction_button.button_pressed = true
@@ -1167,7 +1176,9 @@ func _update_start_availability() -> void:
 	if start_button == null:
 		return
 	var data: Dictionary = _get_selected_faction_data()
-	var playable: bool = bool(data.get("playable", true))
+	var playable: bool = ScenarioData.is_faction_playable_by_default(
+		_get_scenario_id(), selected_faction_id
+	)
 	start_button.disabled = menu_locked or not playable
 	start_button.text = "선택한 역사 시작" if playable else "선택 불가"
 	if status_label == null or menu_locked:
@@ -1259,7 +1270,7 @@ func _rebuild_scenario_factions() -> void:
 
 	var scenario: Dictionary = _get_selected_scenario()
 	var faction_values: Array = scenario.get("factions", [])
-	var available_ids: Array[String] = []
+	var selectable_ids: Array[String] = []
 
 	for faction_value: Variant in faction_values:
 		if typeof(faction_value) != TYPE_DICTIONARY:
@@ -1268,7 +1279,8 @@ func _rebuild_scenario_factions() -> void:
 		var faction_id: String = str(faction_data.get("id", ""))
 		if faction_id == "":
 			continue
-		available_ids.append(faction_id)
+		if bool(faction_data.get("playable_by_default", false)):
+			selectable_ids.append(faction_id)
 
 		var button: Button = _create_faction_card(faction_data)
 		button.button_group = faction_group
@@ -1277,8 +1289,8 @@ func _rebuild_scenario_factions() -> void:
 		faction_buttons[faction_id] = button
 		_create_map_marker(faction_data)
 
-	if not available_ids.has(selected_faction_id):
-		selected_faction_id = available_ids[0] if not available_ids.is_empty() else "silla"
+	if not selectable_ids.has(selected_faction_id):
+		selected_faction_id = selectable_ids[0] if not selectable_ids.is_empty() else ""
 
 	if faction_buttons.has(selected_faction_id):
 		var selected_button: Button = faction_buttons[selected_faction_id]
@@ -1286,8 +1298,8 @@ func _rebuild_scenario_factions() -> void:
 
 	if faction_guide_label != null:
 		faction_guide_label.text = (
-			"한반도·당·몽골 고원과 일본의 야마토 조정·지방 세력을 "
-			+ "모두 처음부터 선택할 수 있습니다."
+			"활성 세력 중 신라·백제·고구려만 기본 선택할 수 있습니다. "
+			+ "잠긴 세력은 AI가 운영합니다."
 		)
 
 	_update_map_interaction_visuals()
@@ -1847,6 +1859,8 @@ func _apply_scenario_defaults(index: int) -> void:
 func _on_faction_toggled(pressed: bool, faction_id: String) -> void:
 	if not pressed:
 		return
+	if not ScenarioData.is_faction_playable_by_default(_get_scenario_id(), faction_id):
+		return
 
 	selected_faction_id = faction_id
 	_update_faction_details()
@@ -1901,7 +1915,9 @@ func _on_start_pressed() -> void:
 		return
 
 	var selected_faction: Dictionary = _get_selected_faction_data()
-	if not bool(selected_faction.get("playable", true)):
+	if not ScenarioData.is_faction_playable_by_default(
+		_get_scenario_id(), selected_faction_id
+	):
 		status_label.text = "이 시나리오에서는 선택할 수 없는 세력입니다."
 		return
 
@@ -1956,7 +1972,10 @@ func _set_menu_enabled(enabled: bool) -> void:
 		(button as Button).disabled = not enabled
 
 	for button in faction_buttons.values():
-		(button as Button).disabled = not enabled
+		var faction_button: Button = button as Button
+		faction_button.disabled = (
+			not enabled or not bool(faction_button.get_meta("selectable", false))
+		)
 
 	for button in map_marker_buttons.values():
 		(button as Button).disabled = not enabled
