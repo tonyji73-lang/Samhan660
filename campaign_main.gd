@@ -15,6 +15,7 @@ const SEASON_START_MONTH_BY_ID: Dictionary = {
 	"autumn": 7,
 	"winter": 10,
 }
+const FOOD_COLLECTION_RATE: float = 0.45
 const ATTACK_FOOD_COST: int = 500
 const CONTROLLER_PLAYER: String = "PLAYER"
 const CONTROLLER_AI: String = "AI"
@@ -1553,6 +1554,12 @@ func calculate_annual_harvest(province: Dictionary) -> int:
 	)
 
 
+func calculate_collected_harvest(province: Dictionary) -> int:
+	# 총 농업생산 중 주민 소비·종자·민간 보유분을 제외한 국가 징수분입니다.
+	# 향후 세율 정책은 이 고정 징수율을 정책값으로 교체할 수 있습니다.
+	return roundi(float(calculate_annual_harvest(province)) * FOOD_COLLECTION_RATE)
+
+
 func process_monthly_commerce_income() -> Array[String]:
 	var messages: Array[String] = []
 	var total_income: int = 0
@@ -1590,9 +1597,8 @@ func process_seasonal_harvest() -> Array[String]:
 		var controller: String = _get_province_controller(province)
 		if controller == CONTROLLER_INACTIVE:
 			continue
-		var harvest: int = roundi(
-			float(calculate_annual_harvest(province)) * harvest_rate
-		)
+		var collected_harvest: int = calculate_collected_harvest(province)
+		var harvest: int = roundi(float(collected_harvest) * harvest_rate)
 		province["food_stock"] = int(province.get("food_stock", 0)) + harvest
 		if controller == CONTROLLER_PLAYER:
 			player_harvest_total += harvest
