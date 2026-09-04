@@ -217,6 +217,7 @@ var officers_by_province: Dictionary = {
 @onready var governor_transfer_confirmation: ConfirmationDialog = $GovernorTransferConfirmation
 
 var pending_governor_transfer: Dictionary = {}
+var pending_transfer_orders: Array[Dictionary] = []
 
 
 func _ready() -> void:
@@ -381,6 +382,10 @@ func _connect_map_city_card() -> void:
 	_connect_button_once(
 		map_area.city_card_sortie_requested,
 		_on_city_card_sortie_requested
+	)
+	_connect_button_once(
+		map_area.city_card_move_requested,
+		_on_city_card_move_requested
 	)
 	_connect_button_once(
 		map_area.city_card_detail_requested,
@@ -608,6 +613,7 @@ func select_province(province_id: String, show_floating_card: bool = true) -> vo
 				"domestic": player_owned,
 				"recruit": player_owned,
 				"sortie": not attack_button.disabled,
+				"move": player_owned,
 				"detail": true,
 			}
 		)
@@ -629,6 +635,12 @@ func _on_city_card_sortie_requested(province_id: String) -> void:
 	if province_id != selected_province_id:
 		select_province(province_id)
 	_on_attack_button_pressed()
+
+
+func _on_city_card_move_requested(province_id: String) -> void:
+	if province_id != selected_province_id:
+		select_province(province_id)
+	_on_transfer_button_pressed()
 
 
 func _on_city_card_detail_requested(province_id: String) -> void:
@@ -897,6 +909,8 @@ func validate_province_transfer(request: Dictionary) -> Dictionary:
 
 	var source_officers: Array = officers_by_province.get(source_id, [])
 	for officer_name: String in requested_officers:
+		if is_officer_transfer_pending(officer_name):
+			return {"ok": false, "reason": "%s은(는) 이미 이동 중입니다." % officer_name}
 		if not source_officers.has(officer_name):
 			return {"ok": false, "reason": "%s은(는) 출발 영지에 배치되어 있지 않습니다." % officer_name}
 
@@ -929,10 +943,10 @@ func request_province_transfer(request: Dictionary) -> void:
 		)
 		governor_transfer_confirmation.popup_centered(Vector2i(480, 170))
 		return
-	apply_province_transfer(request, false)
+	queue_province_transfer(request, false)
 
 
-func apply_province_transfer(
+func queue_province_transfer(
 	request: Dictionary, governor_transfer_confirmed: bool = false
 ) -> Dictionary:
 	var validation: Dictionary = validate_province_transfer(request)
@@ -949,26 +963,31 @@ func apply_province_transfer(
 	var troop_count: int = int(request.get("troops", 0))
 	var requested_officers: Array = request.get("officers", [])
 	provinces[source_id]["troops"] = int(provinces[source_id]["troops"]) - troop_count
-	provinces[target_id]["troops"] = int(provinces[target_id]["troops"]) + troop_count
 
 	var source_officers: Array = officers_by_province.get(source_id, []).duplicate()
-	var target_officers: Array = officers_by_province.get(target_id, []).duplicate()
 	for officer_value: Variant in requested_officers:
 		var officer_name: String = str(officer_value)
 		source_officers.erase(officer_name)
-		if not target_officers.has(officer_name):
-			target_officers.append(officer_name)
 	officers_by_province[source_id] = source_officers
-	officers_by_province[target_id] = target_officers
 	if bool(validation.get("requires_governor_confirmation", false)):
 		provinces[source_id]["governor"] = "태수 없음"
 
+	pending_transfer_orders.append(
+		{
+			"source_id": source_id,
+			"target_id": target_id,
+			"faction": str(provinces[source_id].get("faction", "")),
+			"troops": troop_count,
+			"officers": requested_officers.duplicate(),
+			"remaining_turns": 1,
+		}
+	)
 	var parts: Array[String] = []
 	if troop_count > 0:
 		parts.append("병력 %d명" % troop_count)
 	for officer_value: Variant in requested_officers:
 		parts.append(str(officer_value))
-	var message: String = "%s에서 %s로 %s을(를) 이동시켰습니다." % [
+	var message: String = "%s에서 %s로 %s 이동을 명령했습니다. 1턴 후 도착합니다." % [
 		str(provinces[source_id].get("name", source_id)),
 		str(provinces[target_id].get("name", target_id)),
 		", ".join(parts),
@@ -979,10 +998,56 @@ func apply_province_transfer(
 	return {"ok": true, "message": message}
 
 
+func is_officer_transfer_pending(officer_name: String) -> bool:
+	for order: Dictionary in pending_transfer_orders:
+		var order_officers: Array = order.get("officers", [])
+		if order_officers.has(officer_name):
+			return true
+	return false
+
+
+func process_pending_transfer_orders() -> String:
+	var remaining_orders: Array[Dictionary] = []
+	var messages: Array[String] = []
+	for order_value: Variant in pending_transfer_orders:
+		if typeof(order_value) != TYPE_DICTIONARY:
+			continue
+		var order: Dictionary = (order_value as Dictionary).duplicate(true)
+		order["remaining_turns"] = maxi(0, int(order.get("remaining_turns", 1)) - 1)
+		if int(order["remaining_turns"]) > 0:
+			remaining_orders.append(order)
+			continue
+		messages.append_array(_resolve_pending_transfer_order(order))
+	pending_transfer_orders = remaining_orders
+	return "\n".join(messages)
+
+
+func _resolve_pending_transfer_order(order: Dictionary) -> Array[String]:
+	var messages: Array[String] = []
+	var target_id: String = str(order.get("target_id", ""))
+	if not provinces.has(target_id):
+		return messages
+	var target_name: String = str(provinces[target_id].get("name", target_id))
+	var troop_count: int = maxi(0, int(order.get("troops", 0)))
+	if troop_count > 0:
+		provinces[target_id]["troops"] = int(provinces[target_id]["troops"]) + troop_count
+		messages.append("병력 %d명이 %s에 도착했습니다." % [troop_count, target_name])
+	var target_officers: Array = officers_by_province.get(target_id, []).duplicate()
+	for officer_value: Variant in order.get("officers", []):
+		var officer_name: String = str(officer_value)
+		if officer_name == "":
+			continue
+		if not target_officers.has(officer_name):
+			target_officers.append(officer_name)
+		messages.append("%s이 %s에 도착했습니다." % [officer_name, target_name])
+	officers_by_province[target_id] = target_officers
+	return messages
+
+
 func _on_governor_transfer_confirmed() -> void:
 	var request: Dictionary = pending_governor_transfer
 	pending_governor_transfer = {}
-	var result: Dictionary = apply_province_transfer(request, true)
+	var result: Dictionary = queue_province_transfer(request, true)
 	if not bool(result.get("ok", false)):
 		transfer_panel.show_error(str(result.get("reason", "이동할 수 없습니다.")))
 
@@ -1164,6 +1229,7 @@ func _on_end_turn_button_pressed() -> void:
 		season_index = 0
 		year += 1
 
+	var transfer_message: String = process_pending_transfer_orders()
 	var public_order_message: String = process_public_order()
 
 	for province_value in provinces.values():
@@ -1190,6 +1256,8 @@ func _on_end_turn_button_pressed() -> void:
 		select_province(selected_province_id)
 
 	log_label.text = "계절이 지나 세금과 군량을 확보했습니다."
+	if transfer_message != "":
+		log_label.text += "\n" + transfer_message
 
 	if public_order_message != "":
 		log_label.text += "\n" + public_order_message
@@ -1471,6 +1539,9 @@ func _ensure_additional_officer_assignments() -> void:
 
 		for officer_name_value in province_officers:
 			assigned_officers[str(officer_name_value)] = true
+	for order: Dictionary in pending_transfer_orders:
+		for officer_name_value: Variant in order.get("officers", []):
+			assigned_officers[str(officer_name_value)] = true
 
 	for officer_name_value in ADDITIONAL_OFFICER_ASSIGNMENTS.keys():
 		var officer_name: String = str(officer_name_value)
@@ -1534,6 +1605,7 @@ func _on_save_button_pressed() -> void:
 		"selected_province_id": selected_province_id,
 		"provinces": provinces,
 		"officers_by_province": officers_by_province,
+		"pending_transfer_orders": pending_transfer_orders,
 		"strategy_state": strategy_state,
 	}
 	var save_file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -1616,6 +1688,14 @@ func _on_load_button_pressed() -> void:
 	if typeof(save_data.get("officers_by_province", null)) == TYPE_DICTIONARY:
 		var saved_assignments: Dictionary = save_data["officers_by_province"]
 		officers_by_province = saved_assignments.duplicate(true)
+	pending_transfer_orders.clear()
+	var saved_transfer_orders: Variant = save_data.get("pending_transfer_orders", [])
+	if typeof(saved_transfer_orders) == TYPE_ARRAY:
+		for order_value: Variant in saved_transfer_orders:
+			if typeof(order_value) == TYPE_DICTIONARY:
+				pending_transfer_orders.append(
+					(order_value as Dictionary).duplicate(true)
+				)
 
 	_ensure_additional_officer_assignments()
 
