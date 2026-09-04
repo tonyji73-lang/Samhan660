@@ -1,0 +1,184 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://province_transfer_panel.gd" id="1_transfer"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxPanel"]
+bg_color = Color(0.055, 0.047, 0.037, 0.97)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.72, 0.58, 0.31, 0.78)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[node name="ProvinceTransferPanel" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_transfer")
+
+[node name="DimBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.38)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(460, 430)
+layout_mode = 2
+mouse_filter = 0
+theme_override_styles/panel = SubResource("StyleBoxPanel")
+
+[node name="Margin" type="MarginContainer" parent="Center/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 16
+
+[node name="Content" type="VBoxContainer" parent="Center/Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="Title" type="Label" parent="Center/Panel/Margin/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.86, 0.62, 1)
+theme_override_font_sizes/font_size = 20
+text = "지원/이동"
+
+[node name="SourceRow" type="HBoxContainer" parent="Center/Panel/Margin/Content"]
+layout_mode = 2
+
+[node name="SourceLabel" type="Label" parent="Center/Panel/Margin/Content/SourceRow"]
+custom_minimum_size = Vector2(92, 0)
+layout_mode = 2
+text = "출발"
+
+[node name="SourceValue" type="Label" parent="Center/Panel/Margin/Content/SourceRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-"
+
+[node name="DestinationRow" type="HBoxContainer" parent="Center/Panel/Margin/Content"]
+layout_mode = 2
+
+[node name="DestinationLabel" type="Label" parent="Center/Panel/Margin/Content/DestinationRow"]
+custom_minimum_size = Vector2(92, 0)
+layout_mode = 2
+text = "목적지"
+
+[node name="DestinationOption" type="OptionButton" parent="Center/Panel/Margin/Content/DestinationRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Separator" type="HSeparator" parent="Center/Panel/Margin/Content"]
+layout_mode = 2
+
+[node name="TroopRow" type="HBoxContainer" parent="Center/Panel/Margin/Content"]
+layout_mode = 2
+
+[node name="TroopLabel" type="Label" parent="Center/Panel/Margin/Content/TroopRow"]
+custom_minimum_size = Vector2(92, 0)
+layout_mode = 2
+text = "병력"
+
+[node name="TroopSpin" type="SpinBox" parent="Center/Panel/Margin/Content/TroopRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+step = 100.0
+allow_greater = false
+allow_lesser = false
+
+[node name="FoodRow" type="HBoxContainer" parent="Center/Panel/Margin/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="FoodLabel" type="Label" parent="Center/Panel/Margin/Content/FoodRow"]
+custom_minimum_size = Vector2(92, 0)
+layout_mode = 2
+text = "군량"
+
+[node name="FoodSpin" type="SpinBox" parent="Center/Panel/Margin/Content/FoodRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+step = 100.0
+allow_greater = false
+allow_lesser = false
+
+[node name="GoldRow" type="HBoxContainer" parent="Center/Panel/Margin/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="GoldLabel" type="Label" parent="Center/Panel/Margin/Content/GoldRow"]
+custom_minimum_size = Vector2(92, 0)
+layout_mode = 2
+text = "금"
+
+[node name="GoldSpin" type="SpinBox" parent="Center/Panel/Margin/Content/GoldRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+step = 100.0
+allow_greater = false
+allow_lesser = false
+
+[node name="OfficerLabel" type="Label" parent="Center/Panel/Margin/Content"]
+layout_mode = 2
+text = "장수 이동 (복수 선택 가능)"
+
+[node name="OfficerList" type="ItemList" parent="Center/Panel/Margin/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 140)
+layout_mode = 2
+size_flags_vertical = 3
+select_mode = 1
+
+[node name="StatusLabel" type="Label" parent="Center/Panel/Margin/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.56, 0.46, 1)
+autowrap_mode = 2
+
+[node name="Actions" type="HBoxContainer" parent="Center/Panel/Margin/Content"]
+layout_mode = 2
+alignment = 2
+theme_override_constants/separation = 8
+
+[node name="CancelButton" type="Button" parent="Center/Panel/Margin/Content/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 32)
+layout_mode = 2
+text = "취소"
+
+[node name="ExecuteButton" type="Button" parent="Center/Panel/Margin/Content/Actions"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 32)
+layout_mode = 2
+text = "이동 실행"
