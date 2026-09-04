@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0a0uhhmucnsa" path="res://campaign_main.gd" id="1_aa4yi"]
 [ext_resource type="Script" uid="uid://bftuww74m2mtc" path="res://map_area.gd" id="2_jkp7o"]
+[ext_resource type="PackedScene" path="res://campaign_navigation_menu.tscn" id="3_navigation"]
 
 [node name="CampaignMain" type="Control" unique_id=1330427578]
 layout_mode = 3
@@ -11,6 +12,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aa4yi")
+
+[node name="CampaignNavigationMenu" parent="." instance=ExtResource("3_navigation")]
 
 [node name="MainVBox" type="VBoxContainer" parent="." unique_id=1026816863]
 layout_mode = 1

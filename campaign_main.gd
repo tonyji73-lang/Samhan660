@@ -8,6 +8,10 @@ const SamhanStrategySystems = preload("res://samhan_strategy_systems.gd")
 const SAVE_PATH: String = "user://campaign_save_35_regions_v1.json"
 const SEASONS: Array[String] = ["봄", "여름", "가을", "겨울"]
 const ATTACK_FOOD_COST: int = 500
+
+@export_group("Project Paths")
+@export_file("*.tscn") var setup_scene_path: String = "res://new_game_setup.tscn"
+@export_file("*.tscn") var title_scene_path: String = "res://title_screen.tscn"
 const FACTION_ID_TO_NAME: Dictionary = {
 	"silla": "신라",
 	"baekje": "백제",
@@ -169,6 +173,7 @@ var officers_by_province: Dictionary = {
 
 @onready var map_area: Control = $MainVBox/Content/MapPanel/MapArea
 @onready var province_panel: PanelContainer = $MainVBox/Content/ProvincePanel
+@onready var navigation_menu: Control = $CampaignNavigationMenu
 
 @onready var date_label: Label = $MainVBox/TopBar/DateLabel
 @onready var gold_label: Label = $MainVBox/TopBar/GoldLabel
@@ -211,6 +216,7 @@ func _ready() -> void:
 
 	_bind_city_buttons()
 	_connect_map_city_card()
+	_connect_navigation_menu()
 	_connect_button_once(
 		officer_list.item_selected,
 		_on_officer_list_item_selected
@@ -335,6 +341,33 @@ func _connect_map_city_card() -> void:
 		map_area.city_card_detail_requested,
 		_on_city_card_detail_requested
 	)
+
+
+func _connect_navigation_menu() -> void:
+	navigation_menu.connect("navigation_requested", _on_navigation_requested)
+	navigation_menu.connect("quit_requested", _on_navigation_quit_requested)
+
+
+func _on_navigation_requested(destination: String) -> void:
+	attack_source_id = ""
+	map_area.hide_city_card()
+	province_panel.visible = false
+
+	var root: Window = get_tree().root
+	if root.has_meta("new_game_settings"):
+		root.remove_meta("new_game_settings")
+
+	var target_path: String = title_scene_path
+	if destination == "setup":
+		target_path = setup_scene_path
+
+	var change_error: Error = get_tree().change_scene_to_file(target_path)
+	if change_error != OK:
+		log_label.text = "화면을 열 수 없습니다: %s" % target_path
+
+
+func _on_navigation_quit_requested() -> void:
+	get_tree().quit()
 
 
 func _apply_new_game_settings() -> void:
