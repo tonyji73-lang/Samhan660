@@ -7,6 +7,14 @@ const SamhanStrategySystems = preload("res://samhan_strategy_systems.gd")
 
 const SAVE_PATH: String = "user://campaign_save_35_regions_v1.json"
 const SEASONS: Array[String] = ["봄", "여름", "가을", "겨울"]
+const MONTHS_PER_YEAR: int = 12
+const MONTHS_PER_SEASON: int = 3
+const SEASON_START_MONTH_BY_ID: Dictionary = {
+	"spring": 1,
+	"summer": 4,
+	"autumn": 7,
+	"winter": 10,
+}
 const ATTACK_FOOD_COST: int = 500
 const CONTROLLER_PLAYER: String = "PLAYER"
 const CONTROLLER_AI: String = "AI"
@@ -52,6 +60,7 @@ const ADDITIONAL_OFFICER_ASSIGNMENTS: Dictionary = {
 }
 
 var year: int = 660
+var month: int = 1
 var season_index: int = 0
 var gold: int = 1000
 var food: int = 3000
@@ -471,7 +480,8 @@ func _apply_new_game_settings() -> void:
 		player_faction = ScenarioData.get_faction_name(scenario_id, faction_id)
 	year = int(settings.get("scenario_year", 660))
 	var season_id: String = str(settings.get("scenario_season", "spring"))
-	season_index = int(SEASON_ID_TO_INDEX.get(season_id, 0))
+	month = int(SEASON_START_MONTH_BY_ID.get(season_id, 1))
+	_sync_season_from_month()
 
 	# 선택한 연도에 맞춰 소속 세력만 다시 배치합니다.
 	# provinces 전체를 대입하면 _apply_legacy_core_province_values()가
@@ -1369,11 +1379,7 @@ func _on_recruit_button_pressed() -> void:
 
 
 func _on_end_turn_button_pressed() -> void:
-	season_index += 1
-
-	if season_index >= SEASONS.size():
-		season_index = 0
-		year += 1
+	var season_changed: bool = _advance_month()
 
 	var transfer_message: String = process_pending_transfer_orders()
 	var public_order_message: String = process_public_order()
@@ -1394,14 +1400,16 @@ func _on_end_turn_button_pressed() -> void:
 	var ai_message: String = run_enemy_ai_turns()
 
 	# 건설·연구·교역과, 봄에는 인재 보충·혼인·출산·자녀 성장을 처리합니다.
-	var strategy_message: String = _process_strategy_season()
+	var strategy_message: String = (
+		_process_strategy_season() if season_changed else ""
+	)
 
 	update_top_bar()
 
 	if selected_province_id != "":
 		select_province(selected_province_id)
 
-	log_label.text = "계절이 지나 세금과 군량을 확보했습니다."
+	log_label.text = "%d년 %d월이 되었습니다." % [year, month]
 	if transfer_message != "":
 		log_label.text += "\n" + transfer_message
 
@@ -1413,6 +1421,21 @@ func _on_end_turn_button_pressed() -> void:
 
 	if strategy_message != "":
 		log_label.text += "\n" + strategy_message
+
+
+func _advance_month() -> bool:
+	var previous_season_index: int = season_index
+	month += 1
+	if month > MONTHS_PER_YEAR:
+		month = 1
+		year += 1
+	_sync_season_from_month()
+	return season_index != previous_season_index
+
+
+func _sync_season_from_month() -> void:
+	month = clampi(month, 1, MONTHS_PER_YEAR)
+	season_index = floori(float(month - 1) / float(MONTHS_PER_SEASON))
 
 
 func _process_strategy_season() -> String:
@@ -1741,6 +1764,7 @@ func _on_save_button_pressed() -> void:
 	var save_data: Dictionary = {
 		"save_version": 3,
 		"year": year,
+		"month": month,
 		"season_index": season_index,
 		"gold": gold,
 		"food": food,
@@ -1765,8 +1789,9 @@ func _on_save_button_pressed() -> void:
 		return
 
 	save_file.store_string(JSON.stringify(save_data, "\t"))
-	log_label.text = "%d년 %s 진행 상황을 저장했습니다." % [
+	log_label.text = "%d년 %d월 · %s 진행 상황을 저장했습니다." % [
 		year,
+		month,
 		SEASONS[season_index],
 	]
 
@@ -1795,7 +1820,16 @@ func _on_load_button_pressed() -> void:
 		return
 
 	year = int(save_data.get("year", 660))
-	season_index = clampi(int(save_data.get("season_index", 0)), 0, 3)
+	if save_data.has("month"):
+		month = clampi(int(save_data.get("month", 1)), 1, MONTHS_PER_YEAR)
+	else:
+		var legacy_season_index: int = clampi(
+			int(save_data.get("season_index", 0)),
+			0,
+			SEASONS.size() - 1
+		)
+		month = legacy_season_index * MONTHS_PER_SEASON + 1
+	_sync_season_from_month()
 	gold = maxi(0, int(save_data.get("gold", 1000)))
 	food = maxi(0, int(save_data.get("food", 3000)))
 	player_faction = str(save_data.get("player_faction", "신라"))
@@ -1863,8 +1897,9 @@ func _on_load_button_pressed() -> void:
 	update_top_bar()
 	select_province(requested_selection)
 	_refresh_map_markers()
-	log_label.text = "%d년 %s 저장 기록을 불러왔습니다." % [
+	log_label.text = "%d년 %d월 · %s 저장 기록을 불러왔습니다." % [
 		year,
+		month,
 		SEASONS[season_index],
 	]
 
@@ -1922,9 +1957,10 @@ func update_top_bar() -> void:
 		"가상" if play_style == "fictional" else "역사"
 	)
 	date_label.text = (
-		"%d년 %s · %s · %s"
+		"%d년 %d월 · %s · %s · %s"
 		% [
 			year,
+			month,
 			SEASONS[season_index],
 			mode_label,
 			DIFFICULTY_NAMES.get(difficulty, "보통"),
