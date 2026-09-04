@@ -206,6 +206,7 @@ func _ready() -> void:
 	_ensure_additional_officer_assignments()
 
 	_bind_city_buttons()
+	_connect_map_city_card()
 	_connect_button_once(
 		officer_list.item_selected,
 		_on_officer_list_item_selected
@@ -224,7 +225,7 @@ func _ready() -> void:
 
 	update_top_bar()
 	var starting_province_id: String = _get_starting_province_id()
-	select_province(starting_province_id)
+	select_province(starting_province_id, false)
 	map_area.call_deferred("focus_on_province", starting_province_id, 2.15)
 	log_label.text = (
 		"%s · %s 난이도로 시작합니다."
@@ -308,6 +309,25 @@ func _bind_city_buttons() -> void:
 				"CampaignMain: MapArea에서 %s 버튼을 찾을 수 없습니다."
 				% button_name
 			)
+
+
+func _connect_map_city_card() -> void:
+	_connect_button_once(
+		map_area.city_card_domestic_requested,
+		_on_city_card_domestic_requested
+	)
+	_connect_button_once(
+		map_area.city_card_recruit_requested,
+		_on_city_card_recruit_requested
+	)
+	_connect_button_once(
+		map_area.city_card_sortie_requested,
+		_on_city_card_sortie_requested
+	)
+	_connect_button_once(
+		map_area.city_card_detail_requested,
+		_on_city_card_detail_requested
+	)
 
 
 func _apply_new_game_settings() -> void:
@@ -456,7 +476,7 @@ func _get_starting_province_id() -> String:
 			return "geumseong"
 
 
-func select_province(province_id: String) -> void:
+func select_province(province_id: String, show_floating_card: bool = true) -> void:
 	if not provinces.has(province_id):
 		return
 
@@ -482,6 +502,40 @@ func select_province(province_id: String) -> void:
 
 	update_attack_button(province_id)
 	update_province_log(province_id)
+	if show_floating_card:
+		map_area.show_city_card(
+			province_id,
+			province,
+			{
+				"domestic": player_owned,
+				"recruit": player_owned,
+				"sortie": not attack_button.disabled,
+				"detail": true,
+			}
+		)
+
+
+func _on_city_card_domestic_requested(province_id: String) -> void:
+	if province_id != selected_province_id:
+		select_province(province_id)
+	_on_develop_button_pressed()
+
+
+func _on_city_card_recruit_requested(province_id: String) -> void:
+	if province_id != selected_province_id:
+		select_province(province_id)
+	_on_recruit_button_pressed()
+
+
+func _on_city_card_sortie_requested(province_id: String) -> void:
+	if province_id != selected_province_id:
+		select_province(province_id)
+	_on_attack_button_pressed()
+
+
+func _on_city_card_detail_requested(_province_id: String) -> void:
+	# Commit 3에서 기존 ProvincePanel의 contextual 표시와 연결합니다.
+	pass
 
 
 func update_province_log(province_id: String) -> void:

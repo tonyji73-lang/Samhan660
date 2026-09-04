@@ -3,6 +3,12 @@ extends Control
 const WorldMapData = preload("res://world_map_data.gd")
 const ScenarioData = preload("res://scenario_data.gd")
 const Korea35Data = preload("res://korea_35_data.gd")
+const FloatingCityCardScene = preload("res://floating_city_card.tscn")
+
+signal city_card_domestic_requested(province_id: String)
+signal city_card_recruit_requested(province_id: String)
+signal city_card_sortie_requested(province_id: String)
+signal city_card_detail_requested(province_id: String)
 
 const MAP_BRIGHTNESS_SHADER_CODE: String = """
 shader_type canvas_item;
@@ -532,6 +538,8 @@ var map_pan_offset: Vector2 = Vector2.ZERO
 var map_dragging: bool = false
 var map_drag_last_position: Vector2 = Vector2.ZERO
 var refresh_elapsed: float = 0.0
+var floating_city_card: Control
+var floating_city_card_province_id: String = ""
 
 
 func _ready() -> void:
@@ -546,10 +554,100 @@ func _ready() -> void:
 	_configure_map_background()
 	_build_map_details()
 	_collect_city_buttons()
+	_build_floating_city_card()
 	resized.connect(_layout_city_buttons)
 	gui_input.connect(_on_map_gui_input)
 	call_deferred("_layout_city_buttons")
 	call_deferred("_refresh_marker_data")
+
+
+func _build_floating_city_card() -> void:
+	floating_city_card = FloatingCityCardScene.instantiate() as Control
+	floating_city_card.name = "FloatingCityCard"
+	floating_city_card.visible = false
+	floating_city_card.z_index = 3500
+	add_child(floating_city_card)
+	floating_city_card.connect(
+		"domestic_requested",
+		_on_city_card_action.bind(city_card_domestic_requested)
+	)
+	floating_city_card.connect(
+		"recruit_requested",
+		_on_city_card_action.bind(city_card_recruit_requested)
+	)
+	floating_city_card.connect(
+		"sortie_requested",
+		_on_city_card_action.bind(city_card_sortie_requested)
+	)
+	floating_city_card.connect(
+		"detail_requested",
+		_on_city_card_action.bind(city_card_detail_requested)
+	)
+
+
+func _on_city_card_action(province_id: String, action_signal: Signal) -> void:
+	action_signal.emit(province_id)
+
+
+func show_city_card(
+	province_id: String,
+	province: Dictionary,
+	action_states: Dictionary = {}
+) -> void:
+	if floating_city_card == null or not city_buttons.has(province_id):
+		return
+	floating_city_card_province_id = province_id
+	floating_city_card.call("configure", province_id, province, action_states)
+	floating_city_card.visible = true
+	floating_city_card.reset_size()
+	call_deferred("_position_floating_city_card")
+
+
+func hide_city_card() -> void:
+	floating_city_card_province_id = ""
+	if floating_city_card != null:
+		floating_city_card.visible = false
+
+
+func _position_floating_city_card() -> void:
+	if (
+		floating_city_card == null
+		or not floating_city_card.visible
+		or not city_buttons.has(floating_city_card_province_id)
+	):
+		return
+
+	var marker_button: Button = city_buttons[floating_city_card_province_id]
+	var marker_anchor: Vector2 = marker_button.position + Vector2(
+		marker_button.size.x * 0.5,
+		marker_button.size.y
+	)
+	var card_size: Vector2 = floating_city_card.size
+	if card_size.x <= 0.0 or card_size.y <= 0.0:
+		card_size = floating_city_card.custom_minimum_size
+
+	const MARGIN: float = 12.0
+	const GAP: float = 18.0
+	var card_position: Vector2 = Vector2(
+		marker_anchor.x + marker_button.size.x * 0.45 + GAP,
+		marker_anchor.y - card_size.y - GAP
+	)
+	if card_position.x + card_size.x > size.x - MARGIN:
+		card_position.x = marker_anchor.x - marker_button.size.x * 0.45 - card_size.x - GAP
+	if card_position.y < MARGIN:
+		card_position.y = marker_anchor.y + GAP
+
+	card_position.x = clampf(
+		card_position.x,
+		MARGIN,
+		maxf(MARGIN, size.x - card_size.x - MARGIN)
+	)
+	card_position.y = clampf(
+		card_position.y,
+		MARGIN,
+		maxf(MARGIN, size.y - card_size.y - MARGIN)
+	)
+	floating_city_card.position = card_position.round()
 
 
 func _process(delta: float) -> void:
@@ -928,6 +1026,7 @@ func _layout_city_buttons() -> void:
 		# 확대했을 때 범위를 넘어 에러가 납니다. 0~2000 사이로 눌러서 씁니다.
 		button.z_index = clampi(int(marker_anchor.y), 0, 2000)
 
+	_position_floating_city_card()
 	_layout_map_details(map_rect)
 
 
@@ -1439,6 +1538,8 @@ func _on_map_gui_input(event: InputEvent) -> void:
 			return
 
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT:
+			if mouse_event.pressed:
+				hide_city_card()
 			map_dragging = mouse_event.pressed
 			map_drag_last_position = mouse_event.position
 			accept_event()
@@ -1456,6 +1557,16 @@ func _on_map_gui_input(event: InputEvent) -> void:
 		_clamp_map_pan()
 		_layout_city_buttons()
 		accept_event()
+
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if (
+		event.is_action_pressed("ui_cancel")
+		and floating_city_card != null
+		and floating_city_card.visible
+	):
+		hide_city_card()
+		get_viewport().set_input_as_handled()
 
 
 func _set_map_zoom(
