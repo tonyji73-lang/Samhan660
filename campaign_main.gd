@@ -255,6 +255,21 @@ func _ready() -> void:
 	)
 
 
+func _input(event: InputEvent) -> void:
+	if not event.is_action_pressed("ui_cancel"):
+		return
+	if navigation_menu.get_popup().visible:
+		return
+	var confirmation_dialog: Window = navigation_menu.get_node_or_null(
+		"ConfirmationDialog"
+	) as Window
+	if confirmation_dialog != null and confirmation_dialog.visible:
+		return
+	if province_panel.visible:
+		_hide_province_detail()
+		get_viewport().set_input_as_handled()
+
+
 func _apply_legacy_core_province_values() -> void:
 	# 기존 9개 핵심 도시의 경제·병력·장수 수치를 그대로 승계합니다.
 	for province_id_value: Variant in legacy_provinces.keys():
@@ -592,9 +607,10 @@ func _on_city_card_sortie_requested(province_id: String) -> void:
 
 
 func _on_city_card_detail_requested(province_id: String) -> void:
+	var detail_was_visible: bool = province_panel.visible
 	if province_id != selected_province_id:
 		select_province(province_id)
-	province_panel.visible = true
+	province_panel.visible = not detail_was_visible
 
 
 func _hide_province_detail() -> void:
