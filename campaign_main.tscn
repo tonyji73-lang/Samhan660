@@ -157,12 +157,18 @@ offset_bottom = 685.0
 text = "사별 (신라)"
 
 [node name="ProvincePanel" type="PanelContainer" parent="MainVBox/Content" unique_id=2141073613]
+visible = false
 custom_minimum_size = Vector2(380, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="ProvinceVBox" type="VBoxContainer" parent="MainVBox/Content/ProvincePanel" unique_id=323331976]
 layout_mode = 2
+
+[node name="CloseDetailButton" type="Button" parent="MainVBox/Content/ProvincePanel/ProvinceVBox"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "상세 닫기"
 
 [node name="ProvinceNameLabel" type="Label" parent="MainVBox/Content/ProvincePanel/ProvinceVBox" unique_id=403331358]
 layout_mode = 2

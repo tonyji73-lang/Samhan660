@@ -168,6 +168,7 @@ var officers_by_province: Dictionary = {
 # ==========================================
 
 @onready var map_area: Control = $MainVBox/Content/MapPanel/MapArea
+@onready var province_panel: PanelContainer = $MainVBox/Content/ProvincePanel
 
 @onready var date_label: Label = $MainVBox/TopBar/DateLabel
 @onready var gold_label: Label = $MainVBox/TopBar/GoldLabel
@@ -195,6 +196,9 @@ var officers_by_province: Dictionary = {
 @onready var commerce_button: Button = $MainVBox/Content/ProvincePanel/ProvinceVBox/CommerceButton
 @onready var recruit_button: Button = $MainVBox/Content/ProvincePanel/ProvinceVBox/RecruitButton
 @onready var attack_button: Button = $MainVBox/Content/ProvincePanel/ProvinceVBox/AttackButton
+@onready var close_detail_button: Button = (
+	$MainVBox/Content/ProvincePanel/ProvinceVBox/CloseDetailButton
+)
 
 @onready var officer_list: ItemList = %OfficerList
 @onready var officer_detail_label: Label = %OfficerDetailLabel
@@ -215,6 +219,7 @@ func _ready() -> void:
 	_connect_button_once(commerce_button.pressed, _on_commerce_button_pressed)
 	_connect_button_once(recruit_button.pressed, _on_recruit_button_pressed)
 	_connect_button_once(attack_button.pressed, _on_attack_button_pressed)
+	_connect_button_once(close_detail_button.pressed, _hide_province_detail)
 	_connect_button_once(end_turn_button.pressed, _on_end_turn_button_pressed)
 
 	if save_button != null:
@@ -222,6 +227,8 @@ func _ready() -> void:
 
 	if load_button != null:
 		_connect_button_once(load_button.pressed, _on_load_button_pressed)
+
+	province_panel.visible = false
 
 	update_top_bar()
 	var starting_province_id: String = _get_starting_province_id()
@@ -533,9 +540,14 @@ func _on_city_card_sortie_requested(province_id: String) -> void:
 	_on_attack_button_pressed()
 
 
-func _on_city_card_detail_requested(_province_id: String) -> void:
-	# Commit 3에서 기존 ProvincePanel의 contextual 표시와 연결합니다.
-	pass
+func _on_city_card_detail_requested(province_id: String) -> void:
+	if province_id != selected_province_id:
+		select_province(province_id)
+	province_panel.visible = true
+
+
+func _hide_province_detail() -> void:
+	province_panel.visible = false
 
 
 func update_province_log(province_id: String) -> void:
