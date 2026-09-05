@@ -4,6 +4,12 @@ const Korea35Data = preload("res://korea_35_data.gd")
 const WorldMapData = preload("res://world_map_data.gd")
 const ScenarioData = preload("res://scenario_data.gd")
 const SamhanStrategySystems = preload("res://samhan_strategy_systems.gd")
+const ProductionSystem = preload("res://production_system.gd")
+const ProductionData = preload("res://production_data.gd")
+const ProductionOverlay = preload("res://production_overlay.gd")
+const IronSupplyData = preload("res://iron_supply_data.gd")
+# Dependency supplied only by isolated tests; never loaded from campaign saves.
+var iron_supply_rules: Dictionary = IronSupplyData.SCENARIOS
 
 const SAVE_PATH: String = "user://campaign_save_35_regions_v1.json"
 const SEASONS: Array[String] = ["봄", "여름", "가을", "겨울"]
@@ -71,6 +77,7 @@ var player_faction_id: String = "silla"
 var faction_controllers: Dictionary = {}
 var play_style: String = "historical"
 var difficulty: String = "normal"
+# Campaign start identity: advancing the calendar must never change this ID.
 var scenario_id: String = "baekje_fall_660"
 var ai_recruitment_amount: int = 500
 var ai_attack_ratio: float = 3.5
@@ -169,6 +176,7 @@ var officers: Dictionary = {
 # 호출되지 않아 죽어 있었습니다.
 var strategy: SamhanStrategySystems = SamhanStrategySystems.new()
 var strategy_state: Dictionary = {}
+var production_overlay: Control
 
 var officers_by_province: Dictionary = {
 	"ansi": ["양만춘"],
@@ -240,9 +248,19 @@ func _ready() -> void:
 	_refresh_faction_controllers()
 	_ensure_province_food_economy()
 	_ensure_additional_officer_assignments()
+	# F6로 캠페인 씬을 직접 실행해도 생산/연구/건설 상태를 준비합니다.
+	if strategy_state.is_empty():
+		_init_strategy_state()
 
 	_bind_city_buttons()
 	_connect_map_city_card()
+	var production_layer := CanvasLayer.new()
+	production_layer.name = "ProductionLayer"
+	production_layer.layer = 100
+	add_child(production_layer)
+	production_overlay = ProductionOverlay.new()
+	production_overlay.name = "ProductionOverlay"
+	production_layer.add_child(production_overlay)
 	_connect_navigation_menu()
 	_connect_button_once(
 		officer_list.item_selected,
@@ -303,6 +321,10 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("ui_cancel"):
+		return
+	if production_overlay != null and production_overlay.visible:
+		production_overlay.hide()
+		get_viewport().set_input_as_handled()
 		return
 	if governor_transfer_confirmation.visible:
 		return
@@ -447,6 +469,7 @@ func _bind_city_buttons() -> void:
 
 
 func _connect_map_city_card() -> void:
+	_connect_button_once(map_area.city_card_production_requested, _on_city_card_production_requested)
 	_connect_button_once(
 		map_area.city_card_domestic_requested,
 		_on_city_card_domestic_requested
@@ -544,6 +567,9 @@ func _apply_new_game_settings() -> void:
 	# 전략 상태는 provinces·officers·season_index가 모두 확정된 뒤에
 	# 만들어야 합니다.
 	_init_strategy_state()
+	# Only the new-game settings path grants scenario starting technology.
+	# _init_strategy_state() is also used by legacy loads and must not grant it.
+	IronSupplyData.apply_new_game_technologies(strategy_state, scenario_id)
 
 
 func _init_strategy_state() -> void:
@@ -692,6 +718,7 @@ func select_province(province_id: String, show_floating_card: bool = true) -> vo
 			province,
 			{
 				"domestic": player_owned,
+				"production": player_owned,
 				"recruit": player_owned,
 				"sortie": not attack_button.disabled,
 				"move": player_owned,
@@ -704,6 +731,131 @@ func _on_city_card_domestic_requested(province_id: String) -> void:
 	if province_id != selected_province_id:
 		select_province(province_id)
 	_on_develop_button_pressed()
+
+
+func _on_city_card_production_requested(province_id: String) -> void:
+	if ProductionSystem.ownership_reason(provinces, province_id, player_faction) != "":
+		return
+	map_area.hide_city_card()
+	province_panel.hide()
+	production_overlay.call("open_for_province", self, province_id)
+
+
+func get_production_view_model(province_id: String, recipe_id: String) -> Dictionary:
+	if not provinces.has(province_id) or not ProductionData.recipe_is_enabled(recipe_id):
+		return {}
+	var recipe: Dictionary = ProductionData.RECIPES[recipe_id]
+	var owned: bool = ProductionSystem.ownership_reason(provinces, province_id, player_faction) == ""
+	var faction: String = str(provinces[province_id].get("faction", ""))
+	var order: Dictionary = strategy_state.get("city_production", {}).get(province_id, {}).get(recipe_id, {})
+	var validation: Dictionary = ProductionSystem.validate_batch(strategy_state, provinces, province_id, recipe_id, player_faction, gold, scenario_id, iron_supply_rules)
+	var regional_reason: String = IronSupplyData.blocked_reason(scenario_id, province_id, iron_supply_rules) if bool(recipe.get("regional_supply", false)) else ""
+	var research_options: Array[Dictionary] = _production_requirement_options(province_id, faction, recipe["research"], true, owned)
+	var building_options: Array[Dictionary] = _production_requirement_options(province_id, faction, recipe["buildings"], false, owned)
+	var research_status: Array[String] = []
+	var building_status: Array[String] = []
+	var can_research: bool = false
+	var can_build: bool = false
+	for option: Dictionary in research_options:
+		research_status.append(option["status"])
+		can_research = can_research or bool(option["can_execute"])
+	for option: Dictionary in building_options:
+		building_status.append(option["status"])
+		can_build = can_build or bool(option["can_execute"])
+	var reservations: Array[String] = []
+	for id: String in ProductionData.RECIPE_ORDER:
+		var reservation: Dictionary = strategy_state.get("city_production", {}).get(province_id, {}).get(id, {})
+		reservations.append("%s: %s" % [ProductionData.RECIPES[id]["name"], "예약" if bool(reservation.get("enabled", false)) else "중지"])
+	return {
+		"name": provinces[province_id]["name"], "year": year, "month": month, "gold": gold, "owned": owned,
+		"inventory": ProductionSystem.get_inventory_view(strategy_state, provinces, province_id),
+		"enabled": bool(order.get("enabled", false)), "status": order.get("status", "중지"),
+		"last_reason": _production_reason_text(str(order.get("reason", ""))),
+		"reason": _production_reason_text(str(validation.get("reason", ""))),
+		"research_status": "\n".join(research_status), "building_status": "\n".join(building_status),
+		"research_options": research_options, "building_options": building_options,
+		"can_research": can_research, "can_build": can_build,
+		"can_start": owned and regional_reason.is_empty(), "regional_reason": regional_reason,
+		"evidence": IronSupplyData.evidence_text(province_id), "reservations": " / ".join(reservations),
+		"supply_notice": IronSupplyData.placement_text(scenario_id, province_id, iron_supply_rules),
+	}
+
+
+func _production_requirement_options(province_id: String, faction: String, requirements: Dictionary, is_research: bool, owned: bool) -> Array[Dictionary]:
+	var options: Array[Dictionary] = []
+	var definitions: Dictionary = SamhanStrategySystems.RESEARCH_DEFS if is_research else SamhanStrategySystems.BUILDING_DEFS
+	var levels: Dictionary = strategy_state.get("faction_research", {}).get(faction, {}) if is_research else strategy_state.get("province_buildings", {}).get(province_id, {})
+	var queue: Dictionary = strategy_state.get("research_queues", {}).get(faction, {}) if is_research else strategy_state.get("construction_queues", {}).get(province_id, {})
+	for requirement_id: String in requirements:
+		var name_text: String = str(definitions[requirement_id]["name"])
+		var level: int = int(levels.get(requirement_id, 0))
+		var complete: bool = level >= int(requirements[requirement_id])
+		var queue_id_key: String = "research_id" if is_research else "building_id"
+		var queue_text: String = _production_queue_text(queue) if str(queue.get(queue_id_key, "")) == requirement_id else ""
+		var quote: Dictionary = strategy.get_research_quote(strategy_state, faction, requirement_id) if is_research else strategy.get_building_quote(strategy_state, province_id, requirement_id, scenario_id, iron_supply_rules)
+		options.append({
+			"id": requirement_id,
+			"status": "%s %d / 필요 %d단계%s" % [name_text, level, requirements[requirement_id], queue_text],
+			"label": _production_quote_text(name_text + (" 연구" if is_research else " 건설"), quote, complete),
+			"can_execute": owned and not complete and bool(quote.get("ok", false)) and gold >= int(quote.get("gold_cost", 0)),
+		})
+	return options
+
+
+func _production_reason_text(reason: String) -> String:
+	for id: String in SamhanStrategySystems.RESEARCH_DEFS:
+		reason = reason.replace(id, str(SamhanStrategySystems.RESEARCH_DEFS[id]["name"]))
+	for id: String in SamhanStrategySystems.BUILDING_DEFS:
+		reason = reason.replace(id, str(SamhanStrategySystems.BUILDING_DEFS[id]["name"]))
+	return reason
+
+
+func _production_queue_text(queue: Dictionary) -> String:
+	return " · 진행 중인 명령: 남은 계절 정산 %d회" % int(queue.get("remaining_turns", 0)) if not queue.is_empty() else ""
+
+
+func _production_quote_text(label: String, quote: Dictionary, complete: bool) -> String:
+	if complete:
+		return label + " — 요구 단계 충족"
+	if not bool(quote.get("ok", false)):
+		return label + " — " + str(quote.get("reason", "진행 불가"))
+	return "%s 시작 · 금 %d · 계절 정산 %d회%s" % [label, quote["gold_cost"], quote["turns"], " · 금 부족" if gold < int(quote["gold_cost"]) else ""]
+
+
+func request_production_command(province_id: String, recipe_id: String, action: String, requirement_id: String = "") -> Dictionary:
+	var reason: String = ProductionSystem.ownership_reason(provinces, province_id, player_faction)
+	if reason != "":
+		return {"ok": false, "reason": reason}
+	if not ProductionData.recipe_is_enabled(recipe_id):
+		return {"ok": false, "reason": "알 수 없는 생산법입니다."}
+	if action in ["start", "stop"]:
+		return ProductionSystem.set_enabled(strategy_state, provinces, province_id, recipe_id, player_faction, action == "start", scenario_id, iron_supply_rules)
+	if action not in ["research", "build"]:
+		return {"ok": false, "reason": "알 수 없는 생산 명령입니다."}
+	var recipe: Dictionary = ProductionData.RECIPES[recipe_id]
+	var is_research: bool = action == "research"
+	var requirements: Dictionary = recipe["research"] if is_research else recipe["buildings"]
+	var levels: Dictionary = strategy_state.get("faction_research", {}).get(player_faction, {}) if is_research else strategy_state.get("province_buildings", {}).get(province_id, {})
+	if requirement_id.is_empty():
+		for id: String in requirements:
+			if int(levels.get(id, 0)) < int(requirements[id]):
+				requirement_id = id
+				break
+	if not requirements.has(requirement_id):
+		return {"ok": false, "reason": "필요 조건이 아니거나 이미 모든 요구 단계를 충족했습니다."}
+	if int(levels.get(requirement_id, 0)) >= int(requirements[requirement_id]):
+		return {"ok": false, "reason": "이미 생산에 필요한 단계를 충족했습니다."}
+	var quote: Dictionary = strategy.get_research_quote(strategy_state, player_faction, requirement_id) if is_research else strategy.get_building_quote(strategy_state, province_id, requirement_id, scenario_id, iron_supply_rules)
+	if not bool(quote.get("ok", false)):
+		return quote
+	if gold < int(quote["gold_cost"]):
+		return {"ok": false, "reason": "국가 금이 부족합니다."}
+	var result: Dictionary = strategy.start_research(strategy_state, player_faction, requirement_id) if is_research else strategy.start_building(strategy_state, province_id, requirement_id, "", -1, scenario_id, iron_supply_rules)
+	if bool(result.get("ok", false)):
+		gold -= int(result["gold_cost"])
+		update_top_bar()
+		result["message"] = "%s 명령을 내렸습니다. 계절 전환 때 진행합니다." % result["name"]
+	return result
 
 
 func _on_city_card_recruit_requested(province_id: String) -> void:
@@ -1330,6 +1482,7 @@ func resolve_attack(source_id: String, target_id: String) -> void:
 		attacker["troops"] = source_garrison
 		defender["troops"] = occupation_force
 		defender["faction"] = player_faction
+		ProductionSystem.stop_on_capture(strategy_state, target_id)
 		defender["governor"] = attacker_commander["name"]
 		defender["public_order"] = 35
 		_move_commander_to_province(
@@ -1448,6 +1601,12 @@ func _on_end_turn_button_pressed() -> void:
 	economy_messages.append_array(process_seasonal_harvest())
 	economy_messages.append_array(process_monthly_troop_food_upkeep())
 	economy_messages.append_array(process_monthly_storage_losses())
+	var production_result: Dictionary = ProductionSystem.process_month(
+		strategy_state, provinces, player_faction, gold, year * MONTHS_PER_YEAR + month, scenario_id, iron_supply_rules
+	)
+	gold = int(production_result["gold"])
+	for message: String in production_result["messages"]:
+		economy_messages.append(_production_reason_text(message))
 	var public_order_message: String = process_public_order()
 	var transfer_message: String = process_pending_transfer_orders()
 
@@ -1857,6 +2016,7 @@ func resolve_ai_attack(source_id: String, target_id: String) -> String:
 		attacker["troops"] = source_garrison
 		defender["troops"] = occupation_force
 		defender["faction"] = attacker["faction"]
+		ProductionSystem.stop_on_capture(strategy_state, target_id)
 		defender["governor"] = attacker_commander["name"]
 		defender["public_order"] = 30
 		_move_commander_to_province(
@@ -1979,9 +2139,9 @@ func _find_officer_destination(
 	return ""
 
 
-func _on_save_button_pressed() -> void:
+func _on_save_button_pressed(save_path: String = SAVE_PATH) -> void:
 	var save_data: Dictionary = {
-		"save_version": 3,
+		"save_version": 4,
 		"year": year,
 		"month": month,
 		"season_index": season_index,
@@ -1997,7 +2157,7 @@ func _on_save_button_pressed() -> void:
 		"pending_transfer_orders": pending_transfer_orders,
 		"strategy_state": strategy_state,
 	}
-	var save_file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	var save_file: FileAccess = FileAccess.open(save_path, FileAccess.WRITE)
 
 	if save_file == null:
 		log_label.text = "저장 파일을 만들 수 없습니다."
@@ -2015,12 +2175,12 @@ func _on_save_button_pressed() -> void:
 	]
 
 
-func _on_load_button_pressed() -> void:
-	if not FileAccess.file_exists(SAVE_PATH):
+func _on_load_button_pressed(save_path: String = SAVE_PATH) -> void:
+	if not FileAccess.file_exists(save_path):
 		log_label.text = "불러올 저장 파일이 없습니다."
 		return
 
-	var save_file: FileAccess = FileAccess.open(SAVE_PATH, FileAccess.READ)
+	var save_file: FileAccess = FileAccess.open(save_path, FileAccess.READ)
 
 	if save_file == null:
 		log_label.text = "저장 파일을 열 수 없습니다."
@@ -2054,6 +2214,8 @@ func _on_load_button_pressed() -> void:
 	player_faction = str(save_data.get("player_faction", "신라"))
 	play_style = str(save_data.get("play_style", "historical"))
 	difficulty = str(save_data.get("difficulty", "normal"))
+	# Preserve explicit start identity. Never infer a pilot from the current year;
+	# legacy saves without it retain the existing, non-pilot 660 fallback.
 	scenario_id = str(save_data.get("scenario_id", "baekje_fall_660"))
 
 	if not FACTION_ID_TO_NAME.values().has(player_faction):
@@ -2110,6 +2272,8 @@ func _on_load_button_pressed() -> void:
 	# 뒤에 만들어야 인재 배치가 제대로 잡힙니다.
 	if strategy_state.is_empty():
 		_init_strategy_state()
+	if production_overlay != null:
+		production_overlay.hide()
 
 	attack_source_id = ""
 	_apply_difficulty_settings(false)

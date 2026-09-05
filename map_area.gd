@@ -6,6 +6,7 @@ const Korea35Data = preload("res://korea_35_data.gd")
 const FloatingCityCardScene = preload("res://floating_city_card.tscn")
 
 signal city_card_domestic_requested(province_id: String)
+signal city_card_production_requested(province_id: String)
 signal city_card_recruit_requested(province_id: String)
 signal city_card_sortie_requested(province_id: String)
 signal city_card_move_requested(province_id: String)
@@ -565,6 +566,10 @@ func _ready() -> void:
 func _build_floating_city_card() -> void:
 	floating_city_card = FloatingCityCardScene.instantiate() as Control
 	floating_city_card.name = "FloatingCityCard"
+	floating_city_card.connect(
+		"production_requested",
+		_on_city_card_action.bind(city_card_production_requested)
+	)
 	floating_city_card.visible = false
 	floating_city_card.z_index = 3500
 	add_child(floating_city_card)

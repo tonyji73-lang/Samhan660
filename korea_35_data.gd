@@ -163,6 +163,19 @@ const YEAR_FACTION_OVERRIDES: Dictionary = {
 }
 
 
+# Exact scenario years only: do not change the nearest-year fallback for other
+# dates, or the undated template used by editor previews.
+# Geumgwan was annexed by Silla in 532 (Samguk Sagi, Beopheung year 19).
+# Source: https://db.history.go.kr/id/sg_004r_0030_0150
+# 670 already belongs to Silla in YEAR_FACTION_OVERRIDES.
+const EXACT_YEAR_FACTION_OVERRIDES: Dictionary = {
+	632: {"geumgwan": "신라"},
+	642: {"geumgwan": "신라"},
+	660: {"geumgwan": "신라"},
+	663: {"geumgwan": "신라"},
+}
+
+
 static func get_factions_for_year(year: int) -> Dictionary:
 	var result: Dictionary = DEFAULT_FACTIONS.duplicate(true)
 
@@ -175,6 +188,8 @@ static func get_factions_for_year(year: int) -> Dictionary:
 	var overrides: Dictionary = YEAR_FACTION_OVERRIDES.get(applied_year, {})
 	for province_key: Variant in overrides.keys():
 		result[str(province_key)] = str(overrides[province_key])
+	for province_key: String in EXACT_YEAR_FACTION_OVERRIDES.get(year, {}):
+		result[province_key] = str(EXACT_YEAR_FACTION_OVERRIDES[year][province_key])
 
 	return result
 

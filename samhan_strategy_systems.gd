@@ -3,7 +3,10 @@ extends RefCounted
 # 삼한660 장기 전략 백엔드 V2
 # UI와 분리된 순수 데이터 모듈입니다. 모든 상태는 JSON 저장이 가능한 Dictionary/Array로 유지합니다.
 
-const STATE_VERSION: int = 3
+const STATE_VERSION: int = 4
+const ProductionData = preload("res://production_data.gd")
+const ProductionSystem = preload("res://production_system.gd")
+const IronSupplyData = preload("res://iron_supply_data.gd")
 const GENERATED_STAT_CAP: int = 72
 const DYNASTIC_STAT_CAP: int = 88
 const ADULT_AGE: int = 16
@@ -24,6 +27,7 @@ const FACTION_ALIASES: Dictionary = {
 }
 
 const BUILDING_DEFS: Dictionary = {
+	"smelter": ProductionData.SMELTER_FACILITY,
 	"barracks": {"name": "병영", "max_level": 3, "base_gold": 220, "base_turns": 1, "effect": "징병·주둔군과 보병 해금"},
 	"academy": {"name": "강무학당", "max_level": 3, "base_gold": 260, "base_turns": 2, "effect": "정예병 훈련과 장수 교육"},
 	"stables": {"name": "마장", "max_level": 3, "base_gold": 280, "base_turns": 2, "effect": "기병 생산과 이동력 강화"},
@@ -35,6 +39,8 @@ const BUILDING_DEFS: Dictionary = {
 }
 
 const RESEARCH_DEFS: Dictionary = {
+	"basic_smelting": ProductionData.SMELTING_TECHNOLOGY,
+	"swordsmithing": ProductionData.SWORD_TECHNOLOGY,
 	"infantry": {"name": "보병 전술", "max_level": 3, "base_gold": 260, "base_turns": 2, "effect": "보병 전투력과 정예 보병 해금"},
 	"archery": {"name": "궁술", "max_level": 3, "base_gold": 280, "base_turns": 2, "effect": "궁병 사거리와 집중 사격 강화"},
 	"cavalry": {"name": "기병 전술", "max_level": 3, "base_gold": 300, "base_turns": 2, "effect": "기병 돌격력과 정예 기병 해금"},
@@ -299,6 +305,7 @@ func create_initial_state(
 		state["dynasty"]["people"][officer_name] = _person_from_officer(
 			officer_name, officer, str(officer_factions.get(officer_name, "")), "historical"
 		)
+	ProductionSystem.normalize_state(state, provinces)
 	return state
 
 
@@ -325,6 +332,7 @@ func normalize_loaded_state(state: Dictionary, provinces: Dictionary = {}) -> Di
 		)
 	if not provinces.is_empty():
 		ensure_unit_rosters(state, provinces)
+	ProductionSystem.normalize_state(state, provinces)
 	return state
 
 
@@ -766,9 +774,13 @@ func process_season(
 	}
 
 
-func get_building_quote(state: Dictionary, province_id: String, building_id: String) -> Dictionary:
+func get_building_quote(state: Dictionary, province_id: String, building_id: String, scenario_id: String = "", supply_rules: Dictionary = IronSupplyData.SCENARIOS) -> Dictionary:
 	if not BUILDING_DEFS.has(building_id):
 		return {"ok": false, "reason": "알 수 없는 건물입니다."}
+	if building_id == "smelter":
+		var reason: String = IronSupplyData.blocked_reason(scenario_id, province_id, supply_rules)
+		if reason != "":
+			return {"ok": false, "reason": reason}
 	if state.get("construction_queues", {}).has(province_id):
 		return {"ok": false, "reason": "이 영지는 이미 건설 중입니다."}
 	var levels: Dictionary = state.get("province_buildings", {}).get(province_id, {})
@@ -793,9 +805,10 @@ func start_building(
 	province_id: String,
 	building_id: String,
 	assigned_officer: String = "",
-	turns_override: int = -1
+	turns_override: int = -1,
+	scenario_id: String = "", supply_rules: Dictionary = IronSupplyData.SCENARIOS
 ) -> Dictionary:
-	var quote: Dictionary = get_building_quote(state, province_id, building_id)
+	var quote: Dictionary = get_building_quote(state, province_id, building_id, scenario_id, supply_rules)
 	if not bool(quote.get("ok", false)):
 		return quote
 	var remaining_turns: int = int(quote["turns"])
@@ -815,6 +828,8 @@ func start_building(
 func get_research_quote(state: Dictionary, faction_name: String, research_id: String) -> Dictionary:
 	if not RESEARCH_DEFS.has(research_id):
 		return {"ok": false, "reason": "알 수 없는 연구입니다."}
+	if not bool(RESEARCH_DEFS[research_id].get("researchable", true)):
+		return {"ok": false, "reason": "시작 시나리오의 설계에 따른 기본 기술입니다. 연구로 획득할 수 없습니다."}
 	if state.get("research_queues", {}).has(faction_name):
 		return {"ok": false, "reason": "이 세력은 이미 연구 중입니다."}
 	var levels: Dictionary = state.get("faction_research", {}).get(faction_name, _empty_research_levels())

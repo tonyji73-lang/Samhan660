@@ -819,30 +819,27 @@ func _build_footer_block() -> Control:
 
 func _create_faction_card(data: Dictionary) -> Button:
 	var faction_id: String = str(data.get("id", "silla"))
-	var selectable: bool = bool(data.get("playable_by_default", false))
+	var selectable: bool = ScenarioData.is_faction_playable_by_default(_get_scenario_id(), faction_id)
 	var faction_color: Color = Color(str(data.get("color", "#d2a62f")))
 	var ruler_name: String = str(data.get("ruler", ""))
-	var ruler_title: String = str(data.get("ruler_title", ""))
-	var ruler_display: String = ruler_name
-	if ruler_title != "":
-		ruler_display = "%s %s" % [ruler_title, ruler_name]
 	var button: Button = Button.new()
 	button.name = "%sFactionButton" % faction_id.capitalize()
 	var faction_display: String = str(data.get("name", "신라"))
-	button.text = "%s\n%s · %s" % [
-		faction_display,
-		ruler_display,
-		ScenarioData.get_age_text(ruler_name, _get_scenario_year()),
-	]
+	button.text = "%s\n%s" % [faction_display, ruler_name]
+	button.tooltip_text = button.text
 	button.toggle_mode = true
 	button.set_meta("selectable", selectable)
 	button.disabled = not selectable
 	if not selectable:
-		button.tooltip_text = "현재는 AI 전용 세력입니다."
+		button.tooltip_text += "\n현재는 AI 전용 세력입니다."
 	button.custom_minimum_size = Vector2(0.0, 82.0)
 	button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	button.clip_contents = true
+	# Text must not increase the scroll content's minimum width. Keep two lines
+	# inside the existing 220-wide panel and 82-high rows at every scenario.
+	button.clip_text = true
+	button.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 	button.add_theme_font_size_override("font_size", 15)
 	button.add_theme_color_override("font_color", Color("#312a20"))
 	button.add_theme_color_override("font_hover_color", Color("#17130e"))
@@ -892,15 +889,18 @@ func _create_faction_card(data: Dictionary) -> Button:
 		faction_color,
 		3
 	)
+	var disabled_style: StyleBox = button.get_theme_stylebox("disabled").duplicate()
 
 	# The portrait is a fixed child instead of Button.icon.  Reserve the same
 	# space in every visual state so long faction and ruler names cannot shrink it.
-	for card_style: StyleBoxFlat in [normal_style, hover_style, pressed_style]:
+	for card_style: StyleBox in [normal_style, hover_style, pressed_style, disabled_style]:
 		card_style.content_margin_left = 82.0
 
 	button.add_theme_stylebox_override("normal", normal_style)
 	button.add_theme_stylebox_override("hover", hover_style)
 	button.add_theme_stylebox_override("pressed", pressed_style)
+	button.add_theme_stylebox_override("hover_pressed", pressed_style)
+	button.add_theme_stylebox_override("disabled", disabled_style)
 	return button
 
 
@@ -1105,6 +1105,15 @@ func _select_faction_from_map(faction_id: String) -> void:
 func _update_faction_details() -> void:
 	var data: Dictionary = _get_selected_faction_data()
 	if data.is_empty():
+		for label: Label in [faction_name_label, ruler_label, commander_label,
+			capital_label, territories_label, power_label, faction_difficulty_label,
+			strength_label, risk_label, faction_description_label, notable_characters_label]:
+			label.text = ""
+		leader_portrait.texture = null
+		leader_portrait.hide()
+		portrait_fallback_label.hide()
+		_update_map_markers()
+		_update_start_availability()
 		return
 
 	var faction_color: Color = Color(str(data.get("color", "#d2a62f")))
@@ -1260,6 +1269,7 @@ func _rebuild_scenario_factions() -> void:
 		return
 
 	for child: Node in faction_cards_vbox.get_children():
+		faction_cards_vbox.remove_child(child)
 		child.queue_free()
 	for child: Node in map_marker_buttons.values():
 		child.queue_free()
@@ -1271,6 +1281,8 @@ func _rebuild_scenario_factions() -> void:
 	var scenario: Dictionary = _get_selected_scenario()
 	var faction_values: Array = scenario.get("factions", [])
 	var selectable_ids: Array[String] = []
+	var selectable_factions: Array[Dictionary] = []
+	var unavailable_factions: Array[Dictionary] = []
 
 	for faction_value: Variant in faction_values:
 		if typeof(faction_value) != TYPE_DICTIONARY:
@@ -1279,15 +1291,22 @@ func _rebuild_scenario_factions() -> void:
 		var faction_id: String = str(faction_data.get("id", ""))
 		if faction_id == "":
 			continue
-		if bool(faction_data.get("playable_by_default", false)):
+		if ScenarioData.is_faction_playable_by_default(_get_scenario_id(), faction_id):
 			selectable_ids.append(faction_id)
+			selectable_factions.append(faction_data)
+		else:
+			unavailable_factions.append(faction_data)
+		# Only the left list is reordered; keep map marker creation order intact.
+		_create_map_marker(faction_data)
 
+	# Stable partition: preserve original scenario order inside each group.
+	for faction_data: Dictionary in selectable_factions + unavailable_factions:
+		var faction_id: String = str(faction_data["id"])
 		var button: Button = _create_faction_card(faction_data)
 		button.button_group = faction_group
 		button.toggled.connect(_on_faction_toggled.bind(faction_id))
 		faction_cards_vbox.add_child(button)
 		faction_buttons[faction_id] = button
-		_create_map_marker(faction_data)
 
 	if not selectable_ids.has(selected_faction_id):
 		selected_faction_id = selectable_ids[0] if not selectable_ids.is_empty() else ""
@@ -1874,6 +1893,10 @@ func _on_play_style_toggled(pressed: bool, play_style_id: String) -> void:
 	play_style_description_label.text = str(
 		PLAY_STYLE_DESCRIPTIONS.get(play_style_id, "")
 	)
+	# Current availability policy is shared by historical and fictional styles.
+	# Re-evaluate it on either change without introducing a separate unlock rule.
+	_rebuild_scenario_factions()
+	_update_faction_details()
 
 
 func _on_difficulty_toggled(pressed: bool, difficulty_id: String) -> void:

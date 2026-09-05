@@ -1,6 +1,7 @@
 extends PanelContainer
 
 signal domestic_requested(province_id: String)
+signal production_requested(province_id: String)
 signal recruit_requested(province_id: String)
 signal sortie_requested(province_id: String)
 signal move_requested(province_id: String)
@@ -17,6 +18,7 @@ var province_id: String = ""
 @onready var fortress_value: Label = %FortressValue
 @onready var food_stock_label: Label = %FoodStockLabel
 @onready var domestic_button: Button = %DomesticButton
+@onready var production_button: Button = %ProductionButton
 @onready var recruit_button: Button = %RecruitButton
 @onready var sortie_button: Button = %SortieButton
 @onready var move_button: Button = %MoveButton
@@ -27,6 +29,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	_apply_style()
 	domestic_button.pressed.connect(_emit_action.bind(domestic_requested))
+	production_button.pressed.connect(_emit_action.bind(production_requested))
 	recruit_button.pressed.connect(_emit_action.bind(recruit_requested))
 	sortie_button.pressed.connect(_emit_action.bind(sortie_requested))
 	move_button.pressed.connect(_emit_action.bind(move_requested))
@@ -52,6 +55,7 @@ func configure(
 	]
 
 	domestic_button.disabled = not bool(action_states.get("domestic", true))
+	production_button.disabled = not bool(action_states.get("production", false))
 	recruit_button.disabled = not bool(action_states.get("recruit", true))
 	sortie_button.disabled = not bool(action_states.get("sortie", true))
 	move_button.disabled = not bool(action_states.get("move", true))
@@ -85,6 +89,6 @@ func _apply_style() -> void:
 	panel_style.shadow_size = 8
 	add_theme_stylebox_override("panel", panel_style)
 
-	for button: Button in [domestic_button, recruit_button, sortie_button, move_button, detail_button]:
+	for button: Button in [domestic_button, recruit_button, sortie_button, move_button, detail_button, production_button]:
 		button.custom_minimum_size = Vector2(46.0, 30.0)
 		button.focus_mode = Control.FOCUS_NONE

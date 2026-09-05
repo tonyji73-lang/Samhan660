@@ -97,9 +97,11 @@ text = "군량  - / -"
 custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 
-[node name="Actions" type="HBoxContainer" parent="Margin/Content"]
+[node name="Actions" type="GridContainer" parent="Margin/Content"]
 layout_mode = 2
-theme_override_constants/separation = 5
+columns = 3
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
 
 [node name="DomesticButton" type="Button" parent="Margin/Content/Actions"]
 unique_name_in_owner = true
@@ -130,3 +132,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "상세"
+
+[node name="ProductionButton" type="Button" parent="Margin/Content/Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "생산"
