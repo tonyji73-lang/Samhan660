@@ -7,6 +7,15 @@ const SamhanStrategySystems = preload("res://samhan_strategy_systems.gd")
 
 const SAVE_PATH: String = "user://campaign_save_35_regions_v1.json"
 const SEASONS: Array[String] = ["봄", "여름", "가을", "겨울"]
+const MONTHS_PER_YEAR: int = 12
+const MONTHS_PER_SEASON: int = 3
+const SEASON_START_MONTH_BY_ID: Dictionary = {
+	"spring": 1,
+	"summer": 4,
+	"autumn": 7,
+	"winter": 10,
+}
+const FOOD_COLLECTION_RATE: float = 0.45
 const ATTACK_FOOD_COST: int = 500
 const CONTROLLER_PLAYER: String = "PLAYER"
 const CONTROLLER_AI: String = "AI"
@@ -52,6 +61,7 @@ const ADDITIONAL_OFFICER_ASSIGNMENTS: Dictionary = {
 }
 
 var year: int = 660
+var month: int = 1
 var season_index: int = 0
 var gold: int = 1000
 var food: int = 3000
@@ -199,6 +209,7 @@ var officers_by_province: Dictionary = {
 @onready var commerce_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/CommerceLabel
 @onready var public_order_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/PublicOrderLabel
 @onready var troops_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/TroopsLabel
+@onready var food_stock_label: Label = %FoodStockLabel
 @onready var fortress_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/FortressLabel
 @onready var log_label: Label = $MainVBox/Content/ProvincePanel/ProvinceVBox/LogScroll/LogLabel
 
@@ -227,6 +238,7 @@ func _ready() -> void:
 	_apply_legacy_core_province_values()
 	_apply_new_game_settings()
 	_refresh_faction_controllers()
+	_ensure_province_food_economy()
 	_ensure_additional_officer_assignments()
 
 	_bind_city_buttons()
@@ -319,6 +331,53 @@ func _apply_legacy_core_province_values() -> void:
 		if not provinces.has(province_id):
 			continue
 		provinces[province_id] = legacy_provinces[province_id].duplicate(true)
+
+
+func _ensure_province_food_economy(legacy_player_food: int = -1) -> void:
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
+		var province: Dictionary = provinces[province_id]
+		var population_in_thousands: float = (
+			float(maxi(0, int(province.get("population", 0)))) / 1000.0
+		)
+		var agriculture: int = clampi(int(province.get("agriculture", 0)), 0, 100)
+		if not province.has("granary_capacity"):
+			province["granary_capacity"] = roundi(
+				3000.0
+				+ population_in_thousands * 30.0
+				+ float(agriculture) * 30.0
+			)
+		if not province.has("food_stock"):
+			if province.has("food"):
+				province["food_stock"] = maxi(0, int(province["food"]))
+			else:
+				province["food_stock"] = roundi(
+					float(int(province["granary_capacity"])) * 0.60
+				)
+		province["granary_capacity"] = maxi(0, int(province["granary_capacity"]))
+		province["food_stock"] = maxi(0, int(province["food_stock"]))
+		if not province.has("food_shortage"):
+			province["food_shortage"] = false
+		if not province.has("food_shortage_amount"):
+			province["food_shortage_amount"] = 0
+
+	if legacy_player_food >= 0:
+		var starting_province_id: String = _get_starting_province_id()
+		if provinces.has(starting_province_id):
+			provinces[starting_province_id]["food_stock"] = legacy_player_food
+	food = _get_total_player_food_stock()
+
+
+func _get_total_player_food_stock() -> int:
+	var total: int = 0
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
+		if _get_province_controller(provinces[province_id]) != CONTROLLER_PLAYER:
+			continue
+		total += int(provinces[province_id].get("food_stock", 0))
+	return total
 
 
 func _ensure_steppe_provinces(scenario_year: int) -> void:
@@ -471,7 +530,8 @@ func _apply_new_game_settings() -> void:
 		player_faction = ScenarioData.get_faction_name(scenario_id, faction_id)
 	year = int(settings.get("scenario_year", 660))
 	var season_id: String = str(settings.get("scenario_season", "spring"))
-	season_index = int(SEASON_ID_TO_INDEX.get(season_id, 0))
+	month = int(SEASON_START_MONTH_BY_ID.get(season_id, 1))
+	_sync_season_from_month()
 
 	# 선택한 연도에 맞춰 소속 세력만 다시 배치합니다.
 	# provinces 전체를 대입하면 _apply_legacy_core_province_values()가
@@ -610,6 +670,10 @@ func select_province(province_id: String, show_floating_card: bool = true) -> vo
 	commerce_label.text = "상업: %d" % province["commerce"]
 	public_order_label.text = "치안: %d" % province["public_order"]
 	troops_label.text = "병력: %d" % province["troops"]
+	food_stock_label.text = "군량: %d / %d" % [
+		int(province.get("food_stock", 0)),
+		int(province.get("granary_capacity", 0)),
+	]
 	fortress_label.text = "성벽: %d" % province["fortress"]
 
 	update_officer_list(province_id)
@@ -962,7 +1026,10 @@ func _on_attack_button_pressed() -> void:
 		log_label.text = "아군 영지는 공격할 수 없습니다."
 		return
 
-	if food < ATTACK_FOOD_COST:
+	var source_food_stock: int = int(
+		provinces[attack_source_id].get("food_stock", 0)
+	)
+	if source_food_stock < ATTACK_FOOD_COST:
 		log_label.text = "공격에 필요한 군량 %d이 부족합니다." % ATTACK_FOOD_COST
 		return
 
@@ -1245,7 +1312,10 @@ func resolve_attack(source_id: String, target_id: String) -> void:
 		* (1.0 + float(defender_leadership) / 100.0 + float(fortress) / 200.0)
 	)
 
-	food -= ATTACK_FOOD_COST
+	attacker["food_stock"] = maxi(
+		0,
+		int(attacker.get("food_stock", 0)) - ATTACK_FOOD_COST
+	)
 	var result_message: String = ""
 
 	if attacker_power > defender_power:
@@ -1354,12 +1424,15 @@ func _on_recruit_button_pressed() -> void:
 		log_label.text = "플레이어 소유 영지에서만 징병할 수 있습니다."
 		return
 
-	if gold < 150 or food < 200:
+	var province_food_stock: int = int(
+		provinces[selected_province_id].get("food_stock", 0)
+	)
+	if gold < 150 or province_food_stock < 200:
 		log_label.text = "금 또는 군량이 부족합니다."
 		return
 
 	gold -= 150
-	food -= 200
+	provinces[selected_province_id]["food_stock"] = province_food_stock - 200
 	var current_troops: int = int(provinces[selected_province_id]["troops"])
 	provinces[selected_province_id]["troops"] = current_troops + 1000
 
@@ -1369,39 +1442,30 @@ func _on_recruit_button_pressed() -> void:
 
 
 func _on_end_turn_button_pressed() -> void:
-	season_index += 1
+	var season_changed: bool = _advance_month()
 
-	if season_index >= SEASONS.size():
-		season_index = 0
-		year += 1
-
-	var transfer_message: String = process_pending_transfer_orders()
+	var economy_messages: Array[String] = process_monthly_commerce_income()
+	economy_messages.append_array(process_seasonal_harvest())
+	economy_messages.append_array(process_monthly_troop_food_upkeep())
+	economy_messages.append_array(process_monthly_storage_losses())
 	var public_order_message: String = process_public_order()
-
-	for province_value in provinces.values():
-		var province: Dictionary = province_value
-
-		if province["faction"] != player_faction:
-			continue
-
-		var income_rate: float = get_public_order_income_rate(int(province["public_order"]))
-		var gold_income: int = int(float(int(province["commerce"]) * 2) * income_rate)
-		var food_income: int = int(float(int(province["agriculture"]) * 3) * income_rate)
-
-		gold += gold_income
-		food += food_income
+	var transfer_message: String = process_pending_transfer_orders()
 
 	var ai_message: String = run_enemy_ai_turns()
 
 	# 건설·연구·교역과, 봄에는 인재 보충·혼인·출산·자녀 성장을 처리합니다.
-	var strategy_message: String = _process_strategy_season()
+	var strategy_message: String = (
+		_process_strategy_season() if season_changed else ""
+	)
 
 	update_top_bar()
 
 	if selected_province_id != "":
 		select_province(selected_province_id)
 
-	log_label.text = "계절이 지나 세금과 군량을 확보했습니다."
+	log_label.text = "%d년 %d월이 되었습니다." % [year, month]
+	if not economy_messages.is_empty():
+		log_label.text += "\n" + combine_messages(economy_messages)
 	if transfer_message != "":
 		log_label.text += "\n" + transfer_message
 
@@ -1413,6 +1477,21 @@ func _on_end_turn_button_pressed() -> void:
 
 	if strategy_message != "":
 		log_label.text += "\n" + strategy_message
+
+
+func _advance_month() -> bool:
+	var previous_season_index: int = season_index
+	month += 1
+	if month > MONTHS_PER_YEAR:
+		month = 1
+		year += 1
+	_sync_season_from_month()
+	return season_index != previous_season_index
+
+
+func _sync_season_from_month() -> void:
+	month = clampi(month, 1, MONTHS_PER_YEAR)
+	season_index = floori(float(month - 1) / float(MONTHS_PER_SEASON))
 
 
 func _process_strategy_season() -> String:
@@ -1437,6 +1516,182 @@ func _process_strategy_season() -> String:
 	if messages.is_empty():
 		return ""
 	return combine_messages(messages)
+
+
+func get_public_order_efficiency(public_order: int) -> float:
+	return 0.5 + float(clampi(public_order, 0, 100)) / 200.0
+
+
+func calculate_monthly_commerce_income(province: Dictionary) -> int:
+	var population_in_thousands: float = (
+		float(maxi(0, int(province.get("population", 0)))) / 1000.0
+	)
+	var commerce: int = clampi(int(province.get("commerce", 0)), 0, 100)
+	var efficiency: float = get_public_order_efficiency(
+		int(province.get("public_order", 0))
+	)
+	return roundi(
+		population_in_thousands
+		* float(commerce) / 100.0
+		* efficiency
+		* 2.0
+	)
+
+
+func calculate_annual_harvest(province: Dictionary) -> int:
+	var population_in_thousands: float = (
+		float(maxi(0, int(province.get("population", 0)))) / 1000.0
+	)
+	var agriculture: int = clampi(int(province.get("agriculture", 0)), 0, 100)
+	var efficiency: float = get_public_order_efficiency(
+		int(province.get("public_order", 0))
+	)
+	return roundi(
+		population_in_thousands
+		* float(agriculture) / 100.0
+		* efficiency
+		* 100.0
+	)
+
+
+func calculate_collected_harvest(province: Dictionary) -> int:
+	# 총 농업생산 중 주민 소비·종자·민간 보유분을 제외한 국가 징수분입니다.
+	# 향후 세율 정책은 이 고정 징수율을 정책값으로 교체할 수 있습니다.
+	return roundi(float(calculate_annual_harvest(province)) * FOOD_COLLECTION_RATE)
+
+
+func process_monthly_commerce_income() -> Array[String]:
+	var messages: Array[String] = []
+	var total_income: int = 0
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
+		var province: Dictionary = provinces[province_id]
+		if _get_province_controller(province) != CONTROLLER_PLAYER:
+			continue
+		var income: int = calculate_monthly_commerce_income(province)
+		gold += income
+		total_income += income
+		if province_id == selected_province_id:
+			messages.append("%s 상업세 +%d" % [str(province["name"]), income])
+	if messages.is_empty() and total_income > 0:
+		messages.append("플레이어 도시 상업세 합계 +%d" % total_income)
+	return messages
+
+
+func process_seasonal_harvest() -> Array[String]:
+	var harvest_rate: float = 0.0
+	if month == 9:
+		harvest_rate = 0.70
+	elif month == 10:
+		harvest_rate = 0.30
+	if harvest_rate <= 0.0:
+		return []
+
+	var messages: Array[String] = []
+	var player_harvest_total: int = 0
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
+		var province: Dictionary = provinces[province_id]
+		var controller: String = _get_province_controller(province)
+		if controller == CONTROLLER_INACTIVE:
+			continue
+		var collected_harvest: int = calculate_collected_harvest(province)
+		var harvest: int = roundi(float(collected_harvest) * harvest_rate)
+		province["food_stock"] = int(province.get("food_stock", 0)) + harvest
+		if controller == CONTROLLER_PLAYER:
+			player_harvest_total += harvest
+			if province_id == selected_province_id:
+				messages.append("%s 가을 수확 +%d" % [str(province["name"]), harvest])
+	if messages.is_empty() and player_harvest_total > 0:
+		messages.append("플레이어 도시 가을 수확 합계 +%d" % player_harvest_total)
+	return messages
+
+
+func calculate_monthly_troop_food(province: Dictionary) -> int:
+	return floori(float(maxi(0, int(province.get("troops", 0)))) / 100.0)
+
+
+func process_monthly_troop_food_upkeep() -> Array[String]:
+	var messages: Array[String] = []
+	var player_consumed_total: int = 0
+	var player_shortage_total: int = 0
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
+		var province: Dictionary = provinces[province_id]
+		var controller: String = _get_province_controller(province)
+		if controller == CONTROLLER_INACTIVE:
+			province["food_shortage"] = false
+			province["food_shortage_amount"] = 0
+			continue
+		var required_food: int = calculate_monthly_troop_food(province)
+		var available_food: int = maxi(0, int(province.get("food_stock", 0)))
+		var consumed_food: int = mini(required_food, available_food)
+		var shortage_amount: int = maxi(0, required_food - consumed_food)
+		province["food_stock"] = available_food - consumed_food
+		province["food_shortage"] = shortage_amount > 0
+		province["food_shortage_amount"] = shortage_amount
+		if controller != CONTROLLER_PLAYER:
+			continue
+		player_consumed_total += consumed_food
+		player_shortage_total += shortage_amount
+		if province_id == selected_province_id:
+			var message: String = "%s 주둔군 군량 -%d" % [
+				str(province["name"]),
+				consumed_food,
+			]
+			if shortage_amount > 0:
+				message += " (부족 %d)" % shortage_amount
+			messages.append(message)
+	if messages.is_empty() and (player_consumed_total > 0 or player_shortage_total > 0):
+		var summary: String = "플레이어 도시 주둔군 군량 -%d" % player_consumed_total
+		if player_shortage_total > 0:
+			summary += " (부족 %d)" % player_shortage_total
+		messages.append(summary)
+	return messages
+
+
+func get_monthly_normal_storage_loss_rate() -> float:
+	return 0.01 if season_index == 3 else 0.005
+
+
+func calculate_monthly_storage_loss(province: Dictionary) -> int:
+	var stock: int = maxi(0, int(province.get("food_stock", 0)))
+	var capacity: int = maxi(0, int(province.get("granary_capacity", 0)))
+	var normal_stock: int = mini(stock, capacity)
+	var excess_stock: int = maxi(0, stock - capacity)
+	var normal_loss: int = roundi(
+		float(normal_stock) * get_monthly_normal_storage_loss_rate()
+	)
+	var excess_loss: int = roundi(float(excess_stock) * 0.075)
+	return mini(stock, normal_loss + excess_loss)
+
+
+func process_monthly_storage_losses() -> Array[String]:
+	var messages: Array[String] = []
+	var player_loss_total: int = 0
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if not provinces.has(province_id):
+			continue
+		var province: Dictionary = provinces[province_id]
+		var controller: String = _get_province_controller(province)
+		if controller == CONTROLLER_INACTIVE:
+			continue
+		var loss: int = calculate_monthly_storage_loss(province)
+		province["food_stock"] = maxi(
+			0,
+			int(province.get("food_stock", 0)) - loss
+		)
+		if controller != CONTROLLER_PLAYER or loss <= 0:
+			continue
+		player_loss_total += loss
+		if province_id == selected_province_id:
+			messages.append("%s 저장손실 -%d" % [str(province["name"]), loss])
+	if messages.is_empty() and player_loss_total > 0:
+		messages.append("플레이어 도시 저장손실 합계 -%d" % player_loss_total)
+	return messages
 
 
 func process_public_order() -> String:
@@ -1468,19 +1723,6 @@ func process_public_order() -> String:
 		", ".join(recovered_names.slice(0, 3)),
 		recovered_names.size() - 3,
 	]
-
-
-func get_public_order_income_rate(public_order: int) -> float:
-	if public_order >= 80:
-		return 1.0
-
-	if public_order >= 60:
-		return 0.75
-
-	if public_order >= 40:
-		return 0.50
-
-	return 0.25
 
 
 func run_enemy_ai_turns() -> String:
@@ -1741,9 +1983,10 @@ func _on_save_button_pressed() -> void:
 	var save_data: Dictionary = {
 		"save_version": 3,
 		"year": year,
+		"month": month,
 		"season_index": season_index,
 		"gold": gold,
-		"food": food,
+		"food": _get_total_player_food_stock(),
 		"player_faction": player_faction,
 		"play_style": play_style,
 		"difficulty": difficulty,
@@ -1765,8 +2008,9 @@ func _on_save_button_pressed() -> void:
 		return
 
 	save_file.store_string(JSON.stringify(save_data, "\t"))
-	log_label.text = "%d년 %s 진행 상황을 저장했습니다." % [
+	log_label.text = "%d년 %d월 · %s 진행 상황을 저장했습니다." % [
 		year,
+		month,
 		SEASONS[season_index],
 	]
 
@@ -1795,7 +2039,16 @@ func _on_load_button_pressed() -> void:
 		return
 
 	year = int(save_data.get("year", 660))
-	season_index = clampi(int(save_data.get("season_index", 0)), 0, 3)
+	if save_data.has("month"):
+		month = clampi(int(save_data.get("month", 1)), 1, MONTHS_PER_YEAR)
+	else:
+		var legacy_season_index: int = clampi(
+			int(save_data.get("season_index", 0)),
+			0,
+			SEASONS.size() - 1
+		)
+		month = legacy_season_index * MONTHS_PER_SEASON + 1
+	_sync_season_from_month()
 	gold = maxi(0, int(save_data.get("gold", 1000)))
 	food = maxi(0, int(save_data.get("food", 3000)))
 	player_faction = str(save_data.get("player_faction", "신라"))
@@ -1821,6 +2074,14 @@ func _on_load_button_pressed() -> void:
 
 	var saved_provinces: Dictionary = save_data["provinces"]
 	provinces = saved_provinces.duplicate(true)
+	var has_saved_food_stocks: bool = false
+	for province_id: String in Korea35Data.PROVINCE_IDS:
+		if provinces.has(province_id) and provinces[province_id].has("food_stock"):
+			has_saved_food_stocks = true
+			break
+	_ensure_province_food_economy(
+		-1 if has_saved_food_stocks else food
+	)
 
 	# 전략 상태를 되살립니다. 옛 세이브에는 없으므로 그때는 새로 만듭니다.
 	if typeof(save_data.get("strategy_state", null)) == TYPE_DICTIONARY:
@@ -1863,8 +2124,9 @@ func _on_load_button_pressed() -> void:
 	update_top_bar()
 	select_province(requested_selection)
 	_refresh_map_markers()
-	log_label.text = "%d년 %s 저장 기록을 불러왔습니다." % [
+	log_label.text = "%d년 %d월 · %s 저장 기록을 불러왔습니다." % [
 		year,
+		month,
 		SEASONS[season_index],
 	]
 
@@ -1922,13 +2184,15 @@ func update_top_bar() -> void:
 		"가상" if play_style == "fictional" else "역사"
 	)
 	date_label.text = (
-		"%d년 %s · %s · %s"
+		"%d년 %d월 · %s · %s · %s"
 		% [
 			year,
+			month,
 			SEASONS[season_index],
 			mode_label,
 			DIFFICULTY_NAMES.get(difficulty, "보통"),
 		]
 	)
 	gold_label.text = "금: %d" % gold
-	food_label.text = "군량: %d" % food
+	food = _get_total_player_food_stock()
+	food_label.text = "총 군량: %d" % food

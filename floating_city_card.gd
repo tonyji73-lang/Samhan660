@@ -15,6 +15,7 @@ var province_id: String = ""
 @onready var troops_value: Label = %TroopsValue
 @onready var public_order_value: Label = %PublicOrderValue
 @onready var fortress_value: Label = %FortressValue
+@onready var food_stock_label: Label = %FoodStockLabel
 @onready var domestic_button: Button = %DomesticButton
 @onready var recruit_button: Button = %RecruitButton
 @onready var sortie_button: Button = %SortieButton
@@ -45,6 +46,10 @@ func configure(
 	troops_value.text = _display_number(province, "troops")
 	public_order_value.text = _display_number(province, "public_order")
 	fortress_value.text = _display_number(province, "fortress")
+	food_stock_label.text = "군량  %d / %d" % [
+		int(province.get("food_stock", 0)),
+		int(province.get("granary_capacity", 0)),
+	]
 
 	domestic_button.disabled = not bool(action_states.get("domestic", true))
 	recruit_button.disabled = not bool(action_states.get("recruit", true))
