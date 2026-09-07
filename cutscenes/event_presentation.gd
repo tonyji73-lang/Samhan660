@@ -1,7 +1,8 @@
 extends CanvasLayer
 
 # Campaign-scoped service, not an Autoload. Simulation commits results BEFORE
-# calling play(); neither next, skip, filtering nor restore can apply rewards.
+# calling play(); choice mode delegates a decision to the campaign resolver.
+# Next, skip, filtering and restore never apply simulation effects.
 signal event_finished(event_id: String)
 signal step_changed(event_id: String, index: int)
 
@@ -47,6 +48,8 @@ func setup(host: Node) -> void:
 	view.skip_requested.connect(skip)
 	view.auto_changed.connect(set_auto)
 	view.menu_requested.connect(open_menu)
+	view.choice_requested.connect(_choose)
+	view.save_requested.connect(func(): campaign._on_save_button_pressed())
 	adapter = MapAdapter.new()
 	adapter.setup(campaign, catalog.get("map_targets", {}))
 	campaign.map_area.add_child(adapter)
@@ -86,6 +89,9 @@ func play(event_id: String, payload: Dictionary = {}, occurrence_id: String = ""
 	if not events.has(event_id):
 		return false
 	var event: Dictionary = events[event_id]
+	# Required decisions need an authoritative campaign pending record.
+	if bool(event.get("requires_choice", false)):
+		return false
 	var steps: Array = substitute(event.get("steps", []), payload)
 	var unresolved := RegEx.new()
 	unresolved.compile("\\{[A-Za-z_][A-Za-z0-9_]*\\}")
@@ -123,6 +129,59 @@ func dispatch(context: Dictionary, payload: Dictionary = {}, occurrence_id: Stri
 	return count
 
 
+func play_choice(pending: Dictionary, resuming: bool = false) -> bool:
+	var id: String = str(pending.get("event_id", ""))
+	var occurrence: String = str(pending.get("occurrence_id", ""))
+	if not events.has(id) or not bool(events[id].get("requires_choice", false)) or occurrence.is_empty():
+		return false
+	if current.get("occurrence", "") == occurrence:
+		return false
+	for entry: Dictionary in queue:
+		if entry.get("occurrence", "") == occurrence:
+			return false
+	# Campaign pending state is the authority for resumption; a presentation
+	# receipt alone must never discard an unresolved decision after loading.
+	var templates: Array = events[id].get("steps", []).duplicate(true)
+	var choice_index: int = -1
+	for index: int in range(templates.size()):
+		if templates[index].get("mode", "") == "choice":
+			choice_index = index
+	if choice_index < 0:
+		return false
+	var valid_pending: bool = false
+	for choice: Dictionary in templates[choice_index].get("choices", []):
+		if campaign.get_event_choice_reason(id, occurrence, str(choice.id)).is_empty():
+			valid_pending = true
+	if not valid_pending:
+		return false
+	occurrence_ids[occurrence] = true
+	var payload: Dictionary = pending.get("payload", {}).duplicate(true)
+	queue.append({"id": id, "occurrence": occurrence, "requires_choice": true, "resolved": false,
+		"templates": templates, "payload": payload, "steps": substitute(templates, payload),
+		"start_index": choice_index if resuming or display_level == "minimal" else 0})
+	if not active:
+		_start_next()
+	return true
+
+
+func awaiting_choice() -> bool:
+	return active and bool(current.get("requires_choice", false)) and not bool(current.get("resolved", false))
+
+
+func _choose(choice_id: String) -> void:
+	if not awaiting_choice() or menu_open() or current.steps[step_index].get("mode", "") != "choice":
+		return
+	var result: Dictionary = campaign.resolve_event_choice(str(current.id), str(current.occurrence), choice_id)
+	if result.is_empty():
+		_show_step()
+		return
+	current.resolved = true
+	current.payload.merge(result, true)
+	current.steps = substitute(current.templates, current.payload)
+	step_index += 1
+	_show_step()
+
+
 static func substitute(value: Variant, payload: Dictionary) -> Variant:
 	if value is String:
 		var text: String = value
@@ -150,7 +209,7 @@ func _start_next() -> void:
 	campaign.end_turn_button.disabled = true
 	adapter.begin()
 	current = queue.pop_front()
-	step_index = 0
+	step_index = int(current.get("start_index", 0))
 	set_auto(false)
 	_show_step()
 
@@ -163,6 +222,15 @@ func _show_step() -> void:
 	step_elapsed = 0.0
 	adapter.clear_step()
 	view.show_step(step, catalog)
+	view.skip_button.disabled = awaiting_choice()
+	view.auto_button.disabled = awaiting_choice()
+	view.next_button.disabled = step.get("mode", "") == "choice"
+	view.save_button.visible = awaiting_choice()
+	if step.get("mode", "") == "choice":
+		var choices: Array = step.get("choices", []).duplicate(true)
+		for choice: Dictionary in choices:
+			choice["reason"] = campaign.get_event_choice_reason(str(current.id), str(current.occurrence), str(choice.id))
+		view.show_choices(choices)
 	if step.get("mode", "") == "map":
 		adapter.play_step(step)
 	play_audio(music, str(step.get("music", "")))
@@ -183,6 +251,8 @@ func play_audio(player: AudioStreamPlayer, id: String) -> void:
 func next() -> void:
 	if not active or menu_open():
 		return
+	if current.steps[step_index].get("mode", "") == "choice":
+		return
 	if view.complete_text():
 		return
 	step_index += 1
@@ -190,14 +260,14 @@ func next() -> void:
 
 
 func skip() -> void:
-	if active and not menu_open():
+	if active and not menu_open() and not awaiting_choice():
 		_finish()
 
 
 func set_auto(enabled: bool) -> void:
-	auto_play = enabled
+	auto_play = enabled and not awaiting_choice()
 	if view != null:
-		view.auto_button.set_pressed_no_signal(enabled)
+		view.auto_button.set_pressed_no_signal(auto_play)
 
 
 func _process(delta: float) -> void:
@@ -242,7 +312,8 @@ func restore_state(data: Dictionary) -> void:
 	display_level = str(data.get("display_level", "all"))
 	if not LEVELS.has(display_level):
 		display_level = "all"
-	# Restoring never calls dispatch/play and never resumes a pending result.
+	# Campaign resumes authoritative pending choices AFTER restoring resources.
+	# This presentation restore never replays simulation or resolved results.
 
 
 func _exit_tree() -> void:

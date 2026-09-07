@@ -10,6 +10,9 @@ const ProductionOverlay = preload("res://production_overlay.gd")
 const IronSupplyData = preload("res://iron_supply_data.gd")
 const EventPresentation = preload("res://cutscenes/event_presentation.gd")
 const BountifulHarvest = preload("res://bountiful_harvest.gd")
+const CropFailure = preload("res://crop_failure.gd")
+
+var crop_failure_events: Dictionary = {"version": 1, "years": {}, "pending": {}, "resolved": {}}
 
 var harvest_events: Dictionary = {"version": 1, "years": {}}
 var pending_harvest_presentation: Dictionary = {}
@@ -1678,6 +1681,36 @@ func _on_end_turn_button_pressed() -> void:
 	if strategy_message != "":
 		log_label.text += "\n" + strategy_message
 	_present_harvest_event()
+	_present_pending_choice()
+
+
+func _present_pending_choice(resuming: bool = false) -> void:
+	if CropFailure.cancel_if_unowned(crop_failure_events, provinces, player_faction):
+		log_label.text += "\n흉년 발생 영지의 소유권이 바뀌어 후속 정책 선택이 취소되었습니다."
+		return
+	var pending: Dictionary = crop_failure_events.get("pending", {})
+	if not pending.is_empty():
+		event_presentation.play_choice(pending, resuming)
+
+
+func get_event_choice_reason(event_id: String, occurrence: String, choice: String) -> String:
+	if event_id == CropFailure.EVENT_ID:
+		return CropFailure.choice_reason(crop_failure_events, provinces, player_faction, occurrence, choice)
+	return "지원하지 않는 선택 이벤트입니다"
+
+
+func resolve_event_choice(event_id: String, occurrence: String, choice: String) -> Dictionary:
+	if event_id != CropFailure.EVENT_ID:
+		return {}
+	var result: Dictionary = CropFailure.resolve(crop_failure_events, provinces, player_faction, occurrence, choice)
+	if not result.is_empty():
+		update_top_bar()
+		event_presentation.event_finished.connect(_refresh_after_event_choice, CONNECT_ONE_SHOT)
+	return result
+
+
+func _refresh_after_event_choice(_event_id: String) -> void:
+	select_province(selected_province_id)
 
 
 func _present_harvest_event() -> void:
@@ -1825,6 +1858,11 @@ func process_seasonal_harvest() -> Array[String]:
 	if not bounty.is_empty():
 		pending_harvest_presentation = bounty
 		messages.append("%s 풍년: 9월 수확 추가 군량 +%d · 치안 +%d" % [bounty.province_name, bounty.grain_delta, bounty.public_order_delta])
+	var failure: Dictionary = CropFailure.apply_september(crop_failure_events, scenario_id, year, month,
+		provinces, player_faction, september_harvests,
+		str(harvest_events.get("years", {}).get(str(year), {}).get("province_id", "")))
+	if not failure.is_empty():
+		messages.append("%s 흉년: 9월 수확 군량 -%d" % [failure.payload.province_name, failure.payload.harvest_loss])
 	return messages
 
 
@@ -2225,6 +2263,7 @@ func _on_save_button_pressed(save_path: String = SAVE_PATH) -> void:
 		"strategy_state": strategy_state,
 		"event_presentation": event_presentation.export_state() if event_presentation != null else {},
 		"harvest_events": harvest_events,
+		"crop_failure_events": crop_failure_events,
 	}
 	var save_file: FileAccess = FileAccess.open(save_path, FileAccess.WRITE)
 
@@ -2284,6 +2323,7 @@ func _on_load_button_pressed(save_path: String = SAVE_PATH) -> void:
 	_sync_season_from_month()
 	gold = maxi(0, int(save_data.get("gold", 1000)))
 	harvest_events = BountifulHarvest.restore_state(save_data.get("harvest_events"), year, month)
+	crop_failure_events = CropFailure.restore_state(save_data.get("crop_failure_events"), year, month)
 	pending_harvest_presentation = {}
 	food = maxi(0, int(save_data.get("food", 3000)))
 	player_faction = str(save_data.get("player_faction", "신라"))
@@ -2368,6 +2408,7 @@ func _on_load_button_pressed(save_path: String = SAVE_PATH) -> void:
 		month,
 		SEASONS[season_index],
 	]
+	_present_pending_choice(true)
 
 
 func _is_valid_save_data(save_data: Dictionary) -> bool:

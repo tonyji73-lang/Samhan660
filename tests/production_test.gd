@@ -265,6 +265,9 @@ func _run() -> void:
 	grain.food_stock = 0
 	campaign.provinces[CITY] = grain
 	campaign.month = 9
+	# This fixture isolates the original harvest formula; choice effects and
+	# mandatory turn locks are covered by crop_failure_test.gd.
+	campaign.crop_failure_events.years[str(campaign.year)] = {"evaluated": true, "province_id": ""}
 	campaign.process_seasonal_harvest()
 	check(grain.food_stock == 2520, "September receives 70 percent of collected harvest")
 	campaign.month = 10

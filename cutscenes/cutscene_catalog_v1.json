@@ -8,6 +8,64 @@
     "baekje_west_coast": {"cities": ["imjonseong", "ungjin", "sabi"], "note": "백제 서부 권역의 기존 도시 점멸. 정밀 해안선이 아닌 연출상 대체 표식."}
   },
   "cutscenes": [
+{
+  "schema_version": 1,
+  "id": "domestic_crop_failure",
+  "category": "domestic_choice",
+  "importance": "major",
+  "requires_choice": true,
+  "once_per_campaign": false,
+  "trigger": {
+    "season": "autumn",
+    "event_key": "crop_failure"
+  },
+  "steps": [
+    {
+      "mode": "illustrated",
+      "background": "domestic_crop_failure.webp",
+      "title": "흉년",
+      "text": "{province_name} 일대의 곡식이 제대로 여물지 못했습니다. 이번 수확에서 군량 {harvest_loss}을 잃었습니다.",
+      "duration": 4.0
+    },
+    {
+      "mode": "choice",
+      "background": "domestic_crop_failure.webp",
+      "title": "백성을 어떻게 다스리시겠습니까?",
+      "text": "{province_name} · 확정 수확 손실 군량 {harvest_loss}",
+      "choices": [
+        {
+          "id": "relieve_people",
+          "label": "백성을 구휼한다",
+          "description": "관곡을 풀어 굶주린 백성을 돕습니다.",
+          "preview": ["군량 -800", "치안 +8"],
+          "requires": {"province_food_stock": 800}
+        },
+        {
+          "id": "maintain_tax",
+          "label": "세금을 유지한다",
+          "description": "추가 지출 없이 기존 징수를 유지합니다.",
+          "preview": ["군량 변화 없음", "치안 -6"]
+        },
+        {
+          "id": "force_requisition",
+          "label": "군량을 강제 징발한다",
+          "description": "민간의 곡식을 거두어 군량으로 전환합니다.",
+          "preview": ["군량 +500", "치안 -12"]
+        }
+      ]
+    },
+    {
+      "mode": "result",
+      "background": "domestic_crop_failure.webp",
+      "title": "{choice_result_title}",
+      "results": [
+        {"label": "군량", "value": "{grain_result_text}"},
+        {"label": "치안", "value": "{public_order_result_text}"}
+      ],
+      "duration": 3.5
+    }
+  ]
+},
     {
       "id": "silla_660_intro",
       "category": "campaign_intro",

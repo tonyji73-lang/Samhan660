@@ -39,6 +39,10 @@ func _ready() -> void:
 	column.add_child(heading)
 	event_list = OptionButton.new()
 	for id: String in campaign.event_presentation.events:
+		# This preview intentionally never mutates simulation resources. Required
+		# decisions are exercised through real September turns / crop_failure_test.
+		if campaign.event_presentation.events[id].get("requires_choice", false):
+			continue
 		event_list.add_item(id)
 	column.add_child(event_list)
 	province_name = LineEdit.new()

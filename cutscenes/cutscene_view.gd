@@ -4,6 +4,8 @@ signal next_requested
 signal skip_requested
 signal auto_changed(enabled: bool)
 signal menu_requested
+signal choice_requested(choice_id: String)
+signal save_requested
 
 var background: TextureRect
 var title_label: Label
@@ -15,6 +17,10 @@ var versus_label: Label
 var next_button: Button
 var skip_button: Button
 var auto_button: CheckButton
+var save_button: Button
+var choice_panel: PanelContainer
+var choice_column: VBoxContainer
+var choice_buttons: Dictionary = {}
 var elapsed: float = 0.0
 var full_text: String = ""
 
@@ -74,6 +80,10 @@ func _ready() -> void:
 	menu.text = "메뉴 / Esc"
 	menu.pressed.connect(func(): menu_requested.emit())
 	controls.add_child(menu)
+	save_button = Button.new()
+	save_button.text = "저장"
+	save_button.pressed.connect(func(): save_requested.emit())
+	controls.add_child(save_button)
 	var spacer := Control.new()
 	spacer.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	controls.add_child(spacer)
@@ -92,6 +102,18 @@ func _ready() -> void:
 	for button: Control in controls.get_children():
 		button.add_theme_font_size_override("font_size", 21)
 		button.custom_minimum_size.y = 42
+	choice_panel = PanelContainer.new()
+	choice_panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	choice_panel.anchor_left = 0.18
+	choice_panel.anchor_right = 0.82
+	choice_panel.anchor_top = 0.25
+	choice_panel.anchor_bottom = 0.72
+	choice_panel.add_theme_stylebox_override("panel", style.duplicate())
+	add_child(choice_panel)
+	choice_column = VBoxContainer.new()
+	choice_column.add_theme_constant_override("separation", 12)
+	choice_panel.add_child(choice_column)
+	choice_panel.hide()
 	hide()
 
 
@@ -117,6 +139,7 @@ func _portrait(left: float, right: float) -> TextureRect:
 
 
 func show_step(step: Dictionary, catalog: Dictionary) -> void:
+	choice_panel.hide()
 	var mode: String = str(step.get("mode", "illustrated"))
 	background.visible = mode != "map"
 	background.texture = _texture(str(catalog.get("asset_root", "")), str(step.get("background", "")))
@@ -141,6 +164,26 @@ func show_step(step: Dictionary, catalog: Dictionary) -> void:
 	elapsed = 0.0
 	show()
 	next_button.grab_focus()
+
+
+func show_choices(choices: Array) -> void:
+	for child: Node in choice_column.get_children():
+		choice_column.remove_child(child)
+		child.queue_free()
+	choice_buttons.clear()
+	for choice: Dictionary in choices:
+		var button := Button.new()
+		var reason: String = str(choice.get("reason", ""))
+		button.text = "%s\n%s\n%s" % [choice.get("label", ""), choice.get("description", ""), " · ".join(choice.get("preview", []))]
+		if not reason.is_empty():
+			button.text += "\n" + reason
+		button.disabled = not reason.is_empty()
+		button.add_theme_font_size_override("font_size", 21)
+		button.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		button.pressed.connect(func(): choice_requested.emit(str(choice.id)))
+		choice_column.add_child(button)
+		choice_buttons[str(choice.id)] = button
+	choice_panel.show()
 
 
 func _texture(root_path: String, file: String) -> Texture2D:
