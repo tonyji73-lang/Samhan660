@@ -108,6 +108,9 @@ func campaign_case(scenario: Dictionary, player_id: String) -> void:
 	var campaign = CampaignScene.instantiate()
 	root.add_child(campaign)
 	current_scene = campaign
+	# Ownership regression uses the normal presentation setting to omit openings.
+	# Dedicated cutscene tests exercise their input locks and persistence.
+	campaign.event_presentation.display_level = "minimal"
 	await process_frame
 	await process_frame
 	check(campaign.year == scenario.year and campaign.player_faction_id == setup_player and not root.has_meta("new_game_settings"), label + ": actual new-game settings consumed")

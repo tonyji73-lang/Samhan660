@@ -24,6 +24,7 @@ func run(host: SceneTree) -> void:
 		})
 		var c = CampaignScene.instantiate()
 		runner.root.add_child(c)
+		c.event_presentation.display_level = "minimal"
 		runner.current_scene = c
 		await runner.process_frame
 		await runner.process_frame

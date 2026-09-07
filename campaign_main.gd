@@ -8,6 +8,10 @@ const ProductionSystem = preload("res://production_system.gd")
 const ProductionData = preload("res://production_data.gd")
 const ProductionOverlay = preload("res://production_overlay.gd")
 const IronSupplyData = preload("res://iron_supply_data.gd")
+const EventPresentation = preload("res://cutscenes/event_presentation.gd")
+
+var event_presentation: CanvasLayer
+var pending_campaign_opening: bool = false
 # Dependency supplied only by isolated tests; never loaded from campaign saves.
 var iron_supply_rules: Dictionary = IronSupplyData.SCENARIOS
 
@@ -243,6 +247,7 @@ var pending_transfer_orders: Array[Dictionary] = []
 
 
 func _ready() -> void:
+	pending_campaign_opening = get_tree().root.has_meta("new_game_settings")
 	_apply_legacy_core_province_values()
 	_apply_new_game_settings()
 	_refresh_faction_controllers()
@@ -262,6 +267,9 @@ func _ready() -> void:
 	production_overlay.name = "ProductionOverlay"
 	production_layer.add_child(production_overlay)
 	_connect_navigation_menu()
+	event_presentation = EventPresentation.new()
+	add_child(event_presentation)
+	event_presentation.setup(self)
 	_connect_button_once(
 		officer_list.item_selected,
 		_on_officer_list_item_selected
@@ -317,9 +325,26 @@ func _ready() -> void:
 			DIFFICULTY_NAMES.get(difficulty, "보통"),
 		]
 	)
+	_present_campaign_opening.call_deferred()
+
+
+func _present_campaign_opening() -> void:
+	if not pending_campaign_opening:
+		return
+	pending_campaign_opening = false
+	event_presentation.dispatch({
+		"scenario_year": int(_get_scenario_by_id(scenario_id).get("year", 0)),
+		"player_faction": player_faction_id,
+	})
 
 
 func _input(event: InputEvent) -> void:
+	if event_presentation != null and event_presentation.active:
+		if event.is_action_pressed("ui_cancel"):
+			if not event_presentation.menu_open():
+				event_presentation.open_menu()
+				get_viewport().set_input_as_handled()
+		return
 	if not event.is_action_pressed("ui_cancel"):
 		return
 	if production_overlay != null and production_overlay.visible:
@@ -682,6 +707,8 @@ func get_faction_controller(faction_id: String) -> String:
 
 
 func select_province(province_id: String, show_floating_card: bool = true) -> void:
+	if event_presentation != null and event_presentation.active:
+		return
 	if not provinces.has(province_id):
 		return
 
@@ -1454,6 +1481,7 @@ func resolve_attack(source_id: String, target_id: String) -> void:
 	var attacker_leadership: int = int(attacker_commander["leadership"])
 	var defender_leadership: int = int(defender_commander["leadership"])
 	var fortress: int = int(defender["fortress"])
+	var presentation_losses: Dictionary = {}
 
 	var attacker_power: int = int(
 		float(attacker_troops) * (1.0 + float(attacker_leadership) / 100.0)
@@ -1478,6 +1506,7 @@ func resolve_attack(source_id: String, target_id: String) -> void:
 		var surviving_attackers: int = attacker_troops - attacker_losses
 		var source_garrison: int = maxi(500, int(float(surviving_attackers) * 0.35))
 		var occupation_force: int = maxi(500, surviving_attackers - source_garrison)
+		presentation_losses = {"attacker_losses": attacker_losses, "defender_losses": defender_troops, "battle_grade": "승리"}
 
 		attacker["troops"] = source_garrison
 		defender["troops"] = occupation_force
@@ -1506,6 +1535,7 @@ func resolve_attack(source_id: String, target_id: String) -> void:
 
 		attacker["troops"] = maxi(1000, attacker_troops - attacker_losses)
 		defender["troops"] = maxi(1000, defender_troops - defender_losses)
+		presentation_losses = {"attacker_losses": attacker_troops - int(attacker["troops"]), "defender_losses": defender_troops - int(defender["troops"]), "battle_grade": "패배"}
 
 		result_message = (
 			"%s 공략에 실패했습니다.\n공격군 손실: %d명 | 수비군 손실: %d명"
@@ -1516,6 +1546,11 @@ func resolve_attack(source_id: String, target_id: String) -> void:
 	select_province(target_id)
 	update_top_bar()
 	log_label.text = result_message
+	# Existing combat resolves exactly once above. The catalog supplies the
+	# commander cut-in and result sequence; skipping it cannot undo/reapply combat.
+	if event_presentation != null:
+		presentation_losses.merge({"attacker_name": attacker_commander["name"], "defender_name": defender_commander["name"], "attacker_troops": attacker_troops, "defender_troops": defender_troops})
+		event_presentation.dispatch.call_deferred({"event_key": "battle_start", "attacker_name": attacker_commander["name"], "defender_name": defender_commander["name"]}, presentation_losses)
 
 	if player_controls_all_provinces():
 		log_label.text += (
@@ -1595,6 +1630,8 @@ func _on_recruit_button_pressed() -> void:
 
 
 func _on_end_turn_button_pressed() -> void:
+	if event_presentation != null and event_presentation.active:
+		return
 	var season_changed: bool = _advance_month()
 
 	var economy_messages: Array[String] = process_monthly_commerce_income()
@@ -1985,6 +2022,13 @@ func find_ai_target(source_id: String) -> String:
 func resolve_ai_attack(source_id: String, target_id: String) -> String:
 	var attacker: Dictionary = provinces[source_id]
 	var defender: Dictionary = provinces[target_id]
+	# Capture the pre-combat alert payload; present only after this synchronous
+	# turn's simulation has committed. The presentation never resolves combat.
+	if event_presentation != null and defender.get("faction", "") == player_faction:
+		event_presentation.dispatch.call_deferred({"event_key": "enemy_crossed_border"}, {
+			"target_province_id": target_id, "target_province_name": defender["name"],
+			"enemy_faction_name": attacker["faction"], "enemy_troops": attacker["troops"],
+		})
 	var attacker_commander: Dictionary = get_best_commander(source_id)
 	var defender_commander: Dictionary = get_best_commander(target_id)
 	var attacker_troops: int = int(attacker["troops"])
@@ -2156,6 +2200,7 @@ func _on_save_button_pressed(save_path: String = SAVE_PATH) -> void:
 		"officers_by_province": officers_by_province,
 		"pending_transfer_orders": pending_transfer_orders,
 		"strategy_state": strategy_state,
+		"event_presentation": event_presentation.export_state() if event_presentation != null else {},
 	}
 	var save_file: FileAccess = FileAccess.open(save_path, FileAccess.WRITE)
 
@@ -2198,6 +2243,10 @@ func _on_load_button_pressed(save_path: String = SAVE_PATH) -> void:
 		log_label.text = "9영지 저장 데이터가 손상되었거나 호환되지 않습니다."
 		return
 
+	pending_campaign_opening = false
+	if event_presentation != null:
+		var presentation_data: Variant = save_data.get("event_presentation", {})
+		event_presentation.restore_state(presentation_data if presentation_data is Dictionary else {})
 	year = int(save_data.get("year", 660))
 	if save_data.has("month"):
 		month = clampi(int(save_data.get("month", 1)), 1, MONTHS_PER_YEAR)

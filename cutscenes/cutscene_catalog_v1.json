@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "asset_root": "res://assets/cutscenes/illustrated/",
+  "portrait_root": "res://assets/portraits/",
+  "audio_cues": {},
+  "map_targets": {
+    "tang_east_border": {"cities": ["shandong"], "note": "당 방면 연출 기준점: 기존 산동항 사용. 역사적 국경 좌표를 새로 정의하지 않음."},
+    "baekje_west_coast": {"cities": ["imjonseong", "ungjin", "sabi"], "note": "백제 서부 권역의 기존 도시 점멸. 정밀 해안선이 아닌 연출상 대체 표식."}
+  },
+  "cutscenes": [
+    {
+      "id": "silla_660_intro",
+      "category": "campaign_intro",
+      "importance": "major",
+      "once_per_campaign": true,
+      "trigger": {"scenario_year": 660, "player_faction": "silla"},
+      "steps": [
+        {
+          "mode": "illustrated",
+          "background": "silla_660_intro.webp",
+          "title": "660년, 신라",
+          "text": "신라는 오랜 숙적 백제를 향해 마지막 칼을 뽑았다.",
+          "music": "silla_theme",
+          "duration": 4.0
+        },
+        {
+          "mode": "dialogue",
+          "background": "silla_660_intro.webp",
+          "portrait": "kim_chunchu.png",
+          "speaker": "김춘추",
+          "text": "삼한의 운명을 결정할 때가 왔다.",
+          "sfx": "war_drum_single",
+          "duration": 4.0
+        },
+        {
+          "mode": "map",
+          "camera": {"action": "pan_route", "from": "geumseong", "to": "sabi", "duration": 3.0},
+          "map_effects": [{"action": "pulse_faction", "faction": "baekje", "color": "enemy_red", "count": 2}],
+          "duration": 3.5
+        }
+      ]
+    },
+    {
+      "id": "baekje_660_intro",
+      "category": "campaign_intro",
+      "importance": "major",
+      "once_per_campaign": true,
+      "trigger": {"scenario_year": 660, "player_faction": "baekje"},
+      "steps": [
+        {
+          "mode": "illustrated",
+          "background": "baekje_660_intro.webp",
+          "title": "660년, 백제",
+          "text": "당과 신라의 군대가 백제의 국경을 향하고 있다.",
+          "music": "baekje_crisis_theme",
+          "sfx": "distant_beacon",
+          "duration": 4.5
+        },
+        {
+          "mode": "dialogue",
+          "background": "baekje_660_intro.webp",
+          "portrait": "gyebaek.png",
+          "speaker": "계백",
+          "text": "살아남기 위해 싸우는 것이 아닙니다. 백제의 이름을 지키기 위해 싸우겠습니다.",
+          "duration": 5.0
+        },
+        {
+          "mode": "map",
+          "camera": {"action": "zoom_to", "target": "sabi", "duration": 2.2},
+          "text": "신라 방면과 백제 서부 권역에 전운이 감돌고 있습니다.",
+          "map_effects": [
+            {"action": "pulse_border", "from_faction": "silla", "color": "enemy_red", "count": 2},
+            {"action": "pulse_coast", "target": "baekje_west_coast", "color": "enemy_red", "count": 2}
+          ],
+          "duration": 3.5
+        }
+      ]
+    },
+    {
+      "id": "goguryeo_660_intro",
+      "category": "campaign_intro",
+      "importance": "major",
+      "once_per_campaign": true,
+      "trigger": {"scenario_year": 660, "player_faction": "goguryeo"},
+      "steps": [
+        {
+          "mode": "illustrated",
+          "background": "goguryeo_660_intro.webp",
+          "title": "660년, 고구려",
+          "text": "백제가 무너지면 당의 칼끝은 평양을 향할 것이다.",
+          "music": "goguryeo_northern_theme",
+          "sfx": "winter_wind",
+          "duration": 4.5
+        },
+        {
+          "mode": "dialogue",
+          "background": "goguryeo_660_intro.webp",
+          "portrait": "yeon_gaesomun.png",
+          "speaker": "연개소문",
+          "text": "적은 국경 밖에만 있는 것이 아니다. 흔들리는 자부터 바로 세워야 한다.",
+          "duration": 5.0
+        },
+        {
+          "mode": "map",
+          "camera": {"action": "pan_route", "from": "tang_east_border", "to": "pyongyang", "duration": 3.0},
+          "text": "당 방면에서 평양으로 향하는 위협. 지도 경로는 연출용 개략 표시입니다.",
+          "map_effects": [{"action": "pulse_border", "from_faction": "tang", "color": "enemy_red", "count": 3}],
+          "duration": 3.5
+        }
+      ]
+    },
+    {
+      "id": "domestic_bountiful_harvest",
+      "category": "domestic",
+      "importance": "normal",
+      "once_per_campaign": false,
+      "trigger": {"season": "autumn", "event_key": "bountiful_harvest"},
+      "steps": [
+        {
+          "mode": "illustrated",
+          "background": "domestic_bountiful_harvest.webp",
+          "title": "풍년",
+          "text": "{province_name} 일대에 풍년이 들었습니다. 올해의 수확량이 크게 증가했습니다.",
+          "sfx": "harvest_crowd",
+          "duration": 3.5
+        },
+        {
+          "mode": "result",
+          "background": "domestic_bountiful_harvest.webp",
+          "results": [
+            {"label": "군량", "value": "+{grain_delta}"},
+            {"label": "치안", "value": "+{public_order_delta}"}
+          ],
+          "duration": 2.5
+        }
+      ]
+    },
+    {
+      "id": "enemy_invasion_alert",
+      "category": "military_alert",
+      "importance": "major",
+      "once_per_campaign": false,
+      "trigger": {"event_key": "enemy_crossed_border"},
+      "steps": [
+        {
+          "mode": "map",
+          "camera": {"action": "zoom_to", "target": "{target_province_id}", "duration": 1.8},
+          "title": "{target_province_name} 침공 경보",
+          "text": "{enemy_faction_name}군 {enemy_troops}명 접근. 대상 지역을 확인하십시오.",
+          "map_effects": [{"action": "pulse_province", "target": "{target_province_id}", "color": "enemy_red", "count": 3}],
+          "sfx": "war_drum_alert",
+          "duration": 2.5
+        },
+        {
+          "mode": "illustrated",
+          "background": "enemy_invasion_alert.webp",
+          "title": "적군 침공",
+          "text": "{enemy_faction_name}군 {enemy_troops}명이 {target_province_name}로 진입했습니다.",
+          "sfx": "horse_arrival",
+          "duration": 4.0
+        }
+      ]
+    },
+    {
+      "id": "battle_hwangsanbeol",
+      "category": "battle",
+      "importance": "major",
+      "once_per_campaign": false,
+      "trigger": {"event_key": "battle_start", "attacker_name": "김유신", "defender_name": "계백"},
+      "steps": [
+        {
+          "mode": "battle_vs",
+          "background": "battle_start_hwangsanbeol.webp",
+          "title": "전투 시작",
+          "text": "{attacker_name}군과 {defender_name}군이 맞섭니다.",
+          "left_portrait": "kim_yushin.png",
+          "right_portrait": "gyebaek.png",
+          "left_name": "{attacker_name}",
+          "right_name": "{defender_name}",
+          "left_troops": "{attacker_troops}",
+          "right_troops": "{defender_troops}",
+          "sfx": "war_drum_roll",
+          "duration": 4.0
+        },
+        {
+          "mode": "result",
+          "background": "battle_result_generic.webp",
+          "title": "{battle_grade}",
+          "results": [
+            {"label": "아군 피해", "value": "-{attacker_losses}"},
+            {"label": "적군 피해", "value": "-{defender_losses}"}
+          ],
+          "music": "battle_result_dynamic",
+          "duration": 5.0
+        }
+      ]
+    }
+  ]
+}
