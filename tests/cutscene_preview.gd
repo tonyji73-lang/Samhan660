@@ -4,7 +4,7 @@ extends Node
 # No resources, technologies, troops or rewards are assigned to the campaign.
 const Campaign = preload("res://campaign_main.tscn")
 const PAYLOADS: Dictionary = {
-	"domestic_bountiful_harvest": {"province_name": "금성", "grain_delta": 1200, "public_order_delta": 3},
+	"domestic_bountiful_harvest": {"province_name": "금성", "grain_delta": 1200, "public_order_delta": 0},
 	"enemy_invasion_alert": {"target_province_id": "sabi", "target_province_name": "사비성", "enemy_faction_name": "신라", "enemy_troops": 15000},
 	"battle_hwangsanbeol": {"attacker_name": "김유신", "defender_name": "계백", "attacker_troops": 15000, "defender_troops": 10000, "attacker_losses": 2800, "defender_losses": 9100, "battle_grade": "대승"},
 }
@@ -52,8 +52,9 @@ func _ready() -> void:
 	column.add_child(grain)
 	public_order = SpinBox.new()
 	public_order.max_value = 100
-	public_order.value = 3
+	public_order.value = PAYLOADS.domestic_bountiful_harvest.public_order_delta
 	public_order.prefix = "치안 +"
+	public_order.tooltip_text = "실제 증가량: 0이면 결과에 치안 100 · 최대치 표시"
 	column.add_child(public_order)
 	var play_button := Button.new()
 	play_button.text = "선택한 컷씬 재생"

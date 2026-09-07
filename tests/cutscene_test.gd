@@ -98,6 +98,13 @@ func _run() -> void:
 	p.skip()
 	check(not p.play("domestic_bountiful_harvest", Preview.PAYLOADS.domestic_bountiful_harvest, "harvest-fixture-1"), "same occurrence cannot replay")
 	check(snapshot(c) == before, "presentation never applies a displayed harvest reward")
+	var preview_payload: Dictionary = Preview.PAYLOADS.domestic_bountiful_harvest.duplicate(true)
+	p.play("domestic_bountiful_harvest", preview_payload)
+	p.next()
+	p.next()
+	check(p.view.body_label.text.contains("치안 100 · 최대치") and not p.view.body_label.text.contains("+0"), "zero-order preview displays maximum caption")
+	p.skip()
+	check(preview_payload.public_order_delta == 0 and snapshot(c) == before, "maximum caption changes neither payload nor campaign rewards")
 	p.play("enemy_invasion_alert", Preview.PAYLOADS.enemy_invasion_alert)
 	check(p.current.steps[0].camera.target == "sabi" and p.adapter.effects.size() == 1, "invasion target and pulse are data driven")
 	await create_timer(0.1).timeout

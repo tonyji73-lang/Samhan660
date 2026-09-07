@@ -9,6 +9,10 @@ const ProductionData = preload("res://production_data.gd")
 const ProductionOverlay = preload("res://production_overlay.gd")
 const IronSupplyData = preload("res://iron_supply_data.gd")
 const EventPresentation = preload("res://cutscenes/event_presentation.gd")
+const BountifulHarvest = preload("res://bountiful_harvest.gd")
+
+var harvest_events: Dictionary = {"version": 1, "years": {}}
+var pending_harvest_presentation: Dictionary = {}
 
 var event_presentation: CanvasLayer
 var pending_campaign_opening: bool = false
@@ -1673,6 +1677,16 @@ func _on_end_turn_button_pressed() -> void:
 
 	if strategy_message != "":
 		log_label.text += "\n" + strategy_message
+	_present_harvest_event()
+
+
+func _present_harvest_event() -> void:
+	if pending_harvest_presentation.is_empty():
+		return
+	var result: Dictionary = pending_harvest_presentation
+	pending_harvest_presentation = {}
+	if event_presentation != null:
+		event_presentation.play("domestic_bountiful_harvest", result, str(result.occurrence_id))
 
 
 func _advance_month() -> bool:
@@ -1786,6 +1800,7 @@ func process_seasonal_harvest() -> Array[String]:
 
 	var messages: Array[String] = []
 	var player_harvest_total: int = 0
+	var september_harvests: Dictionary = {}
 	for province_id: String in Korea35Data.PROVINCE_IDS:
 		if not provinces.has(province_id):
 			continue
@@ -1798,10 +1813,18 @@ func process_seasonal_harvest() -> Array[String]:
 		province["food_stock"] = int(province.get("food_stock", 0)) + harvest
 		if controller == CONTROLLER_PLAYER:
 			player_harvest_total += harvest
+			if month == 9:
+				september_harvests[province_id] = harvest
 			if province_id == selected_province_id:
 				messages.append("%s 가을 수확 +%d" % [str(province["name"]), harvest])
 	if messages.is_empty() and player_harvest_total > 0:
 		messages.append("플레이어 도시 가을 수확 합계 +%d" % player_harvest_total)
+	var bounty: Dictionary = BountifulHarvest.apply_september(
+		harvest_events, scenario_id, year, month, provinces, player_faction, september_harvests
+	)
+	if not bounty.is_empty():
+		pending_harvest_presentation = bounty
+		messages.append("%s 풍년: 9월 수확 추가 군량 +%d · 치안 +%d" % [bounty.province_name, bounty.grain_delta, bounty.public_order_delta])
 	return messages
 
 
@@ -2201,6 +2224,7 @@ func _on_save_button_pressed(save_path: String = SAVE_PATH) -> void:
 		"pending_transfer_orders": pending_transfer_orders,
 		"strategy_state": strategy_state,
 		"event_presentation": event_presentation.export_state() if event_presentation != null else {},
+		"harvest_events": harvest_events,
 	}
 	var save_file: FileAccess = FileAccess.open(save_path, FileAccess.WRITE)
 
@@ -2259,6 +2283,8 @@ func _on_load_button_pressed(save_path: String = SAVE_PATH) -> void:
 		month = legacy_season_index * MONTHS_PER_SEASON + 1
 	_sync_season_from_month()
 	gold = maxi(0, int(save_data.get("gold", 1000)))
+	harvest_events = BountifulHarvest.restore_state(save_data.get("harvest_events"), year, month)
+	pending_harvest_presentation = {}
 	food = maxi(0, int(save_data.get("food", 3000)))
 	player_faction = str(save_data.get("player_faction", "신라"))
 	play_style = str(save_data.get("play_style", "historical"))

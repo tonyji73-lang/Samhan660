@@ -129,7 +129,7 @@
           "background": "domestic_bountiful_harvest.webp",
           "results": [
             {"label": "군량", "value": "+{grain_delta}"},
-            {"label": "치안", "value": "+{public_order_delta}"}
+            {"label": "치안", "value": "+{public_order_delta}", "amount": "{public_order_delta}", "zero_text": "치안 100 · 최대치"}
           ],
           "duration": 2.5
         }

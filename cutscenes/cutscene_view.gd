@@ -131,7 +131,11 @@ func show_step(step: Dictionary, catalog: Dictionary) -> void:
 	versus_label.text = "%s  %s명     대     %s  %s명" % [step.get("left_name", ""), step.get("left_troops", ""), step.get("right_name", ""), step.get("right_troops", "")]
 	full_text = str(step.get("text", ""))
 	for result: Dictionary in step.get("results", []):
-		full_text += "%s  %s\n" % [result.get("label", ""), result.get("value", "")]
+		var result_text: String = "%s  %s" % [result.get("label", ""), result.get("value", "")]
+		var amount: String = str(result.get("amount", ""))
+		if result.has("zero_text") and amount.is_valid_float() and amount.to_float() == 0.0:
+			result_text = str(result.zero_text)
+		full_text += result_text + "\n"
 	body_label.text = full_text.strip_edges()
 	body_label.visible_characters = 0
 	elapsed = 0.0
