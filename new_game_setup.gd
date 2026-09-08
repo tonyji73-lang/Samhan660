@@ -21,6 +21,39 @@ void fragment() {
 }
 """
 
+const PILOT_HANJI_SHADER_CODE: String = """
+shader_type canvas_item;
+
+void fragment() {
+	vec4 hanji = texture(TEXTURE, UV);
+	vec2 centered_uv = (UV - vec2(0.5)) * vec2(1.0, 0.86);
+	float distance_from_center = length(centered_uv);
+	float edge_alpha = 1.0 - smoothstep(0.42, 0.74, distance_from_center);
+	COLOR = vec4(hanji.rgb, hanji.a * 0.70 * edge_alpha);
+}
+"""
+
+const PILOT_FONT_NAME: String = "Batang"
+const PILOT_HANJI_PATH: String = "res://assets/ui/hanji_overlay_texture_v1.png"
+const PILOT_CHARACTER_FADE_SECONDS: float = 0.10
+const PILOT_WORD_GAP_SECONDS: float = 0.15
+const PILOT_COLUMN_GAP_SECONDS: float = 0.25
+const PILOT_PORTRAIT_PATH: String = (
+	"res://assets/portraits/overlays/seondeok_queen_overlay.png"
+)
+const PILOT_DECLARATION_LINES: Array[String] = [
+	"나 선덕여왕은",
+	"진평왕의 뒤를 이어",
+	"신라의 왕위에 올랐노라",
+	"백제와 고구려를 막아",
+	"신라의 앞날을 열리라",
+]
+const PILOT_HISTORY_DESCRIPTION: String = (
+	"632년 진평왕이 죽고 덕만공주가 왕위에 올라 선덕여왕이 되었다.\n"
+	+ "신라 최초의 여왕으로서 백제와 고구려의 공세를 견디고,\n"
+	+ "왕권을 지키며 나라의 앞날을 열어야 한다."
+)
+
 @export_group("Project Paths")
 @export_file("*.tscn") var title_scene_path: String = (
 	"res://title_screen.tscn"
@@ -208,6 +241,16 @@ const DEFAULT_BACKGROUND_TEXTURE_PATH: String = (
 	"res://assets/backgrounds/title_bg.png"
 )
 const DEFAULT_CAMPAIGN_MAP_PATH: String = WorldMapData.MAP_TEXTURE_PATH
+const FACTION_SELECTION_BACKGROUND_DIR: String = (
+	"res://assets/faction_selection/backgrounds/"
+)
+const FACTION_SELECTION_CATALOG_PATH: String = (
+	"res://assets/backgrounds/"
+	+ "faction_selection_background_catalog_v1.json"
+)
+const FACTION_SELECTION_FALLBACK_PATH: String = (
+	"res://assets/backgrounds/title_bg.png"
+)
 
 const MAP_MIN_ZOOM: float = 1.0
 const MAP_MAX_ZOOM: float = 5.0
@@ -276,15 +319,29 @@ var faction_group: ButtonGroup
 var faction_buttons: Dictionary = {}
 var faction_cards_vbox: VBoxContainer
 var faction_guide_label: Label
-var faction_description_label: Label
+var faction_description_label: RichTextLabel
+var map_column: VBoxContainer
 var map_marker_buttons: Dictionary = {}
 var map_canvas: Control
 var map_world: Control
 var map_texture_rect: TextureRect
+var faction_scene_background: TextureRect
+var faction_scene_portrait: TextureRect
 var map_territory_overlay: TextureRect
 var map_territory_material: ShaderMaterial
 var map_territory_palette_texture: ImageTexture
 var map_detail_layer: Control
+var pilot_overlay: Control
+var portrait_clip: Control
+var pilot_portrait: TextureRect
+var pilot_declaration_panel: TextureRect
+var pilot_declaration_columns: HBoxContainer
+var pilot_seal_label: Label
+var pilot_declaration_characters: Array = []
+var pilot_animation_generation: int = 0
+var pilot_animation_complete: bool = false
+var pilot_declaration_metrics_logged: bool = false
+var portrait_metrics_logged: bool = false
 # 원정로 점선. 각 항목은 [출발, 도착, Line2D 배열] 형태입니다.
 const SETUP_STRATEGIC_DASH_COUNT: int = 22
 var map_strategic_lines: Array = []
@@ -294,6 +351,7 @@ var map_zoom: float = MAP_MIN_ZOOM
 var map_dragging: bool = false
 var map_drag_last_position: Vector2 = Vector2.ZERO
 var leader_portrait: TextureRect
+var profile_portrait_panel: PanelContainer
 var portrait_fallback_label: Label
 var faction_name_label: Label
 var ruler_label: Label
@@ -337,6 +395,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	if menu_locked:
 		return
 
+	if _is_silla_632_pilot() and (
+		event.is_action_pressed("ui_accept")
+		or event is InputEventMouseButton and (event as InputEventMouseButton).pressed
+	):
+		_complete_pilot_proclamation()
+		get_viewport().set_input_as_handled()
+		return
+
 	if event.is_action_pressed("ui_cancel"):
 		_on_back_pressed()
 		get_viewport().set_input_as_handled()
@@ -370,15 +436,385 @@ func _build_background() -> void:
 
 
 func _apply_background_texture() -> void:
-	if background_texture == null:
-		background_texture = _load_default_background_texture()
+	var selection_background_path: String = _resolve_selection_background_path()
+	var target_texture: Texture2D = null
+	var selection_path_exists: bool = (
+		selection_background_path != ""
+		and ResourceLoader.exists(selection_background_path)
+	)
+	print(
+		"NewGameSetup background: scenario_id=%s faction_id=%s path=%s exists=%s"
+		% [_get_scenario_id(), selected_faction_id, selection_background_path, selection_path_exists]
+	)
 
-	background_rect.texture = background_texture
+	if selection_path_exists:
+		target_texture = _load_texture_resource(selection_background_path)
 
-	if background_texture == null:
+	if target_texture == null:
+		if background_texture == null:
+			background_texture = _load_default_background_texture()
+		target_texture = background_texture
+
+	if target_texture == null:
+		target_texture = _load_texture_resource(FACTION_SELECTION_FALLBACK_PATH)
+
+	background_rect.texture = target_texture
+
+	if target_texture == null:
 		status_label.text = (
 			"Inspector에서 Background Texture를 지정하세요."
 		)
+
+	_apply_faction_scene_layer(target_texture)
+	print(
+		"NewGameSetup background texture: root=%s map=%s portrait=%s map_world_visible=%s map_texture_visible=%s"
+		% [
+			background_rect.texture != null,
+			faction_scene_background != null and faction_scene_background.texture != null,
+			faction_scene_portrait != null and faction_scene_portrait.texture != null,
+			map_world != null and map_world.visible,
+			map_texture_rect != null and map_texture_rect.visible,
+		]
+	)
+
+
+func _apply_faction_scene_layer(background_texture_value: Texture2D) -> void:
+	if faction_scene_background == null:
+		return
+
+	faction_scene_background.texture = background_texture_value
+	var selected_data: Dictionary = _get_selected_faction_data()
+	var portrait: Texture2D = _load_first_texture(
+		selected_data.get("portrait_paths", [])
+	)
+	faction_scene_portrait.texture = portrait
+	var pilot_enabled: bool = _is_silla_632_pilot()
+	faction_scene_portrait.visible = portrait != null and not pilot_enabled
+	var pilot_portrait_texture: Texture2D = _load_texture_resource(
+		PILOT_PORTRAIT_PATH
+	)
+	_update_pilot_overlay(pilot_portrait_texture, pilot_enabled)
+
+
+func _is_silla_632_pilot() -> bool:
+	return (
+		_get_scenario_id() == "silla_equilibrium_632"
+		and selected_faction_id == "silla"
+	)
+
+
+func _build_pilot_overlay() -> void:
+	pilot_overlay = Control.new()
+	pilot_overlay.name = "Silla632PilotOverlay"
+	pilot_overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	pilot_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	pilot_overlay.z_index = 4
+	map_canvas.add_child(pilot_overlay)
+
+	portrait_clip = Control.new()
+	portrait_clip.name = "PortraitClip"
+	portrait_clip.set_anchors_preset(Control.PRESET_TOP_LEFT)
+	portrait_clip.clip_contents = true
+	portrait_clip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	pilot_overlay.add_child(portrait_clip)
+
+	pilot_portrait = TextureRect.new()
+	pilot_portrait.name = "SeondeokPortrait"
+	pilot_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	pilot_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	pilot_portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	pilot_portrait.set_anchors_preset(Control.PRESET_TOP_LEFT)
+	portrait_clip.add_child(pilot_portrait)
+
+	pilot_declaration_panel = TextureRect.new()
+	pilot_declaration_panel.name = "DeclarationHanji"
+	pilot_declaration_panel.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	pilot_declaration_panel.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	pilot_declaration_panel.texture = _load_texture_resource(PILOT_HANJI_PATH)
+	var hanji_shader: Shader = Shader.new()
+	hanji_shader.code = PILOT_HANJI_SHADER_CODE
+	var hanji_material: ShaderMaterial = ShaderMaterial.new()
+	hanji_material.shader = hanji_shader
+	pilot_declaration_panel.material = hanji_material
+	pilot_declaration_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	pilot_overlay.add_child(pilot_declaration_panel)
+
+	var declaration_content: Control = Control.new()
+	declaration_content.name = "DeclarationContent"
+	declaration_content.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	pilot_declaration_panel.add_child(declaration_content)
+
+	pilot_declaration_columns = HBoxContainer.new()
+	pilot_declaration_columns.name = "VerticalDeclarationColumns"
+	pilot_declaration_columns.add_theme_constant_override("separation", 27)
+	declaration_content.add_child(pilot_declaration_columns)
+
+	var brush_font: Font = _load_pilot_font()
+	pilot_declaration_characters.clear()
+	for line_index: int in range(
+		PILOT_DECLARATION_LINES.size() - 1,
+		-1,
+		-1
+	):
+		var line: String = PILOT_DECLARATION_LINES[line_index]
+		var column: VBoxContainer = VBoxContainer.new()
+		var column_characters: Array[Label] = []
+		column.add_theme_constant_override("separation", 0)
+		for character_index: int in range(line.length()):
+			var character: String = line.substr(character_index, 1)
+			if character == " ":
+				var word_gap: Control = Control.new()
+				word_gap.custom_minimum_size = Vector2(0.0, 14.0)
+				column.add_child(word_gap)
+				continue
+			var character_label: Label = Label.new()
+			character_label.text = character
+			character_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			character_label.custom_minimum_size = Vector2(42.0, 39.0)
+			character_label.add_theme_font_size_override("font_size", 39)
+			character_label.add_theme_color_override(
+				"font_color",
+				Color(0.102, 0.082, 0.063, 0.96)
+			)
+			character_label.set_meta(
+				"word_gap_after",
+				character_index < line.length() - 1
+				and line.substr(character_index + 1, 1) == " "
+			)
+			if brush_font != null:
+				character_label.add_theme_font_override("font", brush_font)
+			character_label.modulate.a = 0.0
+			column.add_child(character_label)
+			column_characters.append(character_label)
+		pilot_declaration_columns.add_child(column)
+		pilot_declaration_characters.append(column_characters)
+
+	pilot_seal_label = Label.new()
+	pilot_seal_label.name = "PilotSeal"
+	pilot_seal_label.text = "덕만"
+	pilot_seal_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	pilot_seal_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	pilot_seal_label.add_theme_font_size_override("font_size", 14)
+	pilot_seal_label.add_theme_color_override("font_color", Color("#81362d"))
+	declaration_content.add_child(pilot_seal_label)
+
+	map_canvas.resized.connect(_position_pilot_overlay)
+	portrait_clip.resized.connect(_position_pilot_overlay)
+	pilot_declaration_panel.resized.connect(_center_pilot_declaration)
+	pilot_overlay.hide()
+	call_deferred("_position_pilot_overlay")
+	call_deferred("_center_pilot_declaration")
+
+
+func _load_pilot_font() -> Font:
+	var system_font: SystemFont = SystemFont.new()
+	system_font.font_names = PackedStringArray([PILOT_FONT_NAME])
+	return system_font
+
+
+func _vertical_text(value: String) -> String:
+	var result: String = ""
+	for character_index: int in range(value.length()):
+		if character_index > 0:
+			result += "\n"
+		result += value.substr(character_index, 1)
+	return result
+
+
+func _update_pilot_overlay(portrait: Texture2D, enabled: bool) -> void:
+	if pilot_overlay == null:
+		return
+	if map_column != null:
+		map_column.custom_minimum_size.x = 430.0
+		var map_parent: Node = map_column.get_parent()
+		if map_parent is Control:
+			(map_parent as Control).queue_sort()
+	pilot_overlay.visible = enabled and portrait != null
+	pilot_portrait.texture = portrait
+	if enabled and portrait != null:
+		_position_pilot_overlay()
+		call_deferred("_position_pilot_overlay")
+		_restart_pilot_proclamation()
+
+
+func _position_pilot_overlay() -> void:
+	if (
+		pilot_overlay == null
+		or pilot_portrait == null
+		or pilot_portrait.texture == null
+		or portrait_clip == null
+		or pilot_declaration_panel == null
+	):
+		return
+	var overlay_width: float = map_canvas.size.x
+	var overlay_height: float = map_canvas.size.y
+	portrait_clip.position = Vector2.ZERO
+	portrait_clip.size = map_canvas.size
+	var h: float = portrait_clip.size.y
+	var w: float = portrait_clip.size.x
+	pilot_portrait.position = Vector2(w * -0.01, h * 0.04)
+	pilot_portrait.size = Vector2(h * 0.90, h * 1.32)
+	if not portrait_metrics_logged and h > 0.0:
+		print(
+			"Portrait metrics: clip_size=%s portrait_position=%s portrait_size=%s parent=%s"
+			% [
+				portrait_clip.size,
+				pilot_portrait.position,
+				pilot_portrait.size,
+				portrait_clip.get_class(),
+			]
+		)
+		portrait_metrics_logged = true
+	var declaration_width: float = overlay_width * 0.40
+	var declaration_height: float = overlay_height * 0.75
+	pilot_declaration_panel.position = Vector2(
+		overlay_width * 0.52,
+		overlay_height * 0.08
+	)
+	pilot_declaration_panel.size = Vector2(declaration_width, declaration_height)
+	pilot_seal_label.position = Vector2(20.0, declaration_height - 48.0)
+	pilot_seal_label.size = Vector2(28.0, 28.0)
+	call_deferred("_center_pilot_declaration")
+
+
+func _center_pilot_declaration() -> void:
+	if pilot_declaration_panel == null or pilot_declaration_columns == null:
+		return
+	var content_size: Vector2 = (
+		pilot_declaration_columns.get_combined_minimum_size()
+	)
+	pilot_declaration_columns.size = content_size
+	pilot_declaration_columns.position = (
+		(pilot_declaration_panel.size - content_size) * 0.5
+	)
+	if not pilot_declaration_metrics_logged and pilot_declaration_panel.size.x > 0.0:
+		var horizontal_margin: float = (
+			pilot_declaration_panel.size.x - content_size.x
+		) * 0.5
+		var vertical_margin: float = (
+			pilot_declaration_panel.size.y - content_size.y
+		) * 0.5
+		print(
+			"Hanji metrics: hanji_size=%s text_group_content_size=%s text_group_position=%s horizontal_margins=(%s,%s) vertical_margins=(%s,%s)"
+			% [
+				pilot_declaration_panel.size,
+				content_size,
+				pilot_declaration_columns.position,
+				horizontal_margin,
+				horizontal_margin,
+				vertical_margin,
+				vertical_margin,
+			]
+		)
+		pilot_declaration_metrics_logged = true
+
+
+func _restart_pilot_proclamation() -> void:
+	pilot_animation_generation += 1
+	pilot_animation_complete = false
+	for column_value: Variant in pilot_declaration_characters:
+		for character_value: Variant in column_value:
+			var character_label: Label = character_value as Label
+			if character_label != null:
+				character_label.modulate.a = 0.0
+	call_deferred("_animate_pilot_proclamation", pilot_animation_generation)
+
+
+func _animate_pilot_proclamation(generation: int) -> void:
+	for column_index: int in range(
+		pilot_declaration_characters.size() - 1,
+		-1,
+		-1
+	):
+		var column_value: Array = pilot_declaration_characters[column_index]
+		for character_index: int in range(column_value.size()):
+			if generation != pilot_animation_generation or pilot_animation_complete:
+				return
+			var character_label: Label = column_value[character_index] as Label
+			var fade_tween: Tween = create_tween()
+			fade_tween.tween_property(
+				character_label,
+				"modulate:a",
+				1.0,
+				PILOT_CHARACTER_FADE_SECONDS
+			)
+			await fade_tween.finished
+			if character_index < column_value.size() - 1:
+				if bool(character_label.get_meta("word_gap_after", false)):
+					await get_tree().create_timer(PILOT_WORD_GAP_SECONDS).timeout
+		if generation != pilot_animation_generation or pilot_animation_complete:
+				return
+		if column_index < pilot_declaration_characters.size() - 1:
+			await get_tree().create_timer(PILOT_COLUMN_GAP_SECONDS).timeout
+	pilot_animation_complete = true
+
+
+func _complete_pilot_proclamation() -> void:
+	pilot_animation_generation += 1
+	pilot_animation_complete = true
+	for column_value: Variant in pilot_declaration_characters:
+		for character_value: Variant in column_value:
+			var character_label: Label = character_value as Label
+			if character_label != null:
+				character_label.modulate.a = 1.0
+
+
+func _load_texture_resource(path: String) -> Texture2D:
+	if path == "" or not ResourceLoader.exists(path):
+		return null
+
+	var loaded_resource: Resource = load(path)
+	if loaded_resource is Texture2D:
+		return loaded_resource as Texture2D
+
+	push_warning(
+		"NewGameSetup: %s는 텍스처 리소스가 아닙니다."
+		% path
+	)
+	return null
+
+
+func _resolve_selection_background_path() -> String:
+	var scenario_id: String = _get_scenario_id()
+	if scenario_id == "":
+		return ""
+
+	var catalog: Dictionary = _load_selection_background_catalog()
+	var items: Array = catalog.get("items", [])
+	for item: Dictionary in items:
+		if str(item.get("scenario_id", "")) != scenario_id:
+			continue
+		if str(item.get("faction_id", "")) != selected_faction_id:
+			continue
+
+		var file_name: String = str(item.get("file", ""))
+		if file_name == "":
+			continue
+
+		var candidate_path: String = "%s%s" % [FACTION_SELECTION_BACKGROUND_DIR, file_name]
+		if ResourceLoader.exists(candidate_path):
+			return candidate_path
+
+		var direct_path: String = "res://assets/faction_selection/backgrounds/%s" % file_name
+		if ResourceLoader.exists(direct_path):
+			return direct_path
+
+	return ""
+
+
+func _load_selection_background_catalog() -> Dictionary:
+	var file: FileAccess = FileAccess.open(FACTION_SELECTION_CATALOG_PATH, FileAccess.READ)
+	if file == null:
+		return {}
+
+	var raw_json: String = file.get_as_text()
+	file.close()
+
+	var parsed: Variant = JSON.parse_string(raw_json)
+	if typeof(parsed) != TYPE_DICTIONARY:
+		return {}
+
+	return parsed as Dictionary
 
 
 func _load_default_background_texture() -> Texture2D:
@@ -573,6 +1009,7 @@ func _build_map_block() -> Control:
 	vbox.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	vbox.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	vbox.add_theme_constant_override("separation", 5)
+	map_column = vbox
 
 	var map_panel: PanelContainer = PanelContainer.new()
 	map_panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -594,6 +1031,28 @@ func _build_map_block() -> Control:
 	map_world.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	map_world.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	map_canvas.add_child(map_world)
+	map_world.hide()
+
+	faction_scene_background = TextureRect.new()
+	faction_scene_background.name = "FactionSceneBackground"
+	faction_scene_background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	faction_scene_background.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	faction_scene_background.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	faction_scene_background.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	faction_scene_background.z_index = 0
+	map_canvas.add_child(faction_scene_background)
+
+	faction_scene_portrait = TextureRect.new()
+	faction_scene_portrait.name = "FactionScenePortrait"
+	faction_scene_portrait.set_anchors_preset(Control.PRESET_CENTER_LEFT)
+	faction_scene_portrait.position = Vector2(18.0, 8.0)
+	faction_scene_portrait.size = Vector2(150.0, 245.0)
+	faction_scene_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	faction_scene_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	faction_scene_portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	faction_scene_portrait.z_index = 3
+	map_canvas.add_child(faction_scene_portrait)
+	_build_pilot_overlay()
 
 	map_texture_rect = TextureRect.new()
 	map_texture_rect.name = "MapTexture"
@@ -602,6 +1061,7 @@ func _build_map_block() -> Control:
 	map_texture_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	map_texture_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	map_texture_rect.texture = _load_campaign_map_texture()
+	map_texture_rect.hide()
 	map_world.add_child(map_texture_rect)
 
 	var map_tone: ColorRect = ColorRect.new()
@@ -647,21 +1107,21 @@ func _build_profile_block() -> Control:
 		"panel",
 		_create_light_box_style(Color("#eee7da"), Color("#29241c"), 1)
 	)
+	profile_portrait_panel = PanelContainer.new()
+	profile_portrait_panel.custom_minimum_size = Vector2(0.0, 108.0)
+	profile_portrait_panel.add_theme_stylebox_override(
+		"panel",
+		_create_light_box_style(Color("#d8cebb"), Color("#6c5c43"), 1)
+	)
 
 	var vbox: VBoxContainer = VBoxContainer.new()
 	vbox.add_theme_constant_override("separation", 4)
 	panel.add_child(vbox)
 
-	var portrait_panel: PanelContainer = PanelContainer.new()
-	portrait_panel.custom_minimum_size = Vector2(0.0, 108.0)
-	portrait_panel.add_theme_stylebox_override(
-		"panel",
-		_create_light_box_style(Color("#d8cebb"), Color("#6c5c43"), 1)
-	)
-	vbox.add_child(portrait_panel)
+	vbox.add_child(profile_portrait_panel)
 
 	var portrait_canvas: Control = Control.new()
-	portrait_panel.add_child(portrait_canvas)
+	profile_portrait_panel.add_child(portrait_canvas)
 	leader_portrait = TextureRect.new()
 	leader_portrait.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	leader_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -701,9 +1161,17 @@ func _build_profile_block() -> Control:
 	var separator: HSeparator = HSeparator.new()
 	vbox.add_child(separator)
 
-	faction_description_label = _create_description_label("")
-	faction_description_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	faction_description_label = RichTextLabel.new()
+	faction_description_label.name = "HistoryDescription"
+	faction_description_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	faction_description_label.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	faction_description_label.fit_content = false
+	faction_description_label.scroll_active = true
+	faction_description_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	faction_description_label.bbcode_enabled = false
+	faction_description_label.custom_minimum_size = Vector2(0.0, 52.0)
+	faction_description_label.add_theme_font_size_override("normal_font_size", 13)
+	faction_description_label.add_theme_color_override("default_color", Color("#3e3529"))
 	vbox.add_child(faction_description_label)
 
 	var notable_label: Label = _create_section_label("주요 인물")
@@ -1099,6 +1567,7 @@ func _select_faction_from_map(faction_id: String) -> void:
 	selected_faction_id = faction_id
 	var faction_button: Button = faction_buttons[faction_id]
 	faction_button.button_pressed = true
+	_apply_background_texture()
 	_update_faction_details()
 
 
@@ -1107,8 +1576,9 @@ func _update_faction_details() -> void:
 	if data.is_empty():
 		for label: Label in [faction_name_label, ruler_label, commander_label,
 			capital_label, territories_label, power_label, faction_difficulty_label,
-			strength_label, risk_label, faction_description_label, notable_characters_label]:
+			strength_label, risk_label, notable_characters_label]:
 			label.text = ""
+		faction_description_label.text = ""
 		leader_portrait.texture = null
 		leader_portrait.hide()
 		portrait_fallback_label.hide()
@@ -1149,6 +1619,8 @@ func _update_faction_details() -> void:
 	risk_label.text = "위험  ·  %s" % data["risk"]
 	risk_label.add_theme_color_override("font_color", Color("#8c3026"))
 	var description_text: String = str(data.get("description", ""))
+	if _is_silla_632_pilot():
+		description_text = PILOT_HISTORY_DESCRIPTION
 	var diplomatic_status: String = str(data.get("diplomatic_status", ""))
 	if diplomatic_status != "":
 		description_text += "\n외교 상태  ·  %s" % diplomatic_status
@@ -1169,7 +1641,8 @@ func _update_faction_details() -> void:
 		data.get("portrait_paths", [])
 	)
 	leader_portrait.texture = portrait
-	leader_portrait.visible = portrait != null
+	leader_portrait.visible = portrait != null and not _is_silla_632_pilot()
+	profile_portrait_panel.visible = not _is_silla_632_pilot()
 	portrait_fallback_label.visible = portrait == null
 	portrait_fallback_label.text = commander_name.substr(0, 1)
 	portrait_fallback_label.add_theme_color_override(
@@ -1871,6 +2344,7 @@ func _apply_scenario_defaults(index: int) -> void:
 	)
 
 	_rebuild_scenario_factions()
+	_apply_background_texture()
 	_update_faction_details()
 	_update_map_details()
 
@@ -1882,10 +2356,12 @@ func _on_faction_toggled(pressed: bool, faction_id: String) -> void:
 		return
 
 	selected_faction_id = faction_id
+	_apply_background_texture()
 	_update_faction_details()
 
 
 func _on_play_style_toggled(pressed: bool, play_style_id: String) -> void:
+	_apply_background_texture()
 	if not pressed:
 		return
 

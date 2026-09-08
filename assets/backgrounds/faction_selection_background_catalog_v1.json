@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "purpose": "Samhan660 faction selection backgrounds",
+  "visual_standard": "Samhan660 Portrait ink-and-color / hanji texture / restrained mineral pigments",
+  "layout": {
+    "aspect_ratio": "16:9",
+    "game_ready_size": "1920x1080",
+    "portrait_overlay_side": "left",
+    "portrait_safe_width_ratio": 0.34,
+    "bottom_ui_safe_height_ratio": 0.2,
+    "background_contains_named_character": false
+  },
+  "repo_target_directory": "res://assets/faction_selection/backgrounds/",
+  "items": [
+    {
+      "scenario_id": "silla_equilibrium_632",
+      "year": 632,
+      "faction_id": "silla",
+      "faction_name": "신라",
+      "ruler_overlay": "선덕여왕",
+      "availability": "playable_by_default",
+      "file": "faction_select_632_silla.webp",
+      "scene": "봄비가 갠 금성, 첫 여왕 즉위와 불안한 희망"
+    },
+    {
+      "scenario_id": "silla_equilibrium_632",
+      "year": 632,
+      "faction_id": "baekje",
+      "faction_name": "백제",
+      "ruler_overlay": "무왕",
+      "availability": "playable_by_default",
+      "file": "faction_select_632_baekje.webp",
+      "scene": "금강과 사비성, 회복된 국력과 계승의 긴장"
+    },
+    {
+      "scenario_id": "silla_equilibrium_632",
+      "year": 632,
+      "faction_id": "goguryeo",
+      "faction_name": "고구려",
+      "ruler_overlay": "영류왕",
+      "availability": "playable_by_default",
+      "file": "faction_select_632_goguryeo.webp",
+      "scene": "평양성과 대동강, 왕권과 군부 사이의 긴장"
+    },
+    {
+      "scenario_id": "goguryeo_coup_642",
+      "year": 642,
+      "faction_id": "silla",
+      "faction_name": "신라",
+      "ruler_overlay": "선덕여왕",
+      "availability": "playable_by_default",
+      "file": "faction_select_642_silla.webp",
+      "scene": "대야성 상실 뒤 폭우 속 금성의 방어 준비"
+    },
+    {
+      "scenario_id": "goguryeo_coup_642",
+      "year": 642,
+      "faction_id": "baekje",
+      "faction_name": "백제",
+      "ruler_overlay": "의자왕",
+      "availability": "playable_by_default",
+      "file": "faction_select_642_baekje.webp",
+      "scene": "승리의 물자와 군선이 모이는 가을 사비성"
+    },
+    {
+      "scenario_id": "goguryeo_coup_642",
+      "year": 642,
+      "faction_id": "goguryeo",
+      "faction_name": "고구려",
+      "ruler_overlay": "보장왕",
+      "availability": "playable_by_default",
+      "file": "faction_select_642_goguryeo.webp",
+      "scene": "정변 직후 횃불과 군사 통제 아래 놓인 평양성"
+    },
+    {
+      "scenario_id": "baekje_fall_660",
+      "year": 660,
+      "faction_id": "silla",
+      "faction_name": "신라",
+      "ruler_overlay": "김춘추",
+      "availability": "playable_by_default",
+      "file": "faction_select_660_silla.webp",
+      "scene": "백제 정벌을 앞둔 새벽 금성의 대규모 출진 준비"
+    },
+    {
+      "scenario_id": "baekje_fall_660",
+      "year": 660,
+      "faction_id": "baekje",
+      "faction_name": "백제",
+      "ruler_overlay": "의자왕",
+      "availability": "playable_by_default",
+      "file": "faction_select_660_baekje.webp",
+      "scene": "봉화와 먹구름에 포위된 사비성 멸망 전야"
+    },
+    {
+      "scenario_id": "baekje_fall_660",
+      "year": 660,
+      "faction_id": "goguryeo",
+      "faction_name": "고구려",
+      "ruler_overlay": "보장왕",
+      "availability": "playable_by_default",
+      "file": "faction_select_660_goguryeo.webp",
+      "scene": "당의 압박에 대비해 요새와 병기를 정비하는 평양성"
+    },
+    {
+      "scenario_id": "baekgang_663",
+      "year": 663,
+      "faction_id": "silla",
+      "faction_name": "신라",
+      "ruler_overlay": "김법민",
+      "availability": "playable_by_default",
+      "file": "faction_select_663_silla.webp",
+      "scene": "서쪽과 북쪽 두 전선을 관리하는 가을 금성"
+    },
+    {
+      "scenario_id": "baekgang_663",
+      "year": 663,
+      "faction_id": "baekje_revival",
+      "faction_name": "백제부흥군",
+      "ruler_overlay": "부여풍",
+      "availability": "unlockable",
+      "file": "faction_select_663_baekje_revival.webp",
+      "scene": "왜 원군을 기다리며 포위망을 견디는 주류성"
+    },
+    {
+      "scenario_id": "baekgang_663",
+      "year": 663,
+      "faction_id": "goguryeo",
+      "faction_name": "고구려",
+      "ruler_overlay": "보장왕",
+      "availability": "playable_by_default",
+      "file": "faction_select_663_goguryeo.webp",
+      "scene": "서쪽 먹구름과 연속 봉화 아래 고립되는 평양성"
+    },
+    {
+      "scenario_id": "baekgang_663",
+      "year": 663,
+      "faction_id": "tang",
+      "faction_name": "당",
+      "ruler_overlay": "당 고종",
+      "availability": "unlockable",
+      "file": "faction_select_663_tang.webp",
+      "scene": "백제 옛 성곽을 군항으로 바꾼 웅진도독부"
+    },
+    {
+      "scenario_id": "silla_tang_war_670",
+      "year": 670,
+      "faction_id": "silla",
+      "faction_name": "신라",
+      "ruler_overlay": "김법민",
+      "availability": "playable_by_default",
+      "file": "faction_select_670_silla.webp",
+      "scene": "옛 동맹 당에 맞서 독립전쟁을 준비하는 금성"
+    },
+    {
+      "scenario_id": "silla_tang_war_670",
+      "year": 670,
+      "faction_id": "tang",
+      "faction_name": "당",
+      "ruler_overlay": "당 고종",
+      "availability": "unlockable",
+      "file": "faction_select_670_tang.webp",
+      "scene": "고구려 산성을 점령기지로 바꾼 안동도호부"
+    },
+    {
+      "scenario_id": "silla_tang_war_670",
+      "year": 670,
+      "faction_id": "goguryeo_revival",
+      "faction_name": "고구려부흥군",
+      "ruler_overlay": "안승",
+      "availability": "unlockable",
+      "file": "faction_select_670_goguryeo_revival.webp",
+      "scene": "유민과 농경지를 지키며 재건을 꿈꾸는 금마저"
+    }
+  ]
+}
