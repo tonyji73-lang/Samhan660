@@ -240,7 +240,8 @@ func create_initial_state(
 	officers: Dictionary,
 	officers_by_province: Dictionary,
 	scenario: Dictionary,
-	current_season_index: int = 0
+	current_season_index: int = 0,
+	apply_start_relations: bool = true
 ) -> Dictionary:
 	var state: Dictionary = {
 		"version": STATE_VERSION,
@@ -253,6 +254,7 @@ func create_initial_state(
 		"faction_research": {},
 		"research_queues": {},
 		"relations": {},
+		"diplomacy_last_action_month": {},
 		"trade_routes": [],
 		"next_trade_route_id": 1,
 		"auto_generation": {"counts_by_year": {}},
@@ -288,7 +290,8 @@ func create_initial_state(
 		for second_index: int in range(first_index + 1, faction_names.size()):
 			var key: String = _relation_key(faction_names[first_index], faction_names[second_index])
 			state["relations"][key] = {"value": 0, "status": "중립", "treaties": []}
-	_apply_historical_start_relations(state, current_year)
+	if apply_start_relations:
+		_apply_historical_start_relations(state, current_year)
 
 	var officer_factions: Dictionary = _map_officer_factions(provinces, officers_by_province)
 	for officer_name_value: Variant in officers.keys():
@@ -316,7 +319,7 @@ func normalize_loaded_state(state: Dictionary, provinces: Dictionary = {}) -> Di
 	for key: String in [
 		"officer_metadata", "emergent_officers", "province_buildings",
 		"construction_queues", "faction_research", "research_queues", "relations",
-		"unit_rosters"
+		"unit_rosters", "diplomacy_last_action_month"
 	]:
 		if typeof(state.get(key, null)) != TYPE_DICTIONARY:
 			state[key] = {}
@@ -900,17 +903,49 @@ func get_best_available_unit(state: Dictionary, province_id: String, faction_nam
 	return unlocked[0]
 
 
-func perform_diplomatic_action(
+func get_relation(state: Dictionary, first: String, second: String) -> Dictionary:
+	# Quotes must never create a relationship or mutate a saved treaty array.
+	return state.get("relations", {}).get(_stored_relation_key(state, first, second),
+		{"value": 0, "status": "중립", "treaties": []}).duplicate(true)
+
+
+func get_diplomatic_envoy(
+	state: Dictionary, faction: String, name_value: String, provinces: Dictionary,
+	officers: Dictionary, assignments: Dictionary
+) -> Dictionary:
+	if name_value.is_empty() or not officers.has(name_value):
+		return {"ok": false, "reason": "현재 보유한 사절을 선택하세요."}
+	var assigned: String = ""
+	for id: String in assignments:
+		if assignments[id].has(name_value):
+			if not assigned.is_empty():
+				return {"ok": false, "reason": "장수 배치가 중복되어 사절로 임명할 수 없습니다."}
+			assigned = id
+	if not provinces.has(assigned) or provinces[assigned].get("faction", "") != faction:
+		return {"ok": false, "reason": "현재 통제하는 도시에 소속된 장수만 사절로 보낼 수 있습니다."}
+	var metadata_faction: String = str(state.get("officer_metadata", {}).get(name_value, {}).get("faction", faction))
+	if metadata_faction != faction:
+		return {"ok": false, "reason": "다른 세력의 장수는 사절로 보낼 수 없습니다."}
+	var envoy: Dictionary = officers[name_value].duplicate(true)
+	envoy["name"] = name_value
+	return {"ok": true, "envoy": envoy}
+
+
+func get_diplomatic_action_quote(
 	state: Dictionary,
 	actor_faction: String,
 	target_faction: String,
 	action_id: String,
 	actor: Dictionary,
-	current_year: int
+	current_year: int,
+	current_month: int = 0,
+	available_gold: int = -1,
+	provinces: Dictionary = {},
+	officers: Dictionary = {},
+	assignments: Dictionary = {},
+	active_factions: Array[String] = []
 ) -> Dictionary:
-	if actor_faction == target_faction:
-		return {"ok": false, "reason": "같은 세력에는 외교할 수 없습니다."}
-	var relation: Dictionary = _ensure_relation(state, actor_faction, target_faction)
+	var relation: Dictionary = get_relation(state, actor_faction, target_faction)
 	var relation_value: int = int(relation.get("value", 0))
 	var gold_cost: int = 0
 	var required_relation: int = -100
@@ -925,6 +960,8 @@ func perform_diplomatic_action(
 			required_relation = 10
 			relation_change = 5
 			treaty = "통상 조약"
+		"cancel_trade_pact":
+			relation_change = -10
 		"nonaggression":
 			required_relation = 20
 			relation_change = 8
@@ -938,40 +975,107 @@ func perform_diplomatic_action(
 		"declare_war":
 			relation_change = -60
 			new_status = "전쟁"
-			relation["treaties"] = []
 		_:
 			return {"ok": false, "reason": "지원하지 않는 외교 행동입니다."}
-	if relation_value < required_relation:
-		return {"ok": false, "reason": "관계도가 부족합니다.", "gold_cost": gold_cost}
-
-	var politics: int = int(actor.get("politics", 50))
-	var intelligence: int = int(actor.get("intelligence", 50))
-	var authority: int = int(actor.get("authority", 50))
+	var envoy: Dictionary = actor
+	var reason: String = ""
+	if actor_faction.is_empty() or target_faction.is_empty() or actor_faction == target_faction:
+		reason = "같은 세력 또는 존재하지 않는 세력에는 외교할 수 없습니다."
+	# month=0 keeps the legacy backend signature usable. Campaign actions always
+	# supply the month, money and authoritative live data; UI stats are ignored.
+	elif current_month != 0:
+		if current_month < 1 or current_month > 12 or available_gold < 0:
+			reason = "외교 월 또는 국가 금 정보가 올바르지 않습니다."
+		elif not active_factions.has(actor_faction) or not active_factions.has(target_faction):
+			reason = "현재 시나리오의 활동 세력에게만 외교할 수 있습니다."
+		else:
+			var checked: Dictionary = get_diplomatic_envoy(state, actor_faction, str(actor.get("name", "")), provinces, officers, assignments)
+			if not checked.ok:
+				reason = checked.reason
+			else:
+				envoy = checked.envoy
+	var politics: int = int(envoy.get("politics", 50))
+	var intelligence: int = int(envoy.get("intelligence", 50))
+	var authority: int = int(envoy.get("authority", 50))
 	@warning_ignore("integer_division")
 	var chance: int = clampi(
 		45 + int((politics + intelligence + authority) / 12) + int(relation_value / 5),
 		15,
 		95
 	)
-	if action_id == "gift" or action_id == "declare_war":
+	if action_id in ["gift", "declare_war", "cancel_trade_pact"]:
 		chance = 100
-	var roll: int = absi(hash("%s:%s:%s:%d" % [actor_faction, target_faction, action_id, current_year])) % 100
+	var monthly: bool = action_id in ["gift", "trade_pact", "cancel_trade_pact"]
+	if reason.is_empty():
+		if action_id in ["gift", "trade_pact"] and relation.get("status", "중립") == "전쟁":
+			reason = "전쟁 중에는 친선·통상협의를 할 수 없습니다."
+		elif action_id == "trade_pact" and relation.get("treaties", []).has("통상 조약"):
+			reason = "이미 통상협정이 체결되어 있습니다."
+		elif action_id == "cancel_trade_pact" and not relation.get("treaties", []).has("통상 조약"):
+			reason = "해지할 통상협정이 없습니다."
+		elif relation_value < required_relation:
+			reason = "관계도 %d 이상이 필요합니다." % required_relation
+		elif available_gold >= 0 and available_gold < gold_cost:
+			reason = "금 %d이 필요합니다." % gold_cost
+		elif monthly and current_month > 0 and int(state.get("diplomacy_last_action_month", {}).get(actor_faction, -1)) == current_year * 12 + current_month:
+			reason = "이번 달 외교 행동을 이미 사용했습니다."
+	return {"ok": reason.is_empty(), "reason": reason, "gold_cost": gold_cost, "chance": chance,
+		"required_relation": required_relation, "relation_change": relation_change,
+		"new_status": new_status, "treaty": treaty, "envoy": envoy.duplicate(true), "monthly": monthly}
+
+
+func diplomatic_roll(actor_faction: String, target_faction: String, action_id: String,
+	envoy_name: String, current_year: int, current_month: int) -> int:
+	if current_month == 0:
+		return absi(hash("%s:%s:%s:%d" % [actor_faction, target_faction, action_id, current_year])) % 100
+	var identity: String = "diplomacy:v1|%s|%s|%s|%s|%d|%d" % [actor_faction, target_faction, action_id, envoy_name, current_year, current_month]
+	return identity.sha256_text().substr(0, 8).hex_to_int() % 100
+
+
+func perform_diplomatic_action(
+	state: Dictionary, actor_faction: String, target_faction: String, action_id: String,
+	actor: Dictionary, current_year: int, current_month: int = 0, available_gold: int = -1,
+	provinces: Dictionary = {}, officers: Dictionary = {}, assignments: Dictionary = {},
+	active_factions: Array[String] = []
+) -> Dictionary:
+	var quote: Dictionary = get_diplomatic_action_quote(state, actor_faction, target_faction,
+		action_id, actor, current_year, current_month, available_gold, provinces, officers, assignments, active_factions)
+	if not quote.ok:
+		return {"ok": false, "executed": false, "reason": quote.reason, "gold_cost": 0, "chance": quote.get("chance", 0)}
+	var relation: Dictionary = _ensure_relation(state, actor_faction, target_faction)
+	var relation_value: int = int(relation.get("value", 0))
+	var chance: int = int(quote.chance)
+	var roll: int = diplomatic_roll(actor_faction, target_faction, action_id, str(quote.envoy.get("name", "")), current_year, current_month)
+	if quote.monthly and current_month > 0:
+		if not state.has("diplomacy_last_action_month"):
+			state["diplomacy_last_action_month"] = {}
+		state.diplomacy_last_action_month[actor_faction] = current_year * 12 + current_month
 	if roll >= chance:
 		relation["value"] = clampi(relation_value - 3, -100, 100)
-		return {"ok": false, "reason": "교섭이 결렬되었습니다.", "gold_cost": gold_cost, "chance": chance}
+		return {"ok": false, "executed": true, "reason": "%s과의 통상협의가 결렬되었습니다." % target_faction if action_id == "trade_pact" else "교섭이 결렬되었습니다.", "gold_cost": quote.gold_cost, "chance": chance, "roll": roll}
 
-	relation["value"] = clampi(relation_value + relation_change, -100, 100)
-	relation["status"] = new_status
+	relation["value"] = clampi(relation_value + int(quote.relation_change), -100, 100)
+	relation["status"] = quote.new_status
 	var treaties: Array = relation.get("treaties", [])
-	if treaty != "" and not treaties.has(treaty):
-		treaties.append(treaty)
+	if action_id == "declare_war":
+		treaties = []
+	elif action_id == "cancel_trade_pact":
+		while treaties.has("통상 조약"):
+			treaties.erase("통상 조약")
+	elif quote.treaty != "" and not treaties.has(quote.treaty):
+		treaties.append(quote.treaty)
 	relation["treaties"] = treaties
+	var messages: Dictionary = {"gift": "%s에 친선 사절을 보냈습니다.", "trade_pact": "%s과 통상협정을 체결했습니다.",
+		"cancel_trade_pact": "%s과의 통상협정을 해지했습니다.", "nonaggression": "%s과 불가침 조약을 체결했습니다.",
+		"alliance": "%s과 동맹을 체결했습니다.", "declare_war": "%s에 전쟁을 선포했습니다."}
 	return {
 		"ok": true,
-		"gold_cost": gold_cost,
+		"executed": true,
+		"gold_cost": quote.gold_cost,
 		"chance": chance,
+		"roll": roll,
 		"relation": relation.duplicate(true),
-		"message": "%s과의 %s 교섭이 성사되었습니다." % [target_faction, action_id],
+		"message": str(messages[action_id]) % target_faction,
 	}
 
 
@@ -983,11 +1087,13 @@ func open_trade_route(
 	destination_id: String,
 	goods: String
 ) -> Dictionary:
-	var relation: Dictionary = _ensure_relation(state, faction_a, faction_b)
+	if faction_a == faction_b:
+		return {"ok": false, "reason": "같은 세력의 도시 사이에는 국제 교역로를 개설할 수 없습니다."}
+	var relation: Dictionary = get_relation(state, faction_a, faction_b)
 	if str(relation.get("status", "중립")) == "전쟁":
 		return {"ok": false, "reason": "전쟁 중에는 교역할 수 없습니다."}
-	if int(relation.get("value", 0)) < 10 and not relation.get("treaties", []).has("통상 조약"):
-		return {"ok": false, "reason": "관계도 10 또는 통상 조약이 필요합니다."}
+	if not relation.get("treaties", []).has("통상 조약"):
+		return {"ok": false, "reason": "먼저 상대 세력과 통상협정을 체결해야 합니다."}
 	var buildings: Dictionary = state.get("province_buildings", {})
 	if int(buildings.get(origin_id, {}).get("market", 0)) < 1:
 		return {"ok": false, "reason": "출발 영지에 시장이 필요합니다."}
@@ -1180,9 +1286,10 @@ func _process_trade(state: Dictionary, provinces: Dictionary) -> Dictionary:
 		var destination_id: String = str(route.get("destination_id", ""))
 		if not provinces.has(origin_id) or not provinces.has(destination_id):
 			continue
-		var relation: Dictionary = _ensure_relation(state, str(route["faction_a"]), str(route["faction_b"]))
-		if str(relation.get("status", "중립")) == "전쟁":
+		var relation: Dictionary = get_relation(state, str(route["faction_a"]), str(route["faction_b"]))
+		if str(route["faction_a"]) == str(route["faction_b"]) or str(relation.get("status", "중립")) == "전쟁" or not relation.get("treaties", []).has("통상 조약"):
 			continue
+		relation = _ensure_relation(state, str(route["faction_a"]), str(route["faction_b"]))
 		var buildings: Dictionary = state.get("province_buildings", {})
 		var market_level: int = int(buildings.get(origin_id, {}).get("market", 0)) + int(buildings.get(destination_id, {}).get("market", 0))
 		var commerce_value: int = int(provinces[origin_id].get("commerce", 50)) + int(provinces[destination_id].get("commerce", 50))
@@ -1514,13 +1621,26 @@ func _unit_matches_faction(unit: Dictionary, faction_name: String) -> bool:
 
 
 func _relation_key(first: String, second: String) -> String:
-	var names: Array[String] = [first, second]
+	# Raw scenarios use the old Yamato label; prepared scenarios use the current
+	# label. They identify one faction, not two relationship ledgers.
+	var names: Array[String] = [
+		"왜(야마토 조정)" if first == "왜(야마토)" else first,
+		"왜(야마토 조정)" if second == "왜(야마토)" else second,
+	]
 	names.sort()
 	return "%s|%s" % [names[0], names[1]]
 
 
+func _stored_relation_key(state: Dictionary, first: String, second: String) -> String:
+	var canonical: String = _relation_key(first, second)
+	if state.get("relations", {}).has(canonical):
+		return canonical
+	var legacy: String = canonical.replace("왜(야마토 조정)", "왜(야마토)")
+	return legacy if state.get("relations", {}).has(legacy) else canonical
+
+
 func _ensure_relation(state: Dictionary, first: String, second: String) -> Dictionary:
-	var key: String = _relation_key(first, second)
+	var key: String = _stored_relation_key(state, first, second)
 	if not state["relations"].has(key):
 		state["relations"][key] = {"value": 0, "status": "중립", "treaties": []}
 	return state["relations"][key]

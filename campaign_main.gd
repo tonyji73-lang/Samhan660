@@ -7,6 +7,7 @@ const SamhanStrategySystems = preload("res://samhan_strategy_systems.gd")
 const ProductionSystem = preload("res://production_system.gd")
 const ProductionData = preload("res://production_data.gd")
 const ProductionOverlay = preload("res://production_overlay.gd")
+const DiplomacyOverlay = preload("res://diplomacy_overlay.gd")
 const IronSupplyData = preload("res://iron_supply_data.gd")
 # Dependency supplied only by isolated tests; never loaded from campaign saves.
 var iron_supply_rules: Dictionary = IronSupplyData.SCENARIOS
@@ -177,6 +178,8 @@ var officers: Dictionary = {
 var strategy: SamhanStrategySystems = SamhanStrategySystems.new()
 var strategy_state: Dictionary = {}
 var production_overlay: Control
+var diplomacy_overlay: Control
+var diplomacy_saved_turn_disabled: bool = false
 
 var officers_by_province: Dictionary = {
 	"ansi": ["양만춘"],
@@ -261,6 +264,10 @@ func _ready() -> void:
 	production_overlay = ProductionOverlay.new()
 	production_overlay.name = "ProductionOverlay"
 	production_layer.add_child(production_overlay)
+	diplomacy_overlay = DiplomacyOverlay.new()
+	diplomacy_overlay.name = "DiplomacyOverlay"
+	production_layer.add_child(diplomacy_overlay)
+	diplomacy_overlay.closed.connect(_close_diplomacy)
 	_connect_navigation_menu()
 	_connect_button_once(
 		officer_list.item_selected,
@@ -321,6 +328,12 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("ui_cancel"):
+		return
+	if diplomacy_overlay != null and diplomacy_overlay.visible:
+		if diplomacy_overlay.confirmation.visible:
+			return
+		_close_diplomacy()
+		get_viewport().set_input_as_handled()
 		return
 	if production_overlay != null and production_overlay.visible:
 		production_overlay.hide()
@@ -493,8 +506,79 @@ func _connect_map_city_card() -> void:
 
 
 func _connect_navigation_menu() -> void:
+	navigation_menu.connect("diplomacy_requested", _open_diplomacy)
 	navigation_menu.connect("navigation_requested", _on_navigation_requested)
 	navigation_menu.connect("quit_requested", _on_navigation_quit_requested)
+
+
+func _open_diplomacy() -> void:
+	if diplomacy_overlay.visible:
+		return
+	production_overlay.hide()
+	transfer_panel.close_panel()
+	map_area.hide_city_card()
+	map_area.map_dragging = false
+	province_panel.hide()
+	diplomacy_saved_turn_disabled = end_turn_button.disabled
+	end_turn_button.disabled = true
+	diplomacy_overlay.open_for_campaign(self)
+
+
+func _close_diplomacy() -> void:
+	if diplomacy_overlay == null or not diplomacy_overlay.visible:
+		return
+	diplomacy_overlay.confirmation.hide()
+	diplomacy_overlay.hide()
+	end_turn_button.disabled = diplomacy_saved_turn_disabled
+
+
+func get_diplomacy_factions() -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	# Prepared scenario order and the existing controller policy are authoritative.
+	for id: String in ScenarioData.get_active_faction_ids(scenario_id):
+		if get_faction_controller(id) == CONTROLLER_INACTIVE:
+			continue
+		result.append({"id": id, "name": ScenarioData.get_faction_name(scenario_id, id)})
+	return result
+
+
+func get_diplomacy_envoys() -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	for name_value: String in officers:
+		var checked: Dictionary = strategy.get_diplomatic_envoy(strategy_state, player_faction,
+			name_value, provinces, officers, officers_by_province)
+		if checked.ok:
+			result.append(checked.envoy)
+	return result
+
+
+func get_diplomatic_action_quote(target_id: String, action_id: String, envoy_name: String) -> Dictionary:
+	var names: Array[String] = []
+	var target: String = ""
+	for faction: Dictionary in get_diplomacy_factions():
+		names.append(str(faction.name))
+		if faction.id == target_id:
+			target = str(faction.name)
+	return strategy.get_diplomatic_action_quote(strategy_state, player_faction, target, action_id,
+		{"name": envoy_name}, year, month, gold, provinces, officers, officers_by_province, names)
+
+
+func request_diplomatic_action(target_id: String, action_id: String, envoy_name: String) -> Dictionary:
+	if not action_id in ["gift", "trade_pact", "cancel_trade_pact"]:
+		return {"ok": false, "executed": false, "reason": "지원하지 않는 외교 행동입니다."}
+	var names: Array[String] = []
+	var target: String = ""
+	for faction: Dictionary in get_diplomacy_factions():
+		names.append(str(faction.name))
+		if faction.id == target_id:
+			target = str(faction.name)
+	var result: Dictionary = strategy.perform_diplomatic_action(strategy_state, player_faction, target,
+		action_id, {"name": envoy_name}, year, month, gold, provinces, officers, officers_by_province, names)
+	if result.get("executed", false):
+		gold -= int(result.get("gold_cost", 0))
+	update_top_bar()
+	log_label.text = str(result.get("message", result.get("reason", "")))
+	return result
 
 
 func _on_navigation_requested(destination: String) -> void:
@@ -572,7 +656,7 @@ func _apply_new_game_settings() -> void:
 	IronSupplyData.apply_new_game_technologies(strategy_state, scenario_id)
 
 
-func _init_strategy_state() -> void:
+func _init_strategy_state(apply_start_relations: bool = true) -> void:
 	# provinces와 officers가 확정된 뒤에 만들어야 합니다. 세력 목록과
 	# 수도를 이 자료에서 뽑아 쓰기 때문입니다.
 	strategy_state = strategy.create_initial_state(
@@ -581,7 +665,8 @@ func _init_strategy_state() -> void:
 		officers,
 		officers_by_province,
 		_get_scenario_by_id(scenario_id),
-		season_index
+		season_index,
+		apply_start_relations
 	)
 
 
@@ -682,6 +767,8 @@ func get_faction_controller(faction_id: String) -> String:
 
 
 func select_province(province_id: String, show_floating_card: bool = true) -> void:
+	if diplomacy_overlay != null and diplomacy_overlay.visible:
+		return
 	if not provinces.has(province_id):
 		return
 
@@ -736,6 +823,7 @@ func _on_city_card_domestic_requested(province_id: String) -> void:
 func _on_city_card_production_requested(province_id: String) -> void:
 	if ProductionSystem.ownership_reason(provinces, province_id, player_faction) != "":
 		return
+	_close_diplomacy()
 	map_area.hide_city_card()
 	province_panel.hide()
 	production_overlay.call("open_for_province", self, province_id)
@@ -1595,6 +1683,8 @@ func _on_recruit_button_pressed() -> void:
 
 
 func _on_end_turn_button_pressed() -> void:
+	if diplomacy_overlay != null and diplomacy_overlay.visible:
+		return
 	var season_changed: bool = _advance_month()
 
 	var economy_messages: Array[String] = process_monthly_commerce_income()
@@ -2271,9 +2361,10 @@ func _on_load_button_pressed(save_path: String = SAVE_PATH) -> void:
 	# 옛 세이브에는 전략 상태가 없습니다. officers_by_province가 복원된
 	# 뒤에 만들어야 인재 배치가 제대로 잡힙니다.
 	if strategy_state.is_empty():
-		_init_strategy_state()
+		_init_strategy_state(false)
 	if production_overlay != null:
 		production_overlay.hide()
+	_close_diplomacy()
 
 	attack_source_id = ""
 	_apply_difficulty_settings(false)
