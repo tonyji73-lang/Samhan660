@@ -62,7 +62,7 @@ func _run() -> void:
 		await click(army.equip_button); pick(army.officers,worker); await click(army.train_button)
 		check(c.strategy_state.unit_rosters[uid].equipment==1000 and c.strategy_state.city_inventory[home_city].sword==0,"ten actual bundles consumed "+f)
 		await screen("equipped-training"); await escape()
-		var train_months: int=0; var gold_before: int=c.gold
+		var train_months: int=0
 		while not Army.training_job(c.strategy_state,uid).is_empty() and train_months<8: await month_step(); train_months+=1
 		check(Army.training(c.strategy_state.unit_rosters[uid])==70,"real completed training "+f)
 		c.select_province(home_city); c._on_recruit_button_pressed(); await click(c.recruitment_overlay.army_button); pick(army.selector,uid)

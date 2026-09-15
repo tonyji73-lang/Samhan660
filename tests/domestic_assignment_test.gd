@@ -23,7 +23,7 @@ func _run() -> void:
 	await start(Scenarios.SCENARIOS[0],"silla","historical")
 	conflict_cases()
 	await start(Scenarios.SCENARIOS[0],"silla","historical")
-	await actual_month_and_save()
+	actual_month_and_save()
 	var file:=FileAccess.open(RESULTS+"comparisons.json",FileAccess.WRITE)
 	file.store_string(JSON.stringify(evidence,"\t")); file.close()
 	print("DOMESTIC ASSIGNMENT TESTS: %d checks, %d failures" % [checks,failures])

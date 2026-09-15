@@ -22,7 +22,7 @@ static func view(state: Dictionary, provinces: Dictionary, city: String) -> Dict
 	var civilians: int=maxi(0,int(provinces.get(city,{}).get("population",0)))
 	var soldiers: int=serving(state,city)
 	var available: int=maxi(0,floori((civilians+soldiers)*RATE)-soldiers)
-	return {"civilians":civilians,"serving":soldiers,"available":mini(civilians,available)/UNIT*UNIT,"rate":RATE}
+	return {"civilians":civilians,"serving":soldiers,"available":int(float(mini(civilians,available))/UNIT)*UNIT,"rate":RATE}
 static func disband_quote(state: Dictionary, provinces: Dictionary, actor: String, id: String, amount: int) -> Dictionary:
 	var q: Dictionary=Army.check_unit(state,provinces,actor,id)
 	if not q.ok: return q
@@ -56,8 +56,8 @@ static func ai_amount(c: Node, faction: String, city: String, target: int) -> in
 	var before: Dictionary=c.city_operation_quote(city)
 	while maximum>0:
 		var shadow: Dictionary=p.duplicate(true); shadow.population=int(p.population)-maximum
-		var remaining: int=int(p.food_stock)-maximum/100*20
-		var monthly: int=(int(p.troops)+maximum)/100
+		var remaining: int=int(p.food_stock)-int(maximum/100.0)*20
+		var monthly: int=int(float(int(p.troops)+maximum)/100.0)
 		var tax_after: int=roundi(c.calculate_base_commerce_income(shadow)*float(before.governor.multiplier))
 		var harvest_after: int=roundi(c.calculate_base_annual_harvest(shadow)*float(before.governor.multiplier))
 		if remaining>=monthly*AI_FOOD_MONTHS and tax_after>=floori(int(before.tax)*0.95) and harvest_after>=floori(int(before.annual_harvest)*0.95): break

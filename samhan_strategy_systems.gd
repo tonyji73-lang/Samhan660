@@ -792,7 +792,8 @@ func process_season(
 	}
 
 
-func get_building_quote(state: Dictionary, province_id: String, building_id: String, scenario_id: String = "", supply_rules: Dictionary = IronSupplyData.SCENARIOS) -> Dictionary:
+# Compatibility arguments are retained; scenario restrictions apply to production batches.
+func get_building_quote(state: Dictionary, province_id: String, building_id: String, _scenario_id: String = "", _supply_rules: Dictionary = IronSupplyData.SCENARIOS) -> Dictionary:
 	if not BUILDING_DEFS.has(building_id):
 		return {"ok": false, "reason": "알 수 없는 건물입니다."}
 	if state.get("construction_queues", {}).has(province_id):
@@ -803,14 +804,13 @@ func get_building_quote(state: Dictionary, province_id: String, building_id: Str
 	var next_level: int = current_level + 1
 	if next_level > int(definition.get("max_level", 3)):
 		return {"ok": false, "reason": "이미 최고 단계입니다."}
-	@warning_ignore("integer_division")
 	return {
 		"ok": true,
 		"building_id": building_id,
 		"name": str(definition["name"]),
 		"next_level": next_level,
 		"gold_cost": int(definition["base_gold"]) * next_level,
-		"turns": int(definition["base_turns"]) + int((next_level - 1) / 2),
+		"turns": int(definition["base_turns"]) + int((next_level - 1) / 2.0),
 	}
 
 
@@ -935,10 +935,10 @@ func get_diplomatic_envoy(
 			return {"ok":false,"reason":"진행 중인 내정 업무를 먼저 완료하거나 취소한 뒤 사절로 보내세요."}
 		if not OfficerRegistry.eligible(registry, id, provinces):
 			return {"ok": false, "reason": "배치된 생존 활동 장수만 사절로 보낼 수 있습니다. 이동 중이거나 미배치 상태입니다."}
-		var envoy: Dictionary = OfficerRegistry.view(registry, id)
-		if envoy.faction != faction:
+		var registered_envoy: Dictionary = OfficerRegistry.view(registry, id)
+		if registered_envoy.faction != faction:
 			return {"ok": false, "reason": "다른 세력의 장수는 사절로 보낼 수 없습니다."}
-		return {"ok": true, "envoy": envoy}
+		return {"ok": true, "envoy": registered_envoy}
 	if name_value.is_empty() or not officers.has(name_value):
 		return {"ok": false, "reason": "현재 보유한 사절을 선택하세요."}
 	var assigned: String = ""
@@ -1023,9 +1023,9 @@ func get_diplomatic_action_quote(
 	var politics: int = int(envoy.get("politics", 50))
 	var intelligence: int = int(envoy.get("intelligence", 50))
 	var authority: int = int(envoy.get("authority", 50))
-	@warning_ignore("integer_division")
+	# Relations can be negative: int() preserves truncation toward zero.
 	var chance: int = clampi(
-		45 + int((politics + intelligence + authority) / 12) + int(relation_value / 5),
+		45 + int((politics + intelligence + authority) / 12.0) + int(relation_value / 5.0),
 		15,
 		95
 	)
@@ -1341,10 +1341,9 @@ func _process_trade(state: Dictionary, provinces: Dictionary) -> Dictionary:
 		var buildings: Dictionary = state.get("province_buildings", {})
 		var market_level: int = int(buildings.get(origin_id, {}).get("market", 0)) + int(buildings.get(destination_id, {}).get("market", 0))
 		var commerce_value: int = int(provinces[origin_id].get("commerce", 50)) + int(provinces[destination_id].get("commerce", 50))
-		@warning_ignore("integer_division")
 		var income: int = maxi(
 			20,
-			int(commerce_value / 5) + market_level * 15 - int(route.get("risk", 10))
+			int(commerce_value / 5.0) + market_level * 15 - int(route.get("risk", 10))
 		)
 		for faction_key: String in [str(route["faction_a"]), str(route["faction_b"])]:
 			deltas[faction_key] = int(deltas.get(faction_key, 0)) + income
@@ -1482,9 +1481,8 @@ func _create_child(state: Dictionary, first: Dictionary, second: Dictionary, cur
 	var base_stats: Dictionary = {}
 	var potential: Dictionary = {}
 	for stat_key: String in STAT_KEYS:
-		@warning_ignore("integer_division")
 		var parent_average: int = int(
-			(int(first.get("stats", {}).get(stat_key, 55)) + int(second.get("stats", {}).get(stat_key, 55))) / 2
+			(int(first.get("stats", {}).get(stat_key, 55)) + int(second.get("stats", {}).get(stat_key, 55))) / 2.0
 		)
 		base_stats[stat_key] = clampi(24 + rng.randi_range(0, 8), 20, 40)
 		potential[stat_key] = clampi(parent_average + rng.randi_range(-6, 8), 55, DYNASTIC_STAT_CAP)
@@ -1656,8 +1654,7 @@ func _generate_unique_name(state: Dictionary, faction_name: String, current_year
 	for attempt: int in range(30):
 		var seed_value: int = absi(hash("name:%s:%d:%d:%d" % [faction_name, current_year, salt, attempt]))
 		var surname: String = str(surnames[seed_value % surnames.size()])
-		@warning_ignore("integer_division")
-		var given_index: int = int(seed_value / maxi(1, surnames.size())) % given_names.size()
+		var given_index: int = int(float(seed_value) / maxi(1, surnames.size())) % given_names.size()
 		var given_name: String = str(given_names[given_index])
 		var candidate: String = surname + given_name
 		var registry_name_used: bool = false

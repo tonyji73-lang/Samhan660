@@ -64,18 +64,18 @@ static func _from_definition(d: Dictionary, id: String) -> Dictionary:
 		"birth_year": d.birth.game_year, "death_year": d.death.game_year, "date_basis": "legacy_game_years; historical confidence in catalog",
 		"gender": "unknown", "spouse": "", "parents": [], "children": [], "rng_identity": d.display_name}
 
-static func resolve(registry: Dictionary, reference: String) -> String:
-	if registry.get("people", {}).has(reference):
-		return reference
+static func resolve(registry: Dictionary, officer_ref: String) -> String:
+	if registry.get("people", {}).has(officer_ref):
+		return officer_ref
 	var matches: Array[String] = []
 	for id: String in registry.get("people", {}):
 		var p: Dictionary = registry.people[id]
-		if p.name == reference or p.get("aliases", []).has(reference):
+		if p.name == officer_ref or p.get("aliases", []).has(officer_ref):
 			matches.append(id)
 	return matches[0] if matches.size() == 1 else ""
 
-static func get_person(registry: Dictionary, reference: String) -> Dictionary:
-	return registry.get("people", {}).get(resolve(registry, reference), {})
+static func get_person(registry: Dictionary, officer_ref: String) -> Dictionary:
+	return registry.get("people", {}).get(resolve(registry, officer_ref), {})
 
 static func faction_id(registry: Dictionary, faction: String) -> String:
 	if registry.get("factions", {}).has(faction):
@@ -88,8 +88,8 @@ static func faction_id(registry: Dictionary, faction: String) -> String:
 static func faction_name(registry: Dictionary, p: Dictionary) -> String:
 	return registry.get("factions", {}).get(p.get("faction_id", ""), p.get("legacy_faction", ""))
 
-static func view(registry: Dictionary, reference: String) -> Dictionary:
-	var p: Dictionary = get_person(registry, reference)
+static func view(registry: Dictionary, officer_ref: String) -> Dictionary:
+	var p: Dictionary = get_person(registry, officer_ref)
 	if p.is_empty():
 		return {}
 	var result: Dictionary = p.duplicate(true)
@@ -127,29 +127,29 @@ static func assignments(registry: Dictionary, names: bool = false) -> Dictionary
 		result[city].append(p.name if names and resolve(registry, p.name) == id else id)
 	return result
 
-static func eligible(registry: Dictionary, reference: String, provinces: Dictionary, city: String = "") -> bool:
-	var p: Dictionary = get_person(registry, reference)
+static func eligible(registry: Dictionary, officer_ref: String, provinces: Dictionary, city: String = "") -> bool:
+	var p: Dictionary = get_person(registry, officer_ref)
 	if p.is_empty() or not p.get("active", false) or not p.get("alive", true) or p.get("in_transit", false):
 		return false
 	var place: String = str(p.get("location", ""))
 	return not place.is_empty() and (city.is_empty() or place == city) and provinces.has(place) and faction_name(registry, p) == str(provinces[place].get("faction", ""))
 
-static func set_stats(registry: Dictionary, reference: String, stats: Dictionary) -> bool:
-	var p: Dictionary = get_person(registry, reference)
+static func set_stats(registry: Dictionary, officer_ref: String, stats: Dictionary) -> bool:
+	var p: Dictionary = get_person(registry, officer_ref)
 	if p.is_empty(): return false
 	for key: String in STATS:
 		if stats.has(key): p.stats[key] = int(stats[key])
 	return true
 
-static func action_available(registry: Dictionary, reference: String, provinces: Dictionary, action: String, city: String = "") -> bool:
-	if not eligible(registry,reference,provinces,city): return false
+static func action_available(registry: Dictionary, officer_ref: String, provinces: Dictionary, action: String, city: String = "") -> bool:
+	if not eligible(registry,officer_ref,provinces,city): return false
 	if action in ["defense","governor"]: return true
-	for duty: Variant in get_person(registry,reference).get("duties",[]):
+	for duty: Variant in get_person(registry,officer_ref).get("duties",[]):
 		if duty is Dictionary and duty.get("kind","") in ["domestic","industry","training"]: return false
 	return true
 
-static func set_location(registry: Dictionary, reference: String, city: String, in_transit: bool = false) -> bool:
-	var id: String = resolve(registry, reference)
+static func set_location(registry: Dictionary, officer_ref: String, city: String, in_transit: bool = false) -> bool:
+	var id: String = resolve(registry, officer_ref)
 	if id.is_empty(): return false
 	var p: Dictionary = registry.people[id]
 	if not Power.location_reason(registry,id,city,in_transit).is_empty(): return false
@@ -160,17 +160,17 @@ static func set_location(registry: Dictionary, reference: String, city: String, 
 	p.in_transit = in_transit
 	return true
 
-static func set_faction(registry: Dictionary, reference: String, new_faction_id: String) -> bool:
-	var p: Dictionary = get_person(registry, reference)
+static func set_faction(registry: Dictionary, officer_ref: String, new_faction_id: String) -> bool:
+	var p: Dictionary = get_person(registry, officer_ref)
 	if p.is_empty() or not registry.factions.has(new_faction_id): return false
 	p.faction_id = new_faction_id
 	for post: String in registry.posts.keys():
 		if registry.posts[post] == p.officer_id: set_post(registry,post,"","소속 변경")
 	return true
 
-static func set_post(registry: Dictionary, post: String, reference: String, reason: String = "임명/해임") -> bool:
-	var id: String = resolve(registry,reference) if not reference.is_empty() else ""
-	if not reference.is_empty() and id.is_empty(): return false
+static func set_post(registry: Dictionary, post: String, officer_ref: String, reason: String = "임명/해임") -> bool:
+	var id: String = resolve(registry,officer_ref) if not officer_ref.is_empty() else ""
+	if not officer_ref.is_empty() and id.is_empty(): return false
 	var previous: String = str(registry.posts.get(post,""))
 	if previous==id: return true
 	if not Power.guard_post(registry,post,id,reason): return false
@@ -184,21 +184,21 @@ static func set_post(registry: Dictionary, post: String, reference: String, reas
 	registry.post_history.append({"post":post,"city_id":post.trim_prefix("governor:") if post.begins_with("governor:") else "","officer_id":id if not id.is_empty() else previous,"previous_id":previous,"new_id":id,"month":registry.get("clock_month",0),"reason":reason})
 	return true
 
-static func set_duties(registry: Dictionary, reference: String, duties: Array) -> bool:
-	var p: Dictionary = get_person(registry, reference)
+static func set_duties(registry: Dictionary, officer_ref: String, duties: Array) -> bool:
+	var p: Dictionary = get_person(registry, officer_ref)
 	if p.is_empty(): return false
 	p.duties = duties.duplicate(true)
 	return true
 
-static func set_identity_links(registry: Dictionary, reference: String, family: String, political_group: String) -> bool:
-	var p: Dictionary = get_person(registry, reference)
+static func set_identity_links(registry: Dictionary, officer_ref: String, family: String, political_group: String) -> bool:
+	var p: Dictionary = get_person(registry, officer_ref)
 	if p.is_empty(): return false
 	p.family_id = family
 	p.political_group_id = political_group
 	return true
 
-static func set_alive(registry: Dictionary, reference: String, alive: bool) -> bool:
-	var p: Dictionary = get_person(registry, reference)
+static func set_alive(registry: Dictionary, officer_ref: String, alive: bool) -> bool:
+	var p: Dictionary = get_person(registry, officer_ref)
 	if p.is_empty(): return false
 	p.alive = alive
 	if not alive:

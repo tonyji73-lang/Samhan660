@@ -40,46 +40,46 @@ func tick(f: Dictionary, gold: int, month_key: int = MONTH) -> Dictionary:
 
 func units() -> void:
 	for amounts: Array in [[100, 84, 0, 1], [15, 9, 2, 0], [5, 5, 0, 0]]:
-		var f: Dictionary = fixture()
-		var result: Dictionary = tick(f, amounts[0])
-		check(result.gold == amounts[1] and f.state.city_inventory[CITY].iron == amounts[2] and f.state.city_inventory[CITY].sword == amounts[3], "gold %d -> %d, iron %d, sword %d" % amounts)
+		var case_f: Dictionary = fixture()
+		var case_result: Dictionary = tick(case_f, amounts[0])
+		check(case_result.gold == amounts[1] and case_f.state.city_inventory[CITY].iron == amounts[2] and case_f.state.city_inventory[CITY].sword == amounts[3], "gold %d -> %d, iron %d, sword %d" % amounts)
 		if amounts[0] < 16:
-			check(f.state.city_production[CITY].iron_sword.status == "보류", "manufacture explains shortage")
+			check(case_f.state.city_production[CITY].iron_sword.status == "보류", "manufacture explains shortage")
 		if amounts[0] == 5:
-			check(f.state.city_production[CITY].iron_supply.status == "보류", "supply explains insufficient funds")
-		var inventory: String = JSON.stringify(f.state.city_inventory)
+			check(case_f.state.city_production[CITY].iron_supply.status == "보류", "supply explains insufficient funds")
+		var inventory: String = JSON.stringify(case_f.state.city_inventory)
 		for recipe: String in ["iron_supply","iron_sword"]:
-			Production.set_enabled(f.state, f.provinces, CITY, recipe, FACTION, false, SCENARIO, f.rules)
-			Production.set_enabled(f.state, f.provinces, CITY, recipe, FACTION, true, SCENARIO, f.rules)
-		result = tick(f, 100)
-		check(result.gold == 100 and JSON.stringify(f.state.city_inventory) == inventory, "same-month stop/start and added funds cannot retry successful OR suspended orders")
-		f.state = JSON.parse_string(JSON.stringify(f.state))
-		Production.normalize_state(f.state, f.provinces)
-		result = tick(f, 100)
-		check(result.gold == 100 and JSON.stringify(f.state.city_inventory) == inventory, "JSON load cannot retry same month")
-		result = tick(f, 100, MONTH + 1)
-		check(result.gold == 84 and f.state.city_inventory[CITY].sword == amounts[3] + 1, "next month permits exactly one batch per process")
+			Production.set_enabled(case_f.state, case_f.provinces, CITY, recipe, FACTION, false, SCENARIO, case_f.rules)
+			Production.set_enabled(case_f.state, case_f.provinces, CITY, recipe, FACTION, true, SCENARIO, case_f.rules)
+		case_result = tick(case_f, 100)
+		check(case_result.gold == 100 and JSON.stringify(case_f.state.city_inventory) == inventory, "same-month stop/start and added funds cannot retry successful OR suspended orders")
+		case_f.state = JSON.parse_string(JSON.stringify(case_f.state))
+		Production.normalize_state(case_f.state, case_f.provinces)
+		case_result = tick(case_f, 100)
+		check(case_result.gold == 100 and JSON.stringify(case_f.state.city_inventory) == inventory, "JSON load cannot retry same month")
+		case_result = tick(case_f, 100, MONTH + 1)
+		check(case_result.gold == 84 and case_f.state.city_inventory[CITY].sword == amounts[3] + 1, "next month permits exactly one batch per process")
 
 	for missing: String in ["region", "confirmation", "scenario", "technology", "facility", "ownership"]:
-		var f: Dictionary = fixture()
+		var case_f: Dictionary = fixture()
 		match missing:
-			"region": f.rules[SCENARIO][CITY].allowed = false
-			"confirmation": f.rules[SCENARIO][CITY].placement_confirmed = false
-			"scenario": f.rules = {"another_scenario": f.rules[SCENARIO]}
-			"technology": f.state.faction_research[FACTION].basic_smelting = 0
-			"facility": f.state.province_buildings[CITY].smelter = 0
-			"ownership": f.provinces[CITY].faction = "백제"
-		var result: Dictionary = tick(f, 100)
-		check(result.gold == 100 and f.state.city_inventory[CITY].iron == 0 and f.state.city_inventory[CITY].sword == 0, missing + " blocks supply with no resource changes")
-		check(f.state.city_production[CITY].iron_supply.reason != "", missing + " has a visible reason")
+			"region": case_f.rules[SCENARIO][CITY].allowed = false
+			"confirmation": case_f.rules[SCENARIO][CITY].placement_confirmed = false
+			"scenario": case_f.rules = {"another_scenario": case_f.rules[SCENARIO]}
+			"technology": case_f.state.faction_research[FACTION].basic_smelting = 0
+			"facility": case_f.state.province_buildings[CITY].smelter = 0
+			"ownership": case_f.provinces[CITY].faction = "백제"
+		var case_result: Dictionary = tick(case_f, 100)
+		check(case_result.gold == 100 and case_f.state.city_inventory[CITY].iron == 0 and case_f.state.city_inventory[CITY].sword == 0, missing + " blocks supply with no resource changes")
+		check(case_f.state.city_production[CITY].iron_supply.reason != "", missing + " has a visible reason")
 
 	for stopped: String in ["iron_supply","iron_sword"]:
-		var f: Dictionary = fixture()
-		Production.set_enabled(f.state, f.provinces, CITY, stopped, FACTION, false, SCENARIO, f.rules)
+		var case_f: Dictionary = fixture()
+		Production.set_enabled(case_f.state, case_f.provinces, CITY, stopped, FACTION, false, SCENARIO, case_f.rules)
 		if stopped == "iron_supply":
-			f.state.city_inventory[CITY].iron = 2
-		var result: Dictionary = tick(f, 100)
-		check(result.gold == (90 if stopped == "iron_supply" else 94) and f.state.city_inventory[CITY].sword == (1 if stopped == "iron_supply" else 0) and f.state.city_inventory[CITY].iron == (0 if stopped == "iron_supply" else 2), stopped + " stops independently")
+			case_f.state.city_inventory[CITY].iron = 2
+		var case_result: Dictionary = tick(case_f, 100)
+		check(case_result.gold == (90 if stopped == "iron_supply" else 94) and case_f.state.city_inventory[CITY].sword == (1 if stopped == "iron_supply" else 0) and case_f.state.city_inventory[CITY].iron == (0 if stopped == "iron_supply" else 2), stopped + " stops independently")
 
 	var f: Dictionary = fixture()
 	var old_order: Dictionary = f.state.city_production[CITY].iron_sword.duplicate(true)

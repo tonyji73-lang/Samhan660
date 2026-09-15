@@ -129,7 +129,7 @@ static func forecast(c: Node, faction: String, hub: String) -> Dictionary:
  var inventory: int=Production.get_stock(s,c.provinces,hub,"sword")
  var iron: int=Production.get_stock(s,c.provinces,hub,"iron")
  var work: int=Industry.production_work(s,c.provinces,hub,stamp)
- var production_months: int=ceili(float(int(POLICY.cohort)/100*100)/work)
+ var production_months: int=ceili(float(int(float(POLICY.cohort)/100.0)*100)/work)
  var training_months: int=int(POLICY.training_window)
  if not builder.is_empty():
   var gain: int=5+floori(roundi(float(builder.get("leadership",0))*0.7+float(builder.get("war",0))*0.3)/10.0)
@@ -148,7 +148,7 @@ static func forecast(c: Node, faction: String, hub: String) -> Dictionary:
  var enabled: bool=bool(s.city_production[hub].get("iron_sword",{}).get("enabled",false))
  var input_available: bool=iron>=2 or bool(s.city_production[hub].iron_supply.enabled) or bool(s.city_production[hub].iron_procurement.enabled) or Supply.incoming(s,c.provinces,faction,hub,"iron",stamp+horizon,stamp)>=2
  if ready and enabled and input_available and int(c.provinces[hub].food_stock)>=Supply.upkeep(c.provinces[hub])*int(POLICY.food_months):
-  batches=mini(floori(float(work)*production_months/100),maxi(0,(Economy.balance(s,faction)-int(POLICY.reserve_gold))/operating))
+  batches=mini(floori(float(work)*production_months/100),maxi(0,int(float(Economy.balance(s,faction)-int(POLICY.reserve_gold))/operating)))
  return {"stock_bundles":inventory,"iron_units":iron,"incoming_bundles":freight,"conditional_future_bundles":batches,"facilities_ready":ready,"infrastructure_remaining":construction,"unresolved":unresolved,"horizon":horizon,"production_months":production_months,"training_months":training_months,"travel_months":travel,"unpaid_infrastructure_gold":future_cost,"gold_per_bundle":operating,"supply_recipe":supply_recipe,"training_staff_now":people.size(),"production_work":work,"reason":"군수 시설 준비 · 직렬 보수적 예상(병렬 완료 시 단축)" if not ready else "현재 재고만 배정 · 미래 생산은 가동·원료·국고 유지 조건부"}
 static func transfer(c: Node, faction: String, unit: String, target: String) -> Dictionary:
  var u: Dictionary=Army.units(c.strategy_state).get(unit,{})
@@ -183,7 +183,7 @@ static func run(c: Node, faction: String, planned_attacks: Dictionary={}) -> Arr
   if float(border.enemy_power)<=float(border.defense_power)*float(POLICY.emergency_margin) or int(border.defense_deficit)<100: continue
   var wanted: int=mini(int(border.defense_deficit),int(c.ai_recruitment_amount))
   var amount: int=c.Mobilization.ai_amount(c,faction,border.city,wanted)
-  amount=mini(amount,maxi(0,Economy.balance(s,faction)/15)*100)
+  amount=mini(amount,maxi(0,int(Economy.balance(s,faction)/15.0))*100)
   if amount>0: actions.append({"action":"emergency_recruit","city":border.city,"deficit":border.defense_deficit,"result":c.recruit_for_faction(faction,border.city,amount)})
   break
  Network.run(c,faction,plan,borders,actions)
@@ -220,7 +220,7 @@ static func run(c: Node, faction: String, planned_attacks: Dictionary={}) -> Arr
   if selected.is_empty() and want_new and not staff(c,faction,hub).is_empty():
    var needed: int=maxi(int(demand.defense_deficit),int(demand.attack_deficit))
    var amount: int=c.Mobilization.ai_amount(c,faction,hub,mini(int(POLICY.cohort),needed))
-   if amount>=100 and Economy.balance(s,faction)>=int(POLICY.reserve_gold)+amount/100*15+ceili(float(amount)/100)*5*int(POLICY.training_window):
+   if amount>=100 and Economy.balance(s,faction)>=int(POLICY.reserve_gold)+int(amount/100.0)*15+ceili(float(amount)/100)*5*int(POLICY.training_window):
     var recruited: Dictionary=c.recruit_for_faction(faction,hub,amount)
     actions.append({"action":"planned_recruit","city":hub,"result":recruited})
     if recruited.ok: selected=recruited.unit_id
@@ -265,7 +265,6 @@ static func run(c: Node, faction: String, planned_attacks: Dictionary={}) -> Arr
  Preparation.run(c,faction,plan,borders,actions)
  # Move an available reserve through the SAME one-edge transfer command.
  # Ready cohort deployment has priority; leave assessed border defense intact.
- var moved: bool=actions.any(func(a): return a.action in ["deploy","return_to_training"] and a.result.get("ok",false))
  if not borders.is_empty():
   var sources: Array=cities.duplicate()
   sources.sort_custom(func(a,b):

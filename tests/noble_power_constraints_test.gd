@@ -18,14 +18,14 @@ func _run() -> void:
   var money: int=c.gold; var old: String=c.officer_registry.posts["governor:geumseong"]
   var loyalty: int=c.officer_registry.people[old].loyalty
   var coop: int=c.officer_registry.politics.groups["silla:military"].cooperation
-  var offer: Dictionary=Power.intercept(c,req)
-  check(not offer.ok and c.gold==money and c.officer_registry.posts["governor:geumseong"]==old,"offer is nonmutating authority and money")
-  var id: String=offer.negotiation_id
+  var case_offer: Dictionary=Power.intercept(c,req)
+  check(not case_offer.ok and c.gold==money and c.officer_registry.posts["governor:geumseong"]==old,"offer is nonmutating authority and money")
+  var id: String=case_offer.negotiation_id
   check(Power.resolve(c,id,choice).ok,"choice accepted "+choice)
   if choice=="wait":
    check(c.officer_registry.posts["governor:geumseong"]==old,"wait retains governor")
    var due: int=Power.records(c.strategy_state).requests[id].due_month
-   c.year=(due-1)/12; c.month=(due-1)%12+1
+   c.year=int((due-1)/12.0); c.month=(due-1)%12+1
    Power.begin_month(c)
   check(c.officer_registry.posts["governor:geumseong"]=="historical:001","handover applied "+choice)
   check(c.gold==money-(int(q.gold) if choice=="compensate" else 0),"exact once fee "+choice)
@@ -41,7 +41,7 @@ func _run() -> void:
    check(Power.city_factor(c.strategy_state,"geumseong")==0.8,"city work reduced")
    var stamp: int=c.year*12+c.month
    for n: int in range(1,3):
-    var next: int=stamp+n; c.year=(next-1)/12; c.month=(next-1)%12+1
+    var next: int=stamp+n; c.year=int((next-1)/12.0); c.month=(next-1)%12+1
     Power.finish_month(c); Power.finish_month(c)
     check(Power.records(c.strategy_state).cities.geumseong.remaining==2-n,"city exact monthly countdown "+str(n))
   print("EVIDENCE ",choice," ",JSON.stringify(q)," money ",money,"->",balance)

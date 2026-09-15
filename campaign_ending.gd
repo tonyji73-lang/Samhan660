@@ -19,11 +19,11 @@ static func initialize(state: Dictionary, scenario: String, faction: String, sta
  if state.has("campaign_ending"): return
  state.campaign_ending={"campaign_id":Crypto.new().generate_random_bytes(16).hex_encode(),"status":"ongoing","definition":definition(scenario,faction),"start_month":start_stamp,"start_basis":"actual_new_game_start","migration_month":stamp,"result":{}}
 static func owner(state: Dictionary, province: Dictionary) -> String:
- var reference: String=str(province.get("faction",""))
+ var faction_ref: String=str(province.get("faction",""))
  var names: Dictionary=state.get("faction_economy",{}).get("factions",{})
- if names.has(reference): return reference
+ if names.has(faction_ref): return faction_ref
  for id: String in names:
-  if names[id]==reference: return id
+  if names[id]==faction_ref: return id
  return ""
 # Pure: never initializes, pays, relocates, advances time or confirms a result.
 static func evaluate(state: Dictionary, provinces: Dictionary) -> Dictionary:
@@ -98,4 +98,4 @@ static func result_text(state: Dictionary) -> String:
  statistics+="\n기록된 전투 %d회 · 전투 손실 %d명" % [snap.recorded_battles,snap.recorded_losses] if snap.has("recorded_battles") else "\n전투 누계: 기록 없음"
  statistics+="\n기록된 정치 지출: "+str(snap.recorded_politics_expense) if snap.has("recorded_politics_expense") else "\n정치 지출: 적용 대상 기록 없음"
  if life.get("start_basis","")=="legacy_scenario_january": statistics+="\n구저장 경과 개월은 시나리오 1월 시작을 가정한 추정치입니다."
- return "%s · %s\n%d년 %d월 · 경과 %d개월\n\n%s\n목표 직접 점유 %d/%d\n남은 도시 %d · 병력 %d명 · 국고 %s\n\n%s\n통계는 저장에 남은 기록 범위이며 미기록 과거를 추정하지 않습니다.\n새 보상이나 점수는 지급하지 않습니다.\n결과 ID: %s" % [names.get(life.definition.scenario_id,life.definition.scenario_id),names.get(life.definition.faction_id,life.definition.faction_id),int((int(result.month)-1)/12),((int(result.month)-1)%12)+1,result.elapsed_months,result.evaluation.reason,result.evaluation.achieved.size(),life.definition.targets.size(),snap.cities.size(),snap.troops,str(snap.treasury),statistics,result.result_id]
+ return "%s · %s\n%d년 %d월 · 경과 %d개월\n\n%s\n목표 직접 점유 %d/%d\n남은 도시 %d · 병력 %d명 · 국고 %s\n\n%s\n통계는 저장에 남은 기록 범위이며 미기록 과거를 추정하지 않습니다.\n새 보상이나 점수는 지급하지 않습니다.\n결과 ID: %s" % [names.get(life.definition.scenario_id,life.definition.scenario_id),names.get(life.definition.faction_id,life.definition.faction_id),int((int(result.month)-1)/12.0),((int(result.month)-1)%12)+1,result.elapsed_months,result.evaluation.reason,result.evaluation.achieved.size(),life.definition.targets.size(),snap.cities.size(),snap.troops,str(snap.treasury),statistics,result.result_id]

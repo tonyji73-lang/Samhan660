@@ -8,10 +8,10 @@ const Domestic=preload("res://domestic_assignment.gd")
 const RULES={"bundle_persons":100,"training_limit":1000,"target":70,"base_gain":5,"cost_per_100":5,"recruit_training":50,"ai_reserve_gold":300,"ai_defense_fraction":0.5}
 
 static func units(state: Dictionary) -> Dictionary: return state.get("unit_rosters",{})
-static func create(state: Dictionary, faction: String, city: String, count: int, kind: String="infantry", level: int=50, equipment: int=0, origin: String="", reason: String="external_support") -> Dictionary:
+static func create(state: Dictionary, faction: String, city: String, troop_count: int, kind: String="infantry", level: int=50, equipment: int=0, origin: String="", reason: String="external_support") -> Dictionary:
 	if Ending.finished(state): return {}
 	var id: String="unit:%d" % int(state.army.next_id); state.army.next_id=int(state.army.next_id)+1
-	var u: Dictionary={"id":id,"creation_reason":reason,"faction_id":faction,"location":city,"kind":kind,"troops":count,"training_points":count*level,"equipment":equipment,"commander_id":"","origins":{origin if not origin.is_empty() else city:count},"status":"stationed","transfer_id":"","power":50}
+	var u: Dictionary={"id":id,"creation_reason":reason,"faction_id":faction,"location":city,"kind":kind,"troops":troop_count,"training_points":troop_count*level,"equipment":equipment,"commander_id":"","origins":{origin if not origin.is_empty() else city:troop_count},"status":"stationed","transfer_id":"","power":50}
 	state.unit_rosters[id]=u; return u
 
 static func initialize(state: Dictionary, provinces: Dictionary, transfers: Array, definitions: Dictionary={}) -> void:
@@ -30,22 +30,22 @@ static func initialize(state: Dictionary, provinces: Dictionary, transfers: Arra
 		var kinds: Array=roster.keys(); kinds.sort(); kinds.erase("infantry"); kinds.append("infantry")
 		for kind: String in kinds:
 			var row: Dictionary=roster.get(kind,{})
-			var count: int=left if kind=="infantry" else mini(left,maxi(0,int(row.get("troops",0))))
-			if count<=0: continue
-			var u: Dictionary=create(state,Economy.resolve(state,str(provinces[city].get("faction",""))),city,count,kind,clampi(int(row.get("training",50)),0,100),maxi(0,int(row.get("equipment",count))),city)
+			var troop_count: int=left if kind=="infantry" else mini(left,maxi(0,int(row.get("troops",0))))
+			if troop_count<=0: continue
+			var u: Dictionary=create(state,Economy.resolve(state,str(provinces[city].get("faction",""))),city,troop_count,kind,clampi(int(row.get("training",50)),0,100),maxi(0,int(row.get("equipment",troop_count))),city)
 			u["creation_reason"]="scenario_or_legacy_no_retroactive_charge"; u["legacy_faction"]=str(provinces[city].get("faction","")); u.power=int(row.get("power",definitions.get(kind,{}).get("power",50))); u["legacy_fields"]=row.duplicate(true)
 			if row.get("origins") is Dictionary:
 				var recorded: int=0
 				for value: Variant in row.origins.values(): recorded+=maxi(0,int(value))
-				if recorded==count: u.origins=row.origins.duplicate(true)
+				if recorded==troop_count: u.origins=row.origins.duplicate(true)
 				else: state.army.migration.append({"unit_id":u.id,"original_origins":row.origins.duplicate(true),"policy":"conflicting count archived; stationed city estimate"})
 			u["origin_basis"]="existing origins if count matches; otherwise legacy stationed city"
-			left-=count
+			left-=troop_count
 		if total!=target: state.army.migration.append({"city_id":city,"saved_city":target,"saved_roster":total,"policy":"city actual count; preserve non-infantry first, original archived"})
 	for order: Dictionary in transfers:
-		var count: int=maxi(0,int(order.get("troops",0)))
-		if count>0 and not order.has("unit_ids"):
-			var u: Dictionary=create(state,Economy.resolve(state,str(order.get("faction",""))),"",count,"infantry",50,count,str(order.get("source_id","")))
+		var transfer_count: int=maxi(0,int(order.get("troops",0)))
+		if transfer_count>0 and not order.has("unit_ids"):
+			var u: Dictionary=create(state,Economy.resolve(state,str(order.get("faction",""))),"",transfer_count,"infantry",50,transfer_count,str(order.get("source_id","")))
 			u["creation_reason"]="legacy_transfer_no_retroactive_charge"; u["origin_basis"]="legacy transfer source_id"; u.status="transit"; order["unit_ids"]=[u.id]
 	sync(state,provinces)
 
@@ -93,12 +93,13 @@ static func divide(state: Dictionary, id: String, amount: int) -> String:
 	var v: Dictionary=create(state,u.faction_id,u.location,amount,u.kind,0,0)
 	v.commander_id=u.commander_id; Power.inherit(state,id,v.id)
 	v["creation_reason"]="split"; v["parent_unit_id"]=id; v.power=u.power; v.status=u.status; v.origins={}
+	# Truncate the transferred share; leave the remainder in the original unit.
 	for field: String in ["training_points","equipment"]:
-		v[field]=int(u[field])*amount/before; u[field]=int(u[field])-int(v[field])
+		v[field]=int(float(int(u[field])*amount)/before); u[field]=int(u[field])-int(v[field])
 	var left: int=amount
 	var origins: Array=u.origins.keys(); origins.sort()
 	for n: int in range(origins.size()):
-		var key: String=origins[n]; var allocated: int=mini(int(u.origins[key]),left) if n==origins.size()-1 else mini(left,int(u.origins[key])*amount/before)
+		var key: String=origins[n]; var allocated: int=mini(int(u.origins[key]),left) if n==origins.size()-1 else mini(left,int(float(int(u.origins[key])*amount)/before))
 		v.origins[key]=allocated; u.origins[key]=int(u.origins[key])-allocated; left-=allocated
 	# Any rounding remainder comes from remaining origins in stable order.
 	for key: String in origins:
@@ -170,13 +171,13 @@ static func training_quote(state: Dictionary, provinces: Dictionary, actor: Stri
 	var reason: String=Industry.staff_reason(state,provinces,actor,u.location,officer,stamp,str(job.get("id","")))
 	var person: Dictionary=Registry.view(state.officer_registry,officer)
 	var efficiency: int=clampi(roundi(float(person.get("leadership",0))*0.7+float(person.get("war",0))*0.3),0,100)
-	var gain: int=int(RULES.base_gain)+efficiency/10
+	var gain: int=int(RULES.base_gain)+int(efficiency/10.0)
 	var fee: int=ceili(float(u.troops)/100.0)*int(RULES.cost_per_100)
 	if u.kind!="infantry" or int(u.troops)>int(RULES.training_limit): reason="일반 보병 1~1,000명을 편성하세요."
 	elif training(u)>=int(RULES.target): reason="훈련 목표 이상입니다. 기존 훈련도는 유지합니다."
 	elif Economy.balance(state,actor)<fee: reason="국고 부족 · 유료 훈련 보류"
 	elif bool(provinces[u.location].get("food_shortage",false)): reason="주둔군 군량 유지 실패 · 훈련 보류"
-	elif int(state.faction_economy.phase_months.get("upkeep",-1))!=stamp and int(provinces[u.location].food_stock)<int(provinces[u.location].troops)/100: reason="주둔군 군량 부족 · 훈련 보류"
+	elif int(state.faction_economy.phase_months.get("upkeep",-1))!=stamp and int(provinces[u.location].food_stock)<int(float(provinces[u.location].troops)/100.0): reason="주둔군 군량 부족 · 훈련 보류"
 	if not Power.unit_reason(state,id).is_empty(): reason=Power.unit_reason(state,id)
 	return {"ok":reason.is_empty(),"reason":reason,"efficiency":efficiency,"gain":gain,"cost":fee,"next_training":minf(float(RULES.target),training(u)+gain)}
 static func train(state: Dictionary, provinces: Dictionary, actor: String, id: String, officer: String, stamp: int) -> Dictionary:
@@ -218,7 +219,7 @@ static func casualties(state: Dictionary, ids: Array, losses: int, stamp: int) -
 	for id: String in ids:
 		var u: Dictionary=units(state)[id]; var old: int=u.troops
 		if old<=0: continue
-		var lost: int=mini(old,left) if old==remaining else mini(left,int(left*old/remaining))
+		var lost: int=mini(old,left) if old==remaining else mini(left,int(float(left*old)/remaining))
 		var equipment_lost: int=int(u.equipment) if lost==old else ceili(float(u.equipment)*lost/old)
 		var part: String=divide(state,id,lost) if lost>0 and lost<old else id
 		if lost>0:

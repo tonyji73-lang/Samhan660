@@ -19,9 +19,9 @@ func _run() -> void:
    await start(scenario,faction.id,"historical"); events()
    c._on_end_turn_button_pressed(); events(); await process_frame
    check(not c.Ending.finished(c.strategy_state),"initial real month "+scenario.id+"/"+faction.id)
-   var before: Variant=full()
+   var case_before: Variant=full()
    for ai: String in c.strategy_state.get("military_planning",{}).get("factions",{}): P.run(c,ai)
-   check(full()==before,"same month national planning is inert "+scenario.id+"/"+faction.id)
+   check(full()==case_before,"same month national planning is inert "+scenario.id+"/"+faction.id)
    invariant(scenario.id+"/"+faction.id)
    combos.append({"scenario":scenario.id,"player":faction.id,"plans":c.strategy_state.get("military_planning",{}).duplicate(true)})
  var out:=FileAccess.open(DIR+"initial-combinations.json",FileAccess.WRITE); out.store_string(JSON.stringify(combos)); out.close()

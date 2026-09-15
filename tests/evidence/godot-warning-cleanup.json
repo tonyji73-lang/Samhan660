@@ -1,0 +1,46 @@
+{
+  "baseline_commit": "dd1e22ded04221c206b1e4b7df851693cfc0eea7",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "date": "2026-09-16",
+  "static_analysis": {"scripts": 352, "warnings": 0, "errors": 0},
+  "gut": {"version": "9.7.1", "tests": 152, "passed": 152, "assertions": 1328, "exit": 0},
+  "regression": {"checks": 1501, "failures": 0, "rendering": "D3D12 Forward+", "campaign": "663 July, Goguryeo, actual setup button transition"},
+  "original_strategy_comparison": {"checks": 2008, "failures": 0},
+  "preexisting_failures": [
+    {"test": "mobilization_ai_test.gd::_run/common", "assertion": "AI issues actual produced bundles common", "cause": "No under-equipped units at 632.02; paid production costs 28 gold but the assertion requires equipment_issue history without a deficit.", "before": "FAIL", "after": "FAIL"},
+    {"test": "mobilization_ai_test.gd::_run/stock_transport", "assertion": "AI issues actual produced bundles stock_transport", "cause": "No under-equipped units at 632.02; iron transport and paid production costing 10 gold succeed but there is no equipment issue demand.", "before": "FAIL", "after": "FAIL"},
+    {"test": "mobilization_ai_test.gd::_run/regional", "assertion": "AI issues actual produced bundles regional", "cause": "No under-equipped units at 632.02; regional production costs 16 gold but there is no equipment issue demand.", "before": "FAIL", "after": "FAIL"},
+    {"test": "cutscene_test.gd::_run", "assertion": "single catalog contains existing events and crop failure", "cause": "The assertion expects 7 events. EventPresentation.setup adds noble_personnel_demand to the 7 JSON events, yielding 8.", "before": "FAIL", "after": "FAIL"}
+  ],
+  "logs": [
+    {"path": ".godot/warning-checks/baseline-mobilization-ai.log", "sha256": "4c2dcafb7c1db50e685fc085e368fb7846fa04d9f51de9e8609ee08c48a9c823", "summary": "MOBILIZATION AI TESTS: 15 checks, 3 failures", "exit": 1},
+    {"path": ".godot/warning-checks/baseline-cutscene.log", "sha256": "1af36eeaaca6d7324aceb0c59cf54f36c28dc865874c88515c8ebda43a477c12", "summary": "CUTSCENE TESTS: 83 checks, 1 failures", "exit": 1},
+    {"path": ".godot/warning-checks/mobilization-ai-final.log", "sha256": "3633e5884c274aae40565748b243565373ae2772345531046e29974a83bac28b", "summary": "MOBILIZATION AI TESTS: 15 checks, 3 failures", "exit": 1},
+    {"path": ".godot/warning-checks/cutscene.log", "sha256": "1af36eeaaca6d7324aceb0c59cf54f36c28dc865874c88515c8ebda43a477c12", "summary": "CUTSCENE TESTS: 83 checks, 1 failures", "exit": 1},
+    {"path": ".godot/warning-checks/military_supply_expansion-rebuilt.log", "sha256": "717141ab0d65cd18d6546b9e3f621d23a1beba2a4a0dd9738b5b0e4ebdfd170a", "summary": "SUPPLY EXPANSION RISK: 69 checks, 0 failures", "exit": 0},
+    {"path": ".godot/warning-checks/noble_power_lifecycle-rebuilt.log", "sha256": "b2a1b30d857049c2dfd68eb371c54502efaeda35f64ec8d9bebb3457ea665ac8", "summary": "NOBLE POWER LIFECYCLE: 25 checks, 0 failures", "exit": 0}
+  ],
+  "fixture_hashes": [
+    {"path": ".godot/noble-results/audit-silla.json", "role": "Available 30-month save; source for replacement political branch", "sha256": "f9e0e88cd49223e488cbdf1faa0f2745d0ce43e89d1458911144d30efa955202"},
+    {"path": ".godot/warning-fixtures/playability-results/politics-B-12months.json", "role": "Rebuilt by existing political_branches commands", "sha256": "61929007f48589456eb1f25bdae38a7ee77c3654767ef048d6195bfaaaf8efef"},
+    {"path": ".godot/warning-fixtures/noble-power-results/normal-concentrated.json", "role": "Rebuilt by noble_power_normal_test; 2 months; military influence 50.2700619244877", "sha256": "182aa2fae9291b9776279fa2f3422abeb53cc1a01b7f57a57c5ebbde29417d92"},
+    {"path": ".godot/warning-fixtures/military-initial/silla-initial.json", "role": "New 632 historical campaign; seed 63220260915", "sha256": "c637458d94c8d11e9265763c3616d92fec2edac98d3055ab66a1968c43490be0"},
+    {"path": ".godot/warning-fixtures/military-initial/baekje-initial.json", "role": "New 632 historical campaign; seed 63220260915", "sha256": "d897f75e21788b5779b577ec0407305537356aa140941c8d7efebbf37b63444b"},
+    {"path": ".godot/warning-fixtures/supply-expansion-results/silla-60months.json", "role": "Rebuilt by military_supply_expansion_audit normal monthly progression", "sha256": "4bfe386b427749c1427366aa11c4eada8a4a7849f1cd70122279f50b69ff87e1"},
+    {"path": ".godot/warning-fixtures/supply-expansion-results/baekje-60months.json", "role": "Rebuilt by military_supply_expansion_audit normal monthly progression", "sha256": "637eff3cd3bdc754d128db6fa749318b93b2b4d79f87cf61dabbef0aa9aba308"}
+  ],
+  "archived_save_reverification": {
+    "status": "UNVERIFIED: original saves unavailable; replacement saves are identified separately",
+    "tests": ["military_supply_expansion_test.gd", "noble_power_lifecycle_test.gd"],
+    "exit": 77,
+    "required_missing_paths": [
+      ".godot/supply-expansion-results/silla-60months.json",
+      ".godot/supply-expansion-results/baekje-60months.json",
+      ".godot/noble-power-results/normal-concentrated.json"
+    ]
+  },
+  "rebuilt_save_tests": {
+    "military_supply_expansion": {"checks": 69, "failures": 0, "exit": 0},
+    "noble_power_lifecycle": {"checks": 25, "failures": 0, "exit": 0}
+  }
+}

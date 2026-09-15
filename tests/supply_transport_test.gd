@@ -62,7 +62,7 @@ func validation_cases() -> void:
 	await start(Scenarios.SCENARIOS[0],"silla","historical")
 	fixture_stock("geumseong",{"grain":3000,"iron":10,"sword":4})
 	for cargo: Dictionary in [{"grain":2001},{"iron":11},{"grain":-1},{"grain":1.5},{"unknown":1},{"grain":0},{"sword":1,"weapons":2}]:
-		var before: Dictionary=snapshot(); check(not send("geumseong","geumgwan",cargo).ok and snapshot()==before,"invalid cargo is atomic "+str(cargo))
+		var case_before: Dictionary=snapshot(); check(not send("geumseong","geumgwan",cargo).ok and snapshot()==case_before,"invalid cargo is atomic "+str(cargo))
 	check(Supply.cargo_quote({"sword":2,"weapons":2}).cargo.sword==2,"same alias value does not double inventory")
 	for target: String in ["sabi","geumseong","missing","ulleung","tamna"]:
 		check(not send("geumseong",target,{"grain":1}).ok,"enemy/sea/same/noncity path blocked "+target)
@@ -127,13 +127,13 @@ func ai_cases() -> void:
 		Supply.ai(c.strategy_state,c.provinces,faction,stamp(),500,{},c.scenario_id,c.iron_supply_rules)
 		var orders: Array=Supply.ensure(c.strategy_state).orders.values()
 		check(orders.size()==1 and orders[0].target==pair[1],"AI targets shortage "+faction)
-		var o: Dictionary=orders[0]
-		var player_quote: Dictionary=Supply.quote(c.strategy_state,c.provinces,faction,o.source,o.target,o.cargo,stamp(),true)
-		check(old-Economy.balance(c.strategy_state,faction)==player_quote.cost and o.moves==0,"AI same cost and no immediate move "+faction)
+		var case_o: Dictionary=orders[0]
+		var player_quote: Dictionary=Supply.quote(c.strategy_state,c.provinces,faction,case_o.source,case_o.target,case_o.cargo,stamp(),true)
+		check(old-Economy.balance(c.strategy_state,faction)==player_quote.cost and case_o.moves==0,"AI same cost and no immediate move "+faction)
 		var before: Dictionary=snapshot(); Supply.ai(c.strategy_state,c.provinces,faction,stamp(),500,{},c.scenario_id,c.iron_supply_rules); check(snapshot()==before,"AI one monthly call "+faction)
-		check(Supply.incoming(c.strategy_state,c.provinces,faction,o.target,"grain",stamp()+10,stamp())==o.cargo.grain,"incoming counted")
-		tick(); check(o.status=="arrived","AI one-edge arrival "+faction)
-		evidence.ai.append({"faction":faction,"order":o.duplicate(true),"log":Supply.ensure(c.strategy_state).ai_log.duplicate(true)})
+		check(Supply.incoming(c.strategy_state,c.provinces,faction,case_o.target,"grain",stamp()+10,stamp())==case_o.cargo.grain,"incoming counted")
+		tick(); check(case_o.status=="arrived","AI one-edge arrival "+faction)
+		evidence.ai.append({"faction":faction,"order":case_o.duplicate(true),"log":Supply.ensure(c.strategy_state).ai_log.duplicate(true)})
 	await start(Scenarios.SCENARIOS[0],"silla","historical")
 	# Live AI entry point; only shortage/donor fixtures, no direct transport call.
 	c.provinces.geummajeo.food_stock=0; c.provinces.sabi.food_stock=10000

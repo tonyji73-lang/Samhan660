@@ -54,7 +54,7 @@ func type_into(line: LineEdit,value: String) -> void:
  await key(line.get_viewport(),KEY_A,true)
  for character: String in value:
   for down: bool in [true,false]:
-   var e:=InputEventKey.new(); e.pressed=down; e.keycode=character.to_upper().unicode_at(0); e.unicode=character.unicode_at(0); line.get_viewport().push_input(e,true)
+   var e:=InputEventKey.new(); e.pressed=down; e.keycode=character.to_upper().unicode_at(0) as Key; e.unicode=character.unicode_at(0); line.get_viewport().push_input(e,true)
   await process_frame
  await settle()
 func pick_file(dialog: FileDialog,file: String) -> void:

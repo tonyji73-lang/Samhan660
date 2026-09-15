@@ -153,7 +153,6 @@ func production_cases() -> void:
 		var before: Dictionary=snapshot(); Production.process_all(c.strategy_state,c.provinces,stamp(),c.scenario_id)
 		check(snapshot()==before,"same month facility work/cost/output no duplicate")
 		save_case("production-"+str(manager))
-	var progress: Dictionary=c.strategy_state.facility_progress.geumgwan
 	c.request_production_command("geumgwan","iron_supply","stop")
 	for n: int in range(5): tick(true)
 	check(c.strategy_state.city_inventory.geumgwan.sword==9 and c.strategy_state.facility_progress.geumgwan.forge.remainder<100,"material-blocked months do not bank integer batches")
@@ -196,8 +195,8 @@ func concurrent_cases() -> void:
 	var cities: Dictionary={"silla":"geumseong","baekje":"sabi","goguryeo":"pyongyang"}
 	for faction: String in cities:
 		var city: String=cities[faction]
-		var id: String=officer(city,100)
-		check(begin(city,"build","forge",id).ok,"concurrent national building "+faction)
+		var case_id: String=officer(city,100)
+		check(begin(city,"build","forge",case_id).ok,"concurrent national building "+faction)
 	for n: int in range(4): tick()
 	for faction: String in cities:
 		check(c.strategy_state.province_buildings[cities[faction]].forge==1,"all nations complete before production")

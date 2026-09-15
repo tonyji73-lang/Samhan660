@@ -1657,7 +1657,6 @@ func _update_faction_details() -> void:
 func _update_start_availability() -> void:
 	if start_button == null:
 		return
-	var data: Dictionary = _get_selected_faction_data()
 	var playable: bool = ScenarioData.is_faction_playable_by_default(
 		_get_scenario_id(), selected_faction_id
 	)
@@ -2413,7 +2412,6 @@ func _on_start_pressed() -> void:
 		status_label.text = "선택 가능한 시나리오가 없습니다."
 		return
 
-	var selected_faction: Dictionary = _get_selected_faction_data()
 	if not ScenarioData.is_faction_playable_by_default(
 		_get_scenario_id(), selected_faction_id
 	):

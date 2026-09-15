@@ -30,7 +30,7 @@ func _run() -> void:
     for target: String in c.province_connections.get(reached[pos],[]):
      if not reached.has(target): reached.append(target)
     pos+=1
-   check(Ending.TARGETS.all(func(id): return reached.has(id)),"all fixed target cities connected by actual attack graph")
+   check(Ending.TARGETS.all(func(case_id): return reached.has(case_id)),"all fixed target cities connected by actual attack graph")
    rows.append({"scenario":scenario.id,"faction":faction.id,"rule":c.strategy_state.campaign_ending.definition.duplicate(true),"initial":evaluation})
  check(rows.size()==12,"exactly twelve actual playable combinations")
  await start(Scenarios.SCENARIOS[0],"silla","historical"); await idle()

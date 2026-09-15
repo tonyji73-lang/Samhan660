@@ -219,6 +219,7 @@ static func facility_quote(state: Dictionary, provinces: Dictionary, city: Strin
 	var prior: Dictionary=state.get("facility_progress",{}).get(city,{}).get(facility,{})
 	var remainder: int=int(prior.get("remainder",0)) if prior.get("owner",faction)==faction else 0
 	var capacity: int=Industry.production_work(state,provinces,city,stamp)
+	# Only complete 100-work batches can run; fractional work remains below.
 	var total: int=remainder+capacity
 	var batches: Array[String]=[]
 	var reasons: Array[String]=[]
@@ -227,7 +228,7 @@ static func facility_quote(state: Dictionary, provinces: Dictionary, city: Strin
 	shadow.city_inventory[city]=state.city_inventory[city].duplicate(true)
 	var gold: int=Economy.balance(state,payer)
 	var opening: int=gold
-	for n: int in range(int(total/100)):
+	for n: int in range(int(total/100.0)):
 		var chosen: String=""
 		for recipe_id: String in Data.RECIPE_ORDER:
 			if Industry.FACILITY_BY_RECIPE.get(recipe_id,"")!=facility: continue
@@ -245,7 +246,7 @@ static func facility_quote(state: Dictionary, provinces: Dictionary, city: Strin
 		for item: String in recipe.outputs: shadow.city_inventory[city][item]=int(shadow.city_inventory[city].get(item,0))+int(recipe.outputs[item])
 		batches.append(chosen)
 	if batches.is_empty() and reasons.is_empty(): reasons.append("가동 생산 명령 없음 · 생산 화면에서 가동 설정 필요")
-	return {"work":capacity,"remainder_before":remainder,"remainder":total%100 if not batches.is_empty() else remainder,"batches":batches,"gold_cost":opening-gold,"inventory":shadow.city_inventory[city],"reason":" / ".join(reasons),"possible_batches":int(total/100)}
+	return {"work":capacity,"remainder_before":remainder,"remainder":total%100 if not batches.is_empty() else remainder,"batches":batches,"gold_cost":opening-gold,"inventory":shadow.city_inventory[city],"reason":" / ".join(reasons),"possible_batches":int(total/100.0)}
 
 static func city_quote(state: Dictionary, provinces: Dictionary, city: String, stamp: int, scenario: String, rules: Dictionary = SupplyData.SCENARIOS) -> Dictionary:
 	# Quote the same supply -> manufacture sequence, on isolated temporary resources.

@@ -61,7 +61,7 @@ static func normalize(state: Dictionary, provinces: Dictionary, strategy: RefCou
 			var definitions: Dictionary=strategy.BUILDING_DEFS if kind=="build" else strategy.RESEARCH_DEFS
 			var definition: Dictionary=definitions.get(requirement,{})
 			var level: int=int(old.get("target_level",1))
-			var base_seasons: int=int(definition.get("base_turns",1))+(int((level-1)/2) if kind=="build" else level-1)
+			var base_seasons: int=int(definition.get("base_turns",1))+(int((level-1)/2.0) if kind=="build" else level-1)
 			var remaining: int=maxi(0,int(old.get("remaining_turns",base_seasons)))*SEASON_MONTHS*WORK_PER_MONTH
 			var required: int=maxi(remaining,base_seasons*SEASON_MONTHS*WORK_PER_MONTH)
 			var city: String=key if kind=="build" else str(old.get("city_id",""))
@@ -70,9 +70,9 @@ static func normalize(state: Dictionary, provinces: Dictionary, strategy: RefCou
 			var id: String="industry:%d" % int(state.domestic.next_id); state.domestic.next_id=int(state.domestic.next_id)+1
 			var job: Dictionary={"id":id,"kind":kind,"requirement_id":requirement,"target_level":level,"name":definition.get("name",requirement),"city_id":city,"faction":state.faction_economy.factions.get(payer,faction),"faction_id":payer,"payer_faction_id":payer,"officer_id":"","cost_paid":int(old.get("cost_paid",0)),"cost_known":old.has("cost_paid"),"refund":0,"required":required,"progress":required-remaining,"status":"paused","reason":"담당자 배정 필요","accepted_month":stamp,"last_month":stamp,"legacy_queue":old.duplicate(true)}
 			jobs(state)[id]=job; queue_pointer(state,job); history(job,stamp,"구형 계절 작업 변환")
-			var reference: String=str(old.get("officer_id",old.get("assigned_officer","")))
-			if not reference.is_empty():
-				var existing: String=Registry.resolve(state.officer_registry,reference)
+			var officer_ref: String=str(old.get("officer_id",old.get("assigned_officer","")))
+			if not officer_ref.is_empty():
+				var existing: String=Registry.resolve(state.officer_registry,officer_ref)
 				if kind=="research" and city.is_empty(): city=str(Registry.view(state.officer_registry,existing).get("location",""))
 				var restored: Dictionary=assign(state,provinces,payer,id,city,existing,stamp)
 				if not restored.ok: job.reason="기존 담당자 확인 필요: "+str(restored.reason)

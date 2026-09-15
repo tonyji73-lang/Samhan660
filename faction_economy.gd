@@ -19,11 +19,11 @@ static func initialize(state: Dictionary, scenario: Dictionary, player_id: Strin
 	for job: Dictionary in state.get("domestic",{}).get("jobs",{}).values():
 		if not job.has("payer_faction_id"): job["payer_faction_id"]=resolve(state,str(job.get("faction","")))
 
-static func resolve(state: Dictionary, reference: String) -> String:
+static func resolve(state: Dictionary, faction_ref: String) -> String:
 	var names: Dictionary=state.get("faction_economy",{}).get("factions",{})
-	if names.has(reference): return reference
+	if names.has(faction_ref): return faction_ref
 	for id: String in names:
-		if names[id]==reference: return id
+		if names[id]==faction_ref: return id
 	return ""
 
 static func balance(state: Dictionary, id: String) -> int:

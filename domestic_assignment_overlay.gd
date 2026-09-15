@@ -59,7 +59,7 @@ func refresh_quote() -> void:
 	var due: int=int(active.get("due_month",q.due_month))
 	var gain: int=int(active.get("planned_gain",q.gain))
 	selector.disabled=not active.is_empty()
-	details.text="비용: 금 %d · 기간: 월 진행 1회\n예정 성과: +%d (상한 100) · 완료: %d년 %d월\n%s" % [q.cost,gain,int((due-1)/12),(due-1)%12+1,"실행 가능" if q.ok else q.reason]
+	details.text="비용: 금 %d · 기간: 월 진행 1회\n예정 성과: +%d (상한 100) · 완료: %d년 %d월\n%s" % [q.cost,gain,int((due-1)/12.0),(due-1)%12+1,"실행 가능" if q.ok else q.reason]
 	if not active.is_empty():
 		details.text+="\n진행 중: %s +%d · 담당: %s\n정치 %d / 지력 %d · 금 %d 지불 완료\n업무 중 이동·사절·공격 출정 불가 (방어 가능)" % ["농업" if active.kind=="agriculture" else "상업",active.planned_gain,campaign.get_officer(active.officer_id).get("name",active.officer_id),active.politics,active.intelligence,active.cost_paid]
 	else:

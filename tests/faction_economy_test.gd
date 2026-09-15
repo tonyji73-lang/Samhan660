@@ -169,7 +169,7 @@ func trade_cases() -> void:
 	c.strategy_state.province_buildings.geumseong.market=1
 	c.strategy_state.province_buildings.sabi.market=1
 	check(c.strategy.open_trade_route(c.strategy_state,"신라","백제","geumseong","sabi","철").ok,"existing valid trade route fixture")
-	var expected: int=maxi(20,int((int(c.provinces.geumseong.commerce)+int(c.provinces.sabi.commerce))/5)+30-int(c.strategy_state.trade_routes[0].get("risk",10)))
+	var expected: int=maxi(20,int((int(c.provinces.geumseong.commerce)+int(c.provinces.sabi.commerce))/5.0)+30-int(c.strategy_state.trade_routes[0].get("risk",10)))
 	c._process_strategy_season()
 	check(c.gold==1000+expected and c.get_faction_gold("baekje")==1000+expected and c.get_faction_gold("goguryeo")==1000,"season trade credits both counterpart treasuries only")
 	var before: Dictionary=snapshot()

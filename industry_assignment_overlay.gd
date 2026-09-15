@@ -28,7 +28,7 @@ func _ready() -> void:
 	var box:=VBoxContainer.new(); box.add_theme_constant_override("separation",10); panel.add_child(box)
 	status=Label.new(); box.add_child(status)
 	kind_selector=OptionButton.new(); box.add_child(kind_selector)
-	for name: String in ["건설 업무","연구 업무","도시 생산 관리"]: kind_selector.add_item(name)
+	for kind_label: String in ["건설 업무","연구 업무","도시 생산 관리"]: kind_selector.add_item(kind_label)
 	kind_selector.item_selected.connect(func(n): kind=["build","research","production"][n]; last_job=""; rebuild())
 	city_selector=OptionButton.new(); box.add_child(city_selector); city_selector.item_selected.connect(func(n): city=str(city_selector.get_item_metadata(n)); rebuild_officers(); refresh())
 	requirement_selector=OptionButton.new(); box.add_child(requirement_selector); requirement_selector.item_selected.connect(func(n): requirement=str(requirement_selector.get_item_metadata(n)); refresh())
@@ -129,7 +129,7 @@ func refresh() -> void:
 	cancel_button.disabled=active.is_empty()
 
 func date(stamp: int) -> String:
-	return "%d년 %d월" % [int((stamp-1)/12),(stamp-1)%12+1]
+	return "%d년 %d월" % [int((stamp-1)/12.0),(stamp-1)%12+1]
 
 func execute() -> void:
 	var result: Dictionary=campaign.Industry.start(campaign.strategy_state,campaign.provinces,campaign.strategy,campaign.player_faction_id,city,kind,requirement,selected_id(),campaign.year*12+campaign.month,campaign.scenario_id,campaign.iron_supply_rules)

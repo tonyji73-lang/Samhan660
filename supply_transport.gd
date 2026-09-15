@@ -32,8 +32,8 @@ static func cargo_quote(raw: Dictionary) -> Dictionary:
 			return {"ok":false,"reason":"화물 수량은 0 이상의 정수여야 합니다."}
 		if seen.has(canonical) and int(seen[canonical])!=int(amount): return {"ok":false,"reason":"같은 품목의 별칭 수량이 서로 다릅니다."}
 		seen[canonical]=int(amount); cargo[canonical]=int(amount)
-	var load: int=int(cargo.grain)+10*(int(cargo.iron)+int(cargo.sword))
-	return {"ok":load>0 and load<=MAX_LOAD,"reason":"적재량은 1~2,000이어야 합니다." if load<=0 or load>MAX_LOAD else "","cargo":cargo,"load":load}
+	var cargo_load: int=int(cargo.grain)+10*(int(cargo.iron)+int(cargo.sword))
+	return {"ok":cargo_load>0 and cargo_load<=MAX_LOAD,"reason":"적재량은 1~2,000이어야 합니다." if cargo_load<=0 or cargo_load>MAX_LOAD else "","cargo":cargo,"load":cargo_load}
 
 static func graph() -> Dictionary:
 	var result: Dictionary={}
@@ -200,7 +200,7 @@ static func ai(state: Dictionary, provinces: Dictionary, faction: String, stamp:
 	var urgent: bool=false
 	for target: String in cities:
 		var use: int=upkeep(provinces[target])
-		var recruitment_food: int=maxi(0,recruit_target/100)*20
+		var recruitment_food: int=maxi(0,int(recruit_target/100.0))*20
 		var stock: int=Production.get_stock(state,provinces,target,"grain")
 		if stock+incoming(state,provinces,faction,target,"grain",stamp+int(POLICY.target_reserve_months),stamp)>=use*int(POLICY.target_reserve_months)+recruitment_food+int(attacks.get(target,0)): continue
 		urgent=true

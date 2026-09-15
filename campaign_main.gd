@@ -1162,13 +1162,13 @@ func _on_officer_list_item_selected(index: int) -> void:
 	)
 
 
-func validate_governor_appointment(province_id: String, reference: String) -> Dictionary:
+func validate_governor_appointment(province_id: String, officer_ref: String) -> Dictionary:
 	if Ending.finished(strategy_state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"gold_spent":0}
 	if not provinces.has(province_id):
 		return {"ok": false, "reason": "존재하지 않는 영지입니다."}
 	if provinces[province_id].faction != player_faction:
 		return {"ok": false, "reason": "플레이어 소유 영지에서만 태수를 임명할 수 있습니다."}
-	var id: String = OfficerRegistry.resolve(officer_registry, reference)
+	var id: String = OfficerRegistry.resolve(officer_registry, officer_ref)
 	if id.is_empty() or not OfficerRegistry.eligible(officer_registry, id, provinces, province_id):
 		return {"ok": false, "reason": "이 성에 배치된 같은 세력의 활동 장수만 임명할 수 있습니다."}
 	if get_governor_id(province_id) == id:
@@ -1177,13 +1177,13 @@ func validate_governor_appointment(province_id: String, reference: String) -> Di
 	return {"ok": true, "officer_id": id, "current_governor": old.get("name", "태수 없음"), "requires_confirmation": not old.is_empty()}
 
 
-func _find_assigned_officer_province(reference: String) -> String:
-	var p: Dictionary = OfficerRegistry.get_person(officer_registry, reference)
+func _find_assigned_officer_province(officer_ref: String) -> String:
+	var p: Dictionary = OfficerRegistry.get_person(officer_registry, officer_ref)
 	return "" if p.is_empty() or p.get("in_transit", false) else str(p.location)
 
 
-func _get_officer_faction(reference: String) -> String:
-	return OfficerRegistry.faction_name(officer_registry, OfficerRegistry.get_person(officer_registry, reference))
+func _get_officer_faction(officer_ref: String) -> String:
+	return OfficerRegistry.faction_name(officer_registry, OfficerRegistry.get_person(officer_registry, officer_ref))
 
 
 func _is_vacant_governor(governor_name: String) -> bool:
@@ -1221,9 +1221,9 @@ func _on_appoint_governor_button_pressed() -> void:
 	_apply_governor_appointment(selected_province_id, officer_name)
 
 
-func _apply_governor_appointment(province_id: String, reference: String) -> Dictionary:
+func _apply_governor_appointment(province_id: String, officer_ref: String) -> Dictionary:
 	officer_registry["clock_month"]=year*12+month
-	var validation: Dictionary = validate_governor_appointment(province_id, reference)
+	var validation: Dictionary = validate_governor_appointment(province_id, officer_ref)
 	if not validation.get("ok", false): return validation
 	var old: String = str(provinces[province_id].get("governor", "태수 없음"))
 	var id: String = validation.officer_id
@@ -1533,7 +1533,6 @@ func queue_province_transfer(
 		if not requested_officers.has(Army.units(strategy_state)[uid].commander_id): Army.units(strategy_state)[uid].commander_id=""
 	Army.relocate(strategy_state,moved_units,"","transit"); Army.sync(strategy_state,provinces)
 
-	var source_officers: Array = get_city_officer_ids(source_id).duplicate()
 	for officer_value: Variant in requested_officers:
 		var officer_name: String = OfficerRegistry.resolve(officer_registry, str(officer_value))
 		OfficerRegistry.set_location(officer_registry, officer_name, "", true)
@@ -1569,8 +1568,8 @@ func queue_province_transfer(
 	return {"ok": true, "message": message}
 
 
-func is_officer_transfer_pending(reference: String) -> bool:
-	var p: Dictionary = OfficerRegistry.get_person(officer_registry, reference)
+func is_officer_transfer_pending(officer_ref: String) -> bool:
+	var p: Dictionary = OfficerRegistry.get_person(officer_registry, officer_ref)
 	return not p.is_empty() and bool(p.get("in_transit", false))
 
 
@@ -1950,9 +1949,9 @@ func get_event_choice_reason(event_id: String, occurrence: String, choice: Strin
 func resolve_event_choice(event_id: String, occurrence: String, choice: String) -> Dictionary:
 	if Ending.finished(strategy_state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"gold_spent":0}
 	if event_id==Noble.EVENT:
-		var result: Dictionary=Noble.resolve(self,occurrence,choice)
+		var noble_result: Dictionary=Noble.resolve(self,occurrence,choice)
 		update_top_bar()
-		return result
+		return noble_result
 	if event_id != CropFailure.EVENT_ID:
 		return {}
 	var result: Dictionary = CropFailure.resolve(crop_failure_events, provinces, player_faction, occurrence, choice)
@@ -2272,7 +2271,6 @@ func run_enemy_ai_turns() -> String:
 			ai_province_ids.append(province_id)
 
 	var messages: Array[String] = []
-	var recruit_counts: Dictionary = {}
 	var supply_factions: Dictionary={}
 	var planned_attacks: Dictionary={}
 	for city: String in ai_province_ids:
@@ -2359,8 +2357,8 @@ func resolve_ai_attack(source_id: String, target_id: String) -> String:
 	if result.ok and not alert.is_empty(): event_presentation.dispatch.call_deferred({"event_key":"enemy_crossed_border"},alert)
 	return str(result.get("message",result.get("reason","")))
 
-func _move_commander_to_province(reference: String, source_id: String, target_id: String) -> void:
-	var id: String = OfficerRegistry.resolve(officer_registry, reference)
+func _move_commander_to_province(officer_ref: String, source_id: String, target_id: String) -> void:
+	var id: String = OfficerRegistry.resolve(officer_registry, officer_ref)
 	# The existing capture policy removes defending officers from field service;
 	# retain their identities and original affiliations instead of deleting them.
 	for defender_id: String in get_city_officer_ids(target_id):
@@ -2392,8 +2390,8 @@ func _sync_officer_labels() -> void:
 		OfficerRegistry.sync_province_labels(officer_registry, provinces)
 
 
-func get_officer(reference: String) -> Dictionary:
-	return OfficerRegistry.view(officer_registry, reference)
+func get_officer(officer_ref: String) -> Dictionary:
+	return OfficerRegistry.view(officer_registry, officer_ref)
 
 
 func get_city_officer_ids(city_id: String) -> Array[String]:

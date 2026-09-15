@@ -1,9 +1,13 @@
 extends "res://tests/ai_military_planning_audit.gd"
 const Network=preload("res://military_supply_network.gd")
+const SaveFixtures=preload("res://tests/test_save_fixtures.gd")
 func full() -> Variant:
  return canonical({"s":c.strategy_state,"p":c.provinces,"t":c.pending_transfer_orders})
 func _run() -> void:
- DIR="res://.godot/supply-expansion-results/"
+ DIR=SaveFixtures.directory("supply-expansion-results")
+ var politics_save: String=SaveFixtures.directory("noble-power-results")+"normal-concentrated.json"
+ if not SaveFixtures.available([DIR+"silla-60months.json",DIR+"baekje-60months.json",politics_save]):
+  quit(77); return
  create_timer(240).timeout.connect(func(): quit(2))
  await start(Scenarios.SCENARIOS[0],"baekje","historical"); events()
  c._on_load_button_pressed(DIR+"baekje-60months.json"); events()
@@ -13,17 +17,17 @@ func _run() -> void:
   c._on_load_button_pressed(DIR+player+"-60months.json"); events()
   for faction: String in ["silla","baekje","goguryeo"]:
    if faction==player or (player=="baekje" and faction=="goguryeo"): continue
-   var plan: Dictionary=c.strategy_state.military_planning.factions[faction]
+   var case_plan: Dictionary=c.strategy_state.military_planning.factions[faction]
    var produced: Dictionary={}; var costs: Dictionary={}; var shipments: Array=[]
    for entry: Dictionary in c.strategy_state.faction_economy.entries:
     if entry.faction_id!=faction: continue
-    if str(entry.token).contains(":forge:") and entry.reason=="production": produced[entry.city_id]=int(produced.get(entry.city_id,0))-int(entry.amount)/10
+    if str(entry.token).contains(":forge:") and entry.reason=="production": produced[entry.city_id]=int(produced.get(entry.city_id,0))-int(float(entry.amount)/10.0)
     if entry.reason=="industry_build": costs[entry.city_id]=int(costs.get(entry.city_id,0))-int(entry.amount)
    for order: Dictionary in c.Supply.ensure(c.strategy_state).orders.values():
-    if order.faction_id==faction and order.source!=plan.hub and order.status=="arrived" and int(order.original_cargo.sword)>0: shipments.append(order.duplicate(true))
+    if order.faction_id==faction and order.source!=case_plan.hub and order.status=="arrived" and int(order.original_cargo.sword)>0: shipments.append(order.duplicate(true))
    check(produced.size()>=2,"B normal two paid producing cities "+faction)
    check(not shipments.is_empty(),"B actual secondary-site weapons arrive "+faction)
-   check(plan.network.report.raw_military_shortfall>plan.unarmed_people,"raw demand distinct from suppressed recruitment "+faction)
+   check(case_plan.network.report.raw_military_shortfall>case_plan.unarmed_people,"raw demand distinct from suppressed recruitment "+faction)
    print("NORMAL_SITES ",faction," production=",produced," extra_shipments=",shipments.size())
   var before: Variant=full()
   for faction: String in c.strategy_state.military_planning.factions: P.run(c,faction)
@@ -56,7 +60,7 @@ func _run() -> void:
  var file:=FileAccess.open(DIR+"loss-months.json",FileAccess.WRITE); file.store_string(JSON.stringify(rows)); file.close()
  # D normal political save, real choice; trial AI assessment for player nation is isolated.
  for choice: String in ["wait","force","compensate"]:
-  c._on_load_button_pressed("res://.godot/noble-power-results/normal-concentrated.json"); events()
+  c._on_load_button_pressed(politics_save); events()
   var offer: Dictionary=c.Power.intercept(c,{"kind":"governor","target":"geumseong","officer_id":"historical:001","faction_id":"silla"})
   check(offer.has("negotiation_id"),"D genuine existing authority negotiation "+choice)
   var paid_before: int=c.gold

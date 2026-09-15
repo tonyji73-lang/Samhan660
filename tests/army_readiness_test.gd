@@ -34,8 +34,8 @@ func formation_cases() -> void:
 	var id: String=unit_fixture("geumseong",1001,53,1050)
 	var before: Dictionary=totals()
 	for n: int in range(30):
-		var q: Dictionary=Army.split(c.strategy_state,c.provinces,"silla",id,333)
-		check(q.ok and Army.merge(c.strategy_state,c.provinces,"silla",id,q.unit_id).ok and totals()==before,"exact split/rejoin conserves all mass %d" % n)
+		var case_q: Dictionary=Army.split(c.strategy_state,c.provinces,"silla",id,333)
+		check(case_q.ok and Army.merge(c.strategy_state,c.provinces,"silla",id,case_q.unit_id).ok and totals()==before,"exact split/rejoin conserves all mass %d" % n)
 	var recruited: Dictionary=c.request_recruitment("geumseong",1000)
 	check(recruited.ok,"normal paid recruitment")
 	var rookie: Dictionary=Army.units(c.strategy_state)[recruited.unit_id]
@@ -62,19 +62,19 @@ func formation_cases() -> void:
 func training_cases() -> void:
 	for ability: int in [30,90]:
 		await start(Scenarios.SCENARIOS[0],"silla","historical")
-		var id: String=unit_fixture("geumseong",1000,50,1000)
+		var case_id: String=unit_fixture("geumseong",1000,50,1000)
 		var officer: String=c.get_city_officer_ids("geumseong")[0]
 		Registry.set_stats(c.officer_registry,officer,{"leadership":ability,"war":ability})
-		var q: Dictionary=Army.train(c.strategy_state,c.provinces,"silla",id,officer,stamp())
-		check(q.ok and q.efficiency==ability and q.gain==5+ability/10,"weighted leadership/war training estimate")
+		var q: Dictionary=Army.train(c.strategy_state,c.provinces,"silla",case_id,officer,stamp())
+		check(q.ok and q.efficiency==ability and q.gain==5+int(ability/10.0),"weighted leadership/war training estimate")
 		var old: int=c.gold; Army.process(c.strategy_state,c.provinces,stamp())
-		check(c.gold==old and Army.training(Army.units(c.strategy_state)[id])==50,"no acceptance-month expense or effect")
+		check(c.gold==old and Army.training(Army.units(c.strategy_state)[case_id])==50,"no acceptance-month expense or effect")
 		check(not Registry.action_available(c.officer_registry,officer,c.provinces,"attack","geumseong") and Registry.action_available(c.officer_registry,officer,c.provinces,"defense","geumseong"),"training blocks external action but defense remains")
 		native_save("training-"+str(ability))
 		var months: int=0
-		while not Army.training_job(c.strategy_state,id).is_empty() and months<10: tick(); months+=1
-		check(months==(3 if ability==30 else 2) and old-c.gold==50*months and Army.training(Army.units(c.strategy_state)[id])==70,"actual cost and months by ability")
-		evidence.training.append({"ability":ability,"months":months,"cost":old-c.gold,"unit":Army.units(c.strategy_state)[id].duplicate(true)})
+		while not Army.training_job(c.strategy_state,case_id).is_empty() and months<10: tick(); months+=1
+		check(months==(3 if ability==30 else 2) and old-c.gold==50*months and Army.training(Army.units(c.strategy_state)[case_id])==70,"actual cost and months by ability")
+		evidence.training.append({"ability":ability,"months":months,"cost":old-c.gold,"unit":Army.units(c.strategy_state)[case_id].duplicate(true)})
 		var before: Dictionary=totals(); old=c.gold; Army.process(c.strategy_state,c.provinces,stamp()); check(totals()==before and c.gold==old,"monthly training idempotence")
 	await start(Scenarios.SCENARIOS[0],"silla","historical")
 	var id: String=unit_fixture("geumseong",1000,50,1000)
@@ -104,8 +104,8 @@ func battle_cases() -> void:
 	for size: int in [1,10,499,999]:
 		await start(Scenarios.SCENARIOS[0],"silla","historical")
 		unit_fixture("gukwon",size,50,size); unit_fixture("ungjin",size*3,50,size*3)
-		var before: Dictionary=totals(); var r: Dictionary=c.resolve_army_battle("gukwon","ungjin","silla")
-		check(r.ok and totals().troops==before.troops-r.attacker_losses-r.defender_losses and totals().troops<=before.troops,"small-army no minimum survivor creation "+str(size))
+		var before: Dictionary=totals(); var case_r: Dictionary=c.resolve_army_battle("gukwon","ungjin","silla")
+		check(case_r.ok and totals().troops==before.troops-case_r.attacker_losses-case_r.defender_losses and totals().troops<=before.troops,"small-army no minimum survivor creation "+str(size))
 		check(c.provinces.gukwon.troops==0,"small attack annihilation stays zero")
 	await start(Scenarios.SCENARIOS[0],"silla","historical")
 	unit_fixture("gukwon",1,100,1); unit_fixture("ungjin",0)

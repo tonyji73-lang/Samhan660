@@ -457,12 +457,12 @@ func _render_terrain() -> void:
 	battle_field_container.add_child(unit_layer)
 
 
-func _get_terrain_at_position(position: Vector2) -> String:
+func _get_terrain_at_position(battle_position: Vector2) -> String:
 	var cell_width: float = battlefield_size.x / float(TERRAIN_COLS)
 	var cell_height: float = battlefield_size.y / float(TERRAIN_ROWS)
 	var cell: Vector2i = Vector2i(
-		clampi(int(position.x / cell_width), 0, TERRAIN_COLS - 1),
-		clampi(int(position.y / cell_height), 0, TERRAIN_ROWS - 1)
+		clampi(int(battle_position.x / cell_width), 0, TERRAIN_COLS - 1),
+		clampi(int(battle_position.y / cell_height), 0, TERRAIN_ROWS - 1)
 	)
 	return str(terrain_grid.get(cell, TERRAIN_PLAIN))
 
@@ -1054,10 +1054,10 @@ func _perform_attack(attacker: Dictionary, defender: Dictionary) -> void:
 		_update_unit_visual(attacker)
 
 
-func _show_damage_text(position: Vector2, losses: int) -> void:
+func _show_damage_text(damage_position: Vector2, losses: int) -> void:
 	var damage_label: Label = Label.new()
 	damage_label.text = "-%d" % losses
-	damage_label.position = position - Vector2(36.0, 54.0)
+	damage_label.position = damage_position - Vector2(36.0, 54.0)
 	damage_label.size = Vector2(72.0, 28.0)
 	damage_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	damage_label.add_theme_font_size_override("font_size", 18)

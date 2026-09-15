@@ -1,6 +1,9 @@
 extends "res://tests/noble_power_constraints_test.gd"
+const SaveFixtures=preload("res://tests/test_save_fixtures.gd")
 func _run() -> void:
- DIR="res://.godot/noble-power-results/"
+ DIR=SaveFixtures.directory("noble-power-results")
+ if not SaveFixtures.available([DIR+"normal-concentrated.json"]):
+  quit(77); return
  await setup()
  var offer: Dictionary=Power.intercept(c,request()); var id: String=offer.negotiation_id
  c.gold=0
@@ -9,7 +12,7 @@ func _run() -> void:
  check(Power.resolve(c,id,"wait").ok,"unfunded wait allowed")
  var due: int=Power.records(c.strategy_state).requests[id].due_month
  c.officer_registry.people["historical:001"].location="geumgwan" # explicitly invalid successor boundary
- c.year=(due-1)/12; c.month=(due-1)%12+1; Power.begin_month(c)
+ c.year=int((due-1)/12.0); c.month=(due-1)%12+1; Power.begin_month(c)
  check(Power.records(c.strategy_state).requests[id].status=="successor_needed" and c.officer_registry.posts["governor:geumseong"]=="historical:004","invalid successor retains actual incumbent")
  check(Power.retarget(c,id,"historical:003").ok and Power.records(c.strategy_state).requests[id].due_month==due,"eligible new successor completes without restarting wait")
  await setup(); offer=Power.intercept(c,request()); id=offer.negotiation_id

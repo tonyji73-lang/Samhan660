@@ -68,8 +68,8 @@ static func propose(c: Node) -> Dictionary:
 			for uid: String in Army.at_city(c.strategy_state,p.location,f): options.append({"kind":"commander","target":uid})
 			for option: Dictionary in options:
 				if not Registry.Power.open_request(c.strategy_state,option.kind,option.target).is_empty(): continue
-				var request: Dictionary=option.merged({"officer_id":id,"group_id":gid,"faction_id":f})
-				if viable(c,request): request["priority"]=int(p.get("ambition",50))*int(Core.RULES.ambition_weight)+(100-int(p.get("loyalty",50))); candidates.append(request)
+				var candidate_request: Dictionary=option.merged({"officer_id":id,"group_id":gid,"faction_id":f})
+				if viable(c,candidate_request): candidate_request["priority"]=int(p.get("ambition",50))*int(Core.RULES.ambition_weight)+(100-int(p.get("loyalty",50))); candidates.append(candidate_request)
 	if candidates.is_empty(): return {}
 	candidates.sort_custom(func(a,b): return str(a.officer_id)+str(a.target)<str(b.officer_id)+str(b.target) if a.priority==b.priority else a.priority>b.priority)
 	var request: Dictionary=candidates[0]; var key: String="noble:%d" % int(db.next_id); db.next_id=int(db.next_id)+1

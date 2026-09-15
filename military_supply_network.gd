@@ -74,8 +74,8 @@ static func site_quote(c: Node, faction: String, city: String, horizon: int, rol
  for n: int in range(1,horizon+1):
   if n<=eta or not reasons.is_empty(): continue
   amount+=work if n<=disrupted else normal_work
- var potential: int=amount/100 if role!="iron" else 0
- if role=="forge": potential=mini(potential,(stock(c,city,"iron")+Supply.incoming(s,c.provinces,faction,city,"iron",stamp+horizon,stamp))/2)
+ var potential: int=int(amount/100.0) if role!="iron" else 0
+ if role=="forge": potential=mini(potential,int(float(stock(c,city,"iron")+Supply.incoming(s,c.provinces,faction,city,"iron",stamp+horizon,stamp))/2.0))
  var ready: bool=missing.is_empty()
  var current: Dictionary=Production.city_quote(s,c.provinces,city,stamp+1,c.scenario_id,c.iron_supply_rules)
  return {"city":city,"role":role,"ready":ready,"eta":eta,"unpaid_gold":cost,"unpaid_research":unpaid_research,"missing":missing,"reasons":reasons,"worker_ids":staff,"work_now":work,"work_after_disruption":normal_work,"disruption_months":disrupted,"conditional_bundles":potential,"next_batches":current.forge.batches.size(),"stock_iron":stock(c,city,"iron"),"stock_bundles":stock(c,city,"sword"),"incoming_bundles":Supply.incoming(s,c.provinces,faction,city,"sword",stamp+horizon,stamp)}
@@ -125,7 +125,7 @@ static func candidates(c: Node, faction: String, nodes: Dictionary, borders: Arr
   result.append(q)
  result.sort_custom(func(a,b): return a.city<b.city if a.score==b.score else a.score<b.score)
  return result
-static func request_shipment(c: Node, faction: String, target: String, item: String, needed: int, cap: int, stamp: int, actions: Array, nodes: Dictionary, maximum_unit_cost: float=INF) -> bool:
+static func request_shipment(c: Node, faction: String, target: String, item: String, needed: int, cap: int, stamp: int, actions: Array, maximum_unit_cost: float=INF) -> bool:
  if freight_count(c,faction,stamp)>=cap: return false
  var offers: Array=[]
  for donor: String in c.MilitaryPlanning.owned(c,faction):
@@ -196,7 +196,7 @@ static func run(c: Node, faction: String, plan: Dictionary, borders: Array, acti
    else: research_budgeted[key]=true
   var direct_cost: int=28
   if Production.validate_batch(s,c.provinces,city,"iron_supply",s.faction_economy.factions[faction],Economy.balance(s,faction),c.scenario_id,c.iron_supply_rules).ok: direct_cost=16
-  var paid_capacity: int=mini(int(q.conditional_bundles),maxi(0,virtual_gold-investment)/direct_cost)
+  var paid_capacity: int=mini(int(q.conditional_bundles),int(float(maxi(0,virtual_gold-investment))/direct_cost))
   virtual_gold=maxi(0,virtual_gold-investment-paid_capacity*direct_cost)
   q["allocated_unpaid_gold"]=investment; q["direct_gold_per_bundle"]=direct_cost
   pools[city]=int(pools.get(city,0))+paid_capacity
@@ -234,7 +234,7 @@ static func run(c: Node, faction: String, plan: Dictionary, borders: Array, acti
   var imported: bool=false
   if need>0:
    var unit_price: float=float(Production.Data.RECIPES[recipe].operating_gold)/2.0 if local_valid else INF
-   imported=request_shipment(c,faction,city,"iron",need,cap,stamp,actions,network.sites,unit_price)
+   imported=request_shipment(c,faction,city,"iron",need,cap,stamp,actions,unit_price)
   # Keep local supply during transit if forging would run out before arrival.
   if imported and stock(c,city,"iron")>=desired_iron: need=0
   for option: String in ["iron_supply","iron_procurement"]: Production.set_enabled(s,c.provinces,city,option,name,enabled and can_pay and need>0 and option==recipe,c.scenario_id,c.iron_supply_rules)
@@ -248,7 +248,7 @@ static func run(c: Node, faction: String, plan: Dictionary, borders: Array, acti
    var bundles: int=mini(stock(c,city,"sword"),ceili(float(maxi(0,int(u.troops)-int(u.equipment)))/100))
    if bundles>0: actions.append({"action":"network_equip","city":city,"unit_id":uid,"result":Army.equip(s,c.provinces,faction,uid,bundles,stamp)})
   var need: int=local_need(c,faction,city)+(int(POLICY.buffer_bundles) if city==hub and raw_demand>0 else 0)-stock(c,city,"sword")-Supply.incoming(s,c.provinces,faction,city,"sword",stamp+horizon,stamp)
-  if need>0: request_shipment(c,faction,city,"sword",need,cap,stamp,actions,network.sites)
+  if need>0: request_shipment(c,faction,city,"sword",need,cap,stamp,actions)
  network.report={"month":stamp,"horizon":horizon,"raw_military_shortfall":raw_demand,"unarmed_before":unarmed,"wanted_bundles":wanted,"warehouse_before":current,"stranded_bundles":stranded,"demand_by_city":targets,"allocation":allocation,"valid_inbound":inbound,"conditional_bundles":capacity,"shortage_months":network.shortage_months,"sites":quotes,"candidates":options,"freight_limit":cap,"freight_used":freight_count(c,faction,stamp),"lost_sites":invalid,"reserve_gold":reserve(c,faction)}
  network.history.append({"month":stamp,"action":"assessment","report":network.report.duplicate(true)})
 static func text(c: Node, faction: String) -> String:

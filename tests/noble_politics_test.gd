@@ -37,24 +37,24 @@ func _run() -> void:
 	Registry.set_location(r,id,"geumgwan")
 	check(canonical(r.politics)==before,"automatic move dismissal has no political penalty")
 	r.politics.groups["silla:military"].cooperation=0
-	await politics_save("zero")
+	politics_save("zero")
 	for choice: String in ["accept","gift","reject"]:
 		await setup_power()
-		await politics_save("pending-"+choice)
+		politics_save("pending-"+choice)
 		var request: Dictionary=c.officer_registry.politics.pending.duplicate(true)
 		var person: String=request.officer_id
-		var balance: int=c.gold; var loyalty: int=c.officer_registry.people[person].loyalty
+		var balance: int=c.gold; var case_loyalty: int=c.officer_registry.people[person].loyalty
 		var coop: int=c.officer_registry.politics.groups[request.group_id].cooperation
 		var result: Dictionary=Noble.resolve(c,request.occurrence_id,choice)
 		check(not result.is_empty(),"resolve "+choice)
 		check(c.gold==balance-(100 if choice=="gift" else 0),"exact choice treasury "+choice)
-		check(c.officer_registry.people[person].loyalty==loyalty+({"accept":8,"gift":5,"reject":-6}[choice]),"exact choice loyalty "+choice)
+		check(c.officer_registry.people[person].loyalty==case_loyalty+({"accept":8,"gift":5,"reject":-6}[choice]),"exact choice loyalty "+choice)
 		check(c.officer_registry.politics.groups[request.group_id].cooperation==coop+({"accept":4,"gift":6,"reject":-6}[choice]),"exact choice cooperation "+choice)
 		var state: Variant=canonical(c.officer_registry.politics)
 		check(Noble.resolve(c,request.occurrence_id,choice).is_empty() and canonical(c.officer_registry.politics)==state,"duplicate choice no effect "+choice)
 		check(Noble.propose(c).is_empty(),"national demand cooldown "+choice)
 		proofs.choices.append({"choice":choice,"request":request,"gold_before":balance,"gold_after":c.gold,"loyalty":c.officer_registry.people[person].loyalty,"cooperation":c.officer_registry.politics.groups[request.group_id].cooperation})
-		await politics_save("resolved-"+choice)
+		politics_save("resolved-"+choice)
 	for invalid: String in ["dead","moved","captured"]:
 		await setup_power()
 		var request: Dictionary=c.officer_registry.politics.pending

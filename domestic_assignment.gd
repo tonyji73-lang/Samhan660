@@ -31,10 +31,10 @@ static func active_job(state: Dictionary, city: String) -> Dictionary:
 		if job.kind in ["agriculture","commerce"] and job.city_id==city and job.status=="pending": return job
 	return {}
 
-static func quote(state: Dictionary, provinces: Dictionary, faction: String, city: String, kind: String, reference: String, gold: int, stamp: int) -> Dictionary:
+static func quote(state: Dictionary, provinces: Dictionary, faction: String, city: String, kind: String, officer_ref: String, gold: int, stamp: int) -> Dictionary:
 	if state.has("faction_economy"): gold=Economy.balance(state,Economy.resolve(state,faction))
 	var r: Dictionary = state.get("officer_registry",{})
-	var id: String = Registry.resolve(r,reference)
+	var id: String = Registry.resolve(r,officer_ref)
 	var p: Dictionary = Registry.view(r,id)
 	var q: Dictionary = {"ok":false,"reason":"","cost":COST,"city_id":city,"kind":kind,"officer_id":id,"gain":0,"due_month":stamp+MONTHS,"person":p}
 	if not provinces.has(city) or provinces[city].get("faction","")!=faction: q.reason="현재 소유한 도시에서만 개발할 수 있습니다."
@@ -55,10 +55,10 @@ static func quote(state: Dictionary, provinces: Dictionary, faction: String, cit
 		if not budget.ok: q.ok=false; q.reason=budget.reason
 	return q
 
-static func start(state: Dictionary, provinces: Dictionary, faction: String, city: String, kind: String, reference: String, gold: int, stamp: int) -> Dictionary:
+static func start(state: Dictionary, provinces: Dictionary, faction: String, city: String, kind: String, officer_ref: String, gold: int, stamp: int) -> Dictionary:
 	if Ending.finished(state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"gold_spent":0}
 	if state.has("faction_economy"): gold=Economy.balance(state,Economy.resolve(state,faction))
-	var q: Dictionary = quote(state,provinces,faction,city,kind,reference,gold,stamp)
+	var q: Dictionary = quote(state,provinces,faction,city,kind,officer_ref,gold,stamp)
 	q["gold"]=gold
 	if not q.ok: return q
 	var d: Dictionary = ensure(state)

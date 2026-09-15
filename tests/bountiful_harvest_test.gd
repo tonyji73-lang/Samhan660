@@ -144,9 +144,9 @@ func _run() -> void:
 	check(not p.active and c.provinces[CITY].food_stock == final_stock and receipt(c.harvest_events, c.year).grain_delta == bonus, "September save restores receipt and resources without replay")
 	check(Harvest.apply_september(c.harvest_events, c.scenario_id, c.year, 9, c.provinces, c.player_faction, {CITY: base}).is_empty(), "loaded September cannot receive the reward again")
 	for level: String in ["all", "minimal", "major"]:
-		var file := FileAccess.open(path, FileAccess.WRITE)
-		file.store_string(august)
-		file.close()
+		var case_file := FileAccess.open(path, FileAccess.WRITE)
+		case_file.store_string(august)
+		case_file.close()
 		c._on_load_button_pressed(path)
 		p.display_level = level
 		c._on_end_turn_button_pressed()

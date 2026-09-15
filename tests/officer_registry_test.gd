@@ -118,9 +118,9 @@ func _run() -> void:
 	var file := FileAccess.open(OUT+"census.json",FileAccess.WRITE)
 	file.store_string(JSON.stringify(census,"\t")); file.close()
 	await start(Scenarios.SCENARIOS[0],"silla","historical")
-	await generated_actions()
+	generated_actions()
 	migration_fixture()
-	await legacy_foundation()
+	legacy_foundation()
 	print("OFFICER REGISTRY TESTS: %d checks, %d failures" % [checks,failures])
 	quit(0 if failures==0 else 1)
 

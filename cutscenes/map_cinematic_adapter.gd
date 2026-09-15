@@ -135,8 +135,8 @@ func _draw() -> void:
 		if action in ["pulse_faction", "pulse_border"]:
 			for entry: Array in map.border_lines + map.outside_border_lines:
 				var region: String = str(entry[0])
-				var owner: String = str(campaign.provinces.get(region, world_regions.get(region, {})).get("faction", ""))
-				if owner != faction:
+				var region_owner: String = str(campaign.provinces.get(region, world_regions.get(region, {})).get("faction", ""))
+				if region_owner != faction:
 					continue
 				var points := PackedVector2Array()
 				for uv: Vector2 in entry[1]:

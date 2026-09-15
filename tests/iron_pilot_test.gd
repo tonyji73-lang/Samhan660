@@ -37,7 +37,7 @@ func run(host: SceneTree) -> void:
 		check(c.gold == 1000 and c.strategy_state.city_inventory[CITY].iron == 0 and c.strategy_state.city_inventory[CITY].sword == 0 and int(c.strategy_state.province_buildings[CITY].get("smelter", 0)) == 0 and c.strategy_state.province_buildings[CITY].forge == 0 and c.strategy_state.faction_research["신라"].swordsmithing == 0, str(scenario.year) + " no extra money, stocks, facilities or sword technology")
 		check(Supply.blocked_reason(c.scenario_id, CITY).is_empty() == pilot, str(scenario.year) + " regional permission matches start identity")
 		if pilot:
-			await save_and_capture_cases(c)
+			save_and_capture_cases(c)
 		c.queue_free()
 		await runner.process_frame
 		await runner.process_frame

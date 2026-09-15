@@ -9,12 +9,13 @@ const GOLD_PER_UNIT: int = 15
 const FOOD_PER_UNIT: int = 20
 
 static func affordable(state: Dictionary, provinces: Dictionary, faction_id: String, city: String, target: int) -> int:
+	# Recruit whole 100-person units, truncating each resource budget separately.
 	if not provinces.has(city): return 0
-	return maxi(0,mini(mini(int(target/UNIT),int(Mobilization.view(state,provinces,city).available/UNIT)),mini(int(Economy.balance(state,faction_id)/GOLD_PER_UNIT),int(int(provinces[city].get("food_stock",0))/FOOD_PER_UNIT))))*UNIT
+	return maxi(0,mini(mini(int(float(target)/UNIT),int(float(Mobilization.view(state,provinces,city).available)/UNIT)),mini(int(float(Economy.balance(state,faction_id))/GOLD_PER_UNIT),int(float(int(provinces[city].get("food_stock",0)))/FOOD_PER_UNIT))))*UNIT
 
 static func quote(state: Dictionary, provinces: Dictionary, actor: String, payer: String, city: String, amount: int) -> Dictionary:
-	var gold_cost: int=int(amount/UNIT)*GOLD_PER_UNIT
-	var food_cost: int=int(amount/UNIT)*FOOD_PER_UNIT
+	var gold_cost: int=int(float(amount)/UNIT)*GOLD_PER_UNIT
+	var food_cost: int=int(float(amount)/UNIT)*FOOD_PER_UNIT
 	var q: Dictionary=Economy.validate(state,provinces,actor,payer,city,gold_cost,food_cost)
 	if amount<UNIT or amount%UNIT!=0: q={"ok":false,"reason":"모집은 100명 단위로 지정하세요."}
 	var manpower: Dictionary=Mobilization.view(state,provinces,city)

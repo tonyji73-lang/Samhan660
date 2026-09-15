@@ -63,7 +63,7 @@ func rebuild(selected: String="") -> void:
 
 func city_name(id: String) -> String: return str(campaign.provinces.get(id,{}).get("name",id))
 func state_name(value: String) -> String: return {"transit":"이동 중","waiting":"대기","arrived":"도착","unloaded":"하역 완료","captured":"피탈","canceled":"취소"}.get(value,value)
-func date(value: int) -> String: return "%d년 %d월" % [(value-1)/12,(value-1)%12+1]
+func date(value: int) -> String: return "%d년 %d월" % [int((value-1)/12.0),(value-1)%12+1]
 func selected_order() -> Dictionary:
 	return Supply.ensure(campaign.strategy_state).orders.get(str(orders.get_item_metadata(orders.selected)),{}) if orders.selected>=0 else {}
 func target() -> String: return str(destination.get_item_metadata(destination.selected)) if destination.selected>=0 else ""

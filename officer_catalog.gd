@@ -12,12 +12,12 @@ static func data() -> Dictionary:
 static func definitions() -> Dictionary:
 	return data().definitions
 
-static func resolve(reference: String) -> String:
-	if definitions().has(reference):
-		return reference
+static func resolve(officer_ref: String) -> String:
+	if definitions().has(officer_ref):
+		return officer_ref
 	var found: String = ""
 	for id: String in definitions():
-		if definitions()[id].aliases.has(reference):
+		if definitions()[id].aliases.has(officer_ref):
 			if not found.is_empty():
 				return ""
 			found = id
