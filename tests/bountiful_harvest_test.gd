@@ -112,7 +112,8 @@ func _run() -> void:
 	province.agriculture = 80
 	province.public_order = 98
 	province.food_stock = 0
-	province.troops = 0
+	for uid: String in c.Army.at_city(c.strategy_state,CITY): c.Army.casualties(c.strategy_state,[uid],int(c.Army.units(c.strategy_state)[uid].troops),c.year*12+c.month)
+	c.Army.sync(c.strategy_state,c.provinces)
 	province.granary_capacity = 1000000
 	var base: int = roundi(float(c.calculate_collected_harvest(province)) * 0.70)
 	var bonus: int = roundi(base * 0.25)

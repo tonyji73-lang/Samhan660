@@ -232,7 +232,7 @@ const ITEMS: Dictionary = {
 		"regional_evidence": [{"region":"경주 황성동 일대","evidence_type":"제철 근거","summary":"제철유적 소개","source_ids":["S01"],"limitation":"도시 폴리곤·유적 연대와 7세기 지속 검토 필요","workbook_range":"지역고증!A7:I7"},{"region":"김해·부산 일대","evidence_type":"유통/출토 근거","summary":"철정 유통·출토 집중","source_ids":["S01"],"limitation":"출토량을 광산량으로 바꾸지 않음; 정치세력과 생산지 분리","workbook_range":"지역고증!A8:I8"}],
 		"regional_placement_confirmed": false,
 		"storage": "city_inventory",
-		"recipe_ids": ["iron_supply"],
+		"recipe_ids": ["iron_supply", "iron_procurement"],
 		"workbook_range": "품목목록!A7:L7",
 	},
 	"copper": {
@@ -556,17 +556,23 @@ const SWORD_TECHNOLOGY: Dictionary = {
 	"effect": "군기감에서 철을 소비해 칼 생산 (검증용 임시 설정)",
 }
 const SMELTING_TECHNOLOGY: Dictionary = {
-	"name": "기본 제련", "max_level": 1, "researchable": false,
-	"base_gold": 0, "base_turns": 0,
-	"effect": "시작 시나리오의 설계에 따라 보유하는 기본 기술 (연구로 획득 불가)",
+	"name": "기본 제련", "max_level": 1, "researchable": true,
+	"base_gold": 200, "base_turns": 1,
+	"effect": "제철시설의 철 조달·정련과 기존 지역 철 공급 해금. 게임용 소규모 공급 과정",
 }
 const SMELTER_FACILITY: Dictionary = {
 	"name": "제철시설", "max_level": 1, "base_gold": 240, "base_turns": 2,
-	"effect": "지역 공급 허용 시 철 공급. 군대 능력치 효과 없음 (임시 밸런스)",
+	"effect": "기본 제련 후 공통 철 조달·정련. 허용 지역의 기존 철 공급과 시설 작업량 공유",
 }
 # Explicit order within each city; never depend on dictionary insertion order.
-const RECIPE_ORDER: Array[String] = ["iron_supply", "iron_sword"]
+const RECIPE_ORDER: Array[String] = ["iron_supply", "iron_sword", "iron_procurement"]
 const RECIPES: Dictionary = {
+	"iron_procurement": {
+		"enabled": true, "name": "철 조달·정련 (공통)",
+		"research": {"basic_smelting": 1}, "buildings": {"smelter": 1},
+		"inputs": {}, "outputs": {"iron": 2}, "operating_gold": 18,
+		"description": "소규모 원료 확보·정련을 합친 게임용 공급. 광산·역사 생산량 아님. 지역 공급과 제철시설 작업량 공유.",
+	},
 	"iron_supply": {
 		"enabled": true, "name": "철 공급", "regional_supply": true,
 		"research": {"basic_smelting": 1}, "buildings": {"smelter": 1},

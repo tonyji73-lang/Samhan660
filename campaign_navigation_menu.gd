@@ -2,6 +2,7 @@ extends MenuButton
 
 signal navigation_requested(destination: String)
 signal quit_requested
+signal diplomacy_requested
 
 const DESTINATION_SETUP: String = "setup"
 const DESTINATION_TITLE: String = "title"
@@ -9,6 +10,7 @@ const ITEM_CONTINUE: int = 0
 const ITEM_SETUP: int = 1
 const ITEM_TITLE: int = 2
 const ITEM_QUIT: int = 3
+const ITEM_DIPLOMACY: int = 4
 
 var pending_destination: String = ""
 
@@ -20,6 +22,7 @@ func _ready() -> void:
 	var popup: PopupMenu = get_popup()
 	popup.clear()
 	popup.add_item("계속하기", ITEM_CONTINUE)
+	popup.add_item("외교", ITEM_DIPLOMACY)
 	popup.add_separator()
 	popup.add_item("세력 선택으로", ITEM_SETUP)
 	popup.add_item("타이틀 화면으로", ITEM_TITLE)
@@ -32,6 +35,9 @@ func _ready() -> void:
 
 func _on_item_pressed(item_id: int) -> void:
 	match item_id:
+		ITEM_DIPLOMACY:
+			get_popup().hide()
+			diplomacy_requested.emit()
 		ITEM_CONTINUE:
 			get_popup().hide()
 		ITEM_SETUP:

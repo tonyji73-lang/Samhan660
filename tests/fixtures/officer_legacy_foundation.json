@@ -1,0 +1,4745 @@
+{
+	"crop_failure_events": {
+		"pending": {},
+		"resolved": {
+			"crop_failure:v1:silla_equilibrium_632:632:geumgwan": {
+				"choice_id": "relieve_people",
+				"choice_result_title": "백성을 구휼했습니다",
+				"grain_delta": -800,
+				"grain_result_text": "-800",
+				"public_order_delta": 0,
+				"public_order_result_text": "+0"
+			}
+		},
+		"version": 1,
+		"years": {
+			"632": {
+				"evaluated": true,
+				"harvest_loss": 576.0,
+				"occurrence_id": "crop_failure:v1:silla_equilibrium_632:632:geumgwan",
+				"province_id": "geumgwan"
+			}
+		}
+	},
+	"difficulty": "normal",
+	"event_presentation": {
+		"completed_ids": {},
+		"display_level": "all",
+		"occurrence_ids": {
+			"bountiful_harvest:v1:silla_equilibrium_632:632:gukwon": true,
+			"crop_failure:v1:silla_equilibrium_632:632:geumgwan": true
+		},
+		"version": 1
+	},
+	"food": 80678,
+	"gold": 13413,
+	"harvest_events": {
+		"version": 1,
+		"years": {
+			"632": {
+				"applied": true,
+				"chance_bp": 1060.0,
+				"evaluated": true,
+				"grain_delta": 512.0,
+				"occurrence_id": "bountiful_harvest:v1:silla_equilibrium_632:632:gukwon",
+				"province_id": "gukwon",
+				"province_name": "국원소경",
+				"public_order_delta": 0.0,
+				"roll_bp": 100.0,
+				"september_harvest": 2047.0
+			}
+		}
+	},
+	"month": 9,
+	"officers_by_province": {
+		"ansi": [
+			"양만춘"
+		],
+		"geumseong": [
+			"김춘추",
+			"김유신",
+			"김인문"
+		],
+		"gosa": [
+			"부여태",
+			"계백"
+		],
+		"gukwon": [
+			"김법민",
+			"김흠순"
+		],
+		"gungnae": [
+			"고연무"
+		],
+		"pyongyang": [
+			"연개소문",
+			"연남생"
+		],
+		"sabeol": [
+			"품일",
+			"관창"
+		],
+		"sabi": [
+			"의자왕"
+		],
+		"ungjin": [
+			"흑치상지",
+			"흥수"
+		]
+	},
+	"pending_transfer_orders": [],
+	"play_style": "historical",
+	"player_faction": "신라",
+	"provinces": {
+		"ansi": {
+			"agriculture": 60.0,
+			"commerce": 55.0,
+			"faction": "고구려",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4914,
+			"fortress": 95.0,
+			"governor": "양만춘",
+			"granary_capacity": 9300,
+			"name": "안시성",
+			"population": 150000.0,
+			"public_order": 100.0,
+			"troops": 44000.0
+		},
+		"bireyeolhol": {
+			"agriculture": 59.0,
+			"commerce": 48.0,
+			"faction": "고구려",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 3891,
+			"fortress": 58.0,
+			"governor": "비열홀 수장",
+			"granary_capacity": 6420,
+			"name": "비열홀",
+			"population": 55000.0,
+			"public_order": 100.0,
+			"troops": 12800.0
+		},
+		"bukhansan": {
+			"agriculture": 59.0,
+			"commerce": 68.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5639,
+			"fortress": 83.0,
+			"governor": "북한산성 수장",
+			"granary_capacity": 7770,
+			"name": "북한산성",
+			"population": 100000.0,
+			"public_order": 100.0,
+			"troops": 8800.0
+		},
+		"chaekseong": {
+			"agriculture": 55.0,
+			"commerce": 68.0,
+			"faction": "고구려",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5448,
+			"fortress": 83.0,
+			"governor": "책성·동북 변경 수장",
+			"granary_capacity": 7650,
+			"name": "책성·동북 변경",
+			"population": 100000.0,
+			"public_order": 100.0,
+			"troops": 11000.0
+		},
+		"chupungnyeong": {
+			"agriculture": 71.0,
+			"commerce": 64.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5445,
+			"fortress": 78.0,
+			"governor": "추풍령 교통권 수장",
+			"granary_capacity": 7860,
+			"name": "추풍령 교통권",
+			"population": 91000.0,
+			"public_order": 100.0,
+			"troops": 14200.0
+		},
+		"daedonggang": {
+			"agriculture": 67.0,
+			"commerce": 56.0,
+			"faction": "고구려",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4576,
+			"fortress": 68.0,
+			"governor": "대동강 하류 수장",
+			"granary_capacity": 7200,
+			"name": "대동강 하류",
+			"population": 73000.0,
+			"public_order": 100.0,
+			"troops": 16400.0
+		},
+		"daegaya": {
+			"agriculture": 63.0,
+			"commerce": 60.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5027,
+			"fortress": 73.0,
+			"governor": "대가야 수장",
+			"granary_capacity": 7350,
+			"name": "대가야",
+			"population": 82000.0,
+			"public_order": 100.0,
+			"troops": 10600.0
+		},
+		"dalgubeol": {
+			"agriculture": 59.0,
+			"commerce": 56.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4675,
+			"fortress": 68.0,
+			"governor": "달구벌 수장",
+			"granary_capacity": 6960,
+			"name": "달구벌",
+			"population": 73000.0,
+			"public_order": 100.0,
+			"troops": 8800.0
+		},
+		"danghangseong": {
+			"agriculture": 63.0,
+			"commerce": 48.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4027,
+			"fortress": 58.0,
+			"governor": "당항성 수장",
+			"granary_capacity": 6540,
+			"name": "당항성",
+			"population": 55000.0,
+			"public_order": 100.0,
+			"troops": 10600.0
+		},
+		"ganghwa": {
+			"agriculture": 63.0,
+			"commerce": 56.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4693,
+			"fortress": 68.0,
+			"governor": "강화·한강 하구 수장",
+			"granary_capacity": 7080,
+			"name": "강화·한강 하구",
+			"population": 73000.0,
+			"public_order": 100.0,
+			"troops": 10600.0
+		},
+		"geonanseong": {
+			"agriculture": 67.0,
+			"commerce": 60.0,
+			"faction": "고구려",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4919,
+			"fortress": 73.0,
+			"governor": "건안성 수장",
+			"granary_capacity": 7470,
+			"name": "건안성",
+			"population": 82000.0,
+			"public_order": 100.0,
+			"troops": 16400.0
+		},
+		"geumgwan": {
+			"agriculture": 67.0,
+			"commerce": 64.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4030,
+			"fortress": 78.0,
+			"governor": "금관가야 수장",
+			"granary_capacity": 7740,
+			"name": "금관가야",
+			"population": 91000.0,
+			"public_order": 100,
+			"troops": 12400.0
+		},
+		"geummajeo": {
+			"agriculture": 55.0,
+			"commerce": 56.0,
+			"faction": "백제",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4515,
+			"fortress": 68.0,
+			"governor": "금마저 수장",
+			"granary_capacity": 6840,
+			"name": "금마저",
+			"population": 73000.0,
+			"public_order": 100.0,
+			"troops": 11000.0
+		},
+		"geumseong": {
+			"agriculture": 74.0,
+			"commerce": 61.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5675,
+			"fortress": 76.0,
+			"generals": [
+				"선덕여왕"
+			],
+			"governor": "선덕여왕",
+			"granary_capacity": 8820,
+			"name": "금성",
+			"population": 120000.0,
+			"public_order": 100.0,
+			"troops": 28000.0
+		},
+		"goksan": {
+			"agriculture": 71.0,
+			"commerce": 60.0,
+			"faction": "고구려",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4951,
+			"fortress": 73.0,
+			"governor": "곡산 내륙 수장",
+			"granary_capacity": 7590,
+			"name": "곡산 내륙",
+			"population": 82000.0,
+			"public_order": 100.0,
+			"troops": 18200.0
+		},
+		"gosa": {
+			"agriculture": 55.0,
+			"commerce": 50.0,
+			"faction": "백제",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4437,
+			"fortress": 65.0,
+			"governor": "부여태",
+			"granary_capacity": 7350,
+			"name": "고사성",
+			"population": 90000.0,
+			"public_order": 100.0,
+			"troops": 19000.0
+		},
+		"gukwon": {
+			"agriculture": 65.0,
+			"commerce": 70.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5720,
+			"fortress": 70.0,
+			"governor": "김법민",
+			"granary_capacity": 7950,
+			"name": "국원소경",
+			"population": 100000.0,
+			"public_order": 100.0,
+			"troops": 18000.0
+		},
+		"gungnae": {
+			"agriculture": 65.0,
+			"commerce": 60.0,
+			"faction": "고구려",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5657,
+			"fortress": 85.0,
+			"governor": "고연무",
+			"granary_capacity": 8850,
+			"name": "국내성",
+			"population": 130000.0,
+			"public_order": 100.0,
+			"troops": 29000.0
+		},
+		"haslla": {
+			"agriculture": 55.0,
+			"commerce": 60.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4964,
+			"fortress": 73.0,
+			"governor": "하슬라 수장",
+			"granary_capacity": 7110,
+			"name": "하슬라",
+			"population": 82000.0,
+			"public_order": 100.0,
+			"troops": 7000.0
+		},
+		"hwanghae": {
+			"agriculture": 55.0,
+			"commerce": 64.0,
+			"faction": "고구려",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5136,
+			"fortress": 78.0,
+			"governor": "황해 남부 수장",
+			"granary_capacity": 7380,
+			"name": "황해 남부",
+			"population": 91000.0,
+			"public_order": 100.0,
+			"troops": 11000.0
+		},
+		"imjonseong": {
+			"agriculture": 63.0,
+			"commerce": 68.0,
+			"faction": "백제",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5555,
+			"fortress": 83.0,
+			"governor": "임존성 수장",
+			"granary_capacity": 7890,
+			"name": "임존성",
+			"population": 100000.0,
+			"public_order": 100.0,
+			"troops": 14600.0
+		},
+		"jukryeong": {
+			"agriculture": 67.0,
+			"commerce": 60.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5058,
+			"fortress": 73.0,
+			"governor": "죽령 교통권 수장",
+			"granary_capacity": 7470,
+			"name": "죽령 교통권",
+			"population": 82000.0,
+			"public_order": 100.0,
+			"troops": 12400.0
+		},
+		"juryuseong": {
+			"agriculture": 63.0,
+			"commerce": 64.0,
+			"faction": "백제",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5222,
+			"fortress": 78.0,
+			"governor": "주류성 수장",
+			"granary_capacity": 7620,
+			"name": "주류성",
+			"population": 91000.0,
+			"public_order": 100.0,
+			"troops": 14600.0
+		},
+		"pyongyang": {
+			"agriculture": 72.0,
+			"commerce": 65.0,
+			"faction": "고구려",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 7273,
+			"fortress": 85.0,
+			"generals": [
+				"영류왕"
+			],
+			"governor": "영류왕",
+			"granary_capacity": 10560,
+			"name": "평양성",
+			"population": 180000.0,
+			"public_order": 100.0,
+			"troops": 39000.0
+		},
+		"sabeol": {
+			"agriculture": 70.0,
+			"commerce": 60.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5887,
+			"fortress": 68.0,
+			"governor": "품일",
+			"granary_capacity": 8550,
+			"name": "사벌주",
+			"population": 115000.0,
+			"public_order": 100.0,
+			"troops": 20000.0
+		},
+		"sabi": {
+			"agriculture": 68.0,
+			"commerce": 75.0,
+			"faction": "백제",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 6198,
+			"fortress": 72.0,
+			"generals": [
+				"무왕"
+			],
+			"governor": "무왕",
+			"granary_capacity": 9240,
+			"name": "사비성",
+			"population": 140000.0,
+			"public_order": 88.0,
+			"troops": 26000.0
+		},
+		"samnyeonsanseong": {
+			"agriculture": 67.0,
+			"commerce": 52.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4369,
+			"fortress": 63.0,
+			"governor": "삼년산성 수장",
+			"granary_capacity": 6930,
+			"name": "삼년산성",
+			"population": 64000.0,
+			"public_order": 100.0,
+			"troops": 12400.0
+		},
+		"shinseong": {
+			"agriculture": 55.0,
+			"commerce": 48.0,
+			"faction": "고구려",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 3893,
+			"fortress": 58.0,
+			"governor": "신성 수장",
+			"granary_capacity": 6300,
+			"name": "신성",
+			"population": 55000.0,
+			"public_order": 100.0,
+			"troops": 11000.0
+		},
+		"siljik": {
+			"agriculture": 59.0,
+			"commerce": 64.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5317,
+			"fortress": 78.0,
+			"governor": "실직 수장",
+			"granary_capacity": 7500,
+			"name": "실직",
+			"population": 91000.0,
+			"public_order": 100.0,
+			"troops": 8800.0
+		},
+		"sogaya": {
+			"agriculture": 71.0,
+			"commerce": 68.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5801,
+			"fortress": 83.0,
+			"governor": "소가야 수장",
+			"granary_capacity": 8130,
+			"name": "소가야",
+			"population": 100000.0,
+			"public_order": 100.0,
+			"troops": 14200.0
+		},
+		"sokgunseong": {
+			"agriculture": 59.0,
+			"commerce": 52.0,
+			"faction": "고구려",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4213,
+			"fortress": 63.0,
+			"governor": "속군성 수장",
+			"granary_capacity": 6690,
+			"name": "속군성",
+			"population": 64000.0,
+			"public_order": 100.0,
+			"troops": 12800.0
+		},
+		"steppe_adie": {
+			"agriculture": 25.0,
+			"commerce": 34.0,
+			"faction": "아질",
+			"fortress": 38.0,
+			"governor": "아질 수장",
+			"name": "고비 북연",
+			"overlord": "",
+			"pasture": 42.0,
+			"population": 32000.0,
+			"public_order": 68.0,
+			"status": "설연타 연맹권",
+			"submission": 0.0,
+			"terrain": "north_gobi",
+			"troops": 12000.0
+		},
+		"steppe_bayegu": {
+			"agriculture": 30.0,
+			"commerce": 35.0,
+			"faction": "발야고",
+			"fortress": 42.0,
+			"governor": "발야고 수장",
+			"name": "케룰렌",
+			"overlord": "",
+			"pasture": 84.0,
+			"population": 39000.0,
+			"public_order": 73.0,
+			"status": "설연타 연맹권",
+			"submission": 0.0,
+			"terrain": "kherlen_grassland",
+			"troops": 14500.0
+		},
+		"steppe_duolange": {
+			"agriculture": 32.0,
+			"commerce": 38.0,
+			"faction": "다람갈",
+			"fortress": 44.0,
+			"governor": "다람갈 수장",
+			"name": "항가이",
+			"overlord": "",
+			"pasture": 78.0,
+			"population": 42000.0,
+			"public_order": 70.0,
+			"status": "설연타 연맹권",
+			"submission": 0.0,
+			"terrain": "khangai",
+			"troops": 15000.0
+		},
+		"steppe_huihe": {
+			"agriculture": 35.0,
+			"commerce": 44.0,
+			"faction": "회흘(위구르)",
+			"fortress": 48.0,
+			"governor": "포룬 일테베르",
+			"name": "셀렝게",
+			"overlord": "",
+			"pasture": 90.0,
+			"population": 52000.0,
+			"public_order": 78.0,
+			"status": "설연타 연맹권",
+			"submission": 0.0,
+			"terrain": "selenge_valley",
+			"troops": 18000.0
+		},
+		"steppe_hun": {
+			"agriculture": 27.0,
+			"commerce": 42.0,
+			"faction": "혼",
+			"fortress": 38.0,
+			"governor": "혼 수장",
+			"name": "고비 남록",
+			"overlord": "",
+			"pasture": 34.0,
+			"population": 35000.0,
+			"public_order": 69.0,
+			"status": "설연타 연맹권",
+			"submission": 0.0,
+			"terrain": "south_gobi",
+			"troops": 12500.0
+		},
+		"steppe_pugu": {
+			"agriculture": 31.0,
+			"commerce": 36.0,
+			"faction": "복골",
+			"fortress": 43.0,
+			"governor": "복골 수장",
+			"name": "오논",
+			"overlord": "",
+			"pasture": 82.0,
+			"population": 40000.0,
+			"public_order": 71.0,
+			"status": "설연타 연맹권",
+			"submission": 0.0,
+			"terrain": "onon_forest_steppe",
+			"troops": 15000.0
+		},
+		"steppe_qibi": {
+			"agriculture": 28.0,
+			"commerce": 39.0,
+			"faction": "계필",
+			"fortress": 40.0,
+			"governor": "계필 수장",
+			"name": "툴강 남안",
+			"overlord": "",
+			"pasture": 74.0,
+			"population": 37000.0,
+			"public_order": 74.0,
+			"status": "설연타 연맹권",
+			"submission": 0.0,
+			"terrain": "tuul_south",
+			"troops": 14000.0
+		},
+		"steppe_sijie": {
+			"agriculture": 30.0,
+			"commerce": 36.0,
+			"faction": "사결",
+			"fortress": 42.0,
+			"governor": "사결 수장",
+			"name": "알타이 동록",
+			"overlord": "",
+			"pasture": 62.0,
+			"population": 36000.0,
+			"public_order": 72.0,
+			"status": "설연타 연맹권",
+			"submission": 0.0,
+			"terrain": "altai",
+			"troops": 13000.0
+		},
+		"steppe_tongluo": {
+			"agriculture": 32.0,
+			"commerce": 40.0,
+			"faction": "동라",
+			"fortress": 42.0,
+			"governor": "동라 수장",
+			"name": "툴강 북안",
+			"overlord": "",
+			"pasture": 80.0,
+			"population": 41000.0,
+			"public_order": 70.0,
+			"status": "설연타 연맹권",
+			"submission": 0.0,
+			"terrain": "tuul_north",
+			"troops": 15500.0
+		},
+		"tamna": {
+			"agriculture": 55.0,
+			"commerce": 48.0,
+			"faction": "탐라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 3780,
+			"fortress": 58.0,
+			"governor": "탐라 수장",
+			"granary_capacity": 6300,
+			"name": "탐라",
+			"population": 55000.0,
+			"public_order": 100.0,
+			"troops": 7000.0
+		},
+		"ulleung": {
+			"agriculture": 59.0,
+			"commerce": 52.0,
+			"faction": "신라",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 4351,
+			"fortress": 63.0,
+			"governor": "울릉 수장",
+			"granary_capacity": 6690,
+			"name": "울릉",
+			"population": 64000.0,
+			"public_order": 100.0,
+			"troops": 8800.0
+		},
+		"ungjin": {
+			"agriculture": 68.0,
+			"commerce": 62.0,
+			"faction": "백제",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5449,
+			"fortress": 80.0,
+			"governor": "흑치상지",
+			"granary_capacity": 8340,
+			"name": "웅진성",
+			"population": 110000.0,
+			"public_order": 100.0,
+			"troops": 24000.0
+		},
+		"yeongsangang": {
+			"agriculture": 67.0,
+			"commerce": 68.0,
+			"faction": "백제",
+			"food_shortage": false,
+			"food_shortage_amount": 0.0,
+			"food_stock": 5610,
+			"fortress": 83.0,
+			"governor": "영산강 권역 수장",
+			"granary_capacity": 8010,
+			"name": "영산강 권역",
+			"population": 100000.0,
+			"public_order": 100.0,
+			"troops": 16400.0
+		}
+	},
+	"save_version": 4,
+	"scenario_id": "silla_equilibrium_632",
+	"season_index": 2,
+	"selected_province_id": "geumseong",
+	"strategy_state": {
+		"auto_generation": {
+			"counts_by_year": {}
+		},
+		"city_inventory": {
+			"ansi": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"bireyeolhol": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"bukhansan": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"chaekseong": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"chupungnyeong": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"daedonggang": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"daegaya": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"dalgubeol": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"danghangseong": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"ganghwa": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"geonanseong": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"geumgwan": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 4,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"geummajeo": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"geumseong": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"goksan": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"gosa": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"gukwon": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"gungnae": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"haslla": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"hwanghae": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"imjonseong": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"jukryeong": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"juryuseong": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"pyongyang": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"sabeol": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"sabi": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"samnyeonsanseong": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"shinseong": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"siljik": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"sogaya": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"sokgunseong": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"steppe_adie": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"steppe_bayegu": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"steppe_duolange": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"steppe_huihe": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"steppe_hun": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"steppe_pugu": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"steppe_qibi": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"steppe_sijie": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"steppe_tongluo": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"tamna": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"ulleung": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"ungjin": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			},
+			"yeongsangang": {
+				"armor": 0,
+				"cloth": 0,
+				"copper": 0,
+				"furs": 0,
+				"ginseng": 0,
+				"horses": 0,
+				"iron": 0,
+				"leather": 0,
+				"metalcraft": 0,
+				"salt": 0,
+				"silk": 0,
+				"sword": 0,
+				"timber": 0
+			}
+		},
+		"city_production": {
+			"ansi": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"bireyeolhol": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"bukhansan": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"chaekseong": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"chupungnyeong": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"daedonggang": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"daegaya": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"dalgubeol": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"danghangseong": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"ganghwa": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"geonanseong": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"geumgwan": {
+				"iron_supply": {
+					"enabled": true,
+					"owner": "신라",
+					"reason": "",
+					"status": "생산 완료"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"geummajeo": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"geumseong": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"goksan": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"gosa": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"gukwon": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"gungnae": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"haslla": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"hwanghae": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"imjonseong": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"jukryeong": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"juryuseong": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"pyongyang": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"sabeol": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"sabi": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"samnyeonsanseong": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"shinseong": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"siljik": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"sogaya": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"sokgunseong": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"steppe_adie": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"steppe_bayegu": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"steppe_duolange": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"steppe_huihe": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"steppe_hun": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"steppe_pugu": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"steppe_qibi": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"steppe_sijie": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"steppe_tongluo": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"tamna": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"ulleung": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"ungjin": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			},
+			"yeongsangang": {
+				"iron_supply": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				},
+				"iron_sword": {
+					"enabled": false,
+					"owner": "",
+					"reason": "",
+					"status": "중지"
+				}
+			}
+		},
+		"construction_queues": {},
+		"created_year": 632.0,
+		"diplomacy_last_action_month": {
+			"신라": 7586.0
+		},
+		"dynasty": {
+			"children": {},
+			"marriages": [],
+			"next_child_id": 1.0,
+			"people": {
+				"계백": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "백제",
+					"gender": "unknown",
+					"name": "계백",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 88.0,
+						"intelligence": 76.0,
+						"leadership": 94.0,
+						"politics": 62.0,
+						"war": 95.0
+					}
+				},
+				"고연무": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "고구려",
+					"gender": "unknown",
+					"name": "고연무",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 75.0,
+						"intelligence": 72.0,
+						"leadership": 82.0,
+						"politics": 60.0,
+						"war": 85.0
+					}
+				},
+				"관창": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "신라",
+					"gender": "unknown",
+					"name": "관창",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 74.0,
+						"intelligence": 55.0,
+						"leadership": 72.0,
+						"politics": 45.0,
+						"war": 90.0
+					}
+				},
+				"김법민": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "신라",
+					"gender": "unknown",
+					"name": "김법민",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 95.0,
+						"intelligence": 90.0,
+						"leadership": 88.0,
+						"politics": 92.0,
+						"war": 80.0
+					}
+				},
+				"김유신": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "신라",
+					"gender": "unknown",
+					"name": "김유신",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 91.0,
+						"intelligence": 84.0,
+						"leadership": 95.0,
+						"politics": 73.0,
+						"war": 93.0
+					}
+				},
+				"김인문": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "신라",
+					"gender": "unknown",
+					"name": "김인문",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 85.0,
+						"intelligence": 88.0,
+						"leadership": 82.0,
+						"politics": 90.0,
+						"war": 76.0
+					}
+				},
+				"김춘추": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "신라",
+					"gender": "unknown",
+					"name": "김춘추",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 95.0,
+						"intelligence": 95.0,
+						"leadership": 75.0,
+						"politics": 98.0,
+						"war": 60.0
+					}
+				},
+				"김흠순": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "신라",
+					"gender": "unknown",
+					"name": "김흠순",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 83.0,
+						"intelligence": 78.0,
+						"leadership": 86.0,
+						"politics": 72.0,
+						"war": 84.0
+					}
+				},
+				"부여태": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "백제",
+					"gender": "unknown",
+					"name": "부여태",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 70.0,
+						"intelligence": 60.0,
+						"leadership": 75.0,
+						"politics": 55.0,
+						"war": 78.0
+					}
+				},
+				"양만춘": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "고구려",
+					"gender": "unknown",
+					"name": "양만춘",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 88.0,
+						"intelligence": 85.0,
+						"leadership": 94.0,
+						"politics": 70.0,
+						"war": 89.0
+					}
+				},
+				"연개소문": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "고구려",
+					"gender": "unknown",
+					"name": "연개소문",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 98.0,
+						"intelligence": 88.0,
+						"leadership": 96.0,
+						"politics": 82.0,
+						"war": 95.0
+					}
+				},
+				"연남생": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "고구려",
+					"gender": "unknown",
+					"name": "연남생",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 82.0,
+						"intelligence": 76.0,
+						"leadership": 86.0,
+						"politics": 68.0,
+						"war": 84.0
+					}
+				},
+				"의자왕": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "백제",
+					"gender": "unknown",
+					"name": "의자왕",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 90.0,
+						"intelligence": 75.0,
+						"leadership": 70.0,
+						"politics": 80.0,
+						"war": 65.0
+					}
+				},
+				"품일": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "신라",
+					"gender": "unknown",
+					"name": "품일",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 80.0,
+						"intelligence": 75.0,
+						"leadership": 85.0,
+						"politics": 68.0,
+						"war": 88.0
+					}
+				},
+				"흑치상지": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "백제",
+					"gender": "unknown",
+					"name": "흑치상지",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 85.0,
+						"intelligence": 81.0,
+						"leadership": 92.0,
+						"politics": 65.0,
+						"war": 90.0
+					}
+				},
+				"흥수": {
+					"birth_year": 0.0,
+					"children": [],
+					"death_year": 0.0,
+					"faction": "백제",
+					"gender": "unknown",
+					"name": "흥수",
+					"origin": "historical",
+					"parents": [],
+					"spouse": "",
+					"stats": {
+						"authority": 82.0,
+						"intelligence": 93.0,
+						"leadership": 78.0,
+						"politics": 90.0,
+						"war": 65.0
+					}
+				}
+			}
+		},
+		"emergent_officers": {},
+		"faction_research": {
+			"계필": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"고구려": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"다람갈": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"당": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"동라": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"발야고": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"백제": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"복골": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"사결": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"설연타": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"신라": {
+				"archery": 0.0,
+				"basic_smelting": 1.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"아질": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"왜(야마토)": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"탐라": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"혼": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			},
+			"회흘(위구르)": {
+				"archery": 0.0,
+				"basic_smelting": 0.0,
+				"cavalry": 0.0,
+				"commerce": 0.0,
+				"diplomacy": 0.0,
+				"infantry": 0.0,
+				"logistics": 0.0,
+				"naval": 0.0,
+				"swordsmithing": 0.0
+			}
+		},
+		"next_trade_route_id": 1.0,
+		"officer_metadata": {
+			"계백": {
+				"faction": "백제",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"고연무": {
+				"faction": "고구려",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"관창": {
+				"faction": "신라",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"김법민": {
+				"faction": "신라",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"김유신": {
+				"faction": "신라",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"김인문": {
+				"faction": "신라",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"김춘추": {
+				"faction": "신라",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"김흠순": {
+				"faction": "신라",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"부여태": {
+				"faction": "백제",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"양만춘": {
+				"faction": "고구려",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"연개소문": {
+				"faction": "고구려",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"연남생": {
+				"faction": "고구려",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"의자왕": {
+				"faction": "백제",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"품일": {
+				"faction": "신라",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"흑치상지": {
+				"faction": "백제",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			},
+			"흥수": {
+				"faction": "백제",
+				"faction_screen_eligible": true,
+				"featured_eligible": true,
+				"is_historical": true,
+				"origin": "historical",
+				"quality_tier": "historical"
+			}
+		},
+		"production_last_month": 7593,
+		"province_buildings": {
+			"ansi": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"bireyeolhol": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"bukhansan": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"chaekseong": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"chupungnyeong": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"daedonggang": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"daegaya": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"dalgubeol": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"danghangseong": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"ganghwa": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"geonanseong": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"geumgwan": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"smelter": 1.0,
+				"stables": 0.0
+			},
+			"geummajeo": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"geumseong": {
+				"academy": 1.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 1.0,
+				"forge": 0.0,
+				"market": 1.0,
+				"stables": 0.0
+			},
+			"goksan": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"gosa": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"gukwon": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 1.0,
+				"stables": 0.0
+			},
+			"gungnae": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"haslla": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"hwanghae": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"imjonseong": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"jukryeong": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"juryuseong": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"pyongyang": {
+				"academy": 1.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 1.0,
+				"forge": 0.0,
+				"market": 1.0,
+				"stables": 0.0
+			},
+			"sabeol": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"sabi": {
+				"academy": 1.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 1.0,
+				"forge": 0.0,
+				"market": 1.0,
+				"stables": 0.0
+			},
+			"samnyeonsanseong": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"shinseong": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"siljik": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"sogaya": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"sokgunseong": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"steppe_adie": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"steppe_bayegu": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"steppe_duolange": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"steppe_huihe": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"steppe_hun": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"steppe_pugu": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"steppe_qibi": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"steppe_sijie": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"steppe_tongluo": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"tamna": {
+				"academy": 0.0,
+				"barracks": 0.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"ulleung": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"ungjin": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			},
+			"yeongsangang": {
+				"academy": 0.0,
+				"barracks": 1.0,
+				"caravanserai": 0.0,
+				"dockyard": 0.0,
+				"embassy": 0.0,
+				"forge": 0.0,
+				"market": 0.0,
+				"stables": 0.0
+			}
+		},
+		"relations": {
+			"계필|고구려": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|다람갈": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|당": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|동라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|발야고": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|백제": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|복골": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|사결": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|설연타": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|신라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|아질": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|왜(야마토 조정)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"계필|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|다람갈": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|당": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|동라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|발야고": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|백제": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|복골": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|사결": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|설연타": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|신라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|아질": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|왜(야마토 조정)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"고구려|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|당": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|동라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|발야고": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|백제": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|복골": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|사결": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|설연타": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|신라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|아질": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|왜(야마토 조정)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"다람갈|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"당|동라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"당|발야고": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"당|백제": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"당|복골": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"당|사결": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"당|설연타": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"당|신라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"당|아질": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"당|왜(야마토 조정)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"당|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"당|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"당|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"동라|발야고": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"동라|백제": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"동라|복골": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"동라|사결": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"동라|설연타": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"동라|신라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"동라|아질": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"동라|왜(야마토 조정)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"동라|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"동라|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"동라|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"발야고|백제": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"발야고|복골": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"발야고|사결": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"발야고|설연타": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"발야고|신라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"발야고|아질": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"발야고|왜(야마토 조정)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"발야고|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"발야고|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"발야고|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"백제|복골": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"백제|사결": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"백제|설연타": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"백제|신라": {
+				"status": "중립",
+				"treaties": [
+					"통상 조약"
+				],
+				"value": 17.0
+			},
+			"백제|아질": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"백제|왜(야마토 조정)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"백제|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"백제|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"백제|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"복골|사결": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"복골|설연타": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"복골|신라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"복골|아질": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"복골|왜(야마토 조정)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"복골|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"복골|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"복골|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"사결|설연타": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"사결|신라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"사결|아질": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"사결|왜(야마토 조정)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"사결|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"사결|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"사결|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"설연타|신라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"설연타|아질": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"설연타|왜(야마토 조정)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"설연타|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"설연타|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"설연타|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"신라|아질": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"신라|왜(야마토 조정)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"신라|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"신라|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"신라|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"아질|왜(야마토 조정)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"아질|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"아질|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"아질|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"왜(야마토 조정)|탐라": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"왜(야마토 조정)|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"왜(야마토 조정)|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"탐라|혼": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"탐라|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			},
+			"혼|회흘(위구르)": {
+				"status": "중립",
+				"treaties": [],
+				"value": 0.0
+			}
+		},
+		"research_queues": {},
+		"trade_routes": [],
+		"turn_actions": {
+			"officer_used": {},
+			"province_used": {},
+			"research_used": false,
+			"season_index": 0.0,
+			"year": 632.0
+		},
+		"unit_rosters": {
+			"ansi": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 44000
+				}
+			},
+			"bireyeolhol": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 12800
+				}
+			},
+			"bukhansan": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 8800.0
+				}
+			},
+			"chaekseong": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 11000
+				}
+			},
+			"chupungnyeong": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 14200.0
+				}
+			},
+			"daedonggang": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 16400
+				}
+			},
+			"daegaya": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 10600.0
+				}
+			},
+			"dalgubeol": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 8800.0
+				}
+			},
+			"danghangseong": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 10600.0
+				}
+			},
+			"ganghwa": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 10600.0
+				}
+			},
+			"geonanseong": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 16400
+				}
+			},
+			"geumgwan": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 12400.0
+				}
+			},
+			"geummajeo": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 11000
+				}
+			},
+			"geumseong": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 28000.0
+				}
+			},
+			"goksan": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 18200
+				}
+			},
+			"gosa": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 19000
+				}
+			},
+			"gukwon": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 18000.0
+				}
+			},
+			"gungnae": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 29000
+				}
+			},
+			"haslla": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 7000.0
+				}
+			},
+			"hwanghae": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 11000
+				}
+			},
+			"imjonseong": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 14600
+				}
+			},
+			"jukryeong": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 12400.0
+				}
+			},
+			"juryuseong": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 14600
+				}
+			},
+			"pyongyang": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 39000
+				}
+			},
+			"sabeol": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 20000.0
+				}
+			},
+			"sabi": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 26000
+				}
+			},
+			"samnyeonsanseong": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 12400.0
+				}
+			},
+			"shinseong": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 11000
+				}
+			},
+			"siljik": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 8800.0
+				}
+			},
+			"sogaya": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 14200.0
+				}
+			},
+			"sokgunseong": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 12800
+				}
+			},
+			"steppe_adie": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 12000.0
+				}
+			},
+			"steppe_bayegu": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 14500.0
+				}
+			},
+			"steppe_duolange": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 15000.0
+				}
+			},
+			"steppe_huihe": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 18000.0
+				}
+			},
+			"steppe_hun": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 12500.0
+				}
+			},
+			"steppe_pugu": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 15000.0
+				}
+			},
+			"steppe_qibi": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 14000.0
+				}
+			},
+			"steppe_sijie": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 13000.0
+				}
+			},
+			"steppe_tongluo": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 15500.0
+				}
+			},
+			"tamna": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 7000.0
+				}
+			},
+			"ulleung": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 8800.0
+				}
+			},
+			"ungjin": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 24000
+				}
+			},
+			"yeongsangang": {
+				"archer": {
+					"category": "archer",
+					"morale": 50.0,
+					"name": "궁병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"cavalry": {
+					"category": "cavalry",
+					"morale": 50.0,
+					"name": "기병",
+					"training": 50.0,
+					"troops": 0.0
+				},
+				"infantry": {
+					"category": "infantry",
+					"morale": 55.0,
+					"name": "보병",
+					"training": 50.0,
+					"troops": 16400
+				}
+			}
+		},
+		"version": 4
+	},
+	"year": 632
+}

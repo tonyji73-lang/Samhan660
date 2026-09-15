@@ -5,6 +5,7 @@ class CampaignLoadBridge:
 	extends Node
 
 	var campaign_scene_path: String = ""
+	var selected_save_path: String = ""
 
 
 	func start() -> void:
@@ -37,7 +38,7 @@ class CampaignLoadBridge:
 			)
 		):
 			campaign_scene.call_deferred(
-				"_on_load_button_pressed"
+				"_on_load_button_pressed", selected_save_path
 			)
 		else:
 			push_warning(
@@ -94,6 +95,7 @@ var fade_rect: ColorRect
 var music_player: AudioStreamPlayer
 
 var menu_locked: bool = false
+var load_picker: FileDialog
 
 
 func _ready() -> void:
@@ -636,20 +638,8 @@ func _play_intro() -> void:
 
 
 func _update_load_button() -> void:
-	var save_exists: bool = FileAccess.file_exists(
-		save_path
-	)
-
-	load_game_button.disabled = not save_exists
-
-	if save_exists:
-		load_game_button.tooltip_text = (
-			"저장한 게임을 이어서 시작합니다."
-		)
-	else:
-		load_game_button.tooltip_text = (
-			"저장된 게임이 없습니다."
-		)
+	load_game_button.disabled = false
+	load_game_button.tooltip_text = "저장 파일을 선택해 이어서 시작합니다."
 
 
 func _set_menu_enabled(enabled: bool) -> void:
@@ -724,6 +714,24 @@ func _on_new_game_pressed() -> void:
 
 
 func _on_load_game_pressed() -> void:
+	if menu_locked: return
+	if load_picker == null:
+		load_picker=FileDialog.new()
+		load_picker.title="불러오기 · 캠페인 저장 선택"
+		load_picker.file_mode=FileDialog.FILE_MODE_OPEN_FILE
+		load_picker.title="불러오기 · 캠페인 저장 선택"
+		load_picker.display_mode=FileDialog.DISPLAY_LIST
+		load_picker.access=FileDialog.ACCESS_FILESYSTEM
+		load_picker.filters=PackedStringArray(["*.json ; 캠페인 저장"])
+		load_picker.current_dir=ProjectSettings.globalize_path("user://")
+		add_child(load_picker)
+		load_picker.file_selected.connect(_load_selected_game)
+		load_picker.get_ok_button().text="불러오기"
+		load_picker.get_cancel_button().text="취소"
+	load_picker.popup_centered(Vector2i(1100,700))
+
+func _load_selected_game(path: String) -> void:
+	save_path=path
 	if menu_locked:
 		return
 
@@ -740,6 +748,7 @@ func _on_load_game_pressed() -> void:
 		CampaignLoadBridge.new()
 	)
 	load_bridge.name = "CampaignLoadBridge"
+	load_bridge.selected_save_path = save_path
 	load_bridge.campaign_scene_path = (
 		campaign_scene_path
 	)

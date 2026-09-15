@@ -143,16 +143,20 @@ func _run() -> void:
 	p.restore_state({})
 	check(not p.active and p.queue.is_empty() and not c.map_area.cutscene_input_locked, "load cancels queue without executing it")
 	# A real AI simulation result is committed once, then only displayed.
-	c.resolve_ai_attack("sabi", "geumseong")
+	c.resolve_ai_attack("ungjin", "gukwon")
 	var after_combat: Dictionary = snapshot(c)
 	await process_frame
 	check(p.active and p.current.id == "enemy_invasion_alert", "actual AI attack dispatches invasion alert")
 	p.skip()
 	check(snapshot(c) == after_combat, "skipping real alert preserves exactly one combat result")
 	# Test fixtures only: put the existing two commanders in isolated armies.
-	c.officers_by_province["geumseong"] = ["김유신"]
-	c.officers_by_province["sabi"] = ["계백"]
-	c.resolve_attack("geumseong", "sabi")
+	for city: String in ["geumseong", "geumgwan"]:
+		for id: String in c.get_city_officer_ids(city): c.OfficerRegistry.set_location(c.officer_registry,id,"")
+	c.OfficerRegistry.set_location(c.officer_registry,"김유신","geumseong")
+	c.provinces.geumgwan.faction="백제"
+	for uid: String in c.Army.at_city(c.strategy_state,"geumgwan"): c.Army.units(c.strategy_state)[uid].faction_id="baekje"
+	c.OfficerRegistry.set_location(c.officer_registry,"계백","geumgwan")
+	c.resolve_attack("geumseong", "geumgwan")
 	after_combat = snapshot(c)
 	await process_frame
 	check(p.active and p.current.id == "battle_hwangsanbeol", "existing combat matches catalog commander trigger")

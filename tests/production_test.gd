@@ -123,7 +123,7 @@ func _catalog_cases() -> void:
 	check(metadata_valid, "catalog IDs, categories, evidence sources and unconfirmed placements are consistent")
 	check(expansions_inactive, "all four expansion candidates remain inactive without recipes")
 	check(Catalog.canonical_item_id("weapons") == "sword" and not Catalog.ITEMS.has("weapons"), "weapons is an alias of sword, not an additional item")
-	check(Catalog.RECIPES.size() == 2 and Catalog.RECIPES[RECIPE].inputs == {"iron": 2} and Catalog.RECIPES[RECIPE].outputs == {"sword": 1} and Catalog.RECIPES[RECIPE].operating_gold == 10, "added supply does not replace existing iron 2 / gold 10 / sword 1 balance")
+	check(Catalog.RECIPES.size() == 3 and Catalog.RECIPES[RECIPE].inputs == {"iron": 2} and Catalog.RECIPES[RECIPE].outputs == {"sword": 1} and Catalog.RECIPES[RECIPE].operating_gold == 10, "added supply does not replace existing iron 2 / gold 10 / sword 1 balance")
 	var provinces: Dictionary = {CITY: {"faction": FACTION, "food_stock": 2345}}
 	# Exact previous implementation's saved inventory shape, before catalog defaults existed.
 	var state: Dictionary = {"city_inventory": {CITY: {"iron": 17, "sword": 9}}}
@@ -174,20 +174,21 @@ func _run() -> void:
 	check(campaign.strategy_state.city_inventory[CITY].iron == 0, "real new campaign receives no test iron")
 	check(campaign.strategy_state.faction_research[FACTION].swordsmithing == 0, "new campaign does not claim historical production technology")
 	campaign.gold = 1000
-	var result: Dictionary = campaign.request_production_command(CITY, RECIPE, "research")
-	check(result.ok and campaign.gold == 800 and campaign.strategy_state.research_queues[FACTION].remaining_turns == 1, "research UI command queues existing national research and charges 200")
-	result = campaign.request_production_command(CITY, RECIPE, "research")
+	var people: Array=campaign.get_city_officer_ids(CITY)
+	for id: String in people.slice(0,2): campaign.OfficerRegistry.set_stats(campaign.officer_registry,id,{"politics":100,"intelligence":100})
+	var result: Dictionary = campaign.request_production_command(CITY, RECIPE, "research", "", people[0])
+	check(result.ok and campaign.gold == 800 and result.required == 300, "research command assigns officer, requires300 monthly work, charges200")
+	result = campaign.request_production_command(CITY, RECIPE, "research", "", people[0])
 	check(not result.ok and campaign.gold == 800, "repeated research command does not charge again")
-	result = campaign.request_production_command(CITY, RECIPE, "build")
-	check(result.ok and campaign.gold == 480 and campaign.strategy_state.construction_queues[CITY].remaining_turns == 2, "construction UI command reuses forge: cost 320, two seasonal ticks")
-	result = campaign.request_production_command(CITY, RECIPE, "build")
+	result = campaign.request_production_command(CITY, RECIPE, "build", "", people[1])
+	check(result.ok and campaign.gold == 480 and result.required == 600, "construction retains320cost; two seasons convert to600work")
+	result = campaign.request_production_command(CITY, RECIPE, "build", "", people[1])
 	check(not result.ok and campaign.gold == 480, "repeated construction command does not charge again")
-	campaign.strategy._process_research(campaign.strategy_state)
-	campaign.strategy._process_construction(campaign.strategy_state)
+	var stamp: int=campaign.year*12+campaign.month
+	for n: int in range(1,3): campaign.Industry.process(campaign.strategy_state,campaign.provinces,stamp+n)
 	check(campaign.strategy_state.faction_research[FACTION].swordsmithing == 1 and campaign.strategy_state.province_buildings[CITY].forge == 0, "research complete but unfinished forge cannot qualify")
-	campaign.strategy._process_construction(campaign.strategy_state)
-	check(campaign.strategy_state.province_buildings[CITY].forge == 1, "forge completes through original construction backend")
-
+	for n: int in range(3,5): campaign.Industry.process(campaign.strategy_state,campaign.provinces,stamp+n)
+	check(campaign.strategy_state.province_buildings[CITY].forge == 1, "forge completes once via monthly assigned work")
 	campaign.select_province(CITY)
 	await process_frame
 	await process_frame
@@ -260,6 +261,10 @@ func _run() -> void:
 	check(campaign.calculate_monthly_storage_loss(grain) == 250, "winter stock loss remains 1 percent")
 	check(is_equal_approx(campaign.get_public_order_efficiency(0), 0.5) and is_equal_approx(campaign.get_public_order_efficiency(100), 1.0), "public order efficiency preserved")
 	var saved_province: Dictionary = campaign.provinces[CITY]
+	# Isolate the pre-existing base harvest formula; governor multipliers have
+	# dedicated domestic_assignment tests (including actual 9/10 month harvest).
+	var saved_governor: String = campaign.get_governor_id(CITY)
+	campaign.OfficerRegistry.set_post(campaign.officer_registry,"governor:"+CITY,"")
 	grain["faction"] = FACTION
 	grain["name"] = "Test harvest"
 	grain.food_stock = 0
@@ -274,6 +279,7 @@ func _run() -> void:
 	campaign.process_seasonal_harvest()
 	check(grain.food_stock == 3600, "October receives remaining 30 percent")
 	campaign.provinces[CITY] = saved_province
+	campaign.OfficerRegistry.set_post(campaign.officer_registry,"governor:"+CITY,saved_governor)
 	campaign.month = 2
 	campaign._sync_season_from_month()
 
@@ -301,18 +307,22 @@ func _run() -> void:
 	campaign._on_load_button_pressed(save_path)
 	check(campaign.strategy_state.city_inventory[CITY].iron == 8 and campaign.strategy_state.city_inventory[CITY].sword == 1 and campaign.gold == before_gold, "actual previous v4 iron/sword-only save preserves stocks and gold")
 	check(not campaign.strategy_state.city_inventory[CITY].has("grain") and not campaign.strategy_state.city_inventory[CITY].has("weapons"), "actual load creates neither duplicate grain nor duplicate weapons ledger")
-	# Original seasonal queues must not advance on ordinary monthly turns.
+	# Legacy seasonal queues now wait for explicit staff instead of free completion.
 	campaign.strategy_state.province_buildings[CITY].forge = 0
 	campaign.strategy_state.faction_research[FACTION].swordsmithing = 0
-	campaign.strategy_state.construction_queues[CITY] = {"building_id": "forge", "target_level": 1, "remaining_turns": 1}
-	campaign.strategy_state.research_queues[FACTION] = {"research_id": "swordsmithing", "target_level": 1, "remaining_turns": 1}
+	campaign.strategy_state.construction_queues[CITY] = {"building_id":"forge","target_level":1,"remaining_turns":1}
+	campaign.strategy_state.research_queues[FACTION] = {"research_id":"swordsmithing","target_level":1,"remaining_turns":1}
 	campaign._on_end_turn_button_pressed()
-	check(campaign.month == 3 and campaign.strategy_state.construction_queues[CITY].remaining_turns == 1 and campaign.strategy_state.research_queues[FACTION].remaining_turns == 1, "ordinary month does not advance seasonal construction/research")
+	var build_job: Dictionary=campaign.Industry.active(campaign.strategy_state,"build",CITY,"silla")
+	var research_job: Dictionary=campaign.Industry.active(campaign.strategy_state,"research",CITY,"silla")
+	check(campaign.month==3 and build_job.status=="paused" and research_job.status=="paused", "legacy queues require explicit assignment, no free monthly progress")
+	campaign.Industry.assign(campaign.strategy_state,campaign.provinces,"silla",build_job.id,CITY,people[1],campaign.year*12+campaign.month)
+	campaign.Industry.assign(campaign.strategy_state,campaign.provinces,"silla",research_job.id,CITY,people[0],campaign.year*12+campaign.month)
 	campaign._on_end_turn_button_pressed()
-	check(campaign.month == 4 and campaign.strategy_state.province_buildings[CITY].forge == 1 and campaign.strategy_state.faction_research[FACTION].swordsmithing == 1, "April transition completes original seasonal queues")
-	check(campaign.strategy_state.city_inventory[CITY].sword == 1, "production waits during the month requirements finish")
+	check(campaign.month==4 and campaign.strategy_state.province_buildings[CITY].forge==0 and research_job.progress==150, "April season cannot double-process assigned work")
+	check(campaign.strategy_state.city_inventory[CITY].sword==1, "unfinished facilities still block production")
 	campaign._on_end_turn_button_pressed()
-	check(campaign.month == 5 and campaign.strategy_state.city_inventory[CITY].sword == 2, "completed technology/facility apply on following month")
+	check(campaign.month==5 and campaign.strategy_state.city_inventory[CITY].sword==2, "monthly completion applies before same-month production")
 	var old_save: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(save_path))
 	old_save.save_version = 3
 	for key: String in ["city_inventory", "city_production", "production_last_month"]:

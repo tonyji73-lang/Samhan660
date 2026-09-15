@@ -1,0 +1,63 @@
+extends "res://tests/project_foundation_test.gd"
+
+const GUI_OUT = "res://.godot/domestic-results/"
+
+func capture(label: String) -> void:
+	await settle()
+	await RenderingServer.frame_post_draw
+	check(root.get_texture().get_image().save_png(GUI_OUT+label+".png")==OK,"capture "+label)
+
+func _run() -> void:
+	create_timer(100).timeout.connect(func(): push_error("DOMESTIC GUI TIMEOUT"); quit(2))
+	DirAccess.make_dir_recursive_absolute(GUI_OUT)
+	root.set_meta("new_game_settings",{"faction":"silla","play_style":"historical","difficulty":"normal","scenario_id":Scenarios.SCENARIOS[0].id,"scenario_year":632,"scenario_season":"spring"})
+	change_scene_to_file("res://campaign_main.tscn")
+	await settle()
+	c=current_scene
+	await finish_events()
+	c._on_city_card_detail_requested("geumseong")
+	await click(c.develop_button)
+	var panel: Node=c.domestic_overlay
+	check(panel.visible and c.map_area.modal_input_locked,"existing agriculture button opens modal")
+	check(panel.selector.item_count>0 and panel.details.text.contains("완료:") and panel.details.text.contains("기본"),"person selection quote and governor breakdown visible")
+	panel.selector.select(0); panel.selector.item_selected.emit(0)
+	var id: String=panel.selected_id()
+	var quote: Dictionary=c.get_domestic_quote("geumseong","agriculture",id)
+	var before: int=c.provinces.geumseong.agriculture
+	await capture("selection_quote")
+	await click(panel.execute_button)
+	check(c.gold==900 and c.provinces.geumseong.agriculture==before and panel.execute_button.disabled,"UI charges once; pending rather than instant development")
+	await capture("pending")
+	await click(panel.cancel_button)
+	check(c.gold==1000 and panel.cancel_button.disabled,"UI cancellation refunds once")
+	await capture("cancelled")
+	await click(panel.execute_button)
+	check(c.gold==900,"UI restarts after cancelled job")
+	c._on_save_button_pressed(GUI_OUT+"gui-pending.json")
+	c._on_load_button_pressed(GUI_OUT+"gui-pending.json")
+	await settle()
+	check(not panel.visible and not c.map_area.modal_input_locked,"load closes modal and restores map")
+	c._on_develop_button_pressed()
+	await capture("loaded_pending")
+	await escape()
+	check(not panel.visible and not c.map_area.modal_input_locked,"domestic Esc restores input")
+	await click(c.end_turn_button)
+	await finish_events()
+	check(c.month==2 and c.provinces.geumseong.agriculture==before+int(quote.gain),"real month button applies selected quote exactly once")
+	c._on_develop_button_pressed()
+	await capture("completed_settlement")
+	check(panel.details.text.contains("개발 완료") and panel.details.text.contains("직전 세입"),"completion and actual settlement visible")
+	await click(panel.close_button)
+	check(not panel.visible and not c.map_area.modal_input_locked,"close button restores map")
+	c._on_commerce_button_pressed()
+	check(panel.visible and panel.kind=="commerce","existing commerce command shares assignment UI")
+	c._open_diplomacy()
+	check(not panel.visible and c.diplomacy_overlay.visible,"domestic to diplomacy screen transition")
+	await escape()
+	c._on_develop_button_pressed()
+	c._on_city_card_production_requested("geumseong")
+	check(not panel.visible and c.production_overlay.visible,"domestic to production screen transition")
+	await escape()
+	check(not c.map_area.modal_input_locked,"all modal input recovered")
+	print("DOMESTIC GUI TESTS: %d checks, %d failures" % [checks,failures])
+	quit(0 if failures==0 else 1)

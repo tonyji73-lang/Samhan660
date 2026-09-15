@@ -2,6 +2,8 @@ extends Control
 
 signal transfer_requested(request: Dictionary)
 signal canceled
+signal cargo_requested(city: String)
+var cargo_button: Button
 
 var source_province_id: String = ""
 
@@ -26,6 +28,10 @@ const VIEWPORT_MARGIN: float = 16.0
 func _ready() -> void:
 	visible = false
 	mouse_filter = Control.MOUSE_FILTER_STOP
+	cargo_button=Button.new()
+	cargo_button.text="육상 군량·철·칼 수송 (장수/병력 불필요)"
+	execute_button.get_parent().get_parent().add_child(cargo_button)
+	cargo_button.pressed.connect(func(): cargo_requested.emit(source_province_id))
 	execute_button.pressed.connect(_on_execute_pressed)
 	cancel_button.pressed.connect(close_panel)
 	close_button.pressed.connect(close_panel)
@@ -41,7 +47,8 @@ func open_for_transfer(
 	available_officers: Array[String],
 	governor_name: String,
 	supports_food: bool = false,
-	supports_gold: bool = false
+	supports_gold: bool = false,
+	officer_labels: Dictionary = {}
 ) -> void:
 	source_province_id = province_id
 	source_value.text = province_name
@@ -62,7 +69,7 @@ func open_for_transfer(
 
 	officer_list.clear()
 	for officer_name: String in available_officers:
-		var display_name: String = officer_name
+		var display_name: String = str(officer_labels.get(officer_name, officer_name))
 		if officer_name == governor_name:
 			display_name += " (태수)"
 		officer_list.add_item(display_name)

@@ -29,7 +29,7 @@ func fixture() -> Dictionary:
 	}
 	var rules: Dictionary = {SCENARIO: {CITY: {"allowed": true, "placement_confirmed": true}}}
 	Production.normalize_state(state, provinces)
-	for recipe: String in Data.RECIPE_ORDER:
+	for recipe: String in ["iron_supply","iron_sword"]:
 		Production.set_enabled(state, provinces, CITY, recipe, FACTION, true, SCENARIO, rules)
 	return {"state": state, "provinces": provinces, "rules": rules}
 
@@ -48,7 +48,7 @@ func units() -> void:
 		if amounts[0] == 5:
 			check(f.state.city_production[CITY].iron_supply.status == "보류", "supply explains insufficient funds")
 		var inventory: String = JSON.stringify(f.state.city_inventory)
-		for recipe: String in Data.RECIPE_ORDER:
+		for recipe: String in ["iron_supply","iron_sword"]:
 			Production.set_enabled(f.state, f.provinces, CITY, recipe, FACTION, false, SCENARIO, f.rules)
 			Production.set_enabled(f.state, f.provinces, CITY, recipe, FACTION, true, SCENARIO, f.rules)
 		result = tick(f, 100)
@@ -73,7 +73,7 @@ func units() -> void:
 		check(result.gold == 100 and f.state.city_inventory[CITY].iron == 0 and f.state.city_inventory[CITY].sword == 0, missing + " blocks supply with no resource changes")
 		check(f.state.city_production[CITY].iron_supply.reason != "", missing + " has a visible reason")
 
-	for stopped: String in Data.RECIPE_ORDER:
+	for stopped: String in ["iron_supply","iron_sword"]:
 		var f: Dictionary = fixture()
 		Production.set_enabled(f.state, f.provinces, CITY, stopped, FACTION, false, SCENARIO, f.rules)
 		if stopped == "iron_supply":
@@ -121,7 +121,7 @@ func units() -> void:
 	f.rules[SCENARIO]["aaa"] = {"allowed": true, "placement_confirmed": true}
 	f.state.province_buildings["aaa"] = {"smelter": 1, "forge": 1}
 	Production.normalize_state(f.state, f.provinces)
-	for recipe: String in Data.RECIPE_ORDER:
+	for recipe: String in ["iron_supply","iron_sword"]:
 		Production.set_enabled(f.state, f.provinces, "aaa", recipe, FACTION, true, SCENARIO, f.rules)
 	var result: Dictionary = tick(f, 16)
 	check(result.gold == 0 and f.state.city_inventory.aaa.sword == 1 and f.state.city_inventory[CITY].iron == 0 and f.state.city_inventory[CITY].sword == 0, "shared funds: ascending city ID, supply then manufacture WITHIN each city")
@@ -129,7 +129,7 @@ func units() -> void:
 	var backend := Strategy.new()
 	f = fixture()
 	f.state.province_buildings[CITY].smelter = 0
-	check(not backend.start_building(f.state, CITY, "smelter").ok and f.state.construction_queues.is_empty(), "generic construction backend cannot bypass regional permission")
+	check(backend.get_building_quote(f.state, CITY, "smelter").ok and f.state.construction_queues.is_empty(), "common smelter construction is independent of regional extraction permission")
 	result = backend.start_building(f.state, CITY, "smelter", "", -1, SCENARIO, f.rules)
 	check(result.ok and result.gold_cost == 240 and result.turns == 2, "smelter uses existing queue with gold 240 and two seasonal ticks")
 	check(not backend.start_building(f.state, CITY, "smelter", "", -1, SCENARIO, f.rules).ok, "duplicate construction rejected")
@@ -137,7 +137,7 @@ func units() -> void:
 	check(f.state.province_buildings[CITY].smelter == 0, "unfinished smelter stays inactive")
 	backend._process_construction(f.state)
 	check(f.state.province_buildings[CITY].smelter == 1 and not backend.get_building_quote(f.state, CITY, "smelter", SCENARIO, f.rules).ok, "smelter completes, max level one enforced")
-	check(not backend.start_research(f.state, FACTION, "basic_smelting").ok and f.state.research_queues.is_empty(), "basic technology cannot be acquired through research")
+	check(not backend.start_research(f.state, FACTION, "basic_smelting").ok and f.state.research_queues.is_empty(), "already held smelting cannot be researched twice")
 	check(Supply.CANDIDATES.ugye_ri.placement_confirmed == false and Supply.CANDIDATES.ugye_ri.mining_confirmed == false and not Supply.CANDIDATES.ugye_ri.source_url.is_empty(), "Ugye-ri is evidence only, not a confirmed mine or placement")
 	for scenario: Dictionary in Scenarios.SCENARIOS:
 		var scenario_id: String = str(scenario["id"])
@@ -165,7 +165,7 @@ func run(host: SceneTree) -> void:
 	var overlay = campaign.production_overlay
 	overlay.recipe_selector.select(0)
 	overlay.recipe_selector.item_selected.emit(0)
-	check(overlay.selected_recipe_id == "iron_supply" and overlay.start_button.disabled and overlay.building_button.disabled and overlay.research_button.disabled and overlay.details.text.contains("본게임 생산지 배치 미적용"), "real supply UI blocks start/build/research and explains unplaced status")
+	check(overlay.selected_recipe_id == "iron_supply" and overlay.start_button.disabled and not overlay.building_button.disabled and not overlay.research_button.disabled and overlay.details.text.contains("본게임 생산지 배치 미적용"), "regional supply stays locked while common infrastructure is accessible")
 	var gold_before: int = campaign.gold
 	check(not campaign.request_production_command(CITY, "iron_supply", "start").ok and not campaign.request_production_command(CITY, "iron_supply", "build").ok and campaign.gold == gold_before, "main-game command API cannot bypass region lock")
 	# Even a save carrying forged levels/orders cannot turn on an unplaced source.
@@ -174,7 +174,8 @@ func run(host: SceneTree) -> void:
 	check(not campaign.request_production_command(CITY, "iron_supply", "start").ok, "technology and facility cannot unlock unplaced region")
 	campaign.strategy_state.city_production[CITY].iron_supply = {"enabled": true, "owner": FACTION}
 	var result: Dictionary = Production.process_month(campaign.strategy_state, campaign.provinces, FACTION, 100, MONTH, campaign.scenario_id)
-	check(result.gold == 100 and campaign.strategy_state.city_inventory[CITY].iron == 0, "injected enabled order still cannot produce in main game")
+	# A live campaign now uses its treasury, ignoring a stale caller-supplied scalar.
+	check(result.gold == gold_before and campaign.gold == gold_before and campaign.strategy_state.city_inventory[CITY].iron == 0, "injected enabled order still cannot produce in main game")
 
 	# Isolated campaign dependency and resources; never persisted as world placement.
 	campaign.iron_supply_rules = {campaign.scenario_id: {CITY: {"allowed": true, "placement_confirmed": true}}}
@@ -182,14 +183,13 @@ func run(host: SceneTree) -> void:
 	campaign.gold = 239
 	check(not campaign.request_production_command(CITY, "iron_supply", "build").ok and campaign.gold == 239 and campaign.strategy_state.construction_queues.is_empty(), "construction gold shortage charges nothing")
 	campaign.gold = 1000
-	result = campaign.request_production_command(CITY, "iron_supply", "build")
-	check(result.ok and campaign.gold == 760 and campaign.strategy_state.construction_queues[CITY].remaining_turns == 2, "campaign construction charges existing quote exactly once")
+	result = campaign.request_production_command(CITY, "iron_supply", "build", "", campaign.get_city_officer_ids(CITY)[0])
+	check(result.ok and campaign.gold == 760 and result.required == 600, "campaign construction charges existing quote exactly once")
 	check(not campaign.request_production_command(CITY, "iron_supply", "build").ok and campaign.gold == 760, "repeated build does not charge again")
-	campaign.strategy._process_construction(campaign.strategy_state)
-	campaign.strategy._process_construction(campaign.strategy_state)
+	for n: int in range(1,13): campaign.Industry.process(campaign.strategy_state,campaign.provinces,campaign.year*12+campaign.month+n)
 	campaign.strategy_state.faction_research[FACTION].swordsmithing = 1
 	campaign.strategy_state.province_buildings[CITY].forge = 1
-	for recipe: String in Data.RECIPE_ORDER:
+	for recipe: String in ["iron_supply","iron_sword"]:
 		campaign.request_production_command(CITY, recipe, "start")
 	for index: int in [1, 0, 1, 0]:
 		overlay.recipe_selector.select(index)
@@ -243,17 +243,21 @@ func run(host: SceneTree) -> void:
 	file.store_string(JSON.stringify(saved))
 	file.close()
 	campaign._on_load_button_pressed(path)
-	check(campaign.strategy_state.city_production[CITY].iron_sword == old_sword and not campaign.strategy_state.city_production[CITY].iron_supply.enabled and campaign.strategy_state.production_last_month == MONTH + 1 and campaign.gold == 84 and JSON.stringify(campaign.strategy_state.city_inventory) == inventory, "real previous v4 load adds stopped supply only")
+	check(JSON.parse_string(JSON.stringify(campaign.strategy_state.city_production[CITY].iron_sword)) == old_sword and not campaign.strategy_state.city_production[CITY].iron_supply.enabled and campaign.strategy_state.production_last_month == MONTH + 1 and campaign.gold == 84 and JSON.stringify(campaign.strategy_state.city_inventory) == inventory, "real previous v4 load adds stopped supply only")
 	DirAccess.remove_absolute(path)
 
 	# Actual combat entry points: both player and AI stop orders at capture time.
 	for ai: bool in [false, true]:
-		var source: String = "sabeol"
+		var source: String = "geumgwan"
 		campaign.provinces[source].faction = FACTION
-		campaign.provinces[source].troops = 1000000
+		for city: String in [source,CITY]:
+			for uid: String in campaign.Army.at_city(campaign.strategy_state,city): campaign.Army.casualties(campaign.strategy_state,[uid],int(campaign.Army.units(campaign.strategy_state)[uid].troops),campaign.year*12+campaign.month)
+		campaign.Army.create(campaign.strategy_state,"silla",source,1000000,"infantry",50,1000000,source)
+		campaign.Army.create(campaign.strategy_state,"baekje",CITY,1,"infantry",50,1,CITY)
+		campaign.Army.sync(campaign.strategy_state,campaign.provinces)
 		campaign.provinces[CITY].faction = "백제"
-		campaign.provinces[CITY].troops = 1
-		for recipe: String in Data.RECIPE_ORDER:
+		campaign.provinces[source].food_stock=1000
+		for recipe: String in ["iron_supply","iron_sword"]:
 			campaign.strategy_state.city_production[CITY][recipe] = {"enabled": true, "owner": "백제"}
 		var before_research: String = JSON.stringify(campaign.strategy_state.faction_research)
 		var before_buildings: String = JSON.stringify(campaign.strategy_state.province_buildings)

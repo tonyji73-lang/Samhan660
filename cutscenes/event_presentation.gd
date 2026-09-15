@@ -41,6 +41,12 @@ func setup(host: Node) -> void:
 	catalog = parsed
 	for entry: Dictionary in catalog.get("cutscenes", []):
 		events[str(entry.id)] = entry
+	events["noble_personnel_demand"]={"id":"noble_personnel_demand","requires_choice":true,"importance":"major","steps":[
+		{"mode":"choice","title":"귀족의 인사 요구 · 게임용 정무 사건","text":"{group}의 {candidate}이(가) {position} 자리를 요구합니다. 실제 역사적 반란을 재현하는 사건이 아닙니다.","choices":[
+			{"id":"accept","label":"인사 수락","description":"실제 임명과 기존 담당자 해임","preview":["일반 인사 반응만 적용"]},
+			{"id":"gift","label":"포상으로 타협","description":"직책 유지 · 국고 금100","preview":["충성 +5 / 협력 +6"]},
+			{"id":"reject","label":"요구 거절","description":"국고·직책 유지","preview":["충성 -6 / 협력 -6"]}]},
+		{"mode":"result","title":"정무 결정","results":[{"label":"결과","value":"{result_text}"}],"duration":1.0}]}
 	view = View.new()
 	view.name = "CutsceneView"
 	add_child(view)
@@ -204,6 +210,12 @@ static func substitute(value: Variant, payload: Dictionary) -> Variant:
 func _start_next() -> void:
 	if queue.is_empty():
 		return
+	# Close lower-layer modals before taking a turn/map input snapshot.
+	campaign.production_overlay.hide()
+	for property: String in ["domestic_overlay","recruitment_overlay","industry_overlay", "supply_overlay","army_overlay","politics_overlay"]:
+		var overlay: Variant=campaign.get(property)
+		if overlay!=null: overlay.hide()
+	campaign._close_diplomacy()
 	active = true
 	saved_turn_disabled = campaign.end_turn_button.disabled
 	campaign.end_turn_button.disabled = true

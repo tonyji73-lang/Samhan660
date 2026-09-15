@@ -1,9 +1,12 @@
 extends RefCounted
+const Ending=preload("res://campaign_ending.gd")
+const Army=preload("res://army_readiness.gd")
 
 # 삼한660 장기 전략 백엔드 V2
 # UI와 분리된 순수 데이터 모듈입니다. 모든 상태는 JSON 저장이 가능한 Dictionary/Array로 유지합니다.
 
 const STATE_VERSION: int = 4
+const OfficerRegistry = preload("res://officer_registry.gd")
 const ProductionData = preload("res://production_data.gd")
 const ProductionSystem = preload("res://production_system.gd")
 const IronSupplyData = preload("res://iron_supply_data.gd")
@@ -45,7 +48,7 @@ const RESEARCH_DEFS: Dictionary = {
 	"archery": {"name": "궁술", "max_level": 3, "base_gold": 280, "base_turns": 2, "effect": "궁병 사거리와 집중 사격 강화"},
 	"cavalry": {"name": "기병 전술", "max_level": 3, "base_gold": 300, "base_turns": 2, "effect": "기병 돌격력과 정예 기병 해금"},
 	"naval": {"name": "수군 전술", "max_level": 3, "base_gold": 300, "base_turns": 2, "effect": "수군 전투력과 상륙 작전"},
-	"logistics": {"name": "군량 수송", "max_level": 3, "base_gold": 240, "base_turns": 2, "effect": "행군 군량 절감과 원거리 보급"},
+	"logistics": {"name": "군량 수송", "max_level": 3, "base_gold": 240, "base_turns": 2, "effect": "육상 화물 운송비 단계당 10% 감소 (최대 30%); 장수·호위 비용 포함"},
 	"commerce": {"name": "교역 제도", "max_level": 3, "base_gold": 220, "base_turns": 2, "effect": "교역 수입과 무역 안정성"},
 	"diplomacy": {"name": "외교 제도", "max_level": 3, "base_gold": 240, "base_turns": 2, "effect": "교섭 성공률과 조약 선택지"},
 }
@@ -240,7 +243,8 @@ func create_initial_state(
 	officers: Dictionary,
 	officers_by_province: Dictionary,
 	scenario: Dictionary,
-	current_season_index: int = 0
+	current_season_index: int = 0,
+	apply_start_relations: bool = true
 ) -> Dictionary:
 	var state: Dictionary = {
 		"version": STATE_VERSION,
@@ -253,6 +257,7 @@ func create_initial_state(
 		"faction_research": {},
 		"research_queues": {},
 		"relations": {},
+		"diplomacy_last_action_month": {},
 		"trade_routes": [],
 		"next_trade_route_id": 1,
 		"auto_generation": {"counts_by_year": {}},
@@ -288,7 +293,8 @@ func create_initial_state(
 		for second_index: int in range(first_index + 1, faction_names.size()):
 			var key: String = _relation_key(faction_names[first_index], faction_names[second_index])
 			state["relations"][key] = {"value": 0, "status": "중립", "treaties": []}
-	_apply_historical_start_relations(state, current_year)
+	if apply_start_relations:
+		_apply_historical_start_relations(state, current_year)
 
 	var officer_factions: Dictionary = _map_officer_factions(provinces, officers_by_province)
 	for officer_name_value: Variant in officers.keys():
@@ -316,7 +322,7 @@ func normalize_loaded_state(state: Dictionary, provinces: Dictionary = {}) -> Di
 	for key: String in [
 		"officer_metadata", "emergent_officers", "province_buildings",
 		"construction_queues", "faction_research", "research_queues", "relations",
-		"unit_rosters"
+		"unit_rosters", "diplomacy_last_action_month"
 	]:
 		if typeof(state.get(key, null)) != TYPE_DICTIONARY:
 			state[key] = {}
@@ -331,12 +337,14 @@ func normalize_loaded_state(state: Dictionary, provinces: Dictionary = {}) -> Di
 			int(state.get("created_year", 660)), 0
 		)
 	if not provinces.is_empty():
-		ensure_unit_rosters(state, provinces)
+		if not state.has("army"): pass # Army.initialize migrates untouched old roster after ledger restoration
 	ProductionSystem.normalize_state(state, provinces)
+	OfficerRegistry.bind_dynasty(state)
 	return state
 
 
 func reset_turn_actions(state: Dictionary, current_year: int, season_index: int) -> void:
+	if Ending.finished(state): return
 	state["turn_actions"] = _new_turn_actions(current_year, season_index)
 
 
@@ -373,6 +381,7 @@ func mark_domestic_action(
 	officer_name: String,
 	uses_research_action: bool = false
 ) -> void:
+	if Ending.finished(state): return
 	var actions: Dictionary = state.get("turn_actions", {})
 	var province_used: Dictionary = actions.get("province_used", {})
 	var officer_used: Dictionary = actions.get("officer_used", {})
@@ -386,6 +395,7 @@ func mark_domestic_action(
 
 
 func ensure_unit_rosters(state: Dictionary, provinces: Dictionary) -> void:
+	if state.has("army"): Army.sync(state,provinces); return
 	if typeof(state.get("unit_rosters", null)) != TYPE_DICTIONARY:
 		state["unit_rosters"] = {}
 	for province_id_value: Variant in provinces.keys():
@@ -403,6 +413,7 @@ func ensure_unit_rosters(state: Dictionary, provinces: Dictionary) -> void:
 func reconcile_unit_roster(
 	state: Dictionary, province_id: String, total_troops: int
 ) -> Dictionary:
+	if state.has("army"): return Army.projection(state,province_id)
 	var rosters: Dictionary = state.get("unit_rosters", {})
 	if typeof(rosters.get(province_id, null)) != TYPE_DICTIONARY:
 		rosters[province_id] = _base_unit_roster(total_troops)
@@ -444,13 +455,16 @@ func get_unit_roster(
 ) -> Dictionary:
 	if total_troops >= 0:
 		reconcile_unit_roster(state, province_id, total_troops)
-	var roster: Dictionary = state.get("unit_rosters", {}).get(province_id, {})
+	var roster: Dictionary = Army.projection(state,province_id) if state.has("army") else state.get("unit_rosters", {}).get(province_id, {})
 	return roster.duplicate(true)
 
 
 func get_officer_affinities(
 	state: Dictionary, officer_name: String, officer: Dictionary
 ) -> Dictionary:
+	if state.has("officer_registry"):
+		officer = OfficerRegistry.view(state.officer_registry, officer_name)
+		officer_name = str(officer.get("name", officer_name))
 	if HISTORICAL_AFFINITIES.has(officer_name):
 		return HISTORICAL_AFFINITIES[officer_name].duplicate(true)
 	var result: Dictionary = {
@@ -465,7 +479,7 @@ func get_officer_affinities(
 		),
 	}
 	var metadata: Dictionary = state.get("officer_metadata", {}).get(officer_name, {})
-	if not bool(metadata.get("is_historical", false)):
+	if not bool(officer.get("is_historical", metadata.get("is_historical", false))):
 		for category: String in result.keys():
 			if str(result[category]) in ["S", "A"]:
 				result[category] = "B"
@@ -577,6 +591,8 @@ func get_recruit_quote(
 func recruit_unit(
 	state: Dictionary, province_id: String, quote: Dictionary
 ) -> Dictionary:
+	if Ending.finished(state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"faction_gold_delta":{}}
+	if state.has("army"): return {"ok":false,"reason":"현재 캠페인 모집 명령을 사용하세요."}
 	if not bool(quote.get("ok", false)):
 		return quote
 	if typeof(state.get("unit_rosters", null)) != TYPE_DICTIONARY:
@@ -611,7 +627,7 @@ func recruit_unit(
 func get_best_fielded_unit(
 	state: Dictionary, province_id: String, _faction_name: String
 ) -> Dictionary:
-	var roster: Dictionary = state.get("unit_rosters", {}).get(province_id, {})
+	var roster: Dictionary = Army.projection(state,province_id) if state.has("army") else state.get("unit_rosters", {}).get(province_id, {})
 	var best: Dictionary = {"id": "infantry", "name": "보병", "power": 50, "category": "infantry", "bonus": "기본 병종"}
 	for unit_id_value: Variant in roster.keys():
 		var unit_id: String = str(unit_id_value)
@@ -632,7 +648,7 @@ func get_best_fielded_unit(
 
 
 func get_army_combat_profile(state: Dictionary, province_id: String) -> Dictionary:
-	var roster: Dictionary = state.get("unit_rosters", {}).get(province_id, {})
+	var roster: Dictionary = Army.projection(state,province_id) if state.has("army") else state.get("unit_rosters", {}).get(province_id, {})
 	var total_troops: int = _roster_total(roster)
 	if total_troops <= 0:
 		return {"power": 50, "training": 50, "morale": 50, "troops": 0}
@@ -750,9 +766,11 @@ func process_season(
 	officers_by_province: Dictionary,
 	scenario: Dictionary
 ) -> Dictionary:
+	if Ending.finished(state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"faction_gold_delta":{}}
 	var messages: Array[String] = []
-	messages.append_array(_process_construction(state))
-	messages.append_array(_process_research(state))
+	if not state.has("industry_version"):
+		messages.append_array(_process_construction(state))
+		messages.append_array(_process_research(state))
 	var trade_result: Dictionary = _process_trade(state, provinces)
 	messages.append_array(trade_result.get("messages", []))
 
@@ -777,10 +795,6 @@ func process_season(
 func get_building_quote(state: Dictionary, province_id: String, building_id: String, scenario_id: String = "", supply_rules: Dictionary = IronSupplyData.SCENARIOS) -> Dictionary:
 	if not BUILDING_DEFS.has(building_id):
 		return {"ok": false, "reason": "알 수 없는 건물입니다."}
-	if building_id == "smelter":
-		var reason: String = IronSupplyData.blocked_reason(scenario_id, province_id, supply_rules)
-		if reason != "":
-			return {"ok": false, "reason": reason}
 	if state.get("construction_queues", {}).has(province_id):
 		return {"ok": false, "reason": "이 영지는 이미 건설 중입니다."}
 	var levels: Dictionary = state.get("province_buildings", {}).get(province_id, {})
@@ -808,7 +822,9 @@ func start_building(
 	turns_override: int = -1,
 	scenario_id: String = "", supply_rules: Dictionary = IronSupplyData.SCENARIOS
 ) -> Dictionary:
+	if Ending.finished(state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"faction_gold_delta":{}}
 	var quote: Dictionary = get_building_quote(state, province_id, building_id, scenario_id, supply_rules)
+	if state.has("army"): return {"ok":false,"reason":"현재 캠페인 모집 명령을 사용하세요."}
 	if not bool(quote.get("ok", false)):
 		return quote
 	var remaining_turns: int = int(quote["turns"])
@@ -854,7 +870,9 @@ func start_research(
 	assigned_officer: String = "",
 	turns_override: int = -1
 ) -> Dictionary:
+	if Ending.finished(state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"faction_gold_delta":{}}
 	var quote: Dictionary = get_research_quote(state, faction_name, research_id)
+	if state.has("army"): return {"ok":false,"reason":"현재 캠페인 모집 명령을 사용하세요."}
 	if not bool(quote.get("ok", false)):
 		return quote
 	var remaining_turns: int = int(quote["turns"])
@@ -900,17 +918,60 @@ func get_best_available_unit(state: Dictionary, province_id: String, faction_nam
 	return unlocked[0]
 
 
-func perform_diplomatic_action(
+func get_relation(state: Dictionary, first: String, second: String) -> Dictionary:
+	# Quotes must never create a relationship or mutate a saved treaty array.
+	return state.get("relations", {}).get(_stored_relation_key(state, first, second),
+		{"value": 0, "status": "중립", "treaties": []}).duplicate(true)
+
+
+func get_diplomatic_envoy(
+	state: Dictionary, faction: String, name_value: String, provinces: Dictionary,
+	officers: Dictionary, assignments: Dictionary
+) -> Dictionary:
+	if state.has("officer_registry"):
+		var registry: Dictionary = state.officer_registry
+		var id: String = OfficerRegistry.resolve(registry, name_value)
+		if OfficerRegistry.eligible(registry,id,provinces) and not OfficerRegistry.action_available(registry,id,provinces,"envoy"):
+			return {"ok":false,"reason":"진행 중인 내정 업무를 먼저 완료하거나 취소한 뒤 사절로 보내세요."}
+		if not OfficerRegistry.eligible(registry, id, provinces):
+			return {"ok": false, "reason": "배치된 생존 활동 장수만 사절로 보낼 수 있습니다. 이동 중이거나 미배치 상태입니다."}
+		var envoy: Dictionary = OfficerRegistry.view(registry, id)
+		if envoy.faction != faction:
+			return {"ok": false, "reason": "다른 세력의 장수는 사절로 보낼 수 없습니다."}
+		return {"ok": true, "envoy": envoy}
+	if name_value.is_empty() or not officers.has(name_value):
+		return {"ok": false, "reason": "현재 보유한 사절을 선택하세요."}
+	var assigned: String = ""
+	for id: String in assignments:
+		if assignments[id].has(name_value):
+			if not assigned.is_empty():
+				return {"ok": false, "reason": "장수 배치가 중복되어 사절로 임명할 수 없습니다."}
+			assigned = id
+	if not provinces.has(assigned) or provinces[assigned].get("faction", "") != faction:
+		return {"ok": false, "reason": "현재 통제하는 도시에 소속된 장수만 사절로 보낼 수 있습니다."}
+	var metadata_faction: String = str(state.get("officer_metadata", {}).get(name_value, {}).get("faction", faction))
+	if metadata_faction != faction:
+		return {"ok": false, "reason": "다른 세력의 장수는 사절로 보낼 수 없습니다."}
+	var envoy: Dictionary = officers[name_value].duplicate(true)
+	envoy["name"] = name_value
+	return {"ok": true, "envoy": envoy}
+
+
+func get_diplomatic_action_quote(
 	state: Dictionary,
 	actor_faction: String,
 	target_faction: String,
 	action_id: String,
 	actor: Dictionary,
-	current_year: int
+	current_year: int,
+	current_month: int = 0,
+	available_gold: int = -1,
+	provinces: Dictionary = {},
+	officers: Dictionary = {},
+	assignments: Dictionary = {},
+	active_factions: Array[String] = []
 ) -> Dictionary:
-	if actor_faction == target_faction:
-		return {"ok": false, "reason": "같은 세력에는 외교할 수 없습니다."}
-	var relation: Dictionary = _ensure_relation(state, actor_faction, target_faction)
+	var relation: Dictionary = get_relation(state, actor_faction, target_faction)
 	var relation_value: int = int(relation.get("value", 0))
 	var gold_cost: int = 0
 	var required_relation: int = -100
@@ -925,6 +986,8 @@ func perform_diplomatic_action(
 			required_relation = 10
 			relation_change = 5
 			treaty = "통상 조약"
+		"cancel_trade_pact":
+			relation_change = -10
 		"nonaggression":
 			required_relation = 20
 			relation_change = 8
@@ -938,40 +1001,110 @@ func perform_diplomatic_action(
 		"declare_war":
 			relation_change = -60
 			new_status = "전쟁"
-			relation["treaties"] = []
 		_:
 			return {"ok": false, "reason": "지원하지 않는 외교 행동입니다."}
-	if relation_value < required_relation:
-		return {"ok": false, "reason": "관계도가 부족합니다.", "gold_cost": gold_cost}
-
-	var politics: int = int(actor.get("politics", 50))
-	var intelligence: int = int(actor.get("intelligence", 50))
-	var authority: int = int(actor.get("authority", 50))
+	var envoy: Dictionary = actor
+	var reason: String = ""
+	if actor_faction.is_empty() or target_faction.is_empty() or actor_faction == target_faction:
+		reason = "같은 세력 또는 존재하지 않는 세력에는 외교할 수 없습니다."
+	# month=0 keeps the legacy backend signature usable. Campaign actions always
+	# supply the month, money and authoritative live data; UI stats are ignored.
+	elif current_month != 0:
+		if current_month < 1 or current_month > 12 or available_gold < 0:
+			reason = "외교 월 또는 국가 금 정보가 올바르지 않습니다."
+		elif not active_factions.has(actor_faction) or not active_factions.has(target_faction):
+			reason = "현재 시나리오의 활동 세력에게만 외교할 수 있습니다."
+		else:
+			var checked: Dictionary = get_diplomatic_envoy(state, actor_faction, str(actor.get("name", "")), provinces, officers, assignments)
+			if not checked.ok:
+				reason = checked.reason
+			else:
+				envoy = checked.envoy
+	var politics: int = int(envoy.get("politics", 50))
+	var intelligence: int = int(envoy.get("intelligence", 50))
+	var authority: int = int(envoy.get("authority", 50))
 	@warning_ignore("integer_division")
 	var chance: int = clampi(
 		45 + int((politics + intelligence + authority) / 12) + int(relation_value / 5),
 		15,
 		95
 	)
-	if action_id == "gift" or action_id == "declare_war":
+	if action_id in ["gift", "declare_war", "cancel_trade_pact"]:
 		chance = 100
-	var roll: int = absi(hash("%s:%s:%s:%d" % [actor_faction, target_faction, action_id, current_year])) % 100
+	var monthly: bool = action_id in ["gift", "trade_pact", "cancel_trade_pact"]
+	if reason.is_empty():
+		if action_id in ["gift", "trade_pact"] and relation.get("status", "중립") == "전쟁":
+			reason = "전쟁 중에는 친선·통상협의를 할 수 없습니다."
+		elif action_id == "trade_pact" and relation.get("treaties", []).has("통상 조약"):
+			reason = "이미 통상협정이 체결되어 있습니다."
+		elif action_id == "cancel_trade_pact" and not relation.get("treaties", []).has("통상 조약"):
+			reason = "해지할 통상협정이 없습니다."
+		elif relation_value < required_relation:
+			reason = "관계도 %d 이상이 필요합니다." % required_relation
+		elif available_gold >= 0 and available_gold < gold_cost:
+			reason = "금 %d이 필요합니다." % gold_cost
+		elif monthly and current_month > 0 and int(state.get("diplomacy_last_action_month", {}).get(actor_faction, -1)) == current_year * 12 + current_month:
+			reason = "이번 달 외교 행동을 이미 사용했습니다."
+	return {"ok": reason.is_empty(), "reason": reason, "gold_cost": gold_cost, "chance": chance,
+		"required_relation": required_relation, "relation_change": relation_change,
+		"new_status": new_status, "treaty": treaty, "envoy": envoy.duplicate(true), "monthly": monthly}
+
+
+func diplomatic_roll(actor_faction: String, target_faction: String, action_id: String,
+	envoy_name: String, current_year: int, current_month: int) -> int:
+	if current_month == 0:
+		return absi(hash("%s:%s:%s:%d" % [actor_faction, target_faction, action_id, current_year])) % 100
+	var identity: String = "diplomacy:v1|%s|%s|%s|%s|%d|%d" % [actor_faction, target_faction, action_id, envoy_name, current_year, current_month]
+	return identity.sha256_text().substr(0, 8).hex_to_int() % 100
+
+
+func perform_diplomatic_action(
+	state: Dictionary, actor_faction: String, target_faction: String, action_id: String,
+	actor: Dictionary, current_year: int, current_month: int = 0, available_gold: int = -1,
+	provinces: Dictionary = {}, officers: Dictionary = {}, assignments: Dictionary = {},
+	active_factions: Array[String] = []
+) -> Dictionary:
+	if Ending.finished(state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"faction_gold_delta":{}}
+	var quote: Dictionary = get_diplomatic_action_quote(state, actor_faction, target_faction,
+		action_id, actor, current_year, current_month, available_gold, provinces, officers, assignments, active_factions)
+	if not quote.ok:
+		return {"ok": false, "executed": false, "reason": quote.reason, "gold_cost": 0, "chance": quote.get("chance", 0)}
+	var relation: Dictionary = _ensure_relation(state, actor_faction, target_faction)
+	var relation_value: int = int(relation.get("value", 0))
+	var chance: int = int(quote.chance)
+	var roll: int = diplomatic_roll(actor_faction, target_faction, action_id, str(quote.envoy.get("rng_identity", quote.envoy.get("name", ""))), current_year, current_month)
+	if state.has("officer_registry") and quote.envoy.has("officer_id"):
+		OfficerRegistry.get_person(state.officer_registry,quote.envoy.officer_id)["external_action_month"]=current_year*12+current_month
+	if quote.monthly and current_month > 0:
+		if not state.has("diplomacy_last_action_month"):
+			state["diplomacy_last_action_month"] = {}
+		state.diplomacy_last_action_month[actor_faction] = current_year * 12 + current_month
 	if roll >= chance:
 		relation["value"] = clampi(relation_value - 3, -100, 100)
-		return {"ok": false, "reason": "교섭이 결렬되었습니다.", "gold_cost": gold_cost, "chance": chance}
+		return {"ok": false, "executed": true, "reason": "%s과의 통상협의가 결렬되었습니다." % target_faction if action_id == "trade_pact" else "교섭이 결렬되었습니다.", "gold_cost": quote.gold_cost, "chance": chance, "roll": roll}
 
-	relation["value"] = clampi(relation_value + relation_change, -100, 100)
-	relation["status"] = new_status
+	relation["value"] = clampi(relation_value + int(quote.relation_change), -100, 100)
+	relation["status"] = quote.new_status
 	var treaties: Array = relation.get("treaties", [])
-	if treaty != "" and not treaties.has(treaty):
-		treaties.append(treaty)
+	if action_id == "declare_war":
+		treaties = []
+	elif action_id == "cancel_trade_pact":
+		while treaties.has("통상 조약"):
+			treaties.erase("통상 조약")
+	elif quote.treaty != "" and not treaties.has(quote.treaty):
+		treaties.append(quote.treaty)
 	relation["treaties"] = treaties
+	var messages: Dictionary = {"gift": "%s에 친선 사절을 보냈습니다.", "trade_pact": "%s과 통상협정을 체결했습니다.",
+		"cancel_trade_pact": "%s과의 통상협정을 해지했습니다.", "nonaggression": "%s과 불가침 조약을 체결했습니다.",
+		"alliance": "%s과 동맹을 체결했습니다.", "declare_war": "%s에 전쟁을 선포했습니다."}
 	return {
 		"ok": true,
-		"gold_cost": gold_cost,
+		"executed": true,
+		"gold_cost": quote.gold_cost,
 		"chance": chance,
+		"roll": roll,
 		"relation": relation.duplicate(true),
-		"message": "%s과의 %s 교섭이 성사되었습니다." % [target_faction, action_id],
+		"message": str(messages[action_id]) % target_faction,
 	}
 
 
@@ -983,11 +1116,14 @@ func open_trade_route(
 	destination_id: String,
 	goods: String
 ) -> Dictionary:
-	var relation: Dictionary = _ensure_relation(state, faction_a, faction_b)
+	if Ending.finished(state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"faction_gold_delta":{}}
+	if faction_a == faction_b:
+		return {"ok": false, "reason": "같은 세력의 도시 사이에는 국제 교역로를 개설할 수 없습니다."}
+	var relation: Dictionary = get_relation(state, faction_a, faction_b)
 	if str(relation.get("status", "중립")) == "전쟁":
 		return {"ok": false, "reason": "전쟁 중에는 교역할 수 없습니다."}
-	if int(relation.get("value", 0)) < 10 and not relation.get("treaties", []).has("통상 조약"):
-		return {"ok": false, "reason": "관계도 10 또는 통상 조약이 필요합니다."}
+	if not relation.get("treaties", []).has("통상 조약"):
+		return {"ok": false, "reason": "먼저 상대 세력과 통상협정을 체결해야 합니다."}
 	var buildings: Dictionary = state.get("province_buildings", {})
 	if int(buildings.get(origin_id, {}).get("market", 0)) < 1:
 		return {"ok": false, "reason": "출발 영지에 시장이 필요합니다."}
@@ -1015,6 +1151,10 @@ func arrange_marriage(
 	gender_a: String = "unknown",
 	gender_b: String = "unknown"
 ) -> Dictionary:
+	if Ending.finished(state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"faction_gold_delta":{}}
+	if state.has("officer_registry"):
+		person_a = OfficerRegistry.resolve(state.officer_registry, person_a)
+		person_b = OfficerRegistry.resolve(state.officer_registry, person_b)
 	var people: Dictionary = state.get("dynasty", {}).get("people", {})
 	if not people.has(person_a) or not people.has(person_b):
 		return {"ok": false, "reason": "가문 인물 정보가 없습니다."}
@@ -1035,9 +1175,13 @@ func arrange_marriage(
 	state["dynasty"]["marriages"].append({
 		"person_a": person_a, "person_b": person_b, "year": current_year,
 		"last_birth_year": -999,
+		"legacy_rng_pair": [first.name, second.name],
 	})
 	var faction_a: String = str(first.get("faction", ""))
 	var faction_b: String = str(second.get("faction", ""))
+	if state.has("officer_registry"):
+		faction_a = OfficerRegistry.faction_name(state.officer_registry, first)
+		faction_b = OfficerRegistry.faction_name(state.officer_registry, second)
 	if faction_a != "" and faction_b != "" and faction_a != faction_b:
 		var relation: Dictionary = _ensure_relation(state, faction_a, faction_b)
 		relation["value"] = clampi(int(relation.get("value", 0)) + 15, -100, 100)
@@ -1051,6 +1195,7 @@ func arrange_marriage(
 func set_child_education(
 	state: Dictionary, child_id: String, education_id: String, mentor_name: String = ""
 ) -> Dictionary:
+	if Ending.finished(state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"faction_gold_delta":{}}
 	if not EDUCATION_PATHS.has(education_id):
 		return {"ok": false, "reason": "알 수 없는 교육 과정입니다."}
 	var children: Dictionary = state.get("dynasty", {}).get("children", {})
@@ -1061,6 +1206,8 @@ func set_child_education(
 		return {"ok": false, "reason": "이미 성인이 된 인물입니다."}
 	child["education"] = education_id
 	child["mentor"] = mentor_name
+	if state.has("officer_registry"):
+		child["mentor"] = OfficerRegistry.resolve(state.officer_registry, mentor_name)
 	children[child_id] = child
 	return {"ok": true, "message": "%s의 교육을 %s으로 정했습니다." % [child["name"], EDUCATION_PATHS[education_id]["name"]]}
 
@@ -1072,6 +1219,9 @@ func auto_fill_officer_shortages(
 	officers_by_province: Dictionary,
 	scenario: Dictionary
 ) -> Array[String]:
+	if Ending.finished(state): return []
+	if state.has("officer_registry"):
+		return _registry_auto_fill(state, current_year, provinces, scenario)
 	var messages: Array[String] = []
 	var faction_provinces: Dictionary = _group_provinces_by_faction(provinces)
 	var counts_by_year: Dictionary = state["auto_generation"].get("counts_by_year", {})
@@ -1118,6 +1268,8 @@ func auto_fill_officer_shortages(
 
 
 func is_faction_screen_eligible(state: Dictionary, officer_name: String) -> bool:
+	if state.has("officer_registry"):
+		return OfficerRegistry.get_person(state.officer_registry, officer_name).get("origin", "") == "historical"
 	var metadata: Dictionary = state.get("officer_metadata", {}).get(officer_name, {})
 	return bool(metadata.get("is_historical", false)) and bool(metadata.get("faction_screen_eligible", false))
 
@@ -1135,6 +1287,7 @@ func _process_construction(state: Dictionary) -> Array[String]:
 	for province_id_value: Variant in queues.keys().duplicate():
 		var province_id: String = str(province_id_value)
 		var queue: Dictionary = queues[province_id]
+		if queue.has("industry_job_id"): continue
 		queue["remaining_turns"] = int(queue.get("remaining_turns", 1)) - 1
 		if int(queue["remaining_turns"]) > 0:
 			queues[province_id] = queue
@@ -1154,6 +1307,7 @@ func _process_research(state: Dictionary) -> Array[String]:
 	for faction_name_value: Variant in queues.keys().duplicate():
 		var faction_name: String = str(faction_name_value)
 		var queue: Dictionary = queues[faction_name]
+		if queue.has("industry_job_id"): continue
 		queue["remaining_turns"] = int(queue.get("remaining_turns", 1)) - 1
 		if int(queue["remaining_turns"]) > 0:
 			queues[faction_name] = queue
@@ -1180,9 +1334,10 @@ func _process_trade(state: Dictionary, provinces: Dictionary) -> Dictionary:
 		var destination_id: String = str(route.get("destination_id", ""))
 		if not provinces.has(origin_id) or not provinces.has(destination_id):
 			continue
-		var relation: Dictionary = _ensure_relation(state, str(route["faction_a"]), str(route["faction_b"]))
-		if str(relation.get("status", "중립")) == "전쟁":
+		var relation: Dictionary = get_relation(state, str(route["faction_a"]), str(route["faction_b"]))
+		if str(route["faction_a"]) == str(route["faction_b"]) or str(relation.get("status", "중립")) == "전쟁" or not relation.get("treaties", []).has("통상 조약"):
 			continue
+		relation = _ensure_relation(state, str(route["faction_a"]), str(route["faction_b"]))
 		var buildings: Dictionary = state.get("province_buildings", {})
 		var market_level: int = int(buildings.get(origin_id, {}).get("market", 0)) + int(buildings.get(destination_id, {}).get("market", 0))
 		var commerce_value: int = int(provinces[origin_id].get("commerce", 50)) + int(provinces[destination_id].get("commerce", 50))
@@ -1205,6 +1360,8 @@ func _process_dynasty_year(
 	officers_by_province: Dictionary,
 	scenario: Dictionary
 ) -> Array[String]:
+	if state.has("officer_registry"):
+		return _registry_dynasty_year(state, current_year, provinces, scenario)
 	var messages: Array[String] = []
 	var dynasty: Dictionary = state["dynasty"]
 	var children: Dictionary = dynasty.get("children", {})
@@ -1296,6 +1453,8 @@ func _apply_child_growth(state: Dictionary, child: Dictionary) -> void:
 	var mentor_bonus: int = 0
 	var mentor_name: String = str(child.get("mentor", ""))
 	var mentor: Dictionary = state.get("emergent_officers", {}).get(mentor_name, {})
+	if state.has("officer_registry"):
+		mentor = OfficerRegistry.get_person(state.officer_registry, mentor_name).get("stats", {})
 	if mentor.is_empty() and state.get("dynasty", {}).get("people", {}).has(mentor_name):
 		mentor = state["dynasty"]["people"][mentor_name].get("stats", {})
 	if not mentor.is_empty():
@@ -1356,6 +1515,101 @@ func _adult_officer_from_child(child: Dictionary, current_year: int) -> Dictiona
 	}
 
 
+func _registry_auto_fill(state: Dictionary, current_year: int, provinces: Dictionary, scenario: Dictionary) -> Array[String]:
+	var r: Dictionary = state.officer_registry
+	var messages: Array[String] = []
+	var grouped: Dictionary = _group_provinces_by_faction(provinces)
+	var capitals: Dictionary = _get_capitals_by_faction(provinces, scenario)
+	var counts: Dictionary = state.auto_generation.get("counts_by_year", {})
+	var key: String = str(current_year)
+	if not counts.has(key): counts[key] = {}
+	for faction: String in grouped:
+		# A city owner outside the prepared scenario does not create a new faction.
+		if OfficerRegistry.faction_id(r, faction).is_empty(): continue
+		var city_ids: Array = grouped[faction]
+		var assignments: Dictionary = OfficerRegistry.assignments(r)
+		var active_count: int = 0
+		for city: String in city_ids:
+			for id: String in assignments.get(city, []):
+				if OfficerRegistry.eligible(r,id,provinces,city): active_count += 1
+		var shortage: int = maxi(0, maxi(2, city_ids.size() + 1) - active_count)
+		var already: int = int(counts[key].get(faction, 0))
+		var allowed: int = maxi(0, mini(shortage, MAX_AUTO_OFFICERS_PER_FACTION_YEAR - already))
+		for n: int in range(allowed):
+			var city: String = _pick_generation_province(city_ids, OfficerRegistry.assignments(r), str(capitals.get(faction,"")))
+			var officer: Dictionary = _generate_ordinary_officer(state,faction,current_year,already+n)
+			OfficerRegistry.register_generated(r,officer,faction,city)
+			messages.append("%s에서 보조 인재 %s을 등용했습니다." % [provinces[city].name,officer.name])
+		counts[key][faction] = already + allowed
+	state.auto_generation.counts_by_year = counts
+	OfficerRegistry.bind_dynasty(state)
+	return messages
+
+
+func _registry_dynasty_year(state: Dictionary, current_year: int, provinces: Dictionary, scenario: Dictionary) -> Array[String]:
+	var r: Dictionary = state.officer_registry
+	var messages: Array[String] = []
+	var dynasty: Dictionary = state.dynasty
+	var capitals: Dictionary = _get_capitals_by_faction(provinces,scenario)
+	for child_id: String in dynasty.children:
+		var child: Dictionary = dynasty.children[child_id]
+		if child.get("adult",false): continue
+		var id: String = str(child.get("officer_id", "dynastic:"+child_id))
+		if not r.people.has(id):
+			OfficerRegistry.register_generated(r,child,str(child.get("faction","")),"","dynastic",id)
+			child["officer_id"] = id
+			r.people[id].active = false
+		var person: Dictionary = r.people[id]
+		child["stats"] = person.stats
+		var age: int = current_year - int(child.get("birth_year", current_year))
+		child["age"] = age
+		if age >= 6 and age < ADULT_AGE: _apply_child_growth(state,child)
+		if age >= ADULT_AGE:
+			child["adult"] = true
+			var adult: Dictionary = _adult_officer_from_child(child,current_year)
+			OfficerRegistry.set_stats(r,id,adult)
+			person.active = true
+			person.origin = "dynastic"
+			person["quality_tier"] = "heir"
+			var faction: String = OfficerRegistry.faction_name(r,person)
+			var destination: String = str(capitals.get(faction,""))
+			if not provinces.has(destination) or provinces[destination].faction != faction:
+				destination = _first_faction_province(provinces,faction)
+			OfficerRegistry.set_location(r,id,destination)
+			messages.append("%s이 만 16세가 되어 성인 장수로 출사했습니다." % person.name)
+	for marriage: Dictionary in dynasty.marriages:
+		if current_year - int(marriage.get("last_birth_year",-999)) < 2: continue
+		var a: String = str(marriage.get("person_a",""))
+		var b: String = str(marriage.get("person_b",""))
+		var first: Dictionary = OfficerRegistry.get_person(r,a)
+		var second: Dictionary = OfficerRegistry.get_person(r,b)
+		if first.is_empty() or second.is_empty() or not first.alive or not second.alive: continue
+		if not _couple_can_have_child(first,second,current_year): continue
+		if _count_couple_children(dynasty.children,a,b) >= 4: continue
+		var birth_identity: Array = marriage.get("legacy_rng_pair",[first.name,second.name])
+		if absi(hash("birth:%s:%s:%d" % [birth_identity[0],birth_identity[1],current_year])) % 100 >= 22: continue
+		var first_input: Dictionary = first.duplicate(true)
+		var second_input: Dictionary = second.duplicate(true)
+		first_input["faction"] = OfficerRegistry.faction_name(r,first)
+		second_input["faction"] = OfficerRegistry.faction_name(r,second)
+		var newborn: Dictionary = _create_child(state,first_input,second_input,current_year)
+		newborn.parent_a = a
+		newborn.parent_b = b
+		var id: String = "dynastic:" + str(newborn.id)
+		OfficerRegistry.register_generated(r,newborn,first_input.faction,"","dynastic",id)
+		newborn["officer_id"] = id
+		r.people[id].active = false
+		r.people[id].parents = [a,b]
+		newborn.stats = r.people[id].stats
+		dynasty.children[newborn.id] = newborn
+		first.children.append(id)
+		second.children.append(id)
+		marriage.last_birth_year = current_year
+		messages.append("%s 가문에 자녀 %s이 태어났습니다." % [first.name,newborn.name])
+	OfficerRegistry.bind_dynasty(state)
+	return messages
+
+
 func _generate_ordinary_officer(state: Dictionary, faction_name: String, current_year: int, generation_index: int) -> Dictionary:
 	var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 	rng.seed = absi(hash("generated:%s:%d:%d" % [faction_name, current_year, generation_index]))
@@ -1406,7 +1660,10 @@ func _generate_unique_name(state: Dictionary, faction_name: String, current_year
 		var given_index: int = int(seed_value / maxi(1, surnames.size())) % given_names.size()
 		var given_name: String = str(given_names[given_index])
 		var candidate: String = surname + given_name
-		if not used.has(candidate) and not state.get("emergent_officers", {}).has(candidate):
+		var registry_name_used: bool = false
+		for person: Dictionary in state.get("officer_registry", {}).get("people", {}).values():
+			registry_name_used = registry_name_used or person.name == candidate
+		if not registry_name_used and not used.has(candidate) and not state.get("emergent_officers", {}).has(candidate):
 			return candidate
 	return "%s 인재%d" % [faction_name, salt + 1]
 
@@ -1514,13 +1771,26 @@ func _unit_matches_faction(unit: Dictionary, faction_name: String) -> bool:
 
 
 func _relation_key(first: String, second: String) -> String:
-	var names: Array[String] = [first, second]
+	# Raw scenarios use the old Yamato label; prepared scenarios use the current
+	# label. They identify one faction, not two relationship ledgers.
+	var names: Array[String] = [
+		"왜(야마토 조정)" if first == "왜(야마토)" else first,
+		"왜(야마토 조정)" if second == "왜(야마토)" else second,
+	]
 	names.sort()
 	return "%s|%s" % [names[0], names[1]]
 
 
+func _stored_relation_key(state: Dictionary, first: String, second: String) -> String:
+	var canonical: String = _relation_key(first, second)
+	if state.get("relations", {}).has(canonical):
+		return canonical
+	var legacy: String = canonical.replace("왜(야마토 조정)", "왜(야마토)")
+	return legacy if state.get("relations", {}).has(legacy) else canonical
+
+
 func _ensure_relation(state: Dictionary, first: String, second: String) -> Dictionary:
-	var key: String = _relation_key(first, second)
+	var key: String = _stored_relation_key(state, first, second)
 	if not state["relations"].has(key):
 		state["relations"][key] = {"value": 0, "status": "중립", "treaties": []}
 	return state["relations"][key]

@@ -539,6 +539,7 @@ var map_zoom: float = MAP_MIN_ZOOM
 var map_pan_offset: Vector2 = Vector2.ZERO
 var map_dragging: bool = false
 var cutscene_input_locked: bool = false
+var modal_input_locked: bool = false
 var map_drag_last_position: Vector2 = Vector2.ZERO
 var refresh_elapsed: float = 0.0
 var floating_city_card: Control
@@ -1527,7 +1528,7 @@ func _on_marker_hover_changed(
 
 
 func _on_map_gui_input(event: InputEvent) -> void:
-	if cutscene_input_locked:
+	if cutscene_input_locked or modal_input_locked:
 		return
 	if event is InputEventMouseButton:
 		var mouse_event: InputEventMouseButton = (
@@ -1573,7 +1574,7 @@ func _on_map_gui_input(event: InputEvent) -> void:
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
-	if cutscene_input_locked:
+	if cutscene_input_locked or modal_input_locked:
 		return
 	if (
 		event.is_action_pressed("ui_cancel")

@@ -18,6 +18,8 @@ var catalog_label: Label
 var scroll_container: ScrollContainer
 var extra_research_buttons: VBoxContainer
 var extra_building_buttons: VBoxContainer
+var industry_button: Button
+var manager_button: Button
 
 
 func _ready() -> void:
@@ -58,7 +60,7 @@ func _ready() -> void:
 	header.add_child(close_button)
 	recipe_selector = OptionButton.new()
 	for id: String in Data.RECIPE_ORDER:
-		recipe_selector.add_item("철 공급" if id == "iron_supply" else "칼 제작")
+		recipe_selector.add_item(str(Data.RECIPES[id].name))
 		recipe_selector.set_item_metadata(recipe_selector.item_count - 1, id)
 	recipe_selector.select(Data.RECIPE_ORDER.find(selected_recipe_id))
 	recipe_selector.item_selected.connect(_on_recipe_selected)
@@ -79,6 +81,8 @@ func _ready() -> void:
 	details = Label.new()
 	details.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	body.add_child(details)
+	industry_button=_button(body,"건설·연구 업무 관리",func(): campaign.open_industry(province_id,"build","forge"))
+	manager_button=_button(body,"도시 생산 담당자 배정·변경",func(): campaign.open_industry(province_id,"production",""))
 	research_button = _button(body, "", _research)
 	extra_research_buttons = VBoxContainer.new()
 	body.add_child(extra_research_buttons)
@@ -134,15 +138,26 @@ func refresh() -> void:
 		lines.append("%s (%s): %d" % [item["name"], Data.ITEM_CATEGORIES[item["category"]], int(model["inventory"].get(item_id, 0))])
 	lines.append("\n생산법: %s" % recipe["name"])
 	lines.append("월 예상 투입: %s · 운영비 금 %d" % [_items_text(recipe["inputs"]), recipe["operating_gold"]])
-	lines.append("월 예상 산출: %s" % _items_text(recipe["outputs"]))
+	lines.append("월 예상 산출: %s" % _items_text(recipe["outputs"])); lines.append(str(recipe.get("description","")))
 	lines.append("\n필요 기술: %s" % model["research_status"])
 	lines.append("필요 시설: %s" % model["building_status"])
 	lines.append("\n생산 설정: %s · 최근 처리: %s" % ["가동" if model["enabled"] else "중지", model["status"]])
 	if str(model["last_reason"]) != "":
 		lines.append("최근 보류 이유: %s" % model["last_reason"])
 	lines.append("현재 조건: %s" % ("충족 — 다음 월 정산 시 생산" if model["reason"] == "" else model["reason"]))
-	lines.append("\n생산은 턴 종료 후 월 1회 처리합니다. 연구·건설은 기존 계절 전환 때 진행되며, 완공·연구 완료 후 다음 월부터 생산에 적용됩니다.")
-	lines.append("%s\n재료 부족 시 칼 제작을 보류합니다." % model["supply_notice"])
+	lines.append("\n건설·연구는 담당자 능력에 따라 매월 진행합니다. 그달 완료된 시설·기술을 적용한 뒤 생산합니다. 시설별 작업량 100당 1배치이며 추가 배치도 금·재료를 전액 지불합니다.")
+	var facility: String=campaign.Industry.FACILITY_BY_RECIPE.get(selected_recipe_id,"")
+	var forecast: Dictionary=campaign.ProductionSystem.city_quote(campaign.strategy_state,campaign.provinces,province_id,campaign.year*12+campaign.month+1,campaign.scenario_id,campaign.iron_supply_rules)[facility]
+	var manager: Dictionary=campaign.Industry.active(campaign.strategy_state,"production",province_id,campaign.player_faction_id)
+	if not manager.is_empty():
+		var person: Dictionary=campaign.get_officer(str(manager.officer_id))
+		var groups: Dictionary=campaign.officer_registry.get("politics",{}).get("groups",{})
+		var group: Dictionary=groups.get(str(person.get("political_group_id","")),{})
+		if not group.is_empty() and not group.get("royal",false):
+			lines.append("담당 %s · %s 협력 %d · 능력 작업량에 정치 보정 ×%.3f를 한 번 적용" % [person.name,group.name,group.cooperation,campaign.OfficerRegistry.Politics.multiplier(campaign.strategy_state,manager.officer_id)])
+	lines.append("시설 월 작업량 %d · 잔여 %d/100 · 선행 공정 반영 예상 %d배치 · 금 %d\n%s" % [forecast.work,forecast.remainder_before,forecast.batches.size(),forecast.gold_cost,forecast.reason])
+	lines.append("지역 공급 안내 (공통 조달과 별개): " + str(model["supply_notice"]))
+	lines.append("지역 철 공급 금6 / 철2 · 공통 조달 금18 / 철2 · 같은 제철시설 작업량 공유. 재료 부족 시 제작 보류.")
 	if selected_recipe_id == "iron_supply":
 		lines.append("원료 채취·조달, 선광·배소, 목탄 조달, 제련·정련을 추상화합니다. 별도 철광석·숯 재고는 없습니다.")
 		lines.append(str(model["evidence"]))
@@ -227,6 +242,12 @@ func _items_text(items: Dictionary) -> String:
 
 
 func _command(action: String, requirement_id: String = "") -> void:
+	if action in ["build","research"]:
+		if not Data.RECIPES[selected_recipe_id]["buildings" if action=="build" else "research"].has(requirement_id):
+			result_label.text="필요 조건이 아니거나 이미 모든 요구 단계를 충족했습니다."
+			return
+		campaign.open_industry(province_id,action,requirement_id)
+		return
 	var result: Dictionary = campaign.call("request_production_command", province_id, selected_recipe_id, action, requirement_id)
 	result_label.text = str(result.get("message", result.get("reason", "")))
 	refresh()

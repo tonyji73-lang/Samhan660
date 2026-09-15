@@ -130,10 +130,10 @@ func campaign_case(scenario: Dictionary, player_id: String) -> void:
 	var template: Dictionary = Korea.get_province_templates()[CITY]
 	var fields_unchanged: bool = true
 	for key: String in template:
-		if key != "faction":
+		if key not in ["faction", "governor", "generals"]:
 			fields_unchanged = fields_unchanged and campaign.provinces[CITY].get(key) == template[key]
-	check(fields_unchanged, label + ": city name, troops, stats, grain and governor retained")
-	check(campaign.provinces[CITY].governor == "금관가야 수장" and campaign.officers_by_province.get(CITY, []).is_empty(), label + ": existing generic governor retained; no historical officer assigned")
+	check(fields_unchanged, label + ": city name, troops, stats and grain retained")
+	check(campaign.get_governor_id(CITY).is_empty() and campaign.provinces[CITY].governor == "태수 없음" and campaign.officers_by_province.get(CITY, []).is_empty(), label + ": registry exposes unstaffed city without inventing a historical governor")
 	campaign.select_province(CITY)
 	await process_frame
 	await process_frame
@@ -148,9 +148,13 @@ func campaign_case(scenario: Dictionary, player_id: String) -> void:
 	var pilot: bool = int(scenario.year) in [632, 642]
 	check(int(buildings.get("smelter", 0)) == 0 and campaign.strategy_state.city_inventory[CITY].iron == 0 and int(campaign.strategy_state.faction_research[SILLA].get("basic_smelting", 0)) == (1 if pilot else 0), label + ": no iron/smelter granted; starting technology follows pilot policy")
 	var gold_before: int = campaign.gold
+	var staff: String=""
+	if owned:
+		staff=campaign.get_city_officer_ids("geumseong")[0]
+		campaign.OfficerRegistry.set_location(campaign.officer_registry,staff,CITY)
 	for action: String in ["start", "build"]:
-		var result: Dictionary = campaign.request_production_command(CITY, "iron_supply", action)
-		if pilot and owned:
+		var result: Dictionary = campaign.request_production_command(CITY, "iron_supply", action,"",staff)
+		if owned and (pilot or action=="build"):
 			check(result.ok and campaign.gold == gold_before - (240 if action == "build" else 0), label + ": pilot supply " + action + " uses ordinary cost")
 		else:
 			check(not result.ok and (not owned or str(result.reason).contains("지역 철 공급 미허용")) and campaign.gold == gold_before, label + ": supply " + action + " remains blocked without charge")
