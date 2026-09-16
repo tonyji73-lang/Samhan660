@@ -93,7 +93,7 @@ func _run() -> void:
 		Production.process_all(c.strategy_state,c.provinces,stamp(),c.scenario_id,c.iron_supply_rules)
 		check(canonical(c.strategy_state)==snap,"political production monthly idempotence")
 	for scenario: Dictionary in Scenarios.SCENARIOS:
-		if scenario.year==632: continue
+		if scenario.year in [632,642]: continue
 		await start(scenario,"silla","historical")
 		check(not c.officer_registry.has("politics"),"non-enabled scenario unchanged "+str(scenario.year))
 	await audit_supply()

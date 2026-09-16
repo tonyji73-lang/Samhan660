@@ -4,15 +4,22 @@ const GROUPS={
 	"silla:royal":{"name":"왕실 직속","representative":"historical:001","members":["historical:001"],"royal":true},
 	"silla:civil":{"name":"중앙 귀족 연합","representative":"historical:003","members":["historical:003","historical:002"],"royal":false},
 	"silla:military":{"name":"군사 귀족 연합","representative":"historical:004","members":["historical:004","historical:006"],"royal":false}}
+const GROUPS_642={
+	"silla:royal":{"name":"왕실 직속","representative":"historical:001","members":["historical:001"],"royal":true},
+	"silla:civil":{"name":"문치 귀족 연합","representative":"historical:003","members":["historical:003","historical:002"],"royal":false},
+	"silla:military":{"name":"군사 귀족 연합","representative":"historical:004","members":["historical:004","historical:006","historical:008"],"royal":false}}
+const SCENARIO_GROUPS={"silla_equilibrium_632":GROUPS,"goguryeo_coup_642":GROUPS_642}
 static func initialize(r: Dictionary, scenario: String, stamp: int) -> void:
-	if r.has("politics") or scenario!="silla_equilibrium_632": return
+	# Called only by new-campaign initialization. Loading an old save never opts it in.
+	if r.has("politics") or not SCENARIO_GROUPS.has(scenario): return
+	var configured: Dictionary=SCENARIO_GROUPS[scenario]
 	var db: Dictionary={"version":1,"faction_id":"silla","groups":{},"history":[],"last_positive":{},"last_demands":{},"last_national":-10000,"pending":{},"resolved":{},"next_id":1,"ai_log":[],"initialized_month":stamp}
-	for key: String in GROUPS:
-		var g: Dictionary=GROUPS[key].duplicate(true); g["id"]=key; g["faction_id"]="silla"; g["cooperation"]=int(RULES.initial_cooperation); g["history"]=[]
+	for key: String in configured:
+		var g: Dictionary=configured[key].duplicate(true); g["id"]=key; g["faction_id"]="silla"; g["cooperation"]=int(RULES.initial_cooperation); g["history"]=[]
 		g["description"]="기존 인물만 묶은 게임용 정치 연합입니다. 역사적으로 확인된 파벌·가문 소속을 뜻하지 않습니다."
-		g["basis"]="632 explicit game coalition v1; existing identities and family links unchanged"
+		g["basis"]=("642" if scenario=="goguryeo_coup_642" else "632")+" explicit game coalition v1; existing identities and family links unchanged"
 		g.members=[]
-		for id: String in GROUPS[key].members:
+		for id: String in configured[key].members:
 			var p: Dictionary=r.people.get(id,{})
 			if p.is_empty() or p.faction_id!="silla" or not p.active or not p.alive: continue
 			if not str(p.get("political_group_id","")).is_empty(): continue

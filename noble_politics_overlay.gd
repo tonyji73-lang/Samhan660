@@ -46,7 +46,7 @@ func refresh() -> void:
 	if not r.has("politics") or r.politics.faction_id!=campaign.player_faction_id:
 		details.text="이 국가·시나리오에는 정치집단 초기 설정을 아직 적용하지 않았습니다. 기존 인사 기능은 유지됩니다."; return
 	var power: Dictionary=Core.influence(campaign.strategy_state,campaign.provinces,campaign.player_faction_id)
-	var lines: Array[String]=["집단은 국가·가문과 별개인 게임용 정치 연합입니다. 미배정 기반은 왕실 직할로 계산하지 않습니다."]
+	var lines: Array[String]=["집단은 게임용 정치 연합이며 역사적으로 확정된 파벌·가문 소속을 뜻하지 않습니다. 미배정 기반은 왕실 직할로 계산하지 않습니다."]
 	for gid: String in r.politics.groups:
 		var g: Dictionary=r.politics.groups[gid]; var row: Dictionary=power.groups[gid]; var members: Array[String]=[]; var cities: Array[String]=[]
 		for id: String in g.members:
