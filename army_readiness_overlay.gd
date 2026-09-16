@@ -61,6 +61,9 @@ func open(c: Node,city_id: String) -> void:
 func id() -> String: return str(selector.get_item_metadata(selector.selected)) if selector.selected>=0 else ""
 func officer() -> String: return str(officers.get_item_metadata(officers.selected)) if officers.selected>=0 else ""
 func rebuild(selected: String="") -> void:
+	# A completed command refreshes the roster; keep its selected trainer so the
+	# next-month quote still describes the officer the player actually chose.
+	var selected_officer: String=officer()
 	selector.clear(); join_selector.clear(); officers.clear(); destination.clear()
 	for uid: String in Army.at_city(campaign.strategy_state,city,campaign.player_faction_id):
 		var u: Dictionary=Army.units(campaign.strategy_state)[uid]
@@ -71,6 +74,7 @@ func rebuild(selected: String="") -> void:
 	for oid: String in campaign.get_city_officer_ids(city):
 		var p: Dictionary=campaign.get_officer(oid)
 		officers.add_item("%s · 통솔 %d / 무력 %d" % [p.name,p.leadership,p.war]); officers.set_item_metadata(officers.item_count-1,oid)
+		if oid==selected_officer: officers.select(officers.item_count-1)
 	for target: String in campaign.province_connections.get(city,[]):
 		if campaign.provinces[target].faction==campaign.player_faction: destination.add_item(campaign.provinces[target].name); destination.set_item_metadata(destination.item_count-1,target)
 	refresh()
