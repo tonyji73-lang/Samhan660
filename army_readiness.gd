@@ -1,4 +1,5 @@
 extends RefCounted
+const Merit=preload("res://battle_merit.gd")
 const Power=preload("res://noble_power_constraints.gd")
 const Ending=preload("res://campaign_ending.gd")
 const Economy=preload("res://faction_economy.gd")
@@ -248,9 +249,10 @@ static func take(state: Dictionary, city: String, amount: int, faction: String, 
 		if left<=0: break
 		var n: int=mini(left,int(units(state)[id].troops)); var part: String=divide(state,id,n); result.append(part); left-=n
 	return result
-static func combat(state: Dictionary, provinces: Dictionary, source: String, target: String, attack_leadership: int, defend_leadership: int, stamp: int) -> Dictionary:
+static func combat(state: Dictionary, provinces: Dictionary, source: String, target: String, attack_leadership: int, defend_leadership: int, stamp: int, attack_officer: String="", defend_officer: String="") -> Dictionary:
 	if Ending.finished(state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"gold_spent":0}
 	var faction: String=Economy.resolve(state,str(provinces[source].faction))
+	var defending_faction: String=Economy.resolve(state,str(provinces[target].faction))
 	var attackers: Array=attack_units(state,source,faction); var defenders: Array=at_city(state,target)
 	if attackers.is_empty(): return {"ok":false,"executed":false,"won":false,"reason":"출정 가능한 부대가 없습니다.","messages":[],"gold_spent":0}
 	var attacker_state: Array=[]; var defender_state: Array=[]
@@ -270,6 +272,8 @@ static func combat(state: Dictionary, provinces: Dictionary, source: String, tar
 		provinces[target].faction=provinces[source].faction
 	sync(state,provinces)
 	var result: Dictionary={"attacker_troops":a,"defender_troops":d,"attacker_power":ap,"defender_power":dp,"attacker_losses":al,"defender_losses":dl,"won":won,"source":source,"target":target,"month":stamp,"attack_units":attackers,"defend_units":defenders,"attacker_state":attacker_state,"defender_state":defender_state,"attacker_leadership":attack_leadership,"defender_leadership":defend_leadership,"fortress":int(provinces[target].fortress)}
+	result["attacker_faction"]=faction; result["defender_faction"]=defending_faction
+	Merit.record(state,result,[attack_officer,defend_officer])
 	state.army.battles.append(result.duplicate(true)); return result
 static func ai(state: Dictionary, provinces: Dictionary, faction: String, stamp: int, recruitment_reserve: int=0) -> void:
 	if Ending.finished(state): return

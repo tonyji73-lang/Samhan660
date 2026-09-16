@@ -1,6 +1,8 @@
 extends Control
 const Core=preload("res://noble_politics.gd")
 const Personnel=preload("res://noble_personnel.gd")
+const Merit=preload("res://battle_merit.gd")
+var history_people: OptionButton
 var campaign: Node
 var targets: OptionButton
 var people: OptionButton
@@ -16,6 +18,8 @@ func _ready() -> void:
 	var style:=StyleBoxFlat.new(); style.bg_color=Color("231f18"); style.set_content_margin_all(16); panel.add_theme_stylebox_override("panel",style)
 	var box:=VBoxContainer.new(); panel.add_child(box)
 	result=Label.new(); result.text="귀족·군권·인사정치"; box.add_child(result)
+	history_people=OptionButton.new(); box.add_child(history_people)
+	history_people.item_selected.connect(func(_n): refresh())
 	var scroll:=ScrollContainer.new(); scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL; box.add_child(scroll)
 	details=Label.new(); details.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; details.size_flags_horizontal=Control.SIZE_EXPAND_FILL; scroll.add_child(details)
 	targets=OptionButton.new(); box.add_child(targets); targets.item_selected.connect(func(_n): populate())
@@ -26,6 +30,12 @@ func _ready() -> void:
 	add_theme_font_size_override("font_size",20); hide()
 func open(c: Node) -> void:
 	campaign=c; targets.clear(); show()
+	history_people.clear(); history_people.add_item("인물별 참전·포상 이력 선택"); history_people.set_item_metadata(0,"")
+	for id: String in c.officer_registry.people:
+		var person: Dictionary=c.officer_registry.people[id]
+		var served: bool=c.strategy_state.get("army",{}).get("battles",[]).any(func(row): return Merit.participant(row,id).get("faction_id","")==c.player_faction_id)
+		if (person.faction_id==c.player_faction_id and person.active) or served:
+			history_people.add_item(person.name); history_people.set_item_metadata(history_people.item_count-1,id)
 	for city: String in c.Economy.city_ids(c.strategy_state,c.provinces):
 		if c.provinces[city].faction!=c.player_faction: continue
 		targets.add_item(c.provinces[city].name+" 태수"); targets.set_item_metadata(targets.item_count-1,{"kind":"governor","target":city,"city":city})
@@ -60,6 +70,9 @@ func refresh() -> void:
 	for n: int in range(maxi(0,r.politics.history.size()-4),r.politics.history.size()):
 		var h: Dictionary=r.politics.history[n]; lines.append("%s · %s · 충성%d→%d / 협력%d→%d" % [campaign.get_officer(h.officer_id).name,h.reason,h.loyalty_before,h.loyalty_after,h.cooperation_before,h.cooperation_after])
 	lines.append(campaign.Power.summary(campaign.strategy_state))
+	if history_people.selected>0:
+		var id: String=str(history_people.get_item_metadata(history_people.selected))
+		lines.push_front("참전·포상 이력 · "+campaign.get_officer(id).name+"\n"+Merit.history(campaign.strategy_state,id,campaign.provinces)+"\n")
 	details.text="\n".join(lines)
 func forecast() -> void:
 	apply_button.disabled=true

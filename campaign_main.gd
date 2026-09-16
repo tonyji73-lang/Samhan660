@@ -1,4 +1,8 @@
 extends Control
+const Merit=preload("res://battle_merit.gd")
+const MeritOverlay=preload("res://battle_merit_overlay.gd")
+var merit_overlay: Control
+var pending_merit_battles: Array[String]=[]
 const Ending=preload("res://campaign_ending.gd")
 var ending_dialog: AcceptDialog
 var ending_load_dialog: FileDialog
@@ -307,6 +311,10 @@ func _ready() -> void:
 	recruitment_overlay.visibility_changed.connect(_sync_modal_map_input)
 	army_overlay=ArmyOverlay.new(); production_layer.add_child(army_overlay); army_overlay.visibility_changed.connect(_sync_modal_map_input)
 	politics_overlay=PoliticsOverlay.new(); production_layer.add_child(politics_overlay); politics_overlay.visibility_changed.connect(_sync_modal_map_input)
+	merit_overlay=MeritOverlay.new(); production_layer.add_child(merit_overlay); merit_overlay.visibility_changed.connect(_sync_modal_map_input)
+	navigation_menu.get_popup().add_item("전투 결과·공훈 포상",12)
+	navigation_menu.get_popup().id_pressed.connect(func(id):
+		if id==12 and not event_presentation.active: open_battle_merit())
 	playability_dialog=AcceptDialog.new(); add_child(playability_dialog); playability_dialog.title="캠페인 목표·전쟁 준비·현재 지원 범위"; playability_dialog.dialog_autowrap=true; playability_dialog.visibility_changed.connect(_sync_modal_map_input)
 	navigation_menu.get_popup().add_item("캠페인 목표·전쟁 준비",6)
 	navigation_menu.get_popup().add_item("국가별 AI 군수 계획",7)
@@ -330,6 +338,7 @@ func _ready() -> void:
 	event_presentation = EventPresentation.new()
 	add_child(event_presentation)
 	event_presentation.setup(self)
+	event_presentation.event_finished.connect(func(_id): _show_pending_merit.call_deferred())
 	_connect_button_once(
 		officer_list.item_selected,
 		_on_officer_list_item_selected
@@ -399,6 +408,8 @@ func _present_campaign_opening() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") and merit_overlay!=null and merit_overlay.visible:
+		merit_overlay.hide(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and army_overlay!=null and army_overlay.visible:
 		army_overlay.hide(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and supply_overlay!=null and supply_overlay.visible:
@@ -628,6 +639,7 @@ func _open_diplomacy() -> void:
 
 func _sync_modal_map_input() -> void:
 	map_area.modal_input_locked = (power_dialog!=null and power_dialog.visible) or Ending.finished(strategy_state) or (ending_load_dialog!=null and ending_load_dialog.visible) or (ending_save_dialog!=null and ending_save_dialog.visible) or production_overlay.visible or diplomacy_overlay.visible or (domestic_overlay!=null and domestic_overlay.visible) or (recruitment_overlay!=null and recruitment_overlay.visible) or (industry_overlay!=null and industry_overlay.visible) or (supply_overlay!=null and supply_overlay.visible) or (army_overlay!=null and army_overlay.visible) or (politics_overlay!=null and politics_overlay.visible) or (playability_dialog!=null and playability_dialog.visible)
+	map_area.modal_input_locked=map_area.modal_input_locked or (merit_overlay!=null and merit_overlay.visible)
 	if map_area.modal_input_locked:
 		map_area.map_dragging = false
 
@@ -1651,6 +1663,23 @@ func resolve_attack(source_id: String, target_id: String) -> void:
 		log_label.text=str(result.get("message",result.get("reason","")))
 		if event_presentation!=null:
 			event_presentation.dispatch.call_deferred({"event_key":"battle_start","attacker_name":result.attacker_name,"defender_name":result.defender_name},result)
+		queue_battle_merit(result)
+
+func queue_battle_merit(result: Dictionary) -> void:
+	if not result.get("ok",false) or not result.get("reward_enabled",false) or player_faction_id!="silla": return
+	if result.get("attacker_faction","")!=player_faction_id and result.get("defender_faction","")!=player_faction_id: return
+	pending_merit_battles.append(str(result.battle_id))
+	_show_pending_merit.call_deferred()
+
+func _show_pending_merit() -> void:
+	if pending_merit_battles.is_empty() or event_presentation.active or ending_busy: return
+	var id: String=pending_merit_battles.back(); pending_merit_battles.clear()
+	open_battle_merit(id)
+
+func open_battle_merit(id: String="") -> void:
+	if event_presentation.active: return
+	open_politics(); politics_overlay.hide()
+	merit_overlay.open(self,id)
 
 func resolve_army_battle(source_id: String, target_id: String, actor: String) -> Dictionary:
 	if Ending.finished(strategy_state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"gold_spent":0}
@@ -1668,7 +1697,7 @@ func resolve_army_battle(source_id: String, target_id: String, actor: String) ->
 	if not paid.ok: return paid
 	var defender: Dictionary=get_best_commander(target_id)
 	mark_external_action(commander)
-	var result: Dictionary=Army.combat(strategy_state,provinces,source_id,target_id,int(commander.leadership),int(defender.leadership),year*12+month)
+	var result: Dictionary=Army.combat(strategy_state,provinces,source_id,target_id,int(commander.leadership),int(defender.leadership),year*12+month,str(commander.get("officer_id","")),str(defender.get("officer_id","")))
 	result.merge({"ok":true,"attacker_name":commander.name,"defender_name":defender.name,"battle_grade":"승리" if result.won else "패배"})
 	if result.won:
 		Supply.capture(strategy_state,provinces,target_id,year*12+month)
@@ -1855,6 +1884,7 @@ func _on_recruit_button_pressed() -> void:
 	recruitment_overlay.open(self,selected_province_id)
 
 func _on_end_turn_button_pressed() -> void:
+	if merit_overlay!=null and merit_overlay.visible: return
 	if Ending.finished(strategy_state) or ending_busy: return
 	if army_overlay!=null and army_overlay.visible: return
 	if politics_overlay!=null and politics_overlay.visible: return
@@ -2476,6 +2506,8 @@ func _write_campaign_save(save_path: String) -> bool:
 	return true
 
 func _on_load_button_pressed(save_path: String = SAVE_PATH) -> void:
+	pending_merit_battles.clear()
+	if merit_overlay!=null: merit_overlay.hide()
 	if not FileAccess.file_exists(save_path):
 		log_label.text = "불러올 저장 파일이 없습니다."
 		return
@@ -2719,6 +2751,7 @@ func open_army(city: String) -> void:
 	recruitment_overlay.hide(); supply_overlay.hide(); industry_overlay.hide(); production_overlay.hide(); domestic_overlay.hide(); _close_diplomacy(); transfer_panel.close_panel()
 	army_overlay.open(self,city)
 func open_politics() -> void:
+	if merit_overlay!=null: merit_overlay.hide()
 	for overlay: Control in [army_overlay,domestic_overlay,recruitment_overlay,industry_overlay,supply_overlay,production_overlay,diplomacy_overlay]:
 		if overlay!=null: overlay.hide()
 	map_area.hide_city_card(); province_panel.hide(); politics_overlay.open(self)
