@@ -75,7 +75,8 @@ func _run() -> void:
 	await process_frame
 	var p: Node = c.event_presentation
 	check(not p.active, "F6/legacy initialization does not invent an opening")
-	check(p.events.size() == 7, "single catalog contains existing events and crop failure")
+	for event_id: String in ["silla_660_intro", "baekje_660_intro", "goguryeo_660_intro", "domestic_bountiful_harvest", "domestic_crop_failure", "enemy_invasion_alert", "battle_hwangsanbeol", "noble_personnel_demand"]:
+		check(p.events.has(event_id), "registered required event: " + event_id)
 	check(not p.play("unknown") and not p.play("domestic_bountiful_harvest"), "unknown event and missing dynamic data fail without locking")
 	for id: String in p.events:
 		for step: Dictionary in p.events[id].steps:
