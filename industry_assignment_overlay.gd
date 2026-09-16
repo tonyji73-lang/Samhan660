@@ -16,6 +16,7 @@ var assign_button: Button
 var pause_button: Button
 var cancel_button: Button
 var close_button: Button
+var preparation_back: Button
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT); mouse_filter=Control.MOUSE_FILTER_STOP
@@ -40,7 +41,8 @@ func _ready() -> void:
 	var actions:=HBoxContainer.new(); box.add_child(actions)
 	pause_button=button(actions,"일시 중지 · 담당자 해제",pause_job)
 	cancel_button=button(actions,"업무 취소",cancel_job)
-	close_button=button(box,"닫기 (Esc)",hide)
+	preparation_back=button(box,"선택한 부대 준비로 돌아가기",func(): campaign.close_preparation_destination(self))
+	close_button=button(box,"닫기 (Esc)",func(): campaign.close_preparation_destination(self))
 	for control: Control in [status,kind_selector,city_selector,requirement_selector,officer_selector,details,execute_button,assign_button,pause_button,cancel_button,close_button]: control.add_theme_font_size_override("font_size",21)
 	hide()
 
@@ -84,6 +86,7 @@ func job() -> Dictionary:
 	return campaign.Industry.active(campaign.strategy_state,kind,city,campaign.player_faction_id)
 
 func refresh() -> void:
+	preparation_back.visible=not campaign.preparation_return.is_empty()
 	var active: Dictionary=job()
 	if not active.is_empty(): last_job=active.id
 	elif last_job.is_empty():
@@ -97,7 +100,7 @@ func refresh() -> void:
 	if kind=="production": details.text+="위 수치는 개인 기본 작업량입니다. 협력·인계 차질 적용 결과는 아래 시설별 견적을 확인하세요.\n"
 	if active.is_empty():
 		details.text+="접수 비용: 금 %d · 필요 작업량 %d\n%s\n" % [q.get("gold_cost",0),q.get("required",0),"실행 가능" if q.ok else q.reason]
-		if kind!="production" and q.get("months",0)>0 and not selected_id().is_empty(): details.text+="예상 %d개월 · %s 완료 (현재 선택 담당자 유지 시)\n" % [q.months,date(int(q.due_month))]
+		if kind!="production" and q.ok and q.get("months",0)>0 and not selected_id().is_empty(): details.text+="예상 %d개월 · %s 완료 (현재 선택 담당자 유지 시)\n" % [q.months,date(int(q.due_month))]
 		var recent: Dictionary=campaign.Industry.jobs(campaign.strategy_state).get(last_job,{})
 		if not recent.is_empty(): details.text+="최근 처리: %s · 진척 %d/%d · 환불 %d\n" % [recent.reason,recent.progress,recent.required,recent.refund]
 	else:

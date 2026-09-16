@@ -17,6 +17,7 @@ const IronAI=preload("res://iron_procurement_ai.gd")
 const MilitaryPlanning=preload("res://ai_military_planning.gd")
 const ArmyOverlay=preload("res://army_readiness_overlay.gd")
 var army_overlay: Control
+var preparation_return: Dictionary={}
 var playability_dialog: AcceptDialog
 var military_brief_details: RichTextLabel
 const Playability=preload("res://campaign_playability.gd")
@@ -415,7 +416,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and supply_overlay!=null and supply_overlay.visible:
 		supply_overlay.hide(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and industry_overlay!=null and industry_overlay.visible:
-		industry_overlay.hide(); get_viewport().set_input_as_handled(); return
+		close_preparation_destination(industry_overlay); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and recruitment_overlay!=null and recruitment_overlay.visible:
 		recruitment_overlay.hide()
 		get_viewport().set_input_as_handled()
@@ -439,7 +440,7 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		return
 	if production_overlay != null and production_overlay.visible:
-		production_overlay.hide()
+		close_preparation_destination(production_overlay)
 		get_viewport().set_input_as_handled()
 		return
 	if governor_transfer_confirmation.visible:
@@ -925,6 +926,7 @@ func _on_city_card_domestic_requested(province_id: String) -> void:
 
 
 func _on_city_card_production_requested(province_id: String) -> void:
+	preparation_return={}
 	if domestic_overlay!=null: domestic_overlay.hide()
 	if recruitment_overlay!=null: recruitment_overlay.hide()
 	if army_overlay!=null: army_overlay.hide()
@@ -1061,10 +1063,42 @@ func request_production_command(province_id: String, recipe_id: String, action: 
 	update_top_bar()
 	return result
 
+func open_preparation_destination(city: String, unit_id: String, officer_id: String, kind: String) -> void:
+	if not Economy.validate(strategy_state,provinces,player_faction_id,player_faction_id,city).ok: return
+	if event_presentation!=null and event_presentation.active: return
+	if kind=="production":
+		_on_city_card_production_requested(city)
+		production_overlay.selected_recipe_id="iron_sword"
+		production_overlay.recipe_selector.select(production_overlay.Data.RECIPE_ORDER.find("iron_sword"))
+		production_overlay.refresh()
+	else:
+		var requirements: Array=["smelter","forge"] if kind=="build" else ["basic_smelting","swordsmithing"]
+		var levels: Dictionary=strategy_state.province_buildings[city] if kind=="build" else strategy_state.faction_research[player_faction]
+		var target: String=requirements.back()
+		for requirement: String in requirements:
+			if int(levels.get(requirement,0))<1: target=requirement; break
+		open_industry(city,kind,target)
+	preparation_return={"city":city,"unit":unit_id,"officer":officer_id}
+	production_overlay.preparation_back.visible=true
+	industry_overlay.preparation_back.visible=true
+
+func close_preparation_destination(overlay: Control) -> void:
+	if preparation_return.is_empty(): overlay.hide(); return
+	var previous: Dictionary=preparation_return.duplicate()
+	preparation_return={}
+	production_overlay.hide(); industry_overlay.hide()
+	if not Economy.validate(strategy_state,provinces,player_faction_id,player_faction_id,previous.city).ok: return
+	open_army(previous.city)
+	army_overlay.rebuild(previous.unit)
+	for n: int in range(army_overlay.officers.item_count):
+		if army_overlay.officers.get_item_metadata(n)==previous.officer: army_overlay.officers.select(n); break
+	army_overlay.refresh()
+	if army_overlay.id()!=previous.unit: army_overlay.result.text="이전 부대가 없어 현재 주둔 부대를 표시합니다."
+
 func open_industry(city: String, kind: String, requirement: String = "") -> void:
 	if event_presentation!=null and event_presentation.active: return
 	if not Economy.validate(strategy_state,provinces,player_faction_id,player_faction_id,city).ok: return
-	supply_overlay.hide(); domestic_overlay.hide(); recruitment_overlay.hide(); production_overlay.hide(); _close_diplomacy(); transfer_panel.close_panel()
+	army_overlay.hide(); supply_overlay.hide(); domestic_overlay.hide(); recruitment_overlay.hide(); production_overlay.hide(); _close_diplomacy(); transfer_panel.close_panel()
 	industry_overlay.open(self,city,kind,requirement)
 
 
@@ -2506,6 +2540,7 @@ func _write_campaign_save(save_path: String) -> bool:
 	return true
 
 func _on_load_button_pressed(save_path: String = SAVE_PATH) -> void:
+	preparation_return={}
 	pending_merit_battles.clear()
 	if merit_overlay!=null: merit_overlay.hide()
 	if not FileAccess.file_exists(save_path):
@@ -2746,6 +2781,7 @@ func open_supply(city: String) -> void:
 	production_overlay.hide(); diplomacy_overlay.hide(); domestic_overlay.hide(); recruitment_overlay.hide(); industry_overlay.hide()
 	supply_overlay.open(self,city)
 func open_army(city: String) -> void:
+	preparation_return={}
 	if event_presentation!=null and event_presentation.active: return
 	if not Economy.validate(strategy_state,provinces,player_faction_id,player_faction_id,city).ok: return
 	recruitment_overlay.hide(); supply_overlay.hide(); industry_overlay.hide(); production_overlay.hide(); domestic_overlay.hide(); _close_diplomacy(); transfer_panel.close_panel()

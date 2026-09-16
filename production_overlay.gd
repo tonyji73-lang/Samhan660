@@ -20,6 +20,7 @@ var extra_research_buttons: VBoxContainer
 var extra_building_buttons: VBoxContainer
 var industry_button: Button
 var manager_button: Button
+var preparation_back: Button
 
 
 func _ready() -> void:
@@ -56,8 +57,9 @@ func _ready() -> void:
 	header.add_child(summary)
 	var close_button := Button.new()
 	close_button.text = "닫기 (Esc)"
-	close_button.pressed.connect(hide)
+	close_button.pressed.connect(func(): campaign.close_preparation_destination(self))
 	header.add_child(close_button)
+	preparation_back=_button(layout,"선택한 부대 준비로 돌아가기",func(): campaign.close_preparation_destination(self))
 	recipe_selector = OptionButton.new()
 	for id: String in Data.RECIPE_ORDER:
 		recipe_selector.add_item(str(Data.RECIPES[id].name))
@@ -122,6 +124,7 @@ func open_for_province(campaign_node: Node, city_id: String) -> void:
 
 
 func refresh() -> void:
+	preparation_back.visible=not campaign.preparation_return.is_empty()
 	var model: Dictionary = campaign.call("get_production_view_model", province_id, selected_recipe_id)
 	if model.is_empty():
 		hide()

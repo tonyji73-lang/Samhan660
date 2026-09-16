@@ -1,5 +1,9 @@
 extends Control
 const Army=preload("res://army_readiness.gd")
+const Guide=preload("res://military_preparation_guide.gd")
+var preparation: Label
+var preparation_model: Dictionary={}
+var preparation_buttons: Dictionary={}
 var campaign: Node
 var city: String
 var selector: OptionButton
@@ -46,8 +50,13 @@ func _ready() -> void:
 	commander_button=button(row,"지휘관 임명",func(): run("commander"))
 	train_button=button(row,"훈련 시작·담당자 교체",func(): run("train"))
 	stop_button=button(row,"훈련 중지",func(): run("stop"))
+	row=HBoxContainer.new(); box.add_child(row)
+	for key: String in ["production","build","research"]:
+		preparation_buttons[key]=button(row,{"production":"장비 생산 보기","build":"시설 건설 보기","research":"기술 연구 보기"}[key],func(): campaign.open_preparation_destination(city,id(),officer(),key))
 	var scroll:=ScrollContainer.new(); scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL; box.add_child(scroll)
-	details=Label.new(); details.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; details.size_flags_horizontal=Control.SIZE_EXPAND_FILL; scroll.add_child(details)
+	var content:=VBoxContainer.new(); content.size_flags_horizontal=Control.SIZE_EXPAND_FILL; scroll.add_child(content)
+	preparation=Label.new(); preparation.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; content.add_child(preparation)
+	details=Label.new(); details.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; details.size_flags_horizontal=Control.SIZE_EXPAND_FILL; content.add_child(details)
 	row=HBoxContainer.new(); box.add_child(row)
 	destination=OptionButton.new(); row.add_child(destination)
 	move_button=button(row,"선택 부대 이동",func(): run("move"))
@@ -80,6 +89,8 @@ func rebuild(selected: String="") -> void:
 	refresh()
 func refresh() -> void:
 	if campaign==null: return
+	preparation_model=Guide.model(campaign,city,id(),officer())
+	preparation.text=preparation_model.text+"\n\n부대 상세"
 	var u: Dictionary=Army.units(campaign.strategy_state).get(id(),{})
 	if u.is_empty(): details.text="주둔 부대 없음"; return
 	var q: Dictionary=Army.training_quote(campaign.strategy_state,campaign.provinces,campaign.player_faction_id,id(),officer(),campaign.year*12+campaign.month)
