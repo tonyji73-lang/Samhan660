@@ -1,0 +1,477 @@
+{
+    "source_commit":  "63e22a5",
+    "source_slot":  "battle_merit_loop_unawarded_1789545198_34700.json",
+    "source_sha256":  "460da4dd9a516f36844f7113aa0b38f76673ca0f9da145fd0b0a19f9262ed79b",
+    "purpose":  "Read-only battle ledger extract for controlled calculation; not a campaign save",
+    "battle":  {
+                   "attack_units":  [
+                                        "unit:124",
+                                        "unit:14"
+                                    ],
+                   "attacker_faction":  "silla",
+                   "attacker_leadership":  95,
+                   "attacker_losses":  13020,
+                   "attacker_power":  56706.0,
+                   "attacker_state":  [
+                                          {
+                                              "commander_id":  "historical:004",
+                                              "creation_reason":  "recruitment",
+                                              "equipment":  1000,
+                                              "faction_id":  "silla",
+                                              "id":  "unit:124",
+                                              "kind":  "infantry",
+                                              "location":  "geumseong",
+                                              "origins":  {
+                                                              "geumseong":  1000
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  70000,
+                                              "transfer_id":  "",
+                                              "troops":  1000
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "scenario_or_legacy_no_retroactive_charge",
+                                              "equipment":  28000,
+                                              "faction_id":  "silla",
+                                              "id":  "unit:14",
+                                              "kind":  "infantry",
+                                              "legacy_faction":  "신라",
+                                              "legacy_fields":  {
+                                                                    "category":  "infantry",
+                                                                    "morale":  55,
+                                                                    "name":  "보병",
+                                                                    "training":  50,
+                                                                    "troops":  28000
+                                                                },
+                                              "location":  "geumseong",
+                                              "origin_basis":  "existing origins if count matches; otherwise legacy stationed city",
+                                              "origins":  {
+                                                              "geumseong":  28000
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  1400000,
+                                              "transfer_id":  "",
+                                              "troops":  28000
+                                          }
+                                      ],
+                   "attacker_troops":  29000,
+                   "battle_id":  "battle:c2604bc4ee43af7aef1f9ae9af1952fe",
+                   "defend_units":  [
+                                        "unit:102",
+                                        "unit:105",
+                                        "unit:107",
+                                        "unit:112",
+                                        "unit:116",
+                                        "unit:119",
+                                        "unit:125",
+                                        "unit:127",
+                                        "unit:30",
+                                        "unit:45",
+                                        "unit:47",
+                                        "unit:49",
+                                        "unit:53",
+                                        "unit:55",
+                                        "unit:56",
+                                        "unit:58",
+                                        "unit:78",
+                                        "unit:79",
+                                        "unit:85",
+                                        "unit:88"
+                                    ],
+                   "defender_faction":  "baekje",
+                   "defender_leadership":  50,
+                   "defender_losses":  23674,
+                   "defender_power":  41787.2832,
+                   "defender_state":  [
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "recruitment",
+                                              "equipment":  0,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:102",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "dalgubeol":  500
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  25000,
+                                              "transfer_id":  "",
+                                              "troops":  500
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "recruitment",
+                                              "equipment":  0,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:105",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "dalgubeol":  500
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  25000,
+                                              "transfer_id":  "",
+                                              "troops":  500
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "recruitment",
+                                              "equipment":  0,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:107",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "dalgubeol":  500
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  25000,
+                                              "transfer_id":  "",
+                                              "troops":  500
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "recruitment",
+                                              "equipment":  0,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:112",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "dalgubeol":  500
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  25000,
+                                              "transfer_id":  "",
+                                              "troops":  500
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "recruitment",
+                                              "equipment":  0,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:116",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "dalgubeol":  500
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  25000,
+                                              "transfer_id":  "",
+                                              "troops":  500
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "recruitment",
+                                              "equipment":  0,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:119",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "dalgubeol":  500
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  25000,
+                                              "transfer_id":  "",
+                                              "troops":  500
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "recruitment",
+                                              "equipment":  0,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:125",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "dalgubeol":  500
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  25000,
+                                              "transfer_id":  "",
+                                              "troops":  500
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "recruitment",
+                                              "equipment":  0,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:127",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "dalgubeol":  500
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  25000,
+                                              "transfer_id":  "",
+                                              "troops":  500
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "scenario_or_legacy_no_retroactive_charge",
+                                              "equipment":  2558,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:30",
+                                              "kind":  "infantry",
+                                              "legacy_faction":  "백제",
+                                              "legacy_fields":  {
+                                                                    "category":  "infantry",
+                                                                    "morale":  55,
+                                                                    "name":  "보병",
+                                                                    "training":  50,
+                                                                    "troops":  14200
+                                                                },
+                                              "location":  "dalgubeol",
+                                              "origin_basis":  "existing origins if count matches; otherwise legacy stationed city",
+                                              "origins":  {
+                                                              "sogaya":  2558
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  127900,
+                                              "transfer_id":  "",
+                                              "troops":  2558
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "split",
+                                              "equipment":  853,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:45",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "sabi":  853
+                                                          },
+                                              "parent_unit_id":  "unit:26",
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  59710,
+                                              "transfer_id":  "",
+                                              "troops":  853
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "split",
+                                              "equipment":  853,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:47",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "sabi":  853
+                                                          },
+                                              "parent_unit_id":  "unit:26",
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  59710,
+                                              "transfer_id":  "",
+                                              "troops":  853
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "split",
+                                              "equipment":  4262,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:49",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "sogaya":  4262
+                                                          },
+                                              "parent_unit_id":  "unit:30",
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  213100,
+                                              "transfer_id":  "",
+                                              "troops":  4262
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "split",
+                                              "equipment":  4262,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:53",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "sogaya":  4262
+                                                          },
+                                              "parent_unit_id":  "unit:30",
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  213100,
+                                              "transfer_id":  "",
+                                              "troops":  4262
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "split",
+                                              "equipment":  1023,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:55",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "sogaya":  1023
+                                                          },
+                                              "parent_unit_id":  "unit:30",
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  51150,
+                                              "transfer_id":  "",
+                                              "troops":  1023
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "split",
+                                              "equipment":  2558,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:56",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "yeongsangang":  2558
+                                                          },
+                                              "parent_unit_id":  "unit:44",
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  127900,
+                                              "transfer_id":  "",
+                                              "troops":  2558
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "split",
+                                              "equipment":  1705,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:58",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "yeongsangang":  1705
+                                                          },
+                                              "parent_unit_id":  "unit:56",
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  85250,
+                                              "transfer_id":  "",
+                                              "troops":  1705
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "split",
+                                              "equipment":  100,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:78",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "yeongsangang":  100
+                                                          },
+                                              "parent_unit_id":  "unit:61",
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  5000,
+                                              "transfer_id":  "",
+                                              "troops":  100
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "recruitment",
+                                              "equipment":  0,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:79",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "dalgubeol":  500
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  25000,
+                                              "transfer_id":  "",
+                                              "troops":  500
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "recruitment",
+                                              "equipment":  0,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:85",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "dalgubeol":  500
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  25000,
+                                              "transfer_id":  "",
+                                              "troops":  500
+                                          },
+                                          {
+                                              "commander_id":  "",
+                                              "creation_reason":  "recruitment",
+                                              "equipment":  0,
+                                              "faction_id":  "baekje",
+                                              "id":  "unit:88",
+                                              "kind":  "infantry",
+                                              "location":  "dalgubeol",
+                                              "origins":  {
+                                                              "dalgubeol":  500
+                                                          },
+                                              "power":  50,
+                                              "status":  "stationed",
+                                              "training_points":  25000,
+                                              "transfer_id":  "",
+                                              "troops":  500
+                                          }
+                                      ],
+                   "defender_troops":  23674,
+                   "fortress":  68,
+                   "merit_version":  1,
+                   "month":  7730,
+                   "participants":  [
+                                        {
+                                            "battle_leader":  true,
+                                            "commanded_units":  [
+                                                                    "unit:124"
+                                                                ],
+                                            "faction_id":  "silla",
+                                            "group_id":  "silla:military",
+                                            "name":  "김유신",
+                                            "officer_id":  "historical:004",
+                                            "side":  "attacker",
+                                            "unit_ids":  [
+                                                             "unit:124",
+                                                             "unit:14"
+                                                         ],
+                                            "won":  true
+                                        }
+                                    ],
+                   "reward_enabled":  true,
+                   "rewards":  {
+
+                               },
+                   "source":  "geumseong",
+                   "target":  "dalgubeol",
+                   "won":  true
+               }
+}
