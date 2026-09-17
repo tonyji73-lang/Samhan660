@@ -27,6 +27,7 @@ const Power=preload("res://noble_power_constraints.gd")
 var power_dialog: AcceptDialog
 var power_request_id: String=""
 var power_successors: OptionButton
+var power_details: Label
 const PoliticsOverlay=preload("res://noble_politics_overlay.gd")
 const Supply = preload("res://supply_transport.gd")
 const SupplyOverlay = preload("res://supply_transport_overlay.gd")
@@ -2954,7 +2955,12 @@ func _power_ui_initialize() -> void:
 	power_dialog.custom_action.connect(func(choice):
 		var result: Dictionary=Power.resolve(self,power_request_id,choice)
 		log_label.text=str(result.get("reason","")); show_power_transfer(power_request_id))
-	power_successors=OptionButton.new(); power_dialog.add_child(power_successors); power_successors.position=Vector2(24,440); power_successors.size=Vector2(650,34)
+	# Keep the successor picker below scrollable text instead of overlapping the
+	# dialog's automatically laid-out label at a fixed pixel position.
+	var content:=VBoxContainer.new(); content.custom_minimum_size=Vector2(950,500); power_dialog.add_child(content)
+	var scroll:=ScrollContainer.new(); scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL; content.add_child(scroll)
+	power_details=Label.new(); power_details.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; power_details.size_flags_horizontal=Control.SIZE_EXPAND_FILL; scroll.add_child(power_details)
+	power_successors=OptionButton.new(); content.add_child(power_successors)
 	power_successors.item_selected.connect(func(index):
 		if index<=0: return
 		var result: Dictionary=Power.retarget(self,power_request_id,str(power_successors.get_item_metadata(index)))
@@ -2978,7 +2984,8 @@ func show_power_transfer(id: String) -> void:
 	power_request_id=id
 	for overlay: Control in [politics_overlay,army_overlay,domestic_overlay,industry_overlay,production_overlay,diplomacy_overlay]:
 		if overlay!=null: overlay.hide()
-	power_dialog.dialog_text=Power.describe(self,row)
+	power_details.text=Power.describe(self,row)
+	power_dialog.get_ok_button().text="닫기" if row.get("applied",false) else "닫기·기존 권한 유지"
 	for button: Node in power_dialog.find_children("*","Button",true,false):
 		if button.has_meta("power_choice"): button.disabled=row.status not in ["offered","waiting","successor_needed"] or (button.get_meta("power_choice")=="wait" and row.status!="offered")
 	power_successors.clear(); power_successors.add_item("후임 재지정 (기존 인계 기한 유지)")

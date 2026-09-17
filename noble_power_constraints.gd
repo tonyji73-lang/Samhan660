@@ -232,13 +232,27 @@ static func ai(c: Node) -> void:
 static func describe(c: Node, row: Dictionary) -> String:
  var lines: Array[String]=["권력 인계 협의 · "+str(c.provinces.get(row.city,{}).get("name",row.city)),"실제 인계가 완료되었습니다." if row.get("applied",false) else "기존 권한은 선택·실제 인계 전까지 유지됩니다."]
  lines.append("담당자: %s → %s" % [c.get_officer(str(row.previous_id)).get("name","공석"),c.get_officer(str(row.request.get("officer_id",""))).get("name","공석")])
+ lines.append("협의 접수 당시 견적:")
  for loss: Dictionary in row.losses:
   lines.append("%s: 영향력 %.2f → %.2f (감소 %.2f) · 관할 인구 -%d / 지휘 병력 -%d\n충성 %d · 야망 %d · 조정 F %.2f" % [c.officer_registry.politics.groups[loss.group_id].name,loss.I,loss.after,loss.D,loss.population_lost,loss.troops_lost,loss.loyalty,loss.ambition,loss.F])
  lines.append("세입 M %.1f · %s\n협상금 %d (금10 올림, 최소100) · 보장 기간 %d개월" % [row.income.value,row.income.basis,row.gold,row.months])
- lines.append("A 보상: 즉시 인계, 퇴임 충성 -4 / 집단 협력 -2\nB 기한: 기존 담당 유지 후 인계, 퇴임 -4 / 집단 -2\nC 강제: 즉시 인계, 퇴임 -20 / 집단 -12")
- lines.append("강제 차질: 도시 다음2회 월 결산 태수 보너스 없음·건설/생산80%" if row.request.kind=="governor" else "강제 차질: 다음1회 월 처리까지 해당 병력 공격·훈련 중단. 방어·아군 이동 허용")
- lines.append("상태: %s · 예정 월 %s · %s" % [status_name(str(row.get("status","견적"))),date(int(row.completed_month)) if row.get("applied",false) else (date(int(row.due_month)) if int(row.get("due_month",-1))>0 else date(c.year*12+c.month+int(row.months))),str(row.get("reason",""))])
+ if not row.get("applied",false):
+  lines.append("A 보상: 금%d, 즉시 인계, 퇴임 충성 -4 / 집단 협력 -2\nB 기한: 금0, 기존 담당 유지 후 인계, 퇴임 -4 / 집단 -2\nC 강제: 금0, 즉시 인계, 퇴임 -20 / 집단 -12" % row.gold)
+  lines.append("강제 차질: 도시 다음2회 월 결산 태수 보너스 없음·건설/생산80%" if row.request.kind=="governor" else "강제 차질: 다음1회 월 처리까지 해당 병력 공격·훈련 중단. 방어·아군 이동 허용")
+  lines.append("후임 임명 효과는 기존 충성·협력 규칙과 보상 간격을 적용합니다.")
+ lines.append("상태: %s · %s %s · %s" % [status_name(str(row.get("status","견적"))),"완료 월" if row.get("applied",false) else "예정 월",date(int(row.completed_month)) if row.get("applied",false) else (date(int(row.due_month)) if int(row.get("due_month",-1))>0 else date(c.year*12+c.month+int(row.months))),str(row.get("reason",""))])
  if row.get("applied",false): lines.append("실제 납부 금 %d · 인계 완료 %s" % [row.cost_paid,date(int(row.completed_month))])
+ for loss: Dictionary in row.losses:
+  var person: Dictionary=c.get_officer(loss.officer_id)
+  lines.append("현재 %s 충성 %d · %s 협력 %d" % [person.get("name",loss.officer_id),person.get("loyalty",0),c.officer_registry.politics.groups[loss.group_id].name,c.officer_registry.politics.groups[loss.group_id].cooperation])
+ var next_person: Dictionary=c.get_officer(str(row.request.get("officer_id","")))
+ if not next_person.is_empty(): lines.append("현재 후임 %s 충성 %d" % [next_person.get("name",""),next_person.get("loyalty",0)])
+ if row.request.kind!="governor":
+  var blocked: Array[String]=[]
+  for uid: String in row.units:
+   var reason: String=unit_reason(c.strategy_state,uid)
+   if not reason.is_empty(): blocked.append(uid+": "+reason)
+  lines.append("현재 부대 인계 차질 없음 · 출정·훈련은 일반 자격/군량 조건 적용" if blocked.is_empty() else "\n".join(blocked))
  lines.append(summary(c.strategy_state,row.city))
  return "\n".join(lines)
 static func move_reason(c: Node, req: Dictionary) -> String:
