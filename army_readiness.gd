@@ -50,11 +50,17 @@ static func initialize(state: Dictionary, provinces: Dictionary, transfers: Arra
 			u["creation_reason"]="legacy_transfer_no_retroactive_charge"; u["origin_basis"]="legacy transfer source_id"; u.status="transit"; order["unit_ids"]=[u.id]
 	sync(state,provinces)
 
+static func reservation(state: Dictionary, id: String) -> String:
+	for row: Dictionary in state.get("invasions",{}).get("orders",{}).values():
+		if row.status=="pending" and row.units.has(id): return str(row.id)
+	return ""
+
 static func at_city(state: Dictionary, city: String, faction: String="", attack: bool=false) -> Array:
 	var result: Array=[]
 	for u: Dictionary in units(state).values():
 		if int(u.troops)<=0 or u.location!=city or u.status!="stationed" or (not faction.is_empty() and u.faction_id!=faction): continue
 		if attack and not training_job(state,u.id).is_empty(): continue
+		if attack and not reservation(state,u.id).is_empty(): continue
 		result.append(u.id)
 	result.sort(); return result
 static func attack_units(state: Dictionary, city: String, faction: String="") -> Array:
@@ -78,6 +84,7 @@ static func projection(state: Dictionary, city: String) -> Dictionary:
 	return result
 static func check_unit(state: Dictionary, provinces: Dictionary, actor: String, id: String) -> Dictionary:
 	if Ending.finished(state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"gold_spent":0}
+	if not reservation(state,id).is_empty(): return {"ok":false,"reason":"침공 예약 중인 부대입니다: "+reservation(state,id)}
 	var u: Dictionary=units(state).get(id,{})
 	if u.is_empty() or u.faction_id!=actor or int(u.troops)<=0 or u.status!="stationed": return {"ok":false,"reason":"현재 아군 주둔 부대가 아닙니다."}
 	return Economy.validate(state,provinces,actor,actor,str(u.location))
@@ -147,6 +154,8 @@ static func equip(state: Dictionary, provinces: Dictionary, actor: String, id: S
 static func appoint(state: Dictionary, provinces: Dictionary, actor: String, id: String, officer: String) -> Dictionary:
 	var original: String=officer
 	officer=Registry.resolve(state.officer_registry,officer)
+	for other: Dictionary in units(state).values():
+		if not officer.is_empty() and other.commander_id==officer and not reservation(state,other.id).is_empty(): return {"ok":false,"reason":"침공 예약 부대의 지휘관은 재배치할 수 없습니다."}
 	if not original.is_empty() and officer.is_empty(): return {"ok":false,"reason":"식별되지 않은 지휘관입니다."}
 	var q: Dictionary=check_unit(state,provinces,actor,id)
 	if not q.ok: return q
@@ -249,11 +258,11 @@ static func take(state: Dictionary, city: String, amount: int, faction: String, 
 		if left<=0: break
 		var n: int=mini(left,int(units(state)[id].troops)); var part: String=divide(state,id,n); result.append(part); left-=n
 	return result
-static func combat(state: Dictionary, provinces: Dictionary, source: String, target: String, attack_leadership: int, defend_leadership: int, stamp: int, attack_officer: String="", defend_officer: String="") -> Dictionary:
+static func combat(state: Dictionary, provinces: Dictionary, source: String, target: String, attack_leadership: int, defend_leadership: int, stamp: int, attack_officer: String="", defend_officer: String="", committed: Array=[]) -> Dictionary:
 	if Ending.finished(state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"gold_spent":0}
 	var faction: String=Economy.resolve(state,str(provinces[source].faction))
 	var defending_faction: String=Economy.resolve(state,str(provinces[target].faction))
-	var attackers: Array=attack_units(state,source,faction); var defenders: Array=at_city(state,target)
+	var attackers: Array=attack_units(state,source,faction) if committed.is_empty() else committed.duplicate(); var defenders: Array=at_city(state,target)
 	if attackers.is_empty(): return {"ok":false,"executed":false,"won":false,"reason":"출정 가능한 부대가 없습니다.","messages":[],"gold_spent":0}
 	var attacker_state: Array=[]; var defender_state: Array=[]
 	for id: String in attackers: attacker_state.append(units(state)[id].duplicate(true))
@@ -283,6 +292,7 @@ static func ai(state: Dictionary, provinces: Dictionary, faction: String, stamp:
 	for city: String in Economy.city_ids(state,provinces):
 		if Economy.resolve(state,str(provinces[city].faction))!=faction: continue
 		for id: String in at_city(state,city,faction):
+			if not reservation(state,id).is_empty(): continue
 			var u: Dictionary=units(state)[id]
 			if u.kind!="infantry": continue
 			var bundles: int=mini(int(state.city_inventory[city].sword),ceili(float(maxi(0,int(u.troops)-int(u.equipment)))/100.0))

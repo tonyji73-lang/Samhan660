@@ -46,6 +46,7 @@ func refresh() -> void:
 	var row: Dictionary=Merit.battle(campaign.strategy_state,id)
 	if row.is_empty(): summary.text="선택할 전투 기록이 없습니다. 과거 전투의 포상 자격은 소급 생성하지 않습니다."; return
 	summary.text="공격군 %s · 방어군 %s · 전체 손실 %d / %d\n개인별 처치·피해량은 기록되지 않아 표시하지 않습니다." % ["승리" if row.won else "패배","패배" if row.won else "승리",row.attacker_losses,row.defender_losses]
+	if row.defender_faction==campaign.player_faction_id: summary.text="아군 방어 "+("패배" if row.won else "승리")+"\n"+summary.text
 	for entry: Dictionary in row.get("participants",[]):
 		if entry.faction_id!=campaign.player_faction_id: continue
 		var q: Dictionary=Merit.quote(campaign,id,entry.officer_id)

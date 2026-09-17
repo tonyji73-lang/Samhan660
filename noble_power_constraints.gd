@@ -38,12 +38,17 @@ static func validate(c: Node, req: Dictionary) -> Dictionary:
  var s: Dictionary=c.strategy_state; var r: Dictionary=c.officer_registry
  if c.Ending.finished(s): return {"ok":false,"reason":c.Ending.BLOCKED}
  var kind: String=req.kind; var target: String=req.target; var actor: String=req.faction_id
+ if kind!="governor" and not c.Army.reservation(s,target).is_empty(): return {"ok":false,"reason":"침공 예약 중인 부대의 군권·편성은 변경할 수 없습니다."}
+ if kind=="merge" and not c.Army.reservation(s,str(req.get("source",""))).is_empty(): return {"ok":false,"reason":"침공 예약 중인 부대는 합류할 수 없습니다."}
  var u: Dictionary=s.unit_rosters.get(target,{})
  var city: String=target if kind=="governor" else str(u.get("location",""))
  var access: Dictionary=c.Economy.validate(s,c.provinces,actor,actor,city)
  if not access.ok: return access
  if kind!="governor" and (u.is_empty() or u.status!="stationed" or int(u.troops)<=0): return {"ok":false,"reason":"실제 아군 주둔 부대가 필요합니다."}
  var successor: String=str(req.get("officer_id",""))
+ if kind=="commander" and not successor.is_empty():
+  for unit: Dictionary in s.unit_rosters.values():
+   if unit.commander_id==successor and not c.Army.reservation(s,unit.id).is_empty(): return {"ok":false,"reason":"침공 예약 부대의 지휘관은 재배치할 수 없습니다."}
  if kind in ["governor","commander"] and not successor.is_empty():
   if not c.OfficerRegistry.eligible(r,successor,c.provinces,city) or r.people[successor].faction_id!=actor: return {"ok":false,"reason":"후임 재지정 필요: 같은 도시의 생존·활동 가능한 아군 인물"}
   if kind=="governor":

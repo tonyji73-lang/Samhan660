@@ -152,12 +152,12 @@ func ai_and_attack_cases() -> void:
 		var target: String="gukwon" if ai else "ungjin"
 		c.provinces[source].food_stock=499
 		before=snapshot()
-		if ai: c.resolve_ai_attack(source,target)
+		if ai: c.resolve_army_battle(source,target,"baekje")
 		else: c.resolve_attack(source,target)
 		check(snapshot()==before,"%s direct attack rejects499localfood before combat" % ai)
 		c.provinces[source].food_stock=500
 		var other_food: int=c.provinces[target].food_stock
-		if ai: c.resolve_ai_attack(source,target)
+		if ai: c.resolve_army_battle(source,target,"baekje")
 		else: c.resolve_attack(source,target)
 		check(c.provinces[source].food_stock==0 and c.provinces[target].food_stock==other_food,"%s attack charges500 exactly at actual source" % ai)
 	check(c.strategy_state.faction_economy.food_entries.filter(func(e): return e.reason=="attack").size()==1,"each fresh attack fixture retains local food payment receipt")

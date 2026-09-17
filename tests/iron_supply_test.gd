@@ -262,7 +262,8 @@ func run(host: SceneTree) -> void:
 		var before_research: String = JSON.stringify(campaign.strategy_state.faction_research)
 		var before_buildings: String = JSON.stringify(campaign.strategy_state.province_buildings)
 		if ai:
-			campaign.resolve_ai_attack(source, CITY)
+			# Isolated capture hook regression; delayed AI scheduling is covered by invasion_response_test.
+			campaign.resolve_army_battle(source, CITY,"silla")
 		else:
 			campaign.resolve_attack(source, CITY)
 		check(campaign.provinces[CITY].faction == FACTION and not campaign.strategy_state.city_production[CITY].iron_supply.enabled and not campaign.strategy_state.city_production[CITY].iron_sword.enabled, "actual %s combat capture stops both processes" % ("AI" if ai else "player"))

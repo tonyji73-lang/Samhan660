@@ -1,4 +1,8 @@
 extends Control
+const Invasions=preload("res://invasion_orders.gd")
+const InvasionOverlay=preload("res://invasion_overlay.gd")
+var invasion_overlay: Control
+var invasion_button: Button
 const Merit=preload("res://battle_merit.gd")
 const MeritOverlay=preload("res://battle_merit_overlay.gd")
 var merit_overlay: Control
@@ -314,6 +318,11 @@ func _ready() -> void:
 	army_overlay=ArmyOverlay.new(); production_layer.add_child(army_overlay); army_overlay.visibility_changed.connect(_sync_modal_map_input)
 	politics_overlay=PoliticsOverlay.new(); production_layer.add_child(politics_overlay); politics_overlay.visibility_changed.connect(_sync_modal_map_input)
 	merit_overlay=MeritOverlay.new(); production_layer.add_child(merit_overlay); merit_overlay.visibility_changed.connect(_sync_modal_map_input)
+	invasion_overlay=InvasionOverlay.new(); production_layer.add_child(invasion_overlay); invasion_overlay.visibility_changed.connect(_sync_modal_map_input)
+	invasion_button=Button.new(); invasion_button.text="침공 예고"; navigation_menu.get_parent().add_child(invasion_button); invasion_button.pressed.connect(open_invasions)
+	navigation_menu.get_popup().add_item("침공 예고·방어 대응",13)
+	navigation_menu.get_popup().id_pressed.connect(func(id):
+		if id==13 and not event_presentation.active: open_invasions())
 	navigation_menu.get_popup().add_item("전투 결과·공훈 포상",12)
 	navigation_menu.get_popup().id_pressed.connect(func(id):
 		if id==12 and not event_presentation.active: open_battle_merit())
@@ -410,6 +419,8 @@ func _present_campaign_opening() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") and invasion_overlay!=null and invasion_overlay.visible:
+		invasion_overlay.hide(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and merit_overlay!=null and merit_overlay.visible:
 		merit_overlay.hide(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and army_overlay!=null and army_overlay.visible:
@@ -642,6 +653,7 @@ func _open_diplomacy() -> void:
 func _sync_modal_map_input() -> void:
 	map_area.modal_input_locked = (power_dialog!=null and power_dialog.visible) or Ending.finished(strategy_state) or (ending_load_dialog!=null and ending_load_dialog.visible) or (ending_save_dialog!=null and ending_save_dialog.visible) or production_overlay.visible or diplomacy_overlay.visible or (domestic_overlay!=null and domestic_overlay.visible) or (recruitment_overlay!=null and recruitment_overlay.visible) or (industry_overlay!=null and industry_overlay.visible) or (supply_overlay!=null and supply_overlay.visible) or (army_overlay!=null and army_overlay.visible) or (politics_overlay!=null and politics_overlay.visible) or (playability_dialog!=null and playability_dialog.visible)
 	map_area.modal_input_locked=map_area.modal_input_locked or (merit_overlay!=null and merit_overlay.visible)
+	map_area.modal_input_locked=map_area.modal_input_locked or (invasion_overlay!=null and invasion_overlay.visible)
 	if map_area.modal_input_locked:
 		map_area.map_dragging = false
 
@@ -1716,23 +1728,36 @@ func open_battle_merit(id: String="") -> void:
 	open_politics(); politics_overlay.hide()
 	merit_overlay.open(self,id)
 
-func resolve_army_battle(source_id: String, target_id: String, actor: String) -> Dictionary:
+func open_invasions() -> void:
+	if event_presentation.active: return
+	update_top_bar()
+	open_battle_merit(); merit_overlay.hide()
+	invasion_overlay.open(self)
+
+func resolve_army_battle(source_id: String, target_id: String, actor: String, invasion: Dictionary={}) -> Dictionary:
+	if not invasion.is_empty() and (invasion.get("status","")!="executing" or not is_same(strategy_state.get("invasions",{}).get("orders",{}).get(str(invasion.get("id","")),{}),invasion)):
+		return {"ok":false,"reason":"현재 실행 중인 침공 명령이 아닙니다."}
 	if Ending.finished(strategy_state): return {"ok":false,"executed":false,"reason":Ending.BLOCKED,"messages":[],"gold_spent":0}
 	Army.sync(strategy_state,provinces)
 	if not provinces.has(source_id) or not provinces.has(target_id) or not province_connections.get(source_id,[]).has(target_id): return {"ok":false,"reason":"연결된 전장이 아닙니다."}
+	if Economy.resolve(strategy_state,str(provinces[source_id].faction))!=actor: return {"ok":false,"reason":"출발지 소유권 변경"}
 	if Economy.resolve(strategy_state,str(provinces[target_id].faction))==actor: return {"ok":false,"reason":"아군 도시는 공격할 수 없습니다."}
 	var available: Dictionary=validate_attack_staff(source_id)
 	if not available.ok: return available
-	var participants: Array=Army.attack_units(strategy_state,source_id,actor)
+	var participants: Array=Army.attack_units(strategy_state,source_id,actor) if invasion.is_empty() else invasion.units
 	if participants.is_empty(): return {"ok":false,"reason":"훈련을 중지하고 출정 가능한 부대를 준비하세요."}
 	var commander: Dictionary=get_best_commander(source_id,"attack")
+	if not invasion.is_empty():
+		var invalid: String=Invasions.validate(self,invasion)
+		if not invalid.is_empty(): return {"ok":false,"reason":invalid}
+		commander=get_officer(invasion.commander) if not str(invasion.commander).is_empty() else {"name":"무명 장수","leadership":50,"officer_id":""}
 	var authority_reason: String=Power.attack_reason(self,source_id,str(commander.get("officer_id","")))
 	if not authority_reason.is_empty(): return {"ok":false,"reason":authority_reason}
 	var paid: Dictionary=Economy.spend(strategy_state,provinces,actor,actor,source_id,0,ATTACK_FOOD_COST,"attack",year*12+month)
 	if not paid.ok: return paid
 	var defender: Dictionary=get_best_commander(target_id)
 	mark_external_action(commander)
-	var result: Dictionary=Army.combat(strategy_state,provinces,source_id,target_id,int(commander.leadership),int(defender.leadership),year*12+month,str(commander.get("officer_id","")),str(defender.get("officer_id","")))
+	var result: Dictionary=Army.combat(strategy_state,provinces,source_id,target_id,int(commander.leadership),int(defender.leadership),year*12+month,str(commander.get("officer_id","")),str(defender.get("officer_id","")),participants)
 	result.merge({"ok":true,"attacker_name":commander.name,"defender_name":defender.name,"battle_grade":"승리" if result.won else "패배"})
 	if result.won:
 		Supply.capture(strategy_state,provinces,target_id,year*12+month)
@@ -1919,6 +1944,7 @@ func _on_recruit_button_pressed() -> void:
 	recruitment_overlay.open(self,selected_province_id)
 
 func _on_end_turn_button_pressed() -> void:
+	if invasion_overlay!=null and invasion_overlay.visible: return
 	if merit_overlay!=null and merit_overlay.visible: return
 	if Ending.finished(strategy_state) or ending_busy: return
 	if army_overlay!=null and army_overlay.visible: return
@@ -1957,6 +1983,7 @@ func _on_end_turn_button_pressed() -> void:
 		economy_messages.append(_production_reason_text(message))
 	var public_order_message: String = process_public_order()
 	var transfer_message: String = process_pending_transfer_orders()
+	economy_messages.append_array(Invasions.process(self))
 
 	var ai_message: String = run_enemy_ai_turns()
 
@@ -1988,6 +2015,7 @@ func _on_end_turn_button_pressed() -> void:
 	_present_pending_choice()
 	ending_busy=false
 	Power.finish_month(self)
+	_show_pending_merit.call_deferred()
 	evaluate_campaign_ending.call_deferred("month_complete")
 
 
@@ -2369,7 +2397,7 @@ func run_enemy_ai_turns() -> String:
 			var attack_power: float=Army.power(strategy_state,available)*(1+float(get_best_commander(source_id,"attack").leadership)/100.0)
 			var defense_power: float=Army.power(strategy_state,Army.at_city(strategy_state,target_id))*(1+float(get_best_commander(target_id).leadership)/100.0+float(target.fortress)/200.0)
 			if Army.count(strategy_state,available) >= required_troops and attack_power>defense_power*1.1:
-				messages.append(resolve_ai_attack(source_id, target_id))
+				messages.append(resolve_ai_attack(source_id,target_id))
 				continue
 
 	return combine_messages(messages)
@@ -2414,13 +2442,10 @@ func find_ai_target(source_id: String) -> String:
 
 
 func resolve_ai_attack(source_id: String, target_id: String) -> String:
-	var alert: Dictionary={}
-	if event_presentation!=null and provinces.has(target_id) and provinces.has(source_id) and provinces[target_id].faction==player_faction:
-		alert={"target_province_id":target_id,"target_province_name":provinces[target_id].name,"enemy_faction_name":provinces[source_id].faction,"enemy_troops":provinces[source_id].troops}
-	var actor: String=Economy.resolve(strategy_state,str(provinces.get(source_id,{}).get("faction","")))
-	var result: Dictionary=resolve_army_battle(source_id,target_id,actor)
-	if result.ok and not alert.is_empty(): event_presentation.dispatch.call_deferred({"event_key":"enemy_crossed_border"},alert)
-	return str(result.get("message",result.get("reason","")))
+	var result: Dictionary=Invasions.declare(self,source_id,target_id)
+	if result.ok and result.order.defender==player_faction_id and event_presentation!=null:
+		event_presentation.dispatch.call_deferred({"event_key":"enemy_crossed_border"},{"target_province_id":target_id,"target_province_name":provinces[target_id].name,"enemy_faction_name":provinces[source_id].faction,"enemy_troops":result.order.announced_troops})
+	return str(result.reason)
 
 func _move_commander_to_province(officer_ref: String, source_id: String, target_id: String) -> void:
 	var id: String = OfficerRegistry.resolve(officer_registry, officer_ref)
@@ -2541,6 +2566,7 @@ func _write_campaign_save(save_path: String) -> bool:
 	return true
 
 func _on_load_button_pressed(save_path: String = SAVE_PATH) -> void:
+	if invasion_overlay!=null: invasion_overlay.hide()
 	preparation_return={}
 	pending_merit_battles.clear()
 	if merit_overlay!=null: merit_overlay.hide()
@@ -2754,6 +2780,10 @@ func combine_messages(messages: Array[String]) -> String:
 
 
 func update_top_bar() -> void:
+	if invasion_button!=null:
+		var threats: Array=Invasions.pending(strategy_state).filter(func(o): return o.defender==player_faction_id)
+		invasion_button.text="침공 예고 %d건" % threats.size()
+		invasion_button.tooltip_text="다음 달 침공과 지난 결과 확인"
 	_sync_officer_labels()
 	var mode_label: String = (
 		"가상" if play_style == "fictional" else "역사"
@@ -2788,6 +2818,7 @@ func open_army(city: String) -> void:
 	recruitment_overlay.hide(); supply_overlay.hide(); industry_overlay.hide(); production_overlay.hide(); domestic_overlay.hide(); _close_diplomacy(); transfer_panel.close_panel()
 	army_overlay.open(self,city)
 func open_politics() -> void:
+	if invasion_overlay!=null: invasion_overlay.hide()
 	if merit_overlay!=null: merit_overlay.hide()
 	for overlay: Control in [army_overlay,domestic_overlay,recruitment_overlay,industry_overlay,supply_overlay,production_overlay,diplomacy_overlay]:
 		if overlay!=null: overlay.hide()

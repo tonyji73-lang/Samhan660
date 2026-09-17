@@ -143,13 +143,15 @@ func _run() -> void:
 	check(p.active and p.current.id == "battle_hwangsanbeol" and c.end_turn_button.disabled, "queued events preserve input lock")
 	p.restore_state({})
 	check(not p.active and p.queue.is_empty() and not c.map_area.cutscene_input_locked, "load cancels queue without executing it")
-	# A real AI simulation result is committed once, then only displayed.
+	# AI declaration reserves actual units; presentation never executes combat.
+	var battle_count: int=c.strategy_state.army.battles.size()
 	c.resolve_ai_attack("ungjin", "gukwon")
 	var after_combat: Dictionary = snapshot(c)
+	check(c.strategy_state.army.battles.size()==battle_count and c.Invasions.pending(c.strategy_state).size()==1,"AI alert reserves next-month invasion without immediate battle")
 	await process_frame
-	check(p.active and p.current.id == "enemy_invasion_alert", "actual AI attack dispatches invasion alert")
+	check(p.active and p.current.id == "enemy_invasion_alert", "actual AI declaration dispatches invasion alert")
 	p.skip()
-	check(snapshot(c) == after_combat, "skipping real alert preserves exactly one combat result")
+	check(snapshot(c) == after_combat and c.strategy_state.army.battles.size()==battle_count and c.Invasions.pending(c.strategy_state).size()==1, "skipping real alert preserves one pending order without combat")
 	# Test fixtures only: put the existing two commanders in isolated armies.
 	for city: String in ["geumseong", "geumgwan"]:
 		for id: String in c.get_city_officer_ids(city): c.OfficerRegistry.set_location(c.officer_registry,id,"")

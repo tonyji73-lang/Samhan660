@@ -212,8 +212,8 @@
         {
           "mode": "illustrated",
           "background": "enemy_invasion_alert.webp",
-          "title": "적군 침공",
-          "text": "{enemy_faction_name}군 {enemy_troops}명이 {target_province_name}로 진입했습니다.",
+          "title": "다음 달 침공 예고",
+          "text": "{enemy_faction_name}군 {enemy_troops}명이 다음 달 {target_province_name}를 공격할 예정입니다. 침공 예고 화면에서 지원·부대 명령으로 대응하십시오.",
           "sfx": "horse_arrival",
           "duration": 4.0
         }
