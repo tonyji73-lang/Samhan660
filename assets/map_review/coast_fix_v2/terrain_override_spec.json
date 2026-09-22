@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "purpose": "Godot developer comparison scene integration specification; not an implemented engine loader",
+  "source_commit": "d953cfac9fb70e10c2c45ef659eb0d1bd57e5aaf",
+  "tile_id": "c03_r02",
+  "logical_world_size": [
+    6144,
+    4096
+  ],
+  "logical_rect_xywh": [
+    3072,
+    2048,
+    1024,
+    1024
+  ],
+  "uv_bounds_min_x_min_y_max_x_max_y": [
+    0.5,
+    0.5,
+    0.6666666666666666,
+    0.75
+  ],
+  "asset_path": "assets/maps/terrain_c03_r02_coast_fix_v2_1254.png",
+  "asset_native_pixels": [
+    1254,
+    1254
+  ],
+  "before_reference_path": "reference/terrain_c03_r02_before_1254.png",
+  "settlement_demo_asset_path": "assets/settlements/korean_fortress_demo_rgba.png",
+  "runtime_default_enabled": false,
+  "coordinate_authority": "Existing runtime WorldMapData/Korea35Data merged coordinates; bundled JSON is a diagnostic snapshot only.",
+  "shared_transform_required_for": [
+    "terrain",
+    "settlements",
+    "routes",
+    "selection"
+  ],
+  "zoom_geometry_rule": "Keep this corrected tile at the same logical rect at all zoom levels in the comparison mode; do not switch between the old water outline and corrected land outline by zoom.",
+  "coarse_geometry_update_required": true,
+  "territory_mask_review_required": true,
+  "seam_review_pending": true,
+  "godot_verification_resolutions": [
+    [
+      1280,
+      720
+    ],
+    [
+      1920,
+      1080
+    ]
+  ],
+  "reviewed_anchors": [
+    {
+      "id": "geumgwan",
+      "name": "금관가야",
+      "world_uv": [
+        0.57,
+        0.69
+      ],
+      "tile_local_normalized_xy": [
+        0.42,
+        0.76
+      ],
+      "coordinate_changed": false
+    },
+    {
+      "id": "sogaya",
+      "name": "소가야",
+      "world_uv": [
+        0.54,
+        0.69
+      ],
+      "tile_local_normalized_xy": [
+        0.24,
+        0.76
+      ],
+      "coordinate_changed": false
+    },
+    {
+      "id": "ulleung",
+      "name": "울릉",
+      "world_uv": [
+        0.62,
+        0.55
+      ],
+      "tile_local_normalized_xy": [
+        0.72,
+        0.2
+      ],
+      "coordinate_changed": false
+    }
+  ],
+  "game_logic_changed": false,
+  "game_coordinates_changed": false,
+  "godot_verification_completed": false,
+  "other_first_tile_anchors_need_review": [
+    "bukhansan",
+    "samnyeonsanseong",
+    "gukwon",
+    "siljik",
+    "ungjin",
+    "sabi",
+    "gosa",
+    "geumseong",
+    "sabeol",
+    "dalgubeol",
+    "daegaya",
+    "jukryeong",
+    "chupungnyeong"
+  ]
+}

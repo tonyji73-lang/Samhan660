@@ -3,6 +3,11 @@ extends Control
 const ScenarioData = preload("res://scenario_data.gd")
 const WorldMapData = preload("res://world_map_data.gd")
 const Korea35Data = preload("res://korea_35_data.gd")
+const FactionView = preload("res://ui/faction_selection_v1/faction_selection.tscn")
+var faction_view: Control
+const SCENARIO_ART_ROOT = "res://assets/faction_selection/scenario_art_v1/"
+var scenario_art_profiles: Dictionary = {}
+var selection_map_points: Dictionary = {}
 
 const CIRCLE_PORTRAIT_SHADER_CODE: String = """
 shader_type canvas_item;
@@ -388,10 +393,13 @@ func _ready() -> void:
 	_apply_scenario_defaults(selected_scenario_index)
 	_update_faction_details()
 	_start_music()
+	_mount_faction_view()
 	call_deferred("_play_intro")
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if faction_view != null:
+		return
 	if menu_locked:
 		return
 
@@ -2407,6 +2415,10 @@ func _on_back_pressed() -> void:
 func _on_start_pressed() -> void:
 	if menu_locked:
 		return
+	if not ResourceLoader.exists(campaign_scene_path):
+		status_label.text = "캠페인 화면을 찾을 수 없습니다."
+		if faction_view != null: faction_view.set_start_error(status_label.text)
+		return
 
 	if ScenarioData.SCENARIOS.is_empty():
 		status_label.text = "선택 가능한 시나리오가 없습니다."
@@ -2456,6 +2468,7 @@ func _on_start_pressed() -> void:
 		status_label.text = "캠페인 화면을 열 수 없습니다."
 		await _fade_from_black()
 		_set_menu_enabled(true)
+		if faction_view != null: faction_view.set_start_error("캠페인 화면을 열 수 없습니다.")
 
 
 func _set_menu_enabled(enabled: bool) -> void:
@@ -2485,6 +2498,102 @@ func _set_menu_enabled(enabled: bool) -> void:
 
 	if enabled:
 		_update_start_availability()
+	_present_faction_view()
+
+func _mount_faction_view() -> void:
+	var catalog: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(SCENARIO_ART_ROOT+"profiles.json"))
+	for profile: Dictionary in catalog.get("profiles",[]):
+		scenario_art_profiles[str(profile.scenario_id_hint)+"/"+str(profile.faction_art_key)] = profile
+	var registration: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://ui/korea_layout_v1/data/castle_layout_v1.json"))
+	if FileAccess.get_sha256("res://ui/faction_selection_v1/assets/approved_korea.png")==str(registration.terrain_sha256):
+		for point: Dictionary in registration.points:
+			selection_map_points[str(point.id)]=Vector2(float(point.render_xy[0]),float(point.render_xy[1]))/1254.0
+	for child: Node in get_children():
+		if child is Control and child != fade_rect:
+			child.hide()
+	faction_view = FactionView.instantiate()
+	add_child(faction_view)
+	move_child(fade_rect, get_child_count()-1)
+	faction_view.scenario_requested.connect(func(id: String):
+		if menu_locked: return
+		for index: int in range(ScenarioData.SCENARIOS.size()):
+			if str(ScenarioData.SCENARIOS[index].id)==id:
+				_on_scenario_selected(index)
+				_present_faction_view()
+				return)
+	faction_view.faction_requested.connect(func(id: String):
+		if menu_locked: return
+		_on_faction_toggled(true,id)
+		_present_faction_view())
+	faction_view.mode_requested.connect(func(id: String):
+		if menu_locked or not PLAY_STYLE_ORDER.has(id): return
+		_on_play_style_toggled(true,id)
+		_present_faction_view())
+	faction_view.difficulty_requested.connect(func(id: String):
+		if menu_locked or not DIFFICULTY_ORDER.has(id): return
+		_on_difficulty_toggled(true,id)
+		_present_faction_view())
+	faction_view.back_requested.connect(_on_back_pressed)
+	faction_view.start_requested.connect(_start_from_faction_view)
+	_present_faction_view()
+
+func _start_from_faction_view(selection: Dictionary) -> void:
+	if menu_locked: return
+	var expected := {"scenario_id":_get_scenario_id(),"faction_id":selected_faction_id,"mode_id":selected_play_style_id,"difficulty_id":selected_difficulty_id}
+	if selection != expected or not PLAY_STYLE_ORDER.has(selected_play_style_id) or not DIFFICULTY_ORDER.has(selected_difficulty_id) or not ScenarioData.is_faction_playable_by_default(_get_scenario_id(),selected_faction_id):
+		faction_view.set_start_error("선택이 변경되었습니다. 다시 선택해 주세요.")
+		return
+	_on_start_pressed()
+
+func _present_faction_view() -> void:
+	if faction_view == null: return
+	var scenario: Dictionary = _get_selected_scenario()
+	var data: Dictionary = _get_selected_faction_data()
+	var scenarios: Array=[]
+	for item: Dictionary in ScenarioData.SCENARIOS:
+		scenarios.append({"id":str(item.id),"label":"%d년" % int(item.year),"subtitle":str(item.name),"enabled":true})
+	var factions: Array=[]
+	for item: Dictionary in scenario.get("factions",[]):
+		var playable: bool=ScenarioData.is_faction_playable_by_default(_get_scenario_id(),str(item.id))
+		factions.append({"id":str(item.id),"label":str(item.name),"enabled":playable,"reason":"" if playable else "이 시나리오에서는 AI가 운영하는 세력입니다."})
+	var modes: Array=[]
+	for id: String in PLAY_STYLE_ORDER:
+		modes.append({"id":id,"label":"역사" if id=="historical" else "가상","enabled":true,"reason":PLAY_STYLE_DESCRIPTIONS[id]})
+	var difficulty: Array=[]
+	for id: String in DIFFICULTY_ORDER:
+		difficulty.append({"id":id,"label":DIFFICULTY_NAMES[id],"enabled":true,"reason":DIFFICULTY_DESCRIPTIONS[id]})
+	var art: Dictionary={"background":_resolve_selection_background_path(),"portrait":_load_first_texture(data.get("portrait_paths",[])),"map":"res://ui/faction_selection_v1/assets/approved_korea.png","seal_text":"","declaration_columns":[]}
+	var profile: Dictionary=scenario_art_profiles.get(_get_scenario_id()+"/"+selected_faction_id,{})
+	if not profile.is_empty() and str(profile.ruler_name_reference)==str(data.get("ruler","")):
+		art.portrait=SCENARIO_ART_ROOT+str(profile.portrait)
+		art.background=SCENARIO_ART_ROOT+str(profile.background)
+		art.declaration_columns=profile.declaration_columns
+		art.seal_text=str(profile.seal_text)
+		art.profile_key=str(profile.profile_key)
+	if _is_silla_632_pilot():
+		art.background="res://ui/faction_selection_v1/assets/palace_632_silla.png"
+		art.portrait="res://ui/faction_selection_v1/assets/seondeok.png"
+		art.declaration_columns=["백성을 품고","나라를 지키며","흔들림 없이","신라의 내일을","열어 가리라"]
+		art.seal_text="新羅"
+	var start_id: String=ScenarioData.get_starting_province(_get_scenario_id(),selected_faction_id)
+	var start_name: String=str(Korea35Data.PROVINCE_NAMES.get(start_id,start_id))
+	art.start_province_id=start_id
+	art.capital_label=start_name
+	if selection_map_points.has(start_id): art.capital_uv=selection_map_points[start_id]
+	var facts: Array=[{"label":"초기 영지","value":str(data.get("territories",""))},{"label":"위험","value":str(data.get("risk",""))}]
+	if start_name!=str(data.get("capital","")):
+		facts.push_front({"label":"시작 거점","value":start_name+ (" · 지도 범위 밖" if not selection_map_points.has(start_id) else "")})
+	faction_view.present({"scenario_id":_get_scenario_id(),"faction_id":selected_faction_id,"mode_id":selected_play_style_id,"difficulty_id":selected_difficulty_id,
+		"scenarios":scenarios,"factions":factions,"modes":modes,"difficulty":difficulty,
+		"year_label":"%d년" % _get_scenario_year(),"scenario_title":str(scenario.get("name","")).trim_prefix("%d년" % _get_scenario_year()).strip_edges().trim_prefix(",").strip_edges(),
+		"faction_name":str(data.get("name","")),"leader":str(data.get("ruler","")),"capital":str(data.get("capital","")),
+		"key_people":" · ".join(data.get("notable",[])),
+		"key_people_detail":ScenarioData.get_notable_text(data.get("notable",[]),_get_scenario_year()),
+		"start_label":"%s로 시작" % str(data.get("name","")),
+		"tagline":str(data.get("strength","")),"description":faction_description_label.text,
+		"starting_facts":facts,
+		"can_start":ScenarioData.is_faction_playable_by_default(_get_scenario_id(),selected_faction_id),"busy":menu_locked,
+		"start_disabled_reason":"이 시나리오에서는 선택할 수 없는 세력입니다.","start_error":status_label.text if not menu_locked else "","art":art})
 
 # ==========================================
 # 오디오

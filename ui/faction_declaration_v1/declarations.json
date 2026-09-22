@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "source": "reference/ruler_declarations_v1_ko.txt",
+  "source_library_file_id": "libfile_fafdb7966c288191b13c77dd726aa566",
+  "copy_status": "Existing game dialogue restored verbatim; not historical quotations.",
+  "reading_order": "columns_right_to_left; characters_top_to_bottom; preserve_spaces",
+  "id_policy": "Match current controller IDs explicitly; no faction-only fallback.",
+  "entries": {
+    "silla_equilibrium_632/silla": {
+      "key": "silla_equilibrium_632/silla",
+      "profile_key": "632_silla",
+      "scenario_id_reference": "silla_equilibrium_632",
+      "faction_id_reference": "silla",
+      "heading": "632년 신라 · 선덕여왕",
+      "year": 632,
+      "ruler": "선덕여왕",
+      "columns": [
+        "나 선덕여왕은",
+        "진평왕의 뒤를 이어",
+        "신라의 왕위에 올랐노라",
+        "백제와 고구려를 막아",
+        "신라의 앞날을 열리라"
+      ],
+      "seal_text": "新羅"
+    },
+    "silla_equilibrium_632/baekje": {
+      "key": "silla_equilibrium_632/baekje",
+      "profile_key": "632_baekje",
+      "scenario_id_reference": "silla_equilibrium_632",
+      "faction_id_reference": "baekje",
+      "heading": "632년 백제 · 무왕",
+      "year": 632,
+      "ruler": "무왕",
+      "columns": [
+        "나 무왕은",
+        "백제의 오랜 뜻을 받들어",
+        "나라의 기틀을 다지고",
+        "빼앗긴 강토를 되찾아",
+        "백제의 위엄을 세우리라"
+      ],
+      "seal_text": "百濟"
+    },
+    "silla_equilibrium_632/goguryeo": {
+      "key": "silla_equilibrium_632/goguryeo",
+      "profile_key": "632_goguryeo",
+      "scenario_id_reference": "silla_equilibrium_632",
+      "faction_id_reference": "goguryeo",
+      "heading": "632년 고구려 · 영류왕",
+      "year": 632,
+      "ruler": "영류왕",
+      "columns": [
+        "나 영류왕은",
+        "당과 화친을 도모하되",
+        "변방의 성을 굳게 하여",
+        "백성이 다시 밭을 갈고",
+        "나라가 숨을 고르게 하리라"
+      ],
+      "seal_text": "高句麗"
+    },
+    "goguryeo_coup_642/silla": {
+      "key": "goguryeo_coup_642/silla",
+      "profile_key": "642_silla",
+      "scenario_id_reference": "goguryeo_coup_642",
+      "faction_id_reference": "silla",
+      "heading": "642년 신라 · 선덕여왕",
+      "year": 642,
+      "ruler": "선덕여왕",
+      "columns": [
+        "나 선덕여왕은",
+        "대야의 아픔을 품고",
+        "무너진 성을 다시 세워",
+        "백제의 칼끝을 막고",
+        "신라의 등불을 지키리라"
+      ],
+      "seal_text": "新羅"
+    },
+    "goguryeo_coup_642/baekje": {
+      "key": "goguryeo_coup_642/baekje",
+      "profile_key": "642_baekje",
+      "scenario_id_reference": "goguryeo_coup_642",
+      "faction_id_reference": "baekje",
+      "heading": "642년 백제 · 의자왕",
+      "year": 642,
+      "ruler": "의자왕",
+      "columns": [
+        "나 의자왕은",
+        "선왕의 큰 뜻을 이어",
+        "신라의 성들을 꺾었노라",
+        "이 기세로 군사를 몰아",
+        "백제의 강토를 넓히리라"
+      ],
+      "seal_text": "百濟"
+    },
+    "goguryeo_coup_642/goguryeo": {
+      "key": "goguryeo_coup_642/goguryeo",
+      "profile_key": "642_goguryeo",
+      "scenario_id_reference": "goguryeo_coup_642",
+      "faction_id_reference": "goguryeo",
+      "heading": "642년 고구려 · 보장왕",
+      "year": 642,
+      "ruler": "보장왕",
+      "columns": [
+        "나 보장왕은",
+        "어지러운 조정에 서서",
+        "새로이 왕위를 이었노라",
+        "신하와 백성의 힘을 모아",
+        "고구려를 지켜 내리라"
+      ],
+      "seal_text": "高句麗"
+    },
+    "baekje_fall_660/silla": {
+      "key": "baekje_fall_660/silla",
+      "profile_key": "660_silla",
+      "scenario_id_reference": "baekje_fall_660",
+      "faction_id_reference": "silla",
+      "heading": "660년 신라 · 김춘추",
+      "year": 660,
+      "ruler": "김춘추",
+      "columns": [
+        "나 신라왕 김춘추는",
+        "오랜 싸움에 끝을 고하고",
+        "당과 함께 군사를 일으켜",
+        "백제의 성문을 넘어",
+        "신라의 큰 뜻을 이루리라"
+      ],
+      "seal_text": "新羅"
+    },
+    "baekje_fall_660/baekje": {
+      "key": "baekje_fall_660/baekje",
+      "profile_key": "660_baekje",
+      "scenario_id_reference": "baekje_fall_660",
+      "faction_id_reference": "baekje",
+      "heading": "660년 백제 · 의자왕",
+      "year": 660,
+      "ruler": "의자왕",
+      "columns": [
+        "나 의자왕은",
+        "적의 깃발이 다가와도",
+        "사비의 문을 닫아 걸고",
+        "장수와 백성을 믿으며",
+        "이 나라를 내주지 않으리라"
+      ],
+      "seal_text": "百濟"
+    },
+    "baekje_fall_660/goguryeo": {
+      "key": "baekje_fall_660/goguryeo",
+      "profile_key": "660_goguryeo",
+      "scenario_id_reference": "baekje_fall_660",
+      "faction_id_reference": "goguryeo",
+      "heading": "660년 고구려 · 보장왕",
+      "year": 660,
+      "ruler": "보장왕",
+      "columns": [
+        "나 보장왕은",
+        "남녘의 전운을 살피며",
+        "강과 산성을 굳게 지켜",
+        "당과 신라의 길을 막고",
+        "우리 강토를 보전하리라"
+      ],
+      "seal_text": "高句麗"
+    },
+    "baekgang_663/silla": {
+      "key": "baekgang_663/silla",
+      "profile_key": "663_silla",
+      "scenario_id_reference": "baekgang_663",
+      "faction_id_reference": "silla",
+      "heading": "663년 신라 · 김법민",
+      "year": 663,
+      "ruler": "김법민",
+      "columns": [
+        "나 신라왕 김법민은",
+        "선왕이 남긴 뜻을 이어",
+        "백강의 거센 물결을 넘어",
+        "새로 얻은 땅을 다스려",
+        "나라의 기틀을 굳히리라"
+      ],
+      "seal_text": "新羅"
+    },
+    "baekgang_663/baekje_revival": {
+      "key": "baekgang_663/baekje_revival",
+      "profile_key": "663_baekje_revival",
+      "scenario_id_reference": "baekgang_663",
+      "faction_id_reference": "baekje_revival",
+      "heading": "663년 백제 부흥 · 부여풍",
+      "year": 663,
+      "ruler": "부여풍",
+      "columns": [
+        "나 부여풍은",
+        "왕도는 빼앗겼으나",
+        "백제의 혼은 살아 있노라",
+        "바다 건너 벗과 손잡고",
+        "고국의 깃발을 세우리라"
+      ],
+      "seal_text": "百濟"
+    },
+    "baekgang_663/goguryeo": {
+      "key": "baekgang_663/goguryeo",
+      "profile_key": "663_goguryeo",
+      "scenario_id_reference": "baekgang_663",
+      "faction_id_reference": "goguryeo",
+      "heading": "663년 고구려 · 보장왕",
+      "year": 663,
+      "ruler": "보장왕",
+      "columns": [
+        "나 보장왕은",
+        "백제의 몰락을 보았으되",
+        "고구려마저 꺾이랴",
+        "수많은 침공을 견딘 땅에",
+        "다시 굳은 뜻을 세우리라"
+      ],
+      "seal_text": "高句麗"
+    },
+    "baekgang_663/tang": {
+      "key": "baekgang_663/tang",
+      "profile_key": "663_tang",
+      "scenario_id_reference": "baekgang_663",
+      "faction_id_reference": "tang",
+      "heading": "663년 당 · 당 고종",
+      "year": 663,
+      "ruler": "당 고종",
+      "columns": [
+        "짐은 대당의 천자이니",
+        "백강의 반기를 거두고",
+        "고구려의 성문을 열어",
+        "황명을 널리 떨치리라",
+        "동방에 질서를 세우리라"
+      ],
+      "seal_text": "唐"
+    },
+    "silla_tang_war_670/silla": {
+      "key": "silla_tang_war_670/silla",
+      "profile_key": "670_silla",
+      "scenario_id_reference": "silla_tang_war_670",
+      "faction_id_reference": "silla",
+      "heading": "670년 신라 · 김법민",
+      "year": 670,
+      "ruler": "김법민",
+      "columns": [
+        "나 신라왕 김법민은",
+        "어제의 벗이 땅을 탐하니",
+        "이제는 우리 뜻으로 서리라",
+        "한 치의 땅도 내주지 않고",
+        "우리 백성을 지켜 내리라"
+      ],
+      "seal_text": "新羅"
+    },
+    "silla_tang_war_670/tang": {
+      "key": "silla_tang_war_670/tang",
+      "profile_key": "670_tang",
+      "scenario_id_reference": "silla_tang_war_670",
+      "faction_id_reference": "tang",
+      "heading": "670년 당 · 당 고종",
+      "year": 670,
+      "ruler": "당 고종",
+      "columns": [
+        "짐은 대당의 천자이니",
+        "옛 맹약을 저버린 자여",
+        "황명을 가벼이 여기지 말라",
+        "동방의 군사를 다시 일으켜",
+        "천자의 위엄을 보이리라"
+      ],
+      "seal_text": "唐"
+    },
+    "silla_tang_war_670/goguryeo_revival": {
+      "key": "silla_tang_war_670/goguryeo_revival",
+      "profile_key": "670_goguryeo_revival",
+      "scenario_id_reference": "silla_tang_war_670",
+      "faction_id_reference": "goguryeo_revival",
+      "heading": "670년 고구려 부흥 · 안승",
+      "year": 670,
+      "ruler": "안승",
+      "columns": [
+        "나 안승은",
+        "고구려의 이름을 받들어",
+        "흩어진 백성을 모으고",
+        "꺼져 가는 불씨를 지켜",
+        "다시 설 터전을 찾으리라"
+      ],
+      "seal_text": "高句麗"
+    }
+  }
+}

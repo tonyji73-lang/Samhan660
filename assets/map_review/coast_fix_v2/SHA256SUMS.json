@@ -1,0 +1,16 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "COAST_FIX_COMPARISON.png": "5d60732cb775c0314e02fd4d0683ae8c24c576e2379af4094ee6fa0890735440",
+    "README_KO.md": "d5cbe1ebb7eaa5aa14ec7b0fb0d88769f73669bf3ea1c4ca417b23670de10037",
+    "VSCODE_NEXT_STEP.txt": "9763cc90c8061379f7383ae0d3faba0e00a6cde0a2b5063fed86b4dd15851e5f",
+    "assets/maps/terrain_c03_r02_coast_fix_v2_1254.png": "e22933b846ac607ae80d1401a53f1be39adbc33743fcb830647c1144756a7070",
+    "assets/settlements/korean_fortress_demo_rgba.png": "45974cd37c11d7c044a273adf617594247bc56bf7d911e84e61834c0a5783db5",
+    "prompts/correction.txt": "e0d32a4136c063ea3cb7fde19ba8e489851ffcaa47a565852ac4ec17fb727277",
+    "prompts/land_clearance.txt": "a6c58f506311496e92a8cf74840340179fc7ce61634d37a4aa6564466de8a46c",
+    "reference/effective_coordinates.json": "7c1c66fd07b6145f2c4efaeff9a7cb62e11934dcb49c07d1841c90e742cdf645",
+    "reference/terrain_c03_r02_before_1254.png": "ff6ee4f8e714f0755e6bbb2a7a110c3c248685199c991e0a78510f10b0a2df56",
+    "terrain_override_spec.json": "c9b0ad7bd027ebcb8bee60c1f940b3e1291f49d2666e45685eeaf8b910cb44b9",
+    "tile_manifest.json": "7f9f2d33870f1deb36d71201d749f4bd6658e9300c39f744bb89fb703db7460a"
+  }
+}

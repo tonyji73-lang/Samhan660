@@ -1,0 +1,1266 @@
+{
+  "schema_version": 1,
+  "status": "visual_layout_candidate_not_game_integration",
+  "scenario_year": 642,
+  "image_size": [
+    1254,
+    1254
+  ],
+  "coordinate_system": "native image pixels; origin top left",
+  "registration_method": "Manual visual registration to approved artwork; not surveyed georeferencing",
+  "terrain_sha256": "36594c1d1ee0cbcd80a175d72790d3e22423103cf81d6b191f8bf2d317e1f246",
+  "source_data_sha256": "cfc0e50578fd0217d25a74f01cedcb65b7cd017437d0daeae3d53cba7aa38eae",
+  "original_world_coordinates_preserved": true,
+  "render_policy": {
+    "pivot": [
+      0.5,
+      0.67
+    ],
+    "detail_threshold_screen_px": 18,
+    "maximum_width_to_nearest_distance": 0.5,
+    "distant_marker_diameter_px": 7,
+    "minimum_pick_diameter_px": 32,
+    "picking": "nearest visible anchor in shared hit resolver; no first-overlapping-button priority",
+    "scaling": "native sprite width times the SAME camera scale as terrain; no minimum sprite clamp",
+    "label_policy": "selected and capitals first; collision declutter; all names in selector"
+  },
+  "points": [
+    {
+      "id": "shinseong",
+      "index": 1,
+      "name": "신성",
+      "faction_642": "고구려",
+      "region": "북부·요동",
+      "render_xy": [
+        215,
+        106
+      ],
+      "render_uv": [
+        0.1714514,
+        0.0845295
+      ],
+      "source_world_uv": [
+        0.455,
+        0.31
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 22.0,
+      "marker_only": false,
+      "nearest_id": "ansi",
+      "nearest_distance": 93.48,
+      "width_to_nearest_pct": 23.5,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 8.25
+    },
+    {
+      "id": "sokgunseong",
+      "index": 2,
+      "name": "속군성",
+      "faction_642": "고구려",
+      "region": "북부·요동",
+      "render_xy": [
+        106,
+        119
+      ],
+      "render_uv": [
+        0.0845295,
+        0.0948963
+      ],
+      "source_world_uv": [
+        0.415,
+        0.35
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 22.0,
+      "marker_only": false,
+      "nearest_id": "ansi",
+      "nearest_distance": 85.04,
+      "width_to_nearest_pct": 25.9,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 45.61
+    },
+    {
+      "id": "ansi",
+      "index": 3,
+      "name": "안시성",
+      "faction_642": "고구려",
+      "region": "북부·요동",
+      "render_xy": [
+        162,
+        183
+      ],
+      "render_uv": [
+        0.1291866,
+        0.145933
+      ],
+      "source_world_uv": [
+        0.435,
+        0.365
+      ],
+      "tier": "major",
+      "nominal_width_native": 26,
+      "sprite_width_native": 26.0,
+      "marker_only": false,
+      "nearest_id": "geonanseong",
+      "nearest_distance": 81.49,
+      "width_to_nearest_pct": 31.9,
+      "review_land_fraction": 0.9437,
+      "water_clearance_px": 3.0
+    },
+    {
+      "id": "geonanseong",
+      "index": 4,
+      "name": "건안성",
+      "faction_642": "고구려",
+      "region": "북부·요동",
+      "render_xy": [
+        241,
+        203
+      ],
+      "render_uv": [
+        0.192185,
+        0.161882
+      ],
+      "source_world_uv": [
+        0.43,
+        0.42
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 22.0,
+      "marker_only": false,
+      "nearest_id": "ansi",
+      "nearest_distance": 81.49,
+      "width_to_nearest_pct": 27.0,
+      "review_land_fraction": 0.9804,
+      "water_clearance_px": 6.71
+    },
+    {
+      "id": "gungnae",
+      "index": 5,
+      "name": "국내성",
+      "faction_642": "고구려",
+      "region": "북부·요동",
+      "render_xy": [
+        496,
+        258
+      ],
+      "render_uv": [
+        0.3955343,
+        0.2057416
+      ],
+      "source_world_uv": [
+        0.53,
+        0.335
+      ],
+      "tier": "major",
+      "nominal_width_native": 26,
+      "sprite_width_native": 26.0,
+      "marker_only": false,
+      "nearest_id": "pyongyang",
+      "nearest_distance": 183.64,
+      "width_to_nearest_pct": 14.2,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 13.93
+    },
+    {
+      "id": "chaekseong",
+      "index": 6,
+      "name": "책성·동북 변경",
+      "faction_642": "고구려",
+      "region": "북부·요동",
+      "render_xy": [
+        846,
+        115
+      ],
+      "render_uv": [
+        0.6746411,
+        0.0917065
+      ],
+      "source_world_uv": [
+        0.585,
+        0.315
+      ],
+      "tier": "node",
+      "nominal_width_native": 8,
+      "sprite_width_native": 8,
+      "marker_only": true,
+      "nearest_id": "gungnae",
+      "nearest_distance": 378.09,
+      "width_to_nearest_pct": 2.1,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 8.94
+    },
+    {
+      "id": "bireyeolhol",
+      "index": 7,
+      "name": "비열홀",
+      "faction_642": "고구려",
+      "region": "북부·요동",
+      "render_xy": [
+        607,
+        433
+      ],
+      "render_uv": [
+        0.484051,
+        0.3452951
+      ],
+      "source_world_uv": [
+        0.57,
+        0.38
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 22.0,
+      "marker_only": false,
+      "nearest_id": "goksan",
+      "nearest_distance": 76.49,
+      "width_to_nearest_pct": 28.8,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 4.12
+    },
+    {
+      "id": "pyongyang",
+      "index": 8,
+      "name": "평양성",
+      "faction_642": "고구려",
+      "region": "북부·요동",
+      "render_xy": [
+        465,
+        439
+      ],
+      "render_uv": [
+        0.3708134,
+        0.3500797
+      ],
+      "source_world_uv": [
+        0.5,
+        0.45
+      ],
+      "tier": "capital",
+      "nominal_width_native": 30,
+      "sprite_width_native": 26.31,
+      "marker_only": false,
+      "nearest_id": "daedonggang",
+      "nearest_distance": 52.63,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 16.12
+    },
+    {
+      "id": "daedonggang",
+      "index": 9,
+      "name": "대동강 하류",
+      "faction_642": "고구려",
+      "region": "북부·요동",
+      "render_xy": [
+        424,
+        472
+      ],
+      "render_uv": [
+        0.338118,
+        0.3763955
+      ],
+      "source_world_uv": [
+        0.485,
+        0.475
+      ],
+      "tier": "node",
+      "nominal_width_native": 8,
+      "sprite_width_native": 8,
+      "marker_only": true,
+      "nearest_id": "pyongyang",
+      "nearest_distance": 52.63,
+      "width_to_nearest_pct": 15.2,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 3.0
+    },
+    {
+      "id": "goksan",
+      "index": 10,
+      "name": "곡산 내륙",
+      "faction_642": "고구려",
+      "region": "북부·요동",
+      "render_xy": [
+        550,
+        484
+      ],
+      "render_uv": [
+        0.4385965,
+        0.3859649
+      ],
+      "source_world_uv": [
+        0.545,
+        0.455
+      ],
+      "tier": "node",
+      "nominal_width_native": 8,
+      "sprite_width_native": 8,
+      "marker_only": true,
+      "nearest_id": "bireyeolhol",
+      "nearest_distance": 76.49,
+      "width_to_nearest_pct": 10.5,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 10.0
+    },
+    {
+      "id": "hwanghae",
+      "index": 11,
+      "name": "황해 남부",
+      "faction_642": "고구려",
+      "region": "북부·요동",
+      "render_xy": [
+        456,
+        518
+      ],
+      "render_uv": [
+        0.3636364,
+        0.4130781
+      ],
+      "source_world_uv": [
+        0.47,
+        0.49
+      ],
+      "tier": "node",
+      "nominal_width_native": 8,
+      "sprite_width_native": 8,
+      "marker_only": true,
+      "nearest_id": "daedonggang",
+      "nearest_distance": 56.04,
+      "width_to_nearest_pct": 14.3,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 3.0
+    },
+    {
+      "id": "bukhansan",
+      "index": 12,
+      "name": "북한산성",
+      "faction_642": "신라",
+      "region": "중부·동해",
+      "render_xy": [
+        542,
+        635
+      ],
+      "render_uv": [
+        0.4322169,
+        0.5063796
+      ],
+      "source_world_uv": [
+        0.505,
+        0.5
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 19.9,
+      "marker_only": false,
+      "nearest_id": "danghangseong",
+      "nearest_distance": 39.81,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 9.9
+    },
+    {
+      "id": "danghangseong",
+      "index": 13,
+      "name": "당항성",
+      "faction_642": "신라",
+      "region": "중부·동해",
+      "render_xy": [
+        550,
+        674
+      ],
+      "render_uv": [
+        0.4385965,
+        0.5374801
+      ],
+      "source_world_uv": [
+        0.475,
+        0.525
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 19.9,
+      "marker_only": false,
+      "nearest_id": "bukhansan",
+      "nearest_distance": 39.81,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 5.0
+    },
+    {
+      "id": "samnyeonsanseong",
+      "index": 14,
+      "name": "삼년산성",
+      "faction_642": "신라",
+      "region": "중부·동해",
+      "render_xy": [
+        626,
+        739
+      ],
+      "render_uv": [
+        0.4992026,
+        0.5893142
+      ],
+      "source_world_uv": [
+        0.545,
+        0.515
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 20.39,
+      "marker_only": false,
+      "nearest_id": "ungjin",
+      "nearest_distance": 40.79,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 8.06
+    },
+    {
+      "id": "gukwon",
+      "index": 15,
+      "name": "국원",
+      "faction_642": "신라",
+      "region": "중부·동해",
+      "render_xy": [
+        627,
+        675
+      ],
+      "render_uv": [
+        0.5,
+        0.5382775
+      ],
+      "source_world_uv": [
+        0.55,
+        0.54
+      ],
+      "tier": "major",
+      "nominal_width_native": 26,
+      "sprite_width_native": 25.22,
+      "marker_only": false,
+      "nearest_id": "jukryeong",
+      "nearest_distance": 50.45,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 32.65
+    },
+    {
+      "id": "haslla",
+      "index": 16,
+      "name": "하슬라",
+      "faction_642": "신라",
+      "region": "중부·동해",
+      "render_xy": [
+        714,
+        576
+      ],
+      "render_uv": [
+        0.569378,
+        0.4593301
+      ],
+      "source_world_uv": [
+        0.59,
+        0.48
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 22.0,
+      "marker_only": false,
+      "nearest_id": "siljik",
+      "nearest_distance": 59.93,
+      "width_to_nearest_pct": 36.7,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 11.18
+    },
+    {
+      "id": "siljik",
+      "index": 17,
+      "name": "실직",
+      "faction_642": "신라",
+      "region": "중부·동해",
+      "render_xy": [
+        740,
+        630
+      ],
+      "render_uv": [
+        0.5901116,
+        0.5023923
+      ],
+      "source_world_uv": [
+        0.6,
+        0.53
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 22.0,
+      "marker_only": false,
+      "nearest_id": "haslla",
+      "nearest_distance": 59.93,
+      "width_to_nearest_pct": 36.7,
+      "review_land_fraction": 0.9902,
+      "water_clearance_px": 5.39
+    },
+    {
+      "id": "imjonseong",
+      "index": 18,
+      "name": "임존성",
+      "faction_642": "백제",
+      "region": "서남부",
+      "render_xy": [
+        543,
+        721
+      ],
+      "render_uv": [
+        0.4330144,
+        0.5749601
+      ],
+      "source_world_uv": [
+        0.49,
+        0.54
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 22.0,
+      "marker_only": false,
+      "nearest_id": "danghangseong",
+      "nearest_distance": 47.52,
+      "width_to_nearest_pct": 46.3,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 11.4
+    },
+    {
+      "id": "ungjin",
+      "index": 19,
+      "name": "웅진성",
+      "faction_642": "백제",
+      "region": "서남부",
+      "render_xy": [
+        586,
+        747
+      ],
+      "render_uv": [
+        0.4673046,
+        0.5956938
+      ],
+      "source_world_uv": [
+        0.515,
+        0.555
+      ],
+      "tier": "major",
+      "nominal_width_native": 26,
+      "sprite_width_native": 20.39,
+      "marker_only": false,
+      "nearest_id": "samnyeonsanseong",
+      "nearest_distance": 40.79,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 35.61
+    },
+    {
+      "id": "sabi",
+      "index": 20,
+      "name": "사비성",
+      "faction_642": "백제",
+      "region": "서남부",
+      "render_xy": [
+        566,
+        783
+      ],
+      "render_uv": [
+        0.4513557,
+        0.6244019
+      ],
+      "source_world_uv": [
+        0.52,
+        0.585
+      ],
+      "tier": "capital",
+      "nominal_width_native": 30,
+      "sprite_width_native": 20.59,
+      "marker_only": false,
+      "nearest_id": "ungjin",
+      "nearest_distance": 41.18,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 11.7
+    },
+    {
+      "id": "geummajeo",
+      "index": 21,
+      "name": "금마저",
+      "faction_642": "백제",
+      "region": "서남부",
+      "render_xy": [
+        583,
+        822
+      ],
+      "render_uv": [
+        0.4649123,
+        0.6555024
+      ],
+      "source_world_uv": [
+        0.49,
+        0.59
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 21.27,
+      "marker_only": false,
+      "nearest_id": "sabi",
+      "nearest_distance": 42.54,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 17.0
+    },
+    {
+      "id": "gosa",
+      "index": 22,
+      "name": "고사부리",
+      "faction_642": "백제",
+      "region": "서남부",
+      "render_xy": [
+        557,
+        868
+      ],
+      "render_uv": [
+        0.4441786,
+        0.692185
+      ],
+      "source_world_uv": [
+        0.515,
+        0.615
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 17.06,
+      "marker_only": false,
+      "nearest_id": "juryuseong",
+      "nearest_distance": 34.13,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 19.21
+    },
+    {
+      "id": "juryuseong",
+      "index": 23,
+      "name": "주류성",
+      "faction_642": "백제",
+      "region": "서남부",
+      "render_xy": [
+        539,
+        839
+      ],
+      "render_uv": [
+        0.4298246,
+        0.669059
+      ],
+      "source_world_uv": [
+        0.47,
+        0.625
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 17.06,
+      "marker_only": false,
+      "nearest_id": "gosa",
+      "nearest_distance": 34.13,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 5.0
+    },
+    {
+      "id": "yeongsangang",
+      "index": 24,
+      "name": "영산강 권역",
+      "faction_642": "백제",
+      "region": "서남부",
+      "render_xy": [
+        575,
+        922
+      ],
+      "render_uv": [
+        0.4585327,
+        0.7352472
+      ],
+      "source_world_uv": [
+        0.48,
+        0.665
+      ],
+      "tier": "node",
+      "nominal_width_native": 8,
+      "sprite_width_native": 8,
+      "marker_only": true,
+      "nearest_id": "gosa",
+      "nearest_distance": 56.92,
+      "width_to_nearest_pct": 14.1,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 36.22
+    },
+    {
+      "id": "geumseong",
+      "index": 25,
+      "name": "금성·월성",
+      "faction_642": "신라",
+      "region": "영남",
+      "render_xy": [
+        747,
+        825
+      ],
+      "render_uv": [
+        0.5956938,
+        0.6578947
+      ],
+      "source_world_uv": [
+        0.595,
+        0.61
+      ],
+      "tier": "capital",
+      "nominal_width_native": 30,
+      "sprite_width_native": 24.62,
+      "marker_only": false,
+      "nearest_id": "dalgubeol",
+      "nearest_distance": 49.24,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 7.21
+    },
+    {
+      "id": "sabeol",
+      "index": 26,
+      "name": "사벌",
+      "faction_642": "신라",
+      "region": "영남",
+      "render_xy": [
+        678,
+        734
+      ],
+      "render_uv": [
+        0.5406699,
+        0.585327
+      ],
+      "source_world_uv": [
+        0.56,
+        0.58
+      ],
+      "tier": "major",
+      "nominal_width_native": 26,
+      "sprite_width_native": 25.73,
+      "marker_only": false,
+      "nearest_id": "chupungnyeong",
+      "nearest_distance": 51.48,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 20.62
+    },
+    {
+      "id": "dalgubeol",
+      "index": 27,
+      "name": "달구벌",
+      "faction_642": "신라",
+      "region": "영남",
+      "render_xy": [
+        699,
+        814
+      ],
+      "render_uv": [
+        0.5574163,
+        0.6491228
+      ],
+      "source_world_uv": [
+        0.56,
+        0.63
+      ],
+      "tier": "major",
+      "nominal_width_native": 26,
+      "sprite_width_native": 24.62,
+      "marker_only": false,
+      "nearest_id": "geumseong",
+      "nearest_distance": 49.24,
+      "width_to_nearest_pct": 50.0,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 27.86
+    },
+    {
+      "id": "daegaya",
+      "index": 28,
+      "name": "대가야",
+      "faction_642": "백제",
+      "region": "영남",
+      "render_xy": [
+        654,
+        851
+      ],
+      "render_uv": [
+        0.5215311,
+        0.6786284
+      ],
+      "source_world_uv": [
+        0.53,
+        0.66
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 22.0,
+      "marker_only": false,
+      "nearest_id": "sogaya",
+      "nearest_distance": 57.78,
+      "width_to_nearest_pct": 38.1,
+      "review_land_fraction": 0.9804,
+      "water_clearance_px": 6.0
+    },
+    {
+      "id": "geumgwan",
+      "index": 29,
+      "name": "금관가야",
+      "faction_642": "신라",
+      "region": "영남",
+      "render_xy": [
+        733,
+        904
+      ],
+      "render_uv": [
+        0.5845295,
+        0.7208931
+      ],
+      "source_world_uv": [
+        0.57,
+        0.69
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 22.0,
+      "marker_only": false,
+      "nearest_id": "sogaya",
+      "nearest_distance": 56.0,
+      "width_to_nearest_pct": 39.3,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 9.06
+    },
+    {
+      "id": "sogaya",
+      "index": 30,
+      "name": "소가야",
+      "faction_642": "백제",
+      "region": "영남",
+      "render_xy": [
+        677,
+        904
+      ],
+      "render_uv": [
+        0.5398724,
+        0.7208931
+      ],
+      "source_world_uv": [
+        0.54,
+        0.69
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 22.0,
+      "marker_only": false,
+      "nearest_id": "geumgwan",
+      "nearest_distance": 56.0,
+      "width_to_nearest_pct": 39.3,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 16.76
+    },
+    {
+      "id": "tamna",
+      "index": 31,
+      "name": "탐라",
+      "faction_642": "탐라",
+      "region": "섬",
+      "render_xy": [
+        535,
+        1098
+      ],
+      "render_uv": [
+        0.4266348,
+        0.8755981
+      ],
+      "source_world_uv": [
+        0.49,
+        0.79
+      ],
+      "tier": "standard",
+      "nominal_width_native": 22,
+      "sprite_width_native": 22.0,
+      "marker_only": false,
+      "nearest_id": "yeongsangang",
+      "nearest_distance": 180.49,
+      "width_to_nearest_pct": 12.2,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 12.65
+    },
+    {
+      "id": "ulleung",
+      "index": 32,
+      "name": "울릉",
+      "faction_642": "신라",
+      "region": "섬",
+      "render_xy": [
+        935,
+        651
+      ],
+      "render_uv": [
+        0.745614,
+        0.5191388
+      ],
+      "source_world_uv": [
+        0.62,
+        0.55
+      ],
+      "tier": "node",
+      "nominal_width_native": 8,
+      "sprite_width_native": 8,
+      "marker_only": true,
+      "nearest_id": "siljik",
+      "nearest_distance": 196.13,
+      "width_to_nearest_pct": 4.1,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 4.47
+    },
+    {
+      "id": "ganghwa",
+      "index": 33,
+      "name": "강화·한강 하구",
+      "faction_642": "신라",
+      "region": "중부·동해",
+      "render_xy": [
+        470,
+        604
+      ],
+      "render_uv": [
+        0.3748006,
+        0.4816587
+      ],
+      "source_world_uv": [
+        0.455,
+        0.485
+      ],
+      "tier": "node",
+      "nominal_width_native": 8,
+      "sprite_width_native": 8,
+      "marker_only": true,
+      "nearest_id": "bukhansan",
+      "nearest_distance": 78.39,
+      "width_to_nearest_pct": 10.2,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 3.0
+    },
+    {
+      "id": "jukryeong",
+      "index": 34,
+      "name": "죽령 교통권",
+      "faction_642": "신라",
+      "region": "중부·동해",
+      "render_xy": [
+        676,
+        663
+      ],
+      "render_uv": [
+        0.539075,
+        0.5287081
+      ],
+      "source_world_uv": [
+        0.575,
+        0.555
+      ],
+      "tier": "node",
+      "nominal_width_native": 8,
+      "sprite_width_native": 8,
+      "marker_only": true,
+      "nearest_id": "gukwon",
+      "nearest_distance": 50.45,
+      "width_to_nearest_pct": 15.9,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 14.0
+    },
+    {
+      "id": "chupungnyeong",
+      "index": 35,
+      "name": "추풍령 교통권",
+      "faction_642": "신라",
+      "region": "중부·동해",
+      "render_xy": [
+        653,
+        779
+      ],
+      "render_uv": [
+        0.5207337,
+        0.6212121
+      ],
+      "source_world_uv": [
+        0.54,
+        0.6
+      ],
+      "tier": "node",
+      "nominal_width_native": 8,
+      "sprite_width_native": 8,
+      "marker_only": true,
+      "nearest_id": "samnyeonsanseong",
+      "nearest_distance": 48.26,
+      "width_to_nearest_pct": 16.6,
+      "review_land_fraction": 1.0,
+      "water_clearance_px": 12.08
+    }
+  ],
+  "source_connections": [
+    {
+      "a": "shinseong",
+      "b": "sokgunseong",
+      "type": "land"
+    },
+    {
+      "a": "shinseong",
+      "b": "ansi",
+      "type": "land"
+    },
+    {
+      "a": "shinseong",
+      "b": "gungnae",
+      "type": "land"
+    },
+    {
+      "a": "ansi",
+      "b": "geonanseong",
+      "type": "land"
+    },
+    {
+      "a": "geonanseong",
+      "b": "pyongyang",
+      "type": "land"
+    },
+    {
+      "a": "gungnae",
+      "b": "chaekseong",
+      "type": "land"
+    },
+    {
+      "a": "gungnae",
+      "b": "bireyeolhol",
+      "type": "land"
+    },
+    {
+      "a": "gungnae",
+      "b": "goksan",
+      "type": "land"
+    },
+    {
+      "a": "bireyeolhol",
+      "b": "goksan",
+      "type": "land"
+    },
+    {
+      "a": "pyongyang",
+      "b": "daedonggang",
+      "type": "land"
+    },
+    {
+      "a": "pyongyang",
+      "b": "goksan",
+      "type": "land"
+    },
+    {
+      "a": "daedonggang",
+      "b": "hwanghae",
+      "type": "land"
+    },
+    {
+      "a": "goksan",
+      "b": "bukhansan",
+      "type": "land"
+    },
+    {
+      "a": "goksan",
+      "b": "haslla",
+      "type": "land"
+    },
+    {
+      "a": "hwanghae",
+      "b": "bukhansan",
+      "type": "land"
+    },
+    {
+      "a": "hwanghae",
+      "b": "danghangseong",
+      "type": "land"
+    },
+    {
+      "a": "bukhansan",
+      "b": "samnyeonsanseong",
+      "type": "land"
+    },
+    {
+      "a": "danghangseong",
+      "b": "imjonseong",
+      "type": "land"
+    },
+    {
+      "a": "samnyeonsanseong",
+      "b": "gukwon",
+      "type": "land"
+    },
+    {
+      "a": "samnyeonsanseong",
+      "b": "imjonseong",
+      "type": "land"
+    },
+    {
+      "a": "gukwon",
+      "b": "ungjin",
+      "type": "land"
+    },
+    {
+      "a": "gukwon",
+      "b": "sabeol",
+      "type": "land"
+    },
+    {
+      "a": "haslla",
+      "b": "siljik",
+      "type": "land"
+    },
+    {
+      "a": "siljik",
+      "b": "geumseong",
+      "type": "land"
+    },
+    {
+      "a": "imjonseong",
+      "b": "ungjin",
+      "type": "land"
+    },
+    {
+      "a": "ungjin",
+      "b": "sabi",
+      "type": "land"
+    },
+    {
+      "a": "sabi",
+      "b": "geummajeo",
+      "type": "land"
+    },
+    {
+      "a": "sabi",
+      "b": "gosa",
+      "type": "land"
+    },
+    {
+      "a": "geummajeo",
+      "b": "juryuseong",
+      "type": "land"
+    },
+    {
+      "a": "juryuseong",
+      "b": "yeongsangang",
+      "type": "land"
+    },
+    {
+      "a": "yeongsangang",
+      "b": "sogaya",
+      "type": "land"
+    },
+    {
+      "a": "geumseong",
+      "b": "dalgubeol",
+      "type": "land"
+    },
+    {
+      "a": "geumseong",
+      "b": "geumgwan",
+      "type": "land"
+    },
+    {
+      "a": "sabeol",
+      "b": "dalgubeol",
+      "type": "land"
+    },
+    {
+      "a": "dalgubeol",
+      "b": "daegaya",
+      "type": "land"
+    },
+    {
+      "a": "daegaya",
+      "b": "geumgwan",
+      "type": "land"
+    },
+    {
+      "a": "daegaya",
+      "b": "sogaya",
+      "type": "land"
+    },
+    {
+      "a": "samnyeonsanseong",
+      "b": "jukryeong",
+      "type": "mountain"
+    },
+    {
+      "a": "gukwon",
+      "b": "jukryeong",
+      "type": "mountain"
+    },
+    {
+      "a": "haslla",
+      "b": "jukryeong",
+      "type": "mountain"
+    },
+    {
+      "a": "siljik",
+      "b": "jukryeong",
+      "type": "mountain"
+    },
+    {
+      "a": "gukwon",
+      "b": "chupungnyeong",
+      "type": "mountain"
+    },
+    {
+      "a": "gosa",
+      "b": "chupungnyeong",
+      "type": "mountain"
+    },
+    {
+      "a": "sabeol",
+      "b": "chupungnyeong",
+      "type": "mountain"
+    },
+    {
+      "a": "dalgubeol",
+      "b": "chupungnyeong",
+      "type": "mountain"
+    },
+    {
+      "a": "danghangseong",
+      "b": "ganghwa",
+      "type": "sea"
+    },
+    {
+      "a": "ganghwa",
+      "b": "daedonggang",
+      "type": "sea"
+    },
+    {
+      "a": "yeongsangang",
+      "b": "tamna",
+      "type": "sea"
+    },
+    {
+      "a": "sogaya",
+      "b": "tamna",
+      "type": "sea"
+    },
+    {
+      "a": "haslla",
+      "b": "ulleung",
+      "type": "sea"
+    },
+    {
+      "a": "siljik",
+      "b": "ulleung",
+      "type": "sea"
+    }
+  ]
+}

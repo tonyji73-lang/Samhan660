@@ -285,7 +285,27 @@ var pending_governor_appointment: Dictionary = {}
 var pending_transfer_orders: Array[Dictionary] = []
 
 
+var settlement_overlay: Control
+var settlement_button: Button
+
+func _initialize_settlement_view() -> void:
+	var layer := CanvasLayer.new()
+	layer.name = "SettlementLayer"
+	layer.layer = 50
+	add_child(layer)
+	settlement_overlay = preload("res://settlement_overlay.gd").new()
+	settlement_overlay.campaign = self
+	layer.add_child(settlement_overlay)
+	settlement_button = Button.new()
+	settlement_button.text = "거점 지도"
+	navigation_menu.get_parent().add_child(settlement_button)
+	settlement_button.pressed.connect(settlement_overlay.open)
+	navigation_menu.get_popup().add_item("달구벌 · 거점 지도", 14)
+	navigation_menu.get_popup().id_pressed.connect(func(id):
+		if id == 14: settlement_overlay.open())
+
 func _ready() -> void:
+	_initialize_settlement_view.call_deferred()
 	_ending_initialize.call_deferred()
 	pending_campaign_opening = get_tree().root.has_meta("new_game_settings")
 	_apply_legacy_core_province_values()
@@ -419,6 +439,8 @@ func _present_campaign_opening() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") and settlement_overlay != null and settlement_overlay.visible and not settlement_overlay.busy():
+		settlement_overlay.close(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and invasion_overlay!=null and invasion_overlay.visible:
 		invasion_overlay.hide(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and merit_overlay!=null and merit_overlay.visible:
@@ -654,6 +676,7 @@ func _sync_modal_map_input() -> void:
 	map_area.modal_input_locked = (power_dialog!=null and power_dialog.visible) or Ending.finished(strategy_state) or (ending_load_dialog!=null and ending_load_dialog.visible) or (ending_save_dialog!=null and ending_save_dialog.visible) or production_overlay.visible or diplomacy_overlay.visible or (domestic_overlay!=null and domestic_overlay.visible) or (recruitment_overlay!=null and recruitment_overlay.visible) or (industry_overlay!=null and industry_overlay.visible) or (supply_overlay!=null and supply_overlay.visible) or (army_overlay!=null and army_overlay.visible) or (politics_overlay!=null and politics_overlay.visible) or (playability_dialog!=null and playability_dialog.visible)
 	map_area.modal_input_locked=map_area.modal_input_locked or (merit_overlay!=null and merit_overlay.visible)
 	map_area.modal_input_locked=map_area.modal_input_locked or (invasion_overlay!=null and invasion_overlay.visible)
+	map_area.modal_input_locked = map_area.modal_input_locked or (settlement_overlay != null and settlement_overlay.visible)
 	if map_area.modal_input_locked:
 		map_area.map_dragging = false
 
@@ -1470,6 +1493,12 @@ func _on_transfer_button_pressed() -> void:
 	)
 
 
+func province_transfer_turns(source: String, target: String) -> int:
+	# Shared read-only duration for the existing adjacent friendly-city command.
+	if not provinces.has(source) or not provinces.has(target) or source == target: return 0
+	if provinces[source].faction != provinces[target].faction or not are_provinces_connected(source, target): return 0
+	return 1
+
 func validate_province_transfer(request: Dictionary, actor: String = "") -> Dictionary:
 	if actor.is_empty(): actor=player_faction_id
 	var actor_name: String=str(strategy_state.faction_economy.factions.get(actor,""))
@@ -1607,7 +1636,7 @@ func queue_province_transfer(
 			"troops": troop_count,
 			"unit_ids":moved_units,
 			"officer_ids": requested_officers.duplicate(),
-			"remaining_turns": 1,
+			"remaining_turns": province_transfer_turns(source_id, target_id),
 		}
 	)
 	var parts: Array[String] = []
@@ -2714,6 +2743,10 @@ func _on_load_button_pressed(save_path: String = SAVE_PATH) -> void:
 
 	update_top_bar()
 	select_province(requested_selection)
+	if settlement_overlay != null:
+		settlement_overlay.selected = requested_selection
+		settlement_overlay.route_open = false
+		settlement_overlay.refresh()
 	_refresh_map_markers()
 	log_label.text = "%d년 %d월 · %s 저장 기록을 불러왔습니다." % [
 		year,

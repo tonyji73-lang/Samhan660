@@ -1,0 +1,296 @@
+{
+  "world_size": [
+    6144,
+    4096
+  ],
+  "world_rect": [
+    3584,
+    2048,
+    512,
+    512
+  ],
+  "parent_pixel_rect": [
+    768,
+    512,
+    256,
+    256
+  ],
+  "points": [
+    {
+      "id": "siljik",
+      "name": "실직",
+      "region_id": 17,
+      "world_uv": [
+        0.6,
+        0.53
+      ],
+      "world_xy": [
+        3686.3999999999996,
+        2170.88
+      ],
+      "tile_uv": [
+        0.1999999999999993,
+        0.2400000000000002
+      ],
+      "clearance_envelope_tile_uv": [
+        [
+          0.0768554687499993,
+          0.23746093750000022
+        ],
+        [
+          0.1085937499999993,
+          0.17144531250000022
+        ],
+        [
+          0.13398437499999927,
+          0.1409765625000002
+        ],
+        [
+          0.1593749999999993,
+          0.0952734375000002
+        ],
+        [
+          0.19238281249999928,
+          0.0952734375000002
+        ],
+        [
+          0.3218749999999993,
+          0.1358984375000002
+        ],
+        [
+          0.3256835937499993,
+          0.2044531250000002
+        ],
+        [
+          0.2888671874999993,
+          0.3187109375000002
+        ],
+        [
+          0.2355468749999993,
+          0.3085546875000002
+        ],
+        [
+          0.14160156249999928,
+          0.28570312500000017
+        ]
+      ],
+      "native_image_xy": [
+        250.8,
+        300.96
+      ],
+      "center_visual_observation": "dry clearing in static review",
+      "sprite_static_observation": "broader dry apron visible around unchanged source sprite at width 130 world units; not a pixel-perfect clearance certificate",
+      "godot_runtime_verified": false
+    },
+    {
+      "id": "geumseong",
+      "name": "금성·월성",
+      "region_id": 25,
+      "world_uv": [
+        0.595,
+        0.61
+      ],
+      "world_xy": [
+        3655.68,
+        2498.56
+      ],
+      "tile_uv": [
+        0.13999999999999968,
+        0.8799999999999999
+      ],
+      "clearance_envelope_tile_uv": [
+        [
+          0.016855468749999686,
+          0.8774609374999999
+        ],
+        [
+          0.048593749999999686,
+          0.8114453124999998
+        ],
+        [
+          0.07398437499999967,
+          0.7809765624999999
+        ],
+        [
+          0.09937499999999969,
+          0.7352734374999998
+        ],
+        [
+          0.13238281249999967,
+          0.7352734374999998
+        ],
+        [
+          0.2618749999999997,
+          0.7758984374999999
+        ],
+        [
+          0.26568359374999967,
+          0.8444531249999999
+        ],
+        [
+          0.22886718749999968,
+          0.9587109374999999
+        ],
+        [
+          0.17554687499999969,
+          0.9485546874999998
+        ],
+        [
+          0.08160156249999968,
+          0.9257031249999998
+        ]
+      ],
+      "native_image_xy": [
+        175.56,
+        1103.52
+      ],
+      "center_visual_observation": "dry clearing in static review",
+      "sprite_static_observation": "broader dry apron visible around unchanged source sprite at width 130 world units; not a pixel-perfect clearance certificate",
+      "godot_runtime_verified": false
+    },
+    {
+      "id": "ulleung",
+      "name": "울릉",
+      "region_id": 32,
+      "world_uv": [
+        0.62,
+        0.55
+      ],
+      "world_xy": [
+        3809.2799999999997,
+        2252.8
+      ],
+      "tile_uv": [
+        0.4399999999999995,
+        0.40000000000000036
+      ],
+      "clearance_envelope_tile_uv": [
+        [
+          0.3168554687499995,
+          0.39746093750000033
+        ],
+        [
+          0.3485937499999995,
+          0.33144531250000037
+        ],
+        [
+          0.3739843749999995,
+          0.3009765625000004
+        ],
+        [
+          0.3993749999999995,
+          0.2552734375000003
+        ],
+        [
+          0.4323828124999995,
+          0.2552734375000003
+        ],
+        [
+          0.5618749999999995,
+          0.29589843750000033
+        ],
+        [
+          0.5656835937499995,
+          0.3644531250000004
+        ],
+        [
+          0.5288671874999995,
+          0.4787109375000003
+        ],
+        [
+          0.4755468749999995,
+          0.46855468750000034
+        ],
+        [
+          0.3816015624999995,
+          0.4457031250000003
+        ]
+      ],
+      "native_image_xy": [
+        551.76,
+        501.6
+      ],
+      "center_visual_observation": "dry clearing in static review",
+      "sprite_static_observation": "broader dry apron visible around unchanged source sprite at width 130 world units; not a pixel-perfect clearance certificate",
+      "godot_runtime_verified": false
+    }
+  ],
+  "castle_pivot": [
+    0.5,
+    0.67
+  ],
+  "castle_width_logical": 130.0,
+  "clearance_envelope_sprite_uv": [
+    [
+      0.015,
+      0.66
+    ],
+    [
+      0.14,
+      0.4
+    ],
+    [
+      0.24,
+      0.28
+    ],
+    [
+      0.34,
+      0.1
+    ],
+    [
+      0.47,
+      0.1
+    ],
+    [
+      0.98,
+      0.26
+    ],
+    [
+      0.995,
+      0.53
+    ],
+    [
+      0.85,
+      0.98
+    ],
+    [
+      0.64,
+      0.94
+    ],
+    [
+      0.27,
+      0.85
+    ]
+  ],
+  "clearance_note": "Conservative traced sprite silhouette used as art guidance, not a collision mesh, exact ground mesh or territory boundary. Static review excludes minimum-screen-size clamp.",
+  "schema_version": 1,
+  "asset": "art/terrain_east_coast_detail_draft_v1_1254.png",
+  "asset_sha256": "0a153abfe1f87d48c1c1ee5cbd671ef28466fe55a1393b99cfd9536c66d514a3",
+  "native_pixels": [
+    1254,
+    1254
+  ],
+  "native_pixels_per_world_unit": 2.44921875,
+  "world_uv_rect": [
+    0.5833333333333334,
+    0.5,
+    0.08333333333333333,
+    0.125
+  ],
+  "parent_asset_filename": "terrain_korea_overview_candidate_v1_1024x1536.png",
+  "parent_asset_sha256": "0c060ef881b9db0c7f7e7816d26c03d47cf5e248ed3bc309eed9ff8d5167f5ce",
+  "parent_world_rect": [
+    2048,
+    1024,
+    2048,
+    3072
+  ],
+  "status": "detail_art_candidate_for_existing_korea_draft",
+  "default_game_map_replacement": false,
+  "seamless_parent_compatibility": false,
+  "full_runtime_clearance_verified": false,
+  "territory_mask_rebuilt": false,
+  "world_uv_to_tile_uv": "((u*6144-3584)/512, (v*4096-2048)/512)",
+  "screen_rect_formula": "Rect2(R.position + Vector2(3584/6144,2048/4096)*R.size, Vector2(512/6144,512/4096)*R.size), where R is the existing complete-world screen rect",
+  "important": "This is one 512x512-world-unit sub-tile of c03_r02, not a completed 1024x1024 tile and not all Korea."
+}

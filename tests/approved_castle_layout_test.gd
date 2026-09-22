@@ -1,0 +1,88 @@
+extends "res://tests/settlement_ui_test.gd"
+const CASTLE_OUT="res://.godot/approved-castle-layout/"
+
+func shot(name: String) -> void:
+	var motion:=InputEventMouseMotion.new(); motion.position=Vector2(10,10); root.push_input(motion,true)
+	await pause(); await RenderingServer.frame_post_draw
+	root.get_texture().get_image().save_png(CASTLE_OUT+name+".png")
+
+func _run() -> void:
+	create_timer(300).timeout.connect(func(): quit(2))
+	DirAccess.make_dir_recursive_absolute(CASTLE_OUT)
+	root.content_scale_size=Vector2i.ZERO; root.size=Vector2i(1920,1080)
+	change_scene_to_file(ProjectSettings.get_setting("application/run/main_scene"))
+	await create_timer(2).timeout
+	await click(current_scene.new_game_button); await create_timer(2).timeout
+	await click(current_scene.scenario_buttons[1])
+	await click(current_scene.faction_buttons.silla)
+	await click(current_scene.start_button); await create_timer(2).timeout
+	c=current_scene; c.event_presentation.display_level="minimal"
+	await settle_events(); await pause()
+	check(c.year==642 and c.player_faction_id=="silla","real main scene to 642 Silla via GUI")
+	ui=c.settlement_overlay
+	await click(c.settlement_button)
+	var m: Control=ui.map
+	check(m.get_layout_status().ready and m.get_visible_ids().size()==35,"approved map is default with 35 IDs")
+	check(m.get_layout_status().territory_polygons==0,"old territory mask not reused")
+	var initial: Dictionary=full_state()
+	var coordinates: Dictionary=c.map_area.WORLD_CITY_MAP_UV.duplicate(true)
+	for res: Vector2i in [Vector2i(1280,720),Vector2i(1920,1080)]:
+		root.size=res; await pause()
+		await click(ui.buttons.overview)
+		await shot(str(res.x)+"-all35")
+		for id: String in m.get_visible_ids():
+			check(m.get_live_summary(id).faction==c.provinces[id].faction and m.get_live_summary(id).troops==c.provinces[id].troops,"live ownership and troops "+id)
+			check(m.pick_id_at(m.anchor(id))==id,"overview nearest selection "+id)
+			m.focus_on_province(id,5); await pause()
+			var pt: Vector2=m.global_position+m.anchor(id)
+			await mouse(pt,MOUSE_BUTTON_LEFT,true); await mouse(pt,MOUSE_BUTTON_LEFT,false)
+			check(ui.selected==id and c.selected_province_id==id,"actual castle selection "+id)
+			m.fit_all()
+		for id: String in ["dalgubeol","siljik","geumseong","ulleung"]:
+			ui.select_city(id); m.focus_on_province(id,5); await shot(str(res.x)+"-"+id)
+		ui.select_city("geumseong"); m.focus_on_province("geumseong",4.2); await pause()
+		var focal: Vector2=m.size*Vector2(0.6,0.5)
+		var native: Vector2=m.local_to_map(focal)
+		await mouse(m.global_position+focal,MOUSE_BUTTON_WHEEL_UP,true); await mouse(m.global_position+focal,MOUSE_BUTTON_WHEEL_UP,false)
+		check(m.map_zoom>4.2 and m.local_to_map(focal).distance_to(native)<0.02,"wheel preserves map focus")
+		await mouse(m.global_position+focal,MOUSE_BUTTON_WHEEL_DOWN,true); await mouse(m.global_position+focal,MOUSE_BUTTON_WHEEL_DOWN,false)
+		var old_pan: Vector2=m.map_pan_offset
+		await mouse(m.global_position+focal,MOUSE_BUTTON_LEFT,true)
+		var drag:=InputEventMouseMotion.new(); drag.position=m.global_position+focal+Vector2(-35,20); drag.button_mask=MOUSE_BUTTON_MASK_LEFT; root.push_input(drag,true)
+		await mouse(drag.position,MOUSE_BUTTON_LEFT,false)
+		check(m.map_pan_offset.distance_to(old_pan)>10,"actual drag")
+		var view: Dictionary=m.get_view_state()
+		for kind: String in ["domestic","army","production","politics"]:
+			await click(ui.buttons[kind])
+			check(c.get({"domestic":"domestic_overlay","army":"army_overlay","production":"production_overlay","politics":"politics_overlay"}[kind]).visible and not ui.visible,"existing command opens "+kind)
+			await escape()
+			check(ui.visible and ui.selected=="geumseong" and m.get_view_state()==view,"return preserves camera and selection "+kind)
+		await click(ui.preview)
+		check(ui.route_open and m.preview_source==ui.source_id() and not ui.support.disabled,"normal support route preview")
+		await shot(str(res.x)+"-support")
+		check(ui.bottom.get_global_rect().end.y<=res.y and ui.terrain_note.get_global_rect().end.y<=res.y,"panels fit")
+		await click(ui.buttons.cancel)
+		check(m.preview_source.is_empty() and m._route_ids.is_empty(),"cancel clears all route state")
+		check(full_state()==initial,"display and menus preserve campaign")
+		await click(ui.buttons.close)
+		check(not ui.visible and not c.map_area.modal_input_locked,"world map return unlocks input")
+		await click(c.settlement_button)
+	ui.select_city("dalgubeol"); await pause()
+	select_value(ui.sources,"geumseong"); await click(ui.preview); await click(ui.support)
+	check(c.army_overlay.visible and c.army_overlay.city=="geumseong","support uses real army command")
+	moved_id=c.army_overlay.id()
+	var old_count: int=c.pending_transfer_orders.size()
+	await click(c.army_overlay.move_button)
+	check(c.pending_transfer_orders.size()==old_count+1,"normal unit support dispatched")
+	await escape()
+	var slot: String="user://approved_castle_layout_%d_%d.json" % [Time.get_unix_time_from_system(),OS.get_process_id()]
+	check(not FileAccess.file_exists(slot) and c._on_save_button_pressed(slot),"separate save preserves user slot")
+	var saved: Dictionary=full_state()
+	var previous: int=stamp()
+	await click(ui.buttons.month); await settle_events(); c.merit_overlay.hide(); await pause()
+	check(stamp()==previous+1 and c.Army.units(c.strategy_state)[moved_id].location=="dalgubeol","normal month support arrives")
+	check(c.map_area.WORLD_CITY_MAP_UV==coordinates,"simulation world coordinates unchanged")
+	ui.select_city("dalgubeol"); m.focus_region(); await shot("final-gameplay")
+	var f:=FileAccess.open(CASTLE_OUT+"normal.json",FileAccess.WRITE)
+	f.store_string(JSON.stringify({"pid":OS.get_process_id(),"slot":slot,"state":saved,"unit":moved_id,"checks":checks,"failures":failures},"\t"));f.close()
+	print("APPROVED CAMPAIGN: ",checks," checks, ",failures," failures");quit(0 if failures==0 else 1)

@@ -1,0 +1,117 @@
+{
+  "status": "display_correction_candidate_needs_game_review",
+  "production_auto_switch_allowed": false,
+  "approved_base_sha256": "36594c1d1ee0cbcd80a175d72790d3e22423103cf81d6b191f8bf2d317e1f246",
+  "approved_base_size": [
+    1254,
+    1254
+  ],
+  "native_rect_xywh": [
+    512,
+    544,
+    264,
+    176
+  ],
+  "native_rect_uv": [
+    0.4082934609250399,
+    0.43381180223285487,
+    0.21052631578947367,
+    0.14035087719298245
+  ],
+  "detail_texture": "assets/central_east_detail_candidate.png",
+  "detail_size": [
+    1536,
+    1024
+  ],
+  "density_ratio": [
+    5.818181818181818,
+    5.818181818181818
+  ],
+  "map_coordinates_changed": false,
+  "game_rules_changed": false,
+  "godot_runtime_checked": false,
+  "anchors": [
+    {
+      "id": "bukhansan",
+      "name": "북한산성",
+      "approved_native_xy": [
+        542,
+        635
+      ],
+      "tile_uv": [
+        0.11363636363636363,
+        0.5170454545454546
+      ],
+      "sprite_width_native": 19.9
+    },
+    {
+      "id": "danghangseong",
+      "name": "당항성",
+      "approved_native_xy": [
+        550,
+        674
+      ],
+      "tile_uv": [
+        0.14393939393939395,
+        0.7386363636363636
+      ],
+      "sprite_width_native": 19.9
+    },
+    {
+      "id": "gukwon",
+      "name": "국원",
+      "approved_native_xy": [
+        627,
+        675
+      ],
+      "tile_uv": [
+        0.4356060606060606,
+        0.7443181818181818
+      ],
+      "sprite_width_native": 25.22
+    },
+    {
+      "id": "haslla",
+      "name": "하슬라",
+      "approved_native_xy": [
+        714,
+        576
+      ],
+      "tile_uv": [
+        0.7651515151515151,
+        0.18181818181818182
+      ],
+      "sprite_width_native": 22.0
+    },
+    {
+      "id": "siljik",
+      "name": "실직",
+      "approved_native_xy": [
+        740,
+        630
+      ],
+      "tile_uv": [
+        0.8636363636363636,
+        0.48863636363636365
+      ],
+      "sprite_width_native": 22.0
+    },
+    {
+      "id": "jukryeong",
+      "name": "죽령 교통권",
+      "approved_native_xy": [
+        676,
+        663
+      ],
+      "tile_uv": [
+        0.6212121212121212,
+        0.6761363636363636
+      ],
+      "sprite_width_native": 8
+    }
+  ],
+  "registration_note": "Display-only UV correction, color modulation and feathered fallback added. Residual river/coast differences and local blur remain, especially south of Gukwon. No Godot runtime validation in this package.",
+  "revision": "2026-09-21-r2",
+  "display_mesh": "data/central_east_display_mesh.json",
+  "display_helper": "integration/central_east_display_layer.gd"
+}

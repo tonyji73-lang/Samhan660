@@ -1,0 +1,388 @@
+{
+  "source_commit": "d953cfac9fb70e10c2c45ef659eb0d1bd57e5aaf",
+  "coordinate_system": "normalized UV; x right, y down; diagnostic snapshot, not replacement game data",
+  "logical_size": [
+    6144,
+    4096
+  ],
+  "points": [
+    {
+      "id": "steppe_sijie",
+      "name": "알타이 동록",
+      "u": 0.095,
+      "v": 0.125,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "steppe_duolange",
+      "name": "항가이",
+      "u": 0.225,
+      "v": 0.105,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "steppe_huihe",
+      "name": "셀렝게",
+      "u": 0.35,
+      "v": 0.085,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "steppe_pugu",
+      "name": "오논",
+      "u": 0.465,
+      "v": 0.11,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "steppe_bayegu",
+      "name": "케룰렌",
+      "u": 0.565,
+      "v": 0.145,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "steppe_adie",
+      "name": "고비 북연",
+      "u": 0.175,
+      "v": 0.245,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "steppe_qibi",
+      "name": "툴강 남안",
+      "u": 0.3,
+      "v": 0.255,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "steppe_tongluo",
+      "name": "툴강 북안",
+      "u": 0.42,
+      "v": 0.215,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "steppe_hun",
+      "name": "고비 남록",
+      "u": 0.12,
+      "v": 0.365,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "changan",
+      "name": "장안",
+      "u": 0.08,
+      "v": 0.68,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "luoyang",
+      "name": "낙양",
+      "u": 0.185,
+      "v": 0.585,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "shandong",
+      "name": "산동항",
+      "u": 0.325,
+      "v": 0.495,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "emishi_aguta",
+      "name": "아기타",
+      "u": 0.945,
+      "v": 0.35,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "koshi",
+      "name": "고시",
+      "u": 0.845,
+      "v": 0.56,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "kibi",
+      "name": "기비",
+      "u": 0.785,
+      "v": 0.65,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "naniwa",
+      "name": "나니와",
+      "u": 0.84,
+      "v": 0.66,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "asuka",
+      "name": "아스카",
+      "u": 0.845,
+      "v": 0.7,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "tsukushi",
+      "name": "쓰쿠시",
+      "u": 0.645,
+      "v": 0.75,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "hayato",
+      "name": "하야토령",
+      "u": 0.68,
+      "v": 0.88,
+      "coordinate_source": "world_map_data.gd"
+    },
+    {
+      "id": "shinseong",
+      "name": "신성",
+      "u": 0.455,
+      "v": 0.31,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "sokgunseong",
+      "name": "속군성",
+      "u": 0.415,
+      "v": 0.35,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "ansi",
+      "name": "안시성",
+      "u": 0.435,
+      "v": 0.365,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "geonanseong",
+      "name": "건안성",
+      "u": 0.43,
+      "v": 0.42,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "gungnae",
+      "name": "국내성",
+      "u": 0.53,
+      "v": 0.335,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "chaekseong",
+      "name": "책성·동북 변경",
+      "u": 0.585,
+      "v": 0.315,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "bireyeolhol",
+      "name": "비열홀",
+      "u": 0.57,
+      "v": 0.38,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "pyongyang",
+      "name": "평양성",
+      "u": 0.5,
+      "v": 0.45,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "daedonggang",
+      "name": "대동강 하류",
+      "u": 0.485,
+      "v": 0.475,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "goksan",
+      "name": "곡산 내륙",
+      "u": 0.545,
+      "v": 0.455,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "hwanghae",
+      "name": "황해 남부",
+      "u": 0.47,
+      "v": 0.49,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "bukhansan",
+      "name": "북한산성",
+      "u": 0.505,
+      "v": 0.5,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "danghangseong",
+      "name": "당항성",
+      "u": 0.475,
+      "v": 0.525,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "samnyeonsanseong",
+      "name": "삼년산성",
+      "u": 0.545,
+      "v": 0.515,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "gukwon",
+      "name": "국원",
+      "u": 0.55,
+      "v": 0.54,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "haslla",
+      "name": "하슬라",
+      "u": 0.59,
+      "v": 0.48,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "siljik",
+      "name": "실직",
+      "u": 0.6,
+      "v": 0.53,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "imjonseong",
+      "name": "임존성",
+      "u": 0.49,
+      "v": 0.54,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "ungjin",
+      "name": "웅진성",
+      "u": 0.515,
+      "v": 0.555,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "sabi",
+      "name": "사비성",
+      "u": 0.52,
+      "v": 0.585,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "geummajeo",
+      "name": "금마저",
+      "u": 0.49,
+      "v": 0.59,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "gosa",
+      "name": "고사부리",
+      "u": 0.515,
+      "v": 0.615,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "juryuseong",
+      "name": "주류성",
+      "u": 0.47,
+      "v": 0.625,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "yeongsangang",
+      "name": "영산강 권역",
+      "u": 0.48,
+      "v": 0.665,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "geumseong",
+      "name": "금성·월성",
+      "u": 0.595,
+      "v": 0.61,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "sabeol",
+      "name": "사벌",
+      "u": 0.56,
+      "v": 0.58,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "dalgubeol",
+      "name": "달구벌",
+      "u": 0.56,
+      "v": 0.63,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "daegaya",
+      "name": "대가야",
+      "u": 0.53,
+      "v": 0.66,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "geumgwan",
+      "name": "금관가야",
+      "u": 0.57,
+      "v": 0.69,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "sogaya",
+      "name": "소가야",
+      "u": 0.54,
+      "v": 0.69,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "tamna",
+      "name": "탐라",
+      "u": 0.49,
+      "v": 0.79,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "ulleung",
+      "name": "울릉",
+      "u": 0.62,
+      "v": 0.55,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "ganghwa",
+      "name": "강화·한강 하구",
+      "u": 0.455,
+      "v": 0.485,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "jukryeong",
+      "name": "죽령 교통권",
+      "u": 0.575,
+      "v": 0.555,
+      "coordinate_source": "korea_35_data.gd"
+    },
+    {
+      "id": "chupungnyeong",
+      "name": "추풍령 교통권",
+      "u": 0.54,
+      "v": 0.6,
+      "coordinate_source": "korea_35_data.gd"
+    }
+  ]
+}

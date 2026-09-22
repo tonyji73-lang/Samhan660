@@ -1,0 +1,810 @@
+{
+  "world_size": [
+    6144,
+    4096
+  ],
+  "atlas_world_rect": [
+    2048,
+    1024,
+    2048,
+    3072
+  ],
+  "atlas_uv_rect": [
+    0.3333333333333333,
+    0.25,
+    0.3333333333333333,
+    0.75
+  ],
+  "points": [
+    {
+      "id": "shinseong",
+      "name": "신성",
+      "region_id": 1,
+      "atlas_uv": [
+        0.365,
+        0.08
+      ],
+      "world_uv": [
+        0.455,
+        0.31
+      ],
+      "existing_mask_id": 1,
+      "image_xy": [
+        373.76,
+        122.88
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Rock/slope/trees at center: design a credible castle terrace in detail art without moving UV."
+    },
+    {
+      "id": "sokgunseong",
+      "name": "속군성",
+      "region_id": 2,
+      "atlas_uv": [
+        0.24499999999999988,
+        0.1333333333333333
+      ],
+      "world_uv": [
+        0.415,
+        0.35
+      ],
+      "existing_mask_id": 2,
+      "image_xy": [
+        250.88,
+        204.8
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "ansi",
+      "name": "안시성",
+      "region_id": 3,
+      "atlas_uv": [
+        0.30499999999999994,
+        0.15333333333333332
+      ],
+      "world_uv": [
+        0.435,
+        0.365
+      ],
+      "existing_mask_id": 3,
+      "image_xy": [
+        312.32,
+        235.52
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "geonanseong",
+      "name": "건안성",
+      "region_id": 4,
+      "atlas_uv": [
+        0.29000000000000004,
+        0.22666666666666666
+      ],
+      "world_uv": [
+        0.43,
+        0.42
+      ],
+      "existing_mask_id": 4,
+      "image_xy": [
+        296.96,
+        348.16
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "gungnae",
+      "name": "국내성",
+      "region_id": 5,
+      "atlas_uv": [
+        0.5900000000000001,
+        0.11333333333333336
+      ],
+      "world_uv": [
+        0.53,
+        0.335
+      ],
+      "existing_mask_id": 5,
+      "image_xy": [
+        604.16,
+        174.08
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "chaekseong",
+      "name": "책성·동북 변경",
+      "region_id": 6,
+      "atlas_uv": [
+        0.7549999999999999,
+        0.08666666666666667
+      ],
+      "world_uv": [
+        0.585,
+        0.315
+      ],
+      "existing_mask_id": 6,
+      "image_xy": [
+        773.12,
+        133.12
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Rock/slope/trees at center: design a credible castle terrace in detail art without moving UV."
+    },
+    {
+      "id": "bireyeolhol",
+      "name": "비열홀",
+      "region_id": 7,
+      "atlas_uv": [
+        0.71,
+        0.17333333333333334
+      ],
+      "world_uv": [
+        0.57,
+        0.38
+      ],
+      "existing_mask_id": 7,
+      "image_xy": [
+        727.04,
+        266.24
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "pyongyang",
+      "name": "평양성",
+      "region_id": 8,
+      "atlas_uv": [
+        0.5,
+        0.26666666666666666
+      ],
+      "world_uv": [
+        0.5,
+        0.45
+      ],
+      "existing_mask_id": 8,
+      "image_xy": [
+        512.0,
+        409.6
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Rock/slope/trees at center: design a credible castle terrace in detail art without moving UV."
+    },
+    {
+      "id": "daedonggang",
+      "name": "대동강 하류",
+      "region_id": 9,
+      "atlas_uv": [
+        0.45500000000000007,
+        0.3
+      ],
+      "world_uv": [
+        0.485,
+        0.475
+      ],
+      "existing_mask_id": 9,
+      "image_xy": [
+        465.92,
+        460.8
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "goksan",
+      "name": "곡산 내륙",
+      "region_id": 10,
+      "atlas_uv": [
+        0.6350000000000002,
+        0.2733333333333334
+      ],
+      "world_uv": [
+        0.545,
+        0.455
+      ],
+      "existing_mask_id": 10,
+      "image_xy": [
+        650.24,
+        419.84
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "hwanghae",
+      "name": "황해 남부",
+      "region_id": 11,
+      "atlas_uv": [
+        0.4099999999999999,
+        0.32
+      ],
+      "world_uv": [
+        0.47,
+        0.49
+      ],
+      "existing_mask_id": 11,
+      "image_xy": [
+        419.84,
+        491.52
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Coast/river/compact island: verify full castle ground footprint, not just center."
+    },
+    {
+      "id": "bukhansan",
+      "name": "북한산성",
+      "region_id": 12,
+      "atlas_uv": [
+        0.5150000000000001,
+        0.3333333333333333
+      ],
+      "world_uv": [
+        0.505,
+        0.5
+      ],
+      "existing_mask_id": 12,
+      "image_xy": [
+        527.36,
+        512.0
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "danghangseong",
+      "name": "당항성",
+      "region_id": 13,
+      "atlas_uv": [
+        0.4249999999999998,
+        0.3666666666666667
+      ],
+      "world_uv": [
+        0.475,
+        0.525
+      ],
+      "existing_mask_id": 0,
+      "image_xy": [
+        435.2,
+        563.2
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "samnyeonsanseong",
+      "name": "삼년산성",
+      "region_id": 14,
+      "atlas_uv": [
+        0.6350000000000002,
+        0.35333333333333333
+      ],
+      "world_uv": [
+        0.545,
+        0.515
+      ],
+      "existing_mask_id": 14,
+      "image_xy": [
+        650.24,
+        542.72
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Rock/slope/trees at center: design a credible castle terrace in detail art without moving UV."
+    },
+    {
+      "id": "gukwon",
+      "name": "국원",
+      "region_id": 15,
+      "atlas_uv": [
+        0.6500000000000001,
+        0.3866666666666667
+      ],
+      "world_uv": [
+        0.55,
+        0.54
+      ],
+      "existing_mask_id": 15,
+      "image_xy": [
+        665.6,
+        593.92
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "haslla",
+      "name": "하슬라",
+      "region_id": 16,
+      "atlas_uv": [
+        0.77,
+        0.30666666666666664
+      ],
+      "world_uv": [
+        0.59,
+        0.48
+      ],
+      "existing_mask_id": 0,
+      "image_xy": [
+        788.48,
+        471.04
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Coast/river/compact island: verify full castle ground footprint, not just center."
+    },
+    {
+      "id": "siljik",
+      "name": "실직",
+      "region_id": 17,
+      "atlas_uv": [
+        0.7999999999999998,
+        0.37333333333333335
+      ],
+      "world_uv": [
+        0.6,
+        0.53
+      ],
+      "existing_mask_id": 17,
+      "image_xy": [
+        819.2,
+        573.44
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Coast/river/compact island: verify full castle ground footprint, not just center."
+    },
+    {
+      "id": "imjonseong",
+      "name": "임존성",
+      "region_id": 18,
+      "atlas_uv": [
+        0.47,
+        0.3866666666666667
+      ],
+      "world_uv": [
+        0.49,
+        0.54
+      ],
+      "existing_mask_id": 0,
+      "image_xy": [
+        481.28,
+        593.92
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "ungjin",
+      "name": "웅진성",
+      "region_id": 19,
+      "atlas_uv": [
+        0.5449999999999999,
+        0.40666666666666673
+      ],
+      "world_uv": [
+        0.515,
+        0.555
+      ],
+      "existing_mask_id": 19,
+      "image_xy": [
+        558.08,
+        624.64
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Rock/slope/trees at center: design a credible castle terrace in detail art without moving UV."
+    },
+    {
+      "id": "sabi",
+      "name": "사비성",
+      "region_id": 20,
+      "atlas_uv": [
+        0.56,
+        0.4466666666666666
+      ],
+      "world_uv": [
+        0.52,
+        0.585
+      ],
+      "existing_mask_id": 20,
+      "image_xy": [
+        573.44,
+        686.08
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Coast/river/compact island: verify full castle ground footprint, not just center."
+    },
+    {
+      "id": "geummajeo",
+      "name": "금마저",
+      "region_id": 21,
+      "atlas_uv": [
+        0.47,
+        0.4533333333333333
+      ],
+      "world_uv": [
+        0.49,
+        0.59
+      ],
+      "existing_mask_id": 0,
+      "image_xy": [
+        481.28,
+        696.32
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "gosa",
+      "name": "고사부리",
+      "region_id": 22,
+      "atlas_uv": [
+        0.5449999999999999,
+        0.48666666666666664
+      ],
+      "world_uv": [
+        0.515,
+        0.615
+      ],
+      "existing_mask_id": 22,
+      "image_xy": [
+        558.08,
+        747.52
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "juryuseong",
+      "name": "주류성",
+      "region_id": 23,
+      "atlas_uv": [
+        0.4099999999999999,
+        0.5
+      ],
+      "world_uv": [
+        0.47,
+        0.625
+      ],
+      "existing_mask_id": 0,
+      "image_xy": [
+        419.84,
+        768.0
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "yeongsangang",
+      "name": "영산강 권역",
+      "region_id": 24,
+      "atlas_uv": [
+        0.43999999999999995,
+        0.5533333333333333
+      ],
+      "world_uv": [
+        0.48,
+        0.665
+      ],
+      "existing_mask_id": 24,
+      "image_xy": [
+        450.56,
+        849.92
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "geumseong",
+      "name": "금성·월성",
+      "region_id": 25,
+      "atlas_uv": [
+        0.7849999999999999,
+        0.48
+      ],
+      "world_uv": [
+        0.595,
+        0.61
+      ],
+      "existing_mask_id": 25,
+      "image_xy": [
+        803.84,
+        737.28
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "sabeol",
+      "name": "사벌",
+      "region_id": 26,
+      "atlas_uv": [
+        0.6800000000000002,
+        0.43999999999999995
+      ],
+      "world_uv": [
+        0.56,
+        0.58
+      ],
+      "existing_mask_id": 26,
+      "image_xy": [
+        696.32,
+        675.84
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "dalgubeol",
+      "name": "달구벌",
+      "region_id": 27,
+      "atlas_uv": [
+        0.6800000000000002,
+        0.5066666666666667
+      ],
+      "world_uv": [
+        0.56,
+        0.63
+      ],
+      "existing_mask_id": 27,
+      "image_xy": [
+        696.32,
+        778.24
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "daegaya",
+      "name": "대가야",
+      "region_id": 28,
+      "atlas_uv": [
+        0.5900000000000001,
+        0.5466666666666667
+      ],
+      "world_uv": [
+        0.53,
+        0.66
+      ],
+      "existing_mask_id": 28,
+      "image_xy": [
+        604.16,
+        839.68
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "geumgwan",
+      "name": "금관가야",
+      "region_id": 29,
+      "atlas_uv": [
+        0.71,
+        0.5866666666666666
+      ],
+      "world_uv": [
+        0.57,
+        0.69
+      ],
+      "existing_mask_id": 0,
+      "image_xy": [
+        727.04,
+        901.12
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "sogaya",
+      "name": "소가야",
+      "region_id": 30,
+      "atlas_uv": [
+        0.6200000000000001,
+        0.5866666666666666
+      ],
+      "world_uv": [
+        0.54,
+        0.69
+      ],
+      "existing_mask_id": 30,
+      "image_xy": [
+        634.88,
+        901.12
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "tamna",
+      "name": "탐라",
+      "region_id": 31,
+      "atlas_uv": [
+        0.47,
+        0.7200000000000001
+      ],
+      "world_uv": [
+        0.49,
+        0.79
+      ],
+      "existing_mask_id": 0,
+      "image_xy": [
+        481.28,
+        1105.92
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Coast/river/compact island: verify full castle ground footprint, not just center."
+    },
+    {
+      "id": "ulleung",
+      "name": "울릉",
+      "region_id": 32,
+      "atlas_uv": [
+        0.8599999999999999,
+        0.4000000000000001
+      ],
+      "world_uv": [
+        0.62,
+        0.55
+      ],
+      "existing_mask_id": 0,
+      "image_xy": [
+        880.64,
+        614.4
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Coast/river/compact island: verify full castle ground footprint, not just center."
+    },
+    {
+      "id": "ganghwa",
+      "name": "강화·한강 하구",
+      "region_id": 33,
+      "atlas_uv": [
+        0.365,
+        0.3133333333333333
+      ],
+      "world_uv": [
+        0.455,
+        0.485
+      ],
+      "existing_mask_id": 0,
+      "image_xy": [
+        373.76,
+        481.28
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Coast/river/compact island: verify full castle ground footprint, not just center."
+    },
+    {
+      "id": "jukryeong",
+      "name": "죽령 교통권",
+      "region_id": 34,
+      "atlas_uv": [
+        0.7249999999999999,
+        0.40666666666666673
+      ],
+      "world_uv": [
+        0.575,
+        0.555
+      ],
+      "existing_mask_id": 34,
+      "image_xy": [
+        742.4,
+        624.64
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Center review only; terrain clearance and full footprint remain to be checked."
+    },
+    {
+      "id": "chupungnyeong",
+      "name": "추풍령 교통권",
+      "region_id": 35,
+      "atlas_uv": [
+        0.6200000000000001,
+        0.4666666666666666
+      ],
+      "world_uv": [
+        0.54,
+        0.6
+      ],
+      "existing_mask_id": 35,
+      "image_xy": [
+        634.88,
+        716.8
+      ],
+      "visual_center_review": "dry_surface_observed",
+      "complete_castle_footprint_verified": false,
+      "review_method": "assistant visual inspection of fixed-coordinate contact sheet; not a Godot test",
+      "detail_art_note": "Rock/slope/trees at center: design a credible castle terrace in detail art without moving UV."
+    }
+  ],
+  "schema_version": 1,
+  "asset": "art/terrain_korea_overview_candidate_v1_1024x1536.png",
+  "native_size": [
+    1024,
+    1536
+  ],
+  "native_pixels_per_logical_unit": 0.5,
+  "status": "overview_art_candidate_only",
+  "production_geometry_locked": false,
+  "territory_mask_rebuilt": false,
+  "accepted_high_resolution_detail_tiles": 0,
+  "world_to_atlas_formula": "((u*6144-2048)/2048, (v*4096-1024)/3072)",
+  "sampling_note": "world UV and atlas UV are different; do not substitute atlas UV into campaign data",
+  "game_rules_modified": false,
+  "existing_mask_summary": {
+    "total": 35,
+    "match": 26,
+    "unassigned": 9,
+    "other_region": 0
+  }
+}

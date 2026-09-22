@@ -1,0 +1,863 @@
+{
+  "project": "Samhan660",
+  "version": "map_layers_coast_fix_v2",
+  "created_date": "2026-09-17",
+  "source_commit": "d953cfac9fb70e10c2c45ef659eb0d1bd57e5aaf",
+  "logical_size": [
+    6144,
+    4096
+  ],
+  "grid": {
+    "columns": 6,
+    "rows": 4,
+    "cell_logical_size": [
+      1024,
+      1024
+    ],
+    "target_native_pixels": [
+      2048,
+      2048
+    ]
+  },
+  "coordinate_authority": "WorldMapData merged with Korea35Data by the game merge_world_dictionary rule",
+  "coverage_note": "24 grid definitions; one terrain candidate, three anchors visually rechecked in this revision, zero tiles accepted in Godot.",
+  "generation_method": "built-in image_gen, two edits of the v1 candidate",
+  "source_registration_note": "Same fixed tile bounds and game coordinate snapshot as v1. Terrain art edited; no game coordinates changed.",
+  "tiles": [
+    {
+      "id": "c00_r00",
+      "column": 0,
+      "row": 0,
+      "uv_bounds": [
+        0.0,
+        0.0,
+        0.16666666666666666,
+        0.25
+      ],
+      "logical_rect": [
+        0,
+        0,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "steppe_sijie"
+      ],
+      "art_groups": [
+        "몽골 방면·초원"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c01_r00",
+        "c00_r01"
+      ]
+    },
+    {
+      "id": "c01_r00",
+      "column": 1,
+      "row": 0,
+      "uv_bounds": [
+        0.16666666666666666,
+        0.0,
+        0.3333333333333333,
+        0.25
+      ],
+      "logical_rect": [
+        1024,
+        0,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "steppe_duolange",
+        "steppe_adie"
+      ],
+      "art_groups": [
+        "몽골 방면·초원"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c00_r00",
+        "c02_r00",
+        "c01_r01"
+      ]
+    },
+    {
+      "id": "c02_r00",
+      "column": 2,
+      "row": 0,
+      "uv_bounds": [
+        0.3333333333333333,
+        0.0,
+        0.5,
+        0.25
+      ],
+      "logical_rect": [
+        2048,
+        0,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "steppe_huihe",
+        "steppe_pugu",
+        "steppe_tongluo"
+      ],
+      "art_groups": [
+        "몽골 방면·초원"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c01_r00",
+        "c03_r00",
+        "c02_r01"
+      ]
+    },
+    {
+      "id": "c03_r00",
+      "column": 3,
+      "row": 0,
+      "uv_bounds": [
+        0.5,
+        0.0,
+        0.6666666666666666,
+        0.25
+      ],
+      "logical_rect": [
+        3072,
+        0,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "steppe_bayegu"
+      ],
+      "art_groups": [
+        "몽골 방면·초원"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c02_r00",
+        "c04_r00",
+        "c03_r01"
+      ]
+    },
+    {
+      "id": "c04_r00",
+      "column": 4,
+      "row": 0,
+      "uv_bounds": [
+        0.6666666666666666,
+        0.0,
+        0.8333333333333334,
+        0.25
+      ],
+      "logical_rect": [
+        4096,
+        0,
+        1024,
+        1024
+      ],
+      "anchor_ids": [],
+      "art_groups": [
+        "지형·해역"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c03_r00",
+        "c05_r00",
+        "c04_r01"
+      ]
+    },
+    {
+      "id": "c05_r00",
+      "column": 5,
+      "row": 0,
+      "uv_bounds": [
+        0.8333333333333334,
+        0.0,
+        1.0,
+        0.25
+      ],
+      "logical_rect": [
+        5120,
+        0,
+        1024,
+        1024
+      ],
+      "anchor_ids": [],
+      "art_groups": [
+        "지형·해역"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c04_r00",
+        "c05_r01"
+      ]
+    },
+    {
+      "id": "c00_r01",
+      "column": 0,
+      "row": 1,
+      "uv_bounds": [
+        0.0,
+        0.25,
+        0.16666666666666666,
+        0.5
+      ],
+      "logical_rect": [
+        0,
+        1024,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "steppe_hun"
+      ],
+      "art_groups": [
+        "몽골 방면·초원"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c01_r01",
+        "c00_r00",
+        "c00_r02"
+      ]
+    },
+    {
+      "id": "c01_r01",
+      "column": 1,
+      "row": 1,
+      "uv_bounds": [
+        0.16666666666666666,
+        0.25,
+        0.3333333333333333,
+        0.5
+      ],
+      "logical_rect": [
+        1024,
+        1024,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "steppe_qibi",
+        "shandong"
+      ],
+      "art_groups": [
+        "당 방면",
+        "몽골 방면·초원"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c00_r01",
+        "c02_r01",
+        "c01_r00",
+        "c01_r02"
+      ]
+    },
+    {
+      "id": "c02_r01",
+      "column": 2,
+      "row": 1,
+      "uv_bounds": [
+        0.3333333333333333,
+        0.25,
+        0.5,
+        0.5
+      ],
+      "logical_rect": [
+        2048,
+        1024,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "shinseong",
+        "sokgunseong",
+        "ansi",
+        "geonanseong",
+        "daedonggang",
+        "hwanghae",
+        "ganghwa"
+      ],
+      "art_groups": [
+        "한반도·요동"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c01_r01",
+        "c03_r01",
+        "c02_r00",
+        "c02_r02"
+      ]
+    },
+    {
+      "id": "c03_r01",
+      "column": 3,
+      "row": 1,
+      "uv_bounds": [
+        0.5,
+        0.25,
+        0.6666666666666666,
+        0.5
+      ],
+      "logical_rect": [
+        3072,
+        1024,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "gungnae",
+        "chaekseong",
+        "bireyeolhol",
+        "pyongyang",
+        "goksan",
+        "haslla"
+      ],
+      "art_groups": [
+        "한반도·요동"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c02_r01",
+        "c04_r01",
+        "c03_r00",
+        "c03_r02"
+      ]
+    },
+    {
+      "id": "c04_r01",
+      "column": 4,
+      "row": 1,
+      "uv_bounds": [
+        0.6666666666666666,
+        0.25,
+        0.8333333333333334,
+        0.5
+      ],
+      "logical_rect": [
+        4096,
+        1024,
+        1024,
+        1024
+      ],
+      "anchor_ids": [],
+      "art_groups": [
+        "지형·해역"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c03_r01",
+        "c05_r01",
+        "c04_r00",
+        "c04_r02"
+      ]
+    },
+    {
+      "id": "c05_r01",
+      "column": 5,
+      "row": 1,
+      "uv_bounds": [
+        0.8333333333333334,
+        0.25,
+        1.0,
+        0.5
+      ],
+      "logical_rect": [
+        5120,
+        1024,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "emishi_aguta"
+      ],
+      "art_groups": [
+        "왜·열도 방면"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c04_r01",
+        "c05_r00",
+        "c05_r02"
+      ]
+    },
+    {
+      "id": "c00_r02",
+      "column": 0,
+      "row": 2,
+      "uv_bounds": [
+        0.0,
+        0.5,
+        0.16666666666666666,
+        0.75
+      ],
+      "logical_rect": [
+        0,
+        2048,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "changan"
+      ],
+      "art_groups": [
+        "당 방면"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c01_r02",
+        "c00_r01",
+        "c00_r03"
+      ]
+    },
+    {
+      "id": "c01_r02",
+      "column": 1,
+      "row": 2,
+      "uv_bounds": [
+        0.16666666666666666,
+        0.5,
+        0.3333333333333333,
+        0.75
+      ],
+      "logical_rect": [
+        1024,
+        2048,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "luoyang"
+      ],
+      "art_groups": [
+        "당 방면"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c00_r02",
+        "c02_r02",
+        "c01_r01",
+        "c01_r03"
+      ]
+    },
+    {
+      "id": "c02_r02",
+      "column": 2,
+      "row": 2,
+      "uv_bounds": [
+        0.3333333333333333,
+        0.5,
+        0.5,
+        0.75
+      ],
+      "logical_rect": [
+        2048,
+        2048,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "danghangseong",
+        "imjonseong",
+        "geummajeo",
+        "juryuseong",
+        "yeongsangang"
+      ],
+      "art_groups": [
+        "한반도·요동"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c01_r02",
+        "c03_r02",
+        "c02_r01",
+        "c02_r03"
+      ]
+    },
+    {
+      "id": "c03_r02",
+      "column": 3,
+      "row": 2,
+      "uv_bounds": [
+        0.5,
+        0.5,
+        0.6666666666666666,
+        0.75
+      ],
+      "logical_rect": [
+        3072,
+        2048,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "bukhansan",
+        "samnyeonsanseong",
+        "gukwon",
+        "siljik",
+        "ungjin",
+        "sabi",
+        "gosa",
+        "geumseong",
+        "sabeol",
+        "dalgubeol",
+        "daegaya",
+        "geumgwan",
+        "sogaya",
+        "ulleung",
+        "jukryeong",
+        "chupungnyeong"
+      ],
+      "art_groups": [
+        "한반도·요동"
+      ],
+      "status": "three_anchors_visually_reviewed_engine_and_seams_pending",
+      "candidate_asset": "assets/maps/terrain_c03_r02_coast_fix_v2_1254.png",
+      "actual_pixels": [
+        1254,
+        1254
+      ],
+      "runtime_enabled": false,
+      "neighbors": [
+        "c02_r02",
+        "c04_r02",
+        "c03_r01",
+        "c03_r03"
+      ],
+      "visually_reviewed_anchor_ids_this_revision": [
+        "geumgwan",
+        "sogaya",
+        "ulleung"
+      ],
+      "other_anchor_count_not_individually_rechecked": 13,
+      "outer_band_comparison": {
+        "band_pixels": 60,
+        "mean_absolute_rgb_difference_0_to_255": 11.792,
+        "pixel_identical_to_previous": false,
+        "is_seam_acceptance_test": false
+      }
+    },
+    {
+      "id": "c04_r02",
+      "column": 4,
+      "row": 2,
+      "uv_bounds": [
+        0.6666666666666666,
+        0.5,
+        0.8333333333333334,
+        0.75
+      ],
+      "logical_rect": [
+        4096,
+        2048,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "kibi"
+      ],
+      "art_groups": [
+        "왜·열도 방면"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c03_r02",
+        "c05_r02",
+        "c04_r01",
+        "c04_r03"
+      ]
+    },
+    {
+      "id": "c05_r02",
+      "column": 5,
+      "row": 2,
+      "uv_bounds": [
+        0.8333333333333334,
+        0.5,
+        1.0,
+        0.75
+      ],
+      "logical_rect": [
+        5120,
+        2048,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "koshi",
+        "naniwa",
+        "asuka"
+      ],
+      "art_groups": [
+        "왜·열도 방면"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c04_r02",
+        "c05_r01",
+        "c05_r03"
+      ]
+    },
+    {
+      "id": "c00_r03",
+      "column": 0,
+      "row": 3,
+      "uv_bounds": [
+        0.0,
+        0.75,
+        0.16666666666666666,
+        1.0
+      ],
+      "logical_rect": [
+        0,
+        3072,
+        1024,
+        1024
+      ],
+      "anchor_ids": [],
+      "art_groups": [
+        "지형·해역"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c01_r03",
+        "c00_r02"
+      ]
+    },
+    {
+      "id": "c01_r03",
+      "column": 1,
+      "row": 3,
+      "uv_bounds": [
+        0.16666666666666666,
+        0.75,
+        0.3333333333333333,
+        1.0
+      ],
+      "logical_rect": [
+        1024,
+        3072,
+        1024,
+        1024
+      ],
+      "anchor_ids": [],
+      "art_groups": [
+        "지형·해역"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c00_r03",
+        "c02_r03",
+        "c01_r02"
+      ]
+    },
+    {
+      "id": "c02_r03",
+      "column": 2,
+      "row": 3,
+      "uv_bounds": [
+        0.3333333333333333,
+        0.75,
+        0.5,
+        1.0
+      ],
+      "logical_rect": [
+        2048,
+        3072,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "tamna"
+      ],
+      "art_groups": [
+        "한반도·요동"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c01_r03",
+        "c03_r03",
+        "c02_r02"
+      ]
+    },
+    {
+      "id": "c03_r03",
+      "column": 3,
+      "row": 3,
+      "uv_bounds": [
+        0.5,
+        0.75,
+        0.6666666666666666,
+        1.0
+      ],
+      "logical_rect": [
+        3072,
+        3072,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "tsukushi"
+      ],
+      "art_groups": [
+        "왜·열도 방면"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c02_r03",
+        "c04_r03",
+        "c03_r02"
+      ]
+    },
+    {
+      "id": "c04_r03",
+      "column": 4,
+      "row": 3,
+      "uv_bounds": [
+        0.6666666666666666,
+        0.75,
+        0.8333333333333334,
+        1.0
+      ],
+      "logical_rect": [
+        4096,
+        3072,
+        1024,
+        1024
+      ],
+      "anchor_ids": [
+        "hayato"
+      ],
+      "art_groups": [
+        "왜·열도 방면"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c03_r03",
+        "c05_r03",
+        "c04_r02"
+      ]
+    },
+    {
+      "id": "c05_r03",
+      "column": 5,
+      "row": 3,
+      "uv_bounds": [
+        0.8333333333333334,
+        0.75,
+        1.0,
+        1.0
+      ],
+      "logical_rect": [
+        5120,
+        3072,
+        1024,
+        1024
+      ],
+      "anchor_ids": [],
+      "art_groups": [
+        "지형·해역"
+      ],
+      "status": "planned_not_created",
+      "candidate_asset": null,
+      "actual_pixels": null,
+      "runtime_enabled": false,
+      "neighbors": [
+        "c04_r03",
+        "c05_r02"
+      ]
+    }
+  ],
+  "first_candidate_sha256": "e22933b846ac607ae80d1401a53f1be39adbc33743fcb830647c1144756a7070",
+  "validation": {
+    "coordinate_ids_unique": true,
+    "all_54_anchors_assigned_once": true,
+    "full_grid_uv_coverage": true,
+    "images_decodable": true,
+    "fortress_real_alpha": true,
+    "pixel_perfect_geometry_passed": false,
+    "all_city_anchors_on_appropriate_land_passed": false,
+    "neighbor_seams_passed": false,
+    "target_native_resolution_passed": false,
+    "godot_import_or_execution_tested": false,
+    "repository_modified": false,
+    "coordinate_snapshot_unchanged": true,
+    "three_reviewed_anchors_on_land_visually": true,
+    "browser_before_after_preserves_anchor_screen_positions": true,
+    "browser_inverse_projection_max_error_at_3x": 1.2e-16,
+    "browser_wheel_selection_castle_visibility_checked": true,
+    "browser_360px_layout_checked": true,
+    "coarse_map_geometry_alignment_passed": false,
+    "territory_mask_alignment_passed": false
+  },
+  "production_accepted_tiles": 0
+}

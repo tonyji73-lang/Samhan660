@@ -1,0 +1,78 @@
+{
+  "purpose": "Visual implementation guide; not a Godot resource file",
+  "appearance": "fixed dark charcoal with gold historical styling",
+  "colors": {
+    "background": "#111918",
+    "panel": "#151D1D",
+    "gold": "#D6B678",
+    "heading": "#F3E2B7",
+    "body": "#EEE8D8",
+    "secondary_text": "#B9B9AA",
+    "divider": "#665839",
+    "threat_text": "#F0AD94",
+    "threat_background": "#6A241E",
+    "support_route": "#F0D28A",
+    "invasion_route": "#E47E60"
+  },
+  "reference_app_size_pixels": [
+    1024,
+    791
+  ],
+  "reference_layout_pixels": {
+    "header_height": 68,
+    "left_navigation_width": 76,
+    "map_height": 500,
+    "bottom_detail_min_height": 223
+  },
+  "layout_rule": "Treat these as reference proportions. Fit header + map + details within the actual Godot viewport; do not copy 791px total height into a 720px viewport.",
+  "godot_verification_viewports": [
+    [
+      1280,
+      720
+    ],
+    [
+      1920,
+      1080
+    ]
+  ],
+  "font_rule": "Use licensed Korean fonts already in the game; serif-style headings and legible body text, without baking text into artwork.",
+  "separate_layers": [
+    "terrain",
+    "roads_and_preview_route",
+    "settlement_images",
+    "faction_flags",
+    "city_names_and_troops",
+    "selection",
+    "screen_ui"
+  ],
+  "zoom_levels": [
+    {
+      "name": "overview",
+      "priority": [
+        "major settlements",
+        "ownership",
+        "warnings"
+      ]
+    },
+    {
+      "name": "settlement",
+      "priority": [
+        "four_to_six_nearby_castles",
+        "routes",
+        "selection",
+        "key_troops"
+      ]
+    },
+    {
+      "name": "detail",
+      "priority": [
+        "castle_detail",
+        "current_force_status",
+        "actual_arrival_time"
+      ]
+    }
+  ],
+  "zoom_rule": "Calibrate against the existing map transform; browser zoom ratios are not Godot camera ratios.",
+  "default_action_label": "지원 경로 보기",
+  "live_action_rule": "Preview first. Reuse existing unit/commander selection and validated dispatch logic for actual orders."
+}

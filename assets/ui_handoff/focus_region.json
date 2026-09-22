@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "purpose": "Godot integration specification; not a runtime game database or completed implementation",
+  "source_commit_reference": "d953cfac9fb70e10c2c45ef659eb0d1bd57e5aaf",
+  "coordinate_authority": "Current runtime merged game coordinates; this snapshot is diagnostic only",
+  "initial_focus_id": "dalgubeol",
+  "first_review_ids": [
+    "dalgubeol",
+    "geumseong",
+    "sabeol",
+    "chupungnyeong",
+    "daegaya"
+  ],
+  "do_not_limit_campaign_regions_to_review_ids": true,
+  "logical_world_size_reference": [
+    6144,
+    4096
+  ],
+  "terrain": {
+    "tile_id": "c03_r02",
+    "asset": "assets/maps/terrain_c03_r02_coast_fix_v2_1254.png",
+    "native_pixels": [
+      1254,
+      1254
+    ],
+    "logical_rect_xywh": [
+      3072,
+      2048,
+      1024,
+      1024
+    ],
+    "world_uv_bounds_min_x_min_y_max_x_max_y": [
+      0.5,
+      0.5,
+      0.6666666666666666,
+      0.75
+    ],
+    "status": "First-region art candidate; Godot alignment and seams pending",
+    "same_geometry_at_all_zoom_levels": true,
+    "global_map_and_territory_mask_alignment_verified": false
+  },
+  "settlement": {
+    "asset": "assets/settlements/korean_fortress_demo_rgba.png",
+    "native_pixels": [
+      1254,
+      1254
+    ],
+    "browser_visual_anchor_xy_reference": [
+      0.5,
+      0.67
+    ],
+    "status": "Shared placement illustration; regional final art not completed"
+  },
+  "anchors_reference": [
+    {
+      "id": "dalgubeol",
+      "name": "달구벌",
+      "world_uv_reference": [
+        0.56,
+        0.63
+      ],
+      "tile_local_xy_reference": [
+        0.36,
+        0.52
+      ]
+    },
+    {
+      "id": "geumseong",
+      "name": "금성·월성",
+      "world_uv_reference": [
+        0.595,
+        0.61
+      ],
+      "tile_local_xy_reference": [
+        0.57,
+        0.44
+      ]
+    },
+    {
+      "id": "sabeol",
+      "name": "사벌",
+      "world_uv_reference": [
+        0.56,
+        0.58
+      ],
+      "tile_local_xy_reference": [
+        0.36,
+        0.32
+      ]
+    },
+    {
+      "id": "chupungnyeong",
+      "name": "추풍령 교통권",
+      "world_uv_reference": [
+        0.54,
+        0.6
+      ],
+      "tile_local_xy_reference": [
+        0.24,
+        0.4
+      ]
+    },
+    {
+      "id": "daegaya",
+      "name": "대가야",
+      "world_uv_reference": [
+        0.53,
+        0.66
+      ],
+      "tile_local_xy_reference": [
+        0.18,
+        0.64
+      ]
+    }
+  ],
+  "edges_within_review_ids_reference": [
+    {
+      "from": "geumseong",
+      "to": "dalgubeol",
+      "type_reference": "land",
+      "travel_time": null
+    },
+    {
+      "from": "sabeol",
+      "to": "dalgubeol",
+      "type_reference": "land",
+      "travel_time": null
+    },
+    {
+      "from": "dalgubeol",
+      "to": "daegaya",
+      "type_reference": "land",
+      "travel_time": null
+    },
+    {
+      "from": "sabeol",
+      "to": "chupungnyeong",
+      "type_reference": "mountain",
+      "travel_time": null
+    },
+    {
+      "from": "dalgubeol",
+      "to": "chupungnyeong",
+      "type_reference": "mountain",
+      "travel_time": null
+    }
+  ],
+  "edge_note": "Includes Sabeol-Chupungnyeong mountain road omitted from the focal browser sketch. Read current runtime topology and travel rules.",
+  "runtime_values_not_bundled": [
+    "date",
+    "faction_ownership",
+    "gold",
+    "troops",
+    "grain",
+    "production",
+    "people",
+    "loyalty",
+    "invasions",
+    "travel_times"
+  ],
+  "godot_implementation_complete": false,
+  "godot_execution_verified": false
+}
