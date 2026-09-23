@@ -12,7 +12,7 @@ func _run() -> void:
 	DirAccess.make_dir_recursive_absolute(CENTRAL_OUT)
 	root.content_scale_size=Vector2i.ZERO
 	await start(Scenarios.SCENARIOS[1],"silla","historical");await settle_events();await pause()
-	ui=c.settlement_overlay;await click(c.settlement_button)
+	ui=c.settlement_overlay;await pause()
 	var m: Control=ui.map
 	var state: Dictionary=full_state()
 	check(m._r3_fill.is_ready() and m._r3_fill._texture.get_size()==Vector2(1536,1024),"r3 native texture and mesh loaded")
@@ -55,22 +55,22 @@ func _run() -> void:
 		for id: String in ["bukhansan","danghangseong","gukwon","haslla","siljik","jukryeong"]:
 			m.focus_on_province(id,5);await pause()
 			await click(ui.buttons.detail_r3)
-			var pt: Vector2=m.global_position+m.anchor(id)
+			var pt: Vector2=m.get_global_transform_with_canvas()*m.anchor(id)
 			await mouse(pt,MOUSE_BUTTON_LEFT,true);await mouse(pt,MOUSE_BUTTON_LEFT,false)
 			check(ui.selected==id and c.selected_province_id==id,"unchanged castle click "+id)
 			await click(ui.buttons.detail_corrected)
 		ui.select_city("siljik");m.focus_detail();await pause();await click(ui.buttons.detail_r3);await click(ui.preview)
 		check(ui.route_open and m.preview_source==ui.source_id(),"existing support preview")
 		await capture_central(str(res.x)+"-support")
-		check(ui.bottom.get_global_rect().end.y<=res.y and ui.terrain_note.get_global_rect().end.y<=res.y,"bottom UI fits")
+		check(ui._city_panel.get_global_rect().end.y<=res.y and ui.buttons.month.get_global_rect().end.y<=res.y,"bottom UI fits")
 		await click(ui.buttons.cancel)
 		var selected_before: String=ui.selected
 		var view_before: Dictionary=m.get_view_state()
-		await click(ui.buttons.close);await click(c.settlement_button)
-		check(ui.selected==selected_before and m.get_view_state()==view_before and m.corrected_comparison and m.r3_comparison,"close/reopen preserves r2 and selection")
+		await click(ui.buttons.menu);await escape();await pause()
+		check(ui.selected==selected_before and m.get_view_state()==view_before and m.corrected_comparison and m.r3_comparison,"menu return preserves r2/r3 and selection")
 		await click(ui.buttons.detail_corrected)
 		var scale: float=m.map_zoom
-		var pt: Vector2=m.global_position+m.size/2
+		var pt: Vector2=m.get_global_transform_with_canvas()*(m.size/2)
 		await mouse(pt,MOUSE_BUTTON_WHEEL_UP,true);await mouse(pt,MOUSE_BUTTON_WHEEL_UP,false)
 		check(m.map_zoom>scale and m.detail_weight()==0,"real wheel keeps unregistered detail blocked")
 	# Controlled in-memory gate/transition test, not an art approval or production setting.

@@ -1,6 +1,13 @@
 extends "res://tests/settlement_ui_test.gd"
 const CASTLE_OUT="res://.godot/settlement-style-v1/"
 
+func click(button: Control) -> void:
+	var ancestor := button.get_parent()
+	while ancestor != null:
+		if ancestor is ScrollContainer: ancestor.ensure_control_visible(button)
+		ancestor = ancestor.get_parent()
+	await super.click(button)
+
 func shot(name: String) -> void:
 	var motion:=InputEventMouseMotion.new(); motion.position=Vector2(10,10); root.push_input(motion,true)
 	await pause(); await RenderingServer.frame_post_draw
@@ -20,7 +27,7 @@ func _run() -> void:
 	await settle_events(); await pause()
 	check(c.year==642 and c.player_faction_id=="silla","real main scene to 642 Silla via GUI")
 	ui=c.settlement_overlay
-	await click(c.settlement_button)
+	await pause()
 	var m: Control=ui.map
 	check(m.get_layout_status().ready and m.get_visible_ids().size()==35,"approved map is default with 35 IDs")
 	check(m.get_layout_status().territory_polygons==0,"old territory mask not reused")
@@ -34,7 +41,7 @@ func _run() -> void:
 			check(m.get_live_summary(id).faction==c.provinces[id].faction and m.get_live_summary(id).troops==c.provinces[id].troops,"live ownership and troops "+id)
 			check(m.pick_id_at(m.anchor(id))==id,"overview nearest selection "+id)
 			m.focus_on_province(id,5); await pause()
-			var pt: Vector2=m.global_position+m.anchor(id)
+			var pt: Vector2=m.get_global_transform_with_canvas()*m.anchor(id)
 			await mouse(pt,MOUSE_BUTTON_LEFT,true); await mouse(pt,MOUSE_BUTTON_LEFT,false)
 			check(ui.selected==id and c.selected_province_id==id,"actual castle selection "+id)
 			m.fit_all()
@@ -43,18 +50,18 @@ func _run() -> void:
 		ui.select_city("geumseong"); m.focus_on_province("geumseong",4.2); await pause()
 		var focal: Vector2=m.size*Vector2(0.6,0.5)
 		var native: Vector2=m.local_to_map(focal)
-		await mouse(m.global_position+focal,MOUSE_BUTTON_WHEEL_UP,true); await mouse(m.global_position+focal,MOUSE_BUTTON_WHEEL_UP,false)
+		await mouse(m.get_global_transform_with_canvas()*focal,MOUSE_BUTTON_WHEEL_UP,true); await mouse(m.get_global_transform_with_canvas()*focal,MOUSE_BUTTON_WHEEL_UP,false)
 		check(m.map_zoom>4.2 and m.local_to_map(focal).distance_to(native)<0.02,"wheel preserves map focus")
-		await mouse(m.global_position+focal,MOUSE_BUTTON_WHEEL_DOWN,true); await mouse(m.global_position+focal,MOUSE_BUTTON_WHEEL_DOWN,false)
+		await mouse(m.get_global_transform_with_canvas()*focal,MOUSE_BUTTON_WHEEL_DOWN,true); await mouse(m.get_global_transform_with_canvas()*focal,MOUSE_BUTTON_WHEEL_DOWN,false)
 		var old_pan: Vector2=m.map_pan_offset
-		await mouse(m.global_position+focal,MOUSE_BUTTON_LEFT,true)
-		var drag:=InputEventMouseMotion.new(); drag.position=m.global_position+focal+Vector2(-35,20); drag.button_mask=MOUSE_BUTTON_MASK_LEFT; root.push_input(drag,true)
+		await mouse(m.get_global_transform_with_canvas()*focal,MOUSE_BUTTON_LEFT,true)
+		var drag:=InputEventMouseMotion.new(); drag.position=m.get_global_transform_with_canvas()*focal+Vector2(-35,20); drag.button_mask=MOUSE_BUTTON_MASK_LEFT; root.push_input(drag,true)
 		await mouse(drag.position,MOUSE_BUTTON_LEFT,false)
 		check(m.map_pan_offset.distance_to(old_pan)>10,"actual drag")
 		var view: Dictionary=m.get_view_state()
 		for kind: String in ["domestic","army","production","politics"]:
 			await click(ui.buttons[kind])
-			check(c.get({"domestic":"domestic_overlay","army":"army_overlay","production":"production_overlay","politics":"politics_overlay"}[kind]).visible and not ui.visible,"existing command opens "+kind)
+			check(c.get({"domestic":"domestic_overlay","army":"army_overlay","production":"production_overlay","politics":"politics_overlay"}[kind]).visible and ui.visible and ui.suspended,"existing command opens "+kind)
 			await escape()
 			check(ui.visible and ui.selected=="geumseong" and m.get_view_state()==view,"return preserves camera and selection "+kind)
 		await click(ui.buttons.menu)
@@ -69,13 +76,13 @@ func _run() -> void:
 		await click(ui.preview)
 		check(ui.route_open and m.preview_source==ui.source_id() and not ui.support.disabled,"normal support route preview")
 		await shot(str(res.x)+"-support")
-		check(ui.bottom.get_global_rect().end.y<=res.y and ui.terrain_note.get_global_rect().end.y<=res.y,"panels fit")
+		check(ui._city_panel.get_global_rect().end.y<=res.y and ui.buttons.month.get_global_rect().end.y<=res.y,"panels fit")
 		await click(ui.buttons.cancel)
 		check(m.preview_source.is_empty() and m._route_ids.is_empty(),"cancel clears all route state")
 		check(full_state()==initial,"display and menus preserve campaign")
-		await click(ui.buttons.close)
-		check(not ui.visible and not c.map_area.modal_input_locked,"world map return unlocks input")
-		await click(c.settlement_button)
+		await click(ui.buttons.overview)
+		check(ui.visible and is_equal_approx(ui.map.map_zoom,1.0),"whole map stays on atlas")
+		await pause()
 	ui.select_city("dalgubeol"); await pause()
 	select_value(ui.sources,"geumseong"); await click(ui.preview); await click(ui.support)
 	check(c.army_overlay.visible and c.army_overlay.city=="geumseong","support uses real army command")

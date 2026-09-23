@@ -286,7 +286,6 @@ var pending_transfer_orders: Array[Dictionary] = []
 
 
 var settlement_overlay: Control
-var settlement_button: Button
 
 func _initialize_settlement_view() -> void:
 	var layer := CanvasLayer.new()
@@ -296,16 +295,13 @@ func _initialize_settlement_view() -> void:
 	settlement_overlay = preload("res://settlement_overlay.gd").new()
 	settlement_overlay.campaign = self
 	layer.add_child(settlement_overlay)
-	settlement_button = Button.new()
-	settlement_button.text = "거점 지도"
-	navigation_menu.get_parent().add_child(settlement_button)
-	settlement_button.pressed.connect(settlement_overlay.open)
-	navigation_menu.get_popup().add_item("달구벌 · 거점 지도", 14)
-	navigation_menu.get_popup().id_pressed.connect(func(id):
-		if id == 14: settlement_overlay.open())
+	# The legacy controls still supply shared command/data bindings, not a second view.
+	$MainVBox.hide()
+	map_area.set_process(false)
+	map_area.set_process_input(false)
+	transfer_panel.reparent(get_node("ProductionLayer"))
 
 func _ready() -> void:
-	_initialize_settlement_view.call_deferred()
 	_ending_initialize.call_deferred()
 	pending_campaign_opening = get_tree().root.has_meta("new_game_settings")
 	_apply_legacy_core_province_values()
@@ -366,6 +362,7 @@ func _ready() -> void:
 	production_overlay.visibility_changed.connect(_sync_modal_map_input)
 	diplomacy_overlay.visibility_changed.connect(_sync_modal_map_input)
 	_connect_navigation_menu()
+	_initialize_settlement_view()
 	event_presentation = EventPresentation.new()
 	add_child(event_presentation)
 	event_presentation.setup(self)
@@ -417,7 +414,7 @@ func _ready() -> void:
 	update_top_bar()
 	var starting_province_id: String = _get_starting_province_id()
 	select_province(starting_province_id, false)
-	map_area.call_deferred("focus_on_province", starting_province_id, 2.15)
+	settlement_overlay.open.call_deferred()
 	log_label.text = (
 		"%s · %s 난이도로 시작합니다."
 		% [
@@ -440,7 +437,7 @@ func _present_campaign_opening() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and settlement_overlay != null and settlement_overlay.visible and not settlement_overlay.busy():
-		settlement_overlay.close(); get_viewport().set_input_as_handled(); return
+		settlement_overlay.open_menu(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and invasion_overlay!=null and invasion_overlay.visible:
 		invasion_overlay.hide(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and merit_overlay!=null and merit_overlay.visible:
@@ -914,6 +911,13 @@ func select_province(province_id: String, show_floating_card: bool = true) -> vo
 		return
 
 	selected_province_id = province_id
+	if settlement_overlay != null and show_floating_card:
+		if settlement_overlay.selected != province_id:
+			settlement_overlay.accept_selection(province_id, true)
+		else:
+			# Common commands reselect the current city to refresh its data.
+			# This is not a request to reset the player's zoom/pan or route.
+			settlement_overlay.refresh()
 	var province: Dictionary = provinces[province_id]
 
 	province_name_label.text = province["name"]
@@ -940,7 +944,7 @@ func select_province(province_id: String, show_floating_card: bool = true) -> vo
 
 	update_attack_button(province_id)
 	update_province_log(province_id)
-	if show_floating_card:
+	if show_floating_card and settlement_overlay == null:
 		map_area.show_city_card(
 			province_id,
 			province,
@@ -1157,6 +1161,9 @@ func _on_city_card_move_requested(province_id: String) -> void:
 
 
 func _on_city_card_detail_requested(province_id: String) -> void:
+	if settlement_overlay != null:
+		select_province(province_id)
+		return
 	var detail_was_visible: bool = province_panel.visible
 	if province_id != selected_province_id:
 		select_province(province_id)
@@ -2563,6 +2570,7 @@ func _write_campaign_save(save_path: String) -> bool:
 		"difficulty": difficulty,
 		"scenario_id": scenario_id,
 		"selected_province_id": selected_province_id,
+		"atlas_view": settlement_overlay.export_view() if settlement_overlay != null else {},
 		"provinces": provinces,
 		"officer_registry_version": 1,
 		"pending_transfer_orders": pending_transfer_orders,
@@ -2742,11 +2750,9 @@ func _on_load_button_pressed(save_path: String = SAVE_PATH) -> void:
 		requested_selection = _get_starting_province_id()
 
 	update_top_bar()
-	select_province(requested_selection)
+	select_province(requested_selection, false)
 	if settlement_overlay != null:
-		settlement_overlay.selected = requested_selection
-		settlement_overlay.route_open = false
-		settlement_overlay.refresh()
+		settlement_overlay.restore_view(save_data.get("atlas_view", {}), requested_selection)
 	_refresh_map_markers()
 	log_label.text = "%d년 %d월 · %s 저장 기록을 불러왔습니다." % [
 		year,

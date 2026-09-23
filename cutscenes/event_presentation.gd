@@ -58,7 +58,7 @@ func setup(host: Node) -> void:
 	view.save_requested.connect(func(): campaign._on_save_button_pressed())
 	adapter = MapAdapter.new()
 	adapter.setup(campaign, catalog.get("map_targets", {}))
-	campaign.map_area.add_child(adapter)
+	adapter.map.add_child(adapter)
 	music = AudioStreamPlayer.new()
 	sound = AudioStreamPlayer.new()
 	add_child(music)

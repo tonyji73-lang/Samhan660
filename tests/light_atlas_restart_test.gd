@@ -1,0 +1,25 @@
+extends "res://tests/settlement_style_v1_test.gd"
+
+func _run() -> void:
+	create_timer(90).timeout.connect(func():quit(2))
+	root.content_scale_size=Vector2i.ZERO;root.size=Vector2i(1280,720)
+	var normal: Dictionary=JSON.parse_string(FileAccess.get_file_as_string(CASTLE_OUT+"normal.json"))
+	await start(Scenarios.SCENARIOS[0],"baekje","historical");await settle_events();await pause()
+	check(OS.get_process_id()!=int(normal.pid),"fresh OS process")
+	c._on_load_button_pressed(normal.slot);await pause()
+	check(full_state()==normal.state,"date faction resources units politics pending support restored")
+	ui=c.settlement_overlay;await pause()
+	check(ui.visible and ui.selected=="dalgubeol","restored city selection")
+	var prior: int=stamp()
+	await click(ui.buttons.month);await settle_events();c.merit_overlay.hide();await pause()
+	check(stamp()==prior+1 and c.Army.units(c.strategy_state)[normal.unit].location=="dalgubeol","restored support arrives")
+	check(c.pending_transfer_orders.filter(func(o):return o.unit_ids.has(normal.unit)).is_empty(),"support reservation cleared")
+	check(not ui.map.detail_auto_allowed(),"automatic LOD stays off")
+	# Card title/close stays reachable after scrolling the body to its end.
+	await click(ui.buttons.cancel)
+	check(ui.buttons.hide_city.get_global_rect().position.y>=ui._city_panel.get_global_rect().position.y,"close remains inside card after body scroll")
+	await click(ui.buttons.hide_city);check(not ui._city_panel.visible,"scrolled card closes")
+	await click(ui.buttons.city_info);check(ui._city_panel.visible,"card reopens")
+	await shot("atlas-restart")
+	print("ATLAS RESTART: ",checks," checks, ",failures," failures")
+	quit(0 if failures==0 else 1)

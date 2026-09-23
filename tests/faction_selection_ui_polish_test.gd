@@ -64,7 +64,7 @@ func _run() -> void:
 	await choose("start");setup._on_start_pressed();await create_timer(3).timeout
 	c=current_scene;c.event_presentation.display_level="minimal";await settle_events()
 	check(c.year==632 and c.player_faction_id=="silla","632 campaign starts through existing path")
-	await click(c.settlement_button);await pause()
+	await pause();await pause()
 	check(not c.settlement_overlay.map.detail_auto_allowed(),"map automatic LOD remains off")
 	await capture_ui("632-campaign-map")
 	await enter_setup()

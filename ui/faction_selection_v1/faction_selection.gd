@@ -18,11 +18,11 @@ const LAYOUT_PATH := "res://ui/faction_selection_v1/layout.json"
 const DeclarationCatalog = preload("res://ui/faction_declaration_v1/declaration_catalog.gd")
 const DeclarationView = preload("res://ui/faction_declaration_v1/hanji_declaration.gd")
 const BASE_SIZE := Vector2(1920.0, 1080.0)
-const INK := Color("101b1a")
-const GOLD := Color("c2a36a")
-const IVORY := Color("f2e7ce")
-const MUTED := Color("b4b5a8")
-const RED := Color("6f261e")
+const Atlas = preload("res://ui/light_atlas_v1/atlas_theme.gd")
+const INK := Atlas.INK
+const GOLD := Atlas.ACCENT
+const IVORY := Atlas.INK
+const MUTED := Atlas.MUTED
 
 var _model: Dictionary = {}
 var _layout: Dictionary = {}
@@ -44,6 +44,7 @@ func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	clip_contents = true
 	mouse_filter = Control.MOUSE_FILTER_STOP
+	theme = Atlas.make_theme()
 	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string(LAYOUT_PATH))
 	if not parsed is Dictionary:
 		push_error("Faction selection: layout.json could not be read.")
@@ -164,20 +165,14 @@ func _button(parent: Node, caption: String, key: String, selected: bool,
 	var button := Button.new()
 	button.text = caption
 	button.disabled = not enabled or _busy
-	button.focus_mode = Control.FOCUS_ALL
-	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	button.add_theme_font_override("font", _bold_font)
+	var kind := "tab" if key.begins_with("faction:") else "primary" if key == "start" else "default"
+	Atlas.apply_button(button, selected, kind)
 	button.add_theme_font_size_override("font_size", font_size)
-	button.add_theme_color_override("font_color", IVORY)
-	button.add_theme_color_override("font_hover_color", IVORY)
-	button.add_theme_color_override("font_pressed_color", IVORY)
-	button.add_theme_color_override("font_focus_color", IVORY)
-	button.add_theme_color_override("font_disabled_color", Color("656e68"))
-	button.add_theme_stylebox_override("normal", _style(RED if selected else INK, GOLD if selected else Color("6e6247"), 2 if selected else 1))
-	button.add_theme_stylebox_override("hover", _style(Color("3d3830"), GOLD, 2))
-	button.add_theme_stylebox_override("pressed", _style(Color("542018"), IVORY, 2))
-	button.add_theme_stylebox_override("disabled", _style(Color("111b19"), Color("39453d")))
-	button.add_theme_stylebox_override("focus", _style(Color.TRANSPARENT, IVORY, 3))
+	if key == "start":
+		button.icon = Atlas.icon("arrow-right")
+		button.icon_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	elif key == "back":
+		button.icon = Atlas.icon("arrow-left")
 	button.set_meta("focus_key", key)
 	button.pressed.connect(action)
 	parent.add_child(button)
@@ -203,7 +198,7 @@ func _render() -> void:
 		focus_key = str(old_focus.get_meta("focus_key", ""))
 	var entity_key := str(_model.get("scenario_id", "")) + "|" + str(_model.get("faction_id", ""))
 	var detail_position := _details.scroll_vertical if is_instance_valid(_details) and entity_key == _last_entity else 0
-	var scenario_position := _scenario_scroll.scroll_vertical if is_instance_valid(_scenario_scroll) else 0
+	var scenario_position := _scenario_scroll.scroll_horizontal if is_instance_valid(_scenario_scroll) else 0
 	var faction_position := _faction_scroll.scroll_vertical if is_instance_valid(_faction_scroll) and entity_key == _last_entity else 0
 	_last_entity = entity_key
 	if is_instance_valid(_stage):
@@ -215,17 +210,17 @@ func _render() -> void:
 	_stage.size = BASE_SIZE
 	_stage.clip_contents = true
 	add_child(_stage)
-	_panel(_stage, Rect2(Vector2.ZERO, BASE_SIZE), INK)
+	_panel(_stage, Rect2(Vector2.ZERO, BASE_SIZE), Atlas.PAPER)
 	var art: Dictionary = _model.get("art", {})
 	var backdrop := _load_texture(art.get("background"))
 	_texture(_stage, backdrop, _box("hero"), true)
-	_panel(_stage, _box("hero"), Color(0.10, 0.08, 0.04, 0.11))
+	_panel(_stage, _box("hero"), Color(0.96, 0.93, 0.86, 0.08))
 	_build_map(art)
 	_texture(_stage, _load_texture(art.get("portrait")), _box("portrait"), false)
+	_panel(_stage, _box("right"), Atlas.PAPER)
 	_build_declaration(art, backdrop)
 	_build_header()
 	_build_timeline()
-	_panel(_stage, _box("right"), Color("101b1a"), GOLD)
 	_build_factions()
 	_heading(_stage, str(_model.get("faction_name", "세력을 선택하세요")), _box("name"), 58)
 	_build_details()
@@ -240,11 +235,11 @@ func _render() -> void:
 		error_text = str(_model.get("start_disabled_reason", ""))
 	start_button.tooltip_text = error_text if not error_text.is_empty() else str(_model.get("start_disabled_reason", ""))
 	if not error_text.is_empty():
-		var notice := _label(_stage, error_text, Rect2(1404, 954, 480, 28), 20, Color("ffcc9e"))
+		var notice := _label(_stage, error_text, _box("notice"), 20, Atlas.PRESSED)
 		notice.tooltip_text = error_text
 	_fit_stage()
 	_details.set_deferred("scroll_vertical", detail_position)
-	_scenario_scroll.set_deferred("scroll_vertical", scenario_position)
+	_scenario_scroll.set_deferred("scroll_horizontal", scenario_position)
 	_faction_scroll.set_deferred("scroll_vertical", faction_position)
 	_restore_focus.call_deferred(focus_key)
 
@@ -264,25 +259,16 @@ func _restore_focus(key: String) -> void:
 
 
 func _build_header() -> void:
-	_panel(_stage, _box("header"), Color("0b1413"), GOLD)
-	_heading(_stage, "삼한 660", Rect2(32, 10, 246, 62), 40)
-	_label(_stage, "|", Rect2(292, 12, 30, 60), 30, GOLD)
-	_heading(_stage, "새 캠페인", Rect2(340, 10, 420, 62), 36)
-	var back_button := _button(_stage, "뒤로", "back", false, true, func() -> void: back_requested.emit())
+	_panel(_stage, _box("header"), Atlas.SURFACE, Atlas.LINE)
+	_heading(_stage, "삼한 660", Rect2(32, 14, 232, 56), 36, INK)
+	_label(_stage, "|", Rect2(282, 14, 24, 56), 25, Atlas.LINE)
+	_heading(_stage, "새 캠페인", Rect2(330, 14, 264, 56), 28, INK)
+	var back_button := _button(_stage, "뒤로", "back", false, true, func() -> void: back_requested.emit(), 23)
 	back_button.position = _box("back").position
 	back_button.size = _box("back").size
-	var year_label := _heading(_stage, str(_model.get("year_label", "")), _box("year"), 32, Color("3e2e1b"))
-	year_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	var title_label := _heading(_stage, str(_model.get("scenario_title", "")), _box("title"), 64, Color("302217"))
-	title_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	title_label.add_theme_color_override("font_shadow_color", Color(1.0, 0.91, 0.73, 0.7))
-	title_label.add_theme_constant_override("shadow_offset_y", 2)
-	if str(_model.get("art",{}).get("profile_key","")) != "632_silla":
-		for heading: Label in [year_label,title_label]:
-			heading.add_theme_color_override("font_color", IVORY)
-			heading.add_theme_color_override("font_outline_color", Color("302217"))
-			heading.add_theme_constant_override("outline_size", 4)
-			heading.add_theme_color_override("font_shadow_color", Color("101b1a"))
+	var caption := str(_model.get("year_label", "")) + " · " + str(_model.get("scenario_title", ""))
+	var scenario_label := _label(_stage, caption, _box("title"), 22, MUTED)
+	scenario_label.tooltip_text = caption
 
 
 func _build_map(art: Dictionary) -> void:
@@ -309,7 +295,7 @@ func _build_map(art: Dictionary) -> void:
 	var ring_style := _style(marker_color, Color("f4d28d"), 3)
 	ring_style.set_corner_radius_all(12)
 	ring.add_theme_stylebox_override("panel", ring_style)
-	var map_caption := _label(_stage, str(art.get("capital_label",_model.get("capital", ""))), Rect2(marker_center + Vector2(21, -21), Vector2(180, 42)), 28, IVORY, true)
+	var map_caption := _label(_stage, str(art.get("capital_label",_model.get("capital", ""))), Rect2(marker_center + Vector2(21, -21), Vector2(210, 42)), 28, Atlas.WHITE, true)
 	map_caption.name = "StartMarkerLabel"
 	map_caption.z_index = 1
 	map_caption.add_theme_color_override("font_shadow_color", Color("211d18"))
@@ -338,29 +324,20 @@ func _build_declaration(art: Dictionary, backdrop: Texture2D) -> void:
 
 
 func _build_timeline() -> void:
-	_panel(_stage, _box("timeline"), Color("101b1a"), Color("77623f"))
-	_label(_stage, "시대 선택", Rect2(30, 118, 156, 34), 23, GOLD)
-	_scenario_scroll = _scroll(_stage, Rect2(20, 180, 188, 836))
-	var column := VBoxContainer.new()
-	column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	column.add_theme_constant_override("separation", 25)
-	_scenario_scroll.add_child(column)
+	_scenario_scroll = _scroll(_stage, _box("timeline"))
+	_scenario_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_scenario_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	var row := HBoxContainer.new()
+	row.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	row.add_theme_constant_override("separation", 12)
+	_scenario_scroll.add_child(row)
 	for entry: Dictionary in _model.get("scenarios", []):
 		var entry_id := str(entry.get("id", ""))
 		var selected := entry_id == str(_model.get("scenario_id", ""))
-		var button := _button(column, str(entry.get("label", "")), "scenario:" + entry_id, selected,
-			bool(entry.get("enabled", false)), func() -> void: scenario_requested.emit(entry_id), 32)
-		button.custom_minimum_size = Vector2(168, 110)
-		button.tooltip_text = str(entry.get("reason", ""))
-		var subtitle := str(entry.get("subtitle", ""))
-		if selected and not subtitle.is_empty():
-			var subtitle_label := Label.new()
-			subtitle_label.text = subtitle
-			subtitle_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-			subtitle_label.add_theme_font_override("font", _body_font)
-			subtitle_label.add_theme_font_size_override("font_size", 20)
-			subtitle_label.add_theme_color_override("font_color", GOLD)
-			column.add_child(subtitle_label)
+		var button := _button(row, str(entry.get("label", "")), "scenario:" + entry_id, selected,
+			bool(entry.get("enabled", false)), func() -> void: scenario_requested.emit(entry_id), 24)
+		button.custom_minimum_size = Vector2(144, 52)
+		button.tooltip_text = str(entry.get("subtitle", "")) if bool(entry.get("enabled", false)) else str(entry.get("reason", ""))
 
 
 func _build_factions() -> void:
@@ -375,7 +352,7 @@ func _build_factions() -> void:
 		var selected := entry_id == str(_model.get("faction_id", ""))
 		var button := _button(flow, str(entry.get("label", "")), "faction:" + entry_id, selected,
 			bool(entry.get("enabled", false)), func() -> void: faction_requested.emit(entry_id), 25)
-		button.custom_minimum_size = Vector2(148, 60)
+		button.custom_minimum_size = Vector2(148, 52)
 		button.tooltip_text = "아직 오픈되지 않았습니다" if not bool(entry.get("enabled", false)) else str(entry.get("reason", ""))
 		button.clip_text = true
 
@@ -421,11 +398,11 @@ func _build_choices(list_key: String, selected_key: String, caption: String, out
 	for entry: Dictionary in _model.get(list_key, []):
 		var entry_id := str(entry.get("id", ""))
 		var selected := entry_id == str(_model.get(selected_key, ""))
-		var caption_value := str(entry.get("label", "")) + ("  ✓" if selected else "")
+		var caption_value := str(entry.get("label", ""))
 		var button := _button(row, caption_value, list_key + ":" + entry_id, selected,
 			bool(entry.get("enabled", false)), func() -> void: outgoing.emit(entry_id), 25)
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		button.custom_minimum_size.y = 60
+		button.custom_minimum_size.y = 54
 		button.tooltip_text = str(entry.get("reason", ""))
 		button.clip_text = true
 

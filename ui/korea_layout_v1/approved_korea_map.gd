@@ -39,6 +39,7 @@ var preview_source: String = "":
 		queue_redraw()
 var map_zoom: float = 1.0
 var map_pan_offset: Vector2 = Vector2.ZERO
+var input_locked: bool = false
 var selection_layer: Node2D = null
 
 var faction_colors: Dictionary = {
@@ -380,6 +381,9 @@ func pick_id_at(local_point: Vector2, minimum_radius: float = 16.0) -> String:
 
 
 func _gui_input(event: InputEvent) -> void:
+	if input_locked:
+		_held = false
+		return
 	if not _layout_ok:
 		return
 	if event is InputEventMouseButton:
@@ -516,7 +520,8 @@ func _draw_site(province_id: String, center: Vector2, width_value: float, detail
 		for step: int in range(49):
 			var angle: float = TAU * float(step) / 48.0
 			outline.append(center + Vector2(cos(angle) * radius_x, sin(angle) * radius_y))
-		draw_polyline(outline, Color("fff0bd"), 1.7, true)
+		draw_polyline(outline, Color("fff4df"), 4.0, true)
+		draw_polyline(outline, Color("e87523"), 2.2, true)
 
 
 func _priority(province_id: String) -> int:
@@ -580,7 +585,8 @@ func _draw_support_route() -> void:
 		if not has_site_id(province_id) or not _live.has(province_id):
 			return
 	for index: int in range(route.size() - 1):
-		draw_line(anchor(route[index]), anchor(route[index + 1]), Color("f0d28a"), 2.2, true)
+		draw_line(anchor(route[index]), anchor(route[index + 1]), Color("fff4df"), 5.8, true)
+		draw_line(anchor(route[index]), anchor(route[index + 1]), Color("e87523"), 3.4, true)
 
 
 func _draw_territories() -> void:

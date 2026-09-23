@@ -1,6 +1,14 @@
 extends Control
 ## A live campaign view, never a second campaign or a command implementation.
 const Map = preload("res://ui/korea_layout_v1/approved_korea_map.gd")
+const Atlas = preload("res://ui/light_atlas_v1/atlas_theme.gd")
+const DESIGN_SIZE := Vector2(1920.0, 1080.0)
+var _design_stage: Control
+var _city_panel: PanelContainer
+var _comparison_panel: PanelContainer
+var _modal_shield: Control
+var save_picker: FileDialog
+var review_tools: bool = "--map-review" in OS.get_cmdline_user_args()
 var campaign: Node
 var map: Control
 var selected: String = "dalgubeol"
@@ -15,141 +23,236 @@ var sources: OptionButton
 var route_text: Label
 var support: Button
 var preview: Button
-var bottom: HBoxContainer
+var bottom: VBoxContainer
 var buttons: Dictionary = {}
 var refresh_clock: float = 0.0
 var route_open: bool = false
 var terrain_note: Label
 var resources: Label
+var command_status: Label
 var last_action: String = ""
 var opened_once: bool = false
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_STOP
-	var theme_value := Theme.new()
-	theme_value.default_font = preload("res://ui/faction_selection_v1/assets/SamhanUISans-Medium.ttf")
-	theme_value.default_font_size = 20
-	for state: String in ["normal", "hover", "pressed", "disabled", "focus"]:
-		var style := StyleBoxFlat.new()
-		style.bg_color = Color("6f261e") if state == "pressed" else Color("101b1a") if state != "hover" else Color("3d3830")
-		style.border_color = Color("c2a36a")
-		style.set_border_width_all(1)
-		style.set_content_margin_all(9)
-		style.set_corner_radius_all(3)
-		theme_value.set_stylebox(state, "Button", style)
-		theme_value.set_stylebox(state, "OptionButton", style)
-	theme_value.set_color("font_color", "Label", Color("eee8d8"))
-	theme_value.set_color("font_color", "Button", Color("d6b678"))
-	theme = theme_value
+	theme = Atlas.make_theme()
 	var bg := ColorRect.new()
-	bg.color = Color("101b1a")
+	bg.color = Atlas.PAPER
+	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(bg)
-	var box := VBoxContainer.new()
-	box.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	box.add_theme_constant_override("separation", 0)
-	add_child(box)
-	var top := HBoxContainer.new()
-	top.add_theme_constant_override("separation", 16)
-	top.custom_minimum_size.y = 72
-	box.add_child(top)
-	header = label(top, "", 23)
-	header.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	resources = label(top, "", 20)
+	_design_stage = Control.new()
+	_design_stage.name = "AtlasStage"
+	_design_stage.size = DESIGN_SIZE
+	_design_stage.clip_contents = true
+	_design_stage.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_design_stage)
+	map = Map.new()
+	map.campaign = campaign
+	map.position = Vector2(0, 80)
+	map.size = Vector2(1920, 1000)
+	_design_stage.add_child(map)
+	map.settlement_selected.connect(select_city)
+	var top := _atlas_panel(Rect2(0, 0, 1920, 80), false)
+	header = label(top, "", 26)
+	header.position = Vector2(28, 14)
+	header.size = Vector2(800, 52)
+	header.clip_text = true
+	resources = label(top, "", 23)
+	resources.position = Vector2(834, 14)
+	resources.size = Vector2(370, 52)
+	resources.clip_text = true
 	threat = button(top, "침공 예고", func(): suspend(); campaign.open_invasions(), "invasions")
-	threat.custom_minimum_size = Vector2(150,48)
-	button(top, "저장·메뉴", func(): suspend(); campaign.navigation_menu.show_popup(), "menu")
-	button(top, "전체 지도", close, "close")
-	var tools_row := HBoxContainer.new()
-	box.add_child(tools_row)
-	label(tools_row, "  지도 비교  ", 16)
-	button(tools_row, "중부·동해", func(): map.focus_detail(), "detail_focus")
-	button(tools_row, "후보 보기", func():
+	_position_button(threat, Rect2(1232, 16, 200, 48), "warning-circle")
+	var menu_button := button(top, "저장·메뉴", open_menu, "menu")
+	_position_button(menu_button, Rect2(1452, 16, 196, 48), "floppy-disk")
+	var close_button := button(top, "전체 지도", func(): map.fit_all(), "overview")
+	_position_button(close_button, Rect2(1668, 16, 220, 48), "list")
+	var nav_panel := _atlas_panel(Rect2(24, 106, 926, 64))
+	var nav := HBoxContainer.new()
+	nav.position = Vector2(6, 6)
+	nav.size = Vector2(914, 52)
+	nav.add_theme_constant_override("separation", 8)
+	nav_panel.add_child(nav)
+	for pair: Array in [["영지", "domestic", "buildings"], ["군사", "army", "sword"], ["생산", "production", "plant"], ["인사", "politics", "users-three"], ["연구", "research", "book-open"]]:
+		var key: String = pair[1]
+		var b := button(nav, pair[0], func(): action(key), key)
+		b.icon = Atlas.icon(pair[2])
+		b.custom_minimum_size = Vector2(132, 52)
+		b.toggle_mode = true
+	var card_button := button(nav, "성 정보", func(): _city_panel.visible = not _city_panel.visible, "city_info")
+	card_button.custom_minimum_size = Vector2(170, 52)
+	if review_tools:
+		var view_button := button(_design_stage, "지도 검토", func(): _comparison_panel.visible = not _comparison_panel.visible, "view_options")
+		_position_button(view_button, Rect2(1670, 112, 218, 52), "list")
+	_build_city_panel()
+	if review_tools: _build_comparison_panel()
+	var zoom_in := button(_design_stage, "", func(): map._set_map_zoom(map.map_zoom * map.MAP_ZOOM_STEP, map.size / 2), "zoom_in")
+	_position_button(zoom_in, Rect2(1832, 786, 56, 56), "plus")
+	zoom_in.tooltip_text = "지도 확대"
+	var zoom_out := button(_design_stage, "", func(): map._set_map_zoom(map.map_zoom / map.MAP_ZOOM_STEP, map.size / 2), "zoom_out")
+	_position_button(zoom_out, Rect2(1832, 850, 56, 56), "minus")
+	zoom_out.tooltip_text = "지도 축소"
+	var end_turn := button(_design_stage, "다음 달", advance, "month")
+	Atlas.apply_button(end_turn, false, "primary")
+	_position_button(end_turn, Rect2(1640, 984, 248, 68), "arrow-right")
+	end_turn.icon_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	end_turn.add_theme_font_size_override("font_size", 28)
+	command_status = label(_design_stage, "", 20)
+	command_status.position = Vector2(24,984)
+	command_status.size = Vector2(1540,68)
+	command_status.clip_text = true
+	command_status.add_theme_color_override("font_color", Atlas.WHITE)
+	command_status.add_theme_color_override("font_shadow_color", Atlas.INK)
+	command_status.add_theme_constant_override("shadow_outline_size", 5)
+	command_status.mouse_filter = Control.MOUSE_FILTER_PASS
+	_modal_shield = Control.new()
+	_modal_shield.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_modal_shield.mouse_filter = Control.MOUSE_FILTER_STOP
+	add_child(_modal_shield)
+	_modal_shield.hide()
+	save_picker = FileDialog.new()
+	save_picker.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+	save_picker.access = FileDialog.ACCESS_FILESYSTEM
+	save_picker.filters = PackedStringArray(["*.json ; 캠페인 저장"])
+	save_picker.title = "진행 저장 · 파일 선택"
+	save_picker.current_dir = ProjectSettings.globalize_path("user://")
+	add_child(save_picker)
+	save_picker.file_selected.connect(func(path): campaign._on_save_button_pressed(path))
+	campaign.navigation_menu.get_popup().add_item("진행 저장 · 파일 선택", 15)
+	campaign.navigation_menu.get_popup().id_pressed.connect(func(id):
+		if id == 15:
+			save_picker.current_file = "campaign_%d_%02d.json" % [campaign.year, campaign.month]
+			save_picker.popup_centered(Vector2i(1000,650)))
+	resized.connect(_fit_atlas_stage)
+	_fit_atlas_stage()
+	hide()
+
+func _fit_atlas_stage() -> void:
+	if not is_instance_valid(_design_stage): return
+	var factor := minf(size.x / DESIGN_SIZE.x, size.y / DESIGN_SIZE.y)
+	_design_stage.scale = Vector2.ONE * factor
+	_design_stage.position = (size - DESIGN_SIZE * factor) * 0.5
+
+func _atlas_panel(rectangle: Rect2, floating: bool = true) -> Panel:
+	var panel := Panel.new()
+	panel.mouse_filter = Control.MOUSE_FILTER_STOP
+	panel.add_theme_stylebox_override("panel", Atlas.panel(Atlas.SURFACE, Atlas.LINE, 1, 6 if floating else 0))
+	_design_stage.add_child(panel)
+	panel.position = rectangle.position
+	panel.size = rectangle.size
+	return panel
+
+func _position_button(value: Button, rectangle: Rect2, icon_name: String = "") -> void:
+	value.position = rectangle.position
+	value.size = rectangle.size
+	if not icon_name.is_empty(): value.icon = Atlas.icon(icon_name)
+
+func _build_city_panel() -> void:
+	_city_panel = PanelContainer.new()
+	_city_panel.name = "AtlasCityPanel"
+	_city_panel.position = Vector2(24, 194)
+	_city_panel.size = Vector2(440, 736)
+	var style := Atlas.panel()
+	style.set_content_margin_all(20)
+	_city_panel.add_theme_stylebox_override("panel", style)
+	_design_stage.add_child(_city_panel)
+	var card := VBoxContainer.new()
+	card.add_theme_constant_override("separation", 12)
+	_city_panel.add_child(card)
+	var title_row := HBoxContainer.new()
+	card.add_child(title_row)
+	city_title = label(title_row, "", 34)
+	city_title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	var dismiss := button(title_row, "", func(): _city_panel.hide(), "hide_city")
+	dismiss.icon = Atlas.icon("x")
+	dismiss.custom_minimum_size = Vector2(48, 48)
+	dismiss.tooltip_text = "성 정보 닫기"
+	var scroll := ScrollContainer.new()
+	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	scroll.follow_focus = true
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	card.add_child(scroll)
+	bottom = VBoxContainer.new()
+	bottom.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	bottom.add_theme_constant_override("separation", 12)
+	scroll.add_child(bottom)
+	var fortress := TextureRect.new()
+	fortress.texture = load("res://ui/korea_layout_v1/assets/korean_fortress_original.png") as Texture2D
+	fortress.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	fortress.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	fortress.custom_minimum_size = Vector2(0, 132)
+	fortress.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+	fortress.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	bottom.add_child(fortress)
+	city_info = label(bottom, "", 21)
+	city_info.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	city_info.add_theme_color_override("font_color", Atlas.MUTED)
+	statistics = label(bottom, "", 22)
+	statistics.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label(bottom, "지원 준비", 26)
+	sources = OptionButton.new()
+	sources.custom_minimum_size.y = 48
+	sources.clip_text = true
+	Atlas.apply_button(sources)
+	bottom.add_child(sources)
+	sources.item_selected.connect(func(_n): route_open = true; refresh_route())
+	route_text = label(bottom, "", 21)
+	route_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	preview = button(bottom, "경로 확인", func(): route_open = true; refresh_route(), "preview")
+	preview.custom_minimum_size.y = 48
+	var support_row := HBoxContainer.new()
+	support_row.add_theme_constant_override("separation", 10)
+	card.add_child(support_row)
+	support = button(support_row, "지원군 선택", open_support, "support")
+	Atlas.apply_button(support, false, "primary")
+	support.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	support.custom_minimum_size.y = 54
+	var cancel := button(support_row, "취소", func(): route_open = false; refresh_route(), "cancel")
+	cancel.custom_minimum_size = Vector2(90, 54)
+
+func _build_comparison_panel() -> void:
+	_comparison_panel = PanelContainer.new()
+	_comparison_panel.name = "AtlasMapOptions"
+	_comparison_panel.position = Vector2(1450, 184)
+	_comparison_panel.size = Vector2(438, 0)
+	_design_stage.add_child(_comparison_panel)
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 8)
+	_comparison_panel.add_child(column)
+	label(column, "지도 보기", 24)
+	button(column, "선택 성으로 이동", func(): map.focus_on_province(selected, 5.0), "focus")
+	# Keep existing comparison tools available, but outside the normal play HUD.
+	button(column, "중부·동해", func(): map.focus_detail(), "detail_focus")
+	button(column, "후보 보기", func():
 		map.set_detail_comparison(not map.detail_comparison)
 		buttons.detail_r3.text = "r3 보충"
 		buttons.detail_corrected.text = "보정 보기"
 		buttons.detail_compare.text = "원본 보기" if map.detail_comparison else "후보 보기"
-		terrain_note.text = "중부·동해 후보 비교 · 해안/강 정합 미완료 · 자동 전환 차단" if map.detail_comparison else "휠 확대 · 드래그 이동 · 성 선택  |  승인 지도 · 35개 거점 · 영토 경계 자료 미확정", "detail_compare")
-	button(tools_row, "보정 보기", func():
+		terrain_note.text = "중부·동해 후보 비교 · 정합 미완료 · 자동 전환 차단" if map.detail_comparison else "승인 지도 · 영토 경계 자료 미확정", "detail_compare")
+	button(column, "보정 보기", func():
 		map.set_corrected_comparison(not map.corrected_comparison)
 		buttons.detail_r3.text = "r3 보충"
 		buttons.detail_compare.text = "후보 보기"
 		buttons.detail_corrected.text = "원본 보기" if map.corrected_comparison else "보정 보기"
-		terrain_note.text = "중부·동해 r2 보정 비교 · 일부 원본 복귀/흐림 · 자동 전환 차단" if map.corrected_comparison else "승인 지도 · 35개 거점 · 영토 경계 자료 미확정", "detail_corrected")
-	var middle := HBoxContainer.new()
-	middle.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	box.add_child(middle)
-	var nav := VBoxContainer.new()
-	nav.add_theme_constant_override("separation", 8)
-	nav.custom_minimum_size.x = 116
-	middle.add_child(nav)
-	for pair: Array in [["영지", "domestic"], ["군사", "army"], ["생산", "production"], ["인사", "politics"]]:
-		var key: String = pair[1]
-		var b := button(nav, pair[0], func(): action(key), key)
-		b.custom_minimum_size.y = 48
-		b.toggle_mode = true
-		b.add_theme_font_size_override("font_size", 18)
-	var zoom_row := HBoxContainer.new()
-	tools_row.add_child(zoom_row)
-	button(zoom_row, "+", func(): map._set_map_zoom(map.map_zoom * map.MAP_ZOOM_STEP, map.size / 2), "zoom_in")
-	button(zoom_row, "−", func(): map._set_map_zoom(map.map_zoom / map.MAP_ZOOM_STEP, map.size / 2), "zoom_out")
-	button(tools_row, "선택 성", func(): map.focus_on_province(selected, 5.0), "focus")
-	button(tools_row, "전체", func(): map.fit_all(), "overview")
-	button(tools_row, "r3 보충", func():
+		terrain_note.text = "중부·동해 r2 보정 비교 · 일부 흐림 · 자동 전환 차단" if map.corrected_comparison else "승인 지도 · 영토 경계 자료 미확정", "detail_corrected")
+	button(column, "r3 보충", func():
 		map.set_r3_comparison(not map.r3_comparison)
 		buttons.detail_r3.text = "r2 복귀" if map.r3_comparison else "r3 보충"
 		buttons.detail_compare.text = "후보 보기"
 		buttons.detail_corrected.text = "원본 보기"
-		terrain_note.text = "중부·동해 r3 보충 + r2 · 물길 정합 검토 중 · 자동 전환 차단" if map.r3_comparison else "중부·동해 r2 보정 비교 · 일부 원본 복귀/흐림 · 자동 전환 차단", "detail_r3")
-	map = Map.new()
-	map.z_index = 20
-	map.campaign = campaign
-	map.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	map.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	middle.add_child(map)
-	map.settlement_selected.connect(select_city)
-	bottom = HBoxContainer.new()
-	bottom.custom_minimum_size.y = 260
-	bottom.add_theme_constant_override("separation", 12)
-	box.add_child(bottom)
-	var left := column(bottom)
-	city_title = label(left, "", 28)
-	city_title.add_theme_color_override("font_color", Color("f3e2b7"))
-	city_info = label(left, "", 18)
-	city_info.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	var center := column(bottom)
-	label(center, "주둔 · 군량", 22)
-	statistics = label(center, "", 18)
-	statistics.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	var right := column(bottom)
-	label(right, "방어 준비 · 지원", 23)
-	sources = OptionButton.new()
-	right.add_child(sources)
-	sources.item_selected.connect(func(_n): route_open = true; refresh_route())
-	route_text = label(right, "", 17)
-	route_text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	preview = button(right, "지원 경로 보기", func(): route_open = true; refresh_route(), "preview")
-	var support_row := HBoxContainer.new()
-	right.add_child(support_row)
-	support = button(support_row, "부대 선택·지원", open_support, "support")
-	button(support_row, "취소", func(): route_open = false; refresh_route(), "cancel")
-	var turn := VBoxContainer.new()
-	turn.custom_minimum_size.x = 146
-	bottom.add_child(turn)
-	label(turn, "명령을 마쳤다면", 16)
-	var end_turn := button(turn, "턴 종료\n다음 달로", advance, "month")
-	end_turn.custom_minimum_size.y = 86
-	var turn_style := theme_value.get_stylebox("pressed", "Button").duplicate()
-	end_turn.add_theme_stylebox_override("normal", turn_style)
-	var note := label(box, "휠 확대 · 드래그 이동 · 성 선택  |  승인 지도 · 35개 거점 · 영토 경계 자료 미확정", 15)
-	terrain_note = note
-	note.add_theme_color_override("font_color", Color("b9b9aa"))
-	hide()
+		terrain_note.text = "중부·동해 r3 + r2 · 물길 정합 검토 중 · 자동 전환 차단" if map.r3_comparison else "중부·동해 r2 · 일부 흐림 · 자동 전환 차단", "detail_r3")
+	terrain_note = label(column, "승인 지도 · 영토 경계 자료 미확정", 19)
+	terrain_note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_comparison_panel.hide()
 
 func button(parent: Node, text: String, callback: Callable, key: String) -> Button:
 	var b := Button.new()
 	b.text = text
+	b.custom_minimum_size.y = 48
+	Atlas.apply_button(b)
+	b.add_theme_font_size_override("font_size", 22)
 	parent.add_child(b)
 	b.pressed.connect(callback)
 	buttons[key] = b
@@ -162,51 +265,53 @@ func label(parent: Node, text: String, font_size: int) -> Label:
 	parent.add_child(result)
 	return result
 
-func column(parent: Node) -> VBoxContainer:
-	var panel := PanelContainer.new()
-	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	var style := StyleBoxFlat.new()
-	style.bg_color = Color("101b1a")
-	style.border_color = Color("77623f")
-	style.set_border_width_all(1)
-	style.set_content_margin_all(12)
-	panel.add_theme_stylebox_override("panel", style)
-	parent.add_child(panel)
-	var result := VBoxContainer.new()
-	result.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	result.size_flags_stretch_ratio = 1
-	panel.add_child(result)
-	return result
-
 func open() -> void:
-	if busy(): return
 	active = true
 	suspended = false
 	show()
-	select_city(selected if campaign.provinces.has(selected) else campaign.selected_province_id)
-	# Keep the comparison camera when returning from the full map.
+	accept_selection(campaign.selected_province_id)
+	# Focus only on first entry; commands and menus keep the same camera.
 	if not opened_once:
-		if selected == "dalgubeol": map.call_deferred("focus_region")
-		else: map.call_deferred("focus_on_province", selected, 4.2)
+		if selected == "dalgubeol": map.focus_region()
+		else: map.focus_on_province(selected, 4.2)
 	opened_once = true
 	campaign.map_area.hide_city_card()
 	campaign.province_panel.hide()
 	campaign._sync_modal_map_input()
 
-func close() -> void:
-	active = false
-	suspended = false
-	hide()
-	campaign.select_province(selected, false)
-	campaign.map_area.focus_on_province(selected)
+func open_menu() -> void:
+	if busy(): return
+	suspend()
+	campaign.navigation_menu.show_popup()
+
+func export_view() -> Dictionary:
+	var camera: Dictionary = map.get_view_state()
+	if campaign.event_presentation != null and campaign.event_presentation.active:
+		camera = campaign.event_presentation.adapter.saved_view.duplicate(true)
+	return {"camera":camera, "card_visible":_city_panel.visible}
+
+func restore_view(state: Dictionary, city: String) -> void:
+	active = true
+	show()
+	accept_selection(city)
+	map.focus_on_province(city, 4.2)
+	if state.get("camera") is Dictionary:
+		map.restore_view_state(state.camera)
+		map.selected = city
+	_city_panel.visible = bool(state.get("card_visible", true))
+	opened_once = true
 	campaign._sync_modal_map_input()
 
 func suspend() -> void:
 	suspended = true
-	hide()
+	# A tooltip from the button opening a command must not cover that command.
+	_design_stage.mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_DISABLED
+	support.tooltip_text = ""
+	_modal_shield.show()
 	campaign._sync_modal_map_input()
 
 func busy() -> bool:
+	if save_picker != null and save_picker.visible: return true
 	if campaign.navigation_menu.get_popup().visible: return true
 	var confirmation: Node = campaign.navigation_menu.get_node_or_null("ConfirmationDialog")
 	if confirmation != null and confirmation.visible: return true
@@ -219,12 +324,17 @@ func busy() -> bool:
 func _process(delta: float) -> void:
 	if not active: return
 	if busy():
-		if visible: suspend()
+		suspended = true
+		_design_stage.mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_DISABLED
+		_modal_shield.show()
+		map.input_locked = true
 		return
+	map.input_locked = false
+	_modal_shield.hide()
+	_design_stage.mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_INHERITED
 	if suspended:
 		suspended = false
 		show()
-		campaign.select_province(selected, false)
 		campaign.map_area.hide_city_card()
 		campaign.province_panel.hide()
 		refresh()
@@ -235,17 +345,25 @@ func _process(delta: float) -> void:
 		refresh()
 
 func select_city(id: String) -> void:
+	if busy(): return
+	campaign.select_province(id, false)
+	accept_selection(id)
+
+func accept_selection(id: String, focus: bool = false) -> void:
 	if not campaign.provinces.has(id): return
 	selected = id
-	campaign.select_province(id, false)
+	_city_panel.show()
 	route_open = false
+	if focus: map.focus_on_province(id, 4.2)
 	refresh()
 
 func refresh() -> void:
 	if not campaign.provinces.has(selected): return
 	var p: Dictionary = campaign.provinces[selected]
-	header.text = "  %s  ·  거점 지도\n  %d년 %d월" % [campaign.player_faction, campaign.year, campaign.month]
-	resources.text = "국고  %s 금\n세력 군량  %s" % [String.num_int64(campaign.gold), String.num_int64(campaign.food)]
+	header.text = "삼한 660  |  %s    %d년 %d월" % [campaign.player_faction, campaign.year, campaign.month]
+	resources.text = "금 %s · 군량 %s" % [String.num_int64(campaign.gold), String.num_int64(campaign.food)]
+	command_status.text = campaign.log_label.text
+	command_status.tooltip_text = command_status.text
 	city_title.text = str(p.name)
 	city_info.text = "%s 영토\n태수  %s\n인접 거점 %d곳 · 치안 %d · 성벽 %d" % [p.faction, p.governor, campaign.province_connections.get(selected, []).size(), p.public_order, p.fortress]
 	var owned: bool = p.faction == campaign.player_faction
@@ -268,10 +386,14 @@ func refresh() -> void:
 				tasks.append("%s: %s" % ["건설" if job.kind == "build" else "연구", "일시 중지" if job.status == "paused" else "현재 조건 약 %d개월" % months])
 		if not tasks.is_empty(): statistics.text += "\n" + " / ".join(tasks)
 		statistics.tooltip_text = statistics.text
-	for key: String in ["domestic", "army", "production"]:
+	for key: String in ["domestic", "army", "production", "research"]:
 		buttons[key].disabled = not owned or campaign.Ending.finished(campaign.strategy_state)
-	for key: String in ["domestic", "army", "production", "politics"]:
-		buttons[key].set_pressed_no_signal(key == last_action)
+	for key: String in ["domestic", "army", "production", "politics", "research"]:
+		var is_selected := key == last_action
+		buttons[key].set_pressed_no_signal(is_selected)
+		if bool(buttons[key].get_meta("atlas_selected", false)) != is_selected:
+			Atlas.apply_button(buttons[key], is_selected)
+			buttons[key].set_meta("atlas_selected", is_selected)
 	buttons.month.disabled = campaign.Ending.finished(campaign.strategy_state)
 	var previous: String = source_id()
 	var candidates: Array[String] = []
@@ -296,7 +418,10 @@ func refresh() -> void:
 		warnings.append("%s · %s · 예고 당시 적 %d명" % [campaign.provinces[order.target].name, campaign.Power.date(order.due_month), order.announced_troops])
 	threat.text = "침공 예고  %d건" % warnings.size()
 	threat.tooltip_text = "\n".join(warnings) if not warnings.is_empty() else "현재 예고된 침공이 없습니다. 침공 목록 열기"
-	threat.modulate = Color("ffcc9e") if not warnings.is_empty() else Color.WHITE
+	var has_warning := not warnings.is_empty()
+	if bool(threat.get_meta("atlas_warning", false)) != has_warning:
+		Atlas.apply_button(threat, has_warning)
+		threat.set_meta("atlas_warning", has_warning)
 	map.selected = selected
 	map._refresh_marker_data()
 
@@ -335,6 +460,7 @@ func action(kind: String) -> void:
 		"domestic": campaign.open_domestic("agriculture")
 		"army": campaign.open_army(selected)
 		"production": campaign._on_city_card_production_requested(selected)
+		"research": campaign.open_industry(selected, "research")
 		"politics":
 			campaign.open_politics()
 			var targets: OptionButton = campaign.politics_overlay.targets

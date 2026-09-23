@@ -87,10 +87,14 @@ func _run() -> void:
 			var camera: Dictionary = step.get("camera", {})
 			for key: String in ["target", "from", "to"]:
 				if camera.has(key) and not str(camera[key]).begins_with("{"):
-					check(not p.adapter.city_ids(str(camera[key])).is_empty(), id + " camera target resolves")
+					var target: String = str(camera[key])
+					if target == "tang_east_border" and p.adapter.atlas:
+						check(p.adapter.city_ids(target).is_empty(), "off-atlas Shandong is not projected into Korea")
+					else:
+						check(not p.adapter.city_ids(target).is_empty(), id + " camera target resolves")
 	var before: Dictionary = snapshot(c)
-	var original_zoom: float = c.map_area.map_zoom
-	var original_pan: Vector2 = c.map_area.map_pan_offset
+	var original_zoom: float = p.adapter.map.map_zoom
+	var original_pan: Vector2 = p.adapter.map.map_pan_offset
 	p.play("domestic_bountiful_harvest", {"province_name": "금관가야", "grain_delta": 777, "public_order_delta": 4}, "harvest-fixture-1")
 	check(p.view.body_label.text.contains("금관가야"), "dynamic province name")
 	p.next()
@@ -109,14 +113,14 @@ func _run() -> void:
 	p.play("enemy_invasion_alert", Preview.PAYLOADS.enemy_invasion_alert)
 	check(p.current.steps[0].camera.target == "sabi" and p.adapter.effects.size() == 1, "invasion target and pulse are data driven")
 	await create_timer(0.1).timeout
-	check(c.map_area.map_zoom != original_zoom or c.map_area.map_pan_offset != original_pan, "map camera animates")
+	check(p.adapter.map.map_zoom != original_zoom or p.adapter.map.map_pan_offset != original_pan, "map camera animates")
 	p.open_menu()
 	var elapsed: float = p.step_elapsed
 	p._process(5.0)
 	check(p.menu_open() and p.step_elapsed == elapsed, "pause menu remains available and pauses advance")
 	c.navigation_menu.get_popup().hide()
 	p.skip()
-	check(is_equal_approx(c.map_area.map_zoom, original_zoom) and c.map_area.map_pan_offset.is_equal_approx(original_pan) and p.adapter.effects.is_empty(), "skip restores camera and removes pulses")
+	check(is_equal_approx(p.adapter.map.map_zoom, original_zoom) and p.adapter.map.map_pan_offset.is_equal_approx(original_pan) and p.adapter.effects.is_empty(), "skip restores camera and removes pulses")
 	p.play("battle_hwangsanbeol", Preview.PAYLOADS.battle_hwangsanbeol)
 	check(p.view.left_portrait.texture != null and p.view.right_portrait.texture != null and p.view.versus_label.text.contains("김유신") and p.view.versus_label.text.contains("계백"), "battle versus portraits and names")
 	p.set_auto(true)
