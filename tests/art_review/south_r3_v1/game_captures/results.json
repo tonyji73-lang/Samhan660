@@ -1,0 +1,3050 @@
+{
+	"checks": 112,
+	"failures": 0,
+	"method": "Godot GUI automated input; not human manual play",
+	"observations": [
+		{
+			"camera": {
+				"center_native": [
+					652.079956054688,
+					814.000061035156
+				],
+				"selected": "dalgubeol",
+				"zoom": 2.0
+			},
+			"city": "dalgubeol",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 0.596920282299902,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 0.596920282299902,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 0.596920282299902,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 0.596920282299902,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "wide",
+			"resolution": [
+				1280,
+				720
+			],
+			"zoom": 2.0
+		},
+		{
+			"camera": {
+				"center_native": [
+					680.143920898438,
+					813.999938964844
+				],
+				"selected": "dalgubeol",
+				"zoom": 4.97664
+			},
+			"city": "dalgubeol",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 1.48532867685249,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 1.48532867685249,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 1.48532867685249,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 1.48532867685249,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 1.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "middle",
+			"resolution": [
+				1280,
+				720
+			],
+			"zoom": 4.97664
+		},
+		{
+			"camera": {
+				"center_native": [
+					691.180053710938,
+					814.000061035156
+				],
+				"selected": "dalgubeol",
+				"zoom": 12.0
+			},
+			"city": "dalgubeol",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 3.58152169379941,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 3.58152169379941,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 3.58152169379941,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 3.58152169379941,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 1.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "max",
+			"resolution": [
+				1280,
+				720
+			],
+			"zoom": 12.0
+		},
+		{
+			"camera": {
+				"center_native": [
+					652.079956054688,
+					825.0
+				],
+				"selected": "geumseong",
+				"zoom": 2.0
+			},
+			"city": "geumseong",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 0.596920282299902,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 0.596920282299902,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 0.596920282299902,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 0.596920282299902,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "wide",
+			"resolution": [
+				1280,
+				720
+			],
+			"zoom": 2.0
+		},
+		{
+			"camera": {
+				"center_native": [
+					708.853759765625,
+					824.999938964844
+				],
+				"selected": "geumseong",
+				"zoom": 4.97664
+			},
+			"city": "geumseong",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 1.48532867685249,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 1.48532867685249,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 1.48532867685249,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 1.48532867685249,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 1.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "middle",
+			"resolution": [
+				1280,
+				720
+			],
+			"zoom": 4.97664
+		},
+		{
+			"camera": {
+				"center_native": [
+					731.179992675781,
+					825.000061035156
+				],
+				"selected": "geumseong",
+				"zoom": 12.0
+			},
+			"city": "geumseong",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 3.58152169379941,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 3.58152169379941,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 3.58152169379941,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 3.58152169379941,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 1.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "max",
+			"resolution": [
+				1280,
+				720
+			],
+			"zoom": 12.0
+		},
+		{
+			"camera": {
+				"center_native": [
+					652.079956054688,
+					851.0
+				],
+				"selected": "daegaya",
+				"zoom": 2.0
+			},
+			"city": "daegaya",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 0.596920282299902,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 0.596920282299902,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 0.596920282299902,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 0.596920282299902,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 0.300155937406485,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "wide",
+			"resolution": [
+				1280,
+				720
+			],
+			"zoom": 2.0
+		},
+		{
+			"camera": {
+				"center_native": [
+					653.228393554688,
+					851.0
+				],
+				"selected": "daegaya",
+				"zoom": 4.97664
+			},
+			"city": "daegaya",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 1.48532867685249,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 1.48532867685249,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 1.48532867685249,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 1.48532867685249,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 1.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 0.746884022167305,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "middle",
+			"resolution": [
+				1280,
+				720
+			],
+			"zoom": 4.97664
+		},
+		{
+			"camera": {
+				"center_native": [
+					653.680053710938,
+					850.999938964844
+				],
+				"selected": "daegaya",
+				"zoom": 12.0
+			},
+			"city": "daegaya",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 3.58152169379941,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 3.58152169379941,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 3.58152169379941,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 3.58152169379941,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 1.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 1.80093562443891,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "max",
+			"resolution": [
+				1280,
+				720
+			],
+			"zoom": 12.0
+		},
+		{
+			"camera": {
+				"center_native": [
+					652.079956054688,
+					814.000061035156
+				],
+				"selected": "dalgubeol",
+				"zoom": 2.0
+			},
+			"city": "dalgubeol",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 0.895380396765438,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 0.895380396765438,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 0.895380396765438,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 0.895380396765438,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "wide",
+			"resolution": [
+				1920,
+				1080
+			],
+			"zoom": 2.0
+		},
+		{
+			"camera": {
+				"center_native": [
+					680.143920898438,
+					813.999938964844
+				],
+				"selected": "dalgubeol",
+				"zoom": 4.97664
+			},
+			"city": "dalgubeol",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 2.22799294887938,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 2.22799294887938,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 2.22799294887938,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 2.22799294887938,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 1.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "middle",
+			"resolution": [
+				1920,
+				1080
+			],
+			"zoom": 4.97664
+		},
+		{
+			"camera": {
+				"center_native": [
+					691.180053710938,
+					813.999938964844
+				],
+				"selected": "dalgubeol",
+				"zoom": 12.0
+			},
+			"city": "dalgubeol",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 5.37228238059263,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 5.37228238059263,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 5.37228238059263,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 5.37228238059263,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 1.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "max",
+			"resolution": [
+				1920,
+				1080
+			],
+			"zoom": 12.0
+		},
+		{
+			"camera": {
+				"center_native": [
+					652.079956054688,
+					825.0
+				],
+				"selected": "geumseong",
+				"zoom": 2.0
+			},
+			"city": "geumseong",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 0.895380396765438,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 0.895380396765438,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 0.895380396765438,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 0.895380396765438,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "wide",
+			"resolution": [
+				1920,
+				1080
+			],
+			"zoom": 2.0
+		},
+		{
+			"camera": {
+				"center_native": [
+					708.853759765625,
+					824.999938964844
+				],
+				"selected": "geumseong",
+				"zoom": 4.97664
+			},
+			"city": "geumseong",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 2.22799294887938,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 2.22799294887938,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 2.22799294887938,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 2.22799294887938,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 1.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "middle",
+			"resolution": [
+				1920,
+				1080
+			],
+			"zoom": 4.97664
+		},
+		{
+			"camera": {
+				"center_native": [
+					731.179992675781,
+					825.000061035156
+				],
+				"selected": "geumseong",
+				"zoom": 12.0
+			},
+			"city": "geumseong",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 5.37228238059263,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 5.37228238059263,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 5.37228238059263,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 5.37228238059263,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 1.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "max",
+			"resolution": [
+				1920,
+				1080
+			],
+			"zoom": 12.0
+		},
+		{
+			"camera": {
+				"center_native": [
+					652.079956054688,
+					851.0
+				],
+				"selected": "daegaya",
+				"zoom": 2.0
+			},
+			"city": "daegaya",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 0.895380396765438,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 0.895380396765438,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 0.895380396765438,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 0.895380396765438,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 0.450233892691712,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "wide",
+			"resolution": [
+				1920,
+				1080
+			],
+			"zoom": 2.0
+		},
+		{
+			"camera": {
+				"center_native": [
+					653.228393554688,
+					851.0
+				],
+				"selected": "daegaya",
+				"zoom": 4.97664
+			},
+			"city": "daegaya",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 2.22799294887938,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 2.22799294887938,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 2.22799294887938,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 2.22799294887938,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 1.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 1.12032599986264,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "middle",
+			"resolution": [
+				1920,
+				1080
+			],
+			"zoom": 4.97664
+		},
+		{
+			"camera": {
+				"center_native": [
+					653.679931640625,
+					850.999938964844
+				],
+				"selected": "daegaya",
+				"zoom": 12.0
+			},
+			"city": "daegaya",
+			"diagnostics": {
+				"drawn": [
+					"detail_3_1"
+				],
+				"errors": [],
+				"review": true,
+				"tiles": [
+					{
+						"approved": false,
+						"id": "northwest",
+						"screen_pixels_per_texel": 5.37228238059263,
+						"sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "northeast",
+						"screen_pixels_per_texel": 5.37228238059263,
+						"sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southwest",
+						"screen_pixels_per_texel": 5.37228238059263,
+						"sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "southeast",
+						"screen_pixels_per_texel": 5.37228238059263,
+						"sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_0",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_1",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_0_2",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_1",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_1_2",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_1",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_2_2",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 1.0
+					},
+					{
+						"approved": true,
+						"id": "detail_3_1",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					},
+					{
+						"approved": false,
+						"id": "detail_3_2",
+						"screen_pixels_per_texel": 2.70140335615027,
+						"sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+						"size": [
+							1254.0,
+							1254.0
+						],
+						"weight": 0.0
+					}
+				]
+			},
+			"level": "max",
+			"resolution": [
+				1920,
+				1080
+			],
+			"zoom": 12.0
+		}
+	],
+	"pid": 29876
+}

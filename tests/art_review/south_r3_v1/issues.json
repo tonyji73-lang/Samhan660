@@ -1,0 +1,177 @@
+{
+	"annotations": "Red: issue area/full sprite rectangle. Cyan: actual sprite rectangle, NOT certified floor polygon. Original PNG, pivot .5,.67, original native width.",
+	"approved_sha256": "36594c1d1ee0cbcd80a175d72790d3e22423103cf81d6b191f8bf2d317e1f246",
+	"candidate_composite_order": [
+		"detail_2_1",
+		"detail_2_2",
+		"detail_3_1",
+		"detail_3_2"
+	],
+	"coordinate_system": "approved 1254x1254 native pixels, top-left origin; rect=x,y,w,h",
+	"display_sampling": "Equal native region/output dimensions; diagnostic nearest sampling only, not new high-resolution art. Native approved crops included.",
+	"issues": [
+		{
+			"id": "01_confluences",
+			"mark": [
+				615,
+				807,
+				60,
+				65
+			],
+			"note": "서쪽 큰 굽이와 대가야 북서 합류점 위치를 보정. 본류와 동쪽 지류의 합류 순서·폭은 원본 기준으로 재작성. 대응점 일치만으로 물길 전체 정합 아님.",
+			"output_size": [
+				440,
+				400
+			],
+			"rect": [
+				600,
+				790,
+				110,
+				100
+			]
+		},
+		{
+			"id": "02_estuary_islands",
+			"mark": [
+				635,
+				915,
+				115,
+				60
+			],
+			"note": "하구 분기와 작은 섬·바위 형상이 다름. detail_2_2/detail_3_2 겹침 및 아래쪽을 함께 재작성. 연결 수로/섬 개수 차이는 UV나 흐림으로 해결 불가.",
+			"output_size": [
+				600,
+				320
+			],
+			"rect": [
+				625,
+				900,
+				150,
+				80
+			]
+		},
+		{
+			"id": "03_east_coast",
+			"mark": [
+				790,
+				794,
+				34,
+				98
+			],
+			"note": "동쪽 갈고리 곶·안쪽 만·아래 해안 위치를 UV로 보정. 세부 해안 굴곡과 산림/해변 폭은 여전히 다름. 원본 해안선을 유지하며 상세 재작성.",
+			"output_size": [
+				256,
+				512
+			],
+			"rect": [
+				775,
+				780,
+				64,
+				128
+			]
+		},
+		{
+			"city": "dalgubeol",
+			"id": "04_dalgubeol_floor",
+			"mark": [
+				686.69,
+				797.5046,
+				24.62,
+				24.62
+			],
+			"note": "달구벌 (699,814), 폭24.62. 원본도 숲 구릉이며 후보 나무/능선과 바닥 겹침. 성 이동 금지. 원화에서 바닥 전체 접지면 확보.",
+			"output_size": [
+				384,
+				384
+			],
+			"rect": [
+				675,
+				790,
+				48,
+				48
+			]
+		},
+		{
+			"city": "geumseong",
+			"id": "05_geumseong_floor",
+			"mark": [
+				734.69,
+				808.5046,
+				24.62,
+				24.62
+			],
+			"note": "금성 (747,825), 폭24.62. 후보 산릉/바위가 성 아래에 걸림. 해안 UV 보정은 산릉 자체의 형상 차이를 해결하지 않음. 성 좌표 유지, 원화 재작성.",
+			"output_size": [
+				384,
+				384
+			],
+			"rect": [
+				723,
+				801,
+				48,
+				48
+			]
+		},
+		{
+			"city": "daegaya",
+			"id": "06_daegaya_floor",
+			"mark": [
+				643,
+				836.26,
+				22,
+				22
+			],
+			"note": "대가야 (654,851), 폭22. 합류점 이동 후에도 주변 숲/지류 폭 별도 수정 필요. 원본 바닥도 수계에 인접. 중심점만으로 승인 금지.",
+			"output_size": [
+				384,
+				384
+			],
+			"rect": [
+				630,
+				827,
+				48,
+				48
+			]
+		},
+		{
+			"id": "07_west_tile_boundary",
+			"mark": [
+				599,
+				780,
+				2,
+				160
+			],
+			"note": "x=600에서 detail_2_1 위로 detail_2_2 시작. 독립 원화의 수로·산림·색 불연속. 겹침 x=600..654 및 x=600,y=900 교차점 재작성.",
+			"output_size": [
+				320,
+				640
+			],
+			"rect": [
+				580,
+				780,
+				80,
+				160
+			]
+		},
+		{
+			"id": "08_south_tile_boundary",
+			"mark": [
+				620,
+				899,
+				180,
+				2
+			],
+			"note": "y=900에서 detail_3_2가 detail_2_2 위에 시작. 하구·섬·해안·바다 무늬 불연속. 겹침 y=900..954를 동일 지형으로 재작성.",
+			"output_size": [
+				720,
+				400
+			],
+			"rect": [
+				620,
+				875,
+				180,
+				100
+			]
+		}
+	]
+}

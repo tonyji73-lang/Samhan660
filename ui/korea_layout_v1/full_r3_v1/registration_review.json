@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "basis": "approved atlas native pixels; visual registration is separate from file integrity",
+  "tiles": {
+    "south_continuous_v3": {
+      "sha256": "b6cf84b8c9a63b64a372f6e7425438428dc5a142935ddea067cee970c8a86734",
+      "mesh_sha256": "255bee220cea5198633482225df7ef77272078aa6fca3d2cb2b38bbc42ecf059",
+      "shader_sha256": "963d448fb8e393a48172144e6433a89af03a40659799998de993982315b8479b",
+      "sea_mask_sha256": "2e7378084935f44e7a0e806a0042a2ef9a7a292a964b84fe20ec92f1bf919da9",
+      "status": "visually_registered",
+      "regions": [[670,780,106,67]],
+      "scope": "Bounding rect is NOT full approval: exact inland polygon and 4-native-pixel inward transition are pinned in inland_registration.json. Dalgubeol and Geumseong clearings plus intervening forest/ridge only.",
+      "evidence": "Godot same-camera base/raw/edge-mask/inland mesh renders. Clearings cover unchanged castle footprints; polygon excludes Daegaya river, every coast and all four outer seams.",
+      "limits": "Local visual-art registration, not surveyed geography. Forest texture density transition remains visible. Daegaya, rivers, coastline, estuary, outer patch seams and territory masks are NOT approved."
+    },
+    "detail_3_1": {
+      "sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+      "mesh_sha256": "c6566173dd01cfcf8880aab646fa962a9ec3258a9788957a1fa15b9903b0b33f",
+      "status": "visually_registered",
+      "regions": [[470,1048,122,100]],
+      "scope": "Jeju island only; excludes the tile's mainland coast and every adjoining tile",
+      "evidence": "1280x720 and 1920x1080 same-camera native base/raw/registered Godot captures; nonfolding 128-ray shoreline mesh; Tamna original sprite and anchor unchanged",
+      "limits": "Art registration, not geographic survey or territory-mask approval. Ocean texture scale remains different outside the island patch. Water-color heuristics misclassify shaded trees and cannot approve castle ground."
+    }
+  }
+}

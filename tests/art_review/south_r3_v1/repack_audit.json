@@ -1,0 +1,77 @@
+[
+  {
+    "archive": "C:\\Users\\지용훈\\Downloads\\Samhan660_R3_Assets_Part1.zip",
+    "pngs": [
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/detail/detail_0_0.png",
+        "sha256": "b507c8a70052c2b8e69fabebb3fb514d4bd839b0988ed593ad4553c1d4ad91e2",
+        "matching_local": "detail_0_0.png"
+      },
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/detail/detail_0_1.png",
+        "sha256": "7baf54124fc5f9a8838a0fb16c5fa195aa9ba371bc69358339f0df01663cd609",
+        "matching_local": "detail_0_1.png"
+      },
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/detail/detail_2_1.png",
+        "sha256": "2ca5b6019707facfb98a905b480b4de3c2c627ef982d51bf84b3a7481922b4b4",
+        "matching_local": "detail_2_1.png"
+      },
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/detail/detail_2_2.png",
+        "sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+        "matching_local": "detail_2_2.png"
+      },
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/detail/detail_3_2.png",
+        "sha256": "116c948d27853bc8caefe0b28e81c906c819a78edc3972d6b7246b2afa3cce61",
+        "matching_local": "detail_3_2.png"
+      },
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/overview/southeast.png",
+        "sha256": "66712b0d531d95b25bab540fbe679560c67d0edbb5eaea0d4190f465c7c1b3d7",
+        "matching_local": "southeast.png"
+      },
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/overview/southwest.png",
+        "sha256": "c149e7ab3acb54a1052ba0ae22849ae582e4b798d342db4f1e834752a4db7dde",
+        "matching_local": "southwest.png"
+      }
+    ]
+  },
+  {
+    "archive": "C:\\Users\\지용훈\\Downloads\\Samhan660_R3_Assets_Part2.zip",
+    "pngs": [
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/detail/detail_0_2.png",
+        "sha256": "817a3d09c6e9e71d30cf83d64756ab166d0b94fbee3229740147e911bac7e4aa",
+        "matching_local": "detail_0_2.png"
+      },
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/detail/detail_1_1.png",
+        "sha256": "8c2aea709b1828d56f96550d154d03850132769acda0765345c4227a75bd1290",
+        "matching_local": "detail_1_1.png"
+      },
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/detail/detail_1_2.png",
+        "sha256": "cb6580f88a8e7c174b6e21d1e72abf39892facfffdffb09f5b96491aa42e9acd",
+        "matching_local": "detail_1_2.png"
+      },
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/detail/detail_3_1.png",
+        "sha256": "d62f1da0f4c670f32d2a05b816352bb72ba4ad952ecc57dfe656f4b33ef34c6f",
+        "matching_local": "detail_3_1.png"
+      },
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/overview/northeast.png",
+        "sha256": "238fb42add86d039c38badbc7a9e819fe6bd762d93fb8b765a6e8daa8ef610a7",
+        "matching_local": "northeast.png"
+      },
+      {
+        "member": "Samhan660_R3_All_Regions_v1/assets/overview/northwest.png",
+        "sha256": "d00b214f00b165d7c7319d8c534d263e317b733f702d18171bdca55470e9c7d1",
+        "matching_local": "northwest.png"
+      }
+    ]
+  }
+]

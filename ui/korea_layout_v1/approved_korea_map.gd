@@ -11,6 +11,10 @@ const MAX_ZOOM: float = 12.0
 const DETAIL_THRESHOLD: float = 18.0
 const SPRITE_PIVOT: Vector2 = Vector2(0.5, 0.67)
 const DETAIL_DIR = RESOURCE_DIR + "central_east/"
+const FullR3 = preload("res://ui/korea_layout_v1/full_r3_v1/terrain_layers.gd")
+var full_r3 = FullR3.new()
+var terrain_canvas: Control
+var south_v3: Control
 var detail_comparison: bool = false
 const CorrectedDetail = preload("res://ui/korea_layout_v1/central_east/integration/central_east_display_layer.gd")
 var corrected_comparison: bool = false
@@ -82,6 +86,15 @@ func _ready() -> void:
 		push_error("Approved Korea map: layout or approved assets could not be loaded.")
 	_refresh_marker_data()
 	_load_detail_candidate()
+	full_r3.configure()
+	terrain_canvas=preload("res://ui/korea_layout_v1/south_v3/integration/terrain_canvas.gd").new()
+	terrain_canvas.map=self
+	terrain_canvas.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	terrain_canvas.show_behind_parent=true
+	add_child(terrain_canvas)
+	south_v3=preload("res://ui/korea_layout_v1/south_v3/integration/south_v3_layer.gd").new()
+	terrain_canvas.add_child(south_v3)
+	south_v3.configure(full_r3)
 	_last_fit_scale = _fit_scale()
 	queue_redraw()
 
@@ -405,7 +418,7 @@ func _gui_input(event: InputEvent) -> void:
 						settlement_selected.emit(province_id)
 				_held = false
 			accept_event()
-	elif event is InputEventMouseMotion and _held:
+	elif event is InputEventMouseMotion and _held and (event.button_mask & MOUSE_BUTTON_MASK_LEFT) != 0:
 		var drag_delta: Vector2 = event.position - _press_position
 		_dragged = _dragged or drag_delta.length() > 4.0
 		if _dragged:
@@ -463,19 +476,31 @@ func _faction_color(province_id: String) -> Color:
 	return faction_colors.get(str(_live[province_id]["faction"]), Color("bdb49c"))
 
 
-func _draw() -> void:
-	draw_rect(Rect2(Vector2.ZERO, size), Color("073047"))
+func _draw_terrain(canvas: Control) -> void:
+	canvas.draw_rect(Rect2(Vector2.ZERO, size), Color("073047"))
 	if not _layout_ok:
 		return
-	draw_texture_rect(_terrain, _get_displayed_map_rect(), false)
+	canvas.draw_texture_rect(_terrain, _get_displayed_map_rect(), false)
 	var weight: float = detail_weight()
+	# Full-region review and old r2/r3 comparison are mutually exclusive.
+	full_r3.last_drawn.clear()
+	if not corrected_comparison and not detail_comparison and weight<=0.0:
+		full_r3.draw_on(canvas, _get_displayed_map_rect(), terrain_pixel_scale())
 	if corrected_comparison:
 		if r3_comparison:
-			_r3_fill.draw_on(self, _get_displayed_map_rect())
-		_corrected_detail.draw_on(self, _get_displayed_map_rect())
+			_r3_fill.draw_on(canvas, _get_displayed_map_rect())
+		_corrected_detail.draw_on(canvas, _get_displayed_map_rect())
 	elif weight>0.0:
 		var world := _get_displayed_map_rect()
-		draw_texture_rect(_detail_texture,Rect2(world.position+_detail_rect.position/_image_size*world.size,_detail_rect.size/_image_size*world.size),false,Color(1,1,1,weight))
+		canvas.draw_texture_rect(_detail_texture,Rect2(world.position+_detail_rect.position/_image_size*world.size,_detail_rect.size/_image_size*world.size),false,Color(1,1,1,weight))
+	south_v3.size=size
+	south_v3.sync(_get_displayed_map_rect(),terrain_pixel_scale(),not corrected_comparison and not detail_comparison and weight<=0 and not full_r3.south_v2_review and not full_r3.review and not full_r3.suppressed)
+
+func _draw() -> void:
+	if terrain_canvas:
+		terrain_canvas.size=size
+		terrain_canvas.queue_redraw()
+	if not _layout_ok:return
 	_draw_territories()
 	_draw_support_route()
 	var rendered: Array[Dictionary] = []

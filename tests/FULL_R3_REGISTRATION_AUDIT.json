@@ -1,0 +1,989 @@
+{
+	"castles": [
+		{
+			"anchor": [
+				215.0,
+				106.0
+			],
+			"id": "shinseong",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0559226199930117,
+					"sample_count": 62962,
+					"tile": "detail_0_0"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				106.0,
+				119.0
+			],
+			"id": "sokgunseong",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0,
+					"sample_count": 62962,
+					"tile": "detail_0_0"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				162.0,
+				183.0
+			],
+			"id": "ansi",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.150789365013818,
+					"sample_count": 62962,
+					"tile": "detail_0_0"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				241.0,
+				203.0
+			],
+			"id": "geonanseong",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.451176900352594,
+					"sample_count": 62962,
+					"tile": "detail_0_0"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				496.0,
+				258.0
+			],
+			"id": "gungnae",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.00624186016962612,
+					"sample_count": 62962,
+					"tile": "detail_0_1"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				846.0,
+				115.0
+			],
+			"id": "chaekseong",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0875925161208348,
+					"sample_count": 62962,
+					"tile": "detail_0_2"
+				}
+			],
+			"marker_only": true
+		},
+		{
+			"anchor": [
+				607.0,
+				433.0
+			],
+			"id": "bireyeolhol",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.240128966678314,
+					"sample_count": 62962,
+					"tile": "detail_1_1"
+				},
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.101458022299165,
+					"sample_count": 62962,
+					"tile": "detail_1_2"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				465.0,
+				439.0
+			],
+			"id": "pyongyang",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0,
+					"sample_count": 62962,
+					"tile": "detail_1_1"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				424.0,
+				472.0
+			],
+			"id": "daedonggang",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0771576506464216,
+					"candidate_water_fraction": 0.677710364982053,
+					"sample_count": 62962,
+					"tile": "detail_1_1"
+				}
+			],
+			"marker_only": true
+		},
+		{
+			"anchor": [
+				550.0,
+				484.0
+			],
+			"id": "goksan",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0,
+					"sample_count": 62962,
+					"tile": "detail_1_1"
+				}
+			],
+			"marker_only": true
+		},
+		{
+			"anchor": [
+				456.0,
+				518.0
+			],
+			"id": "hwanghae",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0681045710110861,
+					"sample_count": 62962,
+					"tile": "detail_1_1"
+				}
+			],
+			"marker_only": true
+		},
+		{
+			"anchor": [
+				542.0,
+				635.0
+			],
+			"id": "bukhansan",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.142895714875639,
+					"sample_count": 62962,
+					"tile": "detail_1_1"
+				},
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0180108636955624,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				550.0,
+				674.0
+			],
+			"id": "danghangseong",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				626.0,
+				739.0
+			],
+			"id": "samnyeonsanseong",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0083542454178711,
+					"candidate_water_fraction": 0.00614656459451733,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				},
+				{
+					"base_water_fraction": 0.0083542454178711,
+					"candidate_water_fraction": 0.248816746609066,
+					"sample_count": 62962,
+					"tile": "detail_2_2"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				627.0,
+				675.0
+			],
+			"id": "gukwon",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.00466948318033099,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				},
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.045948349798291,
+					"sample_count": 62962,
+					"tile": "detail_2_2"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				714.0,
+				576.0
+			],
+			"id": "haslla",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0261745179632159,
+					"sample_count": 62962,
+					"tile": "detail_1_2"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				740.0,
+				630.0
+			],
+			"id": "siljik",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.369588005463613,
+					"sample_count": 62962,
+					"tile": "detail_1_2"
+				},
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0514913757504527,
+					"sample_count": 62962,
+					"tile": "detail_2_2"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				543.0,
+				721.0
+			],
+			"id": "imjonseong",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.00316063657444173,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				586.0,
+				747.0
+			],
+			"id": "ungjin",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0330199167751977,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				566.0,
+				783.0
+			],
+			"id": "sabi",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0929767161144817,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				583.0,
+				822.0
+			],
+			"id": "geummajeo",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0192655887678282,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				557.0,
+				868.0
+			],
+			"id": "gosa",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				539.0,
+				839.0
+			],
+			"id": "juryuseong",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.00817953686350497,
+					"candidate_water_fraction": 0.0123248943807376,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				575.0,
+				922.0
+			],
+			"id": "yeongsangang",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.142244528445729,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				},
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.331644483974461,
+					"sample_count": 62962,
+					"tile": "detail_3_1"
+				}
+			],
+			"marker_only": true
+		},
+		{
+			"anchor": [
+				747.0,
+				825.0
+			],
+			"id": "geumseong",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.00419300530478701,
+					"candidate_water_fraction": 0.187716400368476,
+					"sample_count": 62962,
+					"tile": "detail_2_2"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				678.0,
+				734.0
+			],
+			"id": "sabeol",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0493472253105047,
+					"sample_count": 62962,
+					"tile": "detail_2_2"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				699.0,
+				814.0
+			],
+			"id": "dalgubeol",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0785235538896477,
+					"sample_count": 62962,
+					"tile": "detail_2_2"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				654.0,
+				851.0
+			],
+			"id": "daegaya",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0128331374479845,
+					"candidate_water_fraction": 0.223039293542137,
+					"sample_count": 62962,
+					"tile": "detail_2_2"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				733.0,
+				904.0
+			],
+			"id": "geumgwan",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.733267685270481,
+					"sample_count": 62962,
+					"tile": "detail_2_2"
+				},
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.450208062005654,
+					"sample_count": 62962,
+					"tile": "detail_3_2"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				677.0,
+				904.0
+			],
+			"id": "sogaya",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0222197515962009,
+					"sample_count": 62962,
+					"tile": "detail_2_2"
+				},
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0645786347320606,
+					"sample_count": 62962,
+					"tile": "detail_3_2"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				535.0,
+				1098.0
+			],
+			"id": "tamna",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0240938979066739,
+					"registered_water_fraction": 0.0768717639210953,
+					"sample_count": 62962,
+					"tile": "detail_3_1"
+				}
+			],
+			"marker_only": false
+		},
+		{
+			"anchor": [
+				935.0,
+				651.0
+			],
+			"id": "ulleung",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0,
+					"sample_count": 62962,
+					"tile": "detail_1_2"
+				},
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0,
+					"sample_count": 62962,
+					"tile": "detail_2_2"
+				}
+			],
+			"marker_only": true
+		},
+		{
+			"anchor": [
+				470.0,
+				604.0
+			],
+			"id": "ganghwa",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0709634382643499,
+					"candidate_water_fraction": 1.0,
+					"sample_count": 62962,
+					"tile": "detail_1_1"
+				},
+				{
+					"base_water_fraction": 0.0709634382643499,
+					"candidate_water_fraction": 0.0,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				}
+			],
+			"marker_only": true
+		},
+		{
+			"anchor": [
+				676.0,
+				663.0
+			],
+			"id": "jukryeong",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.00768717639210953,
+					"sample_count": 62962,
+					"tile": "detail_2_2"
+				}
+			],
+			"marker_only": true
+		},
+		{
+			"anchor": [
+				653.0,
+				779.0
+			],
+			"id": "chupungnyeong",
+			"lower_sprite_samples": [
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.28753851529494,
+					"sample_count": 62962,
+					"tile": "detail_2_1"
+				},
+				{
+					"base_water_fraction": 0.0,
+					"candidate_water_fraction": 0.0,
+					"sample_count": 62962,
+					"tile": "detail_2_2"
+				}
+			],
+			"marker_only": true
+		}
+	],
+	"method": "RGB water heuristic: diagnostic only, not a territory/land mask or geography approval. Floors use opaque lower 60-90% of actual castle source sprite; vegetation requires visual review.",
+	"seams": [
+		{
+			"a": "northwest",
+			"b": "southwest",
+			"overlap": [
+				0.0,
+				550.0,
+				704.0,
+				154.0
+			],
+			"rgb_rmse": 0.100743792624527,
+			"water_class_disagreement": 0.0149754500818331
+		},
+		{
+			"a": "northwest",
+			"b": "southeast",
+			"overlap": [
+				550.0,
+				550.0,
+				154.0,
+				154.0
+			],
+			"rgb_rmse": 0.181536897092074,
+			"water_class_disagreement": 0.0347633136094675
+		},
+		{
+			"a": "northeast",
+			"b": "northwest",
+			"overlap": [
+				550.0,
+				0.0,
+				154.0,
+				704.0
+			],
+			"rgb_rmse": 0.154078267206473,
+			"water_class_disagreement": 0.0688216039279869
+		},
+		{
+			"a": "northeast",
+			"b": "southwest",
+			"overlap": [
+				550.0,
+				550.0,
+				154.0,
+				154.0
+			],
+			"rgb_rmse": 0.180826628152752,
+			"water_class_disagreement": 0.0517751479289941
+		},
+		{
+			"a": "northeast",
+			"b": "southeast",
+			"overlap": [
+				550.0,
+				550.0,
+				704.0,
+				154.0
+			],
+			"rgb_rmse": 0.097811802624225,
+			"water_class_disagreement": 0.0161211129296236
+		},
+		{
+			"a": "southeast",
+			"b": "southwest",
+			"overlap": [
+				550.0,
+				550.0,
+				154.0,
+				704.0
+			],
+			"rgb_rmse": 0.136833314915434,
+			"water_class_disagreement": 0.0236497545008183
+		},
+		{
+			"a": "detail_0_0",
+			"b": "detail_0_1",
+			"overlap": [
+				300.0,
+				0.0,
+				54.0,
+				354.0
+			],
+			"rgb_rmse": 0.260686378054015,
+			"water_class_disagreement": 0.136064030131827
+		},
+		{
+			"a": "detail_0_0",
+			"b": "detail_1_1",
+			"overlap": [
+				300.0,
+				300.0,
+				54.0,
+				54.0
+			],
+			"rgb_rmse": 0.163781886705845,
+			"water_class_disagreement": 0.0185185185185185
+		},
+		{
+			"a": "detail_0_1",
+			"b": "detail_0_2",
+			"overlap": [
+				600.0,
+				0.0,
+				54.0,
+				354.0
+			],
+			"rgb_rmse": 0.301745048096768,
+			"water_class_disagreement": 0.105932203389831
+		},
+		{
+			"a": "detail_0_1",
+			"b": "detail_1_1",
+			"overlap": [
+				300.0,
+				300.0,
+				354.0,
+				54.0
+			],
+			"rgb_rmse": 0.29585573454785,
+			"water_class_disagreement": 0.192090395480226
+		},
+		{
+			"a": "detail_0_1",
+			"b": "detail_1_2",
+			"overlap": [
+				600.0,
+				300.0,
+				54.0,
+				54.0
+			],
+			"rgb_rmse": 0.345312338238521,
+			"water_class_disagreement": 0.132716049382716
+		},
+		{
+			"a": "detail_0_2",
+			"b": "detail_1_1",
+			"overlap": [
+				600.0,
+				300.0,
+				54.0,
+				54.0
+			],
+			"rgb_rmse": 0.303540374820926,
+			"water_class_disagreement": 0.25
+		},
+		{
+			"a": "detail_0_2",
+			"b": "detail_1_2",
+			"overlap": [
+				600.0,
+				300.0,
+				354.0,
+				54.0
+			],
+			"rgb_rmse": 0.244150858179992,
+			"water_class_disagreement": 0.0885122410546139
+		},
+		{
+			"a": "detail_1_1",
+			"b": "detail_1_2",
+			"overlap": [
+				600.0,
+				300.0,
+				54.0,
+				354.0
+			],
+			"rgb_rmse": 0.317703020946214,
+			"water_class_disagreement": 0.205743879472693
+		},
+		{
+			"a": "detail_1_1",
+			"b": "detail_2_1",
+			"overlap": [
+				300.0,
+				600.0,
+				354.0,
+				54.0
+			],
+			"rgb_rmse": 0.302647843569834,
+			"water_class_disagreement": 0.2015065913371
+		},
+		{
+			"a": "detail_1_1",
+			"b": "detail_2_2",
+			"overlap": [
+				600.0,
+				600.0,
+				54.0,
+				54.0
+			],
+			"rgb_rmse": 0.321731355324732,
+			"water_class_disagreement": 0.111111111111111
+		},
+		{
+			"a": "detail_1_2",
+			"b": "detail_2_1",
+			"overlap": [
+				600.0,
+				600.0,
+				54.0,
+				54.0
+			],
+			"rgb_rmse": 0.377296121385974,
+			"water_class_disagreement": 0.123456790123457
+		},
+		{
+			"a": "detail_1_2",
+			"b": "detail_2_2",
+			"overlap": [
+				600.0,
+				600.0,
+				354.0,
+				54.0
+			],
+			"rgb_rmse": 0.267137568899273,
+			"water_class_disagreement": 0.0951035781544256
+		},
+		{
+			"a": "detail_2_1",
+			"b": "detail_2_2",
+			"overlap": [
+				600.0,
+				600.0,
+				54.0,
+				354.0
+			],
+			"rgb_rmse": 0.34305361308749,
+			"water_class_disagreement": 0.213276836158192
+		},
+		{
+			"a": "detail_2_1",
+			"b": "detail_3_1",
+			"overlap": [
+				300.0,
+				900.0,
+				354.0,
+				54.0
+			],
+			"rgb_rmse": 0.290817957391799,
+			"water_class_disagreement": 0.224105461393597
+		},
+		{
+			"a": "detail_2_1",
+			"b": "detail_3_2",
+			"overlap": [
+				600.0,
+				900.0,
+				54.0,
+				54.0
+			],
+			"rgb_rmse": 0.357489837142816,
+			"water_class_disagreement": 0.432098765432099
+		},
+		{
+			"a": "detail_2_2",
+			"b": "detail_3_1",
+			"overlap": [
+				600.0,
+				900.0,
+				54.0,
+				54.0
+			],
+			"rgb_rmse": 0.355232001273817,
+			"water_class_disagreement": 0.296296296296296
+		},
+		{
+			"a": "detail_2_2",
+			"b": "detail_3_2",
+			"overlap": [
+				600.0,
+				900.0,
+				354.0,
+				54.0
+			],
+			"rgb_rmse": 0.280720819086056,
+			"water_class_disagreement": 0.201035781544256
+		},
+		{
+			"a": "detail_3_1",
+			"b": "detail_3_2",
+			"overlap": [
+				600.0,
+				900.0,
+				54.0,
+				354.0
+			],
+			"rgb_rmse": 0.201234046360658,
+			"water_class_disagreement": 0.109227871939736
+		}
+	],
+	"tiles": [
+		{
+			"id": "northwest",
+			"samples": 55225,
+			"water_class_disagreement": 0.0266545948392938
+		},
+		{
+			"id": "northeast",
+			"samples": 55225,
+			"water_class_disagreement": 0.0233589859665007
+		},
+		{
+			"id": "southwest",
+			"samples": 55225,
+			"water_class_disagreement": 0.0101765504753282
+		},
+		{
+			"id": "southeast",
+			"samples": 55225,
+			"water_class_disagreement": 0.0100316885468538
+		},
+		{
+			"id": "detail_0_0",
+			"samples": 13924,
+			"water_class_disagreement": 0.105860384946854
+		},
+		{
+			"id": "detail_0_1",
+			"samples": 13924,
+			"water_class_disagreement": 0.0800775639184143
+		},
+		{
+			"id": "detail_0_2",
+			"samples": 13924,
+			"water_class_disagreement": 0.0673656995116346
+		},
+		{
+			"id": "detail_1_1",
+			"samples": 13924,
+			"water_class_disagreement": 0.153188738868141
+		},
+		{
+			"id": "detail_1_2",
+			"samples": 13924,
+			"water_class_disagreement": 0.0575983912668773
+		},
+		{
+			"id": "detail_2_1",
+			"samples": 13924,
+			"water_class_disagreement": 0.126759551852916
+		},
+		{
+			"id": "detail_2_2",
+			"samples": 13924,
+			"water_class_disagreement": 0.089629416834243
+		},
+		{
+			"id": "detail_3_1",
+			"samples": 13924,
+			"water_class_disagreement": 0.0304510198218903
+		},
+		{
+			"id": "detail_3_2",
+			"samples": 13924,
+			"water_class_disagreement": 0.0382074116633151
+		}
+	]
+}

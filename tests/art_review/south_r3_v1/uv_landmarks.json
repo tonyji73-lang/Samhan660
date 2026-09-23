@@ -1,0 +1,176 @@
+{
+  "tile": "detail_2_2",
+  "source_sha256": "18cf37fdec0dd1cfbd774f8d5c528238bceffacd5c212063140badeb00a19325",
+  "region": [
+    600,
+    600,
+    354,
+    354
+  ],
+  "grid": [
+    119,
+    119
+  ],
+  "folded_cells": 0,
+  "status": "review_only_requires_art_repair",
+  "automatic_lod_enabled": false,
+  "landmarks": [
+    {
+      "id": "north_confluence",
+      "approved_native": [
+        643.1913875598086,
+        718.5645933014354
+      ],
+      "candidate_native": [
+        640.0861244019138,
+        712.9186602870814
+      ],
+      "confidence": "manual approximate correspondence; not topology approval",
+      "mesh_residual_native_px": 0.014925770871631121
+    },
+    {
+      "id": "west_bend",
+      "approved_native": [
+        636.4162679425838,
+        775.023923444976
+      ],
+      "candidate_native": [
+        635.8516746411483,
+        767.1196172248804
+      ],
+      "confidence": "manual approximate correspondence; not topology approval",
+      "mesh_residual_native_px": 0.015110013881103885
+    },
+    {
+      "id": "west_confluence",
+      "approved_native": [
+        622.5837320574162,
+        818.4976076555024
+      ],
+      "candidate_native": [
+        621.1722488038278,
+        807.488038277512
+      ],
+      "confidence": "manual approximate correspondence; not topology approval",
+      "mesh_residual_native_px": 0.03878993772015739
+    },
+    {
+      "id": "daegaya_east_tributary",
+      "approved_native": [
+        638.11004784689,
+        848.1387559808612
+      ],
+      "candidate_native": [
+        638.6746411483253,
+        828.6602870813397
+      ],
+      "confidence": "manual approximate correspondence; not topology approval",
+      "mesh_residual_native_px": 0.07584802985132945
+    },
+    {
+      "id": "lower_tributary",
+      "approved_native": [
+        632.7464114832536,
+        860.5598086124402
+      ],
+      "candidate_native": [
+        637.8277511961722,
+        838.2583732057417
+      ],
+      "confidence": "manual approximate correspondence; not topology approval",
+      "mesh_residual_native_px": 0.08744858754234822
+    },
+    {
+      "id": "estuary_main_channel",
+      "approved_native": [
+        663.2344497607655,
+        935.9330143540669
+      ],
+      "candidate_native": [
+        662.6698564593302,
+        916.1722488038278
+      ],
+      "confidence": "manual approximate correspondence; not topology approval",
+      "mesh_residual_native_px": 0.004918221485028494
+    },
+    {
+      "id": "east_cape",
+      "approved_native": [
+        818.4976076555024,
+        806.0765550239234
+      ],
+      "candidate_native": [
+        810.8755980861245,
+        797.0430622009569
+      ],
+      "confidence": "manual approximate correspondence; not topology approval",
+      "mesh_residual_native_px": 0.047622516181069025
+    },
+    {
+      "id": "east_cape_inner_bay",
+      "approved_native": [
+        803.8181818181818,
+        812.8516746411483
+      ],
+      "candidate_native": [
+        799.3014354066986,
+        803.8181818181818
+      ],
+      "confidence": "manual approximate correspondence; not topology approval",
+      "mesh_residual_native_px": 0.010663845499130827
+    },
+    {
+      "id": "east_coast_upper",
+      "approved_native": [
+        806.0765550239234,
+        723.9282296650717
+      ],
+      "candidate_native": [
+        799.0191387559809,
+        715.1770334928229
+      ],
+      "confidence": "manual approximate correspondence; not topology approval",
+      "mesh_residual_native_px": 0.007834005627484871
+    },
+    {
+      "id": "east_coast_mid",
+      "approved_native": [
+        806.0765550239234,
+        762.8851674641148
+      ],
+      "candidate_native": [
+        797.88995215311,
+        755.5454545454545
+      ],
+      "confidence": "manual approximate correspondence; not topology approval",
+      "mesh_residual_native_px": 0.02373352949902113
+    },
+    {
+      "id": "east_coast_lower",
+      "approved_native": [
+        800.4306220095693,
+        886.2488038277512
+      ],
+      "candidate_native": [
+        792.8086124401914,
+        870.1578947368421
+      ],
+      "confidence": "manual approximate correspondence; not topology approval",
+      "mesh_residual_native_px": 0.02520934122511337
+    },
+    {
+      "id": "south_inlet",
+      "approved_native": [
+        736.6315789473684,
+        915.0430622009569
+      ],
+      "candidate_native": [
+        734.0909090909091,
+        898.6698564593302
+      ],
+      "confidence": "manual approximate correspondence; not topology approval",
+      "mesh_residual_native_px": 0.00827867323642764
+    }
+  ],
+  "note": "UV only. No feather, tint, sprite relocation or topology claim. Fixed display rectangle; tangential edge UV movement. Adjacent redraws still need art repair."
+}

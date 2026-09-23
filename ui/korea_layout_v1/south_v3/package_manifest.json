@@ -1,0 +1,42 @@
+{
+  "package": "south_v3_apply",
+  "engine_validation_performed": false,
+  "files": {
+    "assets/south_continuous_v3.png": {
+      "bytes": 2842017,
+      "sha256": "b6cf84b8c9a63b64a372f6e7425438428dc5a142935ddea067cee970c8a86734"
+    },
+    "assets/open_sea_keep_mask.png": {
+      "bytes": 3942,
+      "sha256": "2e7378084935f44e7a0e806a0042a2ef9a7a292a964b84fe20ec92f1bf919da9"
+    },
+    "integration/south_patch_edge.gdshader": {
+      "bytes": 1194,
+      "sha256": "963d448fb8e393a48172144e6433a89af03a40659799998de993982315b8479b"
+    },
+    "south_continuous_v3.json": {
+      "bytes": 4747,
+      "sha256": "8f6c89a756a2f04d6aa80565c4f130e4cf2a3b04b99bbe28291e0c20d227e61b"
+    },
+    "CODEX_APPLY.md": {
+      "bytes": 5323,
+      "sha256": "9e2683926f6dd704c237cc1c44325852c32a21f64258188647bb62ab6588f101"
+    },
+    "README_KO.md": {
+      "bytes": 1819,
+      "sha256": "291e93dbf15f621b12c2fb3c8201a900c87b9e5a7748b6b96a2d4e6165647111"
+    },
+    "VALIDATION.md": {
+      "bytes": 3805,
+      "sha256": "2ddfafa555162c80ce8d26e8e53a8fce6c5af635ce03e2ab83d73821d3a01a33"
+    },
+    "GENERATION_PROMPT.md": {
+      "bytes": 2659,
+      "sha256": "6867820e64ae134c9011d33bacbfc4ac8371b8919878d056ee2631801a8f4c20"
+    },
+    "diagnostics/open_sea_mask_method.json": {
+      "bytes": 610,
+      "sha256": "fb4711fb5819d42ae529291662c249e9cd757b1dabe11ab6b5fb484921140bf7"
+    }
+  }
+}

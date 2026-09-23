@@ -1,0 +1,371 @@
+{
+	"checks": 17,
+	"failures": 0,
+	"pid": 17340,
+	"records": [
+		{
+			"camera": {
+				"center_native": [
+					747.0,
+					825.0
+				],
+				"selected": "geumseong",
+				"zoom": 9.0
+			},
+			"name": "632-1280-restart",
+			"old_layers": [],
+			"selected": "geumseong",
+			"v3": {
+				"approval": {
+					"evidence": "Godot same-camera base/raw/edge-mask/inland mesh renders. Clearings cover unchanged castle footprints; polygon excludes Daegaya river, every coast and all four outer seams.",
+					"limits": "Local visual-art registration, not surveyed geography. Forest texture density transition remains visible. Daegaya, rivers, coastline, estuary, outer patch seams and territory masks are NOT approved.",
+					"mesh_sha256": "255bee220cea5198633482225df7ef77272078aa6fca3d2cb2b38bbc42ecf059",
+					"regions": [
+						[
+							670.0,
+							780.0,
+							106.0,
+							67.0
+						]
+					],
+					"scope": "Bounding rect is NOT full approval: exact inland polygon and 4-native-pixel inward transition are pinned in inland_registration.json. Dalgubeol and Geumseong clearings plus intervening forest/ridge only.",
+					"sea_mask_sha256": "2e7378084935f44e7a0e806a0042a2ef9a7a292a964b84fe20ec92f1bf919da9",
+					"sha256": "b6cf84b8c9a63b64a372f6e7425438428dc5a142935ddea067cee970c8a86734",
+					"shader_sha256": "963d448fb8e393a48172144e6433a89af03a40659799998de993982315b8479b",
+					"status": "visually_registered"
+				},
+				"approved": true,
+				"drawn": true,
+				"error": "",
+				"hashes": {
+					"mesh": "255bee220cea5198633482225df7ef77272078aa6fca3d2cb2b38bbc42ecf059",
+					"png": "b6cf84b8c9a63b64a372f6e7425438428dc5a142935ddea067cee970c8a86734",
+					"sea_mask": "2e7378084935f44e7a0e806a0042a2ef9a7a292a964b84fe20ec92f1bf919da9",
+					"shader": "963d448fb8e393a48172144e6433a89af03a40659799998de993982315b8479b"
+				},
+				"id": "south_continuous_v3",
+				"path": "res://ui/korea_layout_v1/south_v3/assets/south_continuous_v3.png",
+				"raw": false,
+				"region_polygon": [
+					[
+						670.0,
+						790.0
+					],
+					[
+						697.0,
+						780.0
+					],
+					[
+						733.0,
+						783.0
+					],
+					[
+						763.0,
+						800.0
+					],
+					[
+						776.0,
+						818.0
+					],
+					[
+						772.0,
+						840.0
+					],
+					[
+						754.0,
+						847.0
+					],
+					[
+						724.0,
+						840.0
+					],
+					[
+						689.0,
+						835.0
+					],
+					[
+						671.0,
+						827.0
+					]
+				],
+				"review": false,
+				"sea_mask_enabled": true,
+				"shader_weight": 1.0,
+				"weight": 1.0
+			}
+		},
+		{
+			"camera": {
+				"center_native": [
+					747.0,
+					825.0
+				],
+				"selected": "geumseong",
+				"zoom": 9.0
+			},
+			"name": "632-1920-restart",
+			"old_layers": [],
+			"selected": "geumseong",
+			"v3": {
+				"approval": {
+					"evidence": "Godot same-camera base/raw/edge-mask/inland mesh renders. Clearings cover unchanged castle footprints; polygon excludes Daegaya river, every coast and all four outer seams.",
+					"limits": "Local visual-art registration, not surveyed geography. Forest texture density transition remains visible. Daegaya, rivers, coastline, estuary, outer patch seams and territory masks are NOT approved.",
+					"mesh_sha256": "255bee220cea5198633482225df7ef77272078aa6fca3d2cb2b38bbc42ecf059",
+					"regions": [
+						[
+							670.0,
+							780.0,
+							106.0,
+							67.0
+						]
+					],
+					"scope": "Bounding rect is NOT full approval: exact inland polygon and 4-native-pixel inward transition are pinned in inland_registration.json. Dalgubeol and Geumseong clearings plus intervening forest/ridge only.",
+					"sea_mask_sha256": "2e7378084935f44e7a0e806a0042a2ef9a7a292a964b84fe20ec92f1bf919da9",
+					"sha256": "b6cf84b8c9a63b64a372f6e7425438428dc5a142935ddea067cee970c8a86734",
+					"shader_sha256": "963d448fb8e393a48172144e6433a89af03a40659799998de993982315b8479b",
+					"status": "visually_registered"
+				},
+				"approved": true,
+				"drawn": true,
+				"error": "",
+				"hashes": {
+					"mesh": "255bee220cea5198633482225df7ef77272078aa6fca3d2cb2b38bbc42ecf059",
+					"png": "b6cf84b8c9a63b64a372f6e7425438428dc5a142935ddea067cee970c8a86734",
+					"sea_mask": "2e7378084935f44e7a0e806a0042a2ef9a7a292a964b84fe20ec92f1bf919da9",
+					"shader": "963d448fb8e393a48172144e6433a89af03a40659799998de993982315b8479b"
+				},
+				"id": "south_continuous_v3",
+				"path": "res://ui/korea_layout_v1/south_v3/assets/south_continuous_v3.png",
+				"raw": false,
+				"region_polygon": [
+					[
+						670.0,
+						790.0
+					],
+					[
+						697.0,
+						780.0
+					],
+					[
+						733.0,
+						783.0
+					],
+					[
+						763.0,
+						800.0
+					],
+					[
+						776.0,
+						818.0
+					],
+					[
+						772.0,
+						840.0
+					],
+					[
+						754.0,
+						847.0
+					],
+					[
+						724.0,
+						840.0
+					],
+					[
+						689.0,
+						835.0
+					],
+					[
+						671.0,
+						827.0
+					]
+				],
+				"review": false,
+				"sea_mask_enabled": true,
+				"shader_weight": 1.0,
+				"weight": 1.0
+			}
+		},
+		{
+			"camera": {
+				"center_native": [
+					747.0,
+					825.0
+				],
+				"selected": "geumseong",
+				"zoom": 9.0
+			},
+			"name": "642-1280-restart",
+			"old_layers": [],
+			"selected": "geumseong",
+			"v3": {
+				"approval": {
+					"evidence": "Godot same-camera base/raw/edge-mask/inland mesh renders. Clearings cover unchanged castle footprints; polygon excludes Daegaya river, every coast and all four outer seams.",
+					"limits": "Local visual-art registration, not surveyed geography. Forest texture density transition remains visible. Daegaya, rivers, coastline, estuary, outer patch seams and territory masks are NOT approved.",
+					"mesh_sha256": "255bee220cea5198633482225df7ef77272078aa6fca3d2cb2b38bbc42ecf059",
+					"regions": [
+						[
+							670.0,
+							780.0,
+							106.0,
+							67.0
+						]
+					],
+					"scope": "Bounding rect is NOT full approval: exact inland polygon and 4-native-pixel inward transition are pinned in inland_registration.json. Dalgubeol and Geumseong clearings plus intervening forest/ridge only.",
+					"sea_mask_sha256": "2e7378084935f44e7a0e806a0042a2ef9a7a292a964b84fe20ec92f1bf919da9",
+					"sha256": "b6cf84b8c9a63b64a372f6e7425438428dc5a142935ddea067cee970c8a86734",
+					"shader_sha256": "963d448fb8e393a48172144e6433a89af03a40659799998de993982315b8479b",
+					"status": "visually_registered"
+				},
+				"approved": true,
+				"drawn": true,
+				"error": "",
+				"hashes": {
+					"mesh": "255bee220cea5198633482225df7ef77272078aa6fca3d2cb2b38bbc42ecf059",
+					"png": "b6cf84b8c9a63b64a372f6e7425438428dc5a142935ddea067cee970c8a86734",
+					"sea_mask": "2e7378084935f44e7a0e806a0042a2ef9a7a292a964b84fe20ec92f1bf919da9",
+					"shader": "963d448fb8e393a48172144e6433a89af03a40659799998de993982315b8479b"
+				},
+				"id": "south_continuous_v3",
+				"path": "res://ui/korea_layout_v1/south_v3/assets/south_continuous_v3.png",
+				"raw": false,
+				"region_polygon": [
+					[
+						670.0,
+						790.0
+					],
+					[
+						697.0,
+						780.0
+					],
+					[
+						733.0,
+						783.0
+					],
+					[
+						763.0,
+						800.0
+					],
+					[
+						776.0,
+						818.0
+					],
+					[
+						772.0,
+						840.0
+					],
+					[
+						754.0,
+						847.0
+					],
+					[
+						724.0,
+						840.0
+					],
+					[
+						689.0,
+						835.0
+					],
+					[
+						671.0,
+						827.0
+					]
+				],
+				"review": false,
+				"sea_mask_enabled": true,
+				"shader_weight": 1.0,
+				"weight": 1.0
+			}
+		},
+		{
+			"camera": {
+				"center_native": [
+					747.0,
+					825.0
+				],
+				"selected": "geumseong",
+				"zoom": 9.0
+			},
+			"name": "642-1920-restart",
+			"old_layers": [],
+			"selected": "geumseong",
+			"v3": {
+				"approval": {
+					"evidence": "Godot same-camera base/raw/edge-mask/inland mesh renders. Clearings cover unchanged castle footprints; polygon excludes Daegaya river, every coast and all four outer seams.",
+					"limits": "Local visual-art registration, not surveyed geography. Forest texture density transition remains visible. Daegaya, rivers, coastline, estuary, outer patch seams and territory masks are NOT approved.",
+					"mesh_sha256": "255bee220cea5198633482225df7ef77272078aa6fca3d2cb2b38bbc42ecf059",
+					"regions": [
+						[
+							670.0,
+							780.0,
+							106.0,
+							67.0
+						]
+					],
+					"scope": "Bounding rect is NOT full approval: exact inland polygon and 4-native-pixel inward transition are pinned in inland_registration.json. Dalgubeol and Geumseong clearings plus intervening forest/ridge only.",
+					"sea_mask_sha256": "2e7378084935f44e7a0e806a0042a2ef9a7a292a964b84fe20ec92f1bf919da9",
+					"sha256": "b6cf84b8c9a63b64a372f6e7425438428dc5a142935ddea067cee970c8a86734",
+					"shader_sha256": "963d448fb8e393a48172144e6433a89af03a40659799998de993982315b8479b",
+					"status": "visually_registered"
+				},
+				"approved": true,
+				"drawn": true,
+				"error": "",
+				"hashes": {
+					"mesh": "255bee220cea5198633482225df7ef77272078aa6fca3d2cb2b38bbc42ecf059",
+					"png": "b6cf84b8c9a63b64a372f6e7425438428dc5a142935ddea067cee970c8a86734",
+					"sea_mask": "2e7378084935f44e7a0e806a0042a2ef9a7a292a964b84fe20ec92f1bf919da9",
+					"shader": "963d448fb8e393a48172144e6433a89af03a40659799998de993982315b8479b"
+				},
+				"id": "south_continuous_v3",
+				"path": "res://ui/korea_layout_v1/south_v3/assets/south_continuous_v3.png",
+				"raw": false,
+				"region_polygon": [
+					[
+						670.0,
+						790.0
+					],
+					[
+						697.0,
+						780.0
+					],
+					[
+						733.0,
+						783.0
+					],
+					[
+						763.0,
+						800.0
+					],
+					[
+						776.0,
+						818.0
+					],
+					[
+						772.0,
+						840.0
+					],
+					[
+						754.0,
+						847.0
+					],
+					[
+						724.0,
+						840.0
+					],
+					[
+						689.0,
+						835.0
+					],
+					[
+						671.0,
+						827.0
+					]
+				],
+				"review": false,
+				"sea_mask_enabled": true,
+				"shader_weight": 1.0,
+				"weight": 1.0
+			}
+		}
+	]
+}

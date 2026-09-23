@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "id": "south_continuous_v3",
+  "kind": "continuous_regional_patch",
+  "status": "art_repair_candidate_requires_game_registration_review",
+  "production_ready": false,
+  "automatic_lod_enabled": false,
+  "registration_verified": false,
+  "path": "assets/south_continuous_v3.png",
+  "sha256": "b6cf84b8c9a63b64a372f6e7425438428dc5a142935ddea067cee970c8a86734",
+  "texture_size_px": [
+    1346,
+    1168
+  ],
+  "source_rect_px": [
+    560,
+    740,
+    300,
+    260
+  ],
+  "source_image_size": [
+    1254,
+    1254
+  ],
+  "source_sha256": "36594c1d1ee0cbcd80a175d72790d3e22423103cf81d6b191f8bf2d317e1f246",
+  "coordinate_system": "approved atlas native pixels, top-left; x right, y down",
+  "native_to_texture_scale": [
+    4.486666666666666,
+    4.492307692307692
+  ],
+  "initial_uv_transform": "identity within source_rect_px; do not apply old tile UV warp",
+  "render_priority": "after approved base, before borders/routes/castles; suppress older candidate terrain inside this rect",
+  "castles": [
+    {
+      "id": "dalgubeol",
+      "anchor": [
+        699,
+        814
+      ],
+      "sprite_rect": [
+        686.69,
+        797.5046,
+        24.62,
+        24.62
+      ],
+      "patch_uv": [
+        0.4633333333333333,
+        0.2846153846153846
+      ],
+      "sprite_pivot": [
+        0.5,
+        0.67
+      ]
+    },
+    {
+      "id": "geumseong",
+      "anchor": [
+        747,
+        825
+      ],
+      "sprite_rect": [
+        734.69,
+        808.5046,
+        24.62,
+        24.62
+      ],
+      "patch_uv": [
+        0.6233333333333333,
+        0.3269230769230769
+      ],
+      "sprite_pivot": [
+        0.5,
+        0.67
+      ]
+    },
+    {
+      "id": "daegaya",
+      "anchor": [
+        654,
+        851
+      ],
+      "sprite_rect": [
+        643,
+        836.26,
+        22,
+        22
+      ],
+      "patch_uv": [
+        0.31333333333333335,
+        0.4269230769230769
+      ],
+      "sprite_pivot": [
+        0.5,
+        0.67
+      ]
+    }
+  ],
+  "jeju_affected": false,
+  "intersecting_tile_windows": [
+    {
+      "tile_id": "detail_2_1",
+      "intersection_native_rect": [
+        560,
+        740,
+        94,
+        214
+      ],
+      "patch_uv_rect": [
+        0.0,
+        0.0,
+        0.31333333333333335,
+        0.823076923076923
+      ],
+      "note": "metadata for one shared texture; do not generate independent overlapping replacements"
+    },
+    {
+      "tile_id": "detail_2_2",
+      "intersection_native_rect": [
+        600,
+        740,
+        260,
+        214
+      ],
+      "patch_uv_rect": [
+        0.13333333333333333,
+        0.0,
+        0.8666666666666667,
+        0.823076923076923
+      ],
+      "note": "metadata for one shared texture; do not generate independent overlapping replacements"
+    },
+    {
+      "tile_id": "detail_3_1",
+      "intersection_native_rect": [
+        560,
+        900,
+        94,
+        100
+      ],
+      "patch_uv_rect": [
+        0.0,
+        0.6153846153846154,
+        0.31333333333333335,
+        0.38461538461538464
+      ],
+      "note": "metadata for one shared texture; do not generate independent overlapping replacements"
+    },
+    {
+      "tile_id": "detail_3_2",
+      "intersection_native_rect": [
+        600,
+        900,
+        260,
+        100
+      ],
+      "patch_uv_rect": [
+        0.13333333333333333,
+        0.6153846153846154,
+        0.8666666666666667,
+        0.38461538461538464
+      ],
+      "note": "metadata for one shared texture; do not generate independent overlapping replacements"
+    }
+  ],
+  "art_changes_requiring_review": [
+    "East tributary moved back above Daegaya castle; check original branch topology and full sprite floor.",
+    "Runtime edge alpha is only seam treatment, not geographic registration."
+  ],
+  "previous_candidate_sha256": "7689732ac0034ebf482af41a1682f31e7e4697c7dbf473c977e64ab06adc33d8",
+  "edge_blend": {
+    "width_native_px": 4.0,
+    "type": "smoothstep_alpha",
+    "shader": "integration/south_patch_edge.gdshader",
+    "not_a_geography_fix": true,
+    "shader_sha256": "963d448fb8e393a48172144e6433a89af03a40659799998de993982315b8479b"
+  },
+  "validation_requirements": {
+    "normal_play_scenarios": [
+      632,
+      642
+    ],
+    "faction": "silla",
+    "engine_validation_performed": false,
+    "comparison_mode_is_not_production": true,
+    "enable_only_verified_regions": true
+  },
+  "open_sea_mask": {
+    "path": "assets/open_sea_keep_mask.png",
+    "sha256": "2e7378084935f44e7a0e806a0042a2ef9a7a292a964b84fe20ec92f1bf919da9",
+    "size_px": [
+      300,
+      260
+    ],
+    "sampling": "linear, no sRGB conversion",
+    "purpose": "preserve approved distant sea texture; never territory or navigation",
+    "review_required": true
+  }
+}

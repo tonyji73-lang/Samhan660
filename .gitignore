@@ -4,3 +4,7 @@
 
 # Local Electron/Crashpad diagnostic output (not a game resource).
 /debug.log
+
+# Earlier map review captures stay in the local/home-transfer archive.
+/tests/art_review/**/*.png
+!/tests/art_review/south_v3/**/*.png

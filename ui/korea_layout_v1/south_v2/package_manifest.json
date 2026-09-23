@@ -1,0 +1,29 @@
+{
+  "package": "samhan_south_v2_apply",
+  "files": {
+    "assets/south_continuous_v2.png": {
+      "bytes": 2810240,
+      "sha256": "7689732ac0034ebf482af41a1682f31e7e4697c7dbf473c977e64ab06adc33d8"
+    },
+    "south_continuous_v2.json": {
+      "bytes": 3858,
+      "sha256": "1d906850ad80c5b7bcd8a4ab1416bcb1edbf99c0471d92bc15633c063e982f40"
+    },
+    "CODEX_APPLY.md": {
+      "bytes": 2318,
+      "sha256": "9982ea42bcba78e67941bac7d09d1001c3a4a330d241c1c89a709a30d11dde3c"
+    },
+    "VALIDATION.md": {
+      "bytes": 2065,
+      "sha256": "463a9b4319e0791c19096657d49128c879e71a1e0e0c1be5a5ef9c2de9c1ca80"
+    },
+    "GENERATION_PROMPTS.md": {
+      "bytes": 7378,
+      "sha256": "e03448251d3bf26e55be22fc233cf36dfeace81ac13d2fa6ff3dd1eaa67a7063"
+    },
+    "diagnostics/issue_coordinates.json": {
+      "bytes": 3717,
+      "sha256": "931fb4a6a4acb1c55f906907eb6ccb3a8edf3a1cb5c0bf4cd1ee4234ffb9e6d0"
+    }
+  }
+}

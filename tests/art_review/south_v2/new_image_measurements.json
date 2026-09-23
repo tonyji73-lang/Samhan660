@@ -1,0 +1,90 @@
+{
+	"method": "Same native transects x=610..650, water-color intervals. Approximate raster diagnostic only; NOT a land mask, verified feature correspondence or topology approval. Reference image has 1 native pixel resolution; quarter-pixel sampling is not quarter-pixel accuracy.",
+	"rows": [
+		{
+			"approved_water_color_runs": [
+				[
+					635.0,
+					638.0
+				]
+			],
+			"native_y": 740.25,
+			"v2_water_color_runs": [
+				[
+					635.25,
+					638.0
+				]
+			]
+		},
+		{
+			"approved_water_color_runs": [
+				[
+					625.0,
+					627.0
+				]
+			],
+			"native_y": 800.0,
+			"v2_water_color_runs": [
+				[
+					624.25,
+					628.0
+				]
+			]
+		},
+		{
+			"approved_water_color_runs": [
+				[
+					620.0,
+					631.0
+				]
+			],
+			"native_y": 820.0,
+			"v2_water_color_runs": [
+				[
+					610.5,
+					613.5
+				],
+				[
+					617.75,
+					629.75
+				]
+			]
+		},
+		{
+			"approved_water_color_runs": [
+				[
+					636.0,
+					645.0
+				]
+			],
+			"native_y": 840.0,
+			"v2_water_color_runs": [
+				[
+					636.25,
+					640.75
+				]
+			]
+		},
+		{
+			"approved_water_color_runs": [
+				[
+					637.0,
+					645.0
+				]
+			],
+			"native_y": 850.0,
+			"v2_water_color_runs": [
+				[
+					638.25,
+					645.0
+				]
+			]
+		},
+		{
+			"approved_water_color_runs": [],
+			"native_y": 860.0,
+			"v2_water_color_runs": []
+		}
+	],
+	"sha256": "7689732ac0034ebf482af41a1682f31e7e4697c7dbf473c977e64ab06adc33d8"
+}
