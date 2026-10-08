@@ -1,0 +1,161 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: distinct weighted efficiency formulas
+PASS: silla build real definition 2seasons =6months=600
+PASS: ability 90 build completes in 5 months
+PASS: completion and cost cannot repeat
+PASS: completed job cannot refund
+PASS: silla research real definition 2seasons =6months=600
+PASS: ability 90 research completes in 5 months
+PASS: completion and cost cannot repeat
+PASS: completed job cannot refund
+PASS: silla build real definition 2seasons =6months=600
+PASS: ability 30 build completes in 8 months
+PASS: completion and cost cannot repeat
+PASS: completed job cannot refund
+PASS: silla research real definition 2seasons =6months=600
+PASS: ability 30 research completes in 8 months
+PASS: completion and cost cannot repeat
+PASS: completed job cannot refund
+PASS: baekje build real definition 2seasons =6months=600
+PASS: ability 90 build completes in 5 months
+PASS: completion and cost cannot repeat
+PASS: completed job cannot refund
+PASS: baekje research real definition 2seasons =6months=600
+PASS: ability 90 research completes in 5 months
+PASS: completion and cost cannot repeat
+PASS: completed job cannot refund
+PASS: baekje build real definition 2seasons =6months=600
+PASS: ability 30 build completes in 8 months
+PASS: completion and cost cannot repeat
+PASS: completed job cannot refund
+PASS: baekje research real definition 2seasons =6months=600
+PASS: ability 30 research completes in 8 months
+PASS: completion and cost cannot repeat
+PASS: completed job cannot refund
+PASS: goguryeo build real definition 2seasons =6months=600
+PASS: ability 90 build completes in 5 months
+PASS: completion and cost cannot repeat
+PASS: completed job cannot refund
+PASS: goguryeo research real definition 2seasons =6months=600
+PASS: ability 90 research completes in 5 months
+PASS: completion and cost cannot repeat
+PASS: completed job cannot refund
+PASS: goguryeo build real definition 2seasons =6months=600
+PASS: ability 30 build completes in 8 months
+PASS: completion and cost cannot repeat
+PASS: completed job cannot refund
+PASS: goguryeo research real definition 2seasons =6months=600
+PASS: ability 30 research completes in 8 months
+PASS: completion and cost cannot repeat
+PASS: completed job cannot refund
+PASS: one duty across construction/research
+PASS: domestic cancel cannot bypass industry cancellation rules
+PASS: construction blocks agriculture
+PASS: common envoy/move/attack conflicts
+PASS: defense retained
+PASS: governor can share local construction
+PASS: different officer allows domestic and build concurrently
+PASS: three separate people concurrently develop/build/manage production
+PASS: one production manager per city, separate construction slot
+PASS: before first work refunds exact paid520 once
+PASS: second cancel denied
+PASS: first month140
+PASS: replacement retains progress and payment
+PASS: replacement changes next month to80
+PASS: pause retains work and releases duty
+PASS: paused native load 0
+PASS: paused native load 1
+PASS: paused native load 2
+PASS: paused save resumes with selected officer
+PASS: resume cannot replay an already elapsed month
+PASS: resumed work keeps220 then adds140
+PASS: after progress cancel has no refund
+PASS: research base loss pauses original country only
+PASS: research resumes at real friendly base
+PASS: research never transfers to occupier
+PASS: construction loss fixture
+PASS: construction capture ends without refund
+PASS: native632 legal production prerequisite smelter
+PASS: native632 legal production prerequisite forge
+PASS: native632 legal production prerequisite swordsmithing
+PASS: real prerequisite costs240+320+200=760 without altered technology/region rules
+PASS: native pilot recipe starts iron_supply
+PASS: native pilot recipe starts iron_sword
+PASS: city quote and execution share preceding supply outputs and exact costs
+PASS: fractional facility work retained separately
+PASS: fractional-false native load 0
+PASS: fractional-false native load 1
+PASS: fractional-false native load 2
+PASS: city quote and execution share preceding supply outputs and exact costs
+PASS: city quote and execution share preceding supply outputs and exact costs
+PASS: city quote and execution share preceding supply outputs and exact costs
+PASS: city quote and execution share preceding supply outputs and exact costs
+PASS: city quote and execution share preceding supply outputs and exact costs
+PASS: six months managerfalse cumulative production
+PASS: every extra batch pays6+10gold and2iron
+PASS: same month facility work/cost/output no duplicate
+PASS: production-false native load 0
+PASS: production-false native load 1
+PASS: production-false native load 2
+PASS: native632 legal production prerequisite smelter
+PASS: native632 legal production prerequisite forge
+PASS: native632 legal production prerequisite swordsmithing
+PASS: real prerequisite costs240+320+200=760 without altered technology/region rules
+PASS: manager uses free officer after completion
+PASS: native pilot recipe starts iron_supply
+PASS: native pilot recipe starts iron_sword
+PASS: city quote and execution share preceding supply outputs and exact costs
+PASS: fractional facility work retained separately
+PASS: fractional-true native load 0
+PASS: fractional-true native load 1
+PASS: fractional-true native load 2
+PASS: stop/resume and manager replacement cannot duplicate same-month fractional work
+PASS: city quote and execution share preceding supply outputs and exact costs
+PASS: city quote and execution share preceding supply outputs and exact costs
+PASS: city quote and execution share preceding supply outputs and exact costs
+PASS: city quote and execution share preceding supply outputs and exact costs
+PASS: city quote and execution share preceding supply outputs and exact costs
+PASS: six months managertrue cumulative production
+PASS: every extra batch pays6+10gold and2iron
+PASS: same month facility work/cost/output no duplicate
+PASS: production-true native load 0
+PASS: production-true native load 1
+PASS: production-true native load 2
+PASS: material-blocked months do not bank integer batches
+PASS: gold blocked both facilities no output or debit
+PASS: unblocked month no historical catch-up batches
+PASS: no valid manager preserves base production
+PASS: capture clears manager orders and residual work
+PASS: old remaining season converted to300 work without discarding past progress/cost
+PASS: unknown old performer/base/payment never invented
+PASS: legacy-migrated native load 0
+PASS: legacy-migrated native load 1
+PASS: legacy-migrated native load 2
+PASS: unassigned legacy work remains paused without payment
+PASS: legacy work accepts explicit assignment
+PASS: remaining300 resumes with no repayment
+PASS: unknown legacy payment never creates inferred refund
+PASS: explicit legacy assigned name resolves to existing ID without reassignment or payment
+PASS: concurrent national building silla
+PASS: concurrent national building baekje
+PASS: concurrent national building goguryeo
+PASS: all nations complete before production
+PASS: concurrent national research silla
+PASS: all nations complete before production
+PASS: concurrent national research baekje
+PASS: all nations complete before production
+PASS: concurrent national research goguryeo
+PASS: real prerequisite research complete silla
+PASS: real prerequisite research complete baekje
+PASS: real prerequisite research complete goguryeo
+PASS: same-month national production pays own320+200+10 silla
+PASS: same-month national production pays own320+200+10 baekje
+PASS: same-month national production pays own320+200+10 goguryeo
+PASS: lost qualification pauses manager but preserves base100
+PASS: paused manager releases person for a different task
+PASS: builder qualification loss preserves accumulated work without advancing
+INDUSTRY ASSIGNMENT TESTS: 155 checks, 0 failures

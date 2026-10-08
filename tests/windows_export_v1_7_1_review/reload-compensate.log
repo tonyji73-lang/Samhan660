@@ -1,0 +1,41 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+PASS: editor helper absent
+PASS: pack includes data/officers_v1.json
+PASS: pack includes cutscenes/cutscene_catalog_v1.json
+PASS: pack includes ui/faction_selection_v1/layout.json
+PASS: pack includes ui/faction_declaration_v1/declarations.json
+PASS: pack includes ui/korea_layout_v1/full_r3_v1/manifest.json
+PASS: pack includes licenses/NanumMyeongjo-OFL.txt
+PASS: pack includes licenses/SamhanUISans-OFL.txt
+PASS: pack includes licenses/GODOT-LICENSE.txt
+PASS: packed raw map hash
+PASS: title Korean glyphs
+PASS: V1.7 court packed
+PASS: politics preview packed
+PASS: new EXE process restores full campaign governorcompensate
+PASS: gold loyalty cooperation influence period units work restored governorcompensate
+PASS: same request ID cannot reapply cost/effects governorcompensate
+PASS: capture governor-compensate-restored
+PASS: actual month advances
+PASS: restored handover completes governorcompensate
+PASS: cost paid remains exact after monthly processing
+PASS: completed response ID remains idempotent after month
+PASS: capture governor-compensate-month-complete
+PASS: new EXE process restores full campaign commandercompensate
+PASS: gold loyalty cooperation influence period units work restored commandercompensate
+PASS: same request ID cannot reapply cost/effects commandercompensate
+PASS: capture commander-compensate-restored
+PASS: actual month advances
+PASS: restored handover completes commandercompensate
+PASS: cost paid remains exact after monthly processing
+PASS: completed response ID remains idempotent after month
+PASS: capture commander-compensate-month-complete
+PASS: new EXE process restores full campaign demandgift
+PASS: gold loyalty cooperation influence period units work restored demandgift
+PASS: same request ID cannot reapply cost/effects demandgift
+PASS: capture demand-gift-restored
+PASS: actual month advances
+PASS: capture demand-gift-month-complete
+EXPORT V1.7.1 reload-compensate: 37 checks, 0 failures

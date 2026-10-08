@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b02jk76f85qap"
+
+[deps]
+
+files=["res://data/officer_roster.이름.translation", "res://data/officer_roster.구분.translation", "res://data/officer_roster.무관·문관.translation", "res://data/officer_roster.업무 역할.translation", "res://data/officer_roster.성별.translation", "res://data/officer_roster.대표 나이.translation", "res://data/officer_roster.키(cm).translation", "res://data/officer_roster.체중(kg).translation", "res://data/officer_roster.체형.translation", "res://data/officer_roster.연도별 소속·지역.translation", "res://data/officer_roster.초상 파일.translation", "res://data/officer_roster.시트 칸(0부터).translation", "res://data/officer_roster.인물 출처·성격.translation"]
+
+source_file="res://data/officer_roster.csv"
+dest_files=["res://data/officer_roster.이름.translation", "res://data/officer_roster.구분.translation", "res://data/officer_roster.무관·문관.translation", "res://data/officer_roster.업무 역할.translation", "res://data/officer_roster.성별.translation", "res://data/officer_roster.대표 나이.translation", "res://data/officer_roster.키(cm).translation", "res://data/officer_roster.체중(kg).translation", "res://data/officer_roster.체형.translation", "res://data/officer_roster.연도별 소속·지역.translation", "res://data/officer_roster.초상 파일.translation", "res://data/officer_roster.시트 칸(0부터).translation", "res://data/officer_roster.인물 출처·성격.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

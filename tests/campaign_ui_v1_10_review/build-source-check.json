@@ -1,0 +1,14 @@
+﻿{
+    "Compared":  1295,
+    "Different":  [
+                      "project.godot"
+                  ],
+    "Excluded":  [
+                     "addons/lowpolyterrain/tests/.gdignore",
+                     "addons/lowpolyterrain/tests/test_low_poly_terrain.gd",
+                     "addons/lowpolyterrain/tests/test_low_poly_terrain_servers.gd"
+                 ],
+    "ProjectConfigDifference":  "Build-only opt-in QA autoload",
+    "ExeSHA256":  "3D19EE4A764E8BB153BFA7F811F98E0DFB0139C9E0C8BC6B76B93D3ED09185BF",
+    "PckSHA256":  "90FDBE93C76AB0B3AFF8718C7A573071275A080A95508512623740BF69E0634B"
+}

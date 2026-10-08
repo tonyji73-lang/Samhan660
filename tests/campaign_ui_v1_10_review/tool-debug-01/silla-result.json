@@ -1,0 +1,10 @@
+{
+	"checks": 2,
+	"evidence": {
+		"trace": []
+	},
+	"exe": "C:/Users/지용훈/AppData/Local/Temp/Samhan660_V1_7_1_20260930/tools/Godot.exe",
+	"failures": 0,
+	"slot": "user://ui_flow_v1_10_silla_1790820737_28860.json",
+	"user_dir": "C:/Users/지용훈/AppData/Roaming/Godot/app_userdata/Samhan660"
+}

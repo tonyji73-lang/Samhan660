@@ -1,0 +1,341 @@
+{
+  "version": "1.3-art-20260929",
+  "coordinate_system": "1920x1080 logical, canvas_items; 720p scale 2/3",
+  "source_policy": "Original generated PNG bytes preserved. Region selects visible artwork; no alpha threshold is applied to delivered PNGs.",
+  "region_method": "alpha > 8 bounding box + 4 source-pixel safety inset/outset; rect is x,y,width,height",
+  "margin_order": "left,right,top,bottom; texture slices are not content margins",
+  "assets": {
+    "lacquer_bar": {
+      "label": "상하단 칠기 프레임",
+      "file": "ui/living_city_v1/assets/ornaments/v1_3/lacquer_bar.png",
+      "source_size": [
+        1850,
+        850
+      ],
+      "source_region": [
+        2,
+        356,
+        1847,
+        135
+      ],
+      "hollow": false,
+      "mode": "RGBA",
+      "alpha_center": 253,
+      "central_alpha_max": 254,
+      "transparent_pixel_ratio": 0.841346,
+      "sha256": "6776eb4ae5433693941be56aba845cbd69d75f4f1e26278ed00ddd7962048d1c",
+      "original_filename": "exec-a65f5c3d-45a4-4968-bac0-82239cd15d95.png"
+    },
+    "primary_red": {
+      "label": "붉은 확정 버튼",
+      "file": "ui/living_city_v1/assets/ornaments/v1_3/primary_red.png",
+      "source_size": [
+        1974,
+        797
+      ],
+      "source_region": [
+        40,
+        260,
+        1894,
+        250
+      ],
+      "hollow": false,
+      "mode": "RGBA",
+      "alpha_center": 252,
+      "central_alpha_max": 254,
+      "transparent_pixel_ratio": 0.717724,
+      "sha256": "90d9a8fb9a18f1e03d4cedc88cf8143222a7435ec72cffad9d643f32515b51cb",
+      "original_filename": "exec-778a1c14-b64d-4b60-a3e5-7861e1076d0d.png"
+    },
+    "work_panel_frame": {
+      "label": "업무 패널 테두리",
+      "file": "ui/living_city_v1/assets/ornaments/v1_3/work_panel_frame.png",
+      "source_size": [
+        1075,
+        1463
+      ],
+      "source_region": [
+        29,
+        48,
+        1017,
+        1367
+      ],
+      "hollow": true,
+      "mode": "RGBA",
+      "alpha_center": 0,
+      "central_alpha_max": 1,
+      "transparent_pixel_ratio": 0.945408,
+      "sha256": "413f79988a63938777cdccef580db9d6d5910a157643b184140a9b755222be89",
+      "original_filename": "exec-55e53f8e-4d54-458c-8b97-234a14cddc21.png"
+    },
+    "candidate_frame": {
+      "label": "후보 카드 테두리",
+      "file": "ui/living_city_v1/assets/ornaments/v1_3/candidate_frame.png",
+      "source_size": [
+        1410,
+        1115
+      ],
+      "source_region": [
+        25,
+        85,
+        1360,
+        938
+      ],
+      "hollow": true,
+      "mode": "RGBA",
+      "alpha_center": 0,
+      "central_alpha_max": 1,
+      "transparent_pixel_ratio": 0.885433,
+      "sha256": "54073b2bf33c2f87445296da606d0ff1c729bdeb73e1d1c5ba1a61a51e2b8cb2",
+      "original_filename": "exec-e6f24ee4-f6fe-4a5c-8333-6f5128342460.png"
+    },
+    "title_divider": {
+      "label": "제목 구분선·메뉴 밑줄",
+      "file": "ui/living_city_v1/assets/ornaments/v1_3/title_divider.png",
+      "source_size": [
+        2193,
+        717
+      ],
+      "source_region": [
+        48,
+        318,
+        2095,
+        61
+      ],
+      "hollow": false,
+      "mode": "RGBA",
+      "alpha_center": 2,
+      "central_alpha_max": 255,
+      "transparent_pixel_ratio": 0.965309,
+      "sha256": "016e974b8ed1747376600ffec7f76b9fd94c0bd39659b4940279cd03f938e138",
+      "original_filename": "exec-2df6c08f-ca29-4249-b681-20a2098348b1.png"
+    },
+    "city_heading_frame": {
+      "label": "도시 제목 테두리",
+      "file": "ui/living_city_v1/assets/ornaments/v1_3/city_heading_frame.png",
+      "source_size": [
+        2111,
+        745
+      ],
+      "source_region": [
+        28,
+        285,
+        2055,
+        174
+      ],
+      "hollow": true,
+      "mode": "RGBA",
+      "alpha_center": 0,
+      "central_alpha_max": 1,
+      "transparent_pixel_ratio": 0.94428,
+      "sha256": "4aac77ab32801d4ab8237579ac6aebab3b71c81c2e3bbc20b4823bf3437028d1",
+      "original_filename": "exec-c9e70f93-276e-46f2-9c0b-a215bfdb17d3.png"
+    }
+  },
+  "profiles": {
+    "top": {
+      "asset": "lacquer_bar",
+      "logical_texture_size": [
+        1920,
+        88
+      ],
+      "example_draw_size": [
+        1920,
+        78
+      ],
+      "slice_lrtb": [
+        64,
+        64,
+        12,
+        12
+      ]
+    },
+    "bottom": {
+      "asset": "lacquer_bar",
+      "logical_texture_size": [
+        1920,
+        88
+      ],
+      "example_draw_size": [
+        1920,
+        88
+      ],
+      "slice_lrtb": [
+        64,
+        64,
+        16,
+        16
+      ]
+    },
+    "primary": {
+      "asset": "primary_red",
+      "logical_texture_size": [
+        648,
+        72
+      ],
+      "example_draw_size": [
+        648,
+        72
+      ],
+      "slice_lrtb": [
+        48,
+        48,
+        16,
+        16
+      ]
+    },
+    "work_panel": {
+      "asset": "work_panel_frame",
+      "logical_texture_size": [
+        672,
+        914
+      ],
+      "example_draw_size": [
+        672,
+        914
+      ],
+      "slice_lrtb": [
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    "candidate": {
+      "asset": "candidate_frame",
+      "logical_texture_size": [
+        192,
+        152
+      ],
+      "example_draw_size": [
+        185,
+        147
+      ],
+      "slice_lrtb": [
+        16,
+        16,
+        16,
+        16
+      ]
+    },
+    "officer_card": {
+      "asset": "candidate_frame",
+      "logical_texture_size": [
+        192,
+        152
+      ],
+      "example_draw_size": [
+        648,
+        182
+      ],
+      "slice_lrtb": [
+        16,
+        16,
+        16,
+        16
+      ]
+    },
+    "nav_border": {
+      "asset": "candidate_frame",
+      "logical_texture_size": [
+        192,
+        152
+      ],
+      "example_draw_size": [
+        279,
+        64
+      ],
+      "slice_lrtb": [
+        16,
+        16,
+        16,
+        16
+      ]
+    },
+    "divider": {
+      "asset": "title_divider",
+      "logical_texture_size": [
+        648,
+        12
+      ],
+      "example_draw_size": [
+        648,
+        12
+      ],
+      "slice_lrtb": [
+        40,
+        40,
+        0,
+        0
+      ]
+    },
+    "nav_underline": {
+      "asset": "title_divider",
+      "logical_texture_size": [
+        648,
+        12
+      ],
+      "example_draw_size": [
+        279,
+        12
+      ],
+      "slice_lrtb": [
+        40,
+        40,
+        0,
+        0
+      ]
+    },
+    "city_heading": {
+      "asset": "city_heading_frame",
+      "logical_texture_size": [
+        1196,
+        84
+      ],
+      "example_draw_size": [
+        1196,
+        83
+      ],
+      "slice_lrtb": [
+        32,
+        32,
+        12,
+        12
+      ]
+    }
+  },
+  "primary_states": {
+    "normal": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "hover": [
+      1.08,
+      1.08,
+      1.08,
+      1
+    ],
+    "pressed": [
+      0.78,
+      0.78,
+      0.78,
+      1
+    ],
+    "hover_pressed": [
+      0.85,
+      0.85,
+      0.85,
+      1
+    ],
+    "disabled": [
+      0.6,
+      0.6,
+      0.6,
+      0.72
+    ]
+  },
+  "focus": "Existing/native StyleBoxFlat: draw_center=false, 2px cream outline; no image swap",
+  "implementation_status": "PNG metadata, source regions, fonts and HTML references verified; browser runtime and Godot integration not verified here"
+}

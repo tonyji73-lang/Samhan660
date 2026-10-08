@@ -1,0 +1,56 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+PASS: editor helper absent
+PASS: pack includes data/officers_v1.json
+PASS: pack includes cutscenes/cutscene_catalog_v1.json
+PASS: pack includes ui/faction_selection_v1/layout.json
+PASS: pack includes ui/faction_declaration_v1/declarations.json
+PASS: pack includes ui/korea_layout_v1/full_r3_v1/manifest.json
+PASS: pack includes licenses/NanumMyeongjo-OFL.txt
+PASS: pack includes licenses/SamhanUISans-OFL.txt
+PASS: pack includes licenses/GODOT-LICENSE.txt
+PASS: packed raw map hash
+PASS: title Korean glyphs
+PASS: V1.7 court packed
+PASS: politics preview packed
+PASS: new EXE process restores full campaign governor
+PASS: gold loyalty cooperation influence period units work restored governor
+PASS: unanswered choices and targets preserved governor
+PASS: response quote read only governorcompensate
+PASS: cancel preserves politics
+PASS: capture governor-compensate-preview-720
+PASS: capture governor-compensate-preview-1080
+PASS: actual cost equals preview governorcompensate
+PASS: actual relations period and response equal preview
+PASS: actual units equal preview
+PASS: new slot preserves all existing saves governor-compensate
+PASS: default user path save governor-compensate
+PASS: capture governor-compensate-applied
+PASS: new EXE process restores full campaign commander
+PASS: gold loyalty cooperation influence period units work restored commander
+PASS: unanswered choices and targets preserved commander
+PASS: response quote read only commandercompensate
+PASS: cancel preserves politics
+PASS: capture commander-compensate-preview-720
+PASS: capture commander-compensate-preview-1080
+PASS: actual cost equals preview commandercompensate
+PASS: actual relations period and response equal preview
+PASS: actual units equal preview
+PASS: new slot preserves all existing saves commander-compensate
+PASS: default user path save commander-compensate
+PASS: capture commander-compensate-applied
+PASS: new EXE process restores full campaign demand
+PASS: gold loyalty cooperation influence period units work restored demand
+PASS: unanswered choices and targets preserved demand
+PASS: response quote read only demandgift
+PASS: cancel preserves politics
+PASS: capture demand-gift-preview-720
+PASS: capture demand-gift-preview-1080
+PASS: actual cost equals preview demandgift
+PASS: actual relations period and response equal preview
+PASS: actual units equal preview
+PASS: new slot preserves all existing saves demand-gift
+PASS: default user path save demand-gift
+PASS: capture demand-gift-applied
+EXPORT V1.7.1 respond-compensate: 52 checks, 0 failures

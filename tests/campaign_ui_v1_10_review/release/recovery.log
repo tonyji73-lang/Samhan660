@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+PASS: existing defeat accessible through GUI battle history
+PASS: capture recovery-result-720
+PASS: capture recovery-recruit-720
+PASS: capture recovery-units-720
+PASS: capture recovery-equipment-supply-720
+PASS: equipment supply return preserves surviving unit
+PASS: capture recovery-07-army
+PASS: capture recovery-08-training
+FAIL: recovery reaches actual sortie readiness
+PASS: capture recovery-sortie-720
+PASS: capture recovery-army-1080
+PASS: new native save slot
+EXPORT V1.10 recovery: 12 checks, 1 failures

@@ -1,0 +1,537 @@
+extends Control
+## Presentation only; all commands and forecasts use existing campaign rules.
+const CityStyle = preload("res://ui/living_city_v1/living_city_theme.gd")
+const Personnel = preload("res://noble_personnel.gd")
+const Politics = preload("res://noble_politics.gd")
+var campaign: Node
+var city: String
+var kind: String
+var selector: OptionButton
+var details: Label
+var status: Label
+var execute_button: Button
+var cancel_button: Button
+var close_button: Button
+var dismiss_button: Button
+var governor_button: Button
+var month_button: Button
+var header: Label
+var city_title: Label
+var jobs_label: Label
+var city_stats: Label
+var governor_label: Label
+var governor_portrait: TextureRect
+var title: Label
+var candidate_row: HBoxContainer
+var candidate_scroll: ScrollContainer
+var city_art: TextureRect
+var art_note: Label
+var officer_portrait: TextureRect
+var officer_summary: Label
+var officer_row: HBoxContainer
+var tasks_row: HBoxContainer
+var navigation: Dictionary = {}
+var task_buttons: Dictionary = {}
+var personnel_mode := false
+var busy := false
+var title_row: HBoxContainer
+var current_summary: Label
+var hero_caption: Label
+var hero_ability: Label
+var hero_context: Label
+var effect_heading: Label
+var detail_scroll: ScrollContainer
+var more_label: Label
+var dismiss_confirmation: ConfirmationDialog
+var dismiss_target := ""
+var preview_context := ""
+var hero_cache: Dictionary = {}
+
+func _label(parent: Node, value: String = "", font_size: int = 24) -> Label:
+	var label := Label.new()
+	label.text = value
+	label.add_theme_font_size_override("font_size", font_size)
+	if font_size >= 30: label.add_theme_font_override("font",CityStyle.Atlas.BOLD_FONT)
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	parent.add_child(label)
+	return label
+
+func _button(parent: Node, value: String, action: Callable) -> Button:
+	var button := Button.new()
+	button.text = value
+	CityStyle.button(button)
+	parent.add_child(button)
+	button.pressed.connect(action)
+	return button
+
+func _portrait(parent: Node, dimensions: Vector2) -> TextureRect:
+	var image := TextureRect.new()
+	image.custom_minimum_size = dimensions
+	image.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	image.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	image.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	parent.add_child(image)
+	return image
+
+func _panel(parent: Node, dark: bool = false) -> PanelContainer:
+	var panel := PanelContainer.new()
+	panel.add_theme_stylebox_override("panel",CityStyle.panel(dark))
+	parent.add_child(panel)
+	return panel
+
+func _ready() -> void:
+	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	mouse_filter = Control.MOUSE_FILTER_STOP
+	theme = CityStyle.make_theme()
+	var backdrop := ColorRect.new()
+	backdrop.color = CityStyle.DARK
+	backdrop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	backdrop.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(backdrop)
+	var top_panel := _panel(self,true)
+	top_panel.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
+	top_panel.offset_bottom = 78
+	var top := HBoxContainer.new()
+	top.add_theme_constant_override("separation",24)
+	top_panel.add_child(top)
+	var brand := _label(top,"삼한660",36)
+	brand.autowrap_mode = TextServer.AUTOWRAP_OFF
+	brand.size_flags_horizontal = Control.SIZE_FILL
+	brand.add_theme_color_override("font_color",CityStyle.GOLD)
+	header = _label(top)
+	header.add_theme_color_override("font_color",CityStyle.LIGHT)
+	header.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	var body := Control.new()
+	add_child(body)
+	body.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	body.offset_top = 78
+	body.offset_bottom = -88
+	var left := Control.new()
+	left.name = "CityPanorama"
+	body.add_child(left)
+	left.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	left.anchor_right = 0.65
+	left.clip_contents = true
+	city_art = _portrait(left,Vector2.ZERO)
+	var city_path := "res://ui/living_city_v1/assets/city.png"
+	city_art.texture = load(city_path) if ResourceLoader.exists(city_path) else ImageTexture.create_from_image(Image.load_from_file(city_path))
+	city_art.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
+	city_art.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var city_heading := _panel(left)
+	city_heading.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE)
+	city_heading.offset_left=26; city_heading.offset_right=-26
+	city_heading.offset_top=22; city_heading.offset_bottom=104
+	var heading_row := HBoxContainer.new()
+	city_heading.add_child(heading_row)
+	city_title = _label(heading_row,"",40)
+	art_note = _label(heading_row,"사람이 모여, 나라가 살아 숨 쉬는 도시",22)
+	art_note.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	for spot: Array in [["농경지",0.14,0.45,"agriculture"],["시장",0.48,0.60,"commerce"],["공방",0.82,0.70,"industry"]]:
+		var action: String = spot[3]
+		var button := _button(left,spot[0],func(): _task(action))
+		button.set_meta("dark",true)
+		CityStyle.button(button)
+		button.anchor_left=spot[1]; button.anchor_right=spot[1]
+		button.anchor_top=spot[2]; button.anchor_bottom=spot[2]
+		button.offset_left=-40; button.offset_top=-24
+		button.offset_right=94; button.offset_bottom=28
+		button.icon = CityStyle.Atlas.icon("plant" if action=="agriculture" else "buildings")
+	var ledger := _panel(left)
+	ledger.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
+	ledger.offset_left=26; ledger.offset_right=-26
+	ledger.offset_top=-205; ledger.offset_bottom=-22
+	var ledger_box := VBoxContainer.new()
+	ledger.add_child(ledger_box)
+	_label(ledger_box,"진행 업무 · 최근 기록",26)
+	var job_scroll := ScrollContainer.new()
+	job_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	job_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	ledger_box.add_child(job_scroll)
+	jobs_label = _label(job_scroll,"",22)
+	ledger_box.add_child(HSeparator.new())
+	city_stats = _label(ledger_box,"",22)
+	var right_panel := _panel(body)
+	right_panel.name = "CityWorkPanel"
+	right_panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	right_panel.anchor_left = 0.65
+	var grain := _portrait(right_panel,Vector2.ZERO)
+	grain.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	grain.texture = preload("res://assets/ui/hanji_overlay_texture_v1.png")
+	grain.stretch_mode=TextureRect.STRETCH_SCALE
+	grain.modulate.a=0.12
+	var right := VBoxContainer.new()
+	right.add_theme_constant_override("separation",6)
+	right_panel.add_child(right)
+	title_row = HBoxContainer.new()
+	right.add_child(title_row)
+	title = _label(title_row,"도시 업무",36)
+	governor_button = _button(title_row,"태수 변경",func(): _set_mode(not personnel_mode))
+	governor_button.add_theme_font_size_override("font_size",21)
+	var current_row := HBoxContainer.new()
+	right.add_child(current_row)
+	current_summary = _label(current_row,"",22)
+	current_summary.max_lines_visible=2
+	dismiss_button = _button(current_row,"태수 해임",_dismiss)
+	dismiss_button.clip_text=true
+	dismiss_button.custom_minimum_size.x=150
+	dismiss_button.add_theme_font_size_override("font_size",20)
+	var hero := HBoxContainer.new()
+	hero.add_theme_constant_override("separation",18)
+	right.add_child(hero)
+	governor_portrait = _portrait(hero,Vector2(280,250))
+	var hero_text := VBoxContainer.new()
+	hero_text.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	hero_text.add_theme_constant_override("separation",5)
+	hero.add_child(hero_text)
+	hero_caption = _label(hero_text,"현재 태수",21)
+	hero_caption.add_theme_color_override("font_color",Color("79653e"))
+	governor_label = _label(hero_text,"",36)
+	governor_label.max_lines_visible=1
+	hero_ability = _label(hero_text,"",29)
+	hero_context = _label(hero_text,"",21)
+	hero_context.max_lines_visible=4
+	tasks_row = HBoxContainer.new()
+	right.add_child(tasks_row)
+	for entry: Array in [["농업","agriculture"],["상업","commerce"],["건설","industry"]]:
+		var task: String=entry[1]
+		var button := _button(tasks_row,entry[0],func(): _task(task))
+		button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		task_buttons[task]=button
+	selector = OptionButton.new()
+	selector.custom_minimum_size.y=44
+	selector.fit_to_longest_item=false
+	selector.item_selected.connect(func(_n): refresh_quote())
+	right.add_child(selector)
+	officer_row = HBoxContainer.new()
+	officer_row.add_theme_constant_override("separation",12)
+	right.add_child(officer_row)
+	officer_portrait = _portrait(officer_row,Vector2(68,68))
+	officer_summary = _label(officer_row,"",22)
+	effect_heading = _label(right,"개발 견적",25)
+	detail_scroll = ScrollContainer.new()
+	detail_scroll.custom_minimum_size.y=72
+	detail_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	detail_scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	right.add_child(detail_scroll)
+	var detail_margin := MarginContainer.new()
+	detail_margin.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	detail_margin.add_theme_constant_override("margin_top",4)
+	detail_margin.add_theme_constant_override("margin_bottom",10)
+	detail_scroll.add_child(detail_margin)
+	details = _label(detail_margin,"",22)
+	more_label = _label(right,"추가 내역은 아래로 스크롤",18)
+	more_label.add_theme_color_override("font_color",Color("79653e"))
+	more_label.hide()
+	candidate_scroll = ScrollContainer.new()
+	candidate_scroll.custom_minimum_size.y=156
+	candidate_scroll.vertical_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	right.add_child(candidate_scroll)
+	candidate_row = HBoxContainer.new()
+	candidate_row.add_theme_constant_override("separation",10)
+	candidate_scroll.add_child(candidate_row)
+	status = _label(right,"",22)
+	status.max_lines_visible=2
+	status.add_theme_color_override("font_color",CityStyle.RED)
+	execute_button = _button(right,"개발 지시",_execute)
+	CityStyle.button(execute_button,false,true)
+	var commands := HBoxContainer.new()
+	right.add_child(commands)
+	cancel_button = _button(commands,"업무 취소",_cancel)
+	close_button = _button(commands,"닫기 (Esc)",hide)
+	for button: Button in [cancel_button,close_button]:
+		button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		button.add_theme_font_size_override("font_size",21)
+	dismiss_confirmation = ConfirmationDialog.new()
+	dismiss_confirmation.title="현재 태수 해임 확인"
+	dismiss_confirmation.confirmed.connect(_confirm_dismiss)
+	add_child(dismiss_confirmation)
+	visibility_changed.connect(func():
+		if not visible: dismiss_confirmation.hide(); dismiss_target="")
+
+	var footer_panel := _panel(self,true)
+	footer_panel.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
+	footer_panel.offset_top=-88
+	var footer := HBoxContainer.new()
+	footer.add_theme_constant_override("separation",16)
+	footer_panel.add_child(footer)
+	for entry: Array in [["내정","domestic","buildings"],["인사","personnel","users-three"],["군수","industry","sword"],["조정","politics","book-open"],["외교","diplomacy","users-three"],["지도","map","arrow-left"]]:
+		var target: String=entry[1]
+		var button := _button(footer,entry[0],func(): _navigate(target))
+		button.set_meta("dark",true)
+		button.icon=CityStyle.Atlas.icon(entry[2])
+		button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		navigation[target]=button
+	month_button = _button(footer,"다음 달  →",_next_month)
+	month_button.set_meta("dark",true)
+	CityStyle.button(month_button)
+	hide()
+
+
+func open(c: Node, city_id: String, task_kind: String) -> void:
+	campaign = c; city = city_id; kind = task_kind
+	personnel_mode = false
+	preview_context = ""
+	dismiss_confirmation.hide()
+	selector.clear()
+	refresh()
+	show()
+	move_to_front()
+	selector.grab_focus()
+
+func selected_id() -> String:
+	return str(selector.get_item_metadata(selector.selected)) if selector.selected >= 0 else ""
+
+func _texture(id: String) -> Texture2D:
+	return campaign.map_area._get_portrait_texture(str(campaign.get_officer(id).get("name","")))
+
+func _hero_texture(id: String) -> Texture2D:
+	# Reuse the existing 1024x1536 queen overlay; crop only the lower body.
+	# Crown and face remain inside the 832x832 upper-body region.
+	if campaign.get_officer(id).get("name","") != "선덕여왕": return _texture(id)
+	if not hero_cache.has(id):
+		var upper_body := AtlasTexture.new()
+		upper_body.atlas = preload("res://assets/portraits/overlays/seondeok_queen_overlay.png")
+		upper_body.region = Rect2(128,0,832,832)
+		hero_cache[id] = upper_body
+	return hero_cache[id]
+
+func _role(id: String) -> String:
+	if id.is_empty(): return "미배정"
+	if campaign.officer_registry.posts.get("ruler:"+campaign.player_faction_id,"") == id:
+		return "%s 군주" % campaign.player_faction
+	if campaign.get_governor_id(city) == id: return "현재 도시 태수"
+	return "현지 장수"
+
+func _present_hero(id: String, caption: String) -> void:
+	var person: Dictionary = campaign.get_officer(id)
+	hero_caption.text = caption
+	governor_label.text = str(person.get("name","공석" if not personnel_mode else "후보 없음"))
+	governor_label.tooltip_text = governor_label.text
+	governor_portrait.texture = _hero_texture(id)
+	hero_ability.text = "정치 %d · 지력 %d" % [person.get("politics",0),person.get("intelligence",0)]
+	hero_context.text = "%s\n개인 충성 %d" % [_role(id),person.get("loyalty",0)]
+	var group: Dictionary = campaign.officer_registry.get("politics",{}).get("groups",{}).get(Politics.group(campaign.officer_registry,id),{})
+	if not group.is_empty(): hero_context.text += "\n"+str(group.name)
+	hero_context.tooltip_text = hero_context.text
+
+func _update_detail_view(context: String) -> void:
+	# Only a new city/mode/candidate/task resets reading position. Same-context
+	# refreshes (including quote updates) preserve the player's scroll position.
+	if preview_context != context:
+		preview_context = context
+		detail_scroll.scroll_vertical = 0
+		_reset_detail_scroll.call_deferred(context)
+	_update_more_label.call_deferred()
+
+func _reset_detail_scroll(context: String) -> void:
+	if preview_context == context: detail_scroll.scroll_vertical = 0
+
+func _update_more_label() -> void:
+	effect_heading.text = "임명 시 변화" if personnel_mode else "개발 견적 · 담당자 기준"
+	if details.size.y > detail_scroll.size.y: effect_heading.text += " · 상세 ↓"
+	detail_scroll.tooltip_text = "긴 설명은 이 영역에서 스크롤할 수 있습니다."
+
+func refresh() -> void:
+	var previous := selected_id()
+	var active: Dictionary = campaign.Domestic.active_job(campaign.strategy_state,city)
+	if not personnel_mode and not active.is_empty(): previous = active.officer_id
+	selector.clear()
+	for id: String in campaign.get_city_officer_ids(city):
+		var p: Dictionary = campaign.get_officer(id)
+		selector.add_item("%s · 정치 %d / 지력 %d" % [p.name,p.politics,p.intelligence])
+		selector.set_item_metadata(selector.item_count-1,id)
+		if id == previous: selector.select(selector.item_count-1)
+	_build_candidates()
+	refresh_quote()
+
+func _build_candidates() -> void:
+	for child: Node in candidate_row.get_children():
+		candidate_row.remove_child(child); child.queue_free()
+	for n: int in range(selector.item_count):
+		var id: String = str(selector.get_item_metadata(n))
+		var p: Dictionary = campaign.get_officer(id)
+		var card := VBoxContainer.new()
+		card.custom_minimum_size.x = 185
+		candidate_row.add_child(card)
+		_portrait(card,Vector2(185,95)).texture = _hero_texture(id)
+		var index := n
+		var button := _button(card,p.name,func(): selector.select(index); refresh_quote())
+		button.set_meta("officer_id",id)
+		button.clip_text = true
+		button.add_theme_font_size_override("font_size",20)
+		button.tooltip_text = "%s · %s · 정치 %d / 지력 %d" % [p.name,_role(id),p.politics,p.intelligence]
+
+func refresh_quote() -> void:
+	var province: Dictionary = campaign.provinces[city]
+	var g: String = campaign.get_governor_id(city)
+	var p: Dictionary = campaign.get_officer(g)
+	header.text = "%s · %s  |  %d년 %d월     국고 %d  |  도시 군량 %d" % [campaign.player_faction,province.name,campaign.year,campaign.month,campaign.gold,province.food_stock]
+	city_title.text = province.name+" 내정"
+	city_art.visible = city == "geumseong"
+	art_note.text = "사람이 모여, 나라가 살아 숨 쉬는 서라벌" if city == "geumseong" else "도시 전경 준비 중 · 실제 도시 현황"
+	_present_hero(g,"현재 태수")
+	var operation: Dictionary = campaign.city_operation_quote(city)
+	hero_context.text += "\n운영 효과 +%.1f%%" % ((float(operation.governor.multiplier)-1.0)*100.0)
+	current_summary.text = "현재 태수 · %s\n현재 월 세입 %d · 운영 +%.1f%%" % [p.get("name","공석"),operation.tax,(float(operation.governor.multiplier)-1.0)*100.0]
+	current_summary.tooltip_text = campaign.get_city_operation_text(city)
+	current_summary.get_parent().visible = personnel_mode
+	city_stats.text = "민간 인구 %d  ·  치안 %d\n농업 %d  ·  상업 %d  ·  월 세입 %d" % [province.population,province.public_order,province.agriculture,province.commerce,campaign.city_operation_quote(city).tax]
+	var lines: Array[String] = []
+	for job: Dictionary in campaign.strategy_state.get("domestic",{}).get("jobs",{}).values():
+		if job.city_id != city: continue
+		var job_name: String = {"agriculture":"농업 개발","commerce":"상업 개발"}.get(job.kind,job.get("name",job.kind))
+		var job_status: String = {"pending":"진행 중","paused":"중지","completed":"완료","cancelled":"취소","interrupted":"중단"}.get(job.status,job.status)
+		var reason: String = str(job.get("reason",""))
+		if reason.is_empty() and job.has("due_month"):
+			var due: int = int(job.due_month)
+			reason = "완료 예정 %d년 %d월" % [int((due-1)/12.0),(due-1)%12+1]
+		elif reason.is_empty() and job.has("progress"):
+			reason = "진행 %d / %d" % [job.progress,job.get("required",0)]
+		lines.append("%s · %s · %s\n%s" % [job_name,campaign.get_officer(job.officer_id).get("name",job.officer_id),job_status,reason])
+	jobs_label.text = "진행 중인 개발 업무가 없습니다." if lines.is_empty() else "\n".join(lines)
+	candidate_scroll.visible = personnel_mode
+	tasks_row.visible = not personnel_mode
+	governor_portrait.get_parent().visible = true
+	selector.visible = not personnel_mode
+	officer_row.visible = not personnel_mode
+	var selected_person: Dictionary = campaign.get_officer(selected_id())
+	officer_portrait.texture = _hero_texture(selected_id())
+	officer_summary.text = "담당자  %s\n위치 %s · %s" % [selected_person.get("name","후보 없음"),campaign.provinces.get(selected_person.get("location",""),{}).get("name","미배치"),_role(selected_id())]
+	for duty: Dictionary in selected_person.get("duties",[]): officer_summary.text += " · "+str(duty.get("kind",""))
+	governor_button.text = "내정으로" if personnel_mode else "태수 변경"
+	for key: String in navigation: CityStyle.button(navigation[key],key == ("personnel" if personnel_mode else "domestic"))
+	for key: String in task_buttons: CityStyle.button(task_buttons[key],not personnel_mode and key==kind)
+	for card: Node in candidate_row.get_children():
+		var button: Button = card.get_child(1)
+		var selected: bool = button.get_meta("officer_id") == selected_id()
+		CityStyle.button(button,selected)
+		button.text = ("선택 · " if selected else "")+str(campaign.get_officer(button.get_meta("officer_id")).name)
+	dismiss_button.visible = personnel_mode
+	dismiss_button.text = "%s 해임" % p.get("name","태수")
+	dismiss_button.tooltip_text = "현재 태수 %s 해임 · 확인 후 기존 인계 규칙 적용" % p.get("name","공석")
+	dismiss_button.disabled = g.is_empty()
+	cancel_button.text = "선택 취소" if personnel_mode else "업무 취소"
+	if personnel_mode:
+		effect_heading.text = "임명 시 변화"
+		_personnel_quote()
+		_update_detail_view(city+":personnel:"+selected_id())
+		return
+	var q: Dictionary = campaign.get_domestic_quote(city,kind,selected_id())
+	var active: Dictionary = campaign.Domestic.active_job(campaign.strategy_state,city)
+	title.text = "농업 개발" if kind=="agriculture" else "상업 개발"
+	effect_heading.text = "개발 견적 · 선택 담당자 기준"
+	var due: int = int(active.get("due_month",q.due_month))
+	selector.disabled = not active.is_empty()
+	details.text = "비용: 금 %d · 기간: 월 진행 %d회\n예정 성과: +%d (상한 100)\n완료: %d년 %d월\n\n현재 태수의 운영 효과 (담당자 성과와 별도)\n%s" % [q.cost,campaign.Domestic.MONTHS,active.get("planned_gain",q.gain),int((due-1)/12.0),(due-1)%12+1,campaign.get_city_operation_text(city)]
+	if not lines.is_empty(): details.text += "\n\n"+lines.back()
+	status.text = "담당자 배정 가능" if q.ok else str(q.reason)
+	execute_button.text = "개발 지시 · 금 %d" % q.cost
+	execute_button.disabled = not q.ok or busy
+	cancel_button.disabled = active.is_empty()
+	status.tooltip_text = status.text
+	_update_detail_view(city+":"+kind+":"+selected_id())
+
+func _personnel_quote() -> void:
+	title.text = "태수 임명"
+	cancel_button.disabled = false
+	execute_button.text = "임명 확정"
+	var id := selected_id()
+	var q: Dictionary = Personnel.quote(campaign,campaign.player_faction_id,"governor",city,id)
+	execute_button.disabled = not q.ok or busy
+	status.text = "후보가 없습니다. 선택을 취소할 수 있습니다." if id.is_empty() else ("확정 전에는 직책·국고가 변경되지 않습니다." if q.ok else str(q.reason))
+	status.tooltip_text = status.text
+	_present_hero(id,"선택 후보")
+	var person: Dictionary = campaign.get_officer(id)
+	var old_id: String = campaign.get_governor_id(city)
+	var old_name: String = campaign.get_officer(old_id).get("name","공석")
+	details.text = "현재 %s → 후보 %s" % [old_name,person.get("name","없음")]
+	if not q.ok:
+		details.text += "\n"+str(q.reason)
+		return
+	var transfer: Dictionary = campaign.Power.quote(campaign,{"kind":"governor","target":city,"officer_id":id,"faction_id":campaign.player_faction_id})
+	if not transfer.ok:
+		execute_button.disabled = true
+		status.text = transfer.reason
+		status.tooltip_text = status.text
+		details.text += "\n"+str(transfer.reason)
+		return
+	var difference: int = int(q.ability)-int(q.old_ability)
+	details.text += "\n태수 정치 %d → %d (차이 %s%d)" % [q.old_ability,q.ability,"+" if difference>=0 else "",difference]
+	if transfer.get("required",false):
+		status.text = "권력 인계 협의가 필요합니다."
+		execute_button.text = "인계 조건 확인"
+		details.text += "\n"+campaign.Power.describe(campaign,transfer)
+	else:
+		details.text += "\n현지 임명 · 기존 개발 업무 유지"
+		for reaction: Dictionary in q.reactions:
+			var loyalty_delta: int = int(reaction.loyalty_after)-int(reaction.loyalty_before)
+			var cooperation_delta: int = int(reaction.cooperation_after)-int(reaction.cooperation_before)
+			details.text += "\n%s 개인 충성 %d → %d (%s%d)\n집단 협력 %d → %d (%s%d)" % [campaign.get_officer(reaction.officer_id).name,reaction.loyalty_before,reaction.loyalty_after,"+" if loyalty_delta>=0 else "",loyalty_delta,reaction.cooperation_before,reaction.cooperation_after,"+" if cooperation_delta>=0 else "",cooperation_delta]
+		if q.reactions.is_empty(): details.text += "\n공통 견적의 개인 충성·집단 협력 변화 없음"
+		for gid: String in q.before.groups:
+			var group: Dictionary = campaign.officer_registry.politics.groups[gid]
+			var before: float = q.before.groups[gid].influence
+			var after: float = q.after.groups[gid].influence
+			details.text += "\n%s 집단 영향력 %.1f → %.1f (%s%.1f)" % [group.name,before,after,"+" if after>=before else "",after-before]
+	if _role(id).ends_with("군주"):
+		details.text += "\n군주 후보: 기존 공통 임명 검증에서 태수 겸임을 허용합니다. 군주 직책은 유지됩니다."
+	details.text += "\n세입·수확 예상 증감은 제공되지 않습니다.\n임명 후 실제 운영 수치를 갱신합니다."
+	for duty: Dictionary in person.get("duties",[]): details.text += "\n후보의 현재 업무: "+str(duty.get("kind",""))
+
+
+func _execute() -> void:
+	if busy or execute_button.disabled or dismiss_confirmation.visible: return
+	busy = true
+	var result: Dictionary
+	if personnel_mode: result = Personnel.appoint(campaign,campaign.player_faction_id,"governor",city,selected_id())
+	else: result = campaign.start_domestic(city,kind,selected_id())
+	busy = false
+	campaign.update_top_bar()
+	refresh()
+	status.text = str(result.get("reason","")) if not result.ok else ("태수 임명 완료" if personnel_mode else "개발 접수 완료")
+
+func _cancel() -> void:
+	if personnel_mode: _set_mode(false); return
+	var job: Dictionary = campaign.Domestic.active_job(campaign.strategy_state,city)
+	if not job.is_empty(): campaign.cancel_domestic(job.id)
+	refresh()
+
+func _dismiss() -> void:
+	dismiss_target = campaign.get_governor_id(city)
+	if dismiss_target.is_empty(): return
+	dismiss_confirmation.dialog_text = "현재 태수 %s을(를) 해임하시겠습니까?\n확정 시 기존 권력 인계 규칙을 적용합니다." % campaign.get_officer(dismiss_target).name
+	dismiss_confirmation.popup_centered(Vector2i(650,190))
+
+func _confirm_dismiss() -> void:
+	if dismiss_target.is_empty() or campaign.get_governor_id(city) != dismiss_target:
+		refresh()
+		status.text = "현재 태수가 바뀌었습니다. 다시 확인하세요."
+		return
+	var success: bool = campaign.dismiss_governor(city)
+	dismiss_target = ""
+	refresh()
+	status.text = "태수 해임 완료" if success else "해임 제한 · 권력 인계 현황을 확인하세요."
+
+func _set_mode(value: bool) -> void:
+	personnel_mode = value
+	refresh()
+
+func _task(value: String) -> void:
+	if value == "industry": _navigate("industry"); return
+	kind = value; personnel_mode = false; refresh()
+
+func _navigate(target: String) -> void:
+	match target:
+		"domestic": _set_mode(false)
+		"personnel": _set_mode(true)
+		"industry": hide(); campaign._on_city_card_production_requested(city)
+		"politics": hide(); campaign.open_politics()
+		"diplomacy": hide(); campaign._open_diplomacy()
+		"map": hide()
+
+func _next_month() -> void:
+	# The existing turn handler retains event, ending and transition locks.
+	if busy: return
+	hide()
+	campaign._on_end_turn_button_pressed()

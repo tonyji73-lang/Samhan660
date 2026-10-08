@@ -1,0 +1,287 @@
+{
+	"checks": 39,
+	"evidence": {
+		"battle": {
+			"attack_units": [
+				"unit:17",
+				"unit:46",
+				"unit:51",
+				"unit:52",
+				"unit:53"
+			],
+			"attacker_faction": "silla",
+			"attacker_leadership": 86,
+			"attacker_losses": 11275,
+			"attacker_power": 120900.0,
+			"attacker_state": [
+				{
+					"commander_id": "historical:002",
+					"creation_reason": "scenario_or_legacy_no_retroactive_charge",
+					"equipment": 18000,
+					"faction_id": "silla",
+					"id": "unit:17",
+					"kind": "infantry",
+					"legacy_faction": "신라",
+					"legacy_fields": {
+						"category": "infantry",
+						"morale": 55,
+						"name": "보병",
+						"training": 50,
+						"troops": 18000
+					},
+					"location": "gukwon",
+					"origin_basis": "existing origins if count matches; otherwise legacy stationed city",
+					"origins": {
+						"gukwon": 18000
+					},
+					"power": 50,
+					"status": "stationed",
+					"training_points": 900000,
+					"transfer_id": "",
+					"troops": 18000
+				},
+				{
+					"commander_id": "",
+					"creation_reason": "split",
+					"equipment": 11200,
+					"faction_id": "silla",
+					"id": "unit:46",
+					"kind": "infantry",
+					"location": "gukwon",
+					"origins": {
+						"chupungnyeong": 11200
+					},
+					"parent_unit_id": "unit:5",
+					"power": 50,
+					"status": "stationed",
+					"training_points": 560000,
+					"transfer_id": "",
+					"troops": 11200
+				},
+				{
+					"commander_id": "",
+					"creation_reason": "split",
+					"equipment": 9400,
+					"faction_id": "silla",
+					"id": "unit:51",
+					"kind": "infantry",
+					"location": "gukwon",
+					"origins": {
+						"jukryeong": 9400
+					},
+					"parent_unit_id": "unit:22",
+					"power": 50,
+					"status": "stationed",
+					"training_points": 470000,
+					"transfer_id": "",
+					"troops": 9400
+				},
+				{
+					"commander_id": "",
+					"creation_reason": "split",
+					"equipment": 17000,
+					"faction_id": "silla",
+					"id": "unit:52",
+					"kind": "infantry",
+					"location": "gukwon",
+					"origins": {
+						"sabeol": 17000
+					},
+					"parent_unit_id": "unit:25",
+					"power": 50,
+					"status": "stationed",
+					"training_points": 850000,
+					"transfer_id": "",
+					"troops": 17000
+				},
+				{
+					"commander_id": "",
+					"creation_reason": "split",
+					"equipment": 9400,
+					"faction_id": "silla",
+					"id": "unit:53",
+					"kind": "infantry",
+					"location": "gukwon",
+					"origins": {
+						"samnyeonsanseong": 9400
+					},
+					"parent_unit_id": "unit:27",
+					"power": 50,
+					"status": "stationed",
+					"training_points": 470000,
+					"transfer_id": "",
+					"troops": 9400
+				}
+			],
+			"attacker_troops": 65000,
+			"battle_id": "battle:d8af24b7bdc0591c1349c910b8b806d0",
+			"defend_units": [
+				"unit:43",
+				"unit:56"
+			],
+			"defender_faction": "baekje",
+			"defender_leadership": 90,
+			"defender_losses": 20500,
+			"defender_power": 46920.0,
+			"defender_state": [
+				{
+					"commander_id": "",
+					"creation_reason": "scenario_or_legacy_no_retroactive_charge",
+					"equipment": 20000,
+					"faction_id": "baekje",
+					"id": "unit:43",
+					"kind": "infantry",
+					"legacy_faction": "백제",
+					"legacy_fields": {
+						"category": "infantry",
+						"morale": 55,
+						"name": "보병",
+						"training": 50,
+						"troops": 20000
+					},
+					"location": "ungjin",
+					"origin_basis": "existing origins if count matches; otherwise legacy stationed city",
+					"origins": {
+						"ungjin": 20000
+					},
+					"power": 50,
+					"status": "stationed",
+					"training_points": 1000000,
+					"transfer_id": "",
+					"troops": 20000
+				},
+				{
+					"commander_id": "",
+					"creation_reason": "recruitment",
+					"equipment": 0,
+					"faction_id": "baekje",
+					"id": "unit:56",
+					"kind": "infantry",
+					"location": "ungjin",
+					"origins": {
+						"ungjin": 500
+					},
+					"power": 50,
+					"status": "stationed",
+					"training_points": 25000,
+					"transfer_id": "",
+					"troops": 500
+				}
+			],
+			"defender_troops": 20500,
+			"fortress": 80,
+			"merit_version": 1,
+			"month": 7712,
+			"participants": [
+				{
+					"battle_leader": true,
+					"commanded_units": [
+						"unit:17"
+					],
+					"faction_id": "silla",
+					"group_id": "silla:civil",
+					"name": "알천",
+					"officer_id": "historical:002",
+					"side": "attacker",
+					"unit_ids": [
+						"unit:17",
+						"unit:46",
+						"unit:51",
+						"unit:52",
+						"unit:53"
+					],
+					"won": true
+				},
+				{
+					"battle_leader": true,
+					"commanded_units": [],
+					"faction_id": "baekje",
+					"group_id": "",
+					"name": "윤충",
+					"officer_id": "historical:014",
+					"side": "defender",
+					"unit_ids": [
+						"unit:43",
+						"unit:56"
+					],
+					"won": false
+				}
+			],
+			"reward_enabled": true,
+			"rewards": {
+				"historical:002": {
+					"cooperation_after": 56,
+					"cooperation_before": 50,
+					"cost": 100,
+					"group_id": "silla:civil",
+					"has_group": true,
+					"loyalty_after": 63,
+					"loyalty_before": 58,
+					"month": 7712,
+					"officer_id": "historical:002",
+					"ok": true,
+					"reason": "금100 · 충성 +5 · 집단 협력 +6 (상한100)",
+					"transaction_id": "battle:d8af24b7bdc0591c1349c910b8b806d0:historical:002:reward"
+				}
+			},
+			"source": "gukwon",
+			"target": "ungjin",
+			"won": true
+		},
+		"trace": [
+			{
+				"message": "북한산성에서 삼년산성로 병력 5800명 이동을 명령했습니다. 1턴 후 도착합니다.",
+				"ok": true
+			},
+			{
+				"message": "추풍령 교통권에서 국원소경로 병력 11200명 이동을 명령했습니다. 1턴 후 도착합니다.",
+				"ok": true
+			},
+			{
+				"message": "달구벌에서 추풍령 교통권로 병력 5800명 이동을 명령했습니다. 1턴 후 도착합니다.",
+				"ok": true
+			},
+			{
+				"message": "금관가야에서 금성로 병력 9400명 이동을 명령했습니다. 1턴 후 도착합니다.",
+				"ok": true
+			},
+			{
+				"message": "금성에서 달구벌로 병력 25000명 이동을 명령했습니다. 1턴 후 도착합니다.",
+				"ok": true
+			},
+			{
+				"message": "하슬라에서 죽령 교통권로 병력 4000명 이동을 명령했습니다. 1턴 후 도착합니다.",
+				"ok": true
+			},
+			{
+				"message": "죽령 교통권에서 국원소경로 병력 9400명 이동을 명령했습니다. 1턴 후 도착합니다.",
+				"ok": true
+			},
+			{
+				"message": "사벌주에서 국원소경로 병력 17000명 이동을 명령했습니다. 1턴 후 도착합니다.",
+				"ok": true
+			},
+			{
+				"message": "삼년산성에서 국원소경로 병력 9400명 이동을 명령했습니다. 1턴 후 도착합니다.",
+				"ok": true
+			},
+			{
+				"message": "실직에서 죽령 교통권로 병력 5800명 이동을 명령했습니다. 1턴 후 도착합니다.",
+				"ok": true
+			},
+			{
+				"message": "울릉에서 하슬라로 병력 5800명 이동을 명령했습니다. 1턴 후 도착합니다.",
+				"ok": true
+			},
+			{
+				"ratio": 2.576726342711,
+				"source": "gukwon",
+				"target": "ungjin"
+			}
+		]
+	},
+	"exe": "C:/Users/지용훈/AppData/Local/Temp/Samhan660_V1_7_1_20260930/tools/Godot.exe",
+	"failures": 0,
+	"slot": "user://living_city_v1_9_victory_1790816827_30228.json",
+	"user_dir": "C:/Users/지용훈/AppData/Roaming/Godot/app_userdata/Samhan660"
+}

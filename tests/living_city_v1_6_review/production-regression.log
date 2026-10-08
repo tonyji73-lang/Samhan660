@@ -1,0 +1,197 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: normal batch: gold 100 -> 90, iron 10 -> 8, sword 0 -> 1
+PASS: same month does not produce twice
+PASS: stop/start cannot bypass month guard
+PASS: following month produces one batch
+PASS: material: no partial deduction
+PASS: material: explains suspension or ownership stop
+PASS: gold: no partial deduction
+PASS: gold: explains suspension or ownership stop
+PASS: technology: no partial deduction
+PASS: technology: explains suspension or ownership stop
+PASS: facility: no partial deduction
+PASS: facility: explains suspension or ownership stop
+PASS: stopped: no partial deduction
+PASS: ownership: no partial deduction
+PASS: ownership: explains suspension or ownership stop
+PASS: order_owner: no partial deduction
+PASS: order_owner: explains suspension or ownership stop
+PASS: exact material and gold boundary
+PASS: foreign production command rejected
+PASS: unknown recipe rejected
+PASS: missing city rejected
+PASS: JSON round trip preserves stocks, settings and month guard
+PASS: legacy defaults grant no resources
+PASS: two cities cannot spend the same national gold
+PASS: catalog has exactly 14 core and 4 expansion items
+PASS: catalog IDs, categories, evidence sources and unconfirmed placements are consistent
+PASS: all four expansion candidates remain inactive without recipes
+PASS: weapons is an alias of sword, not an additional item
+PASS: added supply does not replace existing iron 2 / gold 10 / sword 1 balance
+PASS: previous iron/sword-only save keeps both quantities
+PASS: alias lookup reads the single sword ledger
+PASS: grain reads food_stock without creating inventory grain
+PASS: grain lookup immediately reflects existing food economy changes
+PASS: inventory view includes 14 core items with one weapons count
+PASS: UI snapshot cannot write back into either ledger
+PASS: duplicate aliases are removed without summing or granting grain/weapons
+PASS: alias-only input is canonicalized once without duplication
+PASS: catalog normalization is idempotent
+PASS: item definitions are not executable recipes and inactive defaults create no stocks
+PASS: injected order for an unimplemented product cannot execute
+PASS: real new campaign receives no test iron
+PASS: new campaign does not claim historical production technology
+PASS: research command assigns officer, requires300 monthly work, charges200
+PASS: repeated research command does not charge again
+PASS: construction retains320cost; two seasons convert to600work
+PASS: repeated construction command does not charge again
+PASS: research complete but unfinished forge cannot qualify
+PASS: forge completes once via monthly assigned work
+PASS: city card has six actions in two rows
+PASS: current settlement map visible
+PASS: production button -> card signal -> map signal -> campaign -> overlay
+PASS: production panel retains viewport margins
+PASS: production screen shows inventory and blocked material
+PASS: default inventory prioritizes held goods and current recipe inputs/outputs
+PASS: unplaced main-game iron supply is explicitly explained
+PASS: all items toggle displays core roles and inactive expansion candidates
+PASS: catalog offers no manufacturing controls for definitions alone
+PASS: return from catalog preserves original production controls
+PASS: campaign UI API rejects products without implemented recipes
+PASS: screen start action persists production setting
+PASS: Esc returns to map
+PASS: close button returns to map
+PASS: foreign production view disables commands
+PASS: campaign rejects stale UI command after ownership change
+PASS: one turn = one month, monthly commerce then one production charge
+PASS: actual end turn produces one batch
+PASS: production preserves monthly troop upkeep and storage loss
+PASS: harvest collection remains 45 percent
+PASS: commerce and troop food formula unchanged
+PASS: normal stock loss 0.5 percent and excess loss 7.5 percent
+PASS: winter stock loss remains 1 percent
+PASS: public order efficiency preserved
+PASS: September receives 70 percent of collected harvest
+PASS: October receives remaining 30 percent
+PASS: test save written to isolated temporary path
+PASS: actual save/load restores gold, city stocks and production settings without granting resources
+PASS: actual reload cannot repeat same month production
+PASS: actual previous v4 iron/sword-only save preserves stocks and gold
+PASS: actual load creates neither duplicate grain nor duplicate weapons ledger
+PASS: legacy queues require explicit assignment, no free monthly progress
+PASS: April season cannot double-process assigned work
+PASS: unfinished facilities still block production
+PASS: monthly completion applies before same-month production
+PASS: actual v3 load defaults to zero stocks and stopped production
+PASS: iron supply: gold 100 -> 84, iron 0, sword 1
+PASS: iron supply: same-month stop/start and added funds cannot retry successful OR suspended orders
+PASS: iron supply: JSON load cannot retry same month
+PASS: iron supply: next month permits exactly one batch per process
+PASS: iron supply: gold 15 -> 9, iron 2, sword 0
+PASS: iron supply: manufacture explains shortage
+PASS: iron supply: same-month stop/start and added funds cannot retry successful OR suspended orders
+PASS: iron supply: JSON load cannot retry same month
+PASS: iron supply: next month permits exactly one batch per process
+PASS: iron supply: gold 5 -> 5, iron 0, sword 0
+PASS: iron supply: manufacture explains shortage
+PASS: iron supply: supply explains insufficient funds
+PASS: iron supply: same-month stop/start and added funds cannot retry successful OR suspended orders
+PASS: iron supply: JSON load cannot retry same month
+PASS: iron supply: next month permits exactly one batch per process
+PASS: iron supply: region blocks supply with no resource changes
+PASS: iron supply: region has a visible reason
+PASS: iron supply: confirmation blocks supply with no resource changes
+PASS: iron supply: confirmation has a visible reason
+PASS: iron supply: scenario blocks supply with no resource changes
+PASS: iron supply: scenario has a visible reason
+PASS: iron supply: technology blocks supply with no resource changes
+PASS: iron supply: technology has a visible reason
+PASS: iron supply: facility blocks supply with no resource changes
+PASS: iron supply: facility has a visible reason
+PASS: iron supply: ownership blocks supply with no resource changes
+PASS: iron supply: ownership has a visible reason
+PASS: iron supply: iron_supply stops independently
+PASS: iron supply: iron_sword stops independently
+PASS: iron supply: old single-process save preserves order owner, stocks and stamp; new supply is stopped
+PASS: iron supply: capture and recapture stop both orders without moving research or destroying stocks/facilities
+PASS: iron supply: old owner cannot restart
+PASS: iron supply: new owner cannot reuse previous owner's national technology
+PASS: iron supply: new owner restarts with own technology and supplied national funds
+PASS: iron supply: skipped months never generate catch-up batches
+PASS: iron supply: late regional unlock cannot retry a suspended month
+PASS: iron supply: shared funds: ascending city ID, supply then manufacture WITHIN each city
+PASS: iron supply: common smelter construction is independent of regional extraction permission
+PASS: iron supply: smelter uses existing queue with gold 240 and two seasonal ticks
+PASS: iron supply: duplicate construction rejected
+PASS: iron supply: unfinished smelter stays inactive
+PASS: iron supply: smelter completes, max level one enforced
+PASS: iron supply: already held smelting cannot be researched twice
+PASS: iron supply: Ugye-ri is evidence only, not a confirmed mine or placement
+PASS: iron supply: silla_equilibrium_632: only 632/642 geumgwan pilot permitted
+PASS: iron supply: goguryeo_coup_642: only 632/642 geumgwan pilot permitted
+PASS: iron supply: baekje_fall_660: only 632/642 geumgwan pilot permitted
+PASS: iron supply: baekgang_663: only 632/642 geumgwan pilot permitted
+PASS: iron supply: silla_tang_war_670: only 632/642 geumgwan pilot permitted
+PASS: iron supply: new campaign does not grant basic smelting
+PASS: iron supply: unrelated research queue is not displayed as basic smelting research
+PASS: iron supply: regional supply stays locked while common infrastructure is accessible
+PASS: iron supply: main-game command API cannot bypass region lock
+PASS: iron supply: technology and facility cannot unlock unplaced region
+PASS: iron supply: injected enabled order still cannot produce in main game
+PASS: iron supply: construction gold shortage charges nothing
+PASS: iron supply: campaign construction charges existing quote exactly once
+PASS: iron supply: repeated build does not charge again
+PASS: iron supply: switching displayed process preserves both reservations
+PASS: iron supply: supply stop button does not cancel sword
+PASS: iron supply: sword stop button does not cancel supply
+PASS: iron supply: UI renders every required technology and facility
+PASS: iron supply: explicit requirement routing rejects forged requirement outside the selected recipe
+PASS: iron supply: save cannot embed regional permission table
+PASS: iron supply: real save/load restores both reservations, owner, gold, inventory and stamp without producing
+PASS: iron supply: real reload cannot repeat completed month
+PASS: iron supply: real previous v4 load adds stopped supply only
+PASS: iron supply: actual player combat capture stops both processes
+PASS: iron supply: combat capture preserves research ownership, facilities and item stocks
+PASS: iron supply: actual AI combat capture stops both processes
+PASS: iron supply: combat capture preserves research ownership, facilities and item stocks
+PASS: iron pilot: 632 real new-game owner remains Silla
+PASS: iron pilot: 632 only pilot Silla receives basic smelting
+PASS: iron pilot: 632 no extra money, stocks, facilities or sword technology
+PASS: iron pilot: 632 regional permission matches start identity
+PASS: iron pilot: silla_equilibrium_632 keeps regional permission in year 670
+PASS: iron pilot: silla_equilibrium_632 old save retains identity/stocks/order and receives no technology or money
+PASS: iron pilot: silla_equilibrium_632 saved month blocks duplicate production
+PASS: iron pilot: silla_equilibrium_632 legacy strategy initialization grants no pilot technology
+PASS: iron pilot: silla_equilibrium_632 missing/unknown saved start cannot infer permission from year 632
+PASS: iron pilot: silla_equilibrium_632 missing/unknown saved start cannot infer permission from year 632
+PASS: iron pilot: silla_equilibrium_632 capture stops orders and preserves stocks/facility
+PASS: iron pilot: silla_equilibrium_632 captured city keeps region but requires new owner's technology and authority
+PASS: iron pilot: silla_equilibrium_632 qualified new owner can use the same regional facility
+PASS: iron pilot: 642 real new-game owner remains Silla
+PASS: iron pilot: 642 only pilot Silla receives basic smelting
+PASS: iron pilot: 642 no extra money, stocks, facilities or sword technology
+PASS: iron pilot: 642 regional permission matches start identity
+PASS: iron pilot: goguryeo_coup_642 keeps regional permission in year 670
+PASS: iron pilot: goguryeo_coup_642 old save retains identity/stocks/order and receives no technology or money
+PASS: iron pilot: goguryeo_coup_642 saved month blocks duplicate production
+PASS: iron pilot: goguryeo_coup_642 legacy strategy initialization grants no pilot technology
+PASS: iron pilot: goguryeo_coup_642 missing/unknown saved start cannot infer permission from year 632
+PASS: iron pilot: goguryeo_coup_642 missing/unknown saved start cannot infer permission from year 632
+PASS: iron pilot: goguryeo_coup_642 capture stops orders and preserves stocks/facility
+PASS: iron pilot: goguryeo_coup_642 captured city keeps region but requires new owner's technology and authority
+PASS: iron pilot: goguryeo_coup_642 qualified new owner can use the same regional facility
+PASS: iron pilot: 660 real new-game owner remains Silla
+PASS: iron pilot: 660 only pilot Silla receives basic smelting
+PASS: iron pilot: 660 no extra money, stocks, facilities or sword technology
+PASS: iron pilot: 660 regional permission matches start identity
+PASS: iron pilot: 663 real new-game owner remains Silla
+PASS: iron pilot: 663 only pilot Silla receives basic smelting
+PASS: iron pilot: 663 no extra money, stocks, facilities or sword technology
+PASS: iron pilot: 663 regional permission matches start identity
+PASS: iron pilot: 670 real new-game owner remains Silla
+PASS: iron pilot: 670 only pilot Silla receives basic smelting
+PASS: iron pilot: 670 no extra money, stocks, facilities or sword technology
+PASS: iron pilot: 670 regional permission matches start identity
+PRODUCTION TESTS: 193 checks, 0 failures

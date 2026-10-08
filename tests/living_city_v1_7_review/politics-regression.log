@@ -1,0 +1,91 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: three existing-person groups without retroactive awards
+PASS: unassigned troops are not royal direct control
+PASS: royal governor appointment
+PASS: cross-group exact personal and cooperation effects
+PASS: same appointment no effects
+PASS: six-month personal positive cooldown blocks appointment farming
+PASS: automatic move dismissal has no political penalty
+PASS: politics native repeat load zero
+PASS: politics native repeat load zero
+PASS: politics native repeat load zero
+PASS: real authority gain candidate at influence >=20
+PASS: politics native repeat load pending-accept
+PASS: politics native repeat load pending-accept
+PASS: politics native repeat load pending-accept
+PASS: resolve accept
+PASS: exact choice treasury accept
+PASS: exact choice loyalty accept
+PASS: exact choice cooperation accept
+PASS: duplicate choice no effect accept
+PASS: national demand cooldown accept
+PASS: politics native repeat load resolved-accept
+PASS: politics native repeat load resolved-accept
+PASS: politics native repeat load resolved-accept
+PASS: real authority gain candidate at influence >=20
+PASS: politics native repeat load pending-gift
+PASS: politics native repeat load pending-gift
+PASS: politics native repeat load pending-gift
+PASS: resolve gift
+PASS: exact choice treasury gift
+PASS: exact choice loyalty gift
+PASS: exact choice cooperation gift
+PASS: duplicate choice no effect gift
+PASS: national demand cooldown gift
+PASS: politics native repeat load resolved-gift
+PASS: politics native repeat load resolved-gift
+PASS: politics native repeat load resolved-gift
+PASS: real authority gain candidate at influence >=20
+PASS: politics native repeat load pending-reject
+PASS: politics native repeat load pending-reject
+PASS: politics native repeat load pending-reject
+PASS: resolve reject
+PASS: exact choice treasury reject
+PASS: exact choice loyalty reject
+PASS: exact choice cooperation reject
+PASS: duplicate choice no effect reject
+PASS: national demand cooldown reject
+PASS: politics native repeat load resolved-reject
+PASS: politics native repeat load resolved-reject
+PASS: politics native repeat load resolved-reject
+PASS: real authority gain candidate at influence >=20
+PASS: invalid demand clears without effects dead
+PASS: real authority gain candidate at influence >=20
+PASS: concentrated command move requires authority handover
+PASS: real authority gain candidate at influence >=20
+PASS: invalid demand clears without effects captured
+PASS: smaller command no positive award
+PASS: split merge conserve basis and cooldown
+PASS: native632 legal production prerequisite smelter
+PASS: native632 legal production prerequisite forge
+PASS: native632 legal production prerequisite swordsmithing
+PASS: real prerequisite costs240+320+200=760 without altered technology/region rules
+PASS: native pilot recipe starts iron_supply
+PASS: native pilot recipe starts iron_sword
+PASS: noble manager
+PASS: cooperation actual six-month batches and full material cost 0
+PASS: political production monthly idempotence
+PASS: native632 legal production prerequisite smelter
+PASS: native632 legal production prerequisite forge
+PASS: native632 legal production prerequisite swordsmithing
+PASS: real prerequisite costs240+320+200=760 without altered technology/region rules
+PASS: native pilot recipe starts iron_supply
+PASS: native pilot recipe starts iron_sword
+PASS: noble manager
+PASS: cooperation actual six-month batches and full material cost 50
+PASS: political production monthly idempotence
+PASS: native632 legal production prerequisite smelter
+PASS: native632 legal production prerequisite forge
+PASS: native632 legal production prerequisite swordsmithing
+PASS: real prerequisite costs240+320+200=760 without altered technology/region rules
+PASS: native pilot recipe starts iron_supply
+PASS: native pilot recipe starts iron_sword
+PASS: noble manager
+PASS: cooperation actual six-month batches and full material cost 100
+PASS: political production monthly idempotence
+PASS: non-enabled scenario unchanged 660
+PASS: non-enabled scenario unchanged 663
+PASS: non-enabled scenario unchanged 670
+NOBLE POLITICS: 87 checks, 0 failures

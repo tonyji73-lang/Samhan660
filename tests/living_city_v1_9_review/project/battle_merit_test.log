@@ -1,0 +1,36 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: atomic revalidation rejects money
+PASS: atomic revalidation rejects dead
+PASS: atomic revalidation rejects inactive
+PASS: atomic revalidation rejects enemy
+PASS: atomic revalidation rejects unknown
+PASS: atomic revalidation rejects loser
+PASS: atomic revalidation rejects ended
+PASS: atomic revalidation rejects wrong_player
+PASS: atomic revalidation rejects unsupported
+PASS: atomic revalidation rejects no_politics
+PASS: atomic revalidation rejects duplicate
+PASS: valid displayed quote
+PASS: execution rechecks money after preview
+PASS: common political caps preserved
+PASS: unique native slot legacy
+PASS: legacy battle restore has no retroactive reward or changes
+PASS: common appointment in boundary fixture
+PASS: normal split creates multiple units with same commander
+PASS: multiple unit commander has one candidate 632
+PASS: postbattle movement and command changes preserve evidence
+PASS: supported scenario actual winner can receive reward 632
+PASS: distinct IDs even same month
+PASS: same officer may be rewarded once in a different victory
+PASS: common appointment in boundary fixture
+PASS: normal split creates multiple units with same commander
+PASS: multiple unit commander has one candidate 642
+PASS: postbattle movement and command changes preserve evidence
+PASS: supported scenario actual winner can receive reward 642
+PASS: distinct IDs even same month
+PASS: same officer may be rewarded once in a different victory
+PASS: defensive victory candidate is eligible
+PASS: enemy or losing commander is ineligible
+BATTLE MERIT BOUNDARIES: 32 checks, 0 failures

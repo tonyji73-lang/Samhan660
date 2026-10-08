@@ -1,0 +1,15 @@
+{
+	"checks": 21,
+	"evidence": {
+		"relation": {
+			"status": "중립",
+			"treaties": [],
+			"value": 8
+		},
+		"trade_income": 47
+	},
+	"exe": "C:/Users/지용훈/AppData/Local/Temp/Samhan660_V1_7_1_20260930/tools/Godot.exe",
+	"failures": 0,
+	"slot": "user://living_city_v1_8_1790757021_15664539_cancelled.json",
+	"user_dir": "C:/Users/지용훈/AppData/Roaming/Godot/app_userdata/Samhan660"
+}

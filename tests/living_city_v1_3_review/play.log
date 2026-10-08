@@ -1,0 +1,258 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: capture domestic-1280
+PASS: persistent control inside viewport: 개발 지시 · 금 100
+PASS: command is above footer, without overlap: 개발 지시 · 금 100
+PASS: persistent control inside viewport: 업무 취소
+PASS: command is above footer, without overlap: 업무 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture officer-1280
+PASS: persistent control inside viewport: 선택 취소
+PASS: command is above footer, without overlap: 선택 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: candidate cards retain city/governor context without dropdown
+PASS: all local candidates have development cards
+PASS: card cancel preserves previous selection and complete game state
+PASS: card selection refreshes quote without accepting a job
+PASS: cost and gain tiles use shared quote
+PASS: Esc cancels card picker and keeps domestic screen open
+PASS: commerce card selection uses the same non-mutating flow
+PASS: manifest source region: lacquer_bar
+PASS: manifest source region: primary_red
+PASS: manifest source region: work_panel_frame
+PASS: manifest source region: candidate_frame
+PASS: manifest source region: title_divider
+PASS: manifest source region: city_heading_frame
+PASS: logical texture size: top
+PASS: nine-slice margins: top
+PASS: texture cache reuse: top
+PASS: logical texture size: bottom
+PASS: nine-slice margins: bottom
+PASS: texture cache reuse: bottom
+PASS: logical texture size: primary
+PASS: nine-slice margins: primary
+PASS: texture cache reuse: primary
+PASS: logical texture size: work_panel
+PASS: nine-slice margins: work_panel
+PASS: texture cache reuse: work_panel
+PASS: logical texture size: candidate
+PASS: nine-slice margins: candidate
+PASS: texture cache reuse: candidate
+PASS: logical texture size: officer_card
+PASS: nine-slice margins: officer_card
+PASS: texture cache reuse: officer_card
+PASS: logical texture size: nav_border
+PASS: nine-slice margins: nav_border
+PASS: texture cache reuse: nav_border
+PASS: logical texture size: divider
+PASS: nine-slice margins: divider
+PASS: texture cache reuse: divider
+PASS: logical texture size: nav_underline
+PASS: nine-slice margins: nav_underline
+PASS: texture cache reuse: nav_underline
+PASS: logical texture size: city_heading
+PASS: nine-slice margins: city_heading
+PASS: texture cache reuse: city_heading
+PASS: primary tint: normal
+PASS: primary tint: hover
+PASS: primary tint: pressed
+PASS: primary tint: hover_pressed
+PASS: primary tint: disabled
+PASS: only dynamic city/work headings receive title font
+PASS: body and action fonts remain unchanged
+PASS: title row preserves V1.2 height despite font metrics
+PASS: capture button-normal-1280
+PASS: native hover reaches decorated primary
+PASS: capture button-hover-1280
+PASS: native pressed state reaches decorated primary
+PASS: capture button-pressed-1280
+PASS: releasing outside cancels pressed preview without accepting work
+PASS: native cream focus remains independent of artwork
+PASS: capture button-focus-1280
+PASS: Tab moves keyboard focus past decoration nodes
+PASS: persistent control inside viewport: 개발 지시 · 금 100
+PASS: command is above footer, without overlap: 개발 지시 · 금 100
+PASS: persistent control inside viewport: 업무 취소
+PASS: command is above footer, without overlap: 업무 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: long header stays inside original top frame
+PASS: capture long-header-footer-1280
+PASS: same-city personnel mode retains map lock
+PASS: opening personnel and quote leaves state unchanged
+PASS: incumbent and selected candidate have separate ownership labels
+PASS: new personnel screen begins at the first explanation line
+PASS: same candidate quote refresh preserves reading position
+PASS: different candidate starts its explanation at the first line
+PASS: ruler role is explicit and eligibility follows existing shared rules
+PASS: capture personnel-1280
+PASS: persistent control inside viewport: 임명 확정
+PASS: command is above footer, without overlap: 임명 확정
+PASS: persistent control inside viewport: 선택 취소
+PASS: command is above footer, without overlap: 선택 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture portrait-0-1280
+PASS: candidate hero follows original identity 0
+PASS: capture portrait-1-1280
+PASS: candidate hero follows original identity 1
+PASS: capture portrait-2-1280
+PASS: candidate hero follows original identity 2
+PASS: capture personnel-1920
+PASS: persistent control inside viewport: 임명 확정
+PASS: command is above footer, without overlap: 임명 확정
+PASS: persistent control inside viewport: 선택 취소
+PASS: command is above footer, without overlap: 선택 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture domestic-1920
+PASS: persistent control inside viewport: 개발 지시 · 금 100
+PASS: command is above footer, without overlap: 개발 지시 · 금 100
+PASS: persistent control inside viewport: 업무 취소
+PASS: command is above footer, without overlap: 업무 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture button-normal-1920
+PASS: native hover reaches decorated primary
+PASS: capture button-hover-1920
+PASS: native pressed state reaches decorated primary
+PASS: capture button-pressed-1920
+PASS: releasing outside cancels pressed preview without accepting work
+PASS: native cream focus remains independent of artwork
+PASS: capture button-focus-1920
+PASS: Tab moves keyboard focus past decoration nodes
+PASS: persistent control inside viewport: 개발 지시 · 금 100
+PASS: command is above footer, without overlap: 개발 지시 · 금 100
+PASS: persistent control inside viewport: 업무 취소
+PASS: command is above footer, without overlap: 업무 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: long header stays inside original top frame
+PASS: capture long-header-footer-1920
+PASS: capture officer-1920
+PASS: persistent control inside viewport: 선택 취소
+PASS: command is above footer, without overlap: 선택 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture domestic-2560
+PASS: persistent control inside viewport: 개발 지시 · 금 100
+PASS: command is above footer, without overlap: 개발 지시 · 금 100
+PASS: persistent control inside viewport: 업무 취소
+PASS: command is above footer, without overlap: 업무 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: cancel candidate selection changes no resources or personnel
+PASS: atlas personnel navigation opens selected-city appointment
+PASS: normal 632 development candidate available
+PASS: development cost charged once under repeated confirmation
+PASS: capture button-disabled-1920
+PASS: capture button-disabled-1280
+PASS: conflicting development cannot reuse busy city and officer
+PASS: development has no immediate completion
+PASS: capture pending-1920
+PASS: development cancellation refunds once
+PASS: save/load restores actual job, people, city and treasury
+PASS: load closes UI and unlocks active atlas
+PASS: normal next-month command completes quoted development
+PASS: reopened UI displays completion
+PASS: capture completed-1920
+PASS: normal local governor candidate requires no rule override
+PASS: governor forecast is read-only
+PASS: large portrait follows the selected candidate using original assets
+PASS: capture appointment-preview-1920
+PASS: UI appointment changes actual governor
+PASS: incumbent and actual operating effect refresh after appointment
+PASS: capture appointed-1920
+PASS: capture appointed-1280
+PASS: repeated appointment does not repeat political effects
+PASS: dismissal names incumbent and opens a separate confirmation
+PASS: opening dismissal confirmation does not change state
+PASS: cancelling dismissal preserves the incumbent
+PASS: appointment and politics persist through save/load
+PASS: repeated open/Esc unlocks active atlas
+PASS: repeated open/Esc unlocks active atlas
+PASS: repeated open/Esc unlocks active atlas
+PASS: construction and military production remain accessible
+PASS: diplomacy remains accessible
+PASS: zero-gold UI shows the actual rejection
+PASS: candidate card exposes shared rejection reason
+PASS: unavailable candidate can be inspected but cannot execute
+PASS: many long-name candidates scroll within panel
+PASS: persistent control inside viewport: 선택 취소
+PASS: command is above footer, without overlap: 선택 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture many-officers-1920
+PASS: persistent control inside viewport: 선택 취소
+PASS: command is above footer, without overlap: 선택 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture many-officers-1280
+PASS: last card can be selected after internal scrolling
+PASS: persistent control inside viewport: 개발 지시 · 금 100
+PASS: command is above footer, without overlap: 개발 지시 · 금 100
+PASS: persistent control inside viewport: 업무 취소
+PASS: command is above footer, without overlap: 업무 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture long-officer-summary-1280
+PASS: persistent control inside viewport: 임명 확정
+PASS: command is above footer, without overlap: 임명 확정
+PASS: persistent control inside viewport: 선택 취소
+PASS: command is above footer, without overlap: 선택 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture long-text-1280
+PASS: all candidates remain available beyond three portraits
+PASS: horizontal scroll can select the last candidate
+PASS: candidate cancellation has keyboard focus
+PASS: empty development list has explanation and cancel
+PASS: capture empty-officers-1920
+PASS: persistent control inside viewport: 선택 취소
+PASS: command is above footer, without overlap: 선택 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture empty-officers-1280
+PASS: empty list cancel returns safely to disabled quote
+PASS: empty candidate UI disables confirmation
+PASS: empty candidate state can be cancelled
+PASS: vacant governor is shown explicitly
+PASS: edge fixtures leave active atlas unlocked
+PASS: city switch refreshes context and candidates
+PASS: Seorabeol art is not reused for another city
+PASS: close button unlocks atlas after city switch
+LIVING CITY V1.3 TESTS: 251 checks, 0 failures

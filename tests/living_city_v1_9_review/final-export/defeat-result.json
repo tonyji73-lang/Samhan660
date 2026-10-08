@@ -1,0 +1,129 @@
+{
+	"checks": 45,
+	"evidence": {
+		"battle": {
+			"attack_units": [
+				"unit:17"
+			],
+			"attacker_faction": "silla",
+			"attacker_leadership": 86,
+			"attacker_losses": 8100,
+			"attacker_power": 33480.0,
+			"attacker_state": [
+				{
+					"commander_id": "historical:002",
+					"creation_reason": "scenario_or_legacy_no_retroactive_charge",
+					"equipment": 18000,
+					"faction_id": "silla",
+					"id": "unit:17",
+					"kind": "infantry",
+					"legacy_faction": "신라",
+					"legacy_fields": {
+						"category": "infantry",
+						"morale": 55,
+						"name": "보병",
+						"training": 50,
+						"troops": 18000
+					},
+					"location": "gukwon",
+					"origin_basis": "existing origins if count matches; otherwise legacy stationed city",
+					"origins": {
+						"gukwon": 18000
+					},
+					"power": 50,
+					"status": "stationed",
+					"training_points": 900000,
+					"transfer_id": "",
+					"troops": 18000
+				}
+			],
+			"attacker_troops": 18000,
+			"battle_id": "battle:1a9c94eaec44d506f10b483b59d803a0",
+			"defend_units": [
+				"unit:43"
+			],
+			"defender_faction": "baekje",
+			"defender_leadership": 90,
+			"defender_losses": 3600,
+			"defender_power": 46000.0,
+			"defender_state": [
+				{
+					"commander_id": "",
+					"creation_reason": "scenario_or_legacy_no_retroactive_charge",
+					"equipment": 20000,
+					"faction_id": "baekje",
+					"id": "unit:43",
+					"kind": "infantry",
+					"legacy_faction": "백제",
+					"legacy_fields": {
+						"category": "infantry",
+						"morale": 55,
+						"name": "보병",
+						"training": 50,
+						"troops": 20000
+					},
+					"location": "ungjin",
+					"origin_basis": "existing origins if count matches; otherwise legacy stationed city",
+					"origins": {
+						"ungjin": 20000
+					},
+					"power": 50,
+					"status": "stationed",
+					"training_points": 1000000,
+					"transfer_id": "",
+					"troops": 20000
+				}
+			],
+			"defender_troops": 20000,
+			"fortress": 80,
+			"merit_version": 1,
+			"month": 7711,
+			"participants": [
+				{
+					"battle_leader": true,
+					"commanded_units": [
+						"unit:17"
+					],
+					"faction_id": "silla",
+					"group_id": "silla:civil",
+					"name": "알천",
+					"officer_id": "historical:002",
+					"side": "attacker",
+					"unit_ids": [
+						"unit:17"
+					],
+					"won": false
+				},
+				{
+					"battle_leader": true,
+					"commanded_units": [],
+					"faction_id": "baekje",
+					"group_id": "",
+					"name": "윤충",
+					"officer_id": "historical:014",
+					"side": "defender",
+					"unit_ids": [
+						"unit:43"
+					],
+					"won": true
+				}
+			],
+			"reward_enabled": true,
+			"rewards": {},
+			"source": "gukwon",
+			"target": "ungjin",
+			"won": false
+		},
+		"trace": [
+			{
+				"ratio": 0.727826086956522,
+				"source": "gukwon",
+				"target": "ungjin"
+			}
+		]
+	},
+	"exe": "C:/Users/지용훈/AppData/Local/Temp/Samhan660_Windows_V1_9_20261001/play-copy/Samhan660.exe",
+	"failures": 0,
+	"slot": "user://living_city_v1_9_defeat_1790817034_18656.json",
+	"user_dir": "C:/Users/지용훈/AppData/Roaming/Godot/app_userdata/Samhan660"
+}

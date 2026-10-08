@@ -1,0 +1,17 @@
+﻿{
+    "Scale":  "100%",
+    "Screens":  [
+                    {
+                        "Primary":  true,
+                        "Bounds":  "{X=0,Y=0,Width=1920,Height=1080}",
+                        "Device":  "\\\\.\\DISPLAY1"
+                    },
+                    {
+                        "Primary":  false,
+                        "Bounds":  "{X=1920,Y=0,Width=1920,Height=1080}",
+                        "Device":  "\\\\.\\DISPLAY3"
+                    }
+                ],
+    "Computer":  "GRT-069",
+    "OS":  "Microsoft Windows NT 10.0.26200.0"
+}

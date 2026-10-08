@@ -1,0 +1,56 @@
+﻿[
+    {
+        "ExitCode":  0,
+        "Started":  "2026-09-30T16:29:47.4873519+09:00",
+        "Checks":  52,
+        "PID":  4440,
+        "Failures":  0,
+        "Phase":  "respond-compensate",
+        "Ended":  "2026-09-30T16:30:05.9382823+09:00"
+    },
+    {
+        "ExitCode":  0,
+        "Started":  "2026-09-30T16:30:05.9602880+09:00",
+        "Checks":  37,
+        "PID":  4628,
+        "Failures":  0,
+        "Phase":  "reload-compensate",
+        "Ended":  "2026-09-30T16:30:24.4711095+09:00"
+    },
+    {
+        "ExitCode":  0,
+        "Started":  "2026-09-30T16:30:24.4731115+09:00",
+        "Checks":  52,
+        "PID":  37580,
+        "Failures":  0,
+        "Phase":  "respond-wait",
+        "Ended":  "2026-09-30T16:30:42.6351249+09:00"
+    },
+    {
+        "ExitCode":  0,
+        "Started":  "2026-09-30T16:30:42.6371265+09:00",
+        "Checks":  39,
+        "PID":  14316,
+        "Failures":  0,
+        "Phase":  "reload-wait",
+        "Ended":  "2026-09-30T16:31:04.1361204+09:00"
+    },
+    {
+        "ExitCode":  0,
+        "Started":  "2026-09-30T16:31:04.1391252+09:00",
+        "Checks":  52,
+        "PID":  38716,
+        "Failures":  0,
+        "Phase":  "respond-force",
+        "Ended":  "2026-09-30T16:31:22.4303856+09:00"
+    },
+    {
+        "ExitCode":  0,
+        "Started":  "2026-09-30T16:31:22.4323860+09:00",
+        "Checks":  42,
+        "PID":  18548,
+        "Failures":  0,
+        "Phase":  "reload-force",
+        "Ended":  "2026-09-30T16:31:42.8067141+09:00"
+    }
+]

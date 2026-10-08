@@ -1,0 +1,14 @@
+﻿{
+    "Monitor":  "1920x1080",
+    "Scale":  "150%",
+    "Game":  {
+                 "Pid":  34384,
+                 "Dpi":  96,
+                 "ClientWidth":  1893,
+                 "ClientHeight":  1018,
+                 "ClientX":  14,
+                 "ClientY":  48,
+                 "OuterWidth":  1917,
+                 "OuterHeight":  1077
+             }
+}

@@ -1,0 +1,341 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: scenario source sum silla_equilibrium_632/shinseong
+PASS: scenario source sum silla_equilibrium_632/sokgunseong
+PASS: scenario source sum silla_equilibrium_632/ansi
+PASS: scenario source sum silla_equilibrium_632/geonanseong
+PASS: scenario source sum silla_equilibrium_632/gungnae
+PASS: scenario source sum silla_equilibrium_632/chaekseong
+PASS: scenario source sum silla_equilibrium_632/bireyeolhol
+PASS: scenario source sum silla_equilibrium_632/pyongyang
+PASS: scenario source sum silla_equilibrium_632/daedonggang
+PASS: scenario source sum silla_equilibrium_632/goksan
+PASS: scenario source sum silla_equilibrium_632/hwanghae
+PASS: scenario source sum silla_equilibrium_632/bukhansan
+PASS: scenario source sum silla_equilibrium_632/danghangseong
+PASS: scenario source sum silla_equilibrium_632/samnyeonsanseong
+PASS: scenario source sum silla_equilibrium_632/gukwon
+PASS: scenario source sum silla_equilibrium_632/haslla
+PASS: scenario source sum silla_equilibrium_632/siljik
+PASS: scenario source sum silla_equilibrium_632/imjonseong
+PASS: scenario source sum silla_equilibrium_632/ungjin
+PASS: scenario source sum silla_equilibrium_632/sabi
+PASS: scenario source sum silla_equilibrium_632/geummajeo
+PASS: scenario source sum silla_equilibrium_632/gosa
+PASS: scenario source sum silla_equilibrium_632/juryuseong
+PASS: scenario source sum silla_equilibrium_632/yeongsangang
+PASS: scenario source sum silla_equilibrium_632/geumseong
+PASS: scenario source sum silla_equilibrium_632/sabeol
+PASS: scenario source sum silla_equilibrium_632/dalgubeol
+PASS: scenario source sum silla_equilibrium_632/daegaya
+PASS: scenario source sum silla_equilibrium_632/geumgwan
+PASS: scenario source sum silla_equilibrium_632/sogaya
+PASS: scenario source sum silla_equilibrium_632/tamna
+PASS: scenario source sum silla_equilibrium_632/ulleung
+PASS: scenario source sum silla_equilibrium_632/ganghwa
+PASS: scenario source sum silla_equilibrium_632/jukryeong
+PASS: scenario source sum silla_equilibrium_632/chupungnyeong
+PASS: scenario source sum silla_equilibrium_632/steppe_sijie
+PASS: scenario source sum silla_equilibrium_632/steppe_duolange
+PASS: scenario source sum silla_equilibrium_632/steppe_huihe
+PASS: scenario source sum silla_equilibrium_632/steppe_pugu
+PASS: scenario source sum silla_equilibrium_632/steppe_bayegu
+PASS: scenario source sum silla_equilibrium_632/steppe_adie
+PASS: scenario source sum silla_equilibrium_632/steppe_qibi
+PASS: scenario source sum silla_equilibrium_632/steppe_tongluo
+PASS: scenario source sum silla_equilibrium_632/steppe_hun
+PASS: one-time baseline equipment without stock creation
+PASS: silla_equilibrium_632 repeated native save 0
+PASS: silla_equilibrium_632 repeated native save 1
+PASS: silla_equilibrium_632 repeated native save 2
+PASS: scenario source sum goguryeo_coup_642/shinseong
+PASS: scenario source sum goguryeo_coup_642/sokgunseong
+PASS: scenario source sum goguryeo_coup_642/ansi
+PASS: scenario source sum goguryeo_coup_642/geonanseong
+PASS: scenario source sum goguryeo_coup_642/gungnae
+PASS: scenario source sum goguryeo_coup_642/chaekseong
+PASS: scenario source sum goguryeo_coup_642/bireyeolhol
+PASS: scenario source sum goguryeo_coup_642/pyongyang
+PASS: scenario source sum goguryeo_coup_642/daedonggang
+PASS: scenario source sum goguryeo_coup_642/goksan
+PASS: scenario source sum goguryeo_coup_642/hwanghae
+PASS: scenario source sum goguryeo_coup_642/bukhansan
+PASS: scenario source sum goguryeo_coup_642/danghangseong
+PASS: scenario source sum goguryeo_coup_642/samnyeonsanseong
+PASS: scenario source sum goguryeo_coup_642/gukwon
+PASS: scenario source sum goguryeo_coup_642/haslla
+PASS: scenario source sum goguryeo_coup_642/siljik
+PASS: scenario source sum goguryeo_coup_642/imjonseong
+PASS: scenario source sum goguryeo_coup_642/ungjin
+PASS: scenario source sum goguryeo_coup_642/sabi
+PASS: scenario source sum goguryeo_coup_642/geummajeo
+PASS: scenario source sum goguryeo_coup_642/gosa
+PASS: scenario source sum goguryeo_coup_642/juryuseong
+PASS: scenario source sum goguryeo_coup_642/yeongsangang
+PASS: scenario source sum goguryeo_coup_642/geumseong
+PASS: scenario source sum goguryeo_coup_642/sabeol
+PASS: scenario source sum goguryeo_coup_642/dalgubeol
+PASS: scenario source sum goguryeo_coup_642/daegaya
+PASS: scenario source sum goguryeo_coup_642/geumgwan
+PASS: scenario source sum goguryeo_coup_642/sogaya
+PASS: scenario source sum goguryeo_coup_642/tamna
+PASS: scenario source sum goguryeo_coup_642/ulleung
+PASS: scenario source sum goguryeo_coup_642/ganghwa
+PASS: scenario source sum goguryeo_coup_642/jukryeong
+PASS: scenario source sum goguryeo_coup_642/chupungnyeong
+PASS: scenario source sum goguryeo_coup_642/steppe_sijie
+PASS: scenario source sum goguryeo_coup_642/steppe_duolange
+PASS: scenario source sum goguryeo_coup_642/steppe_huihe
+PASS: scenario source sum goguryeo_coup_642/steppe_pugu
+PASS: scenario source sum goguryeo_coup_642/steppe_bayegu
+PASS: scenario source sum goguryeo_coup_642/steppe_adie
+PASS: scenario source sum goguryeo_coup_642/steppe_qibi
+PASS: scenario source sum goguryeo_coup_642/steppe_tongluo
+PASS: scenario source sum goguryeo_coup_642/steppe_hun
+PASS: one-time baseline equipment without stock creation
+PASS: goguryeo_coup_642 repeated native save 0
+PASS: goguryeo_coup_642 repeated native save 1
+PASS: goguryeo_coup_642 repeated native save 2
+PASS: scenario source sum baekje_fall_660/shinseong
+PASS: scenario source sum baekje_fall_660/sokgunseong
+PASS: scenario source sum baekje_fall_660/ansi
+PASS: scenario source sum baekje_fall_660/geonanseong
+PASS: scenario source sum baekje_fall_660/gungnae
+PASS: scenario source sum baekje_fall_660/chaekseong
+PASS: scenario source sum baekje_fall_660/bireyeolhol
+PASS: scenario source sum baekje_fall_660/pyongyang
+PASS: scenario source sum baekje_fall_660/daedonggang
+PASS: scenario source sum baekje_fall_660/goksan
+PASS: scenario source sum baekje_fall_660/hwanghae
+PASS: scenario source sum baekje_fall_660/bukhansan
+PASS: scenario source sum baekje_fall_660/danghangseong
+PASS: scenario source sum baekje_fall_660/samnyeonsanseong
+PASS: scenario source sum baekje_fall_660/gukwon
+PASS: scenario source sum baekje_fall_660/haslla
+PASS: scenario source sum baekje_fall_660/siljik
+PASS: scenario source sum baekje_fall_660/imjonseong
+PASS: scenario source sum baekje_fall_660/ungjin
+PASS: scenario source sum baekje_fall_660/sabi
+PASS: scenario source sum baekje_fall_660/geummajeo
+PASS: scenario source sum baekje_fall_660/gosa
+PASS: scenario source sum baekje_fall_660/juryuseong
+PASS: scenario source sum baekje_fall_660/yeongsangang
+PASS: scenario source sum baekje_fall_660/geumseong
+PASS: scenario source sum baekje_fall_660/sabeol
+PASS: scenario source sum baekje_fall_660/dalgubeol
+PASS: scenario source sum baekje_fall_660/daegaya
+PASS: scenario source sum baekje_fall_660/geumgwan
+PASS: scenario source sum baekje_fall_660/sogaya
+PASS: scenario source sum baekje_fall_660/tamna
+PASS: scenario source sum baekje_fall_660/ulleung
+PASS: scenario source sum baekje_fall_660/ganghwa
+PASS: scenario source sum baekje_fall_660/jukryeong
+PASS: scenario source sum baekje_fall_660/chupungnyeong
+PASS: scenario source sum baekje_fall_660/steppe_sijie
+PASS: scenario source sum baekje_fall_660/steppe_duolange
+PASS: scenario source sum baekje_fall_660/steppe_huihe
+PASS: scenario source sum baekje_fall_660/steppe_pugu
+PASS: scenario source sum baekje_fall_660/steppe_bayegu
+PASS: scenario source sum baekje_fall_660/steppe_adie
+PASS: scenario source sum baekje_fall_660/steppe_qibi
+PASS: scenario source sum baekje_fall_660/steppe_tongluo
+PASS: scenario source sum baekje_fall_660/steppe_hun
+PASS: one-time baseline equipment without stock creation
+PASS: baekje_fall_660 repeated native save 0
+PASS: baekje_fall_660 repeated native save 1
+PASS: baekje_fall_660 repeated native save 2
+PASS: scenario source sum baekgang_663/shinseong
+PASS: scenario source sum baekgang_663/sokgunseong
+PASS: scenario source sum baekgang_663/ansi
+PASS: scenario source sum baekgang_663/geonanseong
+PASS: scenario source sum baekgang_663/gungnae
+PASS: scenario source sum baekgang_663/chaekseong
+PASS: scenario source sum baekgang_663/bireyeolhol
+PASS: scenario source sum baekgang_663/pyongyang
+PASS: scenario source sum baekgang_663/daedonggang
+PASS: scenario source sum baekgang_663/goksan
+PASS: scenario source sum baekgang_663/hwanghae
+PASS: scenario source sum baekgang_663/bukhansan
+PASS: scenario source sum baekgang_663/danghangseong
+PASS: scenario source sum baekgang_663/samnyeonsanseong
+PASS: scenario source sum baekgang_663/gukwon
+PASS: scenario source sum baekgang_663/haslla
+PASS: scenario source sum baekgang_663/siljik
+PASS: scenario source sum baekgang_663/imjonseong
+PASS: scenario source sum baekgang_663/ungjin
+PASS: scenario source sum baekgang_663/sabi
+PASS: scenario source sum baekgang_663/geummajeo
+PASS: scenario source sum baekgang_663/gosa
+PASS: scenario source sum baekgang_663/juryuseong
+PASS: scenario source sum baekgang_663/yeongsangang
+PASS: scenario source sum baekgang_663/geumseong
+PASS: scenario source sum baekgang_663/sabeol
+PASS: scenario source sum baekgang_663/dalgubeol
+PASS: scenario source sum baekgang_663/daegaya
+PASS: scenario source sum baekgang_663/geumgwan
+PASS: scenario source sum baekgang_663/sogaya
+PASS: scenario source sum baekgang_663/tamna
+PASS: scenario source sum baekgang_663/ulleung
+PASS: scenario source sum baekgang_663/ganghwa
+PASS: scenario source sum baekgang_663/jukryeong
+PASS: scenario source sum baekgang_663/chupungnyeong
+PASS: scenario source sum baekgang_663/steppe_sijie
+PASS: scenario source sum baekgang_663/steppe_duolange
+PASS: scenario source sum baekgang_663/steppe_huihe
+PASS: scenario source sum baekgang_663/steppe_pugu
+PASS: scenario source sum baekgang_663/steppe_bayegu
+PASS: scenario source sum baekgang_663/steppe_adie
+PASS: scenario source sum baekgang_663/steppe_qibi
+PASS: scenario source sum baekgang_663/steppe_tongluo
+PASS: scenario source sum baekgang_663/steppe_hun
+PASS: one-time baseline equipment without stock creation
+PASS: baekgang_663 repeated native save 0
+PASS: baekgang_663 repeated native save 1
+PASS: baekgang_663 repeated native save 2
+PASS: scenario source sum silla_tang_war_670/shinseong
+PASS: scenario source sum silla_tang_war_670/sokgunseong
+PASS: scenario source sum silla_tang_war_670/ansi
+PASS: scenario source sum silla_tang_war_670/geonanseong
+PASS: scenario source sum silla_tang_war_670/gungnae
+PASS: scenario source sum silla_tang_war_670/chaekseong
+PASS: scenario source sum silla_tang_war_670/bireyeolhol
+PASS: scenario source sum silla_tang_war_670/pyongyang
+PASS: scenario source sum silla_tang_war_670/daedonggang
+PASS: scenario source sum silla_tang_war_670/goksan
+PASS: scenario source sum silla_tang_war_670/hwanghae
+PASS: scenario source sum silla_tang_war_670/bukhansan
+PASS: scenario source sum silla_tang_war_670/danghangseong
+PASS: scenario source sum silla_tang_war_670/samnyeonsanseong
+PASS: scenario source sum silla_tang_war_670/gukwon
+PASS: scenario source sum silla_tang_war_670/haslla
+PASS: scenario source sum silla_tang_war_670/siljik
+PASS: scenario source sum silla_tang_war_670/imjonseong
+PASS: scenario source sum silla_tang_war_670/ungjin
+PASS: scenario source sum silla_tang_war_670/sabi
+PASS: scenario source sum silla_tang_war_670/geummajeo
+PASS: scenario source sum silla_tang_war_670/gosa
+PASS: scenario source sum silla_tang_war_670/juryuseong
+PASS: scenario source sum silla_tang_war_670/yeongsangang
+PASS: scenario source sum silla_tang_war_670/geumseong
+PASS: scenario source sum silla_tang_war_670/sabeol
+PASS: scenario source sum silla_tang_war_670/dalgubeol
+PASS: scenario source sum silla_tang_war_670/daegaya
+PASS: scenario source sum silla_tang_war_670/geumgwan
+PASS: scenario source sum silla_tang_war_670/sogaya
+PASS: scenario source sum silla_tang_war_670/tamna
+PASS: scenario source sum silla_tang_war_670/ulleung
+PASS: scenario source sum silla_tang_war_670/ganghwa
+PASS: scenario source sum silla_tang_war_670/jukryeong
+PASS: scenario source sum silla_tang_war_670/chupungnyeong
+PASS: scenario source sum silla_tang_war_670/steppe_sijie
+PASS: scenario source sum silla_tang_war_670/steppe_duolange
+PASS: scenario source sum silla_tang_war_670/steppe_huihe
+PASS: scenario source sum silla_tang_war_670/steppe_pugu
+PASS: scenario source sum silla_tang_war_670/steppe_bayegu
+PASS: scenario source sum silla_tang_war_670/steppe_adie
+PASS: scenario source sum silla_tang_war_670/steppe_qibi
+PASS: scenario source sum silla_tang_war_670/steppe_tongluo
+PASS: scenario source sum silla_tang_war_670/steppe_hun
+PASS: one-time baseline equipment without stock creation
+PASS: silla_tang_war_670 repeated native save 0
+PASS: silla_tang_war_670 repeated native save 1
+PASS: silla_tang_war_670 repeated native save 2
+PASS: exact split/rejoin conserves all mass 0
+PASS: exact split/rejoin conserves all mass 1
+PASS: exact split/rejoin conserves all mass 2
+PASS: exact split/rejoin conserves all mass 3
+PASS: exact split/rejoin conserves all mass 4
+PASS: exact split/rejoin conserves all mass 5
+PASS: exact split/rejoin conserves all mass 6
+PASS: exact split/rejoin conserves all mass 7
+PASS: exact split/rejoin conserves all mass 8
+PASS: exact split/rejoin conserves all mass 9
+PASS: exact split/rejoin conserves all mass 10
+PASS: exact split/rejoin conserves all mass 11
+PASS: exact split/rejoin conserves all mass 12
+PASS: exact split/rejoin conserves all mass 13
+PASS: exact split/rejoin conserves all mass 14
+PASS: exact split/rejoin conserves all mass 15
+PASS: exact split/rejoin conserves all mass 16
+PASS: exact split/rejoin conserves all mass 17
+PASS: exact split/rejoin conserves all mass 18
+PASS: exact split/rejoin conserves all mass 19
+PASS: exact split/rejoin conserves all mass 20
+PASS: exact split/rejoin conserves all mass 21
+PASS: exact split/rejoin conserves all mass 22
+PASS: exact split/rejoin conserves all mass 23
+PASS: exact split/rejoin conserves all mass 24
+PASS: exact split/rejoin conserves all mass 25
+PASS: exact split/rejoin conserves all mass 26
+PASS: exact split/rejoin conserves all mass 27
+PASS: exact split/rejoin conserves all mass 28
+PASS: exact split/rejoin conserves all mass 29
+PASS: normal paid recruitment
+PASS: new recruitment has existing base training50 but no generated equipment
+PASS: reinforcement weighted training and equipment dilution
+PASS: ten bundles pay1000 person equipment, surplus49 preserved capped bonus
+PASS: no excess/repeated issue
+PASS: enemy cannot equip
+PASS: proportional equipment lost with casualties
+PASS: reinforced repeated native save 0
+PASS: reinforced repeated native save 1
+PASS: reinforced repeated native save 2
+PASS: movement references same IDs and removes city display
+PASS: moving repeated native save 0
+PASS: moving repeated native save 1
+PASS: moving repeated native save 2
+PASS: arrival preserves men/equipment/training/origin
+PASS: city projection cannot overwrite authoritative units
+PASS: weighted leadership/war training estimate
+PASS: no acceptance-month expense or effect
+PASS: training blocks external action but defense remains
+PASS: training-30 repeated native save 0
+PASS: training-30 repeated native save 1
+PASS: training-30 repeated native save 2
+PASS: actual cost and months by ability
+PASS: monthly training idempotence
+PASS: weighted leadership/war training estimate
+PASS: no acceptance-month expense or effect
+PASS: training blocks external action but defense remains
+PASS: training-90 repeated native save 0
+PASS: training-90 repeated native save 1
+PASS: training-90 repeated native save 2
+PASS: actual cost and months by ability
+PASS: monthly training idempotence
+PASS: no money pauses without progress
+PASS: failed upkeep pauses without extra food charge
+PASS: same-city replacement retains attained training
+PASS: explicit stop releases training duty
+PASS: capture does not train enemy units
+PASS: actual campaign battle flips only readiness
+PASS: actual battle troop loss and occupation conservation
+PASS: battle-false repeated native save 0
+PASS: battle-false repeated native save 1
+PASS: battle-false repeated native save 2
+PASS: actual campaign battle flips only readiness
+PASS: actual battle troop loss and occupation conservation
+PASS: battle-true repeated native save 0
+PASS: battle-true repeated native save 1
+PASS: battle-true repeated native save 2
+PASS: small-army no minimum survivor creation 1
+PASS: small attack annihilation stays zero
+PASS: small-army no minimum survivor creation 10
+PASS: small attack annihilation stays zero
+PASS: small-army no minimum survivor creation 499
+PASS: small attack annihilation stays zero
+PASS: small-army no minimum survivor creation 999
+PASS: small attack annihilation stays zero
+PASS: one-man occupation cannot make two minimum garrisons
+PASS: actual AI monthly path issues paid inventory
+PASS: actual national AI records successful training command
+PASS: AI actual training jobs exist
+PASS: AI same-month no duplicate decision
+PASS: AI training pays its own ledger
+PASS: legacy preserves existing equipment and mixed troop types
+PASS: legacy in-transit soldiers registered once apart from city
+PASS: migration never repeats baseline equipment
+PASS: compatibility name resolves to stored officer ID
+PASS: explicit affiliation change preserves recruits origin and all quantities
+PASS: former owner cannot change other faction unit
+ARMY READINESS TESTS: 337 checks, 0 failures

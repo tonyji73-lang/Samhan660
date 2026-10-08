@@ -1,0 +1,74 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: boundary actual influence triggers compensate
+PASS: offer is nonmutating authority and money
+PASS: choice accepted compensate
+PASS: handover applied compensate
+PASS: exact once fee compensate
+PASS: retiree exact loss compensate
+PASS: group exact loss compensate
+PASS: repeat choice no effects
+PASS: save compensate
+PASS: repeat restore compensate
+PASS: repeat restore compensate
+EVIDENCE compensate {"city":"geumseong","gold":100,"income":{"basis":"완료 세입 기록 없음: 현재 공통 세입 견적","months":[],"value":1536.0},"losses":[{"D":3.47071583514099,"F":1.0,"I":66.3629790310918,"after":62.8922631959508,"ambition":50,"gold":100,"group_id":"silla:military","loyalty":50,"months":3,"officer_id":"historical:004","population_lost":120000,"troops_lost":0}],"months":3,"ok":true,"old_ids":["historical:004"],"previous_id":"historical:004","reason":"","request":{"faction_id":"silla","kind":"governor","officer_id":"historical:001","target":"geumseong"},"required":true,"successor_id":"historical:001","units":[]} money 1000->900
+PASS: boundary actual influence triggers wait
+PASS: offer is nonmutating authority and money
+PASS: choice accepted wait
+PASS: wait retains governor
+PASS: handover applied wait
+PASS: exact once fee wait
+PASS: retiree exact loss wait
+PASS: group exact loss wait
+PASS: repeat choice no effects
+PASS: save wait
+PASS: repeat restore wait
+PASS: repeat restore wait
+EVIDENCE wait {"city":"geumseong","gold":100,"income":{"basis":"완료 세입 기록 없음: 현재 공통 세입 견적","months":[],"value":1536.0},"losses":[{"D":3.47071583514099,"F":1.0,"I":66.3629790310918,"after":62.8922631959508,"ambition":50,"gold":100,"group_id":"silla:military","loyalty":50,"months":3,"officer_id":"historical:004","population_lost":120000,"troops_lost":0}],"months":3,"ok":true,"old_ids":["historical:004"],"previous_id":"historical:004","reason":"","request":{"faction_id":"silla","kind":"governor","officer_id":"historical:001","target":"geumseong"},"required":true,"successor_id":"historical:001","units":[]} money 1000->1000
+PASS: boundary actual influence triggers force
+PASS: offer is nonmutating authority and money
+PASS: choice accepted force
+PASS: handover applied force
+PASS: exact once fee force
+PASS: retiree exact loss force
+PASS: group exact loss force
+PASS: repeat choice no effects
+PASS: save force
+PASS: repeat restore force
+PASS: repeat restore force
+PASS: city work reduced
+PASS: city exact monthly countdown 1
+PASS: city exact monthly countdown 2
+EVIDENCE force {"city":"geumseong","gold":100,"income":{"basis":"완료 세입 기록 없음: 현재 공통 세입 견적","months":[],"value":1536.0},"losses":[{"D":3.47071583514099,"F":1.0,"I":66.3629790310918,"after":62.8922631959508,"ambition":50,"gold":100,"group_id":"silla:military","loyalty":50,"months":3,"officer_id":"historical:004","population_lost":120000,"troops_lost":0}],"months":3,"ok":true,"old_ids":["historical:004"],"previous_id":"historical:004","reason":"","request":{"faction_id":"silla","kind":"governor","officer_id":"historical:001","target":"geumseong"},"required":true,"successor_id":"historical:001","units":[]} money 1000->1000
+PASS: commander authority negotiation
+PASS: pending split blocked
+PASS: forced command retrieval
+PASS: attack blocked defense retains unit
+PASS: split inherits disruption
+PASS: initial no requests/ending silla_equilibrium_632silla
+PASS: initial common personnel path silla_equilibrium_632silla
+PASS: initial no requests/ending silla_equilibrium_632baekje
+PASS: initial common personnel path silla_equilibrium_632baekje
+PASS: initial no requests/ending silla_equilibrium_632goguryeo
+PASS: initial common personnel path silla_equilibrium_632goguryeo
+PASS: initial no requests/ending goguryeo_coup_642silla
+PASS: initial common personnel path goguryeo_coup_642silla
+PASS: initial no requests/ending goguryeo_coup_642baekje
+PASS: initial common personnel path goguryeo_coup_642baekje
+PASS: initial no requests/ending goguryeo_coup_642goguryeo
+PASS: initial common personnel path goguryeo_coup_642goguryeo
+PASS: initial no requests/ending baekje_fall_660silla
+PASS: initial common personnel path baekje_fall_660silla
+PASS: initial no requests/ending baekje_fall_660baekje
+PASS: initial common personnel path baekje_fall_660baekje
+PASS: initial no requests/ending baekje_fall_660goguryeo
+PASS: initial common personnel path baekje_fall_660goguryeo
+PASS: initial no requests/ending baekgang_663silla
+PASS: initial common personnel path baekgang_663silla
+PASS: initial no requests/ending baekgang_663goguryeo
+PASS: initial common personnel path baekgang_663goguryeo
+PASS: initial no requests/ending silla_tang_war_670silla
+PASS: initial common personnel path silla_tang_war_670silla
+PASS: twelve supported combinations
+NOBLE POWER: 67 checks, 0 failures

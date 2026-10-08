@@ -1,0 +1,42 @@
+﻿[
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "1CC779810D9EA3721DE1EC8611ED8CFEB4F1916BA02D78D43C8CC52D76AD2DD6",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\campaign_main.gd"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "999D4F6B5690D9830314D969DF9C748D06C0BD850BC5E96715B7554C7DC7B130",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\domestic_assignment_overlay.gd"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "80EBE61718BC0ACDB0DED2944590A071D1FDD890D7D8236C7645312C9E7F84B9",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\industry_assignment_overlay.gd"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "236C43523A47589B53E0A15D13975AE895CEB14F7DFFBD009D502D7035782E0C",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\production_overlay.gd"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "8C1395BFCD2B1CA3D9EDEB2A293F5F7B201B76B9E6B107BC042B1199F6257F98",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\settlement_overlay.gd"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "ADE022F4E831A99E052EA2B7A3B85A4C5E70C8E09A01E761F8F4CFFFF28E44D0",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\project.godot"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "3B72A1835490B8937751D044A1B8B38774B054FDEEE8D7D6D89E124FEC5C0EAD",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\export_presets.cfg"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "6D80BDDD55270E876EE639B16AA669653DF9C4AB6B226AE98583D99A882D31D0",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\tests\\HOME_HANDOFF_20260923.md"
+    }
+]

@@ -1,0 +1,46 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+PASS: editor helper absent
+PASS: pack includes data/officers_v1.json
+PASS: pack includes cutscenes/cutscene_catalog_v1.json
+PASS: pack includes ui/faction_selection_v1/layout.json
+PASS: pack includes ui/faction_declaration_v1/declarations.json
+PASS: pack includes ui/korea_layout_v1/full_r3_v1/manifest.json
+PASS: pack includes licenses/NanumMyeongjo-OFL.txt
+PASS: pack includes licenses/SamhanUISans-OFL.txt
+PASS: pack includes licenses/GODOT-LICENSE.txt
+PASS: packed raw map hash
+PASS: title Korean glyphs
+PASS: V1.7 court packed
+PASS: politics preview packed
+PASS: new EXE process restores full campaign governorforce
+PASS: gold loyalty cooperation influence period units work restored governorforce
+PASS: same request ID cannot reapply cost/effects governorforce
+PASS: capture governor-force-restored
+PASS: restored work/army restriction active
+PASS: actual month advances
+PASS: actual month advances
+PASS: restored handover completes governorforce
+PASS: cost paid remains exact after monthly processing
+PASS: restriction expires after exact months
+PASS: completed response ID remains idempotent after month
+PASS: capture governor-force-month-complete
+PASS: new EXE process restores full campaign commanderforce
+PASS: gold loyalty cooperation influence period units work restored commanderforce
+PASS: same request ID cannot reapply cost/effects commanderforce
+PASS: capture commander-force-restored
+PASS: restored work/army restriction active
+PASS: actual month advances
+PASS: restored handover completes commanderforce
+PASS: cost paid remains exact after monthly processing
+PASS: restriction expires after exact months
+PASS: completed response ID remains idempotent after month
+PASS: capture commander-force-month-complete
+PASS: new EXE process restores full campaign demandreject
+PASS: gold loyalty cooperation influence period units work restored demandreject
+PASS: same request ID cannot reapply cost/effects demandreject
+PASS: capture demand-reject-restored
+PASS: actual month advances
+PASS: capture demand-reject-month-complete
+EXPORT V1.7.1 reload-force: 42 checks, 0 failures

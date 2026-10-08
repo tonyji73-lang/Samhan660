@@ -1,0 +1,33 @@
+﻿{
+    "Path":  "C:\\Users\\지용훈\\Downloads\\Samhan660_Windows_V1_9_20261001.zip",
+    "Bytes":  490281615,
+    "SHA256":  "25281BDA5746CBB4DDA4BC66F7CC897C055E60DF5075CEA9F651E284647A8530",
+    "VerifiedPayloads":  11,
+    "Build":  {
+                  "Version":  "V1.9",
+                  "Date":  "2026-10-01",
+                  "Engine":  "4.7.2.stable.official.ed1daf0bf",
+                  "Template":  "4.7.2.stable",
+                  "Architecture":  "x86_64",
+                  "Preset":  "Windows Desktop",
+                  "Branch":  "main",
+                  "Head":  "1dbe7e6546dfb05af9a21a54cf0a3cc3ae8956b5",
+                  "UsesUncommittedSource":  true,
+                  "GameChangesThisTask":  "sortie confirmation and battle results UI; existing combat and reward rules unchanged",
+                  "SourceManifest":  "SOURCE_SHA256.json",
+                  "SourceManifestSHA256":  "13A2F7943F0CEEAA20E28FA3017BB2C63C726DD7ADBA558C9E9F3A4A545AEACD",
+                  "BuildOnlyChanges":  "Opt-in QA autoload res://qa/windows_export_v1_9.gd; no original project.godot edit",
+                  "QA":  [
+                             {
+                                 "SHA256":  "6615AD468704A0E02BC9C61769812769C58DB8AF53E24BA8B2A48BCFF94B57A9",
+                                 "File":  "runtime_qa.gd"
+                             },
+                             {
+                                 "SHA256":  "273003225D3EBA74FE4BD33365B728B353E1DF6A183D030C29B2336B1C54E34B",
+                                 "File":  "base_qa.gd"
+                             }
+                         ],
+                  "ExeSHA256":  "3D19EE4A764E8BB153BFA7F811F98E0DFB0139C9E0C8BC6B76B93D3ED09185BF",
+                  "PackSHA256":  "4405DE84B802002BC1CCB5F24A8C420C9B321E9F48FEE2194164D0C45CF8AFE8"
+              }
+}

@@ -1,0 +1,20 @@
+﻿{
+    "Requested":  125,
+    "ActualScale":  "125%(권장)",
+    "Monitor":  "{X=0,Y=0,Width=1920,Height=1080}",
+    "Metrics":  {
+                    "Pid":  9604,
+                    "Dpi":  96,
+                    "ClientWidth":  1605,
+                    "ClientHeight":  911,
+                    "ClientX":  34,
+                    "ClientY":  63,
+                    "OuterWidth":  1625,
+                    "OuterHeight":  960
+                },
+    "ReportWasVisible":  true,
+    "NativeScroll":  true,
+    "NativeProductionClick":  false,
+    "EscRestoresInput":  false,
+    "FocusAfterTab":  "@Button@398:\u003cButton#125527134124\u003e"
+}

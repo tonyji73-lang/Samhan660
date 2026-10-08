@@ -1,0 +1,17 @@
+﻿{
+    "SourceCount":  1282,
+    "Changed":  "army_readiness_overlay.gd",
+    "Machine":  "0x8664",
+    "Files":  [
+                  {
+                      "Algorithm":  "SHA256",
+                      "Hash":  "3D19EE4A764E8BB153BFA7F811F98E0DFB0139C9E0C8BC6B76B93D3ED09185BF",
+                      "Path":  "C:\\Users\\지용훈\\AppData\\Local\\Temp\\Samhan660_V1_6_1_20260930\\play-copy\\Samhan660.exe"
+                  },
+                  {
+                      "Algorithm":  "SHA256",
+                      "Hash":  "B85471FC7FDC334FB7F1B14A7B88393E81B282A58973F8935918A1B63856FCFB",
+                      "Path":  "C:\\Users\\지용훈\\AppData\\Local\\Temp\\Samhan660_V1_6_1_20260930\\play-copy\\Samhan660.pck"
+                  }
+              ]
+}

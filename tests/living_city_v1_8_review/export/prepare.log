@@ -1,0 +1,73 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+PASS: editor helper absent
+PASS: pack includes data/officers_v1.json
+PASS: pack includes cutscenes/cutscene_catalog_v1.json
+PASS: pack includes ui/faction_selection_v1/layout.json
+PASS: pack includes ui/faction_declaration_v1/declarations.json
+PASS: pack includes ui/korea_layout_v1/full_r3_v1/manifest.json
+PASS: pack includes licenses/NanumMyeongjo-OFL.txt
+PASS: pack includes licenses/SamhanUISans-OFL.txt
+PASS: pack includes licenses/GODOT-LICENSE.txt
+PASS: packed raw map hash
+PASS: title Korean glyphs
+PASS: capture diplomacy-720
+PASS: ruler/envoy portrait and candidates
+PASS: Tab stays in modal
+PASS: Shift Tab reverses
+PASS: keyboard nation selection
+PASS: candidate list scrolls internally
+PASS: capture envoy-scroll-720
+PASS: Esc restores month button
+PASS: map selection restored
+PASS: capture diplomacy-1080
+PASS: ruler/envoy portrait and candidates
+PASS: Tab stays in modal
+PASS: Shift Tab reverses
+PASS: keyboard nation selection
+PASS: candidate list scrolls internally
+PASS: capture envoy-scroll-1080
+PASS: Esc restores month button
+PASS: map selection restored
+PASS: target/envoy browsing changes no game state
+PASS: normal domestic job used for conflict
+PASS: busy envoy disabled with existing reason
+PASS: capture envoy-conflict
+PASS: insufficient gold explained near confirmation
+PASS: insufficient gold cannot execute
+PASS: capture insufficient-gold
+PASS: full long name available as tooltip
+PASS: capture long-name-confirm
+PASS: capture long-list
+PASS: empty candidate list safe
+PASS: capture empty-envoys
+PASS: confirmation cancel preserves state
+PASS: confirmation opens without state changes
+PASS: capture confirm-gift-720
+PASS: capture confirm-gift-1080
+PASS: keyboard confirms modal
+PASS: exact quoted immediate cost
+PASS: actual result equals existing command preview
+PASS: repeat confirmation has no effect
+PASS: normal gift relationship plus twelve
+PASS: monthly limit prevents repeated gift
+PASS: actual month advances
+PASS: normal trade negotiation available
+PASS: capture trade-quote-720
+PASS: capture trade-quote-1080
+PASS: confirmation opens without state changes
+PASS: capture confirm-trade_pact-720
+PASS: capture confirm-trade_pact-1080
+PASS: keyboard confirms modal
+PASS: exact quoted immediate cost
+PASS: actual result equals existing command preview
+PASS: repeat confirmation has no effect
+PASS: normal agreement concluded
+PASS: existing route backend accepts actual markets and agreement
+PASS: conditional trade preview uses existing settlement
+PASS: capture agreement-720
+PASS: capture agreement-1080
+PASS: new default user slot
+PASS: save normal diplomacy state
+EXPORT V1.8 prepare: 69 checks, 0 failures

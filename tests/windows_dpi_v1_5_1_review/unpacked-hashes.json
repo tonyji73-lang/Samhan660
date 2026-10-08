@@ -1,0 +1,12 @@
+﻿[
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "3D19EE4A764E8BB153BFA7F811F98E0DFB0139C9E0C8BC6B76B93D3ED09185BF",
+        "Path":  "C:\\Users\\지용훈\\AppData\\Local\\Temp\\Samhan660_V1_5_1_20260930\\installed\\Samhan660.exe"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "F584BCCD20B654F705DB64EB490312D3517946C9D84DB25F60CF800F622BFFB9",
+        "Path":  "C:\\Users\\지용훈\\AppData\\Local\\Temp\\Samhan660_V1_5_1_20260930\\installed\\Samhan660.pck"
+    }
+]

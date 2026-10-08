@@ -1,0 +1,140 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: capture supply
+PASS: capture formation
+PASS: capture training
+PASS: capture supply
+PASS: capture formation
+PASS: capture training
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab wraps full dialog
+PASS: Shift Tab reverses
+PASS: keyboard production reservation
+PASS: keyboard production stop
+PASS: production internal scrolling
+PASS: capture supply_scroll
+PASS: production Esc restores map
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab wraps full dialog
+PASS: Shift Tab reverses
+PASS: footer within window
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab wraps full dialog
+PASS: Shift Tab reverses
+PASS: footer within window
+PASS: officer selection and cancellation are pure preview
+PASS: many candidate cards scroll inside
+PASS: capture many_candidates
+PASS: empty candidates disable training
+PASS: capture empty_candidates
+PASS: army Esc restores map
+PASS: research Tab focus
+PASS: research Shift Tab returns
+PASS: research keyboard confirm
+PASS: research keyboard cancel
+PASS: research Esc closes
+PASS: domestic 65 percent preserved
+PASS: capture domestic_unchanged
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab wraps full dialog
+PASS: Shift Tab reverses
+PASS: keyboard production reservation
+PASS: keyboard production stop
+PASS: production internal scrolling
+PASS: capture supply_scroll
+PASS: production Esc restores map
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab wraps full dialog
+PASS: Shift Tab reverses
+PASS: footer within window
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab stays in dialog
+PASS: Tab wraps full dialog
+PASS: Shift Tab reverses
+PASS: footer within window
+PASS: officer selection and cancellation are pure preview
+PASS: many candidate cards scroll inside
+PASS: capture many_candidates
+PASS: empty candidates disable training
+PASS: capture empty_candidates
+PASS: army Esc restores map
+PASS: research Tab focus
+PASS: research Shift Tab returns
+PASS: research keyboard confirm
+PASS: research keyboard cancel
+PASS: research Esc closes
+PASS: domestic 65 percent preserved
+PASS: capture domestic_unchanged
+V1.6 VISUAL: 135 checks, 0 failures

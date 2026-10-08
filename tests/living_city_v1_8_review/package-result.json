@@ -1,0 +1,33 @@
+﻿{
+    "Path":  "C:\\Users\\지용훈\\Downloads\\Samhan660_Windows_V1_8_20260930.zip",
+    "Bytes":  490269638,
+    "SHA256":  "327DF6201D2F1B31E1DE0E4A74EDC00E6732EBE2CD88910A2F917294FD9F1AE9",
+    "VerifiedPayloads":  11,
+    "Build":  {
+                  "Version":  "V1.8",
+                  "Date":  "2026-09-30",
+                  "Engine":  "4.7.2.stable.official.ed1daf0bf",
+                  "Template":  "4.7.2.stable",
+                  "Architecture":  "x86_64",
+                  "Preset":  "Windows Desktop",
+                  "Branch":  "main",
+                  "Head":  "1dbe7e6546dfb05af9a21a54cf0a3cc3ae8956b5",
+                  "UsesUncommittedSource":  true,
+                  "GameChangesThisTask":  "campaign diplomacy UI + read-only candidate/preview integration; no diplomacy rules or save schema changes",
+                  "SourceManifest":  "SOURCE_SHA256.json",
+                  "SourceManifestSHA256":  "F6EE0DFD64DE42BDDE9FC45F9DA88C13DB4EDDE75BCF98F9FD2181309020B5BF",
+                  "BuildOnlyChanges":  "Opt-in QA autoload res://qa/windows_export_v1_8.gd; no original project.godot edit",
+                  "QA":  [
+                             {
+                                 "SHA256":  "5A64AED90AEA16591EED97705B8713908F44A3D140581F422B47F952B758CC1F",
+                                 "File":  "runtime_qa.gd"
+                             },
+                             {
+                                 "SHA256":  "2E9F6EBEFD1DE358927E60D7963556AE810E15D8D441FE2795CE85F90079E9DF",
+                                 "File":  "base_qa.gd"
+                             }
+                         ],
+                  "ExeSHA256":  "3D19EE4A764E8BB153BFA7F811F98E0DFB0139C9E0C8BC6B76B93D3ED09185BF",
+                  "PackSHA256":  "47A6D92B18711A93AFF40F7804F8F5FC58CC13DCF1164F1AD80B40E56F6D5C91"
+              }
+}

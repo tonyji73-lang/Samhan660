@@ -1,0 +1,5 @@
+# Disposable save slots and path-only regression runner; screenshots/logs are evidence.
+/pending.json
+/appointed.json
+/regression/
+/domestic_regression.gd

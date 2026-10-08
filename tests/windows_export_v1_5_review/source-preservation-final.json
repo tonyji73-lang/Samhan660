@@ -1,0 +1,34 @@
+﻿[
+    {
+        "File":  "campaign_main.gd",
+        "Unchanged":  true
+    },
+    {
+        "File":  "domestic_assignment_overlay.gd",
+        "Unchanged":  true
+    },
+    {
+        "File":  "industry_assignment_overlay.gd",
+        "Unchanged":  true
+    },
+    {
+        "File":  "production_overlay.gd",
+        "Unchanged":  true
+    },
+    {
+        "File":  "settlement_overlay.gd",
+        "Unchanged":  true
+    },
+    {
+        "File":  "project.godot",
+        "Unchanged":  false
+    },
+    {
+        "File":  "export_presets.cfg",
+        "Unchanged":  false
+    },
+    {
+        "File":  "HOME_HANDOFF_20260923.md",
+        "Unchanged":  true
+    }
+]

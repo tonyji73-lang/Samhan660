@@ -1,0 +1,12 @@
+﻿{
+    "SourceMismatch":  [
+
+                       ],
+    "SourceManifest":  "13A2F7943F0CEEAA20E28FA3017BB2C63C726DD7ADBA558C9E9F3A4A545AEACD",
+    "PackHash":  "4405DE84B802002BC1CCB5F24A8C420C9B321E9F48FEE2194164D0C45CF8AFE8",
+    "ExcludedAddonTests":  [
+                               "addons/lowpolyterrain/tests/.gdignore",
+                               "addons/lowpolyterrain/tests/test_low_poly_terrain.gd",
+                               "addons/lowpolyterrain/tests/test_low_poly_terrain_servers.gd"
+                           ]
+}

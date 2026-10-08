@@ -1,0 +1,33 @@
+﻿{
+    "Path":  "C:\\Users\\지용훈\\Downloads\\Samhan660_Windows_V1_10_20261001.zip",
+    "Bytes":  490296889,
+    "SHA256":  "B3DC26DD41F5EA30D6E2A5DBDEB6176AA9C695EA4C6CEAAAC698C515D87C6F3F",
+    "VerifiedPayloads":  11,
+    "Build":  {
+                  "Version":  "V1.10",
+                  "Date":  "2026-10-01",
+                  "Engine":  "4.7.2.stable.official.ed1daf0bf",
+                  "Template":  "4.7.2.stable",
+                  "Architecture":  "x86_64",
+                  "Preset":  "Windows Desktop",
+                  "Branch":  "main",
+                  "Head":  "1dbe7e6546dfb05af9a21a54cf0a3cc3ae8956b5",
+                  "UsesUncommittedSource":  true,
+                  "GameChangesThisTask":  "monthly report and action routes; production prerequisite ordering; missing map sortie confirmation route restored; all gameplay rules unchanged",
+                  "SourceManifest":  "SOURCE_SHA256.json",
+                  "SourceManifestSHA256":  "0B2C284BB7B7D1963D7CC8D00A60B68C776028B0E31393DA5C5581ED899FA368",
+                  "BuildOnlyChanges":  "Opt-in QA autoload res://qa/windows_export_v1_10.gd; no original project.godot edit",
+                  "QA":  [
+                             {
+                                 "SHA256":  "BA3CA12E8C0341A58064ED1DC934AEBC84C9C9805EA122D55AF662E1957BF877",
+                                 "File":  "runtime_qa.gd"
+                             },
+                             {
+                                 "SHA256":  "0438EC7C8457491A46F9388281F25190459BC524D29BBBB3482E49F098571329",
+                                 "File":  "base_qa.gd"
+                             }
+                         ],
+                  "ExeSHA256":  "3D19EE4A764E8BB153BFA7F811F98E0DFB0139C9E0C8BC6B76B93D3ED09185BF",
+                  "PackSHA256":  "90FDBE93C76AB0B3AFF8718C7A573071275A080A95508512623740BF69E0634B"
+              }
+}

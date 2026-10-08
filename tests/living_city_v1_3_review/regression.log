@@ -1,0 +1,137 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: 신라 ability 90 quote
+PASS: 100 charged once; no immediate stat change
+PASS: city and person duplicate rejected without charge
+PASS: acceptance month cannot finish
+PASS: snapshot outcome applies next month
+PASS: completed job cannot refund
+PASS: repeated processing applies no second gain
+PASS: 신라 ability 30 quote
+PASS: 100 charged once; no immediate stat change
+PASS: city and person duplicate rejected without charge
+PASS: acceptance month cannot finish
+PASS: snapshot outcome applies next month
+PASS: completed job cannot refund
+PASS: repeated processing applies no second gain
+PASS: insufficient gold blocked
+PASS: actual quote clamps remaining headroom
+PASS: cap applied and future charge blocked
+PASS: receipt records actual gain
+PASS: vacancy uses original base
+PASS: governor assigned through actual authority validation
+PASS: politics80 gives 16 percent once to tax and harvest
+PASS: governor can work locally without losing governor bonus
+PASS: normal cancel returns its 100
+PASS: second cancel cannot refund
+PASS: replacement governor immediately changes both outcomes
+PASS: replacement receipt includes both IDs and date
+PASS: politics100 gives20percent
+PASS: actual settlement separates base and bonus
+PASS: same-month tax settlement cannot duplicate
+PASS: actual September collects45percent then70percent with governor
+PASS: same harvest month cannot duplicate
+PASS: moving governor removes post and bonus
+PASS: dismissal history retains identity, city, previous/new IDs and date
+PASS: 백제 ability 90 quote
+PASS: 100 charged once; no immediate stat change
+PASS: city and person duplicate rejected without charge
+PASS: acceptance month cannot finish
+PASS: snapshot outcome applies next month
+PASS: completed job cannot refund
+PASS: repeated processing applies no second gain
+PASS: 백제 ability 30 quote
+PASS: 100 charged once; no immediate stat change
+PASS: city and person duplicate rejected without charge
+PASS: acceptance month cannot finish
+PASS: snapshot outcome applies next month
+PASS: completed job cannot refund
+PASS: repeated processing applies no second gain
+PASS: insufficient gold blocked
+PASS: actual quote clamps remaining headroom
+PASS: cap applied and future charge blocked
+PASS: receipt records actual gain
+PASS: vacancy uses original base
+PASS: governor assigned through actual authority validation
+PASS: politics80 gives 16 percent once to tax and harvest
+PASS: governor can work locally without losing governor bonus
+PASS: normal cancel returns its 100
+PASS: second cancel cannot refund
+PASS: replacement governor immediately changes both outcomes
+PASS: replacement receipt includes both IDs and date
+PASS: politics100 gives20percent
+PASS: actual settlement separates base and bonus
+PASS: same-month tax settlement cannot duplicate
+PASS: actual September collects45percent then70percent with governor
+PASS: same harvest month cannot duplicate
+PASS: moving governor removes post and bonus
+PASS: dismissal history retains identity, city, previous/new IDs and date
+PASS: 고구려 ability 90 quote
+PASS: 100 charged once; no immediate stat change
+PASS: city and person duplicate rejected without charge
+PASS: acceptance month cannot finish
+PASS: snapshot outcome applies next month
+PASS: completed job cannot refund
+PASS: repeated processing applies no second gain
+PASS: 고구려 ability 30 quote
+PASS: 100 charged once; no immediate stat change
+PASS: city and person duplicate rejected without charge
+PASS: acceptance month cannot finish
+PASS: snapshot outcome applies next month
+PASS: completed job cannot refund
+PASS: repeated processing applies no second gain
+PASS: insufficient gold blocked
+PASS: actual quote clamps remaining headroom
+PASS: cap applied and future charge blocked
+PASS: receipt records actual gain
+PASS: vacancy uses original base
+PASS: governor assigned through actual authority validation
+PASS: politics80 gives 16 percent once to tax and harvest
+PASS: governor can work locally without losing governor bonus
+PASS: normal cancel returns its 100
+PASS: second cancel cannot refund
+PASS: replacement governor immediately changes both outcomes
+PASS: replacement receipt includes both IDs and date
+PASS: politics100 gives20percent
+PASS: actual settlement separates base and bonus
+PASS: same-month tax settlement cannot duplicate
+PASS: actual September collects45percent then70percent with governor
+PASS: same harvest month cannot duplicate
+PASS: moving governor removes post and bonus
+PASS: dismissal history retains identity, city, previous/new IDs and date
+PASS: conflict fixture starts
+PASS: busy person cannot be envoy
+PASS: busy person cannot move
+PASS: busy person remains available to defend
+PASS: all busy prevents attack; automatic commander agrees
+PASS: defensive commander preserved
+PASS: direct attack handler blocks before combat
+PASS: AI attack uses identical guard
+PASS: pending-cancel repeated load 0
+PASS: pending-cancel repeated load 1
+PASS: pending-cancel repeated load 2
+PASS: loaded pending job refunds once
+PASS: cancelled repeated load 0
+PASS: cancelled repeated load 1
+PASS: cancelled repeated load 2
+PASS: loaded cancellation cannot refund again
+PASS: city loss cannot use normal refund
+PASS: lost city no gain; reason recorded
+PASS: lost officer qualification interrupts without gain or refund
+PASS: pending-month repeated load 0
+PASS: pending-month repeated load 1
+PASS: pending-month repeated load 2
+PASS: actual month handler completes before settlement
+PASS: same month settlement uses completed commerce before later public-order processing
+PASS: completion saved as terminal status
+PASS: completed-month repeated load 0
+PASS: completed-month repeated load 1
+PASS: completed-month repeated load 2
+PASS: loaded completion cannot refund
+PASS: later month cannot repeat development
+PASS: old save gets empty jobs without new charge
+PASS: old inventory and diplomacy preserved
+DOMESTIC ASSIGNMENT TESTS: 131 checks, 0 failures

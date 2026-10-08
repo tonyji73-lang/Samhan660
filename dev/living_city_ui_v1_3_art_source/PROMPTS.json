@@ -1,0 +1,42 @@
+{
+  "tool": "built-in image_gen",
+  "transparent_background": true,
+  "final_prompts": [
+    {
+      "key": "primary_button",
+      "filename": "primary_red.png",
+      "prompt": "Use case: stylized-concept. Create ONE production UI button background texture for Samhan660. The attached full UI is only a STYLE reference. Match the red confirmation button in the lower right: deep vermilion/burgundy red lacquer, restrained fine antique gold and bronze double border, small symmetric Korean-inspired knotted leaf engravings at the two extreme ends. Exact intended drawable rectangle 648 by 72 px, 9:1 aspect, very wide and shallow, complete uncropped button centered on a transparent canvas. Crisp cut/chamfered corners, all gold decoration stays within outer 48 px at each end and outer 12 px vertically; large central red area is plain and empty for live text. Front-facing orthographic UI bitmap, no perspective. No text of any kind, no icon, no seal, no numbers, no letters, no UI screenshot, no labels. No enormous shine, no heavy external glow or cast shadow. Keep the shape fully inside canvas. Transparent outside the chamfered button, genuinely RGBA alpha, never a painted checkerboard.",
+      "reference_role": "approved option 1 visual or previous iteration; not in-game text"
+    },
+    {
+      "key": "bar_frame_final",
+      "filename": "lacquer_bar.png",
+      "prompt": "Use case: precise-object-edit. Edit the attached long black-and-gold game UI bar. Keep its dark lacquer material and slim straight gold rails, but REMOVE BOTH LARGE CLOUD MEDALLIONS AND ALL BIG END FLOURISHES. Replace them with only tiny low-relief engraved corner filigree, confined to a 16 by 12 pixel-sized corner in the intended 1920 by 88 logical asset. This is essential: live text starts 12 pixels from the left and is 36 pixels tall, and must remain readable without ornament behind it. The entire horizontal center from x=20 through x=1900 is empty nearly-black lacquer. Outer frame shape a simple thin rectangle with minimally chamfered corners, no round disks, no flowers, no large scrolls, no protrusions, no outside shadow. Render a complete uncropped very long shallow 22:1 strip, any surrounding canvas genuinely transparent. No text, no UI mockup, no letters, no icons. Preserve real alpha outside. Texture is subtle. Crisp orthographic front view. Do not add new ornament elsewhere.",
+      "reference_role": "approved option 1 visual or previous iteration; not in-game text"
+    },
+    {
+      "key": "panel_frame",
+      "filename": "work_panel_frame.png",
+      "prompt": "Use case: stylized-concept. Create one standalone production UI border texture for the right cream-paper panel of the attached Samhan660 reference. The reference is only for material style. A tall vertical rectangular border at intended logical size 672 wide by 914 high, aspect ratio .735. Hollow frame: entire interior is genuinely TRANSPARENT alpha, as is everything outside. No paper fill, no backdrop, no checkerboard. Very fine antique bronze/gold double hairline with restrained aged metal edges; four tiny Korean cloud-scroll engraving corners only in a 24 by 24 px logical square. The border itself is at most 6 logical pixels thick, with most ornament within 10px of the edge. Very small details, keep broad interior absolutely empty transparent. The large frame fills the output canvas with just a small transparent safety margin, whole frame uncropped. Straight symmetric vertical/horizontal sides, perfectly front-facing, no perspective, no internal title bar or subdivisions, no letters or numbers or text. Flat UI asset, no external shadow. Match historical Korean strategy aesthetic, understated not fantasy jewelry.",
+      "reference_role": "approved option 1 visual or previous iteration; not in-game text"
+    },
+    {
+      "key": "card_frame",
+      "filename": "candidate_frame.png",
+      "prompt": "Use case: stylized-concept. Create ONE standalone UI selection border for a Samhan660 officer portrait card. Match restrained antique gold of the attached reference selected officer card. Intended canonical shape 192 wide by 152 high, landscape 1.263:1. A fine hollow rectangular double border with subtly clipped corners and a very restrained warm gold inner glint. No filling anywhere: inside and outside are genuinely transparent alpha. Only the frame is visible. Tiny angular bronze-gold Korean-inspired corner accents entirely within 12 by 12 logical pixels at each corner, straight edge rails about 2 logical pixels, no large flourishes. The frame fills canvas with only a small transparent safety margin. Crisp professional strategy-game asset, orthographic front view, no perspective, no shadows outside, no icons, no portrait, no letters, no labels, no text, no other UI. Symmetric straight lines, scalable middle edge sections; glow remains inside the frame and must not fill or fog the center. Never bake a checkerboard or paper into the transparency.",
+      "reference_role": "approved option 1 visual or previous iteration; not in-game text"
+    },
+    {
+      "key": "title_divider",
+      "filename": "title_divider.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE standalone small horizontal divider decoration for a historical Korean strategy game. Create a very thin antique bronze-gold straight line, tapering gently, with a tiny restrained cloud-engraved end cap at both ends. Its intended logical footprint is 648 pixels wide by 12 pixels high. The divider has only very small decorative scrolls within the final 18 pixels at each end, and one simple clean horizontal rail across its entire middle. No center medallion, no shapes hanging below, no text, no letters, no glow, no shadow. Orthographic flat front view; complete uncropped very long shallow strip centered within any output canvas. All space around the ornament genuinely transparent alpha. Match the attached UI reference's antique bronze decoration, but do not reproduce the whole screen. Keep the ornament subdued and legible over cream paper as well as dark lacquer. No paper or background color, no checkerboard. Only the divider, no border around the canvas.",
+      "reference_role": "approved option 1 visual or previous iteration; not in-game text"
+    },
+    {
+      "key": "city_heading_final",
+      "filename": "city_heading_frame.png",
+      "prompt": "Use case: precise-object-edit. Edit the attached hollow long title frame. REMOVE ALL LARGE CURLING END SCROLLS, including the solid decorative blocks at both ends. The result is a very thin simple hollow rectangular antique bronze frame, with only four minuscule engraved corner knots, no large ornament anywhere. All four tiny ornaments must be confined to the outermost 8 pixels of the intended logical 1196 by 84 shape. This is a production UI frame where live text begins 12 logical pixels from the left and spans 40 px tall; the full interior from x=10 to x=1186 and y=10 to y=74 must be completely clear and transparent. Keep just a straight delicate double-line antique bronze/gold rail about 2 logical pixels thick and minimally clipped corners. No left/right circular medallions, no protrusions, no gold triangle corner fills. Very long shallow horizontal frame with fully transparent inside and outside, no backdrop, no letters or text, no glow. Preserve aged bronze material of the source in the thin rails. Entire frame complete uncropped centered in the output canvas.",
+      "reference_role": "approved option 1 visual or previous iteration; not in-game text"
+    }
+  ]
+}

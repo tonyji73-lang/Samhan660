@@ -1,0 +1,325 @@
+{
+	"1280:city_heading": {
+		"display": [
+			797.333333333333,
+			55.3333333333333
+		],
+		"logical": [
+			1196.0,
+			83.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityPanorama/@PanelContainer@201"
+	},
+	"1280:effect_heading": {
+		"display": [
+			432.0,
+			24.6666666666667
+		],
+		"logical": [
+			648.0,
+			37.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@Label@269"
+	},
+	"1280:footer": {
+		"display": [
+			1280.0,
+			58.6666666666667
+		],
+		"logical": [
+			1920.0,
+			88.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@PanelContainer@294"
+	},
+	"1280:header_text": {
+		"display": [
+			1162.0,
+			23.3333333333333
+		],
+		"logical": [
+			1743.0,
+			35.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@PanelContainer@195/@HBoxContainer@196/@Label@198"
+	},
+	"1280:menu": {
+		"display": [
+			186.0,
+			42.6666666666667
+		],
+		"logical": [
+			279.0,
+			64.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@PanelContainer@294/@HBoxContainer@295/@Button@296"
+	},
+	"1280:officer_card": {
+		"display": [
+			432.0,
+			121.333333333333
+		],
+		"logical": [
+			648.0,
+			182.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@ScrollContainer@267/@VBoxContainer@268/@PanelContainer@1585"
+	},
+	"1280:panel": {
+		"display": [
+			448.0,
+			609.333333333333
+		],
+		"logical": [
+			672.0,
+			914.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel"
+	},
+	"1280:personnel_card": {
+		"display": [
+			123.333333333333,
+			98.0
+		],
+		"logical": [
+			185.0,
+			147.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@ScrollContainer@278/@HBoxContainer@279/@VBoxContainer@1609"
+	},
+	"1280:personnel_name": {
+		"display": [
+			123.333333333333,
+			32.0
+		],
+		"logical": [
+			185.0,
+			48.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@ScrollContainer@278/@HBoxContainer@279/@VBoxContainer@1609/@Button@1611"
+	},
+	"1280:personnel_primary": {
+		"display": [
+			432.0,
+			48.0
+		],
+		"logical": [
+			648.0,
+			72.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@Button@281"
+	},
+	"1280:primary": {
+		"display": [
+			432.0,
+			48.0
+		],
+		"logical": [
+			648.0,
+			72.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@Button@281"
+	},
+	"1280:title": {
+		"display": [
+			432.0,
+			35.3333333333333
+		],
+		"logical": [
+			648.0,
+			53.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@HBoxContainer@220"
+	},
+	"1280:top": {
+		"display": [
+			1280.0,
+			52.0
+		],
+		"logical": [
+			1920.0,
+			78.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@PanelContainer@195"
+	},
+	"1920:city_heading": {
+		"display": [
+			1196.0,
+			83.0
+		],
+		"logical": [
+			1196.0,
+			83.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityPanorama/@PanelContainer@201"
+	},
+	"1920:effect_heading": {
+		"display": [
+			648.0,
+			37.0
+		],
+		"logical": [
+			648.0,
+			37.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@Label@269"
+	},
+	"1920:footer": {
+		"display": [
+			1920.0,
+			88.0
+		],
+		"logical": [
+			1920.0,
+			88.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@PanelContainer@294"
+	},
+	"1920:header_text": {
+		"display": [
+			1743.0,
+			35.0
+		],
+		"logical": [
+			1743.0,
+			35.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@PanelContainer@195/@HBoxContainer@196/@Label@198"
+	},
+	"1920:menu": {
+		"display": [
+			279.0,
+			64.0
+		],
+		"logical": [
+			279.0,
+			64.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@PanelContainer@294/@HBoxContainer@295/@Button@296"
+	},
+	"1920:officer_card": {
+		"display": [
+			648.0,
+			182.0
+		],
+		"logical": [
+			648.0,
+			182.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@ScrollContainer@267/@VBoxContainer@268/@PanelContainer@1675"
+	},
+	"1920:panel": {
+		"display": [
+			672.0,
+			914.0
+		],
+		"logical": [
+			672.0,
+			914.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel"
+	},
+	"1920:personnel_card": {
+		"display": [
+			185.0,
+			147.0
+		],
+		"logical": [
+			185.0,
+			147.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@ScrollContainer@278/@HBoxContainer@279/@VBoxContainer@1699"
+	},
+	"1920:personnel_name": {
+		"display": [
+			185.0,
+			48.0
+		],
+		"logical": [
+			185.0,
+			48.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@ScrollContainer@278/@HBoxContainer@279/@VBoxContainer@1699/@Button@1701"
+	},
+	"1920:personnel_primary": {
+		"display": [
+			648.0,
+			72.0
+		],
+		"logical": [
+			648.0,
+			72.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@Button@281"
+	},
+	"1920:primary": {
+		"display": [
+			648.0,
+			72.0
+		],
+		"logical": [
+			648.0,
+			72.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@Button@281"
+	},
+	"1920:title": {
+		"display": [
+			648.0,
+			53.0
+		],
+		"logical": [
+			648.0,
+			53.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@Control@199/CityWorkPanel/@VBoxContainer@219/@HBoxContainer@220"
+	},
+	"1920:top": {
+		"display": [
+			1920.0,
+			78.0
+		],
+		"logical": [
+			1920.0,
+			78.0
+		],
+		"node": "/root/CampaignMain/ProductionLayer/@Control@193/@PanelContainer@195"
+	},
+	"fonts": [
+		{
+			"family": "Samhan UI Sans",
+			"hangul_ga": true,
+			"hangul_guk": true,
+			"path": "res://ui/faction_selection_v1/assets/SamhanUISans-Medium.ttf",
+			"style": "Medium"
+		},
+		{
+			"family": "Samhan UI Sans",
+			"hangul_ga": true,
+			"hangul_guk": true,
+			"path": "res://ui/faction_selection_v1/assets/SamhanUISans-SemiBold.ttf",
+			"style": "SemiBold"
+		},
+		{
+			"family": "Lobster Two",
+			"hangul_ga": false,
+			"hangul_guk": false,
+			"path": "res://addons/gut/fonts/LobsterTwo-Regular.ttf",
+			"style": "Regular"
+		},
+		{
+			"family": "Anonymous Pro",
+			"hangul_ga": false,
+			"hangul_guk": false,
+			"path": "res://addons/gut/fonts/AnonymousPro-Regular.ttf",
+			"style": "Regular"
+		},
+		{
+			"family": "Courier Prime",
+			"hangul_ga": false,
+			"hangul_guk": false,
+			"path": "res://addons/gut/fonts/CourierPrime-Regular.ttf",
+			"style": "Regular"
+		}
+	]
+}

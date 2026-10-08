@@ -1,0 +1,14 @@
+﻿{
+    "Monitor":  "1920x1080",
+    "Scale":  "125%(권장)",
+    "Game":  {
+                 "Pid":  34384,
+                 "Dpi":  96,
+                 "ClientWidth":  1600,
+                 "ClientHeight":  900,
+                 "ClientX":  90,
+                 "ClientY":  120,
+                 "OuterWidth":  1620,
+                 "OuterHeight":  949
+             }
+}

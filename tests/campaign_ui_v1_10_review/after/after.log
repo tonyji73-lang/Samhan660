@@ -1,0 +1,57 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+Portrait metrics: clip_size=(420.0, 275.0) portrait_position=(-4.2, 11.0) portrait_size=(247.5, 363.0) parent=Control
+Hanji metrics: hanji_size=(168.0, 206.25) text_group_content_size=(318.0, 428.0) text_group_position=(-75.0, -110.875) horizontal_margins=(-75.0,-75.0) vertical_margins=(-110.875,-110.875)
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: capture after-01-selection
+PASS: GUI enters actual selected 632 faction
+PASS: capture after-02-city
+PASS: capture after-03-officers
+PASS: capture after-04-development
+PASS: capture after-05-production
+PASS: GUI option selection @OptionButton@1683
+FAIL: GUI option selection @OptionButton@1683
+PASS: GUI option selection @OptionButton@1683
+PASS: GUI option selection @OptionButton@1683
+PASS: GUI option selection @OptionButton@1683
+PASS: capture after-industry-research
+PASS: GUI option selection @OptionButton@1683
+FAIL: GUI option selection @OptionButton@1683
+FAIL: GUI option selection @OptionButton@1683
+PASS: capture after-industry-build
+PASS: capture after-06-transport
+PASS: capture after-09-court
+PASS: capture after-10-diplomacy
+PASS: GUI advances one actual month
+PASS: capture after-month-632-2
+PASS: report opens and blocks map
+PASS: report query leaves state unchanged
+PASS: capture report-720
+PASS: GUI option selection @OptionButton@1217
+PASS: capture guide-720
+PASS: report Tab remains inside
+PASS: report Esc restores visible map input
+PASS: report route uses current city
+PASS: capture production-route-720
+PASS: capture report-1080
+PASS: report wheel scroll exposes complete records
+PASS: capture report-scroll-1080
+PASS: capture after-07-army
+PASS: capture after-08-training
+PASS: GUI advances one actual month
+PASS: capture after-month-632-3
+PASS: new native save slot
+EXPORT V1.10 after: 38 checks, 3 failures

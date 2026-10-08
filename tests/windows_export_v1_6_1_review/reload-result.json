@@ -1,0 +1,71 @@
+{
+	"checks": 26,
+	"evidence": {
+		"gold": 45965,
+		"job": {
+			"city_id": "geumseong",
+			"cost_paid": 100.0,
+			"faction_id": "silla",
+			"history": [
+				{
+					"after_points": 61000.0,
+					"before_points": 50000.0,
+					"cost": 50.0,
+					"month": 7611.0,
+					"officer_id": "historical:001"
+				},
+				{
+					"after_points": 70000,
+					"before_points": 61000,
+					"cost": 50,
+					"month": 7612,
+					"officer_id": "historical:001"
+				}
+			],
+			"id": "training:59",
+			"kind": "training",
+			"last_month": 7612,
+			"officer_id": "historical:001",
+			"reason": "",
+			"status": "completed",
+			"unit_id": "unit:160"
+		},
+		"months_after_reload": 1,
+		"stock": {
+			"armor": 0,
+			"cloth": 0,
+			"copper": 0,
+			"furs": 0,
+			"ginseng": 0,
+			"horses": 0,
+			"iron": 0,
+			"leather": 0,
+			"metalcraft": 0,
+			"salt": 0,
+			"silk": 0,
+			"sword": 0,
+			"timber": 0
+		},
+		"unit": {
+			"commander_id": "historical:001",
+			"creation_reason": "recruitment",
+			"equipment": 1000.0,
+			"faction_id": "silla",
+			"id": "unit:160",
+			"kind": "infantry",
+			"location": "geumseong",
+			"origins": {
+				"geumseong": 1000.0
+			},
+			"power": 50.0,
+			"status": "stationed",
+			"training_points": 70000,
+			"transfer_id": "",
+			"troops": 1000.0
+		}
+	},
+	"exe": "C:/Users/지용훈/AppData/Local/Temp/Samhan660_V1_6_1_20260930/play-copy/Samhan660.exe",
+	"failures": 0,
+	"slot": "user://windows_export_v1_6_1_1790748723.json",
+	"user_dir": "C:/Users/지용훈/AppData/Roaming/Godot/app_userdata/Samhan660"
+}

@@ -1,0 +1,25 @@
+{
+	"busy": false,
+	"controls": {
+		"silla:civil": {
+			"x": 0.162864595651627,
+			"y": 0.450370371341705
+		},
+		"silla:military": {
+			"x": 0.162864595651627,
+			"y": 0.542962968349457
+		},
+		"silla:royal": {
+			"x": 0.162864595651627,
+			"y": 0.635555565357208
+		}
+	},
+	"court_visible": false,
+	"gold": 100578,
+	"scroll": 882,
+	"selected": "silla:military",
+	"size": [
+		1280,
+		720
+	]
+}

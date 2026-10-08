@@ -1,0 +1,125 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+PASS: editor helper absent
+PASS: pack includes data/officers_v1.json
+PASS: pack includes cutscenes/cutscene_catalog_v1.json
+PASS: pack includes ui/faction_selection_v1/layout.json
+PASS: pack includes ui/faction_declaration_v1/declarations.json
+PASS: pack includes ui/korea_layout_v1/full_r3_v1/manifest.json
+PASS: pack includes licenses/NanumMyeongjo-OFL.txt
+PASS: pack includes licenses/SamhanUISans-OFL.txt
+PASS: pack includes licenses/GODOT-LICENSE.txt
+PASS: packed raw map hash
+PASS: title Korean glyphs
+PASS: capture title-prepare
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+Portrait metrics: clip_size=(420.0, 275.0) portrait_position=(-4.2, 11.0) portrait_size=(247.5, 363.0) parent=Control
+Hanji metrics: hanji_size=(168.0, 206.25) text_group_content_size=(318.0, 428.0) text_group_position=(-75.0, -110.875) horizontal_margins=(-75.0,-75.0) vertical_margins=(-110.875,-110.875)
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+SETUP_CONTROLS ["back", "scenario:silla_equilibrium_632", "scenario:goguryeo_coup_642", "scenario:baekje_fall_660", "scenario:baekgang_663", "scenario:silla_tang_war_670", "faction:silla", "faction:baekje", "faction:goguryeo", "faction:tang", "faction:yamato", "faction:xueyantuo", "faction:tsukushi", "faction:kibi", "faction:koshi_abe", "faction:emishi", "faction:hayato", "modes:historical", "modes:fictional", "difficulty:easy", "difficulty:normal", "difficulty:hard", "start"]
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: capture new-game-632-silla
+PASS: actual new game 632 Silla
+PASS: capture domestic-720
+PASS: domestic 65 percent
+PASS: development keyboard focus
+PASS: capture development-focus-720
+PASS: development Tab moves focus
+PASS: capture development-hover-720
+PASS: capture development-pressed-720
+PASS: capture officers-720
+PASS: real officer cards
+PASS: cancel no state mutation
+PASS: Esc returns from picker
+PASS: capture governor-720
+PASS: portrait loaded
+PASS: capture governor-scroll-720
+PASS: domestic Esc restores map
+PASS: capture production-720
+PASS: capture production-scroll-720
+PASS: production internal scroll
+PASS: unselected worker disables build
+PASS: capture build-disabled-720
+PASS: capture build-720
+PASS: build keyboard focus
+PASS: capture build-focus-720
+PASS: build Tab moves focus
+PASS: capture build-hover-720
+PASS: capture build-pressed-720
+PASS: close in viewport build
+PASS: Esc restores map build
+FAIL: unselected worker disables research
+PASS: capture research-disabled-720
+PASS: capture research-720
+PASS: research keyboard focus
+PASS: capture research-focus-720
+PASS: research Tab moves focus
+PASS: capture research-hover-720
+PASS: capture research-pressed-720
+PASS: close in viewport research
+PASS: Esc restores map research
+PASS: all previews leave campaign untouched
+PASS: capture domestic-1080
+PASS: domestic 65 percent
+PASS: development keyboard focus
+PASS: capture development-focus-1080
+PASS: development Tab moves focus
+PASS: capture development-hover-1080
+PASS: capture development-pressed-1080
+PASS: capture officers-1080
+PASS: real officer cards
+PASS: cancel no state mutation
+PASS: Esc returns from picker
+PASS: capture governor-1080
+PASS: portrait loaded
+PASS: capture governor-scroll-1080
+PASS: domestic Esc restores map
+PASS: capture production-1080
+PASS: capture production-scroll-1080
+PASS: production internal scroll
+FAIL: unselected worker disables build
+PASS: capture build-disabled-1080
+PASS: capture build-1080
+PASS: build keyboard focus
+PASS: capture build-focus-1080
+PASS: build Tab moves focus
+PASS: capture build-hover-1080
+PASS: capture build-pressed-1080
+PASS: close in viewport build
+PASS: Esc restores map build
+FAIL: unselected worker disables research
+PASS: capture research-disabled-1080
+PASS: capture research-1080
+PASS: research keyboard focus
+PASS: capture research-focus-1080
+PASS: research Tab moves focus
+PASS: capture research-hover-1080
+PASS: capture research-pressed-1080
+PASS: close in viewport research
+PASS: Esc restores map research
+PASS: all previews leave campaign untouched
+PASS: development accepted
+PASS: normal worker transfer
+PASS: actual month advances
+PASS: normal development completes
+PASS: normal available build smelter
+PASS: accepted build smelter
+PASS: capture build-accepted-smelter
+PASS: normal available research swordsmithing
+PASS: accepted research swordsmithing
+PASS: capture research-accepted-swordsmithing
+PASS: actual month advances
+PASS: new user slot never overwrites existing save
+PASS: default user path save
+PASS: capture saved-pending
+EXPORT V1.5 prepare: 106 checks, 3 failures

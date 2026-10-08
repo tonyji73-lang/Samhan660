@@ -1,0 +1,16 @@
+{
+	"checks": 20,
+	"evidence": {
+		"gold": 10738,
+		"relation": {
+			"status": "중립",
+			"treaties": [],
+			"value": 8.0
+		},
+		"trade_income": 0
+	},
+	"exe": "C:/Users/지용훈/AppData/Local/Temp/Samhan660_Windows_V1_8_20260930/play-copy/Samhan660.exe",
+	"failures": 0,
+	"slot": "user://living_city_v1_8_1790757165_14951318_cancelled.json",
+	"user_dir": "C:/Users/지용훈/AppData/Roaming/Godot/app_userdata/Samhan660"
+}

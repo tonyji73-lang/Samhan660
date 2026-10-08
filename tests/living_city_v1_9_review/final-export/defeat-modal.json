@@ -1,0 +1,14 @@
+{
+	"army_overlay": false,
+	"ending_load_dialog": false,
+	"ending_save_dialog": false,
+	"invasion_overlay": false,
+	"map_locked": true,
+	"playability_dialog": false,
+	"politics_overlay": false,
+	"power_dialog": false,
+	"recruitment_overlay": false,
+	"result": false,
+	"settlement_overlay": true,
+	"sortie_overlay": false
+}

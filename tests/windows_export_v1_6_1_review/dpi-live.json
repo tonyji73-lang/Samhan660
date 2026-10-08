@@ -1,0 +1,20 @@
+{
+	"army_visible": false,
+	"controls": {
+		"formation": {
+			"x": 0.413515615463257,
+			"y": 0.185833337571886
+		},
+		"training": {
+			"x": 1.08617191314697,
+			"y": 0.185833337571886
+		}
+	},
+	"gold": 42909,
+	"mode": "training",
+	"production_visible": false,
+	"size": [
+		1280,
+		720
+	]
+}

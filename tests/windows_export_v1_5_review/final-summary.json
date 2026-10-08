@@ -1,0 +1,20 @@
+﻿[
+    {
+        "Phase":  "prepare",
+        "Checks":  109,
+        "Failures":  0,
+        "Slot":  "user://windows_export_v1_5_1790673173.json"
+    },
+    {
+        "Phase":  "reload",
+        "Checks":  42,
+        "Failures":  0,
+        "Slot":  "user://windows_export_v1_5_production_1790673224.json"
+    },
+    {
+        "Phase":  "production-reload",
+        "Checks":  17,
+        "Failures":  0,
+        "Slot":  "user://windows_export_v1_5_production_1790673224.json"
+    }
+]

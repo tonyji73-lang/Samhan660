@@ -1,0 +1,16 @@
+{
+	"appointment": {
+		"appointed": "historical:001",
+		"previous": "historical:003",
+		"tax_after": 159,
+		"tax_before": 160
+	},
+	"development": {
+		"agriculture_after": 79,
+		"agriculture_before": 74,
+		"cost": 100,
+		"gain": 5,
+		"gold_after_acceptance": 900,
+		"officer": "historical:001"
+	}
+}

@@ -1,0 +1,54 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: capture final-silla-court
+PASS: capture final-silla-court
+PASS: actual appointment candidate silla
+PASS: appointment browsing pure silla
+PASS: capture appointment-silla
+PASS: appointment cancel pure silla
+PASS: keyboard appointment applied silla
+PASS: appointment close restores map input silla
+PASS: capture final-baekje-court
+PASS: capture final-baekje-court
+PASS: actual appointment candidate baekje
+PASS: appointment browsing pure baekje
+PASS: appointment has no foreign group labels baekje
+PASS: capture appointment-baekje
+PASS: appointment cancel pure baekje
+PASS: keyboard appointment applied baekje
+PASS: appointment close restores map input baekje
+PASS: capture final-goguryeo-court
+PASS: capture final-goguryeo-court
+PASS: actual appointment candidate goguryeo
+PASS: appointment browsing pure goguryeo
+PASS: appointment has no foreign group labels goguryeo
+PASS: capture appointment-goguryeo
+PASS: appointment cancel pure goguryeo
+PASS: keyboard appointment applied goguryeo
+PASS: appointment close restores map input goguryeo
+PASS: waiting save found
+PASS: retarget preview read only
+PASS: preview gold equals actual retarget
+PASS: preview complete politics equals actual retarget
+PASS: preview units equal actual retarget
+PASS: withdraw preview read only
+PASS: preview gold equals actual withdraw
+PASS: preview complete politics equals actual withdraw
+PASS: preview units equal actual withdraw
+PASS: capture final-demand-gift
+PASS: unresolved demand reopens without month advancing
+PASS: final authority offered
+PASS: capture final-governor-force
+PASS: affected city work shown
+PASS: normal domestic work accepted for detail check
+PASS: work without numeric progress is not fabricated
+PASS: capture final-demand-gift
+PASS: unresolved demand reopens without month advancing
+PASS: final authority offered
+PASS: capture final-governor-force
+PASS: affected city work shown
+PASS: normal domestic work accepted for detail check
+PASS: work without numeric progress is not fabricated
+V1.7 EDGES: 49 checks, 0 failures

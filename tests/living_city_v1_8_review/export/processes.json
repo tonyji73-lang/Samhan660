@@ -1,0 +1,35 @@
+﻿[
+    {
+        "Phase":  "prepare",
+        "PID":  37020,
+        "Start":  "\/Date(1790757122814)\/",
+        "End":  {
+                    "value":  "\/Date(1790757150268)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "2026년 9월 30일 수요일 오후 5:32:30"
+                },
+        "ExitCode":  0
+    },
+    {
+        "Phase":  "reload",
+        "PID":  14568,
+        "Start":  "\/Date(1790757150464)\/",
+        "End":  {
+                    "value":  "\/Date(1790757165711)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "2026년 9월 30일 수요일 오후 5:32:45"
+                },
+        "ExitCode":  0
+    },
+    {
+        "Phase":  "cancel-reload",
+        "PID":  25356,
+        "Start":  "\/Date(1790757165718)\/",
+        "End":  {
+                    "value":  "\/Date(1790757179982)\/",
+                    "DisplayHint":  2,
+                    "DateTime":  "2026년 9월 30일 수요일 오후 5:32:59"
+                },
+        "ExitCode":  0
+    }
+]

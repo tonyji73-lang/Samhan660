@@ -1,0 +1,39 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: normal commander appointment
+PASS: normal commands find requested battle outcome
+PASS: actual attack opens confirmation and locks map
+PASS: capture defeat-sortie-720
+PASS: capture defeat-sortie-1080
+PASS: target and unit previews preserve all game state
+PASS: existing food validator blocks confirmation with reason
+PASS: blocked confirmation changes no ledger
+PASS: sortie blocks monthly processing
+PASS: Esc cancel preserves resources and restores active map
+PASS: Space confirmation records exactly one battle
+PASS: duplicate confirmation cannot repeat combat
+PASS: normal battle produces requested victory or defeat
+PASS: local food charged exactly once
+PASS: existing battle presentation opens results
+PASS: capture defeat-result-720
+PASS: capture defeat-result-1080
+PASS: before troops match snapshot attacker
+PASS: before troops match snapshot defender
+PASS: battle losses exactly match casualty ledger
+PASS: global troop delta exactly matches battle losses
+PASS: actual city ownership matches result
+PASS: reopening result does not repeat casualties or ownership
+PASS: result Tab stays inside modal
+PASS: Shift Tab reverses modal focus
+PASS: result detail scrolls internally
+PASS: capture defeat-detail-scroll
+PASS: result Esc restores active map input
+PASS: postbattle link opens existing recovery screen
+PASS: postbattle link opens existing recovery screen
+PASS: existing training screen reachable
+PASS: capture defeat-final-720
+PASS: capture defeat-final-1080
+PASS: new native user slot preserves previous saves
+EXPORT V1.9 defeat: 34 checks, 0 failures

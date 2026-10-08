@@ -1,0 +1,26 @@
+{
+	"checks": 50,
+	"evidence": {
+		"cases": [
+			{
+				"id": "handover:1",
+				"kind": "governor",
+				"slot": "user://windows_export_v1_7_1_1790753100_17136673_pending-governor.json"
+			},
+			{
+				"id": "handover:1",
+				"kind": "commander",
+				"slot": "user://windows_export_v1_7_1_1790753101_18300692_pending-commander.json"
+			},
+			{
+				"id": "noble:1",
+				"kind": "demand",
+				"slot": "user://windows_export_v1_7_1_1790753106_23687211_pending-demand.json"
+			}
+		]
+	},
+	"exe": "C:/Users/지용훈/AppData/Local/Temp/Samhan660_V1_7_1_20260930/play-copy/Samhan660.exe",
+	"failures": 0,
+	"slot": "user://windows_export_v1_7_1_1790753106_23687211_pending-demand.json",
+	"user_dir": "C:/Users/지용훈/AppData/Roaming/Godot/app_userdata/Samhan660"
+}

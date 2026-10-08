@@ -1,0 +1,118 @@
+{
+	"completion": [
+		{
+			"cost": 520,
+			"efficiency": 90,
+			"faction": "silla",
+			"kind": "build",
+			"months": 5,
+			"remaining_gold": 480
+		},
+		{
+			"cost": 280,
+			"efficiency": 90,
+			"faction": "silla",
+			"kind": "research",
+			"months": 5,
+			"remaining_gold": 200
+		},
+		{
+			"cost": 520,
+			"efficiency": 30,
+			"faction": "silla",
+			"kind": "build",
+			"months": 8,
+			"remaining_gold": 480
+		},
+		{
+			"cost": 280,
+			"efficiency": 30,
+			"faction": "silla",
+			"kind": "research",
+			"months": 8,
+			"remaining_gold": 200
+		},
+		{
+			"cost": 520,
+			"efficiency": 90,
+			"faction": "baekje",
+			"kind": "build",
+			"months": 5,
+			"remaining_gold": 480
+		},
+		{
+			"cost": 280,
+			"efficiency": 90,
+			"faction": "baekje",
+			"kind": "research",
+			"months": 5,
+			"remaining_gold": 200
+		},
+		{
+			"cost": 520,
+			"efficiency": 30,
+			"faction": "baekje",
+			"kind": "build",
+			"months": 8,
+			"remaining_gold": 480
+		},
+		{
+			"cost": 280,
+			"efficiency": 30,
+			"faction": "baekje",
+			"kind": "research",
+			"months": 8,
+			"remaining_gold": 200
+		},
+		{
+			"cost": 520,
+			"efficiency": 90,
+			"faction": "goguryeo",
+			"kind": "build",
+			"months": 5,
+			"remaining_gold": 480
+		},
+		{
+			"cost": 280,
+			"efficiency": 90,
+			"faction": "goguryeo",
+			"kind": "research",
+			"months": 5,
+			"remaining_gold": 200
+		},
+		{
+			"cost": 520,
+			"efficiency": 30,
+			"faction": "goguryeo",
+			"kind": "build",
+			"months": 8,
+			"remaining_gold": 480
+		},
+		{
+			"cost": 280,
+			"efficiency": 30,
+			"faction": "goguryeo",
+			"kind": "research",
+			"months": 8,
+			"remaining_gold": 200
+		}
+	],
+	"production": [
+		{
+			"end_gold": 144,
+			"iron": 0,
+			"manager": false,
+			"months": 6,
+			"start_gold": 240,
+			"swords": 6
+		},
+		{
+			"end_gold": 96,
+			"iron": 0,
+			"manager": true,
+			"months": 6,
+			"start_gold": 240,
+			"swords": 9
+		}
+	]
+}

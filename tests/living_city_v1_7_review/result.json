@@ -1,0 +1,148 @@
+{
+	"checks": 146,
+	"failures": 0,
+	"responses": [
+		{
+			"choice": "compensate",
+			"gold_after": 100448,
+			"gold_before": 100578,
+			"kind": "governor",
+			"reactions": [
+				{
+					"after": 56,
+					"before": 48.0,
+					"name": "선덕여왕",
+					"unit": "개인 충성"
+				},
+				{
+					"after": 54,
+					"before": 58.0,
+					"name": "김유신",
+					"unit": "개인 충성"
+				},
+				{
+					"after": 52,
+					"before": 54.0,
+					"name": "군사 귀족 연합",
+					"unit": "집단 협력"
+				},
+				{
+					"after": 52,
+					"before": 48.0,
+					"name": "왕실 직속",
+					"unit": "집단 협력"
+				}
+			]
+		},
+		{
+			"choice": "wait",
+			"gold_after": 100578,
+			"gold_before": 100578,
+			"kind": "governor",
+			"reactions": []
+		},
+		{
+			"choice": "force",
+			"gold_after": 100578,
+			"gold_before": 100578,
+			"kind": "governor",
+			"reactions": [
+				{
+					"after": 56,
+					"before": 48.0,
+					"name": "선덕여왕",
+					"unit": "개인 충성"
+				},
+				{
+					"after": 38,
+					"before": 58.0,
+					"name": "김유신",
+					"unit": "개인 충성"
+				},
+				{
+					"after": 42,
+					"before": 54.0,
+					"name": "군사 귀족 연합",
+					"unit": "집단 협력"
+				},
+				{
+					"after": 52,
+					"before": 48.0,
+					"name": "왕실 직속",
+					"unit": "집단 협력"
+				}
+			]
+		},
+		{
+			"choice": "compensate",
+			"gold_after": 99858,
+			"gold_before": 100578,
+			"kind": "commander",
+			"reactions": [
+				{
+					"after": 56,
+					"before": 48.0,
+					"name": "선덕여왕",
+					"unit": "개인 충성"
+				},
+				{
+					"after": 54,
+					"before": 58.0,
+					"name": "김유신",
+					"unit": "개인 충성"
+				},
+				{
+					"after": 52,
+					"before": 54.0,
+					"name": "군사 귀족 연합",
+					"unit": "집단 협력"
+				},
+				{
+					"after": 52,
+					"before": 48.0,
+					"name": "왕실 직속",
+					"unit": "집단 협력"
+				}
+			]
+		},
+		{
+			"choice": "wait",
+			"gold_after": 100578,
+			"gold_before": 100578,
+			"kind": "commander",
+			"reactions": []
+		},
+		{
+			"choice": "force",
+			"gold_after": 100578,
+			"gold_before": 100578,
+			"kind": "commander",
+			"reactions": [
+				{
+					"after": 56,
+					"before": 48.0,
+					"name": "선덕여왕",
+					"unit": "개인 충성"
+				},
+				{
+					"after": 38,
+					"before": 58.0,
+					"name": "김유신",
+					"unit": "개인 충성"
+				},
+				{
+					"after": 42,
+					"before": 54.0,
+					"name": "군사 귀족 연합",
+					"unit": "집단 협력"
+				},
+				{
+					"after": 52,
+					"before": 48.0,
+					"name": "왕실 직속",
+					"unit": "집단 협력"
+				}
+			]
+		}
+	]
+}

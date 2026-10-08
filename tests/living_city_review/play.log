@@ -1,0 +1,70 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: capture domestic-1280
+PASS: persistent control inside viewport: 개발 지시 · 금 100
+PASS: persistent control inside viewport: 업무 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: same-city personnel mode retains map lock
+PASS: opening personnel and quote leaves state unchanged
+PASS: capture personnel-1280
+PASS: persistent control inside viewport: 임명 확정
+PASS: persistent control inside viewport: 선택 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture personnel-1920
+PASS: capture domestic-1920
+PASS: persistent control inside viewport: 개발 지시 · 금 100
+PASS: persistent control inside viewport: 업무 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture domestic-2560
+PASS: persistent control inside viewport: 개발 지시 · 금 100
+PASS: persistent control inside viewport: 업무 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: cancel candidate selection changes no resources or personnel
+PASS: atlas personnel navigation opens selected-city appointment
+PASS: normal 642 development candidate available
+PASS: development cost charged once under repeated confirmation
+PASS: conflicting development cannot reuse busy city and officer
+PASS: development has no immediate completion
+PASS: capture pending-1920
+PASS: development cancellation refunds once
+PASS: save/load restores actual job, people, city and treasury
+PASS: load closes UI and unlocks active atlas
+PASS: normal next-month command completes quoted development
+PASS: reopened UI displays completion
+PASS: capture completed-1920
+PASS: normal local governor candidate requires no rule override
+PASS: governor forecast is read-only
+PASS: large portrait follows the selected candidate
+PASS: capture appointment-preview-1920
+PASS: UI appointment changes actual governor
+PASS: repeated appointment does not repeat political effects
+PASS: appointment and politics persist through save/load
+PASS: repeated open/Esc unlocks active atlas
+PASS: repeated open/Esc unlocks active atlas
+PASS: repeated open/Esc unlocks active atlas
+PASS: construction and military production remain accessible
+PASS: diplomacy remains accessible
+PASS: zero-gold UI shows the actual rejection
+PASS: all candidates remain available beyond three portraits
+PASS: horizontal scroll can select the last candidate
+PASS: candidate cancellation has keyboard focus
+PASS: empty candidate UI disables confirmation
+PASS: empty candidate state can be cancelled
+PASS: vacant governor is shown explicitly
+PASS: edge fixtures leave active atlas unlocked
+PASS: city switch refreshes context and candidates
+PASS: Seorabeol art is not reused for another city
+PASS: close button unlocks atlas after city switch
+LIVING CITY TESTS: 63 checks, 0 failures

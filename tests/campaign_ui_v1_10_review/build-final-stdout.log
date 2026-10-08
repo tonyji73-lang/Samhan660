@@ -1,0 +1,1899 @@
+
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started ?„ë¡œ?íŠ¸ ì´ˆê¸°??(5 steps)[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | ?„ì—­ ?´ë˜???´ë¦„??ë¶ˆëŸ¬?¤ëŠ” ì¤?..[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | GDExtensions ê²€ì¦?ì¤?..[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | ?¤í† ë¡œë“œ ?¤í¬ë¦½íŠ¸ë¥?ë§Œë“œ??ì¤?..[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | ?ŒëŸ¬ê·¸ì¸??ì´ˆê¸°??ì¤?..[39m[0m
+MCP | plugin disabled in headless mode
+[  83% ] [90m[1mfirst_scan_filesystem[22m | ?Œì¼ ?¤ìº” ?œì‘ ì¤?..[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | Started ?„ì—­ ?´ë˜?¤ë? ?±ë¡?˜ëŠ” ì¤?.. (308 steps)[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | McpAtomicWrite[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | McpClient[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | McpCliExec[39m[0m
+[   0% ] [90m[1mupdate_scripts_classes[22m | McpCliFinder[39m[0m
+[   1% ] [90m[1mupdate_scripts_classes[22m | McpCliStrategy[39m[0m
+[   1% ] [90m[1mupdate_scripts_classes[22m | McpDshStrategy[39m[0m
+[   1% ] [90m[1mupdate_scripts_classes[22m | McpJsonStrategy[39m[0m
+[   2% ] [90m[1mupdate_scripts_classes[22m | McpManualCommand[39m[0m
+[   2% ] [90m[1mupdate_scripts_classes[22m | McpPathTemplate[39m[0m
+[   2% ] [90m[1mupdate_scripts_classes[22m | McpClientRegistry[39m[0m
+[   3% ] [90m[1mupdate_scripts_classes[22m | McpTomlStrategy[39m[0m
+[   3% ] [90m[1mupdate_scripts_classes[22m | McpYamlStrategy[39m[0m
+[   3% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   4% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   4% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   4% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   5% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   5% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   5% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   6% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   6% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   6% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   7% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   8% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   8% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   8% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   9% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   9% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[   9% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  10% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  10% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  10% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  11% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  11% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  11% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  11% ] [90m[1mupdate_scripts_classes[22m | McpCallContext[39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | McpCustomToolSpec[39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | McpServiceLocator[39m[0m
+[  12% ] [90m[1mupdate_scripts_classes[22m | McpToolRegistry[39m[0m
+[  13% ] [90m[1mupdate_scripts_classes[22m | McpDebuggerPlugin[39m[0m
+[  13% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  13% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  14% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  14% ] [90m[1mupdate_scripts_classes[22m | McpNodeValidator[39m[0m
+[  14% ] [90m[1mupdate_scripts_classes[22m | McpParamValidators[39m[0m
+[  15% ] [90m[1mupdate_scripts_classes[22m | McpPropertyErrors[39m[0m
+[  15% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  15% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  16% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  17% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  18% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  18% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  18% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  19% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  19% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  19% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  20% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  21% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  21% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  21% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  22% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  22% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  22% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  22% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  23% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  24% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  24% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  24% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  25% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  26% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  27% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  27% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  27% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  28% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  28% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  28% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  29% ] [90m[1mupdate_scripts_classes[22m | McpTestRunner[39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | McpTestSuite[39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | McpAllowHosts[39m[0m
+[  30% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  31% ] [90m[1mupdate_scripts_classes[22m | McpDiagnosticsCapture[39m[0m
+[  31% ] [90m[1mupdate_scripts_classes[22m | McpEditorLogBuffer[39m[0m
+[  31% ] [90m[1mupdate_scripts_classes[22m | McpErrorCodes[39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | McpGameLogBuffer[39m[0m
+[  32% ] [90m[1mupdate_scripts_classes[22m | McpJsonValues[39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | McpLogBacktrace[39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | McpLogBuffer[39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | McpAdoptionLabel[39m[0m
+[  33% ] [90m[1mupdate_scripts_classes[22m | McpClientRefreshState[39m[0m
+[  34% ] [90m[1mupdate_scripts_classes[22m | McpServerState[39m[0m
+[  34% ] [90m[1mupdate_scripts_classes[22m | McpStartupPath[39m[0m
+[  34% ] [90m[1mupdate_scripts_classes[22m | McpPathValidator[39m[0m
+[  35% ] [90m[1mupdate_scripts_classes[22m | McpPortResolver[39m[0m
+[  35% ] [90m[1mupdate_scripts_classes[22m | McpResourceIO[39m[0m
+[  35% ] [90m[1mupdate_scripts_classes[22m | McpScenePath[39m[0m
+[  36% ] [90m[1mupdate_scripts_classes[22m | McpScreenshotEncode[39m[0m
+[  36% ] [90m[1mupdate_scripts_classes[22m | McpServerLifecycleManager[39m[0m
+[  36% ] [90m[1mupdate_scripts_classes[22m | McpServerVersionCheck[39m[0m
+[  37% ] [90m[1mupdate_scripts_classes[22m | McpSettings[39m[0m
+[  37% ] [90m[1mupdate_scripts_classes[22m | McpStructuredLogRing[39m[0m
+[  37% ] [90m[1mupdate_scripts_classes[22m | McpSurfacedErrorTracker[39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | McpUpdateManager[39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  38% ] [90m[1mupdate_scripts_classes[22m | McpUvCacheCleanup[39m[0m
+[  39% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  39% ] [90m[1mupdate_scripts_classes[22m | McpWindowsPortReservation[39m[0m
+[  39% ] [90m[1mupdate_scripts_classes[22m | McpClientConfigurator[39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | McpConnection[39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | McpDispatcher[39m[0m
+[  40% ] [90m[1mupdate_scripts_classes[22m | McpDock[39m[0m
+[  41% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  41% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  41% ] [90m[1mupdate_scripts_classes[22m | McpToolCatalog[39m[0m
+[  42% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  42% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  42% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  43% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  43% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  43% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  44% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  44% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  44% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  44% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  45% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  45% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  45% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  46% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  47% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  47% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  47% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  48% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  48% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  48% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  49% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  49% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  49% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  50% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  51% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  51% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  51% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  52% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  53% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  54% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  54% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  54% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  55% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  55% ] [90m[1mupdate_scripts_classes[22m | GutErrorTracker[39m[0m
+[  55% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  55% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | GutMain[39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  56% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  57% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  57% ] [90m[1mupdate_scripts_classes[22m | GutConstants[39m[0m
+[  57% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  58% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  58% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  58% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  59% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  59% ] [90m[1mupdate_scripts_classes[22m | GutTrackedError[39m[0m
+[  59% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | GutHookScript[39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  60% ] [90m[1mupdate_scripts_classes[22m | GutInputFactory[39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | GutInputSender[39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  61% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  62% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  62% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  62% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  63% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  63% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  63% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  64% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  65% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  65% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  65% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | GutStringUtils[39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  66% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  67% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  67% ] [90m[1mupdate_scripts_classes[22m | GutTest[39m[0m
+[  67% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  68% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  68% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  68% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  69% ] [90m[1mupdate_scripts_classes[22m | GutUtils[39m[0m
+[  69% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  69% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | LowPolyTerrainChunk[39m[0m
+[  70% ] [90m[1mupdate_scripts_classes[22m | LowPolyTerrainInspector[39m[0m
+[  71% ] [90m[1mupdate_scripts_classes[22m | LowPolyTerrainManager[39m[0m
+[  71% ] [90m[1mupdate_scripts_classes[22m | LowPolyTerrainMeshBuilder[39m[0m
+[  71% ] [90m[1mupdate_scripts_classes[22m | LowPolyTerrainPicking[39m[0m
+[  72% ] [90m[1mupdate_scripts_classes[22m | LowPolyTerrainServerBackend[39m[0m
+[  72% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  72% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  73% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  74% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  74% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  74% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  75% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  75% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  75% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  76% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  77% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  77% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  77% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  77% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  78% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  78% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  78% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  79% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  79% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  79% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  80% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  80% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  80% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  81% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  81% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  81% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  82% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  83% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  83% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  83% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  84% ] [90m[1mupdate_scripts_classes[22m | BattleOverlay[39m[0m
+[  84% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  84% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  85% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  86% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  86% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  86% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  87% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  87% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  87% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  88% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  89% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  89% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  89% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  90% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  90% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  90% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  91% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  91% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  91% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  92% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  93% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  93% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  93% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  94% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  94% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  94% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  95% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  95% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  95% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  96% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  96% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  96% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  97% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  97% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  97% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  98% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  98% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  98% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  99% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[  99% ] [90m[1mupdate_scripts_classes[22m | [39m[0m
+[92m[ DONE ][39m [1mupdate_scripts_classes[22m
+[0m
+[   0% ] [90m[1m_update_scan_actions[22m | Started ?¡ì…˜ ?¤ìº” ì¤?.. (268 steps)[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | AnonymousPro-Bold.ttf[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | AnonymousPro-BoldItalic.ttf[39m[0m
+[   0% ] [90m[1m_update_scan_actions[22m | AnonymousPro-Italic.ttf[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | AnonymousPro-Regular.ttf[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | CourierPrime-Bold.ttf[39m[0m
+[   1% ] [90m[1m_update_scan_actions[22m | CourierPrime-BoldItalic.ttf[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | CourierPrime-Italic.ttf[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | CourierPrime-Regular.ttf[39m[0m
+[   2% ] [90m[1m_update_scan_actions[22m | LobsterTwo-Bold.ttf[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | LobsterTwo-BoldItalic.ttf[39m[0m
+[   3% ] [90m[1m_update_scan_actions[22m | LobsterTwo-Italic.ttf[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | LobsterTwo-Regular.ttf[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | arrow.png[39m[0m
+[   4% ] [90m[1m_update_scan_actions[22m | play.png[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | eyey.png[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | Folder.svg[39m[0m
+[   5% ] [90m[1m_update_scan_actions[22m | green.png[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | GutIconV2_base.png[39m[0m
+[   6% ] [90m[1m_update_scan_actions[22m | GutIconV2_no_shine.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | HSplitContainer.svg[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | red.png[39m[0m
+[   7% ] [90m[1m_update_scan_actions[22m | Script.svg[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | VSplitContainer.svg[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | yellow.png[39m[0m
+[   8% ] [90m[1m_update_scan_actions[22m | icon.png[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | source_code_pro.fnt[39m[0m
+[   9% ] [90m[1m_update_scan_actions[22m | activate.svg[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | deactivate.svg[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | flatten.svg[39m[0m
+[  10% ] [90m[1m_update_scan_actions[22m | lower.svg[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | paint.svg[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | raise.svg[39m[0m
+[  11% ] [90m[1m_update_scan_actions[22m | ramp.svg[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | smooth.svg[39m[0m
+[  12% ] [90m[1m_update_scan_actions[22m | icon.svg[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | setup_theme.mp3[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | title_theme.mp3[39m[0m
+[  13% ] [90m[1m_update_scan_actions[22m | baekje_660_intro.webp[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | battle_result_generic.webp[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | battle_start_hwangsanbeol.webp[39m[0m
+[  14% ] [90m[1m_update_scan_actions[22m | domestic_bountiful_harvest.webp[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | domestic_crop_failure.webp[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | enemy_invasion_alert.webp[39m[0m
+[  15% ] [90m[1m_update_scan_actions[22m | goguryeo_660_intro.webp[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | silla_660_intro.webp[39m[0m
+[  16% ] [90m[1m_update_scan_actions[22m | faction_select_632_baekje.webp[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | faction_select_632_goguryeo.webp[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | faction_select_632_silla.webp[39m[0m
+[  17% ] [90m[1m_update_scan_actions[22m | faction_select_642_baekje.webp[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | faction_select_642_goguryeo.webp[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | faction_select_642_silla.webp[39m[0m
+[  18% ] [90m[1m_update_scan_actions[22m | faction_select_660_baekje.webp[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | faction_select_660_goguryeo.webp[39m[0m
+[  19% ] [90m[1m_update_scan_actions[22m | faction_select_660_silla.webp[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | faction_select_663_baekje_revival.webp[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | faction_select_663_goguryeo.webp[39m[0m
+[  20% ] [90m[1m_update_scan_actions[22m | faction_select_663_silla.webp[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | faction_select_663_tang.webp[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | faction_select_670_goguryeo_revival.webp[39m[0m
+[  21% ] [90m[1m_update_scan_actions[22m | faction_select_670_silla.webp[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | faction_select_670_tang.webp[39m[0m
+[  22% ] [90m[1m_update_scan_actions[22m | faction_select_632_baekje.webp[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | faction_select_632_goguryeo.webp[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | faction_select_632_silla.webp[39m[0m
+[  23% ] [90m[1m_update_scan_actions[22m | faction_select_642_baekje.webp[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | faction_select_642_goguryeo.webp[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | faction_select_642_silla.webp[39m[0m
+[  24% ] [90m[1m_update_scan_actions[22m | faction_select_660_baekje.webp[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | faction_select_660_goguryeo.webp[39m[0m
+[  25% ] [90m[1m_update_scan_actions[22m | faction_select_660_silla.webp[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | faction_select_663_baekje_revival.webp[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | faction_select_663_goguryeo.webp[39m[0m
+[  26% ] [90m[1m_update_scan_actions[22m | faction_select_663_silla.webp[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | faction_select_663_tang.webp[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | faction_select_670_goguryeo_revival.webp[39m[0m
+[  27% ] [90m[1m_update_scan_actions[22m | faction_select_670_silla.webp[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | faction_select_670_tang.webp[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | anseung_670_selection_overlay_alpha_v3.png[39m[0m
+[  28% ] [90m[1m_update_scan_actions[22m | bojang_wang_642_selection_overlay.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | bojang_wang_642_selection_overlay_portrait_match_v1.png[39m[0m
+[  29% ] [90m[1m_update_scan_actions[22m | bojang_wang_660_selection_overlay.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | bojang_wang_660_selection_overlay_portrait_match_v1.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | bojang_wang_663_selection_overlay_alpha_v3.png[39m[0m
+[  30% ] [90m[1m_update_scan_actions[22m | bojang_wang_663_selection_overlay_portrait_match_v1.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | buyeo_pung_663_selection_overlay_alpha_v3.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | kim_beopmin_663_selection_overlay_alpha_v3.png[39m[0m
+[  31% ] [90m[1m_update_scan_actions[22m | kim_beopmin_670_selection_overlay_alpha_v3.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | kim_chunchu_660_selection_overlay.png[39m[0m
+[  32% ] [90m[1m_update_scan_actions[22m | kim_chunchu_660_selection_overlay_portrait_match_v1.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | mu_wang_selection_overlay.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | seondeok_queen_642_selection_overlay.png[39m[0m
+[  33% ] [90m[1m_update_scan_actions[22m | seondeok_queen_overlay.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | tang_gaozong_663_selection_overlay_alpha_v3.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | tang_gaozong_670_selection_overlay_alpha_v3.png[39m[0m
+[  34% ] [90m[1m_update_scan_actions[22m | uija_wang_642_selection_overlay.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | uija_wang_642_selection_overlay_portrait_match_v1.png[39m[0m
+[  35% ] [90m[1m_update_scan_actions[22m | uija_wang_660_selection_overlay.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | uija_wang_660_selection_overlay_portrait_match_v1.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | yeongnyu_wang_selection_overlay.png[39m[0m
+[  36% ] [90m[1m_update_scan_actions[22m | samhan660_east_asia_korea_center_6144x4096.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | samhan660_territory_id_map_35.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | korean_fortress_demo_rgba.png[39m[0m
+[  37% ] [90m[1m_update_scan_actions[22m | terrain_c03_r02_before_1254.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | terrain_c03_r02_coast_fix_v2_1254.png[39m[0m
+[  38% ] [90m[1m_update_scan_actions[22m | terrain_east_coast_detail_draft_v1_1254.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | terrain_korea_overview_candidate_v1_1024x1536.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | seondeok_queen_overlay.png[39m[0m
+[  39% ] [90m[1m_update_scan_actions[22m | abe_no_hirafu.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | adie_chief.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | alcheon.png[39m[0m
+[  40% ] [90m[1m_update_scan_actions[22m | anseung.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | bayegu_chief.png[39m[0m
+[  41% ] [90m[1m_update_scan_actions[22m | bisudu_ilteber.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | bojang_wang.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | boksin.png[39m[0m
+[  42% ] [90m[1m_update_scan_actions[22m | buyeo_pung.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | buyeo_tae.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | dujiezhi_ilteber.png[39m[0m
+[  43% ] [90m[1m_update_scan_actions[22m | duolange_chief.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | emishi_chief.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | eulji_mundeok.png[39m[0m
+[  44% ] [90m[1m_update_scan_actions[22m | Fan_Bingbing_Tang.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | gao_kan.png[39m[0m
+[  45% ] [90m[1m_update_scan_actions[22m | geom_mojam.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | go_yeonmu.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | gwanchang.png[39m[0m
+[  46% ] [90m[1m_update_scan_actions[22m | gyebaek.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | hayato_chief.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | heukchi_sangji.png[39m[0m
+[  47% ] [90m[1m_update_scan_actions[22m | heungsu.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | hun_chief.png[39m[0m
+[  48% ] [90m[1m_update_scan_actions[22m | inam_khagan.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | Jang_Wonyoung_Silla.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | Jennie_Silla.png[39m[0m
+[  49% ] [90m[1m_update_scan_actions[22m | Jisoo_Silla.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | jisusin.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | jomei_tenno.png[39m[0m
+[  50% ] [90m[1m_update_scan_actions[22m | kaede_karen.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | Karina_Silla.png[39m[0m
+[  51% ] [90m[1m_update_scan_actions[22m | kibi_chief.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | kim_beopmin.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | kim_chunchu.png[39m[0m
+[  52% ] [90m[1m_update_scan_actions[22m | kim_heumsun.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | kim_inmun.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | kim_pumil.png[39m[0m
+[  53% ] [90m[1m_update_scan_actions[22m | kim_wonsul.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | kim_yushin.png[39m[0m
+[  54% ] [90m[1m_update_scan_actions[22m | kogyoku_saimei.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | koshi_chief.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | lee_sanghyuk.png[39m[0m
+[  55% ] [90m[1m_update_scan_actions[22m | lisa_southern_envoy.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | liu_rengui.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | liu_renyuan.png[39m[0m
+[  56% ] [90m[1m_update_scan_actions[22m | li_jinxing.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | mu_wang.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | nagi_hikaru.png[39m[0m
+[  57% ] [90m[1m_update_scan_actions[22m | naka_no_oe_tenji.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | ogura_yuna.png[39m[0m
+[  58% ] [90m[1m_update_scan_actions[22m | onga_emishi.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | park_jangsik.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | pi_jinju.png[39m[0m
+[  59% ] [90m[1m_update_scan_actions[22m | porun_ilteber.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | pugu_chief.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | pumil.png[39m[0m
+[  60% ] [90m[1m_update_scan_actions[22m | qibi_chief.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | rose_western_musician.png[39m[0m
+[  61% ] [90m[1m_update_scan_actions[22m | seol_oyu.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | seondeok_queen.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | seongchung.png[39m[0m
+[  62% ] [90m[1m_update_scan_actions[22m | sijie_chief.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | strategist_female_01.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | strategist_female_02.png[39m[0m
+[  63% ] [90m[1m_update_scan_actions[22m | strategist_female_03.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | strategist_female_04.png[39m[0m
+[  64% ] [90m[1m_update_scan_actions[22m | strategist_female_05.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | strategist_female_06.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | strategist_female_07.png[39m[0m
+[  65% ] [90m[1m_update_scan_actions[22m | strategist_female_08.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | strategist_male_01.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | strategist_male_02.png[39m[0m
+[  66% ] [90m[1m_update_scan_actions[22m | strategist_male_03.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | strategist_male_04.png[39m[0m
+[  67% ] [90m[1m_update_scan_actions[22m | strategist_male_05.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | strategist_male_06.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | strategist_male_07.png[39m[0m
+[  68% ] [90m[1m_update_scan_actions[22m | strategist_male_08.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | suzumori_remu.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | tang_gaozong.png[39m[0m
+[  69% ] [90m[1m_update_scan_actions[22m | tang_taizong.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | tongluo_chief.png[39m[0m
+[  70% ] [90m[1m_update_scan_actions[22m | tsukushi_chief.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | uija_wang.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | warrior_female_01.png[39m[0m
+[  71% ] [90m[1m_update_scan_actions[22m | warrior_female_02.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | warrior_female_03.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | warrior_female_04.png[39m[0m
+[  72% ] [90m[1m_update_scan_actions[22m | warrior_female_05.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | warrior_female_06.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | warrior_female_07.png[39m[0m
+[  73% ] [90m[1m_update_scan_actions[22m | warrior_female_08.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | warrior_male_01.png[39m[0m
+[  74% ] [90m[1m_update_scan_actions[22m | warrior_male_02.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | warrior_male_03.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | warrior_male_04.png[39m[0m
+[  75% ] [90m[1m_update_scan_actions[22m | warrior_male_05.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | warrior_male_06.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | warrior_male_07.png[39m[0m
+[  76% ] [90m[1m_update_scan_actions[22m | warrior_male_08.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | Winter_Goguryeo.png[39m[0m
+[  77% ] [90m[1m_update_scan_actions[22m | yagi_nana.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | yang_manchun.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | yeongnyu_wang.png[39m[0m
+[  78% ] [90m[1m_update_scan_actions[22m | yeon_gaesomun.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | yeon_namsaeng.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | ye_gun.png[39m[0m
+[  79% ] [90m[1m_update_scan_actions[22m | yunchung.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | hanji_overlay_texture_v1.png[39m[0m
+[  80% ] [90m[1m_update_scan_actions[22m | korean_fortress_demo_rgba.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | terrain_c03_r02_coast_fix_v2_1254.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | approved_korea.png[39m[0m
+[  81% ] [90m[1m_update_scan_actions[22m | palace_632_silla.png[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | SamhanUISans-Medium.ttf[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | SamhanUISans-SemiBold.ttf[39m[0m
+[  82% ] [90m[1m_update_scan_actions[22m | seondeok.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | korean_fortress_original.png[39m[0m
+[  83% ] [90m[1m_update_scan_actions[22m | korea_approved_1254.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | central_east_detail_candidate.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | central_east_detail_r3.png[39m[0m
+[  84% ] [90m[1m_update_scan_actions[22m | central_east_source_crop.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | detail_0_0.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | detail_0_1.png[39m[0m
+[  85% ] [90m[1m_update_scan_actions[22m | detail_0_2.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | detail_1_1.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | detail_1_2.png[39m[0m
+[  86% ] [90m[1m_update_scan_actions[22m | detail_2_1.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | detail_2_2.png[39m[0m
+[  87% ] [90m[1m_update_scan_actions[22m | detail_3_1.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | detail_3_2.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | northeast.png[39m[0m
+[  88% ] [90m[1m_update_scan_actions[22m | northwest.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | southeast.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | southwest.png[39m[0m
+[  89% ] [90m[1m_update_scan_actions[22m | south_continuous_v2.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | open_sea_keep_mask.png[39m[0m
+[  90% ] [90m[1m_update_scan_actions[22m | south_continuous_v3.png[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | arrow-left.svg[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | arrow-right.svg[39m[0m
+[  91% ] [90m[1m_update_scan_actions[22m | book-open.svg[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | buildings.svg[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | floppy-disk.svg[39m[0m
+[  92% ] [90m[1m_update_scan_actions[22m | list.svg[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | minus.svg[39m[0m
+[  93% ] [90m[1m_update_scan_actions[22m | plant.svg[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | plus.svg[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | sword.svg[39m[0m
+[  94% ] [90m[1m_update_scan_actions[22m | users-three.svg[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | warning-circle.svg[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | x.svg[39m[0m
+[  95% ] [90m[1m_update_scan_actions[22m | NanumMyeongjo-ExtraBold.ttf[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | candidate_frame.png[39m[0m
+[  96% ] [90m[1m_update_scan_actions[22m | city_heading_frame.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | lacquer_bar.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | primary_red.png[39m[0m
+[  97% ] [90m[1m_update_scan_actions[22m | title_divider.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | work_panel_frame.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | city.png[39m[0m
+[  98% ] [90m[1m_update_scan_actions[22m | icon.svg[39m[0m
+[  99% ] [90m[1m_update_scan_actions[22m | title_background_samhan660.jpg[39m[0m
+[92m[ DONE ][39m [1m_update_scan_actions[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started ? ì…‹ (?¤ì‹œ) ê°€?¸ì˜¤??ì¤?(267 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   0% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   0% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   1% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   1% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   1% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   2% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   2% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   2% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   3% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   3% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   4% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   4% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   4% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   5% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   5% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   5% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   6% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   6% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   7% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   7% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   7% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   8% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   8% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   8% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   9% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   9% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  10% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  10% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  10% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  11% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  11% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  11% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  12% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  12% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  13% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  13% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  13% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  14% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  14% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  14% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  15% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  15% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  16% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  16% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  16% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  17% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  17% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  17% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  18% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  18% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  19% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  19% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  19% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  20% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  20% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  20% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  21% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  21% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  22% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  22% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  22% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  23% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  23% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  23% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  24% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  24% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  25% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  25% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  25% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  26% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  26% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  26% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  27% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  27% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  27% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  28% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  28% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  29% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  29% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  29% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  30% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  30% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  30% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  31% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  31% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  32% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  32% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  32% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  33% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  33% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  33% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  34% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  34% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  35% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  35% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  35% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  36% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  36% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  36% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  37% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  37% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  38% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  38% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  38% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  39% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  39% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  39% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  40% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  40% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  41% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  41% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  41% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  42% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  42% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  42% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  43% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  43% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  44% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  44% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  44% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  45% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  45% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  45% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  46% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  46% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  47% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  47% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  47% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  48% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  48% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  48% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  49% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  49% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  50% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  50% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  50% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  51% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  51% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  51% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  52% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  52% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  52% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  53% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  53% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  54% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  54% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  54% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  55% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  55% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  55% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  56% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  56% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  57% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  57% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  57% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  58% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  58% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  58% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  59% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  59% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  60% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  60% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  60% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  61% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  61% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  61% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  62% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  62% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  63% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  63% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  63% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  64% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  64% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  64% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  65% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  65% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  66% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  66% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  66% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  67% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  67% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  67% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  68% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  68% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  69% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  69% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  69% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  70% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  70% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  70% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  71% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  71% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  72% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  72% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  72% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  73% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  73% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  73% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  74% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  74% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  75% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  75% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  75% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  76% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  76% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  76% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  77% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  77% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  77% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  78% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  78% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  79% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  79% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  79% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  80% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  80% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  80% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  81% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  81% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  82% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  82% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  82% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  83% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  83% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  83% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  84% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  84% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  85% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  85% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  85% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  86% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  86% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  86% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  87% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  87% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  88% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  88% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  88% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  89% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  89% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  89% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  90% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  90% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  91% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  91% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  91% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  92% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  92% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  92% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  93% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  93% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  94% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  94% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  94% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  95% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  95% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  95% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  96% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  96% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  97% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  97% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  97% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  98% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  98% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  98% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[  99% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¬ ?Œì¼??ì¤€ë¹?ì¤?..[39m[0m
+[   0% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¤ê¸????‘ì—…???˜í–‰ ì¤?..[39m[0m
+[   0% ] [90m[1mreimport[22m | source_code_pro.fnt[39m[0m
+[   0% ] [90m[1mreimport[22m | source_code_pro.fnt[39m[0m
+[   0% ] [90m[1mreimport[22m | SamhanUISans-SemiBold.ttf[39m[0m
+[   1% ] [90m[1mreimport[22m | SamhanUISans-Medium.ttf[39m[0m
+[   1% ] [90m[1mreimport[22m | LobsterTwo-Regular.ttf[39m[0m
+[   1% ] [90m[1mreimport[22m | LobsterTwo-Italic.ttf[39m[0m
+[   2% ] [90m[1mreimport[22m | LobsterTwo-BoldItalic.ttf[39m[0m
+[   2% ] [90m[1mreimport[22m | LobsterTwo-Bold.ttf[39m[0m
+[   2% ] [90m[1mreimport[22m | CourierPrime-Regular.ttf[39m[0m
+[   3% ] [90m[1mreimport[22m | CourierPrime-Italic.ttf[39m[0m
+[   3% ] [90m[1mreimport[22m | CourierPrime-BoldItalic.ttf[39m[0m
+[   4% ] [90m[1mreimport[22m | CourierPrime-Bold.ttf[39m[0m
+[   4% ] [90m[1mreimport[22m | AnonymousPro-Regular.ttf[39m[0m
+[   4% ] [90m[1mreimport[22m | AnonymousPro-Italic.ttf[39m[0m
+[   5% ] [90m[1mreimport[22m | AnonymousPro-BoldItalic.ttf[39m[0m
+[   5% ] [90m[1mreimport[22m | source_code_pro.fnt[39m[0m
+[   5% ] [90m[1mreimport[22m | SamhanUISans-SemiBold.ttf[39m[0m
+[   6% ] [90m[1mreimport[22m | source_code_pro.fnt[39m[0m
+[   6% ] [90m[1mreimport[22m | SamhanUISans-SemiBold.ttf[39m[0m
+[   7% ] [90m[1mreimport[22m | SamhanUISans-Medium.ttf[39m[0m
+[   7% ] [90m[1mreimport[22m | LobsterTwo-Regular.ttf[39m[0m
+[   7% ] [90m[1mreimport[22m | LobsterTwo-Italic.ttf[39m[0m
+[   8% ] [90m[1mreimport[22m | LobsterTwo-BoldItalic.ttf[39m[0m
+[   8% ] [90m[1mreimport[22m | LobsterTwo-Bold.ttf[39m[0m
+[   8% ] [90m[1mreimport[22m | CourierPrime-Regular.ttf[39m[0m
+[   9% ] [90m[1mreimport[22m | CourierPrime-Italic.ttf[39m[0m
+[   9% ] [90m[1mreimport[22m | CourierPrime-BoldItalic.ttf[39m[0m
+[  10% ] [90m[1mreimport[22m | CourierPrime-Bold.ttf[39m[0m
+[  10% ] [90m[1mreimport[22m | AnonymousPro-Regular.ttf[39m[0m
+[  10% ] [90m[1mreimport[22m | AnonymousPro-Italic.ttf[39m[0m
+[  11% ] [90m[1mreimport[22m | AnonymousPro-BoldItalic.ttf[39m[0m
+[  11% ] [90m[1mreimport[22m | AnonymousPro-Bold.ttf[39m[0m
+[  11% ] [90m[1mreimport[22m | setup_theme.mp3[39m[0m
+[  12% ] [90m[1mreimport[22m | title_theme.mp3[39m[0m
+[  12% ] [90m[1mreimport[22m | strategist_male_08.png[39m[0m
+[  13% ] [90m[1mreimport[22m | strategist_male_07.png[39m[0m
+[  13% ] [90m[1mreimport[22m | strategist_male_06.png[39m[0m
+[  13% ] [90m[1mreimport[22m | strategist_male_05.png[39m[0m
+[  14% ] [90m[1mreimport[22m | strategist_male_04.png[39m[0m
+[  14% ] [90m[1mreimport[22m | strategist_male_03.png[39m[0m
+[  14% ] [90m[1mreimport[22m | strategist_male_02.png[39m[0m
+[  15% ] [90m[1mreimport[22m | strategist_male_01.png[39m[0m
+[  15% ] [90m[1mreimport[22m | strategist_female_08.png[39m[0m
+[  16% ] [90m[1mreimport[22m | strategist_female_07.png[39m[0m
+[  16% ] [90m[1mreimport[22m | strategist_female_06.png[39m[0m
+[  16% ] [90m[1mreimport[22m | strategist_female_05.png[39m[0m
+[  17% ] [90m[1mreimport[22m | strategist_female_04.png[39m[0m
+[  17% ] [90m[1mreimport[22m | warrior_male_03.png[39m[0m
+[  17% ] [90m[1mreimport[22m | warrior_male_02.png[39m[0m
+[  18% ] [90m[1mreimport[22m | warrior_male_01.png[39m[0m
+[  18% ] [90m[1mreimport[22m | warrior_female_08.png[39m[0m
+[  19% ] [90m[1mreimport[22m | warrior_female_07.png[39m[0m
+[  19% ] [90m[1mreimport[22m | warrior_female_06.png[39m[0m
+[  19% ] [90m[1mreimport[22m | warrior_female_05.png[39m[0m
+[  20% ] [90m[1mreimport[22m | warrior_female_04.png[39m[0m
+[  20% ] [90m[1mreimport[22m | warrior_female_03.png[39m[0m
+[  20% ] [90m[1mreimport[22m | warrior_female_02.png[39m[0m
+[  21% ] [90m[1mreimport[22m | warrior_female_01.png[39m[0m
+[  21% ] [90m[1mreimport[22m | uija_wang.png[39m[0m
+[  22% ] [90m[1mreimport[22m | tsukushi_chief.png[39m[0m
+[  22% ] [90m[1mreimport[22m | tongluo_chief.png[39m[0m
+[  22% ] [90m[1mreimport[22m | tang_taizong.png[39m[0m
+[  23% ] [90m[1mreimport[22m | tang_gaozong.png[39m[0m
+[  23% ] [90m[1mreimport[22m | suzumori_remu.png[39m[0m
+[  23% ] [90m[1mreimport[22m | kim_chunchu.png[39m[0m
+[  24% ] [90m[1mreimport[22m | kim_heumsun.png[39m[0m
+[  24% ] [90m[1mreimport[22m | kim_inmun.png[39m[0m
+[  25% ] [90m[1mreimport[22m | kim_pumil.png[39m[0m
+[  25% ] [90m[1mreimport[22m | kim_wonsul.png[39m[0m
+[  25% ] [90m[1mreimport[22m | kim_yushin.png[39m[0m
+[  26% ] [90m[1mreimport[22m | kogyoku_saimei.png[39m[0m
+[  26% ] [90m[1mreimport[22m | koshi_chief.png[39m[0m
+[  26% ] [90m[1mreimport[22m | lee_sanghyuk.png[39m[0m
+[  27% ] [90m[1mreimport[22m | lisa_southern_envoy.png[39m[0m
+[  27% ] [90m[1mreimport[22m | liu_rengui.png[39m[0m
+[  27% ] [90m[1mreimport[22m | liu_renyuan.png[39m[0m
+[  28% ] [90m[1mreimport[22m | li_jinxing.png[39m[0m
+[  28% ] [90m[1mreimport[22m | mu_wang.png[39m[0m
+[  29% ] [90m[1mreimport[22m | nagi_hikaru.png[39m[0m
+[  29% ] [90m[1mreimport[22m | naka_no_oe_tenji.png[39m[0m
+[  29% ] [90m[1mreimport[22m | ogura_yuna.png[39m[0m
+[  30% ] [90m[1mreimport[22m | onga_emishi.png[39m[0m
+[  30% ] [90m[1mreimport[22m | park_jangsik.png[39m[0m
+[  30% ] [90m[1mreimport[22m | pi_jinju.png[39m[0m
+[  31% ] [90m[1mreimport[22m | porun_ilteber.png[39m[0m
+[  31% ] [90m[1mreimport[22m | pugu_chief.png[39m[0m
+[  32% ] [90m[1mreimport[22m | pumil.png[39m[0m
+[  32% ] [90m[1mreimport[22m | qibi_chief.png[39m[0m
+[  32% ] [90m[1mreimport[22m | rose_western_musician.png[39m[0m
+[  33% ] [90m[1mreimport[22m | seol_oyu.png[39m[0m
+[  33% ] [90m[1mreimport[22m | seondeok_queen.png[39m[0m
+[  33% ] [90m[1mreimport[22m | seongchung.png[39m[0m
+[  34% ] [90m[1mreimport[22m | sijie_chief.png[39m[0m
+[  34% ] [90m[1mreimport[22m | strategist_female_01.png[39m[0m
+[  35% ] [90m[1mreimport[22m | strategist_female_02.png[39m[0m
+[  35% ] [90m[1mreimport[22m | strategist_female_03.png[39m[0m
+[  35% ] [90m[1mreimport[22m | detail_3_1.png[39m[0m
+[  36% ] [90m[1mreimport[22m | detail_3_2.png[39m[0m
+[  36% ] [90m[1mreimport[22m | northeast.png[39m[0m
+[  36% ] [90m[1mreimport[22m | northwest.png[39m[0m
+[  37% ] [90m[1mreimport[22m | southeast.png[39m[0m
+[  37% ] [90m[1mreimport[22m | southwest.png[39m[0m
+[  38% ] [90m[1mreimport[22m | south_continuous_v2.png[39m[0m
+[  38% ] [90m[1mreimport[22m | open_sea_keep_mask.png[39m[0m
+[  38% ] [90m[1mreimport[22m | south_continuous_v3.png[39m[0m
+[  39% ] [90m[1mreimport[22m | arrow-left.svg[39m[0m
+[  39% ] [90m[1mreimport[22m | arrow-right.svg[39m[0m
+[  39% ] [90m[1mreimport[22m | book-open.svg[39m[0m
+[  40% ] [90m[1mreimport[22m | buildings.svg[39m[0m
+[  40% ] [90m[1mreimport[22m | floppy-disk.svg[39m[0m
+[  41% ] [90m[1mreimport[22m | list.svg[39m[0m
+[  41% ] [90m[1mreimport[22m | minus.svg[39m[0m
+[  41% ] [90m[1mreimport[22m | plant.svg[39m[0m
+[  42% ] [90m[1mreimport[22m | plus.svg[39m[0m
+[  42% ] [90m[1mreimport[22m | sword.svg[39m[0m
+[  42% ] [90m[1mreimport[22m | users-three.svg[39m[0m
+[  43% ] [90m[1mreimport[22m | warning-circle.svg[39m[0m
+[  43% ] [90m[1mreimport[22m | x.svg[39m[0m
+[  44% ] [90m[1mreimport[22m | candidate_frame.png[39m[0m
+[  44% ] [90m[1mreimport[22m | city_heading_frame.png[39m[0m
+[  44% ] [90m[1mreimport[22m | lacquer_bar.png[39m[0m
+[  45% ] [90m[1mreimport[22m | primary_red.png[39m[0m
+[  45% ] [90m[1mreimport[22m | title_divider.png[39m[0m
+[  45% ] [90m[1mreimport[22m | work_panel_frame.png[39m[0m
+[  46% ] [90m[1mreimport[22m | city.png[39m[0m
+[  46% ] [90m[1mreimport[22m | icon.svg[39m[0m
+[  47% ] [90m[1mreimport[22m | title_background_samhan660.jpg[39m[0m
+[  47% ] [90m[1mreimport[22m | warrior_male_04.png[39m[0m
+[  47% ] [90m[1mreimport[22m | warrior_male_05.png[39m[0m
+[  48% ] [90m[1mreimport[22m | warrior_male_06.png[39m[0m
+[  48% ] [90m[1mreimport[22m | warrior_male_07.png[39m[0m
+[  48% ] [90m[1mreimport[22m | warrior_male_08.png[39m[0m
+[  49% ] [90m[1mreimport[22m | Winter_Goguryeo.png[39m[0m
+[  49% ] [90m[1mreimport[22m | yagi_nana.png[39m[0m
+[  50% ] [90m[1mreimport[22m | yang_manchun.png[39m[0m
+[  50% ] [90m[1mreimport[22m | yeongnyu_wang.png[39m[0m
+[  50% ] [90m[1mreimport[22m | yeon_gaesomun.png[39m[0m
+[  51% ] [90m[1mreimport[22m | yeon_namsaeng.png[39m[0m
+[  51% ] [90m[1mreimport[22m | ye_gun.png[39m[0m
+[  51% ] [90m[1mreimport[22m | yunchung.png[39m[0m
+[  52% ] [90m[1mreimport[22m | hanji_overlay_texture_v1.png[39m[0m
+[  52% ] [90m[1mreimport[22m | korean_fortress_demo_rgba.png[39m[0m
+[  52% ] [90m[1mreimport[22m | terrain_c03_r02_coast_fix_v2_1254.png[39m[0m
+[  53% ] [90m[1mreimport[22m | approved_korea.png[39m[0m
+[  53% ] [90m[1mreimport[22m | palace_632_silla.png[39m[0m
+[  54% ] [90m[1mreimport[22m | seondeok.png[39m[0m
+[  54% ] [90m[1mreimport[22m | korean_fortress_original.png[39m[0m
+[  54% ] [90m[1mreimport[22m | korea_approved_1254.png[39m[0m
+[  55% ] [90m[1mreimport[22m | central_east_detail_candidate.png[39m[0m
+[  55% ] [90m[1mreimport[22m | central_east_detail_r3.png[39m[0m
+[  55% ] [90m[1mreimport[22m | central_east_source_crop.png[39m[0m
+[  56% ] [90m[1mreimport[22m | detail_0_0.png[39m[0m
+[  56% ] [90m[1mreimport[22m | detail_0_1.png[39m[0m
+[  57% ] [90m[1mreimport[22m | detail_0_2.png[39m[0m
+[  57% ] [90m[1mreimport[22m | detail_1_1.png[39m[0m
+[  57% ] [90m[1mreimport[22m | detail_1_2.png[39m[0m
+[  58% ] [90m[1mreimport[22m | detail_2_1.png[39m[0m
+[  58% ] [90m[1mreimport[22m | detail_2_2.png[39m[0m
+[  58% ] [90m[1mreimport[22m | faction_select_632_silla.webp[39m[0m
+[  59% ] [90m[1mreimport[22m | faction_select_642_baekje.webp[39m[0m
+[  59% ] [90m[1mreimport[22m | faction_select_642_goguryeo.webp[39m[0m
+[  60% ] [90m[1mreimport[22m | faction_select_642_silla.webp[39m[0m
+[  60% ] [90m[1mreimport[22m | faction_select_660_baekje.webp[39m[0m
+[  60% ] [90m[1mreimport[22m | faction_select_660_goguryeo.webp[39m[0m
+[  61% ] [90m[1mreimport[22m | faction_select_660_silla.webp[39m[0m
+[  61% ] [90m[1mreimport[22m | faction_select_663_baekje_revival.webp[39m[0m
+[  61% ] [90m[1mreimport[22m | faction_select_663_goguryeo.webp[39m[0m
+[  62% ] [90m[1mreimport[22m | faction_select_663_silla.webp[39m[0m
+[  62% ] [90m[1mreimport[22m | faction_select_663_tang.webp[39m[0m
+[  63% ] [90m[1mreimport[22m | faction_select_670_goguryeo_revival.webp[39m[0m
+[  63% ] [90m[1mreimport[22m | faction_select_670_silla.webp[39m[0m
+[  63% ] [90m[1mreimport[22m | faction_select_670_tang.webp[39m[0m
+[  64% ] [90m[1mreimport[22m | faction_select_632_baekje.webp[39m[0m
+[  64% ] [90m[1mreimport[22m | faction_select_632_goguryeo.webp[39m[0m
+[  64% ] [90m[1mreimport[22m | faction_select_632_silla.webp[39m[0m
+[  65% ] [90m[1mreimport[22m | faction_select_642_baekje.webp[39m[0m
+[  65% ] [90m[1mreimport[22m | faction_select_642_goguryeo.webp[39m[0m
+[  66% ] [90m[1mreimport[22m | faction_select_642_silla.webp[39m[0m
+[  66% ] [90m[1mreimport[22m | faction_select_660_baekje.webp[39m[0m
+[  66% ] [90m[1mreimport[22m | faction_select_660_goguryeo.webp[39m[0m
+[  67% ] [90m[1mreimport[22m | faction_select_660_silla.webp[39m[0m
+[  67% ] [90m[1mreimport[22m | faction_select_663_baekje_revival.webp[39m[0m
+[  67% ] [90m[1mreimport[22m | faction_select_663_goguryeo.webp[39m[0m
+[  68% ] [90m[1mreimport[22m | faction_select_663_silla.webp[39m[0m
+[  68% ] [90m[1mreimport[22m | faction_select_663_tang.webp[39m[0m
+[  69% ] [90m[1mreimport[22m | faction_select_670_goguryeo_revival.webp[39m[0m
+[  69% ] [90m[1mreimport[22m | faction_select_670_silla.webp[39m[0m
+[  69% ] [90m[1mreimport[22m | faction_select_670_tang.webp[39m[0m
+[  70% ] [90m[1mreimport[22m | anseung_670_selection_overlay_alpha_v3.png[39m[0m
+[  70% ] [90m[1mreimport[22m | arrow.png[39m[0m
+[  70% ] [90m[1mreimport[22m | play.png[39m[0m
+[  71% ] [90m[1mreimport[22m | eyey.png[39m[0m
+[  71% ] [90m[1mreimport[22m | Folder.svg[39m[0m
+[  72% ] [90m[1mreimport[22m | green.png[39m[0m
+[  72% ] [90m[1mreimport[22m | GutIconV2_base.png[39m[0m
+[  72% ] [90m[1mreimport[22m | GutIconV2_no_shine.png[39m[0m
+[  73% ] [90m[1mreimport[22m | HSplitContainer.svg[39m[0m
+[  73% ] [90m[1mreimport[22m | red.png[39m[0m
+[  73% ] [90m[1mreimport[22m | Script.svg[39m[0m
+[  74% ] [90m[1mreimport[22m | VSplitContainer.svg[39m[0m
+[  74% ] [90m[1mreimport[22m | yellow.png[39m[0m
+[  75% ] [90m[1mreimport[22m | icon.png[39m[0m
+[  75% ] [90m[1mreimport[22m | activate.svg[39m[0m
+[  75% ] [90m[1mreimport[22m | deactivate.svg[39m[0m
+[  76% ] [90m[1mreimport[22m | flatten.svg[39m[0m
+[  76% ] [90m[1mreimport[22m | lower.svg[39m[0m
+[  76% ] [90m[1mreimport[22m | paint.svg[39m[0m
+[  77% ] [90m[1mreimport[22m | raise.svg[39m[0m
+[  77% ] [90m[1mreimport[22m | ramp.svg[39m[0m
+[  77% ] [90m[1mreimport[22m | smooth.svg[39m[0m
+[  78% ] [90m[1mreimport[22m | icon.svg[39m[0m
+[  78% ] [90m[1mreimport[22m | baekje_660_intro.webp[39m[0m
+[  79% ] [90m[1mreimport[22m | battle_result_generic.webp[39m[0m
+[  79% ] [90m[1mreimport[22m | battle_start_hwangsanbeol.webp[39m[0m
+[  79% ] [90m[1mreimport[22m | domestic_bountiful_harvest.webp[39m[0m
+[  80% ] [90m[1mreimport[22m | domestic_crop_failure.webp[39m[0m
+[  80% ] [90m[1mreimport[22m | enemy_invasion_alert.webp[39m[0m
+[  80% ] [90m[1mreimport[22m | goguryeo_660_intro.webp[39m[0m
+[  81% ] [90m[1mreimport[22m | silla_660_intro.webp[39m[0m
+[  81% ] [90m[1mreimport[22m | faction_select_632_baekje.webp[39m[0m
+[  82% ] [90m[1mreimport[22m | faction_select_632_goguryeo.webp[39m[0m
+[  82% ] [90m[1mreimport[22m | anseung.png[39m[0m
+[  82% ] [90m[1mreimport[22m | bayegu_chief.png[39m[0m
+[  83% ] [90m[1mreimport[22m | bisudu_ilteber.png[39m[0m
+[  83% ] [90m[1mreimport[22m | bojang_wang.png[39m[0m
+[  83% ] [90m[1mreimport[22m | boksin.png[39m[0m
+[  84% ] [90m[1mreimport[22m | buyeo_pung.png[39m[0m
+[  84% ] [90m[1mreimport[22m | buyeo_tae.png[39m[0m
+[  85% ] [90m[1mreimport[22m | dujiezhi_ilteber.png[39m[0m
+[  85% ] [90m[1mreimport[22m | duolange_chief.png[39m[0m
+[  85% ] [90m[1mreimport[22m | emishi_chief.png[39m[0m
+[  86% ] [90m[1mreimport[22m | eulji_mundeok.png[39m[0m
+[  86% ] [90m[1mreimport[22m | Fan_Bingbing_Tang.png[39m[0m
+[  86% ] [90m[1mreimport[22m | gao_kan.png[39m[0m
+[  87% ] [90m[1mreimport[22m | geom_mojam.png[39m[0m
+[  87% ] [90m[1mreimport[22m | go_yeonmu.png[39m[0m
+[  88% ] [90m[1mreimport[22m | gwanchang.png[39m[0m
+[  88% ] [90m[1mreimport[22m | gyebaek.png[39m[0m
+[  88% ] [90m[1mreimport[22m | hayato_chief.png[39m[0m
+[  89% ] [90m[1mreimport[22m | heukchi_sangji.png[39m[0m
+[  89% ] [90m[1mreimport[22m | heungsu.png[39m[0m
+[  89% ] [90m[1mreimport[22m | hun_chief.png[39m[0m
+[  90% ] [90m[1mreimport[22m | inam_khagan.png[39m[0m
+[  90% ] [90m[1mreimport[22m | Jang_Wonyoung_Silla.png[39m[0m
+[  91% ] [90m[1mreimport[22m | Jennie_Silla.png[39m[0m
+[  91% ] [90m[1mreimport[22m | Jisoo_Silla.png[39m[0m
+[  91% ] [90m[1mreimport[22m | jisusin.png[39m[0m
+[  92% ] [90m[1mreimport[22m | jomei_tenno.png[39m[0m
+[  92% ] [90m[1mreimport[22m | kaede_karen.png[39m[0m
+[  92% ] [90m[1mreimport[22m | Karina_Silla.png[39m[0m
+[  93% ] [90m[1mreimport[22m | kibi_chief.png[39m[0m
+[  93% ] [90m[1mreimport[22m | kim_beopmin.png[39m[0m
+[  94% ] [90m[1mreimport[22m | bojang_wang_642_selection_overlay.png[39m[0m
+[  94% ] [90m[1mreimport[22m | bojang_wang_642_selection_overlay_portrait_match_v1.png[39m[0m
+[  94% ] [90m[1mreimport[22m | bojang_wang_660_selection_overlay.png[39m[0m
+[  95% ] [90m[1mreimport[22m | bojang_wang_660_selection_overlay_portrait_match_v1.png[39m[0m
+[  95% ] [90m[1mreimport[22m | bojang_wang_663_selection_overlay_alpha_v3.png[39m[0m
+[  95% ] [90m[1mreimport[22m | bojang_wang_663_selection_overlay_portrait_match_v1.png[39m[0m
+[  96% ] [90m[1mreimport[22m | buyeo_pung_663_selection_overlay_alpha_v3.png[39m[0m
+[  96% ] [90m[1mreimport[22m | kim_beopmin_663_selection_overlay_alpha_v3.png[39m[0m
+[  97% ] [90m[1mreimport[22m | kim_beopmin_670_selection_overlay_alpha_v3.png[39m[0m
+[  97% ] [90m[1mreimport[22m | kim_chunchu_660_selection_overlay.png[39m[0m
+[  97% ] [90m[1mreimport[22m | kim_chunchu_660_selection_overlay_portrait_match_v1.png[39m[0m
+[  98% ] [90m[1mreimport[22m | mu_wang_selection_overlay.png[39m[0m
+[  98% ] [90m[1mreimport[22m | seondeok_queen_642_selection_overlay.png[39m[0m
+[  98% ] [90m[1mreimport[22m | seondeok_queen_overlay.png[39m[0m
+[  99% ] [90m[1mreimport[22m | tang_gaozong_663_selection_overlay_alpha_v3.png[39m[0m
+[  99% ] [90m[1mreimport[22m | ? ì…‹ ê°€?¸ì˜¤ê¸?ë§ˆë¬´ë¦?ì¤?..[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mreimport[22m | Started ? ì…‹ (?¤ì‹œ) ê°€?¸ì˜¤??ì¤?(267 steps)[39m[0m
+[   0% ] [90m[1mreimport[22m | ?¤ì‹œ ê°€?¸ì˜¤ê¸????‘ì—…???˜í–‰ ì¤?..[39m[0m
+[92m[ DONE ][39m [1mreimport[22m
+[0m
+[   0% ] [90m[1mloading_editor_layout[22m | Started ?¸ì§‘ê¸°ë? ë¶ˆëŸ¬?¤ëŠ” ì¤?(5 steps)[39m[0m
+[   0% ] [90m[1mloading_editor_layout[22m | ?¸ì§‘ê¸??ˆì´?„ì›ƒ??ë¶ˆëŸ¬?¤ëŠ” ì¤?..[39m[0m
+[  16% ] [90m[1mloading_editor_layout[22m | ?…ì„ ë¶ˆëŸ¬?¤ëŠ” ì¤?..[39m[0m
+[92m[ DONE ][39m [1mloading_editor_layout[22m
+[0m
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[   0% ] [90m[1mfirst_scan_filesystem[22m | Started ?„ë¡œ?íŠ¸ ì´ˆê¸°??(5 steps)[39m[0m
+[   0% ] [90m[1mfirst_scan_filesystem[22m | ?Œì¼ êµ¬ì¡° ?¤ìº” ì¤?..[39m[0m
+[  16% ] [90m[1mfirst_scan_filesystem[22m | ?„ì—­ ?´ë˜???´ë¦„??ë¶ˆëŸ¬?¤ëŠ” ì¤?..[39m[0m
+[  33% ] [90m[1mfirst_scan_filesystem[22m | GDExtensions ê²€ì¦?ì¤?..[39m[0m
+[  50% ] [90m[1mfirst_scan_filesystem[22m | ?¤í† ë¡œë“œ ?¤í¬ë¦½íŠ¸ë¥?ë§Œë“œ??ì¤?..[39m[0m
+[  66% ] [90m[1mfirst_scan_filesystem[22m | ?ŒëŸ¬ê·¸ì¸??ì´ˆê¸°??ì¤?..[39m[0m
+MCP | plugin disabled in headless mode
+[  83% ] [90m[1mfirst_scan_filesystem[22m | ?Œì¼ ?¤ìº” ?œì‘ ì¤?..[39m[0m
+[92m[ DONE ][39m [1mfirst_scan_filesystem[22m
+[0m
+MCP | export: stripping autoload/_mcp_game_helper from the exported pack (restored in the editor after export)
+[   0% ] [90m[1msavepack[22m | Started ?¨í‚¹ ì¤?(102 steps)[39m[0m
+[   1% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://recruitment_system.gdc[39m[0m
+[   1% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://recruitment_overlay.gdc[39m[0m
+[   1% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/exported/133200997/export-043bd2740f262ada10c337d60dcc2665-province_transfer_panel.scn[39m[0m
+[   1% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://province_transfer_panel.gdc[39m[0m
+[   2% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://production_system.gdc[39m[0m
+[   2% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://production_overlay.gdc[39m[0m
+[   2% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://production_data.gdc[39m[0m
+[   2% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://officer_registry.gdc[39m[0m
+[   3% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://officer_catalog.gdc[39m[0m
+[   3% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://noble_power_constraints.gdc[39m[0m
+[   3% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://noble_politics_overlay.gdc[39m[0m
+[   3% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://noble_politics.gdc[39m[0m
+[   4% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/README.txt[39m[0m
+[   4% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_review/coast_fix_v2/VSCODE_NEXT_STEP.txt[39m[0m
+[   4% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/maps/README.txt[39m[0m
+[   4% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_female_02.png-90f26a312dca0b94e12eeb08470c590b.ctex[39m[0m
+[   4% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_female_02.png.import[39m[0m
+[   5% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_male_07.png-dc4061857726bcac6f3ba9560de16d5f.ctex[39m[0m
+[   5% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_male_07.png.import[39m[0m
+[   5% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_male_08.png-2ce5266b2cd5e80ee367d7a044964866.ctex[39m[0m
+[   5% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_male_08.png.import[39m[0m
+[   5% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/Winter_Goguryeo.png-534fe8da4145f85c35b1efdc0ce24af8.ctex[39m[0m
+[   5% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/Winter_Goguryeo.png.import[39m[0m
+[   5% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/yagi_nana.png-9ea665068e6a970092759af1d1c98d34.ctex[39m[0m
+[   5% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/yagi_nana.png.import[39m[0m
+[   6% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/yang_manchun.png-264060426545a14b979d45a4ff5a5133.ctex[39m[0m
+[   6% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/yang_manchun.png.import[39m[0m
+[   6% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://README.txt[39m[0m
+[   6% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://PROJECT_README.txt[39m[0m
+[   7% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://PLAYTEST_README_KO.txt[39m[0m
+[   7% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://battlefield_bg_patch.txt[39m[0m
+[   7% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://world_map_data.gdc[39m[0m
+[   7% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/exported/133200997/export-22e59c4ebacac7a9e73c1ffd541bda9a-title_screen.scn[39m[0m
+[   8% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://title_screen.gdc[39m[0m
+[   8% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/title_background_samhan660.jpg-0f550a5bf10911f30d136844067c4214.ctex[39m[0m
+[   8% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://title_background_samhan660.jpg.import[39m[0m
+[   8% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://territory_vector_borders.gdc[39m[0m
+[   8% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://supply_transport_overlay.gdc[39m[0m
+[   9% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://supply_transport.gdc[39m[0m
+[   9% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://settlement_overlay.gdc[39m[0m
+[   9% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://settlement_map.gdc[39m[0m
+[   9% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://scenario_data.gdc[39m[0m
+[  10% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://samhan_strategy_systems.gdc[39m[0m
+[  10% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://noble_personnel.gdc[39m[0m
+[  10% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/exported/133200997/export-adf2da41457ebbd667d007d50dbe9f3a-new_game_setup.scn[39m[0m
+[  10% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://new_game_setup.gdc[39m[0m
+[  11% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://mobilization.gdc[39m[0m
+[  11% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://military_supply_network.gdc[39m[0m
+[  11% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://military_preparation_guide.gdc[39m[0m
+[  11% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://military_preparation.gdc[39m[0m
+[  12% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/exported/133200997/export-57ad5d4401ee69d50c7783574481164e-map_area.scn[39m[0m
+[  12% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://map_area.gdc[39m[0m
+[  12% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/industry_style.gdc[39m[0m
+[  13% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/faction_flag.gdc[39m[0m
+[  13% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/diplomacy_preview.gdc[39m[0m
+[  13% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn[39m[0m
+[  13% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://main.gdc[39m[0m
+[  14% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://korea_35_data.gdc[39m[0m
+[  14% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://iron_supply_data.gdc[39m[0m
+[  14% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://iron_procurement_ai.gdc[39m[0m
+[  14% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://invasion_overlay.gdc[39m[0m
+[  15% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://invasion_orders.gdc[39m[0m
+[  15% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://industry_assignment_overlay.gdc[39m[0m
+[  15% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://industry_assignment.gdc[39m[0m
+[  15% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex[39m[0m
+[  15% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://icon.svg.import[39m[0m
+[  16% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/exported/133200997/export-05ad1a61fb36fb1b3742111469bf320d-floating_city_card.scn[39m[0m
+[  16% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://floating_city_card.gdc[39m[0m
+[  16% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://faction_economy.gdc[39m[0m
+[  16% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://domestic_overlay.gdc[39m[0m
+[  17% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://domestic_assignment_overlay.gdc[39m[0m
+[  17% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://domestic_assignment.gdc[39m[0m
+[  17% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://diplomacy_overlay.gdc[39m[0m
+[  18% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://crop_failure.gdc[39m[0m
+[  18% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://campaign_playability.gdc[39m[0m
+[  18% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/exported/133200997/export-3c03786f5c0483acca4c7d49bb0120a9-campaign_navigation_menu.scn[39m[0m
+[  18% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://campaign_navigation_menu.gdc[39m[0m
+[  19% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/exported/133200997/export-d61e60a16fdc1aa0cffc8b3b6f2db395-campaign_main.scn[39m[0m
+[  19% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://campaign_main.gdc[39m[0m
+[  19% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://campaign_ending.gdc[39m[0m
+[  19% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://bountiful_harvest.gdc[39m[0m
+[  20% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/exported/133200997/export-474e5502673388405cd71e44a7949a11-battle_overlay.scn[39m[0m
+[  20% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://battle_overlay.gdc[39m[0m
+[  20% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://battle_merit_overlay.gdc[39m[0m
+[  20% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://battle_merit.gdc[39m[0m
+[  21% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://army_readiness_overlay.gdc[39m[0m
+[  21% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://army_readiness.gdc[39m[0m
+[  21% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ai_military_planning.gdc[39m[0m
+[  21% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/sortie_overlay.gdc[39m[0m
+[  22% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/politics_preview.gdc[39m[0m
+[  22% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/ornament_resources.gdc[39m[0m
+[  22% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/ornament_overlay.gdc[39m[0m
+[  22% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/military_style.gdc[39m[0m
+[  23% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/living_city_theme.gdc[39m[0m
+[  23% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/diplomacy_overlay.gdc[39m[0m
+[  23% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/court_overlay.gdc[39m[0m
+[  24% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/campaign_flow_report.gdc[39m[0m
+[  24% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/campaign_flow_overlay.gdc[39m[0m
+[  24% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/battle_style.gdc[39m[0m
+[  24% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/battle_results_overlay.gdc[39m[0m
+[  25% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/city.png-2a46a1796e9a7ac2162bb5fd9f7cdc33.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/city.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/work_panel_frame.png[39m[0m
+[  25% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/work_panel_frame.png-c42d58401442382a6afc32de7f08329b.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/work_panel_frame.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/title_divider.png[39m[0m
+[  25% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/title_divider.png-4a1860168cdd192c980f8c1e64e022a7.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/title_divider.png.import[39m[0m
+[  25% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/primary_red.png[39m[0m
+[  25% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/primary_red.png-c05955ece7b0696e1cdd7cf66b2ded58.ctex[39m[0m
+[  25% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/primary_red.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/lacquer_bar.png[39m[0m
+[  26% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/lacquer_bar.png-4c49d3bf9aec707bcebdf6c5fd142591.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/lacquer_bar.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/city_heading_frame.png[39m[0m
+[  26% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/city_heading_frame.png-42a357fc83fc34ab1e555ac4e96588f8.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/city_heading_frame.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/candidate_frame.png[39m[0m
+[  26% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/candidate_frame.png-a8493b3788e09e92294cd9b439212bf2.ctex[39m[0m
+[  26% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/candidate_frame.png.import[39m[0m
+[  26% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/generated/work_panel_frame.res[39m[0m
+[  27% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/generated/title_divider.res[39m[0m
+[  27% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/generated/primary_red.res[39m[0m
+[  27% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/generated/lacquer_bar.res[39m[0m
+[  27% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/generated/city_heading_frame.res[39m[0m
+[  28% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/ornaments/v1_3/generated/candidate_frame.res[39m[0m
+[  28% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/fonts/nanummyeongjo/title_font.res[39m[0m
+[  28% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/fonts/nanummyeongjo/NanumMyeongjo-ExtraBold.ttf.import[39m[0m
+[  29% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/atlas_theme.gdc[39m[0m
+[  29% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/x.svg-5009a6206366bc6faa919898d00fe535.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/x.svg.import[39m[0m
+[  29% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warning-circle.svg-cae67edb53d925a2a386ce700d20924b.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/warning-circle.svg.import[39m[0m
+[  29% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/users-three.svg-45efae5e6267d7606ae2e27c92a8cc9e.ctex[39m[0m
+[  29% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/users-three.svg.import[39m[0m
+[  30% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/sword.svg-6275969e83b6941f1ad7041d5020438f.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/sword.svg.import[39m[0m
+[  30% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/plus.svg-5e51a65a66902f8371b1c94202f3fb3b.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/plus.svg.import[39m[0m
+[  30% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/plant.svg-39e7b932c24f74c5d61343e8dca6f8b9.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/plant.svg.import[39m[0m
+[  30% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/minus.svg-441ea49eb66b3390a91716f267828473.ctex[39m[0m
+[  30% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/minus.svg.import[39m[0m
+[  31% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/list.svg-f869ae5edc0d03b91dab95179a701f19.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/list.svg.import[39m[0m
+[  31% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/floppy-disk.svg-00c3e09226f32e6578301c3c8b0101b7.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/floppy-disk.svg.import[39m[0m
+[  31% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/buildings.svg-b50cde4f2ed3dff8517a6c8eaf2be067.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/buildings.svg.import[39m[0m
+[  31% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/book-open.svg-86cd9ddf68f7dda3f32720662cc49695.ctex[39m[0m
+[  31% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/book-open.svg.import[39m[0m
+[  32% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/arrow-right.svg-8c6dfaad14b19904d6a9d5c6e3299db5.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/arrow-right.svg.import[39m[0m
+[  32% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/arrow-left.svg-0e1ea0742eb62fc46943ed2796970a18.ctex[39m[0m
+[  32% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/arrow-left.svg.import[39m[0m
+[  32% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/approved_korea_map.gdc[39m[0m
+[  32% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v3/south_continuous_v3.json[39m[0m
+[  33% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/assets/fonts/nanummyeongjo/OFL.txt[39m[0m
+[  33% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/icons/LICENSE.txt[39m[0m
+[  33% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/central_east/VSCODE_REQUEST.txt[39m[0m
+[  33% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_selection_v1/assets/OFL.txt[39m[0m
+[  33% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://licenses/SamhanUISans-OFL.txt[39m[0m
+[  33% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://licenses/Phosphor-Icons-LICENSE.txt[39m[0m
+[  33% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://licenses/NanumMyeongjo-OFL.txt[39m[0m
+[  34% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://licenses/GODOT-THIRD-PARTY.txt[39m[0m
+[  34% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://licenses/GODOT-LICENSE.txt[39m[0m
+[  34% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/yeon_namsaeng.png-380f5df86a3919dd159aa221339a951e.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/yeon_namsaeng.png.import[39m[0m
+[  34% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/yeon_gaesomun.png-80382baaa62d5e9daf3f78afa4966d36.ctex[39m[0m
+[  34% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/yeon_gaesomun.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/yeongnyu_wang.png-97e95e4b2cd466e31b534a3e15f92b44.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/yeongnyu_wang.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_male_06.png-2766879ee1a96f0420e6ae2a789b7287.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_male_06.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_male_05.png-f23d168e86ba92fb74d6750d95782413.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_male_05.png.import[39m[0m
+[  35% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_male_04.png-0599ce3e7374db8dc4fc34c192b3451c.ctex[39m[0m
+[  35% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_male_04.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_male_03.png-a2ae39efc2844e9b61a5ecd129a2bcf9.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_male_03.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_male_02.png-c086a89062de085c404142781054494c.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_male_02.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_male_01.png-472f47d88925effd1cbfbb367ce4d233.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_male_01.png.import[39m[0m
+[  36% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_female_08.png-c7258d944cd7ed5f66fec4ffbc7f8701.ctex[39m[0m
+[  36% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_female_08.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_female_07.png-8dfc866cada8c81f0227555ea0fabf69.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_female_07.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_female_06.png-35ba905bc5b0136c16c5c6b5e7a1b513.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_female_06.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_female_05.png-a4dfdfdf05e4d3ae0f8371108291e404.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_female_05.png.import[39m[0m
+[  37% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_female_04.png-42ffda1e073544989e21c1cf11b7e488.ctex[39m[0m
+[  37% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_female_04.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_female_03.png-d34749deaecc2d8c79739fbb61df0837.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_female_03.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/warrior_female_01.png-16fe46fd5a9c48c0947ce6d72525fb17.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/warrior_female_01.png.import[39m[0m
+[  38% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/uija_wang.png-ae9528536b8c15541c5e8bde3cf9af40.ctex[39m[0m
+[  38% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/uija_wang.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/tsukushi_chief.png-af30c251537e07d6842f1806e5f1992b.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/tsukushi_chief.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/tongluo_chief.png-c96c667c4d05f1af84c76b92aa779de1.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/tongluo_chief.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/tang_taizong.png-49afb816b5a1d1bb64d6672a89723eef.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/tang_taizong.png.import[39m[0m
+[  39% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/tang_gaozong.png-3dbb3a5b51c5ab3234165702bddf3ce6.ctex[39m[0m
+[  39% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/tang_gaozong.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/suzumori_remu.png-5fb51d595626b368637f7d3139fb1628.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/suzumori_remu.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_male_08.png-11c1bbfb7b6f95754b68a73fa9656d4b.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_male_08.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_male_07.png-d312ebc8591633cfb7daa7dc3cdbb1a2.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_male_07.png.import[39m[0m
+[  40% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_male_06.png-f4465279f31622910cefc7c0346833c5.ctex[39m[0m
+[  40% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_male_06.png.import[39m[0m
+[  41% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_male_05.png-34e273b8d58f644e3635dea630137b30.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_male_05.png.import[39m[0m
+[  41% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_male_04.png-1fd10aef35c9ca1a39f8953dc001e739.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_male_04.png.import[39m[0m
+[  41% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_male_03.png-722bcb90875811b26cdd446f9396baf6.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_male_03.png.import[39m[0m
+[  41% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_male_02.png-5678ae8fa08c435f99491d8cb5f6d878.ctex[39m[0m
+[  41% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_male_02.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_male_01.png-4c077797ac202baad5cfab0e1474575a.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_male_01.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_female_08.png-ffc2aac56406c3cc97010dd8fe123ad7.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_female_08.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_female_07.png-817ab6d100906e851b6956bb8b4fd309.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_female_07.png.import[39m[0m
+[  42% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_female_06.png-ad6ef699d5811b310f562bf89776aa5b.ctex[39m[0m
+[  42% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_female_06.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_female_05.png-99b80e641b0f2332b44bccd74adfdff4.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_female_05.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_female_04.png-a4f5c4627ed154b8591bba7581167227.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_female_04.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_female_03.png-e98b1f6420b5a5dcad25276e8394d6c6.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_female_03.png.import[39m[0m
+[  43% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_female_02.png-56957c80f2b957f7ca06d615be7ef1ae.ctex[39m[0m
+[  43% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_female_02.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/strategist_female_01.png-5e2e2ba4bfbc4e2bd297683497d3850b.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/strategist_female_01.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/sijie_chief.png-c3ffed458ba893741c75229009206cdb.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/sijie_chief.png.import[39m[0m
+[  44% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/seongchung.png-c901cf71813b1bd4c94072aa55b5a5d4.ctex[39m[0m
+[  44% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/seongchung.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/seondeok_queen.png-8c3ecb6b05c6efab053dffbcc20c8853.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/seondeok_queen.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/seol_oyu.png-f2124b58950cb3f82061f56c8912777b.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/seol_oyu.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/rose_western_musician.png-6692236ae667f4e1d1b717fdbf763fad.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/rose_western_musician.png.import[39m[0m
+[  45% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/qibi_chief.png-514774d5903f25634dbaa6ed68bed2df.ctex[39m[0m
+[  45% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/qibi_chief.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/pumil.png-9e6a009e5d1d2a6fb30d3d34f4142145.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/pumil.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/pugu_chief.png-c8d6300e468d6bc73cd663ed86d1e98a.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/pugu_chief.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/porun_ilteber.png-111046ea54d802e37e08e053ee11eca9.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/porun_ilteber.png.import[39m[0m
+[  46% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/pi_jinju.png-3735fb54214765a2c170385464876182.ctex[39m[0m
+[  46% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/pi_jinju.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/park_jangsik.png-7b7a091f14e2d4b1d7b186deb05e2bd6.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/park_jangsik.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/onga_emishi.png-0aa9278c7b8bfe1e61646e69ac811adf.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/onga_emishi.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/ogura_yuna.png-17a75b20716d5971f7c0de35b20d0098.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/ogura_yuna.png.import[39m[0m
+[  47% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/naka_no_oe_tenji.png-a467fba150a1aebe648e331c769adf26.ctex[39m[0m
+[  47% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/naka_no_oe_tenji.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/nagi_hikaru.png-7d26efbb707b0cb37d6d504e587b47c6.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/nagi_hikaru.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/mu_wang.png-61e9769a388d0008e827f556b04e9900.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/mu_wang.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/li_jinxing.png-5144ecf1d2a76d6d3a2508855c47fe18.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/li_jinxing.png.import[39m[0m
+[  48% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/liu_renyuan.png-5ae55dcd3f8546d4e7eee37d88016d56.ctex[39m[0m
+[  48% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/liu_renyuan.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/liu_rengui.png-5c1e09aca59cf67b9d120c30015a8253.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/liu_rengui.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/lisa_southern_envoy.png-237dabbec11c58d87748816de61a417a.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/lisa_southern_envoy.png.import[39m[0m
+[  49% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/lee_sanghyuk.png-fa511b458e6a9b78e67887a1b2a09ffc.ctex[39m[0m
+[  49% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/lee_sanghyuk.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/koshi_chief.png-bb945f9f35c5d8befd8a5f6f07c1741e.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/koshi_chief.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kogyoku_saimei.png-15592a215de9108a8a44626a381ed73a.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/kogyoku_saimei.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kim_yushin.png-00a1a76bcee6e20f788b7ba3426a0b74.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/kim_yushin.png.import[39m[0m
+[  50% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kim_wonsul.png-62aea448ae40074372f631138b7c00c5.ctex[39m[0m
+[  50% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/kim_wonsul.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kim_pumil.png-d204a495157d1b27c2b3e2c5ebec5f24.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/kim_pumil.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kim_inmun.png-64efe6fccac86d7758765e0c1cdb30c5.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/kim_inmun.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kim_heumsun.png-4dcbdeb62285817d348f18b648006aec.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/kim_heumsun.png.import[39m[0m
+[  51% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kim_chunchu.png-f3af2b16d755fa9a6ab77a7b9565e288.ctex[39m[0m
+[  51% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/kim_chunchu.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kim_beopmin.png-e9dee052431945839511d67c75f5fcd7.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/kim_beopmin.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kibi_chief.png-00cbeac17db9a453c93e863116f8c783.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/kibi_chief.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/Karina_Silla.png-f53753c07fac61e0eae18f408100904a.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/Karina_Silla.png.import[39m[0m
+[  52% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kaede_karen.png-80805e779f746842499be8c30e147024.ctex[39m[0m
+[  52% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/kaede_karen.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/jomei_tenno.png-e8ee3334ce3015332352508d452df6ce.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/jomei_tenno.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/jisusin.png-1fae41e7b37359346cfe6ca681ec6c64.ctex[39m[0m
+[  53% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/jisusin.png.import[39m[0m
+[  53% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v3/package_manifest.json[39m[0m
+[  53% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v3/inland_registration.json[39m[0m
+[  54% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v3/integration/terrain_canvas.gdc[39m[0m
+[  54% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v3/integration/south_v3_layer.gdc[39m[0m
+[  54% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v3/integration/south_patch_edge.gdshader[39m[0m
+[  54% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v3/assets/south_continuous_v3.png[39m[0m
+[  54% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/south_continuous_v3.png-f9af84357d06bfeb4ce8596d559e58ad.ctex[39m[0m
+[  54% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v3/assets/south_continuous_v3.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v3/assets/open_sea_keep_mask.png[39m[0m
+[  55% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/open_sea_keep_mask.png-5a451b0977e9e552b1799559dc117b10.ctex[39m[0m
+[  55% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v3/assets/open_sea_keep_mask.png.import[39m[0m
+[  55% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v2/south_continuous_v2.json[39m[0m
+[  55% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v2/package_manifest.json[39m[0m
+[  56% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v2/assets/south_continuous_v2.png[39m[0m
+[  56% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/south_continuous_v2.png-1274910ef6254dca587b47a3e40ce1d2.ctex[39m[0m
+[  56% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v2/assets/south_continuous_v2.png.import[39m[0m
+[  56% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/terrain_layers.gdc[39m[0m
+[  56% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/south_registration_review.json[39m[0m
+[  56% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/registration_review.json[39m[0m
+[  57% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/manifest.json[39m[0m
+[  57% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/jeju_registration.json[39m[0m
+[  57% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/castle_tile_links.json[39m[0m
+[  57% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/overview/southwest.png[39m[0m
+[  57% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/southwest.png-623633169b0098bbc97c53406e94a9a0.ctex[39m[0m
+[  57% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/overview/southwest.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/overview/southeast.png[39m[0m
+[  58% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/southeast.png-18519db36c44df4704fdc0ac210e51da.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/overview/southeast.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/overview/northwest.png[39m[0m
+[  58% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/northwest.png-efa60e275b65d909e4300ef975e43f5e.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/overview/northwest.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/overview/northeast.png[39m[0m
+[  58% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/northeast.png-c6b491ba9fede2b9e93729028c9b9f70.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/overview/northeast.png.import[39m[0m
+[  58% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_3_2.png[39m[0m
+[  58% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/detail_3_2.png-bff62ada06fcf57a12d66359427ae0a6.ctex[39m[0m
+[  58% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_3_2.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_3_1.png[39m[0m
+[  59% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/detail_3_1.png-533a152eb0dbaa9047aa0379a8eabf3d.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_3_1.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_2_2.png[39m[0m
+[  59% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/detail_2_2.png-9aeeb218cdc4b8009519e8e7ed5ceb32.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_2_2.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_2_1.png[39m[0m
+[  59% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/detail_2_1.png-c076d4261a8a5bfde65039c077a8bc05.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_2_1.png.import[39m[0m
+[  59% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_1_2.png[39m[0m
+[  59% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/detail_1_2.png-ef115201efe14644c0c6496d8f89ec29.ctex[39m[0m
+[  59% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_1_2.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_1_1.png[39m[0m
+[  60% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/detail_1_1.png-9b1752808cf8473b3610ef055294d6b6.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_1_1.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_0_2.png[39m[0m
+[  60% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/detail_0_2.png-2722b5d08adeaa1dd3343b605f3dc710.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_0_2.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_0_1.png[39m[0m
+[  60% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/detail_0_1.png-47025898f4894903019744e437acf3da.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_0_1.png.import[39m[0m
+[  60% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_0_0.png[39m[0m
+[  60% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/detail_0_0.png-3253f27a0870448dd1d6cfc3ed5bdc87.ctex[39m[0m
+[  60% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/assets/detail/detail_0_0.png.import[39m[0m
+[  61% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/data/castle_layout_v1.json[39m[0m
+[  61% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/central_east/integration/central_east_display_layer.gdc[39m[0m
+[  61% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/central_east/data/central_east_r3_fill_mesh.json[39m[0m
+[  62% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/central_east/data/central_east_display_mesh.json[39m[0m
+[  62% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/central_east/data/central_east_detail_manifest.json[39m[0m
+[  62% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/central_east/assets/central_east_source_crop.png[39m[0m
+[  62% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/central_east_source_crop.png-93610e79bc24091f01f1848198584310.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/central_east/assets/central_east_source_crop.png.import[39m[0m
+[  62% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/central_east/assets/central_east_detail_r3.png[39m[0m
+[  62% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/central_east_detail_r3.png-cb762bf1d783dbfc0f1a50af5b408719.ctex[39m[0m
+[  62% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/central_east/assets/central_east_detail_r3.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/central_east/assets/central_east_detail_candidate.png[39m[0m
+[  63% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/central_east_detail_candidate.png-f2055e649a294819571c65b2ad11cfe2.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/central_east/assets/central_east_detail_candidate.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/assets/korea_approved_1254.png[39m[0m
+[  63% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/korea_approved_1254.png-56af5c77665f7f31b27135b73c7ca0e7.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/assets/korea_approved_1254.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/assets/korean_fortress_original.png[39m[0m
+[  63% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/korean_fortress_original.png-2e6bdd36e2a9a1408473ee9fde280719.ctex[39m[0m
+[  63% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/assets/korean_fortress_original.png.import[39m[0m
+[  63% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_selection_v1/layout.json[39m[0m
+[  64% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/exported/133200997/export-7c426cfbb85c46dbff6e2aff3bc4ddaa-faction_selection.scn[39m[0m
+[  64% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_selection_v1/faction_selection.gdc[39m[0m
+[  64% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_selection_v1/shaders/indirect_map.gdshader[39m[0m
+[  64% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/seondeok.png-bac4b6d58b985b4d12ce103c93f2e7bc.ctex[39m[0m
+[  64% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_selection_v1/assets/seondeok.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/SamhanUISans-SemiBold.ttf-5bf74bfd2cc94c1705cfa3869837fef6.fontdata[39m[0m
+[  65% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_selection_v1/assets/SamhanUISans-SemiBold.ttf.import[39m[0m
+[  65% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/SamhanUISans-Medium.ttf-197f70498375e2fd58afcbd596dba088.fontdata[39m[0m
+[  65% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_selection_v1/assets/SamhanUISans-Medium.ttf.import[39m[0m
+[  65% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/palace_632_silla.png-c0d0d69754b0a9d42ffa3c42eb5ae420.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_selection_v1/assets/palace_632_silla.png.import[39m[0m
+[  65% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_selection_v1/assets/approved_korea.png[39m[0m
+[  65% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/approved_korea.png-612d479c46c5cdaca8091c5615c0f119.ctex[39m[0m
+[  65% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_selection_v1/assets/approved_korea.png.import[39m[0m
+[  66% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_declaration_v1/hanji_declaration.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_declaration_v1/declaration_catalog.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_declaration_v1/declarations.json[39m[0m
+[  66% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://qa/windows_export_v1_10.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://qa/base_qa.gdc[39m[0m
+[  66% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://data/officers_v1.json[39m[0m
+[  66% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://cutscenes/map_cinematic_adapter.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://cutscenes/event_presentation.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://cutscenes/cutscene_view.gdc[39m[0m
+[  67% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://cutscenes/cutscene_catalog_v1.json[39m[0m
+[  67% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/ui_handoff/ui_style_tokens.json[39m[0m
+[  68% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/terrain_c03_r02_coast_fix_v2_1254.png-78f7b0158d2aa6c9592ed77d846cdfff.ctex[39m[0m
+[  68% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/ui_handoff/terrain_c03_r02_coast_fix_v2_1254.png.import[39m[0m
+[  68% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/korean_fortress_demo_rgba.png-a6077321ce997be22d838ff9ab381e15.ctex[39m[0m
+[  68% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/ui_handoff/korean_fortress_demo_rgba.png.import[39m[0m
+[  68% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/ui_handoff/focus_region.json[39m[0m
+[  68% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/hanji_overlay_texture_v1.png-01c72c13fce51a8fe8fffafa87f3af48.ctex[39m[0m
+[  68% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/ui/hanji_overlay_texture_v1.png.import[39m[0m
+[  69% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/yunchung.png-a5642c11994d753ab54e135ad7d2194e.ctex[39m[0m
+[  69% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/yunchung.png.import[39m[0m
+[  69% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/ye_gun.png-131884ff8b1c1b3209320b15f321ec5b.ctex[39m[0m
+[  69% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/ye_gun.png.import[39m[0m
+[  69% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/gyebaek.png-bcefdf30a987e852b658a76947a172f8.ctex[39m[0m
+[  69% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/gyebaek.png.import[39m[0m
+[  69% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/gwanchang.png-73ccc7d34e0a87947244344400d0f4b9.ctex[39m[0m
+[  69% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/gwanchang.png.import[39m[0m
+[  70% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/go_yeonmu.png-2f0ec1c77b04a1a0b54e1aa4fe45e9a9.ctex[39m[0m
+[  70% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/go_yeonmu.png.import[39m[0m
+[  70% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/geom_mojam.png-4ddf848f5adce6824311f57c66caf8d6.ctex[39m[0m
+[  70% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/geom_mojam.png.import[39m[0m
+[  70% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/gao_kan.png-c3d557916a25592beaf2c74c678d0302.ctex[39m[0m
+[  70% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/gao_kan.png.import[39m[0m
+[  70% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/Fan_Bingbing_Tang.png-1aac46f13da2ab766aef557b2fd07ea0.ctex[39m[0m
+[  70% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/Fan_Bingbing_Tang.png.import[39m[0m
+[  71% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/eulji_mundeok.png-78bb8592c596d9d69c8bb8fabe99af4f.ctex[39m[0m
+[  71% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/eulji_mundeok.png.import[39m[0m
+[  71% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/emishi_chief.png-7833bd006aa1648ae4c459ac93cc9ef1.ctex[39m[0m
+[  71% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/emishi_chief.png.import[39m[0m
+[  71% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/duolange_chief.png-b1d453cc3c35cf5682082de463889c90.ctex[39m[0m
+[  71% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/duolange_chief.png.import[39m[0m
+[  72% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/dujiezhi_ilteber.png-9c35b1161179c749bd9ad74de4e208c4.ctex[39m[0m
+[  72% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/dujiezhi_ilteber.png.import[39m[0m
+[  72% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/buyeo_tae.png-ef144423b7a2fb98e3782a2dff3d9df1.ctex[39m[0m
+[  72% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/buyeo_tae.png.import[39m[0m
+[  72% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/buyeo_pung.png-01c42d024135bc4de10039f11930a897.ctex[39m[0m
+[  72% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/buyeo_pung.png.import[39m[0m
+[  72% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/boksin.png-3f06e7edae0db5e449bc5efa5af4b762.ctex[39m[0m
+[  72% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/boksin.png.import[39m[0m
+[  73% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/bojang_wang.png-b12f07ca20f09e617059e69d4dff1f01.ctex[39m[0m
+[  73% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/bojang_wang.png.import[39m[0m
+[  73% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/Jisoo_Silla.png-16ac0b9a682ed1fc14707da3b0d1356f.ctex[39m[0m
+[  73% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/Jisoo_Silla.png.import[39m[0m
+[  73% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/Jennie_Silla.png-be40af0200c7770125c7328b6a370fd0.ctex[39m[0m
+[  73% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/Jennie_Silla.png.import[39m[0m
+[  73% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/Jang_Wonyoung_Silla.png-d73e1e6837a8a5cf6d2838e61a90ae75.ctex[39m[0m
+[  73% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/Jang_Wonyoung_Silla.png.import[39m[0m
+[  74% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/inam_khagan.png-2b17ea42b29088a981141f0f9a75518b.ctex[39m[0m
+[  74% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/inam_khagan.png.import[39m[0m
+[  74% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/hun_chief.png-7b8cb2c017f49248c95a15397e2edf4b.ctex[39m[0m
+[  74% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/hun_chief.png.import[39m[0m
+[  74% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/heungsu.png-34a42a9b9956d1f1d21ada8cf5c188e7.ctex[39m[0m
+[  74% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/heungsu.png.import[39m[0m
+[  74% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/heukchi_sangji.png-42a8280f310096daf31e9fec5aef2f0a.ctex[39m[0m
+[  74% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/heukchi_sangji.png.import[39m[0m
+[  75% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/hayato_chief.png-966efe3b5b47d769e25039d8b0bca1d5.ctex[39m[0m
+[  75% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/hayato_chief.png.import[39m[0m
+[  75% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://addons/windows_export_assets/plugin.gdc[39m[0m
+[  75% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/setup_theme.mp3-5394583cda42cd8d40a866c69067e5c4.mp3str[39m[0m
+[  75% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/audio/setup_theme.mp3.import[39m[0m
+[  75% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/title_theme.mp3-b565042091f1006308dc97f70d9ed6c8.mp3str[39m[0m
+[  75% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/audio/title_theme.mp3.import[39m[0m
+[  76% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/backgrounds/faction_selection_background_catalog_v1.json[39m[0m
+[  76% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/baekje_660_intro.webp-9e48085fac3c51c17cef357070c21f02.ctex[39m[0m
+[  76% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/cutscenes/illustrated/baekje_660_intro.webp.import[39m[0m
+[  76% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/battle_result_generic.webp-989cdf490f86e9c317b08ba3a4e73697.ctex[39m[0m
+[  76% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/cutscenes/illustrated/battle_result_generic.webp.import[39m[0m
+[  77% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/battle_start_hwangsanbeol.webp-d884ff3c8b2fe046e40f578b429889f1.ctex[39m[0m
+[  77% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/cutscenes/illustrated/battle_start_hwangsanbeol.webp.import[39m[0m
+[  77% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/domestic_bountiful_harvest.webp-72c56bff0aa9e1639414abe87fd1e6c6.ctex[39m[0m
+[  77% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/cutscenes/illustrated/domestic_bountiful_harvest.webp.import[39m[0m
+[  77% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/domestic_crop_failure.webp-95c2ef6ad8f954ca56ecdad1f79efd2f.ctex[39m[0m
+[  77% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/cutscenes/illustrated/domestic_crop_failure.webp.import[39m[0m
+[  77% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/enemy_invasion_alert.webp-fff2e2d8fd5e329d8b8787a5d5b70340.ctex[39m[0m
+[  77% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/cutscenes/illustrated/enemy_invasion_alert.webp.import[39m[0m
+[  78% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/goguryeo_660_intro.webp-eb8dd8d1a66e61fd5043fca77ad3fd67.ctex[39m[0m
+[  78% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/cutscenes/illustrated/goguryeo_660_intro.webp.import[39m[0m
+[  78% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/silla_660_intro.webp-c771cc93fd7b7129730f4776c44ac7bd.ctex[39m[0m
+[  78% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/cutscenes/illustrated/silla_660_intro.webp.import[39m[0m
+[  78% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_632_baekje.webp-77398ac373f6b769e4b966a1277688b0.ctex[39m[0m
+[  78% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_632_baekje.webp.import[39m[0m
+[  78% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_632_goguryeo.webp-d3f1b1b1ba1ed48b4e57791937ba228e.ctex[39m[0m
+[  78% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_632_goguryeo.webp.import[39m[0m
+[  79% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_632_silla.webp-a047d606dfd6312c9ec2c4e3efe9de97.ctex[39m[0m
+[  79% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_632_silla.webp.import[39m[0m
+[  79% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_642_baekje.webp-e2f4d2d9974a4195cf8d4da1523e78c9.ctex[39m[0m
+[  79% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_642_baekje.webp.import[39m[0m
+[  79% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_642_goguryeo.webp-4913c725080ea0a23577455360924717.ctex[39m[0m
+[  79% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_642_goguryeo.webp.import[39m[0m
+[  79% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_642_silla.webp-41180c33d663d70f367c561845ab5b00.ctex[39m[0m
+[  79% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_642_silla.webp.import[39m[0m
+[  80% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_660_baekje.webp-6f14bfce8fe657724af06b163f26c33b.ctex[39m[0m
+[  80% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_660_baekje.webp.import[39m[0m
+[  80% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_660_goguryeo.webp-c28a141c8554a6d62b0305aecebc740a.ctex[39m[0m
+[  80% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_660_goguryeo.webp.import[39m[0m
+[  80% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_660_silla.webp-dba53e15369e98cae5f9547e609b0807.ctex[39m[0m
+[  80% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_660_silla.webp.import[39m[0m
+[  80% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_663_baekje_revival.webp-b0b085fd139fbba4c873fa3ea46a0a93.ctex[39m[0m
+[  80% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_663_baekje_revival.webp.import[39m[0m
+[  81% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_663_goguryeo.webp-e24d9bb99f725f076f9e956b9e08a375.ctex[39m[0m
+[  81% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_663_goguryeo.webp.import[39m[0m
+[  81% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_663_silla.webp-d6c442714dd73bc6a3035fbbe6cf6988.ctex[39m[0m
+[  81% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_663_silla.webp.import[39m[0m
+[  81% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_663_tang.webp-f3665ce197fc93402ad33ec48d56781d.ctex[39m[0m
+[  81% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_663_tang.webp.import[39m[0m
+[  81% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_670_goguryeo_revival.webp-d71e98c905de8e16fddcaa5001df7957.ctex[39m[0m
+[  81% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_670_goguryeo_revival.webp.import[39m[0m
+[  82% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_670_silla.webp-1655f7080ccf964fd1900ce9c775a6da.ctex[39m[0m
+[  82% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_670_silla.webp.import[39m[0m
+[  82% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_670_tang.webp-62bc0263b8c24274e25023a0c59b3e38.ctex[39m[0m
+[  82% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/backgrounds/faction_select_670_tang.webp.import[39m[0m
+[  82% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_632_baekje.webp-4ccc58a7f023da6c662d8239434e4b2b.ctex[39m[0m
+[  82% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_632_baekje.webp.import[39m[0m
+[  83% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_632_goguryeo.webp-d498221a523a976e25054176937f3246.ctex[39m[0m
+[  83% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_632_goguryeo.webp.import[39m[0m
+[  83% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_632_silla.webp-0983787540cc26842d0c02b246d68254.ctex[39m[0m
+[  83% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_632_silla.webp.import[39m[0m
+[  83% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_642_baekje.webp-0af0e24e9d4eef09763d53cae743d87e.ctex[39m[0m
+[  83% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_642_baekje.webp.import[39m[0m
+[  83% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_642_goguryeo.webp-e0aec0c51578fc25db14ca5d9ea1b404.ctex[39m[0m
+[  83% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_642_goguryeo.webp.import[39m[0m
+[  84% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_642_silla.webp-ab019eb9ffee8ef85a55257335ad00db.ctex[39m[0m
+[  84% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_642_silla.webp.import[39m[0m
+[  84% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_660_baekje.webp-1bd9a5f0ccd7ffabdfcbbb5964a48164.ctex[39m[0m
+[  84% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_660_baekje.webp.import[39m[0m
+[  84% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_660_goguryeo.webp-2b38a285db5b7f34a2535ac65a7d5781.ctex[39m[0m
+[  84% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_660_goguryeo.webp.import[39m[0m
+[  84% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_660_silla.webp-703fedfec8a9f5474a9a777fa7db19ec.ctex[39m[0m
+[  84% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_660_silla.webp.import[39m[0m
+[  85% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_663_baekje_revival.webp-6028d76d3635fda4b08862ca577d801b.ctex[39m[0m
+[  85% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_663_baekje_revival.webp.import[39m[0m
+[  85% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_663_goguryeo.webp-97f8b7bb4630a10dc55e5f40d7a50be4.ctex[39m[0m
+[  85% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_663_goguryeo.webp.import[39m[0m
+[  85% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_663_silla.webp-f1b6af7e05211f191b1bbff8032731d4.ctex[39m[0m
+[  85% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_663_silla.webp.import[39m[0m
+[  85% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_663_tang.webp-df18ce705d94e7f9da10ad3185f75adb.ctex[39m[0m
+[  85% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_663_tang.webp.import[39m[0m
+[  86% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_670_goguryeo_revival.webp-cdc701a6b2dd29a94abc7b93abab3b13.ctex[39m[0m
+[  86% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_670_goguryeo_revival.webp.import[39m[0m
+[  86% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_670_silla.webp-0f93bb3d897261f3e65857d3f3c7be2c.ctex[39m[0m
+[  86% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_670_silla.webp.import[39m[0m
+[  86% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/faction_select_670_tang.webp-661414e10ebc01ba0ead7c926b1cba84.ctex[39m[0m
+[  86% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/backgrounds/faction_select_670_tang.webp.import[39m[0m
+[  86% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/anseung_670_selection_overlay_alpha_v3.png-a39c46c78ba15bec16f1748420e44f14.ctex[39m[0m
+[  86% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/anseung_670_selection_overlay_alpha_v3.png.import[39m[0m
+[  87% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/bojang_wang_642_selection_overlay.png-643de36a1fe60238e7a06ce7b1beefff.ctex[39m[0m
+[  87% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/bojang_wang_642_selection_overlay.png.import[39m[0m
+[  87% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/bojang_wang_642_selection_overlay_portrait_match_v1.png-d3e7e679675717a2863b70222c5a9318.ctex[39m[0m
+[  87% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/bojang_wang_642_selection_overlay_portrait_match_v1.png.import[39m[0m
+[  87% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/bojang_wang_660_selection_overlay.png-52949da32832f82aa59ce21e63d367a6.ctex[39m[0m
+[  87% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/bojang_wang_660_selection_overlay.png.import[39m[0m
+[  88% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/bojang_wang_660_selection_overlay_portrait_match_v1.png-994e7e859305f091697f758b1552cd33.ctex[39m[0m
+[  88% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/bojang_wang_660_selection_overlay_portrait_match_v1.png.import[39m[0m
+[  88% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/bojang_wang_663_selection_overlay_alpha_v3.png-285b69fd925540178b126ec94c032c56.ctex[39m[0m
+[  88% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/bojang_wang_663_selection_overlay_alpha_v3.png.import[39m[0m
+[  88% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/bojang_wang_663_selection_overlay_portrait_match_v1.png-6d9f9262dfc23600453be585989391a0.ctex[39m[0m
+[  88% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/bojang_wang_663_selection_overlay_portrait_match_v1.png.import[39m[0m
+[  88% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/buyeo_pung_663_selection_overlay_alpha_v3.png-2896cd34ee6f2e9a0542cf2d55df6c79.ctex[39m[0m
+[  88% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/buyeo_pung_663_selection_overlay_alpha_v3.png.import[39m[0m
+[  89% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kim_beopmin_663_selection_overlay_alpha_v3.png-2d8c20fa5f614d2f1002cde49e17e480.ctex[39m[0m
+[  89% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/kim_beopmin_663_selection_overlay_alpha_v3.png.import[39m[0m
+[  89% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kim_beopmin_670_selection_overlay_alpha_v3.png-d83d052d37ac7c31dab146a2abd8633c.ctex[39m[0m
+[  89% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/kim_beopmin_670_selection_overlay_alpha_v3.png.import[39m[0m
+[  89% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kim_chunchu_660_selection_overlay.png-a75394b57dfe8bba0c686fb3fb83173d.ctex[39m[0m
+[  89% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/kim_chunchu_660_selection_overlay.png.import[39m[0m
+[  89% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/kim_chunchu_660_selection_overlay_portrait_match_v1.png-3336b5e4d289b2ec6c0bffb3afa95124.ctex[39m[0m
+[  89% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/kim_chunchu_660_selection_overlay_portrait_match_v1.png.import[39m[0m
+[  90% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/mu_wang_selection_overlay.png-1041665ca4834091b5aa0efe0f2b9571.ctex[39m[0m
+[  90% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/mu_wang_selection_overlay.png.import[39m[0m
+[  90% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/seondeok_queen_642_selection_overlay.png-2cd8e8a15819d955062eb9b1463f4a2d.ctex[39m[0m
+[  90% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/seondeok_queen_642_selection_overlay.png.import[39m[0m
+[  90% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/seondeok_queen_overlay.png-1c9a8f7e3345d3bb7de5d07c018e4449.ctex[39m[0m
+[  90% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/seondeok_queen_overlay.png.import[39m[0m
+[  90% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/tang_gaozong_663_selection_overlay_alpha_v3.png-e04ffdd8a699ae94f921115d53f09dc2.ctex[39m[0m
+[  90% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/tang_gaozong_663_selection_overlay_alpha_v3.png.import[39m[0m
+[  91% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/tang_gaozong_670_selection_overlay_alpha_v3.png-6c505339e0731a7acf1df7a8d9a28aa8.ctex[39m[0m
+[  91% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/tang_gaozong_670_selection_overlay_alpha_v3.png.import[39m[0m
+[  91% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/uija_wang_642_selection_overlay.png-7784b1fd22fd01b937217c6e4a7ea5dd.ctex[39m[0m
+[  91% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/uija_wang_642_selection_overlay.png.import[39m[0m
+[  91% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/uija_wang_642_selection_overlay_portrait_match_v1.png-04a586198b2bb5f5c3309cb15909ceba.ctex[39m[0m
+[  91% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/uija_wang_642_selection_overlay_portrait_match_v1.png.import[39m[0m
+[  91% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/uija_wang_660_selection_overlay.png-e10bdbfc727f28e26ed6255a6044101a.ctex[39m[0m
+[  91% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/uija_wang_660_selection_overlay.png.import[39m[0m
+[  92% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/uija_wang_660_selection_overlay_portrait_match_v1.png-2f17d9c645ed9375a8b957d6fb85201d.ctex[39m[0m
+[  92% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/uija_wang_660_selection_overlay_portrait_match_v1.png.import[39m[0m
+[  92% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/yeongnyu_wang_selection_overlay.png-b64557099642248ff6137bb8d2331a2a.ctex[39m[0m
+[  92% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/portraits/yeongnyu_wang_selection_overlay.png.import[39m[0m
+[  92% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/profiles.json[39m[0m
+[  92% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/faction_selection/scenario_art_v1/start_locations_approved_korea.json[39m[0m
+[  93% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/samhan660_east_asia_korea_center_6144x4096.png-16c6ee19ff807da463a6f02fcf0013f8.ctex[39m[0m
+[  93% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/maps/samhan660_east_asia_korea_center_6144x4096.png.import[39m[0m
+[  93% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/samhan660_territory_id_map_35.png-84e00fdaa851b2a8de92d5395fdd795f.ctex[39m[0m
+[  93% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/maps/samhan660_territory_id_map_35.png.import[39m[0m
+[  93% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_render/east_coast_join_v1.gdshader[39m[0m
+[  94% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/exported/133200997/export-8f769e5b28b1fef18c87ec4beea630b6-east_coast_join_v1.res[39m[0m
+[  94% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_review/coast_fix_v2/effective_coordinates.json[39m[0m
+[  94% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/korean_fortress_demo_rgba.png-ce1d49483885f688ad3eb513b6f25b05.ctex[39m[0m
+[  94% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_review/coast_fix_v2/korean_fortress_demo_rgba.png.import[39m[0m
+[  94% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_review/coast_fix_v2/SHA256SUMS.json[39m[0m
+[  95% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/terrain_c03_r02_before_1254.png-ff89b26e64cb937156e215e3a3a26d92.ctex[39m[0m
+[  95% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_review/coast_fix_v2/terrain_c03_r02_before_1254.png.import[39m[0m
+[  95% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/terrain_c03_r02_coast_fix_v2_1254.png-bc564c94450ddb937a99fa039609d1af.ctex[39m[0m
+[  95% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_review/coast_fix_v2/terrain_c03_r02_coast_fix_v2_1254.png.import[39m[0m
+[  95% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_review/coast_fix_v2/terrain_override_spec.json[39m[0m
+[  95% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_review/coast_fix_v2/tile_manifest.json[39m[0m
+[  96% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_review/east_coast_detail_v1/detail_registration.json[39m[0m
+[  96% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/terrain_east_coast_detail_draft_v1_1254.png-71a9cdcdcb5ca6d72daae64e982d78ef.ctex[39m[0m
+[  96% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_review/east_coast_detail_v1/terrain_east_coast_detail_draft_v1_1254.png.import[39m[0m
+[  96% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_review/korea_draft_v1/atlas_registration.json[39m[0m
+[  96% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/terrain_korea_overview_candidate_v1_1024x1536.png-74ba0cacf1ecfa0dbcd993cdaa9650df.ctex[39m[0m
+[  96% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_review/korea_draft_v1/terrain_korea_overview_candidate_v1_1024x1536.png.import[39m[0m
+[  97% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/seondeok_queen_overlay.png-7f9520b58d0ba1af6ba9c2c73546c8ef.ctex[39m[0m
+[  97% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/overlays/seondeok_queen_overlay.png.import[39m[0m
+[  97% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/abe_no_hirafu.png-21cd66341b3b7d4cd727dde2b3cb0527.ctex[39m[0m
+[  97% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/abe_no_hirafu.png.import[39m[0m
+[  97% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/adie_chief.png-ee5bfc3c75bedbb92015b7d7117f853d.ctex[39m[0m
+[  97% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/adie_chief.png.import[39m[0m
+[  97% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/alcheon.png-a769e18108f4ab3fc4d069823d446357.ctex[39m[0m
+[  97% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/alcheon.png.import[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/anseung.png-51435da1246930bea0d39d776f36c926.ctex[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/anseung.png.import[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/bayegu_chief.png-f0ea3a3d3e47449fadd3e8d2d19bcb4b.ctex[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/bayegu_chief.png.import[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/imported/bisudu_ilteber.png-44a6114b92d463dc08b327086a627110.ctex[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/portraits/bisudu_ilteber.png.import[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://recruitment_system.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://recruitment_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://province_transfer_panel.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://province_transfer_panel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://production_system.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://production_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://production_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://officer_registry.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://officer_catalog.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://noble_power_constraints.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://noble_politics_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://noble_politics.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://world_map_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://title_screen.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://title_screen.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://territory_vector_borders.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://supply_transport_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://supply_transport.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://settlement_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://settlement_map.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://scenario_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://samhan_strategy_systems.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://noble_personnel.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://new_game_setup.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://new_game_setup.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://mobilization.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://military_supply_network.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://military_preparation_guide.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://military_preparation.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://map_area.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://map_area.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/industry_style.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/faction_flag.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/diplomacy_preview.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://main.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://main.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://korea_35_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://iron_supply_data.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://iron_procurement_ai.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://invasion_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://invasion_orders.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://industry_assignment_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://industry_assignment.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://floating_city_card.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://floating_city_card.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://faction_economy.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://domestic_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://domestic_assignment_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://domestic_assignment.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://diplomacy_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://crop_failure.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://campaign_playability.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://campaign_navigation_menu.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://campaign_navigation_menu.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://campaign_main.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://campaign_main.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://campaign_ending.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://bountiful_harvest.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://battle_overlay.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://battle_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://battle_merit_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://battle_merit.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://army_readiness_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://army_readiness.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ai_military_planning.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/sortie_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/politics_preview.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/ornament_resources.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/ornament_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/military_style.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/living_city_theme.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/diplomacy_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/court_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/campaign_flow_report.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/campaign_flow_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/battle_style.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/living_city_v1/battle_results_overlay.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/light_atlas_v1/atlas_theme.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/approved_korea_map.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v3/integration/terrain_canvas.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/south_v3/integration/south_v3_layer.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/full_r3_v1/terrain_layers.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/korea_layout_v1/central_east/integration/central_east_display_layer.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_selection_v1/faction_selection.tscn.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_selection_v1/faction_selection.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_declaration_v1/hanji_declaration.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://ui/faction_declaration_v1/declaration_catalog.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://qa/windows_export_v1_10.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://qa/base_qa.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://cutscenes/map_cinematic_adapter.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://cutscenes/event_presentation.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://cutscenes/cutscene_view.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://addons/windows_export_assets/plugin.gd.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://assets/map_render/east_coast_join_v1.tres.remap[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/global_script_class_cache.cfg[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://icon.svg[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://.godot/uid_cache.bin[39m[0m
+[  98% ] [90m[1msavepack[22m | ?Œì¼ ?€??ì¤? res://project.binary[39m[0m
+[92m[ DONE ][39m [1msavepack[22m
+[0m
+Build complete: C:\Users\Áö¿ëÈÆ\AppData\Local\Temp\Samhan660_V1_10_Export_Final_20261001/play-copy/Samhan660.exe

@@ -1,0 +1,243 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: relation zero blocks trade negotiation
+PASS: quote uses authoritative stats and original integer formula, ignores forged stats
+PASS: self/inactive target blocked: 신라
+PASS: self/inactive target blocked: 없음
+PASS: invalid envoy rejected: 외국 사절
+PASS: invalid envoy rejected: 존재하지 않음
+PASS: invalid envoy rejected: 
+PASS: quotes and rejected commands never mutate state
+PASS: captured envoy city invalidates authority
+PASS: foreign metadata rejected even in player city
+PASS: unassigned/transferring envoy rejected
+PASS: insufficient gold has no partial effects or monthly consumption
+PASS: gift costs 200 and adds twelve at exact boundary
+PASS: gift consumes monthly national action
+PASS: changing envoy cannot bypass monthly action
+PASS: following month permits trade with shared displayed chance
+PASS: successful negotiation adds five at zero cost
+PASS: one compatible treaty and Korean success message
+PASS: existing pact blocks duplication in later month
+PASS: sorted pair shares a single relationship ledger
+PASS: cancellation removes only trade pact and deducts ten
+PASS: cancellation consumes month; absent treaty cannot cancel
+PASS: failed negotiation deducts three and records an executed action
+PASS: failure cannot retry or gift in same month
+PASS: same pre-action JSON save gives identical negotiation result
+PASS: roll is deterministic
+PASS: SHA256 roll matches independent golden vector including envoy/year/month
+PASS: legacy no-month call retains original seed behavior
+PASS: legacy declaration removes treaties and sets war
+PASS: war blocks friendship and trade
+PASS: high relationship without pact cannot open a route
+PASS: pact then checks origin market
+PASS: pact then checks destination market
+PASS: domestic route is not international trade
+PASS: valid pact and markets allow existing route backend
+PASS: route duplication still blocked
+PASS: existing seasonal route formula preserved
+PASS: paused route is retained with no gold or relation change: cancelled
+PASS: paused route is retained with no gold or relation change: war
+PASS: war blocks new routes even with stale pact
+PASS: paused route is retained with no gold or relation change: inactive
+PASS: legacy normalization adds unused month ledger without changing treaties
+PASS: old Yamato relationship key is read without migration or regrant
+PASS: canonical writes reuse the old single relationship ledger
+PASS: month key includes year and permits January after December
+PASS: negative relation division truncates toward zero as before
+PASS: chance upper cap 95
+PASS: chance lower cap 15
+PASS: 632 Menu diplomacy opens and locks turns
+PASS: 632 target list uses scenario order and excludes self/inactive
+PASS: 632 campaign commands blocked by diplomacy modal
+PASS: 632 envoy identity retained through refresh
+INITIAL PACTS 632: Silla-Tang=[], Baekje-Yamato=[]; targets=["baekje", "goguryeo", "tang", "yamato", "xueyantuo", "tsukushi", "kibi", "koshi_abe", "emishi", "hayato"]
+PASS: 632 existing Silla-Tang initial rule retained
+PASS: 632 canonical Baekje-Yamato agreement only when both start factions exist
+PASS: 632 opening/quotes grant nothing and consume no month
+PASS: real campaign gift updates treasury/relation once
+PASS: campaign log receives Korean result
+PASS: closing/reopening cannot retry same month
+PASS: real save preserves month and gift effects
+PASS: normal next monthly turn permits negotiation
+PASS: campaign pre-action reload cannot reroll negotiation
+PASS: post-attempt reload cannot reset used month
+PASS: real legacy save without monthly field loads unused and unchanged
+PASS: 632 production remains accessible alone
+PASS: 632 diplomacy closes production
+PASS: 632 close restores turn input
+PASS: 642 Menu diplomacy opens and locks turns
+PASS: 642 target list uses scenario order and excludes self/inactive
+PASS: 642 campaign commands blocked by diplomacy modal
+PASS: 642 envoy identity retained through refresh
+INITIAL PACTS 642: Silla-Tang=[], Baekje-Yamato=[]; targets=["baekje", "goguryeo", "tang", "yamato", "xueyantuo", "tsukushi", "kibi", "koshi_abe", "emishi", "hayato"]
+PASS: 642 existing Silla-Tang initial rule retained
+PASS: 642 canonical Baekje-Yamato agreement only when both start factions exist
+PASS: 642 opening/quotes grant nothing and consume no month
+PASS: 642 production remains accessible alone
+PASS: 642 diplomacy closes production
+PASS: 642 close restores turn input
+PASS: 660 Menu diplomacy opens and locks turns
+PASS: 660 target list uses scenario order and excludes self/inactive
+PASS: 660 campaign commands blocked by diplomacy modal
+PASS: 660 envoy identity retained through refresh
+INITIAL PACTS 660: Silla-Tang=["동맹", "통상 조약"], Baekje-Yamato=["동맹", "통상 조약"]; targets=["baekje", "goguryeo", "tang", "yamato", "huihe", "pugu", "tongluo", "bayegu", "sijie", "qibi", "hun", "duolange", "adie", "tsukushi", "kibi", "koshi_abe", "emishi", "hayato"]
+PASS: 660 existing Silla-Tang initial rule retained
+PASS: 660 canonical Baekje-Yamato agreement only when both start factions exist
+PASS: 660 opening/quotes grant nothing and consume no month
+PASS: 660 war target remains visible with friendship/trade blocked
+PASS: 660 Tang initial agreement visible and cancellable
+PASS: cancel opens confirmation before mutating
+PASS: confirmed cancellation preserves alliance and immediately refreshes log/UI
+PASS: cancelled treaty and month persist without regrant
+PASS: pre-strategy legacy load does not grant historical agreements or charge gold
+PASS: 660 production remains accessible alone
+PASS: 660 diplomacy closes production
+PASS: 660 close restores turn input
+PASS: 663 Menu diplomacy opens and locks turns
+PASS: 663 target list uses scenario order and excludes self/inactive
+PASS: 663 campaign commands blocked by diplomacy modal
+PASS: 663 envoy identity retained through refresh
+INITIAL PACTS 663: Silla-Tang=["동맹", "통상 조약"], Baekje-Yamato=[]; targets=["baekje_revival", "goguryeo", "tang", "yamato", "huihe", "pugu", "tongluo", "bayegu", "sijie", "qibi", "hun", "duolange", "adie", "tsukushi", "kibi", "koshi_abe", "emishi", "hayato"]
+PASS: 663 existing Silla-Tang initial rule retained
+PASS: 663 canonical Baekje-Yamato agreement only when both start factions exist
+PASS: 663 opening/quotes grant nothing and consume no month
+PASS: 663 production remains accessible alone
+PASS: 663 diplomacy closes production
+PASS: 663 close restores turn input
+PASS: 670 Menu diplomacy opens and locks turns
+PASS: 670 target list uses scenario order and excludes self/inactive
+PASS: 670 campaign commands blocked by diplomacy modal
+PASS: 670 envoy identity retained through refresh
+INITIAL PACTS 670: Silla-Tang=["동맹", "통상 조약"], Baekje-Yamato=[]; targets=["tang", "goguryeo_revival", "yamato", "huihe", "pugu", "tongluo", "bayegu", "sijie", "qibi", "hun", "duolange", "adie", "tsukushi", "kibi", "koshi_abe", "emishi", "hayato"]
+PASS: 670 existing Silla-Tang initial rule retained
+PASS: 670 canonical Baekje-Yamato agreement only when both start factions exist
+PASS: 670 opening/quotes grant nothing and consume no month
+PASS: 670 production remains accessible alone
+PASS: 670 diplomacy closes production
+PASS: 670 close restores turn input
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+Portrait metrics: clip_size=(420.0, 275.0) portrait_position=(-4.2, 11.0) portrait_size=(247.5, 363.0) parent=Control
+Hanji metrics: hanji_size=(168.0, 206.25) text_group_content_size=(318.0, 428.0) text_group_position=(-75.0, -110.875) horizontal_margins=(-75.0,-75.0) vertical_margins=(-110.875,-110.875)
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: setup order and fixed size: 0/historical
+PASS: scenario tab and actual ID match: 0/historical
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: setup order and fixed size: 0/fictional
+PASS: scenario tab and actual ID match: 0/fictional
+NewGameSetup background: scenario_id=goguryeo_coup_642 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_642_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=goguryeo_coup_642 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_642_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=goguryeo_coup_642 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_642_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=goguryeo_coup_642 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_642_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=goguryeo_coup_642 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_642_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: setup order and fixed size: 1/historical
+PASS: scenario tab and actual ID match: 1/historical
+NewGameSetup background: scenario_id=goguryeo_coup_642 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_642_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=goguryeo_coup_642 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_642_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=goguryeo_coup_642 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_642_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=goguryeo_coup_642 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_642_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=goguryeo_coup_642 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_642_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: setup order and fixed size: 1/fictional
+PASS: scenario tab and actual ID match: 1/fictional
+NewGameSetup background: scenario_id=baekje_fall_660 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_660_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekje_fall_660 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_660_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekje_fall_660 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_660_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekje_fall_660 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_660_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekje_fall_660 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_660_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: setup order and fixed size: 2/historical
+PASS: scenario tab and actual ID match: 2/historical
+NewGameSetup background: scenario_id=baekje_fall_660 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_660_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekje_fall_660 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_660_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekje_fall_660 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_660_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekje_fall_660 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_660_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekje_fall_660 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_660_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: setup order and fixed size: 2/fictional
+PASS: scenario tab and actual ID match: 2/fictional
+NewGameSetup background: scenario_id=baekgang_663 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_663_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekgang_663 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_663_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekgang_663 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_663_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekgang_663 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_663_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekgang_663 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_663_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: setup order and fixed size: 3/historical
+PASS: scenario tab and actual ID match: 3/historical
+NewGameSetup background: scenario_id=baekgang_663 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_663_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekgang_663 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_663_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekgang_663 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_663_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekgang_663 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_663_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=baekgang_663 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_663_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: setup order and fixed size: 3/fictional
+PASS: scenario tab and actual ID match: 3/fictional
+NewGameSetup background: scenario_id=silla_tang_war_670 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_670_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_tang_war_670 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_670_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_tang_war_670 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_670_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_tang_war_670 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_670_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_tang_war_670 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_670_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: setup order and fixed size: 4/historical
+PASS: scenario tab and actual ID match: 4/historical
+NewGameSetup background: scenario_id=silla_tang_war_670 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_670_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_tang_war_670 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_670_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_tang_war_670 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_670_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_tang_war_670 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_670_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_tang_war_670 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_670_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: setup order and fixed size: 4/fictional
+PASS: scenario tab and actual ID match: 4/fictional
+DIPLOMACY TESTS: 132 checks, 0 failures

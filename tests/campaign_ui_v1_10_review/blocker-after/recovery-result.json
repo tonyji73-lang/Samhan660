@@ -1,0 +1,109 @@
+{
+	"checks": 16,
+	"evidence": {
+		"trace": [
+			{
+				"label": "recruitment",
+				"month": 7,
+				"step": 1,
+				"value": "국원소경 · 신라 국고 1000\n도시 군량 4270 · 주둔 병력 9900\n\n모집 1000명 → 금 150 / 이 도시 군량 200\n실행 가능\n\n국가 원장: 시작 1000 + 수입 0 − 지출 0 = 1000\n월 세입: 기본 126 + 태수 18 = 144\n민간 인구 100000 → 99000 · 출신 복무 9900 · 추가 동원 17500명\n다른 도시·이동 중 출신 병력도 동원 부담에 포함됩니다.\n다음 월 세입 144 → 143 · 연간 수확 6692 → 6626 (현재 조건)\n다음 수확 642.09 국고 수취 군량 2108 → 2087 (풍흉년 별도)",
+				"year": 642
+			},
+			{
+				"label": "survivors and recruitment",
+				"month": 7,
+				"step": 2,
+				"value": "unit:17 · 보병\n병력 9900명  /  장비 충족 100.0%\n장비 9900명분 · 현재 숙련도 50.0",
+				"year": 642
+			},
+			{
+				"label": "equipment and prerequisites",
+				"month": 7,
+				"step": 3,
+				"value": "군사 준비 · 국원소경 / unit:17 · 병력 9900명\n장비 부족 0명분 (0묶음) · 도시 재고 0묶음\n장비 충족 · 추가 지급 불필요\n훈련 50.0 · 일반 보병 1~1,000명을 편성하세요.\n자체 생산 조건 · 재고가 부족할 때 확인\n제철시설 접수 가능 · 김흠순 · 금240 · 월 작업124 / 필요600 · 예상5개월\n군기감 접수 가능 · 김흠순 · 금320 · 월 작업124 / 필요600 · 예상5개월\n기본 제련 완료\n도검 제작 접수 가능 · 김흠순 · 금200 · 월 작업127 / 필요300 · 예상3개월\n철 조달 · 다음 월 예상 0배치 / 금0 · 작업100 (잔여0) · 가동 생산 명령 없음 · 생산 화면에서 가동 설정 필요\n무기 생산 · 다음 월 예상 0배치 / 금0 · 작업100 (잔여0) · 가동 생산 명령 없음 · 생산 화면에서 가동 설정 필요\n장비 준비 완료 · 훈련 조건을 확인하세요.\n현재 조건에 따른 예상입니다. 다른 지출·군량·담당 변경에 따라 달라집니다. 전체 완료일은 선행 업무와 재료 확보 후 다시 확인하세요.\n\n부대 상세",
+				"year": 642
+			},
+			{
+				"label": "equipment",
+				"month": 7,
+				"step": 4,
+				"value": "현지 창고  0묶음\n현재 지급 가능  0묶음\n이 도시 창고의 무기 묶음이 부족합니다.",
+				"year": 642
+			},
+			{
+				"label": "training",
+				"month": 7,
+				"step": 5,
+				"value": "현재 숙련도  50.0 / 목표 70\n접수 전\n\n훈련 50.0 → 63.0 · 김흠순 · 지금 시작 가능\n월 금50 · 현재 조건 예상 잔여2개월 / 금100 · 다음 월부터 처리\n\n확정 후 다음 월부터 지불·훈련",
+				"year": 642
+			},
+			{
+				"label": "sortie quote",
+				"month": 7,
+				"step": 6,
+				"value": {
+					"commander": {
+						"active": true,
+						"aliases": [
+							"알천"
+						],
+						"alive": true,
+						"ambition": 50.0,
+						"authority": 85.0,
+						"availability_reason": "",
+						"birth_year": 577.0,
+						"catalog_id": "historical:002",
+						"children": [],
+						"date_basis": "legacy_game_years; historical confidence in catalog",
+						"death_year": 686.0,
+						"desired_location": "gukwon",
+						"duties": [],
+						"external_action_month": 7711.0,
+						"faction": "신라",
+						"faction_id": "silla",
+						"faction_screen_eligible": true,
+						"family_id": "",
+						"gender": "unknown",
+						"in_transit": false,
+						"intelligence": 76.0,
+						"is_historical": true,
+						"leadership": 86.0,
+						"life_status": "alive_at_start",
+						"location": "gukwon",
+						"loyalty": 58.0,
+						"name": "알천",
+						"officer_id": "historical:002",
+						"origin": "historical",
+						"parents": [],
+						"placement_note": "explicit game start assignment; not evidence of a historical posting",
+						"political_group_id": "silla:civil",
+						"politics": 78.0,
+						"rng_identity": "알천",
+						"spouse": "",
+						"stats": {
+							"authority": 85.0,
+							"intelligence": 76.0,
+							"leadership": 86.0,
+							"politics": 78.0,
+							"war": 84.0
+						},
+						"war": 84.0
+					},
+					"food": 4070,
+					"ok": true,
+					"reason": "",
+					"troops": 9900,
+					"units": [
+						"unit:17",
+						"unit:48"
+					]
+				},
+				"year": 642
+			}
+		]
+	},
+	"exe": "C:/Users/지용훈/AppData/Local/Temp/Samhan660_V1_7_1_20260930/tools/Godot.exe",
+	"failures": 0,
+	"slot": "user://ui_flow_v1_10_recovery_1790822636_36392.json",
+	"user_dir": "C:/Users/지용훈/AppData/Roaming/Godot/app_userdata/Samhan660"
+}

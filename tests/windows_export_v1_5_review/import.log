@@ -1,0 +1,1130 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+[   0% ] first_scan_filesystem | Started 프로젝트 초기화 (5 steps)
+[  16% ] first_scan_filesystem | 전역 클래스 이름을 불러오는 중...
+[  33% ] first_scan_filesystem | GDExtensions 검증 중...
+[  50% ] first_scan_filesystem | 오토로드 스크립트를 만드는 중...
+[  66% ] first_scan_filesystem | 플러그인을 초기화 중...
+MCP | plugin disabled in headless mode
+[  83% ] first_scan_filesystem | 파일 스캔 시작 중...
+[ DONE ] first_scan_filesystem
+
+[   0% ] update_scripts_classes | Started 전역 클래스를 등록하는 중... (295 steps)
+[   0% ] update_scripts_classes | McpAtomicWrite
+[   0% ] update_scripts_classes | McpClient
+[   0% ] update_scripts_classes | McpCliExec
+[   1% ] update_scripts_classes | McpCliFinder
+[   1% ] update_scripts_classes | McpCliStrategy
+[   1% ] update_scripts_classes | McpDshStrategy
+[   2% ] update_scripts_classes | McpJsonStrategy
+[   2% ] update_scripts_classes | McpManualCommand
+[   2% ] update_scripts_classes | McpPathTemplate
+[   3% ] update_scripts_classes | McpClientRegistry
+[   3% ] update_scripts_classes | McpTomlStrategy
+[   3% ] update_scripts_classes | McpYamlStrategy
+[   4% ] update_scripts_classes | 
+[   4% ] update_scripts_classes | 
+[   4% ] update_scripts_classes | 
+[   5% ] update_scripts_classes | 
+[   5% ] update_scripts_classes | 
+[   5% ] update_scripts_classes | 
+[   6% ] update_scripts_classes | 
+[   6% ] update_scripts_classes | 
+[   6% ] update_scripts_classes | 
+[   7% ] update_scripts_classes | 
+[   7% ] update_scripts_classes | 
+[   7% ] update_scripts_classes | 
+[   8% ] update_scripts_classes | 
+[   8% ] update_scripts_classes | 
+[   8% ] update_scripts_classes | 
+[   9% ] update_scripts_classes | 
+[   9% ] update_scripts_classes | 
+[   9% ] update_scripts_classes | 
+[  10% ] update_scripts_classes | 
+[  10% ] update_scripts_classes | 
+[  10% ] update_scripts_classes | 
+[  11% ] update_scripts_classes | 
+[  11% ] update_scripts_classes | 
+[  11% ] update_scripts_classes | 
+[  12% ] update_scripts_classes | 
+[  12% ] update_scripts_classes | McpCallContext
+[  12% ] update_scripts_classes | McpCustomToolSpec
+[  13% ] update_scripts_classes | McpServiceLocator
+[  13% ] update_scripts_classes | McpToolRegistry
+[  13% ] update_scripts_classes | McpDebuggerPlugin
+[  14% ] update_scripts_classes | 
+[  14% ] update_scripts_classes | 
+[  14% ] update_scripts_classes | 
+[  15% ] update_scripts_classes | McpNodeValidator
+[  15% ] update_scripts_classes | McpParamValidators
+[  15% ] update_scripts_classes | McpPropertyErrors
+[  16% ] update_scripts_classes | 
+[  16% ] update_scripts_classes | 
+[  16% ] update_scripts_classes | 
+[  17% ] update_scripts_classes | 
+[  17% ] update_scripts_classes | 
+[  17% ] update_scripts_classes | 
+[  18% ] update_scripts_classes | 
+[  18% ] update_scripts_classes | 
+[  18% ] update_scripts_classes | 
+[  19% ] update_scripts_classes | 
+[  19% ] update_scripts_classes | 
+[  19% ] update_scripts_classes | 
+[  20% ] update_scripts_classes | 
+[  20% ] update_scripts_classes | 
+[  20% ] update_scripts_classes | 
+[  21% ] update_scripts_classes | 
+[  21% ] update_scripts_classes | 
+[  21% ] update_scripts_classes | 
+[  22% ] update_scripts_classes | 
+[  22% ] update_scripts_classes | 
+[  22% ] update_scripts_classes | 
+[  23% ] update_scripts_classes | 
+[  23% ] update_scripts_classes | 
+[  23% ] update_scripts_classes | 
+[  24% ] update_scripts_classes | 
+[  24% ] update_scripts_classes | 
+[  25% ] update_scripts_classes | 
+[  25% ] update_scripts_classes | 
+[  25% ] update_scripts_classes | 
+[  26% ] update_scripts_classes | 
+[  26% ] update_scripts_classes | 
+[  26% ] update_scripts_classes | 
+[  27% ] update_scripts_classes | 
+[  27% ] update_scripts_classes | 
+[  27% ] update_scripts_classes | 
+[  28% ] update_scripts_classes | 
+[  28% ] update_scripts_classes | 
+[  28% ] update_scripts_classes | 
+[  29% ] update_scripts_classes | 
+[  29% ] update_scripts_classes | 
+[  29% ] update_scripts_classes | 
+[  30% ] update_scripts_classes | 
+[  30% ] update_scripts_classes | 
+[  30% ] update_scripts_classes | 
+[  31% ] update_scripts_classes | McpTestRunner
+[  31% ] update_scripts_classes | McpTestSuite
+[  31% ] update_scripts_classes | McpAllowHosts
+[  32% ] update_scripts_classes | 
+[  32% ] update_scripts_classes | McpDiagnosticsCapture
+[  32% ] update_scripts_classes | McpEditorLogBuffer
+[  33% ] update_scripts_classes | McpErrorCodes
+[  33% ] update_scripts_classes | 
+[  33% ] update_scripts_classes | McpGameLogBuffer
+[  34% ] update_scripts_classes | McpJsonValues
+[  34% ] update_scripts_classes | McpLogBacktrace
+[  34% ] update_scripts_classes | McpLogBuffer
+[  35% ] update_scripts_classes | McpAdoptionLabel
+[  35% ] update_scripts_classes | McpClientRefreshState
+[  35% ] update_scripts_classes | McpServerState
+[  36% ] update_scripts_classes | McpStartupPath
+[  36% ] update_scripts_classes | McpPathValidator
+[  36% ] update_scripts_classes | McpPortResolver
+[  37% ] update_scripts_classes | McpResourceIO
+[  37% ] update_scripts_classes | McpScenePath
+[  37% ] update_scripts_classes | McpScreenshotEncode
+[  38% ] update_scripts_classes | McpServerLifecycleManager
+[  38% ] update_scripts_classes | McpServerVersionCheck
+[  38% ] update_scripts_classes | McpSettings
+[  39% ] update_scripts_classes | McpStructuredLogRing
+[  39% ] update_scripts_classes | McpSurfacedErrorTracker
+[  39% ] update_scripts_classes | McpUpdateManager
+[  40% ] update_scripts_classes | 
+[  40% ] update_scripts_classes | McpUvCacheCleanup
+[  40% ] update_scripts_classes | 
+[  41% ] update_scripts_classes | McpWindowsPortReservation
+[  41% ] update_scripts_classes | McpClientConfigurator
+[  41% ] update_scripts_classes | McpConnection
+[  42% ] update_scripts_classes | McpDispatcher
+[  42% ] update_scripts_classes | McpDock
+[  42% ] update_scripts_classes | 
+[  43% ] update_scripts_classes | 
+[  43% ] update_scripts_classes | McpToolCatalog
+[  43% ] update_scripts_classes | 
+[  44% ] update_scripts_classes | 
+[  44% ] update_scripts_classes | 
+[  44% ] update_scripts_classes | 
+[  45% ] update_scripts_classes | 
+[  45% ] update_scripts_classes | 
+[  45% ] update_scripts_classes | 
+[  46% ] update_scripts_classes | 
+[  46% ] update_scripts_classes | 
+[  46% ] update_scripts_classes | 
+[  47% ] update_scripts_classes | 
+[  47% ] update_scripts_classes | 
+[  47% ] update_scripts_classes | 
+[  48% ] update_scripts_classes | 
+[  48% ] update_scripts_classes | 
+[  48% ] update_scripts_classes | 
+[  49% ] update_scripts_classes | 
+[  49% ] update_scripts_classes | 
+[  50% ] update_scripts_classes | 
+[  50% ] update_scripts_classes | 
+[  50% ] update_scripts_classes | 
+[  51% ] update_scripts_classes | 
+[  51% ] update_scripts_classes | 
+[  51% ] update_scripts_classes | 
+[  52% ] update_scripts_classes | 
+[  52% ] update_scripts_classes | 
+[  52% ] update_scripts_classes | 
+[  53% ] update_scripts_classes | 
+[  53% ] update_scripts_classes | 
+[  53% ] update_scripts_classes | 
+[  54% ] update_scripts_classes | 
+[  54% ] update_scripts_classes | 
+[  54% ] update_scripts_classes | 
+[  55% ] update_scripts_classes | 
+[  55% ] update_scripts_classes | 
+[  55% ] update_scripts_classes | 
+[  56% ] update_scripts_classes | 
+[  56% ] update_scripts_classes | 
+[  56% ] update_scripts_classes | 
+[  57% ] update_scripts_classes | 
+[  57% ] update_scripts_classes | 
+[  57% ] update_scripts_classes | GutErrorTracker
+[  58% ] update_scripts_classes | 
+[  58% ] update_scripts_classes | 
+[  58% ] update_scripts_classes | GutMain
+[  59% ] update_scripts_classes | 
+[  59% ] update_scripts_classes | 
+[  59% ] update_scripts_classes | 
+[  60% ] update_scripts_classes | GutConstants
+[  60% ] update_scripts_classes | 
+[  60% ] update_scripts_classes | 
+[  61% ] update_scripts_classes | 
+[  61% ] update_scripts_classes | 
+[  61% ] update_scripts_classes | 
+[  62% ] update_scripts_classes | GutTrackedError
+[  62% ] update_scripts_classes | 
+[  62% ] update_scripts_classes | GutHookScript
+[  63% ] update_scripts_classes | 
+[  63% ] update_scripts_classes | GutInputFactory
+[  63% ] update_scripts_classes | GutInputSender
+[  64% ] update_scripts_classes | 
+[  64% ] update_scripts_classes | 
+[  64% ] update_scripts_classes | 
+[  65% ] update_scripts_classes | 
+[  65% ] update_scripts_classes | 
+[  65% ] update_scripts_classes | 
+[  66% ] update_scripts_classes | 
+[  66% ] update_scripts_classes | 
+[  66% ] update_scripts_classes | 
+[  67% ] update_scripts_classes | 
+[  67% ] update_scripts_classes | 
+[  67% ] update_scripts_classes | 
+[  68% ] update_scripts_classes | 
+[  68% ] update_scripts_classes | 
+[  68% ] update_scripts_classes | GutStringUtils
+[  69% ] update_scripts_classes | 
+[  69% ] update_scripts_classes | 
+[  69% ] update_scripts_classes | 
+[  70% ] update_scripts_classes | 
+[  70% ] update_scripts_classes | GutTest
+[  70% ] update_scripts_classes | 
+[  71% ] update_scripts_classes | 
+[  71% ] update_scripts_classes | 
+[  71% ] update_scripts_classes | 
+[  72% ] update_scripts_classes | GutUtils
+[  72% ] update_scripts_classes | 
+[  72% ] update_scripts_classes | 
+[  73% ] update_scripts_classes | 
+[  73% ] update_scripts_classes | LowPolyTerrainChunk
+[  73% ] update_scripts_classes | LowPolyTerrainInspector
+[  74% ] update_scripts_classes | LowPolyTerrainManager
+[  74% ] update_scripts_classes | LowPolyTerrainMeshBuilder
+[  75% ] update_scripts_classes | LowPolyTerrainPicking
+[  75% ] update_scripts_classes | LowPolyTerrainServerBackend
+[  75% ] update_scripts_classes | 
+[  76% ] update_scripts_classes | 
+[  76% ] update_scripts_classes | 
+[  76% ] update_scripts_classes | 
+[  77% ] update_scripts_classes | 
+[  77% ] update_scripts_classes | 
+[  77% ] update_scripts_classes | 
+[  78% ] update_scripts_classes | 
+[  78% ] update_scripts_classes | 
+[  78% ] update_scripts_classes | 
+[  79% ] update_scripts_classes | 
+[  79% ] update_scripts_classes | 
+[  79% ] update_scripts_classes | 
+[  80% ] update_scripts_classes | 
+[  80% ] update_scripts_classes | 
+[  80% ] update_scripts_classes | 
+[  81% ] update_scripts_classes | 
+[  81% ] update_scripts_classes | 
+[  81% ] update_scripts_classes | 
+[  82% ] update_scripts_classes | 
+[  82% ] update_scripts_classes | 
+[  82% ] update_scripts_classes | 
+[  83% ] update_scripts_classes | 
+[  83% ] update_scripts_classes | BattleOverlay
+[  83% ] update_scripts_classes | 
+[  84% ] update_scripts_classes | 
+[  84% ] update_scripts_classes | 
+[  84% ] update_scripts_classes | 
+[  85% ] update_scripts_classes | 
+[  85% ] update_scripts_classes | 
+[  85% ] update_scripts_classes | 
+[  86% ] update_scripts_classes | 
+[  86% ] update_scripts_classes | 
+[  86% ] update_scripts_classes | 
+[  87% ] update_scripts_classes | 
+[  87% ] update_scripts_classes | 
+[  87% ] update_scripts_classes | 
+[  88% ] update_scripts_classes | 
+[  88% ] update_scripts_classes | 
+[  88% ] update_scripts_classes | 
+[  89% ] update_scripts_classes | 
+[  89% ] update_scripts_classes | 
+[  89% ] update_scripts_classes | 
+[  90% ] update_scripts_classes | 
+[  90% ] update_scripts_classes | 
+[  90% ] update_scripts_classes | 
+[  91% ] update_scripts_classes | 
+[  91% ] update_scripts_classes | 
+[  91% ] update_scripts_classes | 
+[  92% ] update_scripts_classes | 
+[  92% ] update_scripts_classes | 
+[  92% ] update_scripts_classes | 
+[  93% ] update_scripts_classes | 
+[  93% ] update_scripts_classes | 
+[  93% ] update_scripts_classes | 
+[  94% ] update_scripts_classes | 
+[  94% ] update_scripts_classes | 
+[  94% ] update_scripts_classes | 
+[  95% ] update_scripts_classes | 
+[  95% ] update_scripts_classes | 
+[  95% ] update_scripts_classes | 
+[  96% ] update_scripts_classes | 
+[  96% ] update_scripts_classes | 
+[  96% ] update_scripts_classes | 
+[  97% ] update_scripts_classes | 
+[  97% ] update_scripts_classes | 
+[  97% ] update_scripts_classes | 
+[  98% ] update_scripts_classes | 
+[  98% ] update_scripts_classes | 
+[  98% ] update_scripts_classes | 
+[  99% ] update_scripts_classes | 
+[ DONE ] update_scripts_classes
+
+[   0% ] _update_scan_actions | Started 액션 스캔 중... (268 steps)
+[   0% ] _update_scan_actions | AnonymousPro-Bold.ttf
+[   0% ] _update_scan_actions | AnonymousPro-BoldItalic.ttf
+[   0% ] _update_scan_actions | AnonymousPro-Italic.ttf
+[   1% ] _update_scan_actions | AnonymousPro-Regular.ttf
+[   1% ] _update_scan_actions | CourierPrime-Bold.ttf
+[   1% ] _update_scan_actions | CourierPrime-BoldItalic.ttf
+[   2% ] _update_scan_actions | CourierPrime-Italic.ttf
+[   2% ] _update_scan_actions | CourierPrime-Regular.ttf
+[   2% ] _update_scan_actions | LobsterTwo-Bold.ttf
+[   3% ] _update_scan_actions | LobsterTwo-BoldItalic.ttf
+[   3% ] _update_scan_actions | LobsterTwo-Italic.ttf
+[   4% ] _update_scan_actions | LobsterTwo-Regular.ttf
+[   4% ] _update_scan_actions | arrow.png
+[   4% ] _update_scan_actions | play.png
+[   5% ] _update_scan_actions | eyey.png
+[   5% ] _update_scan_actions | Folder.svg
+[   5% ] _update_scan_actions | green.png
+[   6% ] _update_scan_actions | GutIconV2_base.png
+[   6% ] _update_scan_actions | GutIconV2_no_shine.png
+[   7% ] _update_scan_actions | HSplitContainer.svg
+[   7% ] _update_scan_actions | red.png
+[   7% ] _update_scan_actions | Script.svg
+[   8% ] _update_scan_actions | VSplitContainer.svg
+[   8% ] _update_scan_actions | yellow.png
+[   8% ] _update_scan_actions | icon.png
+[   9% ] _update_scan_actions | source_code_pro.fnt
+[   9% ] _update_scan_actions | activate.svg
+[  10% ] _update_scan_actions | deactivate.svg
+[  10% ] _update_scan_actions | flatten.svg
+[  10% ] _update_scan_actions | lower.svg
+[  11% ] _update_scan_actions | paint.svg
+[  11% ] _update_scan_actions | raise.svg
+[  11% ] _update_scan_actions | ramp.svg
+[  12% ] _update_scan_actions | smooth.svg
+[  12% ] _update_scan_actions | icon.svg
+[  13% ] _update_scan_actions | setup_theme.mp3
+[  13% ] _update_scan_actions | title_theme.mp3
+[  13% ] _update_scan_actions | baekje_660_intro.webp
+[  14% ] _update_scan_actions | battle_result_generic.webp
+[  14% ] _update_scan_actions | battle_start_hwangsanbeol.webp
+[  14% ] _update_scan_actions | domestic_bountiful_harvest.webp
+[  15% ] _update_scan_actions | domestic_crop_failure.webp
+[  15% ] _update_scan_actions | enemy_invasion_alert.webp
+[  15% ] _update_scan_actions | goguryeo_660_intro.webp
+[  16% ] _update_scan_actions | silla_660_intro.webp
+[  16% ] _update_scan_actions | faction_select_632_baekje.webp
+[  17% ] _update_scan_actions | faction_select_632_goguryeo.webp
+[  17% ] _update_scan_actions | faction_select_632_silla.webp
+[  17% ] _update_scan_actions | faction_select_642_baekje.webp
+[  18% ] _update_scan_actions | faction_select_642_goguryeo.webp
+[  18% ] _update_scan_actions | faction_select_642_silla.webp
+[  18% ] _update_scan_actions | faction_select_660_baekje.webp
+[  19% ] _update_scan_actions | faction_select_660_goguryeo.webp
+[  19% ] _update_scan_actions | faction_select_660_silla.webp
+[  20% ] _update_scan_actions | faction_select_663_baekje_revival.webp
+[  20% ] _update_scan_actions | faction_select_663_goguryeo.webp
+[  20% ] _update_scan_actions | faction_select_663_silla.webp
+[  21% ] _update_scan_actions | faction_select_663_tang.webp
+[  21% ] _update_scan_actions | faction_select_670_goguryeo_revival.webp
+[  21% ] _update_scan_actions | faction_select_670_silla.webp
+[  22% ] _update_scan_actions | faction_select_670_tang.webp
+[  22% ] _update_scan_actions | faction_select_632_baekje.webp
+[  23% ] _update_scan_actions | faction_select_632_goguryeo.webp
+[  23% ] _update_scan_actions | faction_select_632_silla.webp
+[  23% ] _update_scan_actions | faction_select_642_baekje.webp
+[  24% ] _update_scan_actions | faction_select_642_goguryeo.webp
+[  24% ] _update_scan_actions | faction_select_642_silla.webp
+[  24% ] _update_scan_actions | faction_select_660_baekje.webp
+[  25% ] _update_scan_actions | faction_select_660_goguryeo.webp
+[  25% ] _update_scan_actions | faction_select_660_silla.webp
+[  26% ] _update_scan_actions | faction_select_663_baekje_revival.webp
+[  26% ] _update_scan_actions | faction_select_663_goguryeo.webp
+[  26% ] _update_scan_actions | faction_select_663_silla.webp
+[  27% ] _update_scan_actions | faction_select_663_tang.webp
+[  27% ] _update_scan_actions | faction_select_670_goguryeo_revival.webp
+[  27% ] _update_scan_actions | faction_select_670_silla.webp
+[  28% ] _update_scan_actions | faction_select_670_tang.webp
+[  28% ] _update_scan_actions | anseung_670_selection_overlay_alpha_v3.png
+[  28% ] _update_scan_actions | bojang_wang_642_selection_overlay.png
+[  29% ] _update_scan_actions | bojang_wang_642_selection_overlay_portrait_match_v1.png
+[  29% ] _update_scan_actions | bojang_wang_660_selection_overlay.png
+[  30% ] _update_scan_actions | bojang_wang_660_selection_overlay_portrait_match_v1.png
+[  30% ] _update_scan_actions | bojang_wang_663_selection_overlay_alpha_v3.png
+[  30% ] _update_scan_actions | bojang_wang_663_selection_overlay_portrait_match_v1.png
+[  31% ] _update_scan_actions | buyeo_pung_663_selection_overlay_alpha_v3.png
+[  31% ] _update_scan_actions | kim_beopmin_663_selection_overlay_alpha_v3.png
+[  31% ] _update_scan_actions | kim_beopmin_670_selection_overlay_alpha_v3.png
+[  32% ] _update_scan_actions | kim_chunchu_660_selection_overlay.png
+[  32% ] _update_scan_actions | kim_chunchu_660_selection_overlay_portrait_match_v1.png
+[  33% ] _update_scan_actions | mu_wang_selection_overlay.png
+[  33% ] _update_scan_actions | seondeok_queen_642_selection_overlay.png
+[  33% ] _update_scan_actions | seondeok_queen_overlay.png
+[  34% ] _update_scan_actions | tang_gaozong_663_selection_overlay_alpha_v3.png
+[  34% ] _update_scan_actions | tang_gaozong_670_selection_overlay_alpha_v3.png
+[  34% ] _update_scan_actions | uija_wang_642_selection_overlay.png
+[  35% ] _update_scan_actions | uija_wang_642_selection_overlay_portrait_match_v1.png
+[  35% ] _update_scan_actions | uija_wang_660_selection_overlay.png
+[  36% ] _update_scan_actions | uija_wang_660_selection_overlay_portrait_match_v1.png
+[  36% ] _update_scan_actions | yeongnyu_wang_selection_overlay.png
+[  36% ] _update_scan_actions | samhan660_east_asia_korea_center_6144x4096.png
+[  37% ] _update_scan_actions | samhan660_territory_id_map_35.png
+[  37% ] _update_scan_actions | korean_fortress_demo_rgba.png
+[  37% ] _update_scan_actions | terrain_c03_r02_before_1254.png
+[  38% ] _update_scan_actions | terrain_c03_r02_coast_fix_v2_1254.png
+[  38% ] _update_scan_actions | terrain_east_coast_detail_draft_v1_1254.png
+[  39% ] _update_scan_actions | terrain_korea_overview_candidate_v1_1024x1536.png
+[  39% ] _update_scan_actions | seondeok_queen_overlay.png
+[  39% ] _update_scan_actions | abe_no_hirafu.png
+[  40% ] _update_scan_actions | adie_chief.png
+[  40% ] _update_scan_actions | alcheon.png
+[  40% ] _update_scan_actions | anseung.png
+[  41% ] _update_scan_actions | bayegu_chief.png
+[  41% ] _update_scan_actions | bisudu_ilteber.png
+[  42% ] _update_scan_actions | bojang_wang.png
+[  42% ] _update_scan_actions | boksin.png
+[  42% ] _update_scan_actions | buyeo_pung.png
+[  43% ] _update_scan_actions | buyeo_tae.png
+[  43% ] _update_scan_actions | dujiezhi_ilteber.png
+[  43% ] _update_scan_actions | duolange_chief.png
+[  44% ] _update_scan_actions | emishi_chief.png
+[  44% ] _update_scan_actions | eulji_mundeok.png
+[  44% ] _update_scan_actions | Fan_Bingbing_Tang.png
+[  45% ] _update_scan_actions | gao_kan.png
+[  45% ] _update_scan_actions | geom_mojam.png
+[  46% ] _update_scan_actions | go_yeonmu.png
+[  46% ] _update_scan_actions | gwanchang.png
+[  46% ] _update_scan_actions | gyebaek.png
+[  47% ] _update_scan_actions | hayato_chief.png
+[  47% ] _update_scan_actions | heukchi_sangji.png
+[  47% ] _update_scan_actions | heungsu.png
+[  48% ] _update_scan_actions | hun_chief.png
+[  48% ] _update_scan_actions | inam_khagan.png
+[  49% ] _update_scan_actions | Jang_Wonyoung_Silla.png
+[  49% ] _update_scan_actions | Jennie_Silla.png
+[  49% ] _update_scan_actions | Jisoo_Silla.png
+[  50% ] _update_scan_actions | jisusin.png
+[  50% ] _update_scan_actions | jomei_tenno.png
+[  50% ] _update_scan_actions | kaede_karen.png
+[  51% ] _update_scan_actions | Karina_Silla.png
+[  51% ] _update_scan_actions | kibi_chief.png
+[  52% ] _update_scan_actions | kim_beopmin.png
+[  52% ] _update_scan_actions | kim_chunchu.png
+[  52% ] _update_scan_actions | kim_heumsun.png
+[  53% ] _update_scan_actions | kim_inmun.png
+[  53% ] _update_scan_actions | kim_pumil.png
+[  53% ] _update_scan_actions | kim_wonsul.png
+[  54% ] _update_scan_actions | kim_yushin.png
+[  54% ] _update_scan_actions | kogyoku_saimei.png
+[  55% ] _update_scan_actions | koshi_chief.png
+[  55% ] _update_scan_actions | lee_sanghyuk.png
+[  55% ] _update_scan_actions | lisa_southern_envoy.png
+[  56% ] _update_scan_actions | liu_rengui.png
+[  56% ] _update_scan_actions | liu_renyuan.png
+[  56% ] _update_scan_actions | li_jinxing.png
+[  57% ] _update_scan_actions | mu_wang.png
+[  57% ] _update_scan_actions | nagi_hikaru.png
+[  57% ] _update_scan_actions | naka_no_oe_tenji.png
+[  58% ] _update_scan_actions | ogura_yuna.png
+[  58% ] _update_scan_actions | onga_emishi.png
+[  59% ] _update_scan_actions | park_jangsik.png
+[  59% ] _update_scan_actions | pi_jinju.png
+[  59% ] _update_scan_actions | porun_ilteber.png
+[  60% ] _update_scan_actions | pugu_chief.png
+[  60% ] _update_scan_actions | pumil.png
+[  60% ] _update_scan_actions | qibi_chief.png
+[  61% ] _update_scan_actions | rose_western_musician.png
+[  61% ] _update_scan_actions | seol_oyu.png
+[  62% ] _update_scan_actions | seondeok_queen.png
+[  62% ] _update_scan_actions | seongchung.png
+[  62% ] _update_scan_actions | sijie_chief.png
+[  63% ] _update_scan_actions | strategist_female_01.png
+[  63% ] _update_scan_actions | strategist_female_02.png
+[  63% ] _update_scan_actions | strategist_female_03.png
+[  64% ] _update_scan_actions | strategist_female_04.png
+[  64% ] _update_scan_actions | strategist_female_05.png
+[  65% ] _update_scan_actions | strategist_female_06.png
+[  65% ] _update_scan_actions | strategist_female_07.png
+[  65% ] _update_scan_actions | strategist_female_08.png
+[  66% ] _update_scan_actions | strategist_male_01.png
+[  66% ] _update_scan_actions | strategist_male_02.png
+[  66% ] _update_scan_actions | strategist_male_03.png
+[  67% ] _update_scan_actions | strategist_male_04.png
+[  67% ] _update_scan_actions | strategist_male_05.png
+[  68% ] _update_scan_actions | strategist_male_06.png
+[  68% ] _update_scan_actions | strategist_male_07.png
+[  68% ] _update_scan_actions | strategist_male_08.png
+[  69% ] _update_scan_actions | suzumori_remu.png
+[  69% ] _update_scan_actions | tang_gaozong.png
+[  69% ] _update_scan_actions | tang_taizong.png
+[  70% ] _update_scan_actions | tongluo_chief.png
+[  70% ] _update_scan_actions | tsukushi_chief.png
+[  71% ] _update_scan_actions | uija_wang.png
+[  71% ] _update_scan_actions | warrior_female_01.png
+[  71% ] _update_scan_actions | warrior_female_02.png
+[  72% ] _update_scan_actions | warrior_female_03.png
+[  72% ] _update_scan_actions | warrior_female_04.png
+[  72% ] _update_scan_actions | warrior_female_05.png
+[  73% ] _update_scan_actions | warrior_female_06.png
+[  73% ] _update_scan_actions | warrior_female_07.png
+[  73% ] _update_scan_actions | warrior_female_08.png
+[  74% ] _update_scan_actions | warrior_male_01.png
+[  74% ] _update_scan_actions | warrior_male_02.png
+[  75% ] _update_scan_actions | warrior_male_03.png
+[  75% ] _update_scan_actions | warrior_male_04.png
+[  75% ] _update_scan_actions | warrior_male_05.png
+[  76% ] _update_scan_actions | warrior_male_06.png
+[  76% ] _update_scan_actions | warrior_male_07.png
+[  76% ] _update_scan_actions | warrior_male_08.png
+[  77% ] _update_scan_actions | Winter_Goguryeo.png
+[  77% ] _update_scan_actions | yagi_nana.png
+[  78% ] _update_scan_actions | yang_manchun.png
+[  78% ] _update_scan_actions | yeongnyu_wang.png
+[  78% ] _update_scan_actions | yeon_gaesomun.png
+[  79% ] _update_scan_actions | yeon_namsaeng.png
+[  79% ] _update_scan_actions | ye_gun.png
+[  79% ] _update_scan_actions | yunchung.png
+[  80% ] _update_scan_actions | hanji_overlay_texture_v1.png
+[  80% ] _update_scan_actions | korean_fortress_demo_rgba.png
+[  81% ] _update_scan_actions | terrain_c03_r02_coast_fix_v2_1254.png
+[  81% ] _update_scan_actions | approved_korea.png
+[  81% ] _update_scan_actions | palace_632_silla.png
+[  82% ] _update_scan_actions | SamhanUISans-Medium.ttf
+[  82% ] _update_scan_actions | SamhanUISans-SemiBold.ttf
+[  82% ] _update_scan_actions | seondeok.png
+[  83% ] _update_scan_actions | korean_fortress_original.png
+[  83% ] _update_scan_actions | korea_approved_1254.png
+[  84% ] _update_scan_actions | central_east_detail_candidate.png
+[  84% ] _update_scan_actions | central_east_detail_r3.png
+[  84% ] _update_scan_actions | central_east_source_crop.png
+[  85% ] _update_scan_actions | detail_0_0.png
+[  85% ] _update_scan_actions | detail_0_1.png
+[  85% ] _update_scan_actions | detail_0_2.png
+[  86% ] _update_scan_actions | detail_1_1.png
+[  86% ] _update_scan_actions | detail_1_2.png
+[  86% ] _update_scan_actions | detail_2_1.png
+[  87% ] _update_scan_actions | detail_2_2.png
+[  87% ] _update_scan_actions | detail_3_1.png
+[  88% ] _update_scan_actions | detail_3_2.png
+[  88% ] _update_scan_actions | northeast.png
+[  88% ] _update_scan_actions | northwest.png
+[  89% ] _update_scan_actions | southeast.png
+[  89% ] _update_scan_actions | southwest.png
+[  89% ] _update_scan_actions | south_continuous_v2.png
+[  90% ] _update_scan_actions | open_sea_keep_mask.png
+[  90% ] _update_scan_actions | south_continuous_v3.png
+[  91% ] _update_scan_actions | arrow-left.svg
+[  91% ] _update_scan_actions | arrow-right.svg
+[  91% ] _update_scan_actions | book-open.svg
+[  92% ] _update_scan_actions | buildings.svg
+[  92% ] _update_scan_actions | floppy-disk.svg
+[  92% ] _update_scan_actions | list.svg
+[  93% ] _update_scan_actions | minus.svg
+[  93% ] _update_scan_actions | plant.svg
+[  94% ] _update_scan_actions | plus.svg
+[  94% ] _update_scan_actions | sword.svg
+[  94% ] _update_scan_actions | users-three.svg
+[  95% ] _update_scan_actions | warning-circle.svg
+[  95% ] _update_scan_actions | x.svg
+[  95% ] _update_scan_actions | NanumMyeongjo-ExtraBold.ttf
+[  96% ] _update_scan_actions | candidate_frame.png
+[  96% ] _update_scan_actions | city_heading_frame.png
+[  97% ] _update_scan_actions | lacquer_bar.png
+[  97% ] _update_scan_actions | primary_red.png
+[  97% ] _update_scan_actions | title_divider.png
+[  98% ] _update_scan_actions | work_panel_frame.png
+[  98% ] _update_scan_actions | city.png
+[  98% ] _update_scan_actions | icon.svg
+[  99% ] _update_scan_actions | title_background_samhan660.jpg
+[ DONE ] _update_scan_actions
+
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (267 steps)
+[   0% ] reimport | 다시 가져올 파일을 준비 중...
+[   0% ] reimport | 다시 가져올 파일을 준비 중...
+[   0% ] reimport | 다시 가져올 파일을 준비 중...
+[   1% ] reimport | 다시 가져올 파일을 준비 중...
+[   1% ] reimport | 다시 가져올 파일을 준비 중...
+[   1% ] reimport | 다시 가져올 파일을 준비 중...
+[   2% ] reimport | 다시 가져올 파일을 준비 중...
+[   2% ] reimport | 다시 가져올 파일을 준비 중...
+[   2% ] reimport | 다시 가져올 파일을 준비 중...
+[   3% ] reimport | 다시 가져올 파일을 준비 중...
+[   3% ] reimport | 다시 가져올 파일을 준비 중...
+[   4% ] reimport | 다시 가져올 파일을 준비 중...
+[   4% ] reimport | 다시 가져올 파일을 준비 중...
+[   4% ] reimport | 다시 가져올 파일을 준비 중...
+[   5% ] reimport | 다시 가져올 파일을 준비 중...
+[   5% ] reimport | 다시 가져올 파일을 준비 중...
+[   5% ] reimport | 다시 가져올 파일을 준비 중...
+[   6% ] reimport | 다시 가져올 파일을 준비 중...
+[   6% ] reimport | 다시 가져올 파일을 준비 중...
+[   7% ] reimport | 다시 가져올 파일을 준비 중...
+[   7% ] reimport | 다시 가져올 파일을 준비 중...
+[   7% ] reimport | 다시 가져올 파일을 준비 중...
+[   8% ] reimport | 다시 가져올 파일을 준비 중...
+[   8% ] reimport | 다시 가져올 파일을 준비 중...
+[   8% ] reimport | 다시 가져올 파일을 준비 중...
+[   9% ] reimport | 다시 가져올 파일을 준비 중...
+[   9% ] reimport | 다시 가져올 파일을 준비 중...
+[  10% ] reimport | 다시 가져올 파일을 준비 중...
+[  10% ] reimport | 다시 가져올 파일을 준비 중...
+[  10% ] reimport | 다시 가져올 파일을 준비 중...
+[  11% ] reimport | 다시 가져올 파일을 준비 중...
+[  11% ] reimport | 다시 가져올 파일을 준비 중...
+[  11% ] reimport | 다시 가져올 파일을 준비 중...
+[  12% ] reimport | 다시 가져올 파일을 준비 중...
+[  12% ] reimport | 다시 가져올 파일을 준비 중...
+[  13% ] reimport | 다시 가져올 파일을 준비 중...
+[  13% ] reimport | 다시 가져올 파일을 준비 중...
+[  13% ] reimport | 다시 가져올 파일을 준비 중...
+[  14% ] reimport | 다시 가져올 파일을 준비 중...
+[  14% ] reimport | 다시 가져올 파일을 준비 중...
+[  14% ] reimport | 다시 가져올 파일을 준비 중...
+[  15% ] reimport | 다시 가져올 파일을 준비 중...
+[  15% ] reimport | 다시 가져올 파일을 준비 중...
+[  16% ] reimport | 다시 가져올 파일을 준비 중...
+[  16% ] reimport | 다시 가져올 파일을 준비 중...
+[  16% ] reimport | 다시 가져올 파일을 준비 중...
+[  17% ] reimport | 다시 가져올 파일을 준비 중...
+[  17% ] reimport | 다시 가져올 파일을 준비 중...
+[  17% ] reimport | 다시 가져올 파일을 준비 중...
+[  18% ] reimport | 다시 가져올 파일을 준비 중...
+[  18% ] reimport | 다시 가져올 파일을 준비 중...
+[  19% ] reimport | 다시 가져올 파일을 준비 중...
+[  19% ] reimport | 다시 가져올 파일을 준비 중...
+[  19% ] reimport | 다시 가져올 파일을 준비 중...
+[  20% ] reimport | 다시 가져올 파일을 준비 중...
+[  20% ] reimport | 다시 가져올 파일을 준비 중...
+[  20% ] reimport | 다시 가져올 파일을 준비 중...
+[  21% ] reimport | 다시 가져올 파일을 준비 중...
+[  21% ] reimport | 다시 가져올 파일을 준비 중...
+[  22% ] reimport | 다시 가져올 파일을 준비 중...
+[  22% ] reimport | 다시 가져올 파일을 준비 중...
+[  22% ] reimport | 다시 가져올 파일을 준비 중...
+[  23% ] reimport | 다시 가져올 파일을 준비 중...
+[  23% ] reimport | 다시 가져올 파일을 준비 중...
+[  23% ] reimport | 다시 가져올 파일을 준비 중...
+[  24% ] reimport | 다시 가져올 파일을 준비 중...
+[  24% ] reimport | 다시 가져올 파일을 준비 중...
+[  25% ] reimport | 다시 가져올 파일을 준비 중...
+[  25% ] reimport | 다시 가져올 파일을 준비 중...
+[  25% ] reimport | 다시 가져올 파일을 준비 중...
+[  26% ] reimport | 다시 가져올 파일을 준비 중...
+[  26% ] reimport | 다시 가져올 파일을 준비 중...
+[  26% ] reimport | 다시 가져올 파일을 준비 중...
+[  27% ] reimport | 다시 가져올 파일을 준비 중...
+[  27% ] reimport | 다시 가져올 파일을 준비 중...
+[  27% ] reimport | 다시 가져올 파일을 준비 중...
+[  28% ] reimport | 다시 가져올 파일을 준비 중...
+[  28% ] reimport | 다시 가져올 파일을 준비 중...
+[  29% ] reimport | 다시 가져올 파일을 준비 중...
+[  29% ] reimport | 다시 가져올 파일을 준비 중...
+[  29% ] reimport | 다시 가져올 파일을 준비 중...
+[  30% ] reimport | 다시 가져올 파일을 준비 중...
+[  30% ] reimport | 다시 가져올 파일을 준비 중...
+[  30% ] reimport | 다시 가져올 파일을 준비 중...
+[  31% ] reimport | 다시 가져올 파일을 준비 중...
+[  31% ] reimport | 다시 가져올 파일을 준비 중...
+[  32% ] reimport | 다시 가져올 파일을 준비 중...
+[  32% ] reimport | 다시 가져올 파일을 준비 중...
+[  32% ] reimport | 다시 가져올 파일을 준비 중...
+[  33% ] reimport | 다시 가져올 파일을 준비 중...
+[  33% ] reimport | 다시 가져올 파일을 준비 중...
+[  33% ] reimport | 다시 가져올 파일을 준비 중...
+[  34% ] reimport | 다시 가져올 파일을 준비 중...
+[  34% ] reimport | 다시 가져올 파일을 준비 중...
+[  35% ] reimport | 다시 가져올 파일을 준비 중...
+[  35% ] reimport | 다시 가져올 파일을 준비 중...
+[  35% ] reimport | 다시 가져올 파일을 준비 중...
+[  36% ] reimport | 다시 가져올 파일을 준비 중...
+[  36% ] reimport | 다시 가져올 파일을 준비 중...
+[  36% ] reimport | 다시 가져올 파일을 준비 중...
+[  37% ] reimport | 다시 가져올 파일을 준비 중...
+[  37% ] reimport | 다시 가져올 파일을 준비 중...
+[  38% ] reimport | 다시 가져올 파일을 준비 중...
+[  38% ] reimport | 다시 가져올 파일을 준비 중...
+[  38% ] reimport | 다시 가져올 파일을 준비 중...
+[  39% ] reimport | 다시 가져올 파일을 준비 중...
+[  39% ] reimport | 다시 가져올 파일을 준비 중...
+[  39% ] reimport | 다시 가져올 파일을 준비 중...
+[  40% ] reimport | 다시 가져올 파일을 준비 중...
+[  40% ] reimport | 다시 가져올 파일을 준비 중...
+[  41% ] reimport | 다시 가져올 파일을 준비 중...
+[  41% ] reimport | 다시 가져올 파일을 준비 중...
+[  41% ] reimport | 다시 가져올 파일을 준비 중...
+[  42% ] reimport | 다시 가져올 파일을 준비 중...
+[  42% ] reimport | 다시 가져올 파일을 준비 중...
+[  42% ] reimport | 다시 가져올 파일을 준비 중...
+[  43% ] reimport | 다시 가져올 파일을 준비 중...
+[  43% ] reimport | 다시 가져올 파일을 준비 중...
+[  44% ] reimport | 다시 가져올 파일을 준비 중...
+[  44% ] reimport | 다시 가져올 파일을 준비 중...
+[  44% ] reimport | 다시 가져올 파일을 준비 중...
+[  45% ] reimport | 다시 가져올 파일을 준비 중...
+[  45% ] reimport | 다시 가져올 파일을 준비 중...
+[  45% ] reimport | 다시 가져올 파일을 준비 중...
+[  46% ] reimport | 다시 가져올 파일을 준비 중...
+[  46% ] reimport | 다시 가져올 파일을 준비 중...
+[  47% ] reimport | 다시 가져올 파일을 준비 중...
+[  47% ] reimport | 다시 가져올 파일을 준비 중...
+[  47% ] reimport | 다시 가져올 파일을 준비 중...
+[  48% ] reimport | 다시 가져올 파일을 준비 중...
+[  48% ] reimport | 다시 가져올 파일을 준비 중...
+[  48% ] reimport | 다시 가져올 파일을 준비 중...
+[  49% ] reimport | 다시 가져올 파일을 준비 중...
+[  49% ] reimport | 다시 가져올 파일을 준비 중...
+[  50% ] reimport | 다시 가져올 파일을 준비 중...
+[  50% ] reimport | 다시 가져올 파일을 준비 중...
+[  50% ] reimport | 다시 가져올 파일을 준비 중...
+[  51% ] reimport | 다시 가져올 파일을 준비 중...
+[  51% ] reimport | 다시 가져올 파일을 준비 중...
+[  51% ] reimport | 다시 가져올 파일을 준비 중...
+[  52% ] reimport | 다시 가져올 파일을 준비 중...
+[  52% ] reimport | 다시 가져올 파일을 준비 중...
+[  52% ] reimport | 다시 가져올 파일을 준비 중...
+[  53% ] reimport | 다시 가져올 파일을 준비 중...
+[  53% ] reimport | 다시 가져올 파일을 준비 중...
+[  54% ] reimport | 다시 가져올 파일을 준비 중...
+[  54% ] reimport | 다시 가져올 파일을 준비 중...
+[  54% ] reimport | 다시 가져올 파일을 준비 중...
+[  55% ] reimport | 다시 가져올 파일을 준비 중...
+[  55% ] reimport | 다시 가져올 파일을 준비 중...
+[  55% ] reimport | 다시 가져올 파일을 준비 중...
+[  56% ] reimport | 다시 가져올 파일을 준비 중...
+[  56% ] reimport | 다시 가져올 파일을 준비 중...
+[  57% ] reimport | 다시 가져올 파일을 준비 중...
+[  57% ] reimport | 다시 가져올 파일을 준비 중...
+[  57% ] reimport | 다시 가져올 파일을 준비 중...
+[  58% ] reimport | 다시 가져올 파일을 준비 중...
+[  58% ] reimport | 다시 가져올 파일을 준비 중...
+[  58% ] reimport | 다시 가져올 파일을 준비 중...
+[  59% ] reimport | 다시 가져올 파일을 준비 중...
+[  59% ] reimport | 다시 가져올 파일을 준비 중...
+[  60% ] reimport | 다시 가져올 파일을 준비 중...
+[  60% ] reimport | 다시 가져올 파일을 준비 중...
+[  60% ] reimport | 다시 가져올 파일을 준비 중...
+[  61% ] reimport | 다시 가져올 파일을 준비 중...
+[  61% ] reimport | 다시 가져올 파일을 준비 중...
+[  61% ] reimport | 다시 가져올 파일을 준비 중...
+[  62% ] reimport | 다시 가져올 파일을 준비 중...
+[  62% ] reimport | 다시 가져올 파일을 준비 중...
+[  63% ] reimport | 다시 가져올 파일을 준비 중...
+[  63% ] reimport | 다시 가져올 파일을 준비 중...
+[  63% ] reimport | 다시 가져올 파일을 준비 중...
+[  64% ] reimport | 다시 가져올 파일을 준비 중...
+[  64% ] reimport | 다시 가져올 파일을 준비 중...
+[  64% ] reimport | 다시 가져올 파일을 준비 중...
+[  65% ] reimport | 다시 가져올 파일을 준비 중...
+[  65% ] reimport | 다시 가져올 파일을 준비 중...
+[  66% ] reimport | 다시 가져올 파일을 준비 중...
+[  66% ] reimport | 다시 가져올 파일을 준비 중...
+[  66% ] reimport | 다시 가져올 파일을 준비 중...
+[  67% ] reimport | 다시 가져올 파일을 준비 중...
+[  67% ] reimport | 다시 가져올 파일을 준비 중...
+[  67% ] reimport | 다시 가져올 파일을 준비 중...
+[  68% ] reimport | 다시 가져올 파일을 준비 중...
+[  68% ] reimport | 다시 가져올 파일을 준비 중...
+[  69% ] reimport | 다시 가져올 파일을 준비 중...
+[  69% ] reimport | 다시 가져올 파일을 준비 중...
+[  69% ] reimport | 다시 가져올 파일을 준비 중...
+[  70% ] reimport | 다시 가져올 파일을 준비 중...
+[  70% ] reimport | 다시 가져올 파일을 준비 중...
+[  70% ] reimport | 다시 가져올 파일을 준비 중...
+[  71% ] reimport | 다시 가져올 파일을 준비 중...
+[  71% ] reimport | 다시 가져올 파일을 준비 중...
+[  72% ] reimport | 다시 가져올 파일을 준비 중...
+[  72% ] reimport | 다시 가져올 파일을 준비 중...
+[  72% ] reimport | 다시 가져올 파일을 준비 중...
+[  73% ] reimport | 다시 가져올 파일을 준비 중...
+[  73% ] reimport | 다시 가져올 파일을 준비 중...
+[  73% ] reimport | 다시 가져올 파일을 준비 중...
+[  74% ] reimport | 다시 가져올 파일을 준비 중...
+[  74% ] reimport | 다시 가져올 파일을 준비 중...
+[  75% ] reimport | 다시 가져올 파일을 준비 중...
+[  75% ] reimport | 다시 가져올 파일을 준비 중...
+[  75% ] reimport | 다시 가져올 파일을 준비 중...
+[  76% ] reimport | 다시 가져올 파일을 준비 중...
+[  76% ] reimport | 다시 가져올 파일을 준비 중...
+[  76% ] reimport | 다시 가져올 파일을 준비 중...
+[  77% ] reimport | 다시 가져올 파일을 준비 중...
+[  77% ] reimport | 다시 가져올 파일을 준비 중...
+[  77% ] reimport | 다시 가져올 파일을 준비 중...
+[  78% ] reimport | 다시 가져올 파일을 준비 중...
+[  78% ] reimport | 다시 가져올 파일을 준비 중...
+[  79% ] reimport | 다시 가져올 파일을 준비 중...
+[  79% ] reimport | 다시 가져올 파일을 준비 중...
+[  79% ] reimport | 다시 가져올 파일을 준비 중...
+[  80% ] reimport | 다시 가져올 파일을 준비 중...
+[  80% ] reimport | 다시 가져올 파일을 준비 중...
+[  80% ] reimport | 다시 가져올 파일을 준비 중...
+[  81% ] reimport | 다시 가져올 파일을 준비 중...
+[  81% ] reimport | 다시 가져올 파일을 준비 중...
+[  82% ] reimport | 다시 가져올 파일을 준비 중...
+[  82% ] reimport | 다시 가져올 파일을 준비 중...
+[  82% ] reimport | 다시 가져올 파일을 준비 중...
+[  83% ] reimport | 다시 가져올 파일을 준비 중...
+[  83% ] reimport | 다시 가져올 파일을 준비 중...
+[  83% ] reimport | 다시 가져올 파일을 준비 중...
+[  84% ] reimport | 다시 가져올 파일을 준비 중...
+[  84% ] reimport | 다시 가져올 파일을 준비 중...
+[  85% ] reimport | 다시 가져올 파일을 준비 중...
+[  85% ] reimport | 다시 가져올 파일을 준비 중...
+[  85% ] reimport | 다시 가져올 파일을 준비 중...
+[  86% ] reimport | 다시 가져올 파일을 준비 중...
+[  86% ] reimport | 다시 가져올 파일을 준비 중...
+[  86% ] reimport | 다시 가져올 파일을 준비 중...
+[  87% ] reimport | 다시 가져올 파일을 준비 중...
+[  87% ] reimport | 다시 가져올 파일을 준비 중...
+[  88% ] reimport | 다시 가져올 파일을 준비 중...
+[  88% ] reimport | 다시 가져올 파일을 준비 중...
+[  88% ] reimport | 다시 가져올 파일을 준비 중...
+[  89% ] reimport | 다시 가져올 파일을 준비 중...
+[  89% ] reimport | 다시 가져올 파일을 준비 중...
+[  89% ] reimport | 다시 가져올 파일을 준비 중...
+[  90% ] reimport | 다시 가져올 파일을 준비 중...
+[  90% ] reimport | 다시 가져올 파일을 준비 중...
+[  91% ] reimport | 다시 가져올 파일을 준비 중...
+[  91% ] reimport | 다시 가져올 파일을 준비 중...
+[  91% ] reimport | 다시 가져올 파일을 준비 중...
+[  92% ] reimport | 다시 가져올 파일을 준비 중...
+[  92% ] reimport | 다시 가져올 파일을 준비 중...
+[  92% ] reimport | 다시 가져올 파일을 준비 중...
+[  93% ] reimport | 다시 가져올 파일을 준비 중...
+[  93% ] reimport | 다시 가져올 파일을 준비 중...
+[  94% ] reimport | 다시 가져올 파일을 준비 중...
+[  94% ] reimport | 다시 가져올 파일을 준비 중...
+[  94% ] reimport | 다시 가져올 파일을 준비 중...
+[  95% ] reimport | 다시 가져올 파일을 준비 중...
+[  95% ] reimport | 다시 가져올 파일을 준비 중...
+[  95% ] reimport | 다시 가져올 파일을 준비 중...
+[  96% ] reimport | 다시 가져올 파일을 준비 중...
+[  96% ] reimport | 다시 가져올 파일을 준비 중...
+[  97% ] reimport | 다시 가져올 파일을 준비 중...
+[  97% ] reimport | 다시 가져올 파일을 준비 중...
+[  97% ] reimport | 다시 가져올 파일을 준비 중...
+[  98% ] reimport | 다시 가져올 파일을 준비 중...
+[  98% ] reimport | 다시 가져올 파일을 준비 중...
+[  98% ] reimport | 다시 가져올 파일을 준비 중...
+[  99% ] reimport | 다시 가져올 파일을 준비 중...
+[   0% ] reimport | 다시 가져오기 전 작업을 수행 중...
+[   0% ] reimport | source_code_pro.fnt
+[   0% ] reimport | source_code_pro.fnt
+[   0% ] reimport | SamhanUISans-SemiBold.ttf
+[   1% ] reimport | SamhanUISans-Medium.ttf
+[   1% ] reimport | LobsterTwo-Regular.ttf
+[   1% ] reimport | LobsterTwo-Italic.ttf
+[   2% ] reimport | LobsterTwo-BoldItalic.ttf
+[   2% ] reimport | LobsterTwo-Bold.ttf
+[   2% ] reimport | CourierPrime-Regular.ttf
+[   3% ] reimport | CourierPrime-Italic.ttf
+[   3% ] reimport | CourierPrime-BoldItalic.ttf
+[   4% ] reimport | CourierPrime-Bold.ttf
+[   4% ] reimport | AnonymousPro-Regular.ttf
+[   4% ] reimport | AnonymousPro-Italic.ttf
+[   5% ] reimport | AnonymousPro-BoldItalic.ttf
+[   5% ] reimport | source_code_pro.fnt
+[   5% ] reimport | SamhanUISans-SemiBold.ttf
+[   6% ] reimport | source_code_pro.fnt
+[   6% ] reimport | SamhanUISans-SemiBold.ttf
+[   7% ] reimport | SamhanUISans-Medium.ttf
+[   7% ] reimport | LobsterTwo-Regular.ttf
+[   7% ] reimport | LobsterTwo-Italic.ttf
+[   8% ] reimport | LobsterTwo-BoldItalic.ttf
+[   8% ] reimport | LobsterTwo-Bold.ttf
+[   8% ] reimport | CourierPrime-Regular.ttf
+[   9% ] reimport | CourierPrime-Italic.ttf
+[   9% ] reimport | CourierPrime-BoldItalic.ttf
+[  10% ] reimport | CourierPrime-Bold.ttf
+[  10% ] reimport | AnonymousPro-Regular.ttf
+[  10% ] reimport | AnonymousPro-Italic.ttf
+[  11% ] reimport | AnonymousPro-BoldItalic.ttf
+[  11% ] reimport | AnonymousPro-Bold.ttf
+[  11% ] reimport | setup_theme.mp3
+[  12% ] reimport | title_theme.mp3
+[  12% ] reimport | strategist_male_08.png
+[  13% ] reimport | strategist_male_07.png
+[  13% ] reimport | strategist_male_06.png
+[  13% ] reimport | strategist_male_05.png
+[  14% ] reimport | strategist_male_04.png
+[  14% ] reimport | strategist_male_03.png
+[  14% ] reimport | strategist_male_02.png
+[  15% ] reimport | strategist_male_01.png
+[  15% ] reimport | strategist_female_08.png
+[  16% ] reimport | strategist_female_07.png
+[  16% ] reimport | strategist_female_06.png
+[  16% ] reimport | strategist_female_05.png
+[  17% ] reimport | strategist_female_04.png
+[  17% ] reimport | warrior_male_03.png
+[  17% ] reimport | warrior_male_02.png
+[  18% ] reimport | warrior_male_01.png
+[  18% ] reimport | warrior_female_08.png
+[  19% ] reimport | warrior_female_07.png
+[  19% ] reimport | warrior_female_06.png
+[  19% ] reimport | warrior_female_05.png
+[  20% ] reimport | warrior_female_04.png
+[  20% ] reimport | warrior_female_03.png
+[  20% ] reimport | warrior_female_02.png
+[  21% ] reimport | warrior_female_01.png
+[  21% ] reimport | uija_wang.png
+[  22% ] reimport | tsukushi_chief.png
+[  22% ] reimport | tongluo_chief.png
+[  22% ] reimport | tang_taizong.png
+[  23% ] reimport | tang_gaozong.png
+[  23% ] reimport | suzumori_remu.png
+[  23% ] reimport | kim_chunchu.png
+[  24% ] reimport | kim_heumsun.png
+[  24% ] reimport | kim_inmun.png
+[  25% ] reimport | kim_pumil.png
+[  25% ] reimport | kim_wonsul.png
+[  25% ] reimport | kim_yushin.png
+[  26% ] reimport | kogyoku_saimei.png
+[  26% ] reimport | koshi_chief.png
+[  26% ] reimport | lee_sanghyuk.png
+[  27% ] reimport | lisa_southern_envoy.png
+[  27% ] reimport | liu_rengui.png
+[  27% ] reimport | liu_renyuan.png
+[  28% ] reimport | li_jinxing.png
+[  28% ] reimport | mu_wang.png
+[  29% ] reimport | nagi_hikaru.png
+[  29% ] reimport | naka_no_oe_tenji.png
+[  29% ] reimport | ogura_yuna.png
+[  30% ] reimport | onga_emishi.png
+[  30% ] reimport | park_jangsik.png
+[  30% ] reimport | pi_jinju.png
+[  31% ] reimport | porun_ilteber.png
+[  31% ] reimport | pugu_chief.png
+[  32% ] reimport | pumil.png
+[  32% ] reimport | qibi_chief.png
+[  32% ] reimport | rose_western_musician.png
+[  33% ] reimport | seol_oyu.png
+[  33% ] reimport | seondeok_queen.png
+[  33% ] reimport | seongchung.png
+[  34% ] reimport | sijie_chief.png
+[  34% ] reimport | strategist_female_01.png
+[  35% ] reimport | strategist_female_02.png
+[  35% ] reimport | strategist_female_03.png
+[  35% ] reimport | detail_3_1.png
+[  36% ] reimport | detail_3_2.png
+[  36% ] reimport | northeast.png
+[  36% ] reimport | northwest.png
+[  37% ] reimport | southeast.png
+[  37% ] reimport | southwest.png
+[  38% ] reimport | south_continuous_v2.png
+[  38% ] reimport | open_sea_keep_mask.png
+[  38% ] reimport | south_continuous_v3.png
+[  39% ] reimport | arrow-left.svg
+[  39% ] reimport | arrow-right.svg
+[  39% ] reimport | book-open.svg
+[  40% ] reimport | buildings.svg
+[  40% ] reimport | floppy-disk.svg
+[  41% ] reimport | list.svg
+[  41% ] reimport | minus.svg
+[  41% ] reimport | plant.svg
+[  42% ] reimport | plus.svg
+[  42% ] reimport | sword.svg
+[  42% ] reimport | users-three.svg
+[  43% ] reimport | warning-circle.svg
+[  43% ] reimport | x.svg
+[  44% ] reimport | candidate_frame.png
+[  44% ] reimport | city_heading_frame.png
+[  44% ] reimport | lacquer_bar.png
+[  45% ] reimport | primary_red.png
+[  45% ] reimport | title_divider.png
+[  45% ] reimport | work_panel_frame.png
+[  46% ] reimport | city.png
+[  46% ] reimport | icon.svg
+[  47% ] reimport | title_background_samhan660.jpg
+[  47% ] reimport | warrior_male_04.png
+[  47% ] reimport | warrior_male_05.png
+[  48% ] reimport | warrior_male_06.png
+[  48% ] reimport | warrior_male_07.png
+[  48% ] reimport | warrior_male_08.png
+[  49% ] reimport | Winter_Goguryeo.png
+[  49% ] reimport | yagi_nana.png
+[  50% ] reimport | yang_manchun.png
+[  50% ] reimport | yeongnyu_wang.png
+[  50% ] reimport | yeon_gaesomun.png
+[  51% ] reimport | yeon_namsaeng.png
+[  51% ] reimport | ye_gun.png
+[  51% ] reimport | yunchung.png
+[  52% ] reimport | hanji_overlay_texture_v1.png
+[  52% ] reimport | korean_fortress_demo_rgba.png
+[  52% ] reimport | terrain_c03_r02_coast_fix_v2_1254.png
+[  53% ] reimport | approved_korea.png
+[  53% ] reimport | palace_632_silla.png
+[  54% ] reimport | seondeok.png
+[  54% ] reimport | korean_fortress_original.png
+[  54% ] reimport | korea_approved_1254.png
+[  55% ] reimport | central_east_detail_candidate.png
+[  55% ] reimport | central_east_detail_r3.png
+[  55% ] reimport | central_east_source_crop.png
+[  56% ] reimport | detail_0_0.png
+[  56% ] reimport | detail_0_1.png
+[  57% ] reimport | detail_0_2.png
+[  57% ] reimport | detail_1_1.png
+[  57% ] reimport | detail_1_2.png
+[  58% ] reimport | detail_2_1.png
+[  58% ] reimport | detail_2_2.png
+[  58% ] reimport | faction_select_632_silla.webp
+[  59% ] reimport | faction_select_642_baekje.webp
+[  59% ] reimport | faction_select_642_goguryeo.webp
+[  60% ] reimport | faction_select_642_silla.webp
+[  60% ] reimport | faction_select_660_baekje.webp
+[  60% ] reimport | faction_select_660_goguryeo.webp
+[  61% ] reimport | faction_select_660_silla.webp
+[  61% ] reimport | faction_select_663_baekje_revival.webp
+[  61% ] reimport | faction_select_663_goguryeo.webp
+[  62% ] reimport | faction_select_663_silla.webp
+[  62% ] reimport | faction_select_663_tang.webp
+[  63% ] reimport | faction_select_670_goguryeo_revival.webp
+[  63% ] reimport | faction_select_670_silla.webp
+[  63% ] reimport | faction_select_670_tang.webp
+[  64% ] reimport | faction_select_632_baekje.webp
+[  64% ] reimport | faction_select_632_goguryeo.webp
+[  64% ] reimport | faction_select_632_silla.webp
+[  65% ] reimport | faction_select_642_baekje.webp
+[  65% ] reimport | faction_select_642_goguryeo.webp
+[  66% ] reimport | faction_select_642_silla.webp
+[  66% ] reimport | faction_select_660_baekje.webp
+[  66% ] reimport | faction_select_660_goguryeo.webp
+[  67% ] reimport | faction_select_660_silla.webp
+[  67% ] reimport | faction_select_663_baekje_revival.webp
+[  67% ] reimport | faction_select_663_goguryeo.webp
+[  68% ] reimport | faction_select_663_silla.webp
+[  68% ] reimport | faction_select_663_tang.webp
+[  69% ] reimport | faction_select_670_goguryeo_revival.webp
+[  69% ] reimport | faction_select_670_silla.webp
+[  69% ] reimport | faction_select_670_tang.webp
+[  70% ] reimport | anseung_670_selection_overlay_alpha_v3.png
+[  70% ] reimport | arrow.png
+[  70% ] reimport | play.png
+[  71% ] reimport | eyey.png
+[  71% ] reimport | Folder.svg
+[  72% ] reimport | green.png
+[  72% ] reimport | GutIconV2_base.png
+[  72% ] reimport | GutIconV2_no_shine.png
+[  73% ] reimport | HSplitContainer.svg
+[  73% ] reimport | red.png
+[  73% ] reimport | Script.svg
+[  74% ] reimport | VSplitContainer.svg
+[  74% ] reimport | yellow.png
+[  75% ] reimport | icon.png
+[  75% ] reimport | activate.svg
+[  75% ] reimport | deactivate.svg
+[  76% ] reimport | flatten.svg
+[  76% ] reimport | lower.svg
+[  76% ] reimport | paint.svg
+[  77% ] reimport | raise.svg
+[  77% ] reimport | ramp.svg
+[  77% ] reimport | smooth.svg
+[  78% ] reimport | icon.svg
+[  78% ] reimport | baekje_660_intro.webp
+[  79% ] reimport | battle_result_generic.webp
+[  79% ] reimport | battle_start_hwangsanbeol.webp
+[  79% ] reimport | domestic_bountiful_harvest.webp
+[  80% ] reimport | domestic_crop_failure.webp
+[  80% ] reimport | enemy_invasion_alert.webp
+[  80% ] reimport | goguryeo_660_intro.webp
+[  81% ] reimport | silla_660_intro.webp
+[  81% ] reimport | faction_select_632_baekje.webp
+[  82% ] reimport | faction_select_632_goguryeo.webp
+[  82% ] reimport | anseung.png
+[  82% ] reimport | bayegu_chief.png
+[  83% ] reimport | bisudu_ilteber.png
+[  83% ] reimport | bojang_wang.png
+[  83% ] reimport | boksin.png
+[  84% ] reimport | buyeo_pung.png
+[  84% ] reimport | buyeo_tae.png
+[  85% ] reimport | dujiezhi_ilteber.png
+[  85% ] reimport | duolange_chief.png
+[  85% ] reimport | emishi_chief.png
+[  86% ] reimport | eulji_mundeok.png
+[  86% ] reimport | Fan_Bingbing_Tang.png
+[  86% ] reimport | gao_kan.png
+[  87% ] reimport | geom_mojam.png
+[  87% ] reimport | go_yeonmu.png
+[  88% ] reimport | gwanchang.png
+[  88% ] reimport | gyebaek.png
+[  88% ] reimport | hayato_chief.png
+[  89% ] reimport | heukchi_sangji.png
+[  89% ] reimport | heungsu.png
+[  89% ] reimport | hun_chief.png
+[  90% ] reimport | inam_khagan.png
+[  90% ] reimport | Jang_Wonyoung_Silla.png
+[  91% ] reimport | Jennie_Silla.png
+[  91% ] reimport | Jisoo_Silla.png
+[  91% ] reimport | jisusin.png
+[  92% ] reimport | jomei_tenno.png
+[  92% ] reimport | kaede_karen.png
+[  92% ] reimport | Karina_Silla.png
+[  93% ] reimport | kibi_chief.png
+[  93% ] reimport | kim_beopmin.png
+[  94% ] reimport | bojang_wang_642_selection_overlay.png
+[  94% ] reimport | bojang_wang_642_selection_overlay_portrait_match_v1.png
+[  94% ] reimport | bojang_wang_660_selection_overlay.png
+[  95% ] reimport | bojang_wang_660_selection_overlay_portrait_match_v1.png
+[  95% ] reimport | bojang_wang_663_selection_overlay_alpha_v3.png
+[  95% ] reimport | bojang_wang_663_selection_overlay_portrait_match_v1.png
+[  96% ] reimport | buyeo_pung_663_selection_overlay_alpha_v3.png
+[  96% ] reimport | kim_beopmin_663_selection_overlay_alpha_v3.png
+[  97% ] reimport | kim_beopmin_670_selection_overlay_alpha_v3.png
+[  97% ] reimport | kim_chunchu_660_selection_overlay.png
+[  97% ] reimport | kim_chunchu_660_selection_overlay_portrait_match_v1.png
+[  98% ] reimport | mu_wang_selection_overlay.png
+[  98% ] reimport | seondeok_queen_642_selection_overlay.png
+[  98% ] reimport | seondeok_queen_overlay.png
+[  99% ] reimport | tang_gaozong_663_selection_overlay_alpha_v3.png
+[  99% ] reimport | 애셋 가져오기 마무리 중...
+[ DONE ] reimport
+
+[   0% ] reimport | Started 애셋 (다시) 가져오는 중 (267 steps)
+[   0% ] reimport | 다시 가져오기 후 작업을 수행 중...
+[ DONE ] reimport
+
+[   0% ] loading_editor_layout | Started 편집기를 불러오는 중 (5 steps)
+[   0% ] loading_editor_layout | 편집기 레이아웃을 불러오는 중...
+[  16% ] loading_editor_layout | 독을 불러오는 중...
+[ DONE ] loading_editor_layout
+

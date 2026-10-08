@@ -1,0 +1,24 @@
+{
+    "source":  "C:\\Users\\지용훈\\AppData\\Local\\Temp\\Samhan660_PlayMap_20261002_093703\\source",
+    "import_log":  "C:\\Users\\지용훈\\AppData\\Local\\Temp\\Samhan660_PlayMap_20261002_093703/import.log",
+    "pck_sha256":  "8F248863D5468E0C7F601D9A775F957C3920C8B7C448BF4951E72DE0CDBFD88E",
+    "project":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1",
+    "engine":  "4.7.2.stable.official.ed1daf0bf",
+    "exe":  "C:\\Users\\지용훈\\Downloads\\Samhan660_PlayMap_20261002_093703\\Samhan660.exe",
+    "export_log":  "C:\\Users\\지용훈\\AppData\\Local\\Temp\\Samhan660_PlayMap_20261002_093703/export.log",
+    "delivery":  "C:\\Users\\지용훈\\Downloads\\Samhan660_PlayMap_20261002_093703",
+    "changed_sources":  [
+                            {
+                                "sha256":  "13947F0BC1F9083B5695E8500140C05D2F9FC4C3A3303155FDE747C9AF3DA3C1",
+                                "path":  "ui/korea_layout_v1/terrain_refresh_20261001/detail.gdshader"
+                            },
+                            {
+                                "sha256":  "7639994C32CCD3463735B73EEB7C1827038DCB46F77439CBB480C02088C37F81",
+                                "path":  "ui/korea_layout_v1/terrain_refresh_20261001/detail_layer.gd"
+                            },
+                            {
+                                "sha256":  "9C12C1FC54E7DA7D4DE2B7C1A9811118CDF7E1532FD2F8F50CB15BF0F0892629",
+                                "path":  "ui/korea_layout_v1/play_detail_20261002/manifest.json"
+                            }
+                        ]
+}

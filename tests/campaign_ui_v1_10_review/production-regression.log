@@ -1,0 +1,110 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: normal batch: gold 100 -> 90, iron 10 -> 8, sword 0 -> 1
+PASS: same month does not produce twice
+PASS: stop/start cannot bypass month guard
+PASS: following month produces one batch
+PASS: material: no partial deduction
+PASS: material: explains suspension or ownership stop
+PASS: gold: no partial deduction
+PASS: gold: explains suspension or ownership stop
+PASS: technology: no partial deduction
+PASS: technology: explains suspension or ownership stop
+PASS: facility: no partial deduction
+PASS: facility: explains suspension or ownership stop
+PASS: stopped: no partial deduction
+PASS: ownership: no partial deduction
+PASS: ownership: explains suspension or ownership stop
+PASS: order_owner: no partial deduction
+PASS: order_owner: explains suspension or ownership stop
+PASS: exact material and gold boundary
+PASS: foreign production command rejected
+PASS: unknown recipe rejected
+PASS: missing city rejected
+PASS: JSON round trip preserves stocks, settings and month guard
+PASS: legacy defaults grant no resources
+PASS: two cities cannot spend the same national gold
+PASS: catalog has exactly 14 core and 4 expansion items
+PASS: catalog IDs, categories, evidence sources and unconfirmed placements are consistent
+PASS: all four expansion candidates remain inactive without recipes
+PASS: weapons is an alias of sword, not an additional item
+PASS: added supply does not replace existing iron 2 / gold 10 / sword 1 balance
+PASS: previous iron/sword-only save keeps both quantities
+PASS: alias lookup reads the single sword ledger
+PASS: grain reads food_stock without creating inventory grain
+PASS: grain lookup immediately reflects existing food economy changes
+PASS: inventory view includes 14 core items with one weapons count
+PASS: UI snapshot cannot write back into either ledger
+PASS: duplicate aliases are removed without summing or granting grain/weapons
+PASS: alias-only input is canonicalized once without duplication
+PASS: catalog normalization is idempotent
+PASS: item definitions are not executable recipes and inactive defaults create no stocks
+PASS: injected order for an unimplemented product cannot execute
+PASS: real new campaign receives no test iron
+PASS: new campaign does not claim historical production technology
+PASS: research command assigns officer, requires300 monthly work, charges200
+PASS: repeated research command does not charge again
+PASS: construction retains320cost; two seasons convert to600work
+PASS: repeated construction command does not charge again
+PASS: research complete but unfinished forge cannot qualify
+PASS: forge completes once via monthly assigned work
+PASS: city card has six actions in two rows
+ERROR: FAIL: city card fits inside map
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/production_test.gd:25)
+       [1] _run (res://tests/production_test.gd:199)
+ERROR: FAIL: production button -> card signal -> map signal -> campaign -> overlay
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/production_test.gd:25)
+       [1] _run (res://tests/production_test.gd:201)
+PASS: production panel retains viewport margins
+ERROR: FAIL: production screen shows inventory and blocked material
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/production_test.gd:25)
+       [1] _run (res://tests/production_test.gd:205)
+ERROR: FAIL: default inventory prioritizes held goods and current recipe inputs/outputs
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/production_test.gd:25)
+       [1] _run (res://tests/production_test.gd:206)
+ERROR: FAIL: unplaced main-game iron supply is explicitly explained
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/production_test.gd:25)
+       [1] _run (res://tests/production_test.gd:207)
+ERROR: FAIL: all items toggle displays core roles and inactive expansion candidates
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/production_test.gd:25)
+       [1] _run (res://tests/production_test.gd:212)
+ERROR: FAIL: catalog offers no manufacturing controls for definitions alone
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/production_test.gd:25)
+       [1] _run (res://tests/production_test.gd:213)
+PASS: return from catalog preserves original production controls
+PASS: campaign UI API rejects products without implemented recipes
+SCRIPT ERROR: Cannot call method 'call' on a null value.
+   at: _command (res://production_overlay.gd:333)
+   GDScript backtrace (most recent call first):
+       [0] _command (res://production_overlay.gd:333)
+       [1] _start (res://production_overlay.gd:347)
+       [2] _run (res://tests/production_test.gd:217)
+ERROR: FAIL: screen start action persists production setting
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/production_test.gd:25)
+       [1] _run (res://tests/production_test.gd:218)
+PASS: Esc returns to map
+ERROR: Index p_index = 0 is out of bounds ((int)data.children_cache.size() - data.internal_children_front_count_cache - data.internal_children_back_count_cache = 0).
+   at: get_child (scene/main/node.cpp:1861)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/production_test.gd:225)
+SCRIPT ERROR: Cannot call method 'get_child' on a null value.
+   at: _run (res://tests/production_test.gd:225)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/production_test.gd:225)

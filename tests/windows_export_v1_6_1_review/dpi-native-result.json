@@ -1,0 +1,57 @@
+﻿{
+    "Original":  "100%",
+    "ActualScale":  "150%",
+    "Monitor":  "1920x1080",
+    "Metrics":  {
+                    "Pid":  39664,
+                    "Dpi":  96,
+                    "ClientWidth":  1600,
+                    "ClientHeight":  901,
+                    "ClientX":  36,
+                    "ClientY":  71,
+                    "OuterWidth":  1625,
+                    "OuterHeight":  960
+                },
+    "TrainingNativeClick":  true,
+    "EscClosedArmy":  true,
+    "AfterClick":  {
+                       "army_visible":  true,
+                       "controls":  {
+                                        "formation":  {
+                                                          "x":  0.496063718643832,
+                                                          "y":  0.222628956824888
+                                                      },
+                                        "training":  {
+                                                         "x":  1.30299910855494,
+                                                         "y":  0.222628956824888
+                                                     }
+                                    },
+                       "gold":  42909,
+                       "mode":  "training",
+                       "production_visible":  false,
+                       "size":  [
+                                    1067,
+                                    601
+                                ]
+                   },
+    "AfterEsc":  {
+                     "army_visible":  false,
+                     "controls":  {
+                                      "formation":  {
+                                                        "x":  0.496063718643832,
+                                                        "y":  0.222628956824888
+                                                    },
+                                      "training":  {
+                                                       "x":  1.30299910855494,
+                                                       "y":  0.222628956824888
+                                                   }
+                                  },
+                     "gold":  42909,
+                     "mode":  "training",
+                     "production_visible":  false,
+                     "size":  [
+                                  1067,
+                                  601
+                              ]
+                 }
+}

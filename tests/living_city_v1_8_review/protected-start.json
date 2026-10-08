@@ -1,0 +1,22 @@
+﻿[
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "6D80BDDD55270E876EE639B16AA669653DF9C4AB6B226AE98583D99A882D31D0",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\tests\\HOME_HANDOFF_20260923.md"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "01B552D3A73B3F57612B12BDDEF57EF63CC41675520F481E7D2225FDA3778760",
+        "Path":  "C:\\Users\\지용훈\\Downloads\\Samhan660_Windows_V1_5_Review_20260929.zip"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "13B31FDA4229871A244F38DEF88D08EEB1EA5F24F94EA889642D251E652A5FA6",
+        "Path":  "C:\\Users\\지용훈\\Downloads\\Samhan660_Windows_V1_6_1_20260930.zip"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "618ACB2342BFA3DA81A11AD92EB9ACCFACB0C888D4F44EACEAD3ACD19D297514",
+        "Path":  "C:\\Users\\지용훈\\Downloads\\Samhan660_Windows_V1_7_1_20260930.zip"
+    }
+]

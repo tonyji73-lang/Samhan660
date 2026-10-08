@@ -1,0 +1,29 @@
+{
+	"checks": 52,
+	"evidence": {
+		"cases": [
+			{
+				"choice": "compensate",
+				"gold": 100448.0,
+				"kind": "governor",
+				"slot": "user://windows_export_v1_7_1_1790753399_11987160_governor-compensate.json"
+			},
+			{
+				"choice": "compensate",
+				"gold": 99858.0,
+				"kind": "commander",
+				"slot": "user://windows_export_v1_7_1_1790753402_14908284_commander-compensate.json"
+			},
+			{
+				"choice": "gift",
+				"gold": 900.0,
+				"kind": "demand",
+				"slot": "user://windows_export_v1_7_1_1790753405_17311755_demand-gift.json"
+			}
+		]
+	},
+	"exe": "C:/Users/지용훈/AppData/Local/Temp/Samhan660_V1_7_1_20260930/play-copy/Samhan660.exe",
+	"failures": 0,
+	"slot": "user://windows_export_v1_7_1_1790753405_17311755_demand-gift.json",
+	"user_dir": "C:/Users/지용훈/AppData/Roaming/Godot/app_userdata/Samhan660"
+}

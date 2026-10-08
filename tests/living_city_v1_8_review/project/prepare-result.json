@@ -1,0 +1,21 @@
+{
+	"checks": 58,
+	"evidence": {
+		"gold": 2342,
+		"relation": {
+			"status": "중립",
+			"treaties": [
+				"통상 조약"
+			],
+			"value": 17
+		},
+		"trade": {
+			"income": 47,
+			"routes": 1
+		}
+	},
+	"exe": "C:/Users/지용훈/AppData/Local/Temp/Samhan660_V1_7_1_20260930/tools/Godot.exe",
+	"failures": 0,
+	"slot": "user://living_city_v1_8_1790756825_25367881_agreement.json",
+	"user_dir": "C:/Users/지용훈/AppData/Roaming/Godot/app_userdata/Samhan660"
+}

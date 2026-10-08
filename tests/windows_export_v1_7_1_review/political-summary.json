@@ -1,0 +1,110 @@
+﻿[
+    {
+        "Kind":  "governor",
+        "Choice":  "compensate",
+        "Gold":  100448.0,
+        "KimYusinLoyalty":  54.0,
+        "MilitaryCooperation":  52.0,
+        "MilitaryInfluence":  41.1827358420545,
+        "Due":  -1.0,
+        "Months":  2.0,
+        "Status":  "completed",
+        "Slot":  "user://windows_export_v1_7_1_1790753399_11987160_governor-compensate.json"
+    },
+    {
+        "Kind":  "commander",
+        "Choice":  "compensate",
+        "Gold":  99858.0,
+        "KimYusinLoyalty":  54.0,
+        "MilitaryCooperation":  52.0,
+        "MilitaryInfluence":  15.5960068284718,
+        "Due":  -1.0,
+        "Months":  2.0,
+        "Status":  "completed",
+        "Slot":  "user://windows_export_v1_7_1_1790753402_14908284_commander-compensate.json"
+    },
+    {
+        "Kind":  "demand",
+        "Choice":  "gift",
+        "Gold":  900.0,
+        "KimYusinLoyalty":  58.0,
+        "MilitaryCooperation":  60.0,
+        "MilitaryInfluence":  20.449404257514,
+        "Due":  null,
+        "Months":  null,
+        "Status":  null,
+        "Slot":  "user://windows_export_v1_7_1_1790753405_17311755_demand-gift.json"
+    },
+    {
+        "Kind":  "governor",
+        "Choice":  "wait",
+        "Gold":  100578.0,
+        "KimYusinLoyalty":  58.0,
+        "MilitaryCooperation":  54.0,
+        "MilitaryInfluence":  46.73829139761,
+        "Due":  7645.0,
+        "Months":  2.0,
+        "Status":  "waiting",
+        "Slot":  "user://windows_export_v1_7_1_1790753436_11899508_governor-wait.json"
+    },
+    {
+        "Kind":  "commander",
+        "Choice":  "wait",
+        "Gold":  100578.0,
+        "KimYusinLoyalty":  58.0,
+        "MilitaryCooperation":  54.0,
+        "MilitaryInfluence":  46.73829139761,
+        "Due":  7645.0,
+        "Months":  2.0,
+        "Status":  "waiting",
+        "Slot":  "user://windows_export_v1_7_1_1790753439_14901154_commander-wait.json"
+    },
+    {
+        "Kind":  "demand",
+        "Choice":  "accept",
+        "Gold":  1000.0,
+        "KimYusinLoyalty":  58.0,
+        "MilitaryCooperation":  54.0,
+        "MilitaryInfluence":  26.4228555849476,
+        "Due":  null,
+        "Months":  null,
+        "Status":  null,
+        "Slot":  "user://windows_export_v1_7_1_1790753441_17355674_demand-accept.json"
+    },
+    {
+        "Kind":  "governor",
+        "Choice":  "force",
+        "Gold":  100578.0,
+        "KimYusinLoyalty":  38.0,
+        "MilitaryCooperation":  42.0,
+        "MilitaryInfluence":  41.1827358420545,
+        "Due":  -1.0,
+        "Months":  2.0,
+        "Status":  "completed",
+        "Slot":  "user://windows_export_v1_7_1_1790753476_11954953_governor-force.json"
+    },
+    {
+        "Kind":  "commander",
+        "Choice":  "force",
+        "Gold":  100578.0,
+        "KimYusinLoyalty":  38.0,
+        "MilitaryCooperation":  42.0,
+        "MilitaryInfluence":  15.5960068284718,
+        "Due":  -1.0,
+        "Months":  2.0,
+        "Status":  "completed",
+        "Slot":  "user://windows_export_v1_7_1_1790753479_15020109_commander-force.json"
+    },
+    {
+        "Kind":  "demand",
+        "Choice":  "reject",
+        "Gold":  1000.0,
+        "KimYusinLoyalty":  58.0,
+        "MilitaryCooperation":  48.0,
+        "MilitaryInfluence":  20.449404257514,
+        "Due":  null,
+        "Months":  null,
+        "Status":  null,
+        "Slot":  "user://windows_export_v1_7_1_1790753481_17492874_demand-reject.json"
+    }
+]

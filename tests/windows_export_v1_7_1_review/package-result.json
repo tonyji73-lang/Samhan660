@@ -1,0 +1,33 @@
+﻿{
+    "Path":  "C:\\Users\\지용훈\\Downloads\\Samhan660_Windows_V1_7_1_20260930.zip",
+    "Bytes":  490260735,
+    "SHA256":  "618ACB2342BFA3DA81A11AD92EB9ACCFACB0C888D4F44EACEAD3ACD19D297514",
+    "VerifiedPayloads":  11,
+    "Build":  {
+                  "Version":  "V1.7.1",
+                  "Date":  "2026-09-30",
+                  "Engine":  "4.7.2.stable.official.ed1daf0bf",
+                  "Template":  "4.7.2.stable",
+                  "Architecture":  "x86_64",
+                  "Preset":  "Windows Desktop",
+                  "Branch":  "main",
+                  "Head":  "1dbe7e6546dfb05af9a21a54cf0a3cc3ae8956b5",
+                  "UsesUncommittedSource":  true,
+                  "GameChangesThisTask":  "court_overlay.gd: localize industry duty using existing job kind; no rule/save changes",
+                  "SourceManifest":  "SOURCE_SHA256.json",
+                  "SourceManifestSHA256":  "49491C09F4F0810753924F3763614EEA0D471C87F9FCABAC61399E37A1A9D43D",
+                  "BuildOnlyChanges":  "Opt-in QA autoload res://qa/windows_export_v1_7_1.gd; no original project.godot edit",
+                  "QA":  [
+                             {
+                                 "SHA256":  "C7898A0CC468BD49AA6CF641900BBF89D45E72D7051FAC243C38A74032D2A14E",
+                                 "File":  "runtime_qa.gd"
+                             },
+                             {
+                                 "SHA256":  "5BDCB59E9D393B70C7AE99F6C57CF213F7E71CD2826064530D9CFF3C2D69663E",
+                                 "File":  "base_qa.gd"
+                             }
+                         ],
+                  "ExeSHA256":  "3D19EE4A764E8BB153BFA7F811F98E0DFB0139C9E0C8BC6B76B93D3ED09185BF",
+                  "PackSHA256":  "F0C74A2C16A0C8548E942769E15EAD5687E1FDCE31DE0531C1E0EF7B6EAD8042"
+              }
+}

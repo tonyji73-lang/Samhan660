@@ -1,0 +1,138 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: normal officer transfer
+PASS: real month advances
+PASS: existing build opens assignment and locks map
+PASS: shared estimate and cancellation rule visible
+PASS: capture smelter_quote
+PASS: UI pays original cost once smelter
+PASS: capture smelter_pending
+ERROR: FAIL: pending load restores job and map input
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/project_foundation_test.gd:20)
+       [1] task (res://tests/industry_assignment_gui_test.gd:50)
+       [2] settle (res://tests/project_foundation_test.gd:27)
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: actual monthly completion smelter
+PASS: completed receipt visible
+PASS: capture smelter_completed
+ERROR: FAIL: Esc restores input
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/project_foundation_test.gd:20)
+       [1] task (res://tests/industry_assignment_gui_test.gd:61)
+       [2] escape (res://tests/project_foundation_test.gd:63)
+       [3] settle (res://tests/project_foundation_test.gd:27)
+PASS: existing build opens assignment and locks map
+PASS: shared estimate and cancellation rule visible
+PASS: capture forge_quote
+PASS: UI pays original cost once forge
+PASS: capture forge_pending
+ERROR: FAIL: pending load restores job and map input
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/project_foundation_test.gd:20)
+       [1] task (res://tests/industry_assignment_gui_test.gd:50)
+       [2] settle (res://tests/project_foundation_test.gd:27)
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: actual monthly completion forge
+PASS: completed receipt visible
+PASS: capture forge_completed
+ERROR: FAIL: Esc restores input
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/project_foundation_test.gd:20)
+       [1] task (res://tests/industry_assignment_gui_test.gd:61)
+       [2] escape (res://tests/project_foundation_test.gd:63)
+       [3] settle (res://tests/project_foundation_test.gd:27)
+PASS: existing research opens assignment and locks map
+PASS: shared estimate and cancellation rule visible
+PASS: capture swordsmithing_quote
+PASS: UI pays original cost once swordsmithing
+PASS: capture swordsmithing_pending
+ERROR: FAIL: pending load restores job and map input
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/project_foundation_test.gd:20)
+       [1] task (res://tests/industry_assignment_gui_test.gd:50)
+       [2] settle (res://tests/project_foundation_test.gd:27)
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: actual monthly completion swordsmithing
+PASS: completed receipt visible
+PASS: capture swordsmithing_completed
+ERROR: FAIL: Esc restores input
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/project_foundation_test.gd:20)
+       [1] task (res://tests/industry_assignment_gui_test.gd:61)
+       [2] escape (res://tests/project_foundation_test.gd:63)
+       [3] settle (res://tests/project_foundation_test.gd:27)
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: normal production made 10 bundles
+PASS: existing support panel open
+PASS: cargo-only access locks map
+PASS: shared quote executable weapons
+PASS: capture weapons_quote
+PASS: UI pays exact shipping cost weapons
+PASS: capture weapons_transit
+ERROR: FAIL: cargo Esc unlocks map
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/project_foundation_test.gd:20)
+       [1] ship (res://tests/supply_transport_gui_test.gd:32)
+       [2] escape (res://tests/project_foundation_test.gd:63)
+       [3] settle (res://tests/project_foundation_test.gd:27)
+PASS: incoming equipment excluded from local stock
+PASS: capture supply_incoming
+PASS: trainer returns normally
+PASS: real month advances
+PASS: actual shipment arrived
+PASS: normal recruitment made unequipped 1000-person unit
+PASS: capture equipment_preview
+PASS: quote previews equipment delta (1280, 720)
+PASS: preview does not issue equipment
+PASS: capture equipment_preview
+PASS: quote previews equipment delta (1920, 1080)
+PASS: preview does not issue equipment
+PASS: keyboard confirms exact existing equipment quote
+PASS: candidate selection/cancel changes no game state
+PASS: keyboard commander appointment
+PASS: Tab stays in military dialog
+PASS: Shift Tab returns to training confirmation
+PASS: capture training_quote
+PASS: Tab stays in military dialog
+PASS: Shift Tab returns to training confirmation
+PASS: capture training_quote
+PASS: keyboard training accepted
+PASS: capture training_pending
+PASS: training Esc closes
+PASS: real month advances
+PASS: real month advances
+PASS: paid monthly training completes
+PASS: capture training_complete
+PASS: readiness refreshed after month processing
+PASS: capture training_complete
+PASS: readiness refreshed after month processing
+V1.6 NORMAL FLOW: 94 checks, 7 failures

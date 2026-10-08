@@ -1,0 +1,54 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+PASS: editor helper absent
+PASS: pack includes data/officers_v1.json
+PASS: pack includes cutscenes/cutscene_catalog_v1.json
+PASS: pack includes ui/faction_selection_v1/layout.json
+PASS: pack includes ui/faction_declaration_v1/declarations.json
+PASS: pack includes ui/korea_layout_v1/full_r3_v1/manifest.json
+PASS: pack includes licenses/NanumMyeongjo-OFL.txt
+PASS: pack includes licenses/SamhanUISans-OFL.txt
+PASS: pack includes licenses/GODOT-LICENSE.txt
+PASS: packed raw map hash
+PASS: title Korean glyphs
+PASS: V1.7 court packed
+PASS: politics preview packed
+PASS: capture court-720
+PASS: portrait/member assets exported
+PASS: Tab stays in court
+PASS: Shift Tab reverses
+PASS: keyboard group selection silla:royal
+PASS: keyboard group selection silla:civil
+PASS: keyboard group selection silla:military
+PASS: capture court-details-720
+PASS: group detail scroll
+PASS: capture court-person-720
+PASS: Esc restores map input
+PASS: capture court-1080
+PASS: portrait/member assets exported
+PASS: Tab stays in court
+PASS: Shift Tab reverses
+PASS: keyboard group selection silla:royal
+PASS: keyboard group selection silla:civil
+PASS: keyboard group selection silla:military
+PASS: capture court-details-1080
+PASS: group detail scroll
+PASS: capture court-person-1080
+PASS: Esc restores map input
+PASS: all group/person previews are read only
+PASS: normal achieved authority offers governor
+PASS: new slot preserves all existing saves pending-governor
+PASS: default user path save pending-governor
+PASS: capture pending-governor
+PASS: normal achieved authority offers commander
+PASS: new slot preserves all existing saves pending-commander
+PASS: default user path save pending-commander
+PASS: capture pending-commander
+PASS: normal 642 governor
+PASS: normal 642 commander
+PASS: normal demand generated
+PASS: new slot preserves all existing saves pending-demand
+PASS: default user path save pending-demand
+PASS: capture pending-demand
+EXPORT V1.7.1 prepare: 50 checks, 0 failures

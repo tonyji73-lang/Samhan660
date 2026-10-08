@@ -1,0 +1,2616 @@
+[
+	{
+		"label": "entry",
+		"month": 1,
+		"step": 1,
+		"value": {
+			"city": "geumseong",
+			"faction": "silla",
+			"gold": 1000
+		},
+		"year": 632
+	},
+	{
+		"label": "domestic quote",
+		"month": 1,
+		"step": 2,
+		"value": {
+			"enabled": true,
+			"text": "담당자  선덕여왕\n위치 금성 · 신라 군주"
+		},
+		"year": 632
+	},
+	{
+		"label": "production requirements",
+		"month": 1,
+		"step": 3,
+		"value": "공정별 예약: 철 공급: 중지 / 철로 칼 제작: 중지 / 철 조달·정련 (공통): 중지\n\n도시 재고\n곡물·군량 (기본물자): 5292\n철 (기초 소재): 0\n무기 (칼) (제조품): 0\n\n생산법: 철로 칼 제작\n월 예상 투입: 철 2 · 운영비 금 10\n월 예상 산출: 무기 (칼) 1\n\n\n필요 기술: 도검 제작 0 / 필요 1단계\n필요 시설: 군기감 0 / 필요 1단계\n\n생산 설정: 중지 · 최근 처리: 중지\n현재 조건: 필요 기술 미연구: 도검 제작 / 필요 시설 미완공: 군기감 / 재료 부족: 철 부족\n\n건설·연구는 담당자 능력에 따라 매월 진행합니다. 그달 완료된 시설·기술을 적용한 뒤 생산합니다. 시설별 작업량 100당 1배치이며 추가 배치도 금·재료를 전액 지불합니다.\n시설 월 작업량 100 · 잔여 0/100 · 선행 공정 반영 예상 0배치 · 금 0\n가동 생산 명령 없음 · 생산 화면에서 가동 설정 필요\n지역 공급 안내 (공통 조달과 별개): 철 공급 공정 구현 / 본게임 생산지 배치 미적용\n지역 철 공급 금6 / 철2 · 공통 조달 금18 / 철2 · 같은 제철시설 작업량 공유. 재료 부족 시 제작 보류.\n곡물·군량은 기존 도시 군량 장부를 조회합니다. 무기 (칼)는 기존 칼 재고 하나를 사용합니다.\n생산량·운영비·도검 연구비는 검증용 임시 설정입니다.",
+		"year": 632
+	},
+	{
+		"label": "production manager",
+		"month": 1,
+		"step": 4,
+		"value": false,
+		"year": 632
+	},
+	{
+		"label": "industry quote",
+		"month": 1,
+		"step": 5,
+		"value": {
+			"enabled": true,
+			"kind": "research"
+		},
+		"year": 632
+	},
+	{
+		"label": "industry quote",
+		"month": 1,
+		"step": 6,
+		"value": {
+			"enabled": false,
+			"kind": "build"
+		},
+		"year": 632
+	},
+	{
+		"label": "transport quote",
+		"month": 1,
+		"step": 7,
+		"value": "북한산성 창고: 군량 4662 · 철 0 · 칼 0\n국고 금 700\n\n새 수송 견적: 군량 100 · 철 0 · 칼 0 · 적재량 100 / 2,000\n경로: 북한산성 → 삼년산성 → 죽령 교통권 → 실직 → 금성\n예상 도착: 632년 5월 (다음 월부터 구간당 1개월)\n기본 금 44 · 군량 수송 연구 할인 0% · 최종 금 44\n출발 후 군량 4562 · 현재 주둔군 월 소비 88 · 유지 51.8개월\n\n\n이동 중 화물은 모집·생산에 사용할 수 없습니다.\n첫 이동 전 취소는 화물·납부 운송비 환불. 이동 후 재지정 비용은 추가 지불하며 이전 비용은 환불하지 않습니다.",
+		"year": 632
+	},
+	{
+		"label": "diplomacy",
+		"month": 1,
+		"step": 8,
+		"value": {
+			"cost": "",
+			"reason": ""
+		},
+		"year": 632
+	},
+	{
+		"label": "monthly report",
+		"month": 2,
+		"step": 9,
+		"value": {
+			"gold_after": 2198,
+			"gold_before": 656,
+			"jobs": {
+				"domestic:1": {
+					"accepted_month": 7585,
+					"applied_gain": 5,
+					"city_id": "geumseong",
+					"cost_paid": 100,
+					"due_month": 7586,
+					"efficiency": 92.6,
+					"faction": "신라",
+					"id": "domestic:1",
+					"intelligence": 91.0,
+					"kind": "agriculture",
+					"officer_id": "historical:001",
+					"payer_faction_id": "silla",
+					"planned_gain": 5,
+					"politics": 93.0,
+					"processed_month": 7586,
+					"reason": "개발 완료 +5",
+					"refund": 0,
+					"status": "completed"
+				},
+				"industry:10": {
+					"accepted_month": 7586,
+					"city_id": "pyongyang",
+					"cost_known": true,
+					"cost_paid": 200,
+					"faction": "고구려",
+					"faction_id": "goguryeo",
+					"history": [
+						{
+							"action": "접수",
+							"city_id": "pyongyang",
+							"month": 7586,
+							"officer_id": "historical:025",
+							"previous_id": "",
+							"progress": 0
+						},
+						{
+							"action": "월 진척",
+							"city_id": "pyongyang",
+							"month": 7587,
+							"officer_id": "historical:025",
+							"previous_id": "",
+							"progress": 137
+						}
+					],
+					"id": "industry:10",
+					"kind": "research",
+					"last_month": 7587,
+					"last_work": 137,
+					"name": "기본 제련",
+					"officer_id": "historical:025",
+					"payer_faction_id": "goguryeo",
+					"progress": 137,
+					"reason": "",
+					"refund": 0,
+					"required": 300,
+					"requirement_id": "basic_smelting",
+					"status": "pending",
+					"target_level": 1
+				},
+				"industry:2": {
+					"accepted_month": 7585,
+					"city_id": "geumseong",
+					"cost_known": true,
+					"cost_paid": 0,
+					"faction": "신라",
+					"faction_id": "silla",
+					"history": [
+						{
+							"action": "접수",
+							"city_id": "geumseong",
+							"month": 7585,
+							"officer_id": "historical:004",
+							"previous_id": "",
+							"progress": 0
+						}
+					],
+					"id": "industry:2",
+					"kind": "production",
+					"last_month": 7587,
+					"name": "생산 관리",
+					"officer_id": "historical:004",
+					"payer_faction_id": "silla",
+					"progress": 0,
+					"reason": "",
+					"refund": 0,
+					"required": 0,
+					"requirement_id": "",
+					"status": "pending",
+					"target_level": 0
+				},
+				"industry:3": {
+					"accepted_month": 7585,
+					"city_id": "geumseong",
+					"cost_known": true,
+					"cost_paid": 200,
+					"faction": "신라",
+					"faction_id": "silla",
+					"history": [
+						{
+							"action": "접수",
+							"city_id": "geumseong",
+							"month": 7585,
+							"officer_id": "historical:003",
+							"previous_id": "",
+							"progress": 0
+						},
+						{
+							"action": "월 진척",
+							"city_id": "geumseong",
+							"month": 7586,
+							"officer_id": "historical:003",
+							"previous_id": "",
+							"progress": 146
+						},
+						{
+							"action": "월 진척",
+							"city_id": "geumseong",
+							"month": 7587,
+							"officer_id": "historical:003",
+							"previous_id": "",
+							"progress": 292
+						}
+					],
+					"id": "industry:3",
+					"kind": "research",
+					"last_month": 7587,
+					"last_work": 146,
+					"name": "도검 제작",
+					"officer_id": "historical:003",
+					"payer_faction_id": "silla",
+					"progress": 292,
+					"reason": "",
+					"refund": 0,
+					"required": 300,
+					"requirement_id": "swordsmithing",
+					"status": "pending",
+					"target_level": 1
+				},
+				"industry:4": {
+					"accepted_month": 7586,
+					"city_id": "sabi",
+					"cost_known": true,
+					"cost_paid": 240,
+					"faction": "백제",
+					"faction_id": "baekje",
+					"history": [
+						{
+							"action": "접수",
+							"city_id": "sabi",
+							"month": 7586,
+							"officer_id": "historical:015",
+							"previous_id": "",
+							"progress": 0
+						},
+						{
+							"action": "월 진척",
+							"city_id": "sabi",
+							"month": 7587,
+							"officer_id": "historical:015",
+							"previous_id": "",
+							"progress": 143
+						}
+					],
+					"id": "industry:4",
+					"kind": "build",
+					"last_month": 7587,
+					"last_work": 143,
+					"name": "제철시설",
+					"officer_id": "historical:015",
+					"payer_faction_id": "baekje",
+					"progress": 143,
+					"reason": "",
+					"refund": 0,
+					"required": 600,
+					"requirement_id": "smelter",
+					"status": "pending",
+					"target_level": 1
+				},
+				"industry:5": {
+					"accepted_month": 7586,
+					"city_id": "sabi",
+					"cost_known": true,
+					"cost_paid": 200,
+					"faction": "백제",
+					"faction_id": "baekje",
+					"history": [
+						{
+							"action": "접수",
+							"city_id": "sabi",
+							"month": 7586,
+							"officer_id": "historical:016",
+							"previous_id": "",
+							"progress": 0
+						},
+						{
+							"action": "월 진척",
+							"city_id": "sabi",
+							"month": 7587,
+							"officer_id": "historical:016",
+							"previous_id": "",
+							"progress": 142
+						}
+					],
+					"id": "industry:5",
+					"kind": "research",
+					"last_month": 7587,
+					"last_work": 142,
+					"name": "기본 제련",
+					"officer_id": "historical:016",
+					"payer_faction_id": "baekje",
+					"progress": 142,
+					"reason": "",
+					"refund": 0,
+					"required": 300,
+					"requirement_id": "basic_smelting",
+					"status": "pending",
+					"target_level": 1
+				},
+				"industry:9": {
+					"accepted_month": 7586,
+					"city_id": "pyongyang",
+					"cost_known": true,
+					"cost_paid": 240,
+					"faction": "고구려",
+					"faction_id": "goguryeo",
+					"history": [
+						{
+							"action": "접수",
+							"city_id": "pyongyang",
+							"month": 7586,
+							"officer_id": "historical:023",
+							"previous_id": "",
+							"progress": 0
+						},
+						{
+							"action": "월 진척",
+							"city_id": "pyongyang",
+							"month": 7587,
+							"officer_id": "historical:023",
+							"previous_id": "",
+							"progress": 139
+						}
+					],
+					"id": "industry:9",
+					"kind": "build",
+					"last_month": 7587,
+					"last_work": 139,
+					"name": "제철시설",
+					"officer_id": "historical:023",
+					"payer_faction_id": "goguryeo",
+					"progress": 139,
+					"reason": "",
+					"refund": 0,
+					"required": 600,
+					"requirement_id": "smelter",
+					"status": "pending",
+					"target_level": 1
+				},
+				"training:11": {
+					"city_id": "ansi",
+					"cost_paid": 50,
+					"faction_id": "goguryeo",
+					"history": [
+						{
+							"after_points": 64000,
+							"before_points": 50000,
+							"cost": 50,
+							"month": 7587,
+							"officer_id": "historical:026"
+						}
+					],
+					"id": "training:11",
+					"kind": "training",
+					"last_month": 7587,
+					"officer_id": "historical:026",
+					"reason": "",
+					"status": "pending",
+					"unit_id": "unit:50"
+				},
+				"training:12": {
+					"city_id": "geumseong",
+					"cost_paid": 50,
+					"faction_id": "silla",
+					"history": [
+						{
+							"after_points": 61000,
+							"before_points": 50000,
+							"cost": 50,
+							"month": 7587,
+							"officer_id": "historical:001"
+						}
+					],
+					"id": "training:12",
+					"kind": "training",
+					"last_month": 7587,
+					"officer_id": "historical:001",
+					"reason": "",
+					"status": "pending",
+					"unit_id": "unit:52"
+				},
+				"training:6": {
+					"city_id": "sabi",
+					"cost_paid": 50,
+					"faction_id": "baekje",
+					"history": [
+						{
+							"after_points": 63000,
+							"before_points": 50000,
+							"cost": 50,
+							"month": 7587,
+							"officer_id": "historical:012"
+						}
+					],
+					"id": "training:6",
+					"kind": "training",
+					"last_month": 7587,
+					"officer_id": "historical:012",
+					"reason": "",
+					"status": "pending",
+					"unit_id": "unit:45"
+				},
+				"training:7": {
+					"city_id": "gosa",
+					"cost_paid": 50,
+					"faction_id": "baekje",
+					"history": [
+						{
+							"after_points": 64000,
+							"before_points": 50000,
+							"cost": 50,
+							"month": 7587,
+							"officer_id": "historical:017"
+						}
+					],
+					"id": "training:7",
+					"kind": "training",
+					"last_month": 7587,
+					"officer_id": "historical:017",
+					"reason": "",
+					"status": "pending",
+					"unit_id": "unit:46"
+				},
+				"training:8": {
+					"city_id": "sabi",
+					"cost_paid": 50,
+					"faction_id": "baekje",
+					"history": [
+						{
+							"after_points": 61000,
+							"before_points": 50000,
+							"cost": 50,
+							"month": 7587,
+							"officer_id": "historical:013"
+						}
+					],
+					"id": "training:8",
+					"kind": "training",
+					"last_month": 7587,
+					"officer_id": "historical:013",
+					"reason": "",
+					"status": "pending",
+					"unit_id": "unit:47"
+				}
+			},
+			"production": {
+				"ansi": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"bireyeolhol": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"bukhansan": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"chaekseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"chupungnyeong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"daedonggang": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"daegaya": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"dalgubeol": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"danghangseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"ganghwa": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"geonanseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"geumgwan": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"geummajeo": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"geumseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": true,
+						"last_batches": 0,
+						"owner": "신라",
+						"reason": "필요 기술 미연구: swordsmithing / 필요 시설 미완공: forge / 재료 부족: 철 부족",
+						"status": "보류"
+					}
+				},
+				"goksan": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"gosa": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"gukwon": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"gungnae": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"haslla": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"hwanghae": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"imjonseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"jukryeong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"juryuseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"pyongyang": {
+					"iron_procurement": {
+						"enabled": true,
+						"last_batches": 0,
+						"owner": "고구려",
+						"reason": "",
+						"status": "대기"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "고구려",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": true,
+						"last_batches": 0,
+						"owner": "고구려",
+						"reason": "",
+						"status": "대기"
+					}
+				},
+				"sabeol": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"sabi": {
+					"iron_procurement": {
+						"enabled": true,
+						"last_batches": 0,
+						"owner": "백제",
+						"reason": "",
+						"status": "대기"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "백제",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": true,
+						"last_batches": 0,
+						"owner": "백제",
+						"reason": "",
+						"status": "대기"
+					}
+				},
+				"samnyeonsanseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"shinseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"siljik": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"sogaya": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"sokgunseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_adie": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_bayegu": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_duolange": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_huihe": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_hun": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_pugu": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_qibi": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_sijie": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_tongluo": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"tamna": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"ulleung": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"ungjin": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"yeongsangang": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				}
+			},
+			"text": "632년 2월이 되었습니다.\n금성 · 선덕여왕 · 개발 완료 +5\n금성 상업세: 기본 130 + 태수 25 = 155\n금성 주둔군 군량 -280\n금성 저장손실 -25\n금성 · 철로 칼 제작 0배치 · 금 0 · 잔여 작업량 0/100 · 필요 기술 미연구: 도검 제작 / 필요 시설 미완공: 군기감 / 재료 부족: 철 부족\n치안 회복: 북한산성, 당항성, 삼년산성 외 13곳\nbaekje 군수 계획: sabi · 재고 0묶음 / 조건부 0묶음 · 훈련 접수 · 다음 월 유료 진행\ngoguryeo 군수 계획: pyongyang · 재고 0묶음 / 조건부 0묶음 · 군수 시설 준비"
+		},
+		"year": 632
+	},
+	{
+		"label": "equipment",
+		"month": 2,
+		"step": 10,
+		"value": "현지 창고  0묶음\n현재 지급 가능  0묶음\n일반 보병의 부족 장비만 묶음 단위로 지급하세요.",
+		"year": 632
+	},
+	{
+		"label": "training",
+		"month": 2,
+		"step": 11,
+		"value": "현재 숙련도  50.0 / 목표 70\n접수 전\n\n훈련 50.0 → 61.0 · 선덕여왕 · 지금 시작 가능\n월 금50 · 현재 조건 예상 잔여2개월 / 금100 · 다음 월부터 처리\n\n확정 후 다음 월부터 지불·훈련",
+		"year": 632
+	},
+	{
+		"label": "monthly report",
+		"month": 3,
+		"step": 12,
+		"value": {
+			"gold_after": 3734,
+			"gold_before": 2198,
+			"jobs": {
+				"domestic:1": {
+					"accepted_month": 7585,
+					"applied_gain": 5,
+					"city_id": "geumseong",
+					"cost_paid": 100,
+					"due_month": 7586,
+					"efficiency": 92.6,
+					"faction": "신라",
+					"id": "domestic:1",
+					"intelligence": 91.0,
+					"kind": "agriculture",
+					"officer_id": "historical:001",
+					"payer_faction_id": "silla",
+					"planned_gain": 5,
+					"politics": 93.0,
+					"processed_month": 7586,
+					"reason": "개발 완료 +5",
+					"refund": 0,
+					"status": "completed"
+				},
+				"industry:10": {
+					"accepted_month": 7586,
+					"city_id": "pyongyang",
+					"cost_known": true,
+					"cost_paid": 200,
+					"faction": "고구려",
+					"faction_id": "goguryeo",
+					"history": [
+						{
+							"action": "접수",
+							"city_id": "pyongyang",
+							"month": 7586,
+							"officer_id": "historical:025",
+							"previous_id": "",
+							"progress": 0
+						},
+						{
+							"action": "월 진척",
+							"city_id": "pyongyang",
+							"month": 7587,
+							"officer_id": "historical:025",
+							"previous_id": "",
+							"progress": 137
+						}
+					],
+					"id": "industry:10",
+					"kind": "research",
+					"last_month": 7587,
+					"last_work": 137,
+					"name": "기본 제련",
+					"officer_id": "historical:025",
+					"payer_faction_id": "goguryeo",
+					"progress": 137,
+					"reason": "",
+					"refund": 0,
+					"required": 300,
+					"requirement_id": "basic_smelting",
+					"status": "pending",
+					"target_level": 1
+				},
+				"industry:2": {
+					"accepted_month": 7585,
+					"city_id": "geumseong",
+					"cost_known": true,
+					"cost_paid": 0,
+					"faction": "신라",
+					"faction_id": "silla",
+					"history": [
+						{
+							"action": "접수",
+							"city_id": "geumseong",
+							"month": 7585,
+							"officer_id": "historical:004",
+							"previous_id": "",
+							"progress": 0
+						}
+					],
+					"id": "industry:2",
+					"kind": "production",
+					"last_month": 7587,
+					"name": "생산 관리",
+					"officer_id": "historical:004",
+					"payer_faction_id": "silla",
+					"progress": 0,
+					"reason": "",
+					"refund": 0,
+					"required": 0,
+					"requirement_id": "",
+					"status": "pending",
+					"target_level": 0
+				},
+				"industry:3": {
+					"accepted_month": 7585,
+					"city_id": "geumseong",
+					"cost_known": true,
+					"cost_paid": 200,
+					"faction": "신라",
+					"faction_id": "silla",
+					"history": [
+						{
+							"action": "접수",
+							"city_id": "geumseong",
+							"month": 7585,
+							"officer_id": "historical:003",
+							"previous_id": "",
+							"progress": 0
+						},
+						{
+							"action": "월 진척",
+							"city_id": "geumseong",
+							"month": 7586,
+							"officer_id": "historical:003",
+							"previous_id": "",
+							"progress": 146
+						},
+						{
+							"action": "월 진척",
+							"city_id": "geumseong",
+							"month": 7587,
+							"officer_id": "historical:003",
+							"previous_id": "",
+							"progress": 292
+						}
+					],
+					"id": "industry:3",
+					"kind": "research",
+					"last_month": 7587,
+					"last_work": 146,
+					"name": "도검 제작",
+					"officer_id": "historical:003",
+					"payer_faction_id": "silla",
+					"progress": 292,
+					"reason": "",
+					"refund": 0,
+					"required": 300,
+					"requirement_id": "swordsmithing",
+					"status": "pending",
+					"target_level": 1
+				},
+				"industry:4": {
+					"accepted_month": 7586,
+					"city_id": "sabi",
+					"cost_known": true,
+					"cost_paid": 240,
+					"faction": "백제",
+					"faction_id": "baekje",
+					"history": [
+						{
+							"action": "접수",
+							"city_id": "sabi",
+							"month": 7586,
+							"officer_id": "historical:015",
+							"previous_id": "",
+							"progress": 0
+						},
+						{
+							"action": "월 진척",
+							"city_id": "sabi",
+							"month": 7587,
+							"officer_id": "historical:015",
+							"previous_id": "",
+							"progress": 143
+						}
+					],
+					"id": "industry:4",
+					"kind": "build",
+					"last_month": 7587,
+					"last_work": 143,
+					"name": "제철시설",
+					"officer_id": "historical:015",
+					"payer_faction_id": "baekje",
+					"progress": 143,
+					"reason": "",
+					"refund": 0,
+					"required": 600,
+					"requirement_id": "smelter",
+					"status": "pending",
+					"target_level": 1
+				},
+				"industry:5": {
+					"accepted_month": 7586,
+					"city_id": "sabi",
+					"cost_known": true,
+					"cost_paid": 200,
+					"faction": "백제",
+					"faction_id": "baekje",
+					"history": [
+						{
+							"action": "접수",
+							"city_id": "sabi",
+							"month": 7586,
+							"officer_id": "historical:016",
+							"previous_id": "",
+							"progress": 0
+						},
+						{
+							"action": "월 진척",
+							"city_id": "sabi",
+							"month": 7587,
+							"officer_id": "historical:016",
+							"previous_id": "",
+							"progress": 142
+						}
+					],
+					"id": "industry:5",
+					"kind": "research",
+					"last_month": 7587,
+					"last_work": 142,
+					"name": "기본 제련",
+					"officer_id": "historical:016",
+					"payer_faction_id": "baekje",
+					"progress": 142,
+					"reason": "",
+					"refund": 0,
+					"required": 300,
+					"requirement_id": "basic_smelting",
+					"status": "pending",
+					"target_level": 1
+				},
+				"industry:9": {
+					"accepted_month": 7586,
+					"city_id": "pyongyang",
+					"cost_known": true,
+					"cost_paid": 240,
+					"faction": "고구려",
+					"faction_id": "goguryeo",
+					"history": [
+						{
+							"action": "접수",
+							"city_id": "pyongyang",
+							"month": 7586,
+							"officer_id": "historical:023",
+							"previous_id": "",
+							"progress": 0
+						},
+						{
+							"action": "월 진척",
+							"city_id": "pyongyang",
+							"month": 7587,
+							"officer_id": "historical:023",
+							"previous_id": "",
+							"progress": 139
+						}
+					],
+					"id": "industry:9",
+					"kind": "build",
+					"last_month": 7587,
+					"last_work": 139,
+					"name": "제철시설",
+					"officer_id": "historical:023",
+					"payer_faction_id": "goguryeo",
+					"progress": 139,
+					"reason": "",
+					"refund": 0,
+					"required": 600,
+					"requirement_id": "smelter",
+					"status": "pending",
+					"target_level": 1
+				},
+				"training:11": {
+					"city_id": "ansi",
+					"cost_paid": 50,
+					"faction_id": "goguryeo",
+					"history": [
+						{
+							"after_points": 64000,
+							"before_points": 50000,
+							"cost": 50,
+							"month": 7587,
+							"officer_id": "historical:026"
+						}
+					],
+					"id": "training:11",
+					"kind": "training",
+					"last_month": 7587,
+					"officer_id": "historical:026",
+					"reason": "",
+					"status": "pending",
+					"unit_id": "unit:50"
+				},
+				"training:12": {
+					"city_id": "geumseong",
+					"cost_paid": 50,
+					"faction_id": "silla",
+					"history": [
+						{
+							"after_points": 61000,
+							"before_points": 50000,
+							"cost": 50,
+							"month": 7587,
+							"officer_id": "historical:001"
+						}
+					],
+					"id": "training:12",
+					"kind": "training",
+					"last_month": 7587,
+					"officer_id": "historical:001",
+					"reason": "",
+					"status": "pending",
+					"unit_id": "unit:52"
+				},
+				"training:6": {
+					"city_id": "sabi",
+					"cost_paid": 50,
+					"faction_id": "baekje",
+					"history": [
+						{
+							"after_points": 63000,
+							"before_points": 50000,
+							"cost": 50,
+							"month": 7587,
+							"officer_id": "historical:012"
+						}
+					],
+					"id": "training:6",
+					"kind": "training",
+					"last_month": 7587,
+					"officer_id": "historical:012",
+					"reason": "",
+					"status": "pending",
+					"unit_id": "unit:45"
+				},
+				"training:7": {
+					"city_id": "gosa",
+					"cost_paid": 50,
+					"faction_id": "baekje",
+					"history": [
+						{
+							"after_points": 64000,
+							"before_points": 50000,
+							"cost": 50,
+							"month": 7587,
+							"officer_id": "historical:017"
+						}
+					],
+					"id": "training:7",
+					"kind": "training",
+					"last_month": 7587,
+					"officer_id": "historical:017",
+					"reason": "",
+					"status": "pending",
+					"unit_id": "unit:46"
+				},
+				"training:8": {
+					"city_id": "sabi",
+					"cost_paid": 50,
+					"faction_id": "baekje",
+					"history": [
+						{
+							"after_points": 61000,
+							"before_points": 50000,
+							"cost": 50,
+							"month": 7587,
+							"officer_id": "historical:013"
+						}
+					],
+					"id": "training:8",
+					"kind": "training",
+					"last_month": 7587,
+					"officer_id": "historical:013",
+					"reason": "",
+					"status": "pending",
+					"unit_id": "unit:47"
+				}
+			},
+			"production": {
+				"ansi": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"bireyeolhol": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"bukhansan": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"chaekseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"chupungnyeong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"daedonggang": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"daegaya": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"dalgubeol": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"danghangseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"ganghwa": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"geonanseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"geumgwan": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"geummajeo": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"geumseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": true,
+						"last_batches": 0,
+						"owner": "신라",
+						"reason": "필요 기술 미연구: swordsmithing / 필요 시설 미완공: forge / 재료 부족: 철 부족",
+						"status": "보류"
+					}
+				},
+				"goksan": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"gosa": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"gukwon": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"gungnae": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"haslla": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"hwanghae": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"imjonseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"jukryeong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"juryuseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"pyongyang": {
+					"iron_procurement": {
+						"enabled": true,
+						"last_batches": 0,
+						"owner": "고구려",
+						"reason": "",
+						"status": "대기"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "고구려",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": true,
+						"last_batches": 0,
+						"owner": "고구려",
+						"reason": "",
+						"status": "대기"
+					}
+				},
+				"sabeol": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"sabi": {
+					"iron_procurement": {
+						"enabled": true,
+						"last_batches": 0,
+						"owner": "백제",
+						"reason": "",
+						"status": "대기"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "백제",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": true,
+						"last_batches": 0,
+						"owner": "백제",
+						"reason": "",
+						"status": "대기"
+					}
+				},
+				"samnyeonsanseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"shinseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"siljik": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"sogaya": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"sokgunseong": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_adie": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_bayegu": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_duolange": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_huihe": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_hun": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_pugu": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_qibi": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_sijie": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"steppe_tongluo": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"tamna": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"ulleung": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"ungjin": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				},
+				"yeongsangang": {
+					"iron_procurement": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_supply": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					},
+					"iron_sword": {
+						"enabled": false,
+						"owner": "",
+						"reason": "",
+						"status": "중지"
+					}
+				}
+			},
+			"text": "632년 3월이 되었습니다.\n금성 상업세: 기본 134 + 태수 26 = 160\n금성 주둔군 군량 -280\n금성 저장손실 -24\n금성 · 철로 칼 제작 0배치 · 금 0 · 잔여 작업량 0/100 · 필요 기술 미연구: 도검 제작 / 필요 시설 미완공: 군기감 / 재료 부족: 철 부족\n사비성 · 철 조달·정련 (공통) 0배치 · 금 0 · 잔여 작업량 0/100 · 필요 기술 미연구: 기본 제련 / 필요 시설 미완공: 제철시설\n사비성 · 철로 칼 제작 0배치 · 금 0 · 잔여 작업량 0/100 · 필요 기술 미연구: 도검 제작 / 필요 시설 미완공: 군기감 / 재료 부족: 철 부족\n… 외 2건\n치안 회복: 북한산성, 당항성, 삼년산성 외 13곳\nbaekje 군수 계획: sabi · 재고 0묶음 / 조건부 0묶음 · 훈련 진행 또는 전선 배치\ngoguryeo 군수 계획: pyongyang · 재고 0묶음 / 조건부 0묶음 · 군수 시설 준비"
+		},
+		"year": 632
+	}
+]

@@ -1,0 +1,470 @@
+﻿[
+    {
+        "Image":  "domestic-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "officers-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "governor-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "production-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "build-disabled-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "research-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "domestic-125.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  900,
+                        "ClientX":  90,
+                        "ClientY":  120,
+                        "OuterWidth":  1620,
+                        "OuterHeight":  949
+                    }
+    },
+    {
+        "Image":  "officers-125.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  900,
+                        "ClientX":  90,
+                        "ClientY":  120,
+                        "OuterWidth":  1620,
+                        "OuterHeight":  949
+                    }
+    },
+    {
+        "Image":  "governor-125.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  900,
+                        "ClientX":  90,
+                        "ClientY":  120,
+                        "OuterWidth":  1620,
+                        "OuterHeight":  949
+                    }
+    },
+    {
+        "Image":  "production-125.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  900,
+                        "ClientX":  90,
+                        "ClientY":  120,
+                        "OuterWidth":  1620,
+                        "OuterHeight":  949
+                    }
+    },
+    {
+        "Image":  "build-125.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  900,
+                        "ClientX":  90,
+                        "ClientY":  120,
+                        "OuterWidth":  1620,
+                        "OuterHeight":  949
+                    }
+    },
+    {
+        "Image":  "research-125.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1333,
+                        "ClientHeight":  751,
+                        "ClientX":  11,
+                        "ClientY":  39,
+                        "OuterWidth":  1354,
+                        "OuterHeight":  800
+                    }
+    },
+    {
+        "Image":  "domestic-150.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  901,
+                        "ClientX":  12,
+                        "ClientY":  47,
+                        "OuterWidth":  1625,
+                        "OuterHeight":  960
+                    }
+    },
+    {
+        "Image":  "officers-150.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  901,
+                        "ClientX":  12,
+                        "ClientY":  47,
+                        "OuterWidth":  1625,
+                        "OuterHeight":  960
+                    }
+    },
+    {
+        "Image":  "governor-150.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  901,
+                        "ClientX":  12,
+                        "ClientY":  47,
+                        "OuterWidth":  1625,
+                        "OuterHeight":  960
+                    }
+    },
+    {
+        "Image":  "production-150.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  901,
+                        "ClientX":  12,
+                        "ClientY":  47,
+                        "OuterWidth":  1625,
+                        "OuterHeight":  960
+                    }
+    },
+    {
+        "Image":  "build-150.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  901,
+                        "ClientX":  12,
+                        "ClientY":  47,
+                        "OuterWidth":  1625,
+                        "OuterHeight":  960
+                    }
+    },
+    {
+        "Image":  "research-150.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  901,
+                        "ClientX":  12,
+                        "ClientY":  47,
+                        "OuterWidth":  1625,
+                        "OuterHeight":  960
+                    }
+    },
+    {
+        "Image":  "production-scroll-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "army-overview-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "army-formation-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "army-training-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "officer-changed-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "development-confirmed-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "development-cancelled-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "governor-confirmed-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "build-confirmed-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "build-cancelled-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "build-confirmed-125.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  900,
+                        "ClientX":  10,
+                        "ClientY":  39,
+                        "OuterWidth":  1620,
+                        "OuterHeight":  949
+                    }
+    },
+    {
+        "Image":  "build-cancelled-125.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  900,
+                        "ClientX":  10,
+                        "ClientY":  39,
+                        "OuterWidth":  1620,
+                        "OuterHeight":  949
+                    }
+    },
+    {
+        "Image":  "build-confirmed-150.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  901,
+                        "ClientX":  12,
+                        "ClientY":  47,
+                        "OuterWidth":  1625,
+                        "OuterHeight":  960
+                    }
+    },
+    {
+        "Image":  "build-cancelled-150.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  901,
+                        "ClientX":  12,
+                        "ClientY":  47,
+                        "OuterWidth":  1625,
+                        "OuterHeight":  960
+                    }
+    },
+    {
+        "Image":  "research-confirmed-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "research-cancelled-100.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1280,
+                        "ClientHeight":  720,
+                        "ClientX":  88,
+                        "ClientY":  111,
+                        "OuterWidth":  1296,
+                        "OuterHeight":  759
+                    }
+    },
+    {
+        "Image":  "focus-150.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  901,
+                        "ClientX":  12,
+                        "ClientY":  47,
+                        "OuterWidth":  1625,
+                        "OuterHeight":  960
+                    }
+    },
+    {
+        "Image":  "escape-150.jpg",
+        "Metrics":  {
+                        "Pid":  34384,
+                        "Dpi":  96,
+                        "ClientWidth":  1600,
+                        "ClientHeight":  901,
+                        "ClientX":  12,
+                        "ClientY":  47,
+                        "OuterWidth":  1625,
+                        "OuterHeight":  960
+                    }
+    }
+]

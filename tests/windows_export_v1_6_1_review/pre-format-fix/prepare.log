@@ -1,0 +1,124 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+PASS: editor helper absent
+PASS: pack includes data/officers_v1.json
+PASS: pack includes cutscenes/cutscene_catalog_v1.json
+PASS: pack includes ui/faction_selection_v1/layout.json
+PASS: pack includes ui/faction_declaration_v1/declarations.json
+PASS: pack includes ui/korea_layout_v1/full_r3_v1/manifest.json
+PASS: pack includes licenses/NanumMyeongjo-OFL.txt
+PASS: pack includes licenses/SamhanUISans-OFL.txt
+PASS: pack includes licenses/GODOT-LICENSE.txt
+PASS: packed raw map hash
+PASS: title Korean glyphs
+PASS: V1.6 shared military style packed
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+Portrait metrics: clip_size=(420.0, 275.0) portrait_position=(-4.2, 11.0) portrait_size=(247.5, 363.0) parent=Control
+Hanji metrics: hanji_size=(168.0, 206.25) text_group_content_size=(318.0, 428.0) text_group_position=(-75.0, -110.875) horizontal_margins=(-75.0,-75.0) vertical_margins=(-110.875,-110.875)
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: normal new 632 Silla campaign
+PASS: capture supply-720
+PASS: export local stocks and incoming model
+PASS: supply Tab in dialog
+PASS: capture supply-scroll-720
+PASS: supply Esc returns to settlement
+PASS: capture formation-720
+PASS: unit list visible formation
+PASS: military Tab wraps formation
+PASS: military Shift Tab reverse formation
+PASS: capture training-720
+PASS: unit list visible training
+PASS: military Tab wraps training
+PASS: military Shift Tab reverse training
+PASS: keyboard candidate selection
+PASS: selection cancel leaves campaign unchanged
+PASS: military Esc restores settlement
+PASS: capture supply-1080
+PASS: export local stocks and incoming model
+PASS: supply Tab in dialog
+PASS: capture supply-scroll-1080
+PASS: supply Esc returns to settlement
+PASS: capture formation-1080
+PASS: unit list visible formation
+PASS: military Tab wraps formation
+PASS: military Shift Tab reverse formation
+PASS: capture training-1080
+PASS: unit list visible training
+PASS: military Tab wraps training
+PASS: military Shift Tab reverse training
+PASS: keyboard candidate selection
+PASS: selection cancel leaves campaign unchanged
+PASS: military Esc restores settlement
+PASS: all export screen previews leave state unchanged
+PASS: normal worker transfer
+PASS: actual month advances
+PASS: normal available build smelter
+PASS: accepted build smelter
+PASS: capture build-accepted-smelter
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: completed build
+PASS: normal available build forge
+PASS: accepted build forge
+PASS: capture build-accepted-forge
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: completed build
+PASS: normal available research swordsmithing
+PASS: accepted research swordsmithing
+PASS: capture research-accepted-swordsmithing
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: completed research
+PASS: normal production reservation
+PASS: normal production reservation
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: normal production creates actual weapons
+PASS: normal cargo quote available
+PASS: normal cargo dispatched
+PASS: trainer returns normally
+PASS: actual month advances
+PASS: local cargo arrives
+PASS: normal recruitment creates unit
+PASS: capture equipment-preview-720
+PASS: equipment preview pure
+PASS: capture equipment-preview-1080
+PASS: equipment preview pure
+PASS: keyboard issue exact 10 bundles / 1000 equipment
+PASS: keyboard commander appointment
+PASS: capture training-quote-720
+PASS: capture training-quote-1080
+PASS: keyboard training accepted
+PASS: actual month advances
+PASS: paid training in progress before save
+PASS: capture training-pending-1080
+PASS: unique slot does not overwrite existing saves
+PASS: default user path pending save
+EXPORT V1.6.1 prepare: 106 checks, 0 failures

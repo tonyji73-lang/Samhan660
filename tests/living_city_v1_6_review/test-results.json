@@ -1,0 +1,54 @@
+﻿[
+    {
+        "File":  "army-final.log",
+        "Errors":  0,
+        "Summary":  {
+                        "value":  "ARMY READINESS TESTS: 337 checks, 0 failures",
+                        "PSPath":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\tests\\living_city_v1_6_review\\army-final.log",
+                        "PSParentPath":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\tests\\living_city_v1_6_review",
+                        "PSChildName":  "army-final.log",
+                        "PSDrive":  "E",
+                        "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                        "ReadCount":  341
+                    }
+    },
+    {
+        "File":  "production-regression.log",
+        "Errors":  0,
+        "Summary":  {
+                        "value":  "PRODUCTION TESTS: 193 checks, 0 failures",
+                        "PSPath":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\tests\\living_city_v1_6_review\\production-regression.log",
+                        "PSParentPath":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\tests\\living_city_v1_6_review",
+                        "PSChildName":  "production-regression.log",
+                        "PSDrive":  "E",
+                        "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                        "ReadCount":  197
+                    }
+    },
+    {
+        "File":  "flow-final.log",
+        "Errors":  0,
+        "Summary":  {
+                        "value":  "V1.6 NORMAL FLOW: 94 checks, 0 failures",
+                        "PSPath":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\tests\\living_city_v1_6_review\\flow-final.log",
+                        "PSParentPath":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\tests\\living_city_v1_6_review",
+                        "PSChildName":  "flow-final.log",
+                        "PSDrive":  "E",
+                        "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                        "ReadCount":  103
+                    }
+    },
+    {
+        "File":  "visual-final.log",
+        "Errors":  0,
+        "Summary":  {
+                        "value":  "V1.6 VISUAL: 145 checks, 0 failures",
+                        "PSPath":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\tests\\living_city_v1_6_review\\visual-final.log",
+                        "PSParentPath":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\tests\\living_city_v1_6_review",
+                        "PSChildName":  "visual-final.log",
+                        "PSDrive":  "E",
+                        "PSProvider":  "Microsoft.PowerShell.Core\\FileSystem",
+                        "ReadCount":  150
+                    }
+    }
+]

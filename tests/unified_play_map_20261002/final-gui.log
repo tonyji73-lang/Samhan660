@@ -1,0 +1,129 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+Portrait metrics: clip_size=(420.0, 275.0) portrait_position=(-4.2, 11.0) portrait_size=(247.5, 363.0) parent=Control
+Hanji metrics: hanji_size=(168.0, 206.25) text_group_content_size=(318.0, 428.0) text_group_position=(-75.0, -110.875) horizontal_margins=(-75.0,-75.0) vertical_margins=(-110.875,-110.875)
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+NewGameSetup background: scenario_id=silla_equilibrium_632 faction_id=silla path=res://assets/faction_selection/backgrounds/faction_select_632_silla.webp exists=true
+NewGameSetup background texture: root=true map=true portrait=true map_world_visible=false map_texture_visible=false
+PASS: separate world-map feature removed
+PASS: original 35 layout entries preserved
+PASS: all actual campaign sites have play-map anchors
+PASS: actual or explicitly reference-only site asuka
+PASS: actual or explicitly reference-only site changan
+PASS: actual or explicitly reference-only site emishi_aguta
+PASS: actual or explicitly reference-only site hayato
+PASS: actual or explicitly reference-only site kibi
+PASS: actual or explicitly reference-only site koshi
+PASS: actual or explicitly reference-only site luoyang
+PASS: actual or explicitly reference-only site naniwa
+PASS: actual or explicitly reference-only site shandong
+PASS: actual or explicitly reference-only site steppe_adie
+PASS: actual or explicitly reference-only site steppe_bayegu
+PASS: actual or explicitly reference-only site steppe_duolange
+PASS: actual or explicitly reference-only site steppe_huihe
+PASS: actual or explicitly reference-only site steppe_hun
+PASS: actual or explicitly reference-only site steppe_pugu
+PASS: actual or explicitly reference-only site steppe_qibi
+PASS: actual or explicitly reference-only site steppe_sijie
+PASS: actual or explicitly reference-only site steppe_tongluo
+PASS: actual or explicitly reference-only site tsukushi
+PASS: capture 1280-continuous
+PASS: reference geography cannot execute campaign commands changan
+PASS: one play view retained changan
+PASS: external high-detail tiles active changan
+PASS: capture 1280-changan
+PASS: reference geography cannot execute campaign commands shandong
+PASS: one play view retained shandong
+PASS: external high-detail tiles active shandong
+PASS: capture 1280-shandong
+PASS: actual play-map click steppe_huihe(1280, 720)
+PASS: one play view retained steppe_huihe
+PASS: external high-detail tiles active steppe_huihe
+PASS: capture 1280-steppe_huihe
+PASS: actual play-map click steppe_bayegu(1280, 720)
+PASS: one play view retained steppe_bayegu
+PASS: external high-detail tiles active steppe_bayegu
+PASS: capture 1280-steppe_bayegu
+PASS: reference geography cannot execute campaign commands asuka
+PASS: one play view retained asuka
+PASS: external high-detail tiles active asuka
+PASS: capture 1280-asuka
+PASS: reference geography cannot execute campaign commands tsukushi
+PASS: one play view retained tsukushi
+PASS: external high-detail tiles active tsukushi
+PASS: capture 1280-tsukushi
+PASS: reference geography cannot execute campaign commands emishi_aguta
+PASS: one play view retained emishi_aguta
+PASS: external high-detail tiles active emishi_aguta
+PASS: capture 1280-emishi_aguta
+PASS: actual play-map click pyongyang(1280, 720)
+PASS: one play view retained pyongyang
+PASS: capture 1280-pyongyang
+PASS: actual play-map click geumseong(1280, 720)
+PASS: one play view retained geumseong
+PASS: capture 1280-geumseong
+PASS: negative world center restores
+PASS: wheel zoom outside Korea
+PASS: no detail texel enlargement at maximum changan
+PASS: capture 1280-max-changan
+PASS: no detail texel enlargement at maximum asuka
+PASS: capture 1280-max-asuka
+PASS: no detail texel enlargement at maximum steppe_huihe
+PASS: capture 1280-max-steppe_huihe
+PASS: actual drag outside Korea
+PASS: Esc retains unified play map
+PASS: navigation changes no campaign resources or troops
+PASS: capture 1920-continuous
+PASS: reference geography cannot execute campaign commands changan
+PASS: one play view retained changan
+PASS: external high-detail tiles active changan
+PASS: capture 1920-changan
+PASS: reference geography cannot execute campaign commands shandong
+PASS: one play view retained shandong
+PASS: external high-detail tiles active shandong
+PASS: capture 1920-shandong
+PASS: actual play-map click steppe_huihe(1920, 1080)
+PASS: one play view retained steppe_huihe
+PASS: external high-detail tiles active steppe_huihe
+PASS: capture 1920-steppe_huihe
+PASS: actual play-map click steppe_bayegu(1920, 1080)
+PASS: one play view retained steppe_bayegu
+PASS: external high-detail tiles active steppe_bayegu
+PASS: capture 1920-steppe_bayegu
+PASS: reference geography cannot execute campaign commands asuka
+PASS: one play view retained asuka
+PASS: external high-detail tiles active asuka
+PASS: capture 1920-asuka
+PASS: reference geography cannot execute campaign commands tsukushi
+PASS: one play view retained tsukushi
+PASS: external high-detail tiles active tsukushi
+PASS: capture 1920-tsukushi
+PASS: reference geography cannot execute campaign commands emishi_aguta
+PASS: one play view retained emishi_aguta
+PASS: external high-detail tiles active emishi_aguta
+PASS: capture 1920-emishi_aguta
+PASS: actual play-map click pyongyang(1920, 1080)
+PASS: one play view retained pyongyang
+PASS: capture 1920-pyongyang
+PASS: actual play-map click geumseong(1920, 1080)
+PASS: one play view retained geumseong
+PASS: capture 1920-geumseong
+PASS: negative world center restores
+PASS: wheel zoom outside Korea
+PASS: no detail texel enlargement at maximum changan
+PASS: capture 1920-max-changan
+PASS: no detail texel enlargement at maximum asuka
+PASS: capture 1920-max-asuka
+PASS: no detail texel enlargement at maximum steppe_huihe
+PASS: capture 1920-max-steppe_huihe
+PASS: actual drag outside Korea
+PASS: Esc retains unified play map
+PASS: navigation changes no campaign resources or troops
+UNIFIED PLAY MAP: 114 checks, 0 failures

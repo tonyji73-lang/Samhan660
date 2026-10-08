@@ -1,0 +1,13 @@
+﻿{
+    "BaselineSaves":  228,
+    "ProtectedFiles":  4,
+    "Damaged":  [
+
+                ],
+    "ChangedExistingSource":  [
+                                  "campaign_main.gd"
+                              ],
+    "BuildMismatch":  [
+
+                      ]
+}

@@ -1,0 +1,23 @@
+﻿{
+    "Scale":  "100%",
+    "Displays":  [
+                     {
+                         "Name":  "디스플레이 1❘3",
+                         "Selected":  true
+                     },
+                     {
+                         "Name":  "디스플레이 2",
+                         "Selected":  false
+                     }
+                 ],
+    "Game":  {
+                 "Pid":  34384,
+                 "Dpi":  96,
+                 "ClientWidth":  1280,
+                 "ClientHeight":  720,
+                 "ClientX":  88,
+                 "ClientY":  111,
+                 "OuterWidth":  1296,
+                 "OuterHeight":  759
+             }
+}

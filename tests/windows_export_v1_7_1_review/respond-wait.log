@@ -1,0 +1,56 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+PASS: editor helper absent
+PASS: pack includes data/officers_v1.json
+PASS: pack includes cutscenes/cutscene_catalog_v1.json
+PASS: pack includes ui/faction_selection_v1/layout.json
+PASS: pack includes ui/faction_declaration_v1/declarations.json
+PASS: pack includes ui/korea_layout_v1/full_r3_v1/manifest.json
+PASS: pack includes licenses/NanumMyeongjo-OFL.txt
+PASS: pack includes licenses/SamhanUISans-OFL.txt
+PASS: pack includes licenses/GODOT-LICENSE.txt
+PASS: packed raw map hash
+PASS: title Korean glyphs
+PASS: V1.7 court packed
+PASS: politics preview packed
+PASS: new EXE process restores full campaign governor
+PASS: gold loyalty cooperation influence period units work restored governor
+PASS: unanswered choices and targets preserved governor
+PASS: response quote read only governorwait
+PASS: cancel preserves politics
+PASS: capture governor-wait-preview-720
+PASS: capture governor-wait-preview-1080
+PASS: actual cost equals preview governorwait
+PASS: actual relations period and response equal preview
+PASS: actual units equal preview
+PASS: new slot preserves all existing saves governor-wait
+PASS: default user path save governor-wait
+PASS: capture governor-wait-applied
+PASS: new EXE process restores full campaign commander
+PASS: gold loyalty cooperation influence period units work restored commander
+PASS: unanswered choices and targets preserved commander
+PASS: response quote read only commanderwait
+PASS: cancel preserves politics
+PASS: capture commander-wait-preview-720
+PASS: capture commander-wait-preview-1080
+PASS: actual cost equals preview commanderwait
+PASS: actual relations period and response equal preview
+PASS: actual units equal preview
+PASS: new slot preserves all existing saves commander-wait
+PASS: default user path save commander-wait
+PASS: capture commander-wait-applied
+PASS: new EXE process restores full campaign demand
+PASS: gold loyalty cooperation influence period units work restored demand
+PASS: unanswered choices and targets preserved demand
+PASS: response quote read only demandaccept
+PASS: cancel preserves politics
+PASS: capture demand-accept-preview-720
+PASS: capture demand-accept-preview-1080
+PASS: actual cost equals preview demandaccept
+PASS: actual relations period and response equal preview
+PASS: actual units equal preview
+PASS: new slot preserves all existing saves demand-accept
+PASS: default user path save demand-accept
+PASS: capture demand-accept-applied
+EXPORT V1.7.1 respond-wait: 52 checks, 0 failures

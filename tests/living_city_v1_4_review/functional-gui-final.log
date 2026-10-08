@@ -1,0 +1,62 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: existing transfer moves real officer to unstaffed pilot city
+PASS: real month advances
+PASS: actual transfer arrival, no generated/injected officer
+PASS: existing build opens assignment and locks map
+PASS: shared estimate and cancellation rule visible
+PASS: capture smelter_quote
+PASS: UI pays original cost once smelter
+PASS: capture smelter_pending
+PASS: pending load restores job and map input
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: actual monthly completion smelter
+PASS: completed receipt visible
+PASS: capture smelter_completed
+PASS: Esc restores input
+PASS: existing build opens assignment and locks map
+PASS: shared estimate and cancellation rule visible
+PASS: capture forge_quote
+PASS: UI pays original cost once forge
+PASS: capture forge_pending
+PASS: pending load restores job and map input
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: actual monthly completion forge
+PASS: completed receipt visible
+PASS: capture forge_completed
+PASS: Esc restores input
+PASS: existing research opens assignment and locks map
+PASS: shared estimate and cancellation rule visible
+PASS: capture swordsmithing_quote
+PASS: UI pays original cost once swordsmithing
+PASS: capture swordsmithing_pending
+PASS: pending load restores job and map input
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: actual monthly completion swordsmithing
+PASS: completed receipt visible
+PASS: capture swordsmithing_completed
+PASS: Esc restores input
+PASS: real historical officer manages production
+PASS: capture production_manager
+PASS: capture both_facilities_ready
+PASS: real month advances
+PASS: real month advances
+PASS: real month advances
+PASS: native scenario chain produces actual sword inventory
+PASS: capture iron_to_swords
+PASS: production close restores map
+INDUSTRY GUI TESTS: 55 checks, 0 failures

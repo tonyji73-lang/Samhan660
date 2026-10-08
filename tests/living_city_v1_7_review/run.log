@@ -1,0 +1,151 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: actual Silla groups
+PASS: capture after-court
+PASS: Tab stays in court
+PASS: Shift Tab returns
+PASS: keyboard group selection silla:royal
+PASS: keyboard group selection silla:civil
+PASS: keyboard group selection silla:military
+PASS: group selection and opening are read-only
+PASS: group detail scrolls internally
+PASS: capture group-details
+PASS: many long entries scroll with close visible
+PASS: display-only long list fixture leaves data unchanged
+PASS: capture long-list
+PASS: Esc restores settlement input
+PASS: domestic 65 percent preserved
+PASS: actual Silla groups
+PASS: capture after-court
+PASS: Tab stays in court
+PASS: Shift Tab returns
+PASS: keyboard group selection silla:royal
+PASS: keyboard group selection silla:civil
+PASS: keyboard group selection silla:military
+PASS: group selection and opening are read-only
+PASS: group detail scrolls internally
+PASS: capture group-details
+PASS: many long entries scroll with close visible
+PASS: display-only long list fixture leaves data unchanged
+PASS: capture long-list
+PASS: Esc restores settlement input
+PASS: domestic 65 percent preserved
+PASS: normal authority offer governor
+PASS: existing command routes to new court
+PASS: choice preview is isolated governorcompensate
+PASS: keyboard cancel leaves real state
+PASS: capture governor-compensate-preview
+PASS: capture governor-compensate-preview
+PASS: preview gold equals actual governorcompensate
+PASS: preview complete politics equals actual governorcompensate
+PASS: preview units equal actual governorcompensate
+PASS: double confirmation not applied twice
+PASS: new test save governorcompensate
+PASS: pending/effects restore exactly governorcompensate
+PASS: capture governor-compensate-result
+PASS: normal authority offer governor
+PASS: existing command routes to new court
+PASS: choice preview is isolated governorwait
+PASS: keyboard cancel leaves real state
+PASS: capture governor-wait-preview
+PASS: capture governor-wait-preview
+PASS: preview gold equals actual governorwait
+PASS: preview complete politics equals actual governorwait
+PASS: preview units equal actual governorwait
+PASS: double confirmation not applied twice
+PASS: new test save governorwait
+PASS: pending/effects restore exactly governorwait
+PASS: capture governor-wait-result
+PASS: real monthly processing
+PASS: real monthly processing
+PASS: waiting completes by real month governor
+PASS: normal authority offer governor
+PASS: existing command routes to new court
+PASS: choice preview is isolated governorforce
+PASS: keyboard cancel leaves real state
+PASS: capture governor-force-preview
+PASS: capture governor-force-preview
+PASS: preview gold equals actual governorforce
+PASS: preview complete politics equals actual governorforce
+PASS: preview units equal actual governorforce
+PASS: double confirmation not applied twice
+PASS: new test save governorforce
+PASS: pending/effects restore exactly governorforce
+PASS: capture governor-force-result
+PASS: real monthly processing
+PASS: real monthly processing
+PASS: force disruption expires governor
+PASS: normal authority offer commander
+PASS: existing command routes to new court
+PASS: choice preview is isolated commandercompensate
+PASS: keyboard cancel leaves real state
+PASS: capture commander-compensate-preview
+PASS: capture commander-compensate-preview
+PASS: preview gold equals actual commandercompensate
+PASS: preview complete politics equals actual commandercompensate
+PASS: preview units equal actual commandercompensate
+PASS: double confirmation not applied twice
+PASS: new test save commandercompensate
+PASS: pending/effects restore exactly commandercompensate
+PASS: capture commander-compensate-result
+PASS: normal authority offer commander
+PASS: existing command routes to new court
+PASS: choice preview is isolated commanderwait
+PASS: keyboard cancel leaves real state
+PASS: capture commander-wait-preview
+PASS: capture commander-wait-preview
+PASS: preview gold equals actual commanderwait
+PASS: preview complete politics equals actual commanderwait
+PASS: preview units equal actual commanderwait
+PASS: double confirmation not applied twice
+PASS: new test save commanderwait
+PASS: pending/effects restore exactly commanderwait
+PASS: capture commander-wait-result
+PASS: real monthly processing
+PASS: real monthly processing
+PASS: waiting completes by real month commander
+PASS: normal authority offer commander
+PASS: existing command routes to new court
+PASS: choice preview is isolated commanderforce
+PASS: keyboard cancel leaves real state
+PASS: capture commander-force-preview
+PASS: capture commander-force-preview
+PASS: preview gold equals actual commanderforce
+PASS: preview complete politics equals actual commanderforce
+PASS: preview units equal actual commanderforce
+PASS: double confirmation not applied twice
+PASS: new test save commanderforce
+PASS: pending/effects restore exactly commanderforce
+PASS: capture commander-force-result
+PASS: real monthly processing
+PASS: force disruption expires commander
+PASS: 642 normal governor appointment
+PASS: 642 normal commander appointment
+PASS: normal gameplay demand generated
+PASS: demand preview pure gift
+PASS: capture demand-gift
+PASS: preview gold equals actual demand-gift
+PASS: preview complete politics equals actual demand-gift
+PASS: preview units equal actual demand-gift
+PASS: demand response duplicate safe
+PASS: demand preview pure reject
+PASS: capture demand-reject
+PASS: preview gold equals actual demand-reject
+PASS: preview complete politics equals actual demand-reject
+PASS: preview units equal actual demand-reject
+PASS: demand response duplicate safe
+PASS: demand preview pure accept
+PASS: capture demand-accept
+PASS: preview gold equals actual demand-accept
+PASS: preview complete politics equals actual demand-accept
+PASS: preview units equal actual demand-accept
+PASS: demand response duplicate safe
+PASS: no invented groups baekje
+PASS: actual faction people and ruler baekje
+PASS: capture baekje-court
+PASS: no invented groups goguryeo
+PASS: actual faction people and ruler goguryeo
+PASS: capture goguryeo-court
+V1.7 GUI: 146 checks, 0 failures

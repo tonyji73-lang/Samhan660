@@ -1,0 +1,58 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+ERROR: Failed to read the root certificate store.
+   at: get_system_ca_certificates (platform/windows/os_windows.cpp:2582)
+[godot_ai game_helper] registered mcp capture (debugger active=false, logger=true)
+PASS: capture domestic-1280
+PASS: persistent control inside viewport: 개발 지시 · 금 100
+PASS: command is above footer, without overlap: 개발 지시 · 금 100
+PASS: persistent control inside viewport: 업무 취소
+PASS: command is above footer, without overlap: 업무 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: same-city personnel mode retains map lock
+PASS: opening personnel and quote leaves state unchanged
+PASS: capture personnel-1280
+PASS: persistent control inside viewport: 임명 확정
+PASS: command is above footer, without overlap: 임명 확정
+PASS: persistent control inside viewport: 선택 취소
+ERROR: FAIL: command is above footer, without overlap: 선택 취소
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/project_foundation_test.gd:20)
+       [1] bounds (res://tests/living_city_ui_v1_1_play.gd:17)
+       [2] _run (res://tests/living_city_ui_v1_1_play.gd:60)
+       [3] capture (res://tests/living_city_ui_v1_1_play.gd:28)
+PASS: persistent control inside viewport: 닫기 (Esc)
+ERROR: FAIL: command is above footer, without overlap: 닫기 (Esc)
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] check (res://tests/project_foundation_test.gd:20)
+       [1] bounds (res://tests/living_city_ui_v1_1_play.gd:17)
+       [2] _run (res://tests/living_city_ui_v1_1_play.gd:60)
+       [3] capture (res://tests/living_city_ui_v1_1_play.gd:28)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture personnel-1920
+PASS: capture domestic-1920
+PASS: persistent control inside viewport: 개발 지시 · 금 100
+PASS: command is above footer, without overlap: 개발 지시 · 금 100
+PASS: persistent control inside viewport: 업무 취소
+PASS: command is above footer, without overlap: 업무 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+PASS: capture domestic-2560
+PASS: persistent control inside viewport: 개발 지시 · 금 100
+PASS: command is above footer, without overlap: 개발 지시 · 금 100
+PASS: persistent control inside viewport: 업무 취소
+PASS: command is above footer, without overlap: 업무 취소
+PASS: persistent control inside viewport: 닫기 (Esc)
+PASS: command is above footer, without overlap: 닫기 (Esc)
+PASS: persistent control inside viewport: 다음 달  →
+PASS: city and work panel retain 65/35 split
+LIVING CITY V1.1 VISUAL CHECKS: 39 checks, 2 failures

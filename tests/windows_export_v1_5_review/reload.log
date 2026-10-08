@@ -1,0 +1,44 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+D3D12 12_0 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+PASS: editor helper absent
+PASS: pack includes data/officers_v1.json
+PASS: pack includes cutscenes/cutscene_catalog_v1.json
+PASS: pack includes ui/faction_selection_v1/layout.json
+PASS: pack includes ui/faction_declaration_v1/declarations.json
+PASS: pack includes ui/korea_layout_v1/full_r3_v1/manifest.json
+PASS: pack includes licenses/NanumMyeongjo-OFL.txt
+PASS: pack includes licenses/SamhanUISans-OFL.txt
+PASS: pack includes licenses/GODOT-LICENSE.txt
+PASS: packed raw map hash
+PASS: title Korean glyphs
+PASS: capture title-reload
+PASS: restart restores exact date officers progress treasury inventory
+PASS: capture restored
+PASS: actual month advances
+PASS: actual month advances
+PASS: completed research
+PASS: actual month advances
+PASS: actual month advances
+PASS: completed build
+PASS: normal available build forge
+PASS: accepted build forge
+PASS: capture build-accepted-forge
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+PASS: completed build
+PASS: normal available production 
+PASS: accepted production 
+PASS: capture production-accepted-
+PASS: capture production-running
+PASS: actual month advances
+PASS: actual month advances
+PASS: actual month advances
+FAIL: actual monthly sword output increases
+PASS: capture production-complete
+PASS: second new slot does not overwrite saves
+PASS: save running production to default user path
+EXPORT V1.5 reload: 40 checks, 1 failures

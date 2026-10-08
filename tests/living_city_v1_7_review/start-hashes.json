@@ -1,0 +1,47 @@
+﻿[
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "0BBCFF628B87B9EC192E48D52FB68387393D4FF1BB39BD736A39723DE5957B3E",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\noble_politics_overlay.gd"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "7A9CC7BB7562FC8F7F917734573864B5D30F600898CA605D407C1B8468EB9909",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\noble_power_constraints.gd"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "4ABEA653F23121D8702AC4EA56E8DA95743CD07E56E0362ADFF9A041B79FF4D4",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\noble_personnel.gd"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "B9F0B54EA985D3F992A913CFC56811D19E68668892ACB5A620E6CF72D06DDC3C",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\noble_politics.gd"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "8DC4E242011919895E4B4BAFB950A045244F4F19E600E5CBF8CB4A357488C966",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\campaign_main.gd"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "F0D843D0487A179C7E9C7DFCB6F2163730317BCF9AE814C3A4AAD77A37935688",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\project.godot"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "8DF592CDDFC3DCF07419A0CD7B4DE4F0803D45FE0815A74739082AA0AF8E5CEB",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\army_readiness.gd"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "999D4F6B5690D9830314D969DF9C748D06C0BD850BC5E96715B7554C7DC7B130",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\domestic_assignment_overlay.gd"
+    },
+    {
+        "Algorithm":  "SHA256",
+        "Hash":  "6D80BDDD55270E876EE639B16AA669653DF9C4AB6B226AE98583D99A882D31D0",
+        "Path":  "E:\\OneDrive - GRTech\\문서\\samhan-660-2026-09-02-00-00-33-home\\Samhan660-faction-rulers-v1\\.worktrees\\project-foundation-v1\\tests\\HOME_HANDOFF_20260923.md"
+    }
+]

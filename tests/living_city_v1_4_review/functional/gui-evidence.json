@@ -1,0 +1,6351 @@
+[
+	{
+		"cost": 240.0,
+		"gold_after": 10651,
+		"kind": "build",
+		"month": 7,
+		"months": 5,
+		"officer_id": "historical:001",
+		"progress": 600,
+		"requirement": "smelter",
+		"year": 632
+	},
+	{
+		"cost": 320.0,
+		"gold_after": 19124,
+		"kind": "build",
+		"month": 12,
+		"months": 5,
+		"officer_id": "historical:001",
+		"progress": 600,
+		"requirement": "forge",
+		"year": 632
+	},
+	{
+		"cost": 200.0,
+		"gold_after": 23932,
+		"kind": "research",
+		"month": 3,
+		"months": 3,
+		"officer_id": "historical:001",
+		"progress": 300,
+		"requirement": "swordsmithing",
+		"year": 633
+	},
+	{
+		"account": {
+			"balance": 28740,
+			"expense": 824,
+			"income": 28564,
+			"opening": 1000.0
+		},
+		"entries": [
+			{
+				"amount": 44.0,
+				"balance": 1044.0,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:shinseong:7586"
+			},
+			{
+				"amount": 57.0,
+				"balance": 1101.0,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7586"
+			},
+			{
+				"amount": 174.0,
+				"balance": 1275.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:ansi:7586"
+			},
+			{
+				"amount": 89.0,
+				"balance": 1364.0,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:geonanseong:7586"
+			},
+			{
+				"amount": 140.0,
+				"balance": 1504.0,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:gungnae:7586"
+			},
+			{
+				"amount": 117.0,
+				"balance": 1621.0,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:chaekseong:7586"
+			},
+			{
+				"amount": 46.0,
+				"balance": 1667.0,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7586"
+			},
+			{
+				"amount": 232.0,
+				"balance": 1899.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:pyongyang:7586"
+			},
+			{
+				"amount": 69.0,
+				"balance": 1968.0,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:daedonggang:7586"
+			},
+			{
+				"amount": 85.0,
+				"balance": 2053.0,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:goksan:7586"
+			},
+			{
+				"amount": 103.0,
+				"balance": 2156.0,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:hwanghae:7586"
+			},
+			{
+				"amount": 122.0,
+				"balance": 1122.0,
+				"city_id": "bukhansan",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:bukhansan:7586"
+			},
+			{
+				"amount": 44.0,
+				"balance": 1166.0,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:danghangseong:7586"
+			},
+			{
+				"amount": 57.0,
+				"balance": 1223.0,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7586"
+			},
+			{
+				"amount": 144.0,
+				"balance": 1367.0,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:gukwon:7586"
+			},
+			{
+				"amount": 89.0,
+				"balance": 1456.0,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:haslla:7586"
+			},
+			{
+				"amount": 98.0,
+				"balance": 1554.0,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:siljik:7586"
+			},
+			{
+				"amount": 117.0,
+				"balance": 1117.0,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:imjonseong:7586"
+			},
+			{
+				"amount": 113.0,
+				"balance": 1230.0,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:ungjin:7586"
+			},
+			{
+				"amount": 180.0,
+				"balance": 1410.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:sabi:7586"
+			},
+			{
+				"amount": 69.0,
+				"balance": 1479.0,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:geummajeo:7586"
+			},
+			{
+				"amount": 81.0,
+				"balance": 1560.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:gosa:7586"
+			},
+			{
+				"amount": 103.0,
+				"balance": 1663.0,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:juryuseong:7586"
+			},
+			{
+				"amount": 122.0,
+				"balance": 1785.0,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7586"
+			},
+			{
+				"amount": 155.0,
+				"balance": 1709.0,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:geumseong:7586"
+			},
+			{
+				"amount": 140.0,
+				"balance": 1849.0,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:sabeol:7586"
+			},
+			{
+				"amount": 72.0,
+				"balance": 1921.0,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7586"
+			},
+			{
+				"amount": 89.0,
+				"balance": 2010.0,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:daegaya:7586"
+			},
+			{
+				"amount": 98.0,
+				"balance": 2108.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:geumgwan:7586"
+			},
+			{
+				"amount": 117.0,
+				"balance": 2225.0,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:sogaya:7586"
+			},
+			{
+				"amount": 60.0,
+				"balance": 2285.0,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:ulleung:7586"
+			},
+			{
+				"amount": 69.0,
+				"balance": 2354.0,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:ganghwa:7586"
+			},
+			{
+				"amount": 85.0,
+				"balance": 2439.0,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:jukryeong:7586"
+			},
+			{
+				"amount": 103.0,
+				"balance": 2542.0,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7586"
+			},
+			{
+				"amount": -240.0,
+				"balance": 1545.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7586.0,
+				"reason": "build",
+				"token": "industry:1:cost"
+			},
+			{
+				"amount": -200.0,
+				"balance": 1345.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7586.0,
+				"reason": "research",
+				"token": "industry:2:cost"
+			},
+			{
+				"amount": -75.0,
+				"balance": 2081.0,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "recruitment",
+				"token": ""
+			},
+			{
+				"amount": -240.0,
+				"balance": 1841.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "build",
+				"token": "industry:6:cost"
+			},
+			{
+				"amount": -200.0,
+				"balance": 1641.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7586.0,
+				"reason": "research",
+				"token": "industry:7:cost"
+			},
+			{
+				"amount": -240.0,
+				"balance": 2302.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7586.0,
+				"reason": "build",
+				"token": "industry:9:cost"
+			},
+			{
+				"amount": 46.0,
+				"balance": 1687.0,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:shinseong:7587"
+			},
+			{
+				"amount": 59.0,
+				"balance": 1746.0,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7587"
+			},
+			{
+				"amount": 179.0,
+				"balance": 1925.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:ansi:7587"
+			},
+			{
+				"amount": 91.0,
+				"balance": 2016.0,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:geonanseong:7587"
+			},
+			{
+				"amount": 144.0,
+				"balance": 2160.0,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:gungnae:7587"
+			},
+			{
+				"amount": 120.0,
+				"balance": 2280.0,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:chaekseong:7587"
+			},
+			{
+				"amount": 48.0,
+				"balance": 2328.0,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7587"
+			},
+			{
+				"amount": 239.0,
+				"balance": 2567.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:pyongyang:7587"
+			},
+			{
+				"amount": 71.0,
+				"balance": 2638.0,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:daedonggang:7587"
+			},
+			{
+				"amount": 87.0,
+				"balance": 2725.0,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:goksan:7587"
+			},
+			{
+				"amount": 105.0,
+				"balance": 2830.0,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:hwanghae:7587"
+			},
+			{
+				"amount": 126.0,
+				"balance": 2428.0,
+				"city_id": "bukhansan",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:bukhansan:7587"
+			},
+			{
+				"amount": 46.0,
+				"balance": 2474.0,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:danghangseong:7587"
+			},
+			{
+				"amount": 59.0,
+				"balance": 2533.0,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7587"
+			},
+			{
+				"amount": 149.0,
+				"balance": 2682.0,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:gukwon:7587"
+			},
+			{
+				"amount": 91.0,
+				"balance": 2773.0,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:haslla:7587"
+			},
+			{
+				"amount": 101.0,
+				"balance": 2874.0,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:siljik:7587"
+			},
+			{
+				"amount": 120.0,
+				"balance": 1465.0,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:imjonseong:7587"
+			},
+			{
+				"amount": 116.0,
+				"balance": 1581.0,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:ungjin:7587"
+			},
+			{
+				"amount": 187.0,
+				"balance": 1768.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:sabi:7587"
+			},
+			{
+				"amount": 71.0,
+				"balance": 1839.0,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:geummajeo:7587"
+			},
+			{
+				"amount": 83.0,
+				"balance": 1922.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:gosa:7587"
+			},
+			{
+				"amount": 105.0,
+				"balance": 2027.0,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:juryuseong:7587"
+			},
+			{
+				"amount": 126.0,
+				"balance": 2153.0,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7587"
+			},
+			{
+				"amount": 160.0,
+				"balance": 3034.0,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:geumseong:7587"
+			},
+			{
+				"amount": 143.0,
+				"balance": 3177.0,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:sabeol:7587"
+			},
+			{
+				"amount": 74.0,
+				"balance": 3251.0,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7587"
+			},
+			{
+				"amount": 91.0,
+				"balance": 3342.0,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:daegaya:7587"
+			},
+			{
+				"amount": 101.0,
+				"balance": 3443.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:geumgwan:7587"
+			},
+			{
+				"amount": 120.0,
+				"balance": 3563.0,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:sogaya:7587"
+			},
+			{
+				"amount": 62.0,
+				"balance": 3625.0,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:ulleung:7587"
+			},
+			{
+				"amount": 71.0,
+				"balance": 3696.0,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:ganghwa:7587"
+			},
+			{
+				"amount": 87.0,
+				"balance": 3783.0,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:jukryeong:7587"
+			},
+			{
+				"amount": 105.0,
+				"balance": 3888.0,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7587.0,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7587"
+			},
+			{
+				"amount": -50.0,
+				"balance": 2103.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7587.0,
+				"reason": "training",
+				"token": "training:3:7587"
+			},
+			{
+				"amount": -50.0,
+				"balance": 2053.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7587.0,
+				"reason": "training",
+				"token": "training:4:7587"
+			},
+			{
+				"amount": -50.0,
+				"balance": 2003.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7587.0,
+				"reason": "training",
+				"token": "training:5:7587"
+			},
+			{
+				"amount": -50.0,
+				"balance": 2780.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7587.0,
+				"reason": "training",
+				"token": "training:8:7587"
+			},
+			{
+				"amount": 47.0,
+				"balance": 2827.0,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:shinseong:7588"
+			},
+			{
+				"amount": 61.0,
+				"balance": 2888.0,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7588"
+			},
+			{
+				"amount": 184.0,
+				"balance": 3072.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:ansi:7588"
+			},
+			{
+				"amount": 93.0,
+				"balance": 3165.0,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:geonanseong:7588"
+			},
+			{
+				"amount": 148.0,
+				"balance": 3313.0,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:gungnae:7588"
+			},
+			{
+				"amount": 124.0,
+				"balance": 3437.0,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:chaekseong:7588"
+			},
+			{
+				"amount": 49.0,
+				"balance": 3486.0,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7588"
+			},
+			{
+				"amount": 246.0,
+				"balance": 3732.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:pyongyang:7588"
+			},
+			{
+				"amount": 73.0,
+				"balance": 3805.0,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:daedonggang:7588"
+			},
+			{
+				"amount": 90.0,
+				"balance": 3895.0,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:goksan:7588"
+			},
+			{
+				"amount": 108.0,
+				"balance": 4003.0,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:hwanghae:7588"
+			},
+			{
+				"amount": 129.0,
+				"balance": 4017.0,
+				"city_id": "bukhansan",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:bukhansan:7588"
+			},
+			{
+				"amount": 47.0,
+				"balance": 4064.0,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:danghangseong:7588"
+			},
+			{
+				"amount": 61.0,
+				"balance": 4125.0,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7588"
+			},
+			{
+				"amount": 152.0,
+				"balance": 4277.0,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:gukwon:7588"
+			},
+			{
+				"amount": 93.0,
+				"balance": 4370.0,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:haslla:7588"
+			},
+			{
+				"amount": 104.0,
+				"balance": 4474.0,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:siljik:7588"
+			},
+			{
+				"amount": 124.0,
+				"balance": 2127.0,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:imjonseong:7588"
+			},
+			{
+				"amount": 119.0,
+				"balance": 2246.0,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:ungjin:7588"
+			},
+			{
+				"amount": 193.0,
+				"balance": 2439.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:sabi:7588"
+			},
+			{
+				"amount": 73.0,
+				"balance": 2512.0,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:geummajeo:7588"
+			},
+			{
+				"amount": 87.0,
+				"balance": 2599.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:gosa:7588"
+			},
+			{
+				"amount": 108.0,
+				"balance": 2707.0,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:juryuseong:7588"
+			},
+			{
+				"amount": 129.0,
+				"balance": 2836.0,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7588"
+			},
+			{
+				"amount": 165.0,
+				"balance": 4639.0,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:geumseong:7588"
+			},
+			{
+				"amount": 148.0,
+				"balance": 4787.0,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:sabeol:7588"
+			},
+			{
+				"amount": 76.0,
+				"balance": 4863.0,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7588"
+			},
+			{
+				"amount": 93.0,
+				"balance": 4956.0,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:daegaya:7588"
+			},
+			{
+				"amount": 104.0,
+				"balance": 5060.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:geumgwan:7588"
+			},
+			{
+				"amount": 124.0,
+				"balance": 5184.0,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:sogaya:7588"
+			},
+			{
+				"amount": 63.0,
+				"balance": 5247.0,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:ulleung:7588"
+			},
+			{
+				"amount": 73.0,
+				"balance": 5320.0,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:ganghwa:7588"
+			},
+			{
+				"amount": 90.0,
+				"balance": 5410.0,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:jukryeong:7588"
+			},
+			{
+				"amount": 108.0,
+				"balance": 5518.0,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7588.0,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7588"
+			},
+			{
+				"amount": -50.0,
+				"balance": 2786.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7588.0,
+				"reason": "training",
+				"token": "training:3:7588"
+			},
+			{
+				"amount": -50.0,
+				"balance": 2736.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7588.0,
+				"reason": "training",
+				"token": "training:4:7588"
+			},
+			{
+				"amount": -50.0,
+				"balance": 2686.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7588.0,
+				"reason": "training",
+				"token": "training:5:7588"
+			},
+			{
+				"amount": -50.0,
+				"balance": 3953.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "training",
+				"token": "training:8:7588"
+			},
+			{
+				"amount": -240.0,
+				"balance": 2446.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7588.0,
+				"reason": "build",
+				"token": "industry:10:cost"
+			},
+			{
+				"amount": -240.0,
+				"balance": 3713.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7588.0,
+				"reason": "build",
+				"token": "industry:12:cost"
+			},
+			{
+				"amount": 48.0,
+				"balance": 3761.0,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:shinseong:7589"
+			},
+			{
+				"amount": 62.0,
+				"balance": 3823.0,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7589"
+			},
+			{
+				"amount": 188.0,
+				"balance": 4011.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:ansi:7589"
+			},
+			{
+				"amount": 96.0,
+				"balance": 4107.0,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:geonanseong:7589"
+			},
+			{
+				"amount": 152.0,
+				"balance": 4259.0,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:gungnae:7589"
+			},
+			{
+				"amount": 127.0,
+				"balance": 4386.0,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:chaekseong:7589"
+			},
+			{
+				"amount": 50.0,
+				"balance": 4436.0,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7589"
+			},
+			{
+				"amount": 251.0,
+				"balance": 4687.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:pyongyang:7589"
+			},
+			{
+				"amount": 75.0,
+				"balance": 4762.0,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:daedonggang:7589"
+			},
+			{
+				"amount": 92.0,
+				"balance": 4854.0,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:goksan:7589"
+			},
+			{
+				"amount": 111.0,
+				"balance": 4965.0,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:hwanghae:7589"
+			},
+			{
+				"amount": 133.0,
+				"balance": 5651.0,
+				"city_id": "bukhansan",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:bukhansan:7589"
+			},
+			{
+				"amount": 48.0,
+				"balance": 5699.0,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:danghangseong:7589"
+			},
+			{
+				"amount": 62.0,
+				"balance": 5761.0,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7589"
+			},
+			{
+				"amount": 157.0,
+				"balance": 5918.0,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:gukwon:7589"
+			},
+			{
+				"amount": 96.0,
+				"balance": 6014.0,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:haslla:7589"
+			},
+			{
+				"amount": 107.0,
+				"balance": 6121.0,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:siljik:7589"
+			},
+			{
+				"amount": 127.0,
+				"balance": 2573.0,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:imjonseong:7589"
+			},
+			{
+				"amount": 123.0,
+				"balance": 2696.0,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:ungjin:7589"
+			},
+			{
+				"amount": 198.0,
+				"balance": 2894.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:sabi:7589"
+			},
+			{
+				"amount": 75.0,
+				"balance": 2969.0,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:geummajeo:7589"
+			},
+			{
+				"amount": 89.0,
+				"balance": 3058.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:gosa:7589"
+			},
+			{
+				"amount": 111.0,
+				"balance": 3169.0,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:juryuseong:7589"
+			},
+			{
+				"amount": 133.0,
+				"balance": 3302.0,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7589"
+			},
+			{
+				"amount": 169.0,
+				"balance": 6290.0,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:geumseong:7589"
+			},
+			{
+				"amount": 151.0,
+				"balance": 6441.0,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:sabeol:7589"
+			},
+			{
+				"amount": 78.0,
+				"balance": 6519.0,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7589"
+			},
+			{
+				"amount": 96.0,
+				"balance": 6615.0,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:daegaya:7589"
+			},
+			{
+				"amount": 107.0,
+				"balance": 6722.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:geumgwan:7589"
+			},
+			{
+				"amount": 127.0,
+				"balance": 6849.0,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:sogaya:7589"
+			},
+			{
+				"amount": 65.0,
+				"balance": 6914.0,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:ulleung:7589"
+			},
+			{
+				"amount": 75.0,
+				"balance": 6989.0,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:ganghwa:7589"
+			},
+			{
+				"amount": 92.0,
+				"balance": 7081.0,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:jukryeong:7589"
+			},
+			{
+				"amount": 111.0,
+				"balance": 7192.0,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7589.0,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7589"
+			},
+			{
+				"amount": -50.0,
+				"balance": 3252.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7589.0,
+				"reason": "training",
+				"token": "training:11:7589"
+			},
+			{
+				"amount": -200.0,
+				"balance": 3052.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7589.0,
+				"reason": "research",
+				"token": "industry:13:cost"
+			},
+			{
+				"amount": -200.0,
+				"balance": 4765.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7589.0,
+				"reason": "research",
+				"token": "industry:14:cost"
+			},
+			{
+				"amount": 50.0,
+				"balance": 4815.0,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:shinseong:7590"
+			},
+			{
+				"amount": 64.0,
+				"balance": 4879.0,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7590"
+			},
+			{
+				"amount": 188.0,
+				"balance": 5067.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:ansi:7590"
+			},
+			{
+				"amount": 98.0,
+				"balance": 5165.0,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:geonanseong:7590"
+			},
+			{
+				"amount": 156.0,
+				"balance": 5321.0,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:gungnae:7590"
+			},
+			{
+				"amount": 131.0,
+				"balance": 5452.0,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:chaekseong:7590"
+			},
+			{
+				"amount": 52.0,
+				"balance": 5504.0,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7590"
+			},
+			{
+				"amount": 258.0,
+				"balance": 5762.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:pyongyang:7590"
+			},
+			{
+				"amount": 77.0,
+				"balance": 5839.0,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:daedonggang:7590"
+			},
+			{
+				"amount": 94.0,
+				"balance": 5933.0,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:goksan:7590"
+			},
+			{
+				"amount": 114.0,
+				"balance": 6047.0,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:hwanghae:7590"
+			},
+			{
+				"amount": 136.0,
+				"balance": 7328.0,
+				"city_id": "bukhansan",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:bukhansan:7590"
+			},
+			{
+				"amount": 50.0,
+				"balance": 7378.0,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:danghangseong:7590"
+			},
+			{
+				"amount": 64.0,
+				"balance": 7442.0,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7590"
+			},
+			{
+				"amount": 160.0,
+				"balance": 7602.0,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:gukwon:7590"
+			},
+			{
+				"amount": 98.0,
+				"balance": 7700.0,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:haslla:7590"
+			},
+			{
+				"amount": 109.0,
+				"balance": 7809.0,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:siljik:7590"
+			},
+			{
+				"amount": 131.0,
+				"balance": 3183.0,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:imjonseong:7590"
+			},
+			{
+				"amount": 126.0,
+				"balance": 3309.0,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:ungjin:7590"
+			},
+			{
+				"amount": 204.0,
+				"balance": 3513.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:sabi:7590"
+			},
+			{
+				"amount": 77.0,
+				"balance": 3590.0,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:geummajeo:7590"
+			},
+			{
+				"amount": 91.0,
+				"balance": 3681.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:gosa:7590"
+			},
+			{
+				"amount": 114.0,
+				"balance": 3795.0,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:juryuseong:7590"
+			},
+			{
+				"amount": 136.0,
+				"balance": 3931.0,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7590"
+			},
+			{
+				"amount": 173.0,
+				"balance": 7982.0,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:geumseong:7590"
+			},
+			{
+				"amount": 156.0,
+				"balance": 8138.0,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:sabeol:7590"
+			},
+			{
+				"amount": 80.0,
+				"balance": 8218.0,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7590"
+			},
+			{
+				"amount": 98.0,
+				"balance": 8316.0,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:daegaya:7590"
+			},
+			{
+				"amount": 109.0,
+				"balance": 8425.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:geumgwan:7590"
+			},
+			{
+				"amount": 131.0,
+				"balance": 8556.0,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:sogaya:7590"
+			},
+			{
+				"amount": 67.0,
+				"balance": 8623.0,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:ulleung:7590"
+			},
+			{
+				"amount": 77.0,
+				"balance": 8700.0,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:ganghwa:7590"
+			},
+			{
+				"amount": 94.0,
+				"balance": 8794.0,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:jukryeong:7590"
+			},
+			{
+				"amount": 114.0,
+				"balance": 8908.0,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7590.0,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7590"
+			},
+			{
+				"amount": -50.0,
+				"balance": 3881.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7590.0,
+				"reason": "training",
+				"token": "training:11:7590"
+			},
+			{
+				"amount": 51.0,
+				"balance": 6098.0,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:shinseong:7591"
+			},
+			{
+				"amount": 66.0,
+				"balance": 6164.0,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7591"
+			},
+			{
+				"amount": 188.0,
+				"balance": 6352.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:ansi:7591"
+			},
+			{
+				"amount": 98.0,
+				"balance": 6450.0,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:geonanseong:7591"
+			},
+			{
+				"amount": 156.0,
+				"balance": 6606.0,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:gungnae:7591"
+			},
+			{
+				"amount": 134.0,
+				"balance": 6740.0,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:chaekseong:7591"
+			},
+			{
+				"amount": 53.0,
+				"balance": 6793.0,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7591"
+			},
+			{
+				"amount": 265.0,
+				"balance": 7058.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:pyongyang:7591"
+			},
+			{
+				"amount": 79.0,
+				"balance": 7137.0,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:daedonggang:7591"
+			},
+			{
+				"amount": 97.0,
+				"balance": 7234.0,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:goksan:7591"
+			},
+			{
+				"amount": 116.0,
+				"balance": 7350.0,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:hwanghae:7591"
+			},
+			{
+				"amount": 136.0,
+				"balance": 9044.0,
+				"city_id": "bukhansan",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:bukhansan:7591"
+			},
+			{
+				"amount": 51.0,
+				"balance": 9095.0,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:danghangseong:7591"
+			},
+			{
+				"amount": 66.0,
+				"balance": 9161.0,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7591"
+			},
+			{
+				"amount": 160.0,
+				"balance": 9321.0,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:gukwon:7591"
+			},
+			{
+				"amount": 98.0,
+				"balance": 9419.0,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:haslla:7591"
+			},
+			{
+				"amount": 112.0,
+				"balance": 9531.0,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:siljik:7591"
+			},
+			{
+				"amount": 134.0,
+				"balance": 4015.0,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:imjonseong:7591"
+			},
+			{
+				"amount": 130.0,
+				"balance": 4145.0,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:ungjin:7591"
+			},
+			{
+				"amount": 211.0,
+				"balance": 4356.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:sabi:7591"
+			},
+			{
+				"amount": 79.0,
+				"balance": 4435.0,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:geummajeo:7591"
+			},
+			{
+				"amount": 93.0,
+				"balance": 4528.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:gosa:7591"
+			},
+			{
+				"amount": 116.0,
+				"balance": 4644.0,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:juryuseong:7591"
+			},
+			{
+				"amount": 136.0,
+				"balance": 4780.0,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7591"
+			},
+			{
+				"amount": 175.0,
+				"balance": 9706.0,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:geumseong:7591"
+			},
+			{
+				"amount": 160.0,
+				"balance": 9866.0,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:sabeol:7591"
+			},
+			{
+				"amount": 82.0,
+				"balance": 9948.0,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7591"
+			},
+			{
+				"amount": 98.0,
+				"balance": 10046.0,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:daegaya:7591"
+			},
+			{
+				"amount": 112.0,
+				"balance": 10158.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:geumgwan:7591"
+			},
+			{
+				"amount": 134.0,
+				"balance": 10292.0,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:sogaya:7591"
+			},
+			{
+				"amount": 67.0,
+				"balance": 10359.0,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:ulleung:7591"
+			},
+			{
+				"amount": 79.0,
+				"balance": 10438.0,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:ganghwa:7591"
+			},
+			{
+				"amount": 97.0,
+				"balance": 10535.0,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:jukryeong:7591"
+			},
+			{
+				"amount": 116.0,
+				"balance": 10651.0,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7591"
+			},
+			{
+				"amount": -50.0,
+				"balance": 4730.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7591.0,
+				"reason": "training",
+				"token": "training:15:7591"
+			},
+			{
+				"amount": -50.0,
+				"balance": 4680.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7591.0,
+				"reason": "training",
+				"token": "training:16:7591"
+			},
+			{
+				"amount": -18.0,
+				"balance": 4662.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7591.0,
+				"reason": "production",
+				"token": "facility:sabi:smelter:7591"
+			},
+			{
+				"amount": -18.0,
+				"balance": 7332.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "production",
+				"token": "facility:pyongyang:smelter:7591"
+			},
+			{
+				"amount": -320.0,
+				"balance": 4342.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7591.0,
+				"reason": "build",
+				"token": "industry:17:cost"
+			},
+			{
+				"amount": -320.0,
+				"balance": 7012.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7591.0,
+				"reason": "build",
+				"token": "industry:18:cost"
+			},
+			{
+				"amount": -320.0,
+				"balance": 10331.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7591.0,
+				"reason": "build",
+				"token": "industry:19:cost"
+			},
+			{
+				"amount": 52.0,
+				"balance": 7064.0,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:shinseong:7592"
+			},
+			{
+				"amount": 67.0,
+				"balance": 7131.0,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7592"
+			},
+			{
+				"amount": 188.0,
+				"balance": 7319.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:ansi:7592"
+			},
+			{
+				"amount": 98.0,
+				"balance": 7417.0,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:geonanseong:7592"
+			},
+			{
+				"amount": 156.0,
+				"balance": 7573.0,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:gungnae:7592"
+			},
+			{
+				"amount": 136.0,
+				"balance": 7709.0,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:chaekseong:7592"
+			},
+			{
+				"amount": 53.0,
+				"balance": 7762.0,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7592"
+			},
+			{
+				"amount": 272.0,
+				"balance": 8034.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:pyongyang:7592"
+			},
+			{
+				"amount": 81.0,
+				"balance": 8115.0,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:daedonggang:7592"
+			},
+			{
+				"amount": 98.0,
+				"balance": 8213.0,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:goksan:7592"
+			},
+			{
+				"amount": 116.0,
+				"balance": 8329.0,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:hwanghae:7592"
+			},
+			{
+				"amount": 136.0,
+				"balance": 10467.0,
+				"city_id": "bukhansan",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:bukhansan:7592"
+			},
+			{
+				"amount": 52.0,
+				"balance": 10519.0,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:danghangseong:7592"
+			},
+			{
+				"amount": 67.0,
+				"balance": 10586.0,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7592"
+			},
+			{
+				"amount": 160.0,
+				"balance": 10746.0,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:gukwon:7592"
+			},
+			{
+				"amount": 98.0,
+				"balance": 10844.0,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:haslla:7592"
+			},
+			{
+				"amount": 115.0,
+				"balance": 10959.0,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:siljik:7592"
+			},
+			{
+				"amount": 136.0,
+				"balance": 4478.0,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:imjonseong:7592"
+			},
+			{
+				"amount": 133.0,
+				"balance": 4611.0,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:ungjin:7592"
+			},
+			{
+				"amount": 217.0,
+				"balance": 4828.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:sabi:7592"
+			},
+			{
+				"amount": 81.0,
+				"balance": 4909.0,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:geummajeo:7592"
+			},
+			{
+				"amount": 97.0,
+				"balance": 5006.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:gosa:7592"
+			},
+			{
+				"amount": 116.0,
+				"balance": 5122.0,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:juryuseong:7592"
+			},
+			{
+				"amount": 136.0,
+				"balance": 5258.0,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7592"
+			},
+			{
+				"amount": 175.0,
+				"balance": 11134.0,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:geumseong:7592"
+			},
+			{
+				"amount": 160.0,
+				"balance": 11294.0,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:sabeol:7592"
+			},
+			{
+				"amount": 82.0,
+				"balance": 11376.0,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7592"
+			},
+			{
+				"amount": 98.0,
+				"balance": 11474.0,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:daegaya:7592"
+			},
+			{
+				"amount": 115.0,
+				"balance": 11589.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:geumgwan:7592"
+			},
+			{
+				"amount": 136.0,
+				"balance": 11725.0,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:sogaya:7592"
+			},
+			{
+				"amount": 67.0,
+				"balance": 11792.0,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:ulleung:7592"
+			},
+			{
+				"amount": 81.0,
+				"balance": 11873.0,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:ganghwa:7592"
+			},
+			{
+				"amount": 98.0,
+				"balance": 11971.0,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:jukryeong:7592"
+			},
+			{
+				"amount": 116.0,
+				"balance": 12087.0,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7592.0,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7592"
+			},
+			{
+				"amount": -50.0,
+				"balance": 5208.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7592.0,
+				"reason": "training",
+				"token": "training:15:7592"
+			},
+			{
+				"amount": -50.0,
+				"balance": 5158.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7592.0,
+				"reason": "training",
+				"token": "training:16:7592"
+			},
+			{
+				"amount": -18.0,
+				"balance": 5140.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7592.0,
+				"reason": "production",
+				"token": "facility:sabi:smelter:7592"
+			},
+			{
+				"amount": -18.0,
+				"balance": 8311.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7592.0,
+				"reason": "production",
+				"token": "facility:pyongyang:smelter:7592"
+			},
+			{
+				"amount": 53.0,
+				"balance": 8364.0,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:shinseong:7593"
+			},
+			{
+				"amount": 67.0,
+				"balance": 8431.0,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7593"
+			},
+			{
+				"amount": 188.0,
+				"balance": 8619.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:ansi:7593"
+			},
+			{
+				"amount": 98.0,
+				"balance": 8717.0,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:geonanseong:7593"
+			},
+			{
+				"amount": 156.0,
+				"balance": 8873.0,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:gungnae:7593"
+			},
+			{
+				"amount": 136.0,
+				"balance": 9009.0,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:chaekseong:7593"
+			},
+			{
+				"amount": 53.0,
+				"balance": 9062.0,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7593"
+			},
+			{
+				"amount": 272.0,
+				"balance": 9334.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:pyongyang:7593"
+			},
+			{
+				"amount": 82.0,
+				"balance": 9416.0,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:daedonggang:7593"
+			},
+			{
+				"amount": 98.0,
+				"balance": 9514.0,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:goksan:7593"
+			},
+			{
+				"amount": 116.0,
+				"balance": 9630.0,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:hwanghae:7593"
+			},
+			{
+				"amount": 136.0,
+				"balance": 12223.0,
+				"city_id": "bukhansan",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:bukhansan:7593"
+			},
+			{
+				"amount": 53.0,
+				"balance": 12276.0,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:danghangseong:7593"
+			},
+			{
+				"amount": 67.0,
+				"balance": 12343.0,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7593"
+			},
+			{
+				"amount": 160.0,
+				"balance": 12503.0,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:gukwon:7593"
+			},
+			{
+				"amount": 98.0,
+				"balance": 12601.0,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:haslla:7593"
+			},
+			{
+				"amount": 116.0,
+				"balance": 12717.0,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:siljik:7593"
+			},
+			{
+				"amount": 136.0,
+				"balance": 5276.0,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:imjonseong:7593"
+			},
+			{
+				"amount": 136.0,
+				"balance": 5412.0,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:ungjin:7593"
+			},
+			{
+				"amount": 223.0,
+				"balance": 5635.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:sabi:7593"
+			},
+			{
+				"amount": 82.0,
+				"balance": 5717.0,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:geummajeo:7593"
+			},
+			{
+				"amount": 99.0,
+				"balance": 5816.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:gosa:7593"
+			},
+			{
+				"amount": 116.0,
+				"balance": 5932.0,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:juryuseong:7593"
+			},
+			{
+				"amount": 136.0,
+				"balance": 6068.0,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7593"
+			},
+			{
+				"amount": 175.0,
+				"balance": 12892.0,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:geumseong:7593"
+			},
+			{
+				"amount": 160.0,
+				"balance": 13052.0,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:sabeol:7593"
+			},
+			{
+				"amount": 82.0,
+				"balance": 13134.0,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7593"
+			},
+			{
+				"amount": 98.0,
+				"balance": 13232.0,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:daegaya:7593"
+			},
+			{
+				"amount": 116.0,
+				"balance": 13348.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:geumgwan:7593"
+			},
+			{
+				"amount": 136.0,
+				"balance": 13484.0,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:sogaya:7593"
+			},
+			{
+				"amount": 67.0,
+				"balance": 13551.0,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:ulleung:7593"
+			},
+			{
+				"amount": 82.0,
+				"balance": 13633.0,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:ganghwa:7593"
+			},
+			{
+				"amount": 98.0,
+				"balance": 13731.0,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:jukryeong:7593"
+			},
+			{
+				"amount": 116.0,
+				"balance": 13847.0,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7593.0,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7593"
+			},
+			{
+				"amount": -50.0,
+				"balance": 6018.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7593.0,
+				"reason": "training",
+				"token": "training:20:7593"
+			},
+			{
+				"amount": -50.0,
+				"balance": 9580.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "training",
+				"token": "training:21:7593"
+			},
+			{
+				"amount": -18.0,
+				"balance": 9562.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "production",
+				"token": "facility:ansi:smelter:7593"
+			},
+			{
+				"amount": -320.0,
+				"balance": 9242.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7593.0,
+				"reason": "build",
+				"token": "industry:22:cost"
+			},
+			{
+				"amount": 53.0,
+				"balance": 9295.0,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:shinseong:7594"
+			},
+			{
+				"amount": 67.0,
+				"balance": 9362.0,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7594"
+			},
+			{
+				"amount": 188.0,
+				"balance": 9550.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:ansi:7594"
+			},
+			{
+				"amount": 98.0,
+				"balance": 9648.0,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:geonanseong:7594"
+			},
+			{
+				"amount": 156.0,
+				"balance": 9804.0,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:gungnae:7594"
+			},
+			{
+				"amount": 136.0,
+				"balance": 9940.0,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:chaekseong:7594"
+			},
+			{
+				"amount": 53.0,
+				"balance": 9993.0,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7594"
+			},
+			{
+				"amount": 272.0,
+				"balance": 10265.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:pyongyang:7594"
+			},
+			{
+				"amount": 82.0,
+				"balance": 10347.0,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:daedonggang:7594"
+			},
+			{
+				"amount": 98.0,
+				"balance": 10445.0,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:goksan:7594"
+			},
+			{
+				"amount": 116.0,
+				"balance": 10561.0,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:hwanghae:7594"
+			},
+			{
+				"amount": 136.0,
+				"balance": 13983.0,
+				"city_id": "bukhansan",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:bukhansan:7594"
+			},
+			{
+				"amount": 53.0,
+				"balance": 14036.0,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:danghangseong:7594"
+			},
+			{
+				"amount": 67.0,
+				"balance": 14103.0,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7594"
+			},
+			{
+				"amount": 160.0,
+				"balance": 14263.0,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:gukwon:7594"
+			},
+			{
+				"amount": 98.0,
+				"balance": 14361.0,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:haslla:7594"
+			},
+			{
+				"amount": 116.0,
+				"balance": 14477.0,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:siljik:7594"
+			},
+			{
+				"amount": 136.0,
+				"balance": 6154.0,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:imjonseong:7594"
+			},
+			{
+				"amount": 136.0,
+				"balance": 6290.0,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:ungjin:7594"
+			},
+			{
+				"amount": 229.0,
+				"balance": 6519.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:sabi:7594"
+			},
+			{
+				"amount": 82.0,
+				"balance": 6601.0,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:geummajeo:7594"
+			},
+			{
+				"amount": 101.0,
+				"balance": 6702.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:gosa:7594"
+			},
+			{
+				"amount": 116.0,
+				"balance": 6818.0,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:juryuseong:7594"
+			},
+			{
+				"amount": 136.0,
+				"balance": 6954.0,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7594"
+			},
+			{
+				"amount": 175.0,
+				"balance": 14652.0,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:geumseong:7594"
+			},
+			{
+				"amount": 160.0,
+				"balance": 14812.0,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:sabeol:7594"
+			},
+			{
+				"amount": 82.0,
+				"balance": 14894.0,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7594"
+			},
+			{
+				"amount": 98.0,
+				"balance": 14992.0,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:daegaya:7594"
+			},
+			{
+				"amount": 113.0,
+				"balance": 15105.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:geumgwan:7594"
+			},
+			{
+				"amount": 136.0,
+				"balance": 15241.0,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:sogaya:7594"
+			},
+			{
+				"amount": 67.0,
+				"balance": 15308.0,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:ulleung:7594"
+			},
+			{
+				"amount": 82.0,
+				"balance": 15390.0,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:ganghwa:7594"
+			},
+			{
+				"amount": 98.0,
+				"balance": 15488.0,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:jukryeong:7594"
+			},
+			{
+				"amount": 116.0,
+				"balance": 15604.0,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7594.0,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7594"
+			},
+			{
+				"amount": -50.0,
+				"balance": 6904.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7594.0,
+				"reason": "training",
+				"token": "training:20:7594"
+			},
+			{
+				"amount": -50.0,
+				"balance": 10511.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "training",
+				"token": "training:21:7594"
+			},
+			{
+				"amount": -18.0,
+				"balance": 6886.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7594.0,
+				"reason": "production",
+				"token": "facility:gosa:smelter:7594"
+			},
+			{
+				"amount": -18.0,
+				"balance": 10493.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7594.0,
+				"reason": "production",
+				"token": "facility:ansi:smelter:7594"
+			},
+			{
+				"amount": -320.0,
+				"balance": 6566.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7594.0,
+				"reason": "build",
+				"token": "industry:23:cost"
+			},
+			{
+				"amount": 53.0,
+				"balance": 10546.0,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:shinseong:7595"
+			},
+			{
+				"amount": 67.0,
+				"balance": 10613.0,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7595"
+			},
+			{
+				"amount": 188.0,
+				"balance": 10801.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:ansi:7595"
+			},
+			{
+				"amount": 98.0,
+				"balance": 10899.0,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:geonanseong:7595"
+			},
+			{
+				"amount": 156.0,
+				"balance": 11055.0,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:gungnae:7595"
+			},
+			{
+				"amount": 136.0,
+				"balance": 11191.0,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:chaekseong:7595"
+			},
+			{
+				"amount": 53.0,
+				"balance": 11244.0,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7595"
+			},
+			{
+				"amount": 272.0,
+				"balance": 11516.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:pyongyang:7595"
+			},
+			{
+				"amount": 82.0,
+				"balance": 11598.0,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:daedonggang:7595"
+			},
+			{
+				"amount": 98.0,
+				"balance": 11696.0,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:goksan:7595"
+			},
+			{
+				"amount": 116.0,
+				"balance": 11812.0,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:hwanghae:7595"
+			},
+			{
+				"amount": 136.0,
+				"balance": 15740.0,
+				"city_id": "bukhansan",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:bukhansan:7595"
+			},
+			{
+				"amount": 53.0,
+				"balance": 15793.0,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:danghangseong:7595"
+			},
+			{
+				"amount": 67.0,
+				"balance": 15860.0,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7595"
+			},
+			{
+				"amount": 160.0,
+				"balance": 16020.0,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:gukwon:7595"
+			},
+			{
+				"amount": 98.0,
+				"balance": 16118.0,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:haslla:7595"
+			},
+			{
+				"amount": 116.0,
+				"balance": 16234.0,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:siljik:7595"
+			},
+			{
+				"amount": 136.0,
+				"balance": 6702.0,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:imjonseong:7595"
+			},
+			{
+				"amount": 136.0,
+				"balance": 6838.0,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:ungjin:7595"
+			},
+			{
+				"amount": 235.0,
+				"balance": 7073.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:sabi:7595"
+			},
+			{
+				"amount": 82.0,
+				"balance": 7155.0,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:geummajeo:7595"
+			},
+			{
+				"amount": 101.0,
+				"balance": 7256.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:gosa:7595"
+			},
+			{
+				"amount": 116.0,
+				"balance": 7372.0,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:juryuseong:7595"
+			},
+			{
+				"amount": 136.0,
+				"balance": 7508.0,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7595"
+			},
+			{
+				"amount": 175.0,
+				"balance": 16409.0,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:geumseong:7595"
+			},
+			{
+				"amount": 160.0,
+				"balance": 16569.0,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:sabeol:7595"
+			},
+			{
+				"amount": 82.0,
+				"balance": 16651.0,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7595"
+			},
+			{
+				"amount": 98.0,
+				"balance": 16749.0,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:daegaya:7595"
+			},
+			{
+				"amount": 116.0,
+				"balance": 16865.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:geumgwan:7595"
+			},
+			{
+				"amount": 136.0,
+				"balance": 17001.0,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:sogaya:7595"
+			},
+			{
+				"amount": 67.0,
+				"balance": 17068.0,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:ulleung:7595"
+			},
+			{
+				"amount": 82.0,
+				"balance": 17150.0,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:ganghwa:7595"
+			},
+			{
+				"amount": 98.0,
+				"balance": 17248.0,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:jukryeong:7595"
+			},
+			{
+				"amount": 116.0,
+				"balance": 17364.0,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7595.0,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7595"
+			},
+			{
+				"amount": -25.0,
+				"balance": 11787.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7595.0,
+				"reason": "training",
+				"token": "training:24:7595"
+			},
+			{
+				"amount": -18.0,
+				"balance": 7490.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7595.0,
+				"reason": "production",
+				"token": "facility:gosa:smelter:7595"
+			},
+			{
+				"amount": 53.0,
+				"balance": 11840.0,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:shinseong:7596"
+			},
+			{
+				"amount": 67.0,
+				"balance": 11907.0,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7596"
+			},
+			{
+				"amount": 188.0,
+				"balance": 12095.0,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:ansi:7596"
+			},
+			{
+				"amount": 98.0,
+				"balance": 12193.0,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:geonanseong:7596"
+			},
+			{
+				"amount": 156.0,
+				"balance": 12349.0,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:gungnae:7596"
+			},
+			{
+				"amount": 136.0,
+				"balance": 12485.0,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:chaekseong:7596"
+			},
+			{
+				"amount": 53.0,
+				"balance": 12538.0,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7596"
+			},
+			{
+				"amount": 272.0,
+				"balance": 12810.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:pyongyang:7596"
+			},
+			{
+				"amount": 82.0,
+				"balance": 12892.0,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:daedonggang:7596"
+			},
+			{
+				"amount": 98.0,
+				"balance": 12990.0,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:goksan:7596"
+			},
+			{
+				"amount": 116.0,
+				"balance": 13106.0,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:hwanghae:7596"
+			},
+			{
+				"amount": 136.0,
+				"balance": 17500.0,
+				"city_id": "bukhansan",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:bukhansan:7596"
+			},
+			{
+				"amount": 53.0,
+				"balance": 17553.0,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:danghangseong:7596"
+			},
+			{
+				"amount": 67.0,
+				"balance": 17620.0,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7596"
+			},
+			{
+				"amount": 160.0,
+				"balance": 17780.0,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:gukwon:7596"
+			},
+			{
+				"amount": 98.0,
+				"balance": 17878.0,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:haslla:7596"
+			},
+			{
+				"amount": 116.0,
+				"balance": 17994.0,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:siljik:7596"
+			},
+			{
+				"amount": 136.0,
+				"balance": 7626.0,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:imjonseong:7596"
+			},
+			{
+				"amount": 136.0,
+				"balance": 7762.0,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:ungjin:7596"
+			},
+			{
+				"amount": 241.0,
+				"balance": 8003.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:sabi:7596"
+			},
+			{
+				"amount": 82.0,
+				"balance": 8085.0,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:geummajeo:7596"
+			},
+			{
+				"amount": 101.0,
+				"balance": 8186.0,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:gosa:7596"
+			},
+			{
+				"amount": 116.0,
+				"balance": 8302.0,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:juryuseong:7596"
+			},
+			{
+				"amount": 136.0,
+				"balance": 8438.0,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7596"
+			},
+			{
+				"amount": 175.0,
+				"balance": 18169.0,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:geumseong:7596"
+			},
+			{
+				"amount": 160.0,
+				"balance": 18329.0,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:sabeol:7596"
+			},
+			{
+				"amount": 82.0,
+				"balance": 18411.0,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7596"
+			},
+			{
+				"amount": 98.0,
+				"balance": 18509.0,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:daegaya:7596"
+			},
+			{
+				"amount": 116.0,
+				"balance": 18625.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:geumgwan:7596"
+			},
+			{
+				"amount": 136.0,
+				"balance": 18761.0,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:sogaya:7596"
+			},
+			{
+				"amount": 67.0,
+				"balance": 18828.0,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:ulleung:7596"
+			},
+			{
+				"amount": 82.0,
+				"balance": 18910.0,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:ganghwa:7596"
+			},
+			{
+				"amount": 98.0,
+				"balance": 19008.0,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:jukryeong:7596"
+			},
+			{
+				"amount": 116.0,
+				"balance": 19124.0,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7596"
+			},
+			{
+				"amount": -50.0,
+				"balance": 8388.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7596.0,
+				"reason": "training",
+				"token": "training:26:7596"
+			},
+			{
+				"amount": -25.0,
+				"balance": 13081.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "training",
+				"token": "training:24:7596"
+			},
+			{
+				"amount": -50.0,
+				"balance": 8338.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7596.0,
+				"reason": "training",
+				"token": "training:25:7596"
+			},
+			{
+				"amount": -10.0,
+				"balance": 8328.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7596.0,
+				"reason": "production",
+				"token": "facility:sabi:forge:7596"
+			},
+			{
+				"amount": -10.0,
+				"balance": 13071.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "production",
+				"token": "facility:pyongyang:forge:7596"
+			},
+			{
+				"amount": 0.0,
+				"balance": 8328.0,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7596.0,
+				"reason": "production",
+				"token": "industry:27:cost"
+			},
+			{
+				"amount": 0.0,
+				"balance": 13071.0,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7596.0,
+				"reason": "production",
+				"token": "industry:28:cost"
+			},
+			{
+				"amount": -200.0,
+				"balance": 18924.0,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7596.0,
+				"reason": "research",
+				"token": "industry:30:cost"
+			},
+			{
+				"amount": 53,
+				"balance": 13124,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:shinseong:7597"
+			},
+			{
+				"amount": 67,
+				"balance": 13191,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7597"
+			},
+			{
+				"amount": 188,
+				"balance": 13379,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:ansi:7597"
+			},
+			{
+				"amount": 98,
+				"balance": 13477,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:geonanseong:7597"
+			},
+			{
+				"amount": 156,
+				"balance": 13633,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:gungnae:7597"
+			},
+			{
+				"amount": 136,
+				"balance": 13769,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:chaekseong:7597"
+			},
+			{
+				"amount": 53,
+				"balance": 13822,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7597"
+			},
+			{
+				"amount": 272,
+				"balance": 14094,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:pyongyang:7597"
+			},
+			{
+				"amount": 82,
+				"balance": 14176,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:daedonggang:7597"
+			},
+			{
+				"amount": 98,
+				"balance": 14274,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:goksan:7597"
+			},
+			{
+				"amount": 116,
+				"balance": 14390,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:hwanghae:7597"
+			},
+			{
+				"amount": 136,
+				"balance": 19060,
+				"city_id": "bukhansan",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:bukhansan:7597"
+			},
+			{
+				"amount": 53,
+				"balance": 19113,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:danghangseong:7597"
+			},
+			{
+				"amount": 67,
+				"balance": 19180,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7597"
+			},
+			{
+				"amount": 160,
+				"balance": 19340,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:gukwon:7597"
+			},
+			{
+				"amount": 98,
+				"balance": 19438,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:haslla:7597"
+			},
+			{
+				"amount": 116,
+				"balance": 19554,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:siljik:7597"
+			},
+			{
+				"amount": 136,
+				"balance": 8464,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:imjonseong:7597"
+			},
+			{
+				"amount": 136,
+				"balance": 8600,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:ungjin:7597"
+			},
+			{
+				"amount": 244,
+				"balance": 8844,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:sabi:7597"
+			},
+			{
+				"amount": 82,
+				"balance": 8926,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:geummajeo:7597"
+			},
+			{
+				"amount": 101,
+				"balance": 9027,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:gosa:7597"
+			},
+			{
+				"amount": 116,
+				"balance": 9143,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:juryuseong:7597"
+			},
+			{
+				"amount": 136,
+				"balance": 9279,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7597"
+			},
+			{
+				"amount": 175,
+				"balance": 19729,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:geumseong:7597"
+			},
+			{
+				"amount": 160,
+				"balance": 19889,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:sabeol:7597"
+			},
+			{
+				"amount": 82,
+				"balance": 19971,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7597"
+			},
+			{
+				"amount": 98,
+				"balance": 20069,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:daegaya:7597"
+			},
+			{
+				"amount": 116,
+				"balance": 20185,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:geumgwan:7597"
+			},
+			{
+				"amount": 136,
+				"balance": 20321,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:sogaya:7597"
+			},
+			{
+				"amount": 67,
+				"balance": 20388,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:ulleung:7597"
+			},
+			{
+				"amount": 82,
+				"balance": 20470,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:ganghwa:7597"
+			},
+			{
+				"amount": 98,
+				"balance": 20568,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:jukryeong:7597"
+			},
+			{
+				"amount": 116,
+				"balance": 20684,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7597,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7597"
+			},
+			{
+				"amount": -50,
+				"balance": 9229,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7597,
+				"reason": "training",
+				"token": "training:26:7597"
+			},
+			{
+				"amount": -50,
+				"balance": 9179,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7597,
+				"reason": "training",
+				"token": "training:25:7597"
+			},
+			{
+				"amount": -50,
+				"balance": 14340,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "training",
+				"token": "training:29:7597"
+			},
+			{
+				"amount": -18,
+				"balance": 9161,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7597,
+				"reason": "production",
+				"token": "facility:sabi:smelter:7597"
+			},
+			{
+				"amount": -10,
+				"balance": 9151,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7597,
+				"reason": "production",
+				"token": "facility:sabi:forge:7597"
+			},
+			{
+				"amount": -18,
+				"balance": 14322,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "production",
+				"token": "facility:pyongyang:smelter:7597"
+			},
+			{
+				"amount": -10,
+				"balance": 14312,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "production",
+				"token": "facility:pyongyang:forge:7597"
+			},
+			{
+				"amount": 0,
+				"balance": 14312,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7597,
+				"reason": "attack",
+				"token": ""
+			},
+			{
+				"amount": 53,
+				"balance": 14365,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:shinseong:7598"
+			},
+			{
+				"amount": 67,
+				"balance": 14432,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7598"
+			},
+			{
+				"amount": 188,
+				"balance": 14620,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:ansi:7598"
+			},
+			{
+				"amount": 98,
+				"balance": 14718,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:geonanseong:7598"
+			},
+			{
+				"amount": 156,
+				"balance": 14874,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:gungnae:7598"
+			},
+			{
+				"amount": 136,
+				"balance": 15010,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:chaekseong:7598"
+			},
+			{
+				"amount": 53,
+				"balance": 15063,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7598"
+			},
+			{
+				"amount": 272,
+				"balance": 15335,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:pyongyang:7598"
+			},
+			{
+				"amount": 82,
+				"balance": 15417,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:daedonggang:7598"
+			},
+			{
+				"amount": 98,
+				"balance": 15515,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:goksan:7598"
+			},
+			{
+				"amount": 116,
+				"balance": 15631,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:hwanghae:7598"
+			},
+			{
+				"amount": 92,
+				"balance": 15723,
+				"city_id": "bukhansan",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:bukhansan:7598"
+			},
+			{
+				"amount": 53,
+				"balance": 20737,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:danghangseong:7598"
+			},
+			{
+				"amount": 67,
+				"balance": 20804,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7598"
+			},
+			{
+				"amount": 160,
+				"balance": 20964,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:gukwon:7598"
+			},
+			{
+				"amount": 98,
+				"balance": 21062,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:haslla:7598"
+			},
+			{
+				"amount": 116,
+				"balance": 21178,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:siljik:7598"
+			},
+			{
+				"amount": 136,
+				"balance": 9287,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:imjonseong:7598"
+			},
+			{
+				"amount": 136,
+				"balance": 9423,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:ungjin:7598"
+			},
+			{
+				"amount": 244,
+				"balance": 9667,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:sabi:7598"
+			},
+			{
+				"amount": 82,
+				"balance": 9749,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:geummajeo:7598"
+			},
+			{
+				"amount": 101,
+				"balance": 9850,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:gosa:7598"
+			},
+			{
+				"amount": 116,
+				"balance": 9966,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:juryuseong:7598"
+			},
+			{
+				"amount": 136,
+				"balance": 10102,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7598"
+			},
+			{
+				"amount": 175,
+				"balance": 21353,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:geumseong:7598"
+			},
+			{
+				"amount": 160,
+				"balance": 21513,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:sabeol:7598"
+			},
+			{
+				"amount": 82,
+				"balance": 21595,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7598"
+			},
+			{
+				"amount": 98,
+				"balance": 21693,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:daegaya:7598"
+			},
+			{
+				"amount": 116,
+				"balance": 21809,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:geumgwan:7598"
+			},
+			{
+				"amount": 136,
+				"balance": 21945,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:sogaya:7598"
+			},
+			{
+				"amount": 67,
+				"balance": 22012,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:ulleung:7598"
+			},
+			{
+				"amount": 82,
+				"balance": 22094,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:ganghwa:7598"
+			},
+			{
+				"amount": 98,
+				"balance": 22192,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:jukryeong:7598"
+			},
+			{
+				"amount": 116,
+				"balance": 22308,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7598,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7598"
+			},
+			{
+				"amount": -50,
+				"balance": 15673,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "training",
+				"token": "training:29:7598"
+			},
+			{
+				"amount": -18,
+				"balance": 10084,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7598,
+				"reason": "production",
+				"token": "facility:sabi:smelter:7598"
+			},
+			{
+				"amount": -10,
+				"balance": 10074,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7598,
+				"reason": "production",
+				"token": "facility:sabi:forge:7598"
+			},
+			{
+				"amount": -10,
+				"balance": 15663,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "production",
+				"token": "facility:ansi:forge:7598"
+			},
+			{
+				"amount": -18,
+				"balance": 15645,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "production",
+				"token": "facility:pyongyang:smelter:7598"
+			},
+			{
+				"amount": -10,
+				"balance": 15635,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "production",
+				"token": "facility:pyongyang:forge:7598"
+			},
+			{
+				"amount": -240,
+				"balance": 9834,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7598,
+				"reason": "build",
+				"token": "industry:31:cost"
+			},
+			{
+				"amount": -240,
+				"balance": 15395,
+				"city_id": "bukhansan",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "build",
+				"token": "industry:32:cost"
+			},
+			{
+				"amount": -22,
+				"balance": 15373,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7598,
+				"reason": "transport",
+				"token": "supply:1:start"
+			},
+			{
+				"amount": 53,
+				"balance": 15426,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:shinseong:7599"
+			},
+			{
+				"amount": 67,
+				"balance": 15493,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7599"
+			},
+			{
+				"amount": 188,
+				"balance": 15681,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:ansi:7599"
+			},
+			{
+				"amount": 98,
+				"balance": 15779,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:geonanseong:7599"
+			},
+			{
+				"amount": 156,
+				"balance": 15935,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:gungnae:7599"
+			},
+			{
+				"amount": 136,
+				"balance": 16071,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:chaekseong:7599"
+			},
+			{
+				"amount": 53,
+				"balance": 16124,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7599"
+			},
+			{
+				"amount": 272,
+				"balance": 16396,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:pyongyang:7599"
+			},
+			{
+				"amount": 82,
+				"balance": 16478,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:daedonggang:7599"
+			},
+			{
+				"amount": 98,
+				"balance": 16576,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:goksan:7599"
+			},
+			{
+				"amount": 116,
+				"balance": 16692,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:hwanghae:7599"
+			},
+			{
+				"amount": 95,
+				"balance": 16787,
+				"city_id": "bukhansan",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:bukhansan:7599"
+			},
+			{
+				"amount": 53,
+				"balance": 22361,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:danghangseong:7599"
+			},
+			{
+				"amount": 67,
+				"balance": 22428,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7599"
+			},
+			{
+				"amount": 160,
+				"balance": 22588,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:gukwon:7599"
+			},
+			{
+				"amount": 98,
+				"balance": 22686,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:haslla:7599"
+			},
+			{
+				"amount": 116,
+				"balance": 22802,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:siljik:7599"
+			},
+			{
+				"amount": 136,
+				"balance": 9970,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:imjonseong:7599"
+			},
+			{
+				"amount": 136,
+				"balance": 10106,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:ungjin:7599"
+			},
+			{
+				"amount": 244,
+				"balance": 10350,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:sabi:7599"
+			},
+			{
+				"amount": 82,
+				"balance": 10432,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:geummajeo:7599"
+			},
+			{
+				"amount": 101,
+				"balance": 10533,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:gosa:7599"
+			},
+			{
+				"amount": 116,
+				"balance": 10649,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:juryuseong:7599"
+			},
+			{
+				"amount": 136,
+				"balance": 10785,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7599"
+			},
+			{
+				"amount": 175,
+				"balance": 22977,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:geumseong:7599"
+			},
+			{
+				"amount": 160,
+				"balance": 23137,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:sabeol:7599"
+			},
+			{
+				"amount": 82,
+				"balance": 23219,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7599"
+			},
+			{
+				"amount": 98,
+				"balance": 23317,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:daegaya:7599"
+			},
+			{
+				"amount": 116,
+				"balance": 23433,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:geumgwan:7599"
+			},
+			{
+				"amount": 136,
+				"balance": 23569,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:sogaya:7599"
+			},
+			{
+				"amount": 67,
+				"balance": 23636,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:ulleung:7599"
+			},
+			{
+				"amount": 82,
+				"balance": 23718,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:ganghwa:7599"
+			},
+			{
+				"amount": 98,
+				"balance": 23816,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:jukryeong:7599"
+			},
+			{
+				"amount": 116,
+				"balance": 23932,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7599"
+			},
+			{
+				"amount": -50,
+				"balance": 16737,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "training",
+				"token": "training:33:7599"
+			},
+			{
+				"amount": -50,
+				"balance": 16687,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "training",
+				"token": "training:34:7599"
+			},
+			{
+				"amount": -36,
+				"balance": 10749,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7599,
+				"reason": "production",
+				"token": "facility:sabi:smelter:7599"
+			},
+			{
+				"amount": -20,
+				"balance": 10729,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7599,
+				"reason": "production",
+				"token": "facility:sabi:forge:7599"
+			},
+			{
+				"amount": -18,
+				"balance": 16669,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "production",
+				"token": "facility:ansi:smelter:7599"
+			},
+			{
+				"amount": -10,
+				"balance": 16659,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "production",
+				"token": "facility:ansi:forge:7599"
+			},
+			{
+				"amount": -36,
+				"balance": 16623,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "production",
+				"token": "facility:pyongyang:smelter:7599"
+			},
+			{
+				"amount": -20,
+				"balance": 16603,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "production",
+				"token": "facility:pyongyang:forge:7599"
+			},
+			{
+				"amount": -22,
+				"balance": 16581,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7599,
+				"reason": "transport",
+				"token": "supply:2:start"
+			},
+			{
+				"amount": 0,
+				"balance": 23932,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7599,
+				"reason": "production",
+				"token": "industry:35:cost"
+			},
+			{
+				"amount": 53,
+				"balance": 16634,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:shinseong:7600"
+			},
+			{
+				"amount": 67,
+				"balance": 16701,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7600"
+			},
+			{
+				"amount": 188,
+				"balance": 16889,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:ansi:7600"
+			},
+			{
+				"amount": 98,
+				"balance": 16987,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:geonanseong:7600"
+			},
+			{
+				"amount": 156,
+				"balance": 17143,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:gungnae:7600"
+			},
+			{
+				"amount": 136,
+				"balance": 17279,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:chaekseong:7600"
+			},
+			{
+				"amount": 53,
+				"balance": 17332,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7600"
+			},
+			{
+				"amount": 272,
+				"balance": 17604,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:pyongyang:7600"
+			},
+			{
+				"amount": 82,
+				"balance": 17686,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:daedonggang:7600"
+			},
+			{
+				"amount": 98,
+				"balance": 17784,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:goksan:7600"
+			},
+			{
+				"amount": 116,
+				"balance": 17900,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:hwanghae:7600"
+			},
+			{
+				"amount": 99,
+				"balance": 17999,
+				"city_id": "bukhansan",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:bukhansan:7600"
+			},
+			{
+				"amount": 53,
+				"balance": 23985,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:danghangseong:7600"
+			},
+			{
+				"amount": 67,
+				"balance": 24052,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7600"
+			},
+			{
+				"amount": 160,
+				"balance": 24212,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:gukwon:7600"
+			},
+			{
+				"amount": 98,
+				"balance": 24310,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:haslla:7600"
+			},
+			{
+				"amount": 116,
+				"balance": 24426,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:siljik:7600"
+			},
+			{
+				"amount": 136,
+				"balance": 10865,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:imjonseong:7600"
+			},
+			{
+				"amount": 136,
+				"balance": 11001,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:ungjin:7600"
+			},
+			{
+				"amount": 244,
+				"balance": 11245,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:sabi:7600"
+			},
+			{
+				"amount": 82,
+				"balance": 11327,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:geummajeo:7600"
+			},
+			{
+				"amount": 101,
+				"balance": 11428,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:gosa:7600"
+			},
+			{
+				"amount": 116,
+				"balance": 11544,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:juryuseong:7600"
+			},
+			{
+				"amount": 136,
+				"balance": 11680,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7600"
+			},
+			{
+				"amount": 175,
+				"balance": 24601,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:geumseong:7600"
+			},
+			{
+				"amount": 160,
+				"balance": 24761,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:sabeol:7600"
+			},
+			{
+				"amount": 82,
+				"balance": 24843,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7600"
+			},
+			{
+				"amount": 98,
+				"balance": 24941,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:daegaya:7600"
+			},
+			{
+				"amount": 116,
+				"balance": 25057,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:geumgwan:7600"
+			},
+			{
+				"amount": 136,
+				"balance": 25193,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:sogaya:7600"
+			},
+			{
+				"amount": 67,
+				"balance": 25260,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:ulleung:7600"
+			},
+			{
+				"amount": 82,
+				"balance": 25342,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:ganghwa:7600"
+			},
+			{
+				"amount": 98,
+				"balance": 25440,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:jukryeong:7600"
+			},
+			{
+				"amount": 116,
+				"balance": 25556,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7600"
+			},
+			{
+				"amount": -50,
+				"balance": 17949,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "training",
+				"token": "training:33:7600"
+			},
+			{
+				"amount": -50,
+				"balance": 17899,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "training",
+				"token": "training:34:7600"
+			},
+			{
+				"amount": -10,
+				"balance": 11670,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7600,
+				"reason": "production",
+				"token": "facility:gosa:forge:7600"
+			},
+			{
+				"amount": -18,
+				"balance": 11652,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7600,
+				"reason": "production",
+				"token": "facility:sabi:smelter:7600"
+			},
+			{
+				"amount": -10,
+				"balance": 11642,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7600,
+				"reason": "production",
+				"token": "facility:sabi:forge:7600"
+			},
+			{
+				"amount": -18,
+				"balance": 17881,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "production",
+				"token": "facility:ansi:smelter:7600"
+			},
+			{
+				"amount": -10,
+				"balance": 17871,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "production",
+				"token": "facility:ansi:forge:7600"
+			},
+			{
+				"amount": -18,
+				"balance": 17853,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "production",
+				"token": "facility:pyongyang:smelter:7600"
+			},
+			{
+				"amount": -10,
+				"balance": 17843,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "production",
+				"token": "facility:pyongyang:forge:7600"
+			},
+			{
+				"amount": -6,
+				"balance": 25550,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "production",
+				"token": "facility:geumgwan:smelter:7600"
+			},
+			{
+				"amount": -10,
+				"balance": 25540,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7600,
+				"reason": "production",
+				"token": "facility:geumgwan:forge:7600"
+			},
+			{
+				"amount": -11,
+				"balance": 11631,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7600,
+				"reason": "transport",
+				"token": "supply:3:start"
+			},
+			{
+				"amount": -22,
+				"balance": 17821,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7600,
+				"reason": "transport",
+				"token": "supply:4:start"
+			},
+			{
+				"amount": 53,
+				"balance": 17874,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:shinseong:7601"
+			},
+			{
+				"amount": 67,
+				"balance": 17941,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7601"
+			},
+			{
+				"amount": 188,
+				"balance": 18129,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:ansi:7601"
+			},
+			{
+				"amount": 98,
+				"balance": 18227,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:geonanseong:7601"
+			},
+			{
+				"amount": 156,
+				"balance": 18383,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:gungnae:7601"
+			},
+			{
+				"amount": 136,
+				"balance": 18519,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:chaekseong:7601"
+			},
+			{
+				"amount": 53,
+				"balance": 18572,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7601"
+			},
+			{
+				"amount": 272,
+				"balance": 18844,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:pyongyang:7601"
+			},
+			{
+				"amount": 82,
+				"balance": 18926,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:daedonggang:7601"
+			},
+			{
+				"amount": 98,
+				"balance": 19024,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:goksan:7601"
+			},
+			{
+				"amount": 116,
+				"balance": 19140,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:hwanghae:7601"
+			},
+			{
+				"amount": 102,
+				"balance": 19242,
+				"city_id": "bukhansan",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:bukhansan:7601"
+			},
+			{
+				"amount": 53,
+				"balance": 25593,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:danghangseong:7601"
+			},
+			{
+				"amount": 67,
+				"balance": 25660,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7601"
+			},
+			{
+				"amount": 160,
+				"balance": 25820,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:gukwon:7601"
+			},
+			{
+				"amount": 98,
+				"balance": 25918,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:haslla:7601"
+			},
+			{
+				"amount": 116,
+				"balance": 26034,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:siljik:7601"
+			},
+			{
+				"amount": 136,
+				"balance": 11767,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:imjonseong:7601"
+			},
+			{
+				"amount": 136,
+				"balance": 11903,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:ungjin:7601"
+			},
+			{
+				"amount": 244,
+				"balance": 12147,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:sabi:7601"
+			},
+			{
+				"amount": 82,
+				"balance": 12229,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:geummajeo:7601"
+			},
+			{
+				"amount": 101,
+				"balance": 12330,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:gosa:7601"
+			},
+			{
+				"amount": 116,
+				"balance": 12446,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:juryuseong:7601"
+			},
+			{
+				"amount": 136,
+				"balance": 12582,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7601"
+			},
+			{
+				"amount": 175,
+				"balance": 26209,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:geumseong:7601"
+			},
+			{
+				"amount": 160,
+				"balance": 26369,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:sabeol:7601"
+			},
+			{
+				"amount": 82,
+				"balance": 26451,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7601"
+			},
+			{
+				"amount": 98,
+				"balance": 26549,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:daegaya:7601"
+			},
+			{
+				"amount": 116,
+				"balance": 26665,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:geumgwan:7601"
+			},
+			{
+				"amount": 136,
+				"balance": 26801,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:sogaya:7601"
+			},
+			{
+				"amount": 67,
+				"balance": 26868,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:ulleung:7601"
+			},
+			{
+				"amount": 82,
+				"balance": 26950,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:ganghwa:7601"
+			},
+			{
+				"amount": 98,
+				"balance": 27048,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:jukryeong:7601"
+			},
+			{
+				"amount": 116,
+				"balance": 27164,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7601"
+			},
+			{
+				"amount": -50,
+				"balance": 19192,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "training",
+				"token": "training:34:7601"
+			},
+			{
+				"amount": -50,
+				"balance": 12532,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "training",
+				"token": "training:36:7601"
+			},
+			{
+				"amount": -50,
+				"balance": 19142,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "training",
+				"token": "training:37:7601"
+			},
+			{
+				"amount": -18,
+				"balance": 12514,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "production",
+				"token": "facility:gosa:smelter:7601"
+			},
+			{
+				"amount": -10,
+				"balance": 12504,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "production",
+				"token": "facility:gosa:forge:7601"
+			},
+			{
+				"amount": -18,
+				"balance": 12486,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "production",
+				"token": "facility:sabi:smelter:7601"
+			},
+			{
+				"amount": -10,
+				"balance": 12476,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "production",
+				"token": "facility:sabi:forge:7601"
+			},
+			{
+				"amount": -18,
+				"balance": 19124,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "production",
+				"token": "facility:ansi:smelter:7601"
+			},
+			{
+				"amount": -10,
+				"balance": 19114,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "production",
+				"token": "facility:ansi:forge:7601"
+			},
+			{
+				"amount": -36,
+				"balance": 19078,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "production",
+				"token": "facility:pyongyang:smelter:7601"
+			},
+			{
+				"amount": -20,
+				"balance": 19058,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "production",
+				"token": "facility:pyongyang:forge:7601"
+			},
+			{
+				"amount": -6,
+				"balance": 27158,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "production",
+				"token": "facility:geumgwan:smelter:7601"
+			},
+			{
+				"amount": -10,
+				"balance": 27148,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7601,
+				"reason": "production",
+				"token": "facility:geumgwan:forge:7601"
+			},
+			{
+				"amount": -11,
+				"balance": 12465,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7601,
+				"reason": "transport",
+				"token": "supply:5:start"
+			},
+			{
+				"amount": -22,
+				"balance": 19036,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7601,
+				"reason": "transport",
+				"token": "supply:6:start"
+			},
+			{
+				"amount": 53,
+				"balance": 19089,
+				"city_id": "shinseong",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:shinseong:7602"
+			},
+			{
+				"amount": 67,
+				"balance": 19156,
+				"city_id": "sokgunseong",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:sokgunseong:7602"
+			},
+			{
+				"amount": 188,
+				"balance": 19344,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:ansi:7602"
+			},
+			{
+				"amount": 98,
+				"balance": 19442,
+				"city_id": "geonanseong",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:geonanseong:7602"
+			},
+			{
+				"amount": 156,
+				"balance": 19598,
+				"city_id": "gungnae",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:gungnae:7602"
+			},
+			{
+				"amount": 136,
+				"balance": 19734,
+				"city_id": "chaekseong",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:chaekseong:7602"
+			},
+			{
+				"amount": 53,
+				"balance": 19787,
+				"city_id": "bireyeolhol",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:bireyeolhol:7602"
+			},
+			{
+				"amount": 272,
+				"balance": 20059,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:pyongyang:7602"
+			},
+			{
+				"amount": 82,
+				"balance": 20141,
+				"city_id": "daedonggang",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:daedonggang:7602"
+			},
+			{
+				"amount": 98,
+				"balance": 20239,
+				"city_id": "goksan",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:goksan:7602"
+			},
+			{
+				"amount": 116,
+				"balance": 20355,
+				"city_id": "hwanghae",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:hwanghae:7602"
+			},
+			{
+				"amount": 105,
+				"balance": 20460,
+				"city_id": "bukhansan",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:bukhansan:7602"
+			},
+			{
+				"amount": 53,
+				"balance": 27201,
+				"city_id": "danghangseong",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:danghangseong:7602"
+			},
+			{
+				"amount": 67,
+				"balance": 27268,
+				"city_id": "samnyeonsanseong",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:samnyeonsanseong:7602"
+			},
+			{
+				"amount": 160,
+				"balance": 27428,
+				"city_id": "gukwon",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:gukwon:7602"
+			},
+			{
+				"amount": 98,
+				"balance": 27526,
+				"city_id": "haslla",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:haslla:7602"
+			},
+			{
+				"amount": 116,
+				"balance": 27642,
+				"city_id": "siljik",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:siljik:7602"
+			},
+			{
+				"amount": 136,
+				"balance": 12601,
+				"city_id": "imjonseong",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:imjonseong:7602"
+			},
+			{
+				"amount": 136,
+				"balance": 12737,
+				"city_id": "ungjin",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:ungjin:7602"
+			},
+			{
+				"amount": 244,
+				"balance": 12981,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:sabi:7602"
+			},
+			{
+				"amount": 82,
+				"balance": 13063,
+				"city_id": "geummajeo",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:geummajeo:7602"
+			},
+			{
+				"amount": 101,
+				"balance": 13164,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:gosa:7602"
+			},
+			{
+				"amount": 116,
+				"balance": 13280,
+				"city_id": "juryuseong",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:juryuseong:7602"
+			},
+			{
+				"amount": 136,
+				"balance": 13416,
+				"city_id": "yeongsangang",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:yeongsangang:7602"
+			},
+			{
+				"amount": 175,
+				"balance": 27817,
+				"city_id": "geumseong",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:geumseong:7602"
+			},
+			{
+				"amount": 160,
+				"balance": 27977,
+				"city_id": "sabeol",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:sabeol:7602"
+			},
+			{
+				"amount": 82,
+				"balance": 28059,
+				"city_id": "dalgubeol",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:dalgubeol:7602"
+			},
+			{
+				"amount": 98,
+				"balance": 28157,
+				"city_id": "daegaya",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:daegaya:7602"
+			},
+			{
+				"amount": 116,
+				"balance": 28273,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:geumgwan:7602"
+			},
+			{
+				"amount": 136,
+				"balance": 28409,
+				"city_id": "sogaya",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:sogaya:7602"
+			},
+			{
+				"amount": 67,
+				"balance": 28476,
+				"city_id": "ulleung",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:ulleung:7602"
+			},
+			{
+				"amount": 82,
+				"balance": 28558,
+				"city_id": "ganghwa",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:ganghwa:7602"
+			},
+			{
+				"amount": 98,
+				"balance": 28656,
+				"city_id": "jukryeong",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:jukryeong:7602"
+			},
+			{
+				"amount": 116,
+				"balance": 28772,
+				"city_id": "chupungnyeong",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "tax",
+				"token": "tax:chupungnyeong:7602"
+			},
+			{
+				"amount": -50,
+				"balance": 13366,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "training",
+				"token": "training:36:7602"
+			},
+			{
+				"amount": -50,
+				"balance": 20410,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "training",
+				"token": "training:37:7602"
+			},
+			{
+				"amount": -50,
+				"balance": 20360,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "training",
+				"token": "training:38:7602"
+			},
+			{
+				"amount": -18,
+				"balance": 13348,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "production",
+				"token": "facility:gosa:smelter:7602"
+			},
+			{
+				"amount": -10,
+				"balance": 13338,
+				"city_id": "gosa",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "production",
+				"token": "facility:gosa:forge:7602"
+			},
+			{
+				"amount": -36,
+				"balance": 13302,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "production",
+				"token": "facility:sabi:smelter:7602"
+			},
+			{
+				"amount": -20,
+				"balance": 13282,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "production",
+				"token": "facility:sabi:forge:7602"
+			},
+			{
+				"amount": -18,
+				"balance": 20342,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "production",
+				"token": "facility:ansi:smelter:7602"
+			},
+			{
+				"amount": -10,
+				"balance": 20332,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "production",
+				"token": "facility:ansi:forge:7602"
+			},
+			{
+				"amount": -18,
+				"balance": 20314,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "production",
+				"token": "facility:pyongyang:smelter:7602"
+			},
+			{
+				"amount": -10,
+				"balance": 20304,
+				"city_id": "pyongyang",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "production",
+				"token": "facility:pyongyang:forge:7602"
+			},
+			{
+				"amount": -12,
+				"balance": 28760,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "production",
+				"token": "facility:geumgwan:smelter:7602"
+			},
+			{
+				"amount": -20,
+				"balance": 28740,
+				"city_id": "geumgwan",
+				"faction_id": "silla",
+				"month": 7602,
+				"reason": "production",
+				"token": "facility:geumgwan:forge:7602"
+			},
+			{
+				"amount": -150,
+				"balance": 13132,
+				"city_id": "sabi",
+				"faction_id": "baekje",
+				"month": 7602,
+				"reason": "recruitment",
+				"token": ""
+			},
+			{
+				"amount": -22,
+				"balance": 20282,
+				"city_id": "ansi",
+				"faction_id": "goguryeo",
+				"month": 7602,
+				"reason": "transport",
+				"token": "supply:7:start"
+			}
+		],
+		"facility_progress": {
+			"forge": {
+				"last_batches": 2,
+				"last_gold": 20,
+				"last_month": 7602,
+				"last_work": 146,
+				"owner": "신라",
+				"reason": "",
+				"remainder": 38
+			},
+			"smelter": {
+				"last_batches": 2,
+				"last_gold": 12,
+				"last_month": 7602,
+				"last_work": 146,
+				"owner": "신라",
+				"reason": "",
+				"remainder": 38
+			}
+		},
+		"gold": 28740,
+		"iron": 0,
+		"sword_after": 4,
+		"sword_before": 0
+	}
+]

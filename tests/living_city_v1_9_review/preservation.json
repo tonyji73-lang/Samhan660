@@ -1,0 +1,11 @@
+﻿{
+    "BaselineSaves":  235,
+    "ProtectedFiles":  26,
+    "Mismatch":  [
+
+                 ],
+    "ChangedExistingSource":  [
+                                  "campaign_main.gd",
+                                  "settlement_overlay.gd"
+                              ]
+}
