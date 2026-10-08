@@ -40,6 +40,8 @@ static func new_game(scenario_id: String, provinces: Dictionary) -> Dictionary:
 		p["availability_reason"] = row.get("exception", "")
 		p["placement_note"] = row.placement_note
 		p["desired_location"] = row.desired_location
+		p["placement_source"] = row.get("placement_source", "")
+		p["placement_confidence"] = row.get("placement_confidence", "legacy_game_assignment")
 		if not p.location.is_empty() and not provinces.has(p.location):
 			p.location = ""
 			diagnose(registry, "unrepresented_location", row)
@@ -57,12 +59,16 @@ static func new_game(scenario_id: String, provinces: Dictionary) -> Dictionary:
 	return registry
 
 static func _from_definition(d: Dictionary, id: String) -> Dictionary:
-	return {"officer_id": id, "catalog_id": d.officer_id, "name": d.display_name,
+	var person := {"officer_id": id, "catalog_id": d.officer_id, "name": d.display_name,
 		"aliases": d.aliases.duplicate(), "stats": d.base_stats.duplicate(true),
 		"origin": d.origin, "active": false, "alive": true, "faction_id": "", "location": "", "in_transit": false,
 		"family_id": "", "political_group_id": "", "duties": [],
 		"birth_year": d.birth.game_year, "death_year": d.death.game_year, "date_basis": "legacy_game_years; historical confidence in catalog",
-		"gender": "unknown", "spouse": "", "parents": [], "children": [], "rng_identity": d.display_name}
+		"gender": d.get("gender", "unknown"), "role": d.get("role", ""), "character_type": d.get("character_type", ""), "appearance": d.get("appearance", {}).duplicate(true), "portrait": d.get("portrait", {}).duplicate(true), "spouse": "", "parents": [], "children": [], "rng_identity": d.display_name}
+	if d.origin == "fictional":
+		person["loyalty"] = int(Politics.RULES.initial_loyalty)
+		person["ambition"] = int(Politics.RULES.initial_ambition)
+	return person
 
 static func resolve(registry: Dictionary, officer_ref: String) -> String:
 	if registry.get("people", {}).has(officer_ref):

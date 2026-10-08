@@ -1,0 +1,350 @@
+{
+    "date":  "2026-10-02",
+    "native_detail_tile_size":  350,
+    "tool":  "image_gen",
+    "reference":  "existing approved Korea play map; original unchanged",
+    "assets":  [
+                   {
+                       "file":  "atlas.png",
+                       "width":  1536,
+                       "height":  1024,
+                       "sha256":  "DB2B17231E3998DE959EC9F9ACD8D87E24DC64FDBCC01B41E93926CA3B8AFB3A"
+                   },
+                   {
+                       "file":  "tile_00_00.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "3D02E2AB4BD8995D22A60D8F64603D82DB7822FC79F59E7E4893D588600CFE9B"
+                   },
+                   {
+                       "file":  "tile_00_01.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "402BE22E2DE80372468522594232269577CD445AB3F93D885D66A03E48EFDCFE"
+                   },
+                   {
+                       "file":  "tile_00_02.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "F7A6159640381138674E525A27C791BCB50EBA39B44CE1DBB31D1EA94708B38B"
+                   },
+                   {
+                       "file":  "tile_00_03.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "DEFDFCB0A20003625BF914D1CB7433C7072695923536B8C190671D849F2EFB9D"
+                   },
+                   {
+                       "file":  "tile_00_04.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "8419928E7772C22E7197330D163217B567B9F274A141B84E307FF8846675EE73"
+                   },
+                   {
+                       "file":  "tile_00_05.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "808F933A334D8FE9D9FEF1A7D81F4ACC7742BD69554F2D6C4DC9C8EC0EB27F6E"
+                   },
+                   {
+                       "file":  "tile_00_06.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "853AA0CA58CE11911C6B405A437877617B0C796131935A4CB950516A80328D38"
+                   },
+                   {
+                       "file":  "tile_00_07.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "F5671FDDC336391796C58BA7AD5177D0044BADC116520F8DAEB06DC790F415D8"
+                   },
+                   {
+                       "file":  "tile_00_08.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "6528DDA6418F5E9858251D65B07AB6335036901E0FB0D98B0C1303528AFB20FD"
+                   },
+                   {
+                       "file":  "tile_00_09.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "EBFBF9F3E65D331EC69E8369B082D8AFD4D14AFF9E8B8F91337F454986086232"
+                   },
+                   {
+                       "file":  "tile_01_00.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "66BBE5E32BB5A8A0DC8FA7A1983D0A8DF6C8F235D1C9359B91CC6D368F2D50C6"
+                   },
+                   {
+                       "file":  "tile_01_01.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "4A52464AA4412FDF7AFC659B4DD176144FC385C00B893D4542F9E54003646381"
+                   },
+                   {
+                       "file":  "tile_01_02.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "053788FCC5BEB97F97236A8C2F611C4D29E344D49E07520CBA12BBF0447ED343"
+                   },
+                   {
+                       "file":  "tile_01_03.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "24626F34B47FEC9E7B12403157D64F6FF6D88C7578E673263AE3011316D12936"
+                   },
+                   {
+                       "file":  "tile_01_04.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "B5B27AD1A5241587A8CA5DB5C24BD3F8CE5B69C02C2DF630DE1CB6E7C63794D0"
+                   },
+                   {
+                       "file":  "tile_01_05.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "9BC42889067153A59228BF502CAE01C7A6AF126230794334DB3A75C127C50085"
+                   },
+                   {
+                       "file":  "tile_01_06.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "4B21740027939DCE7CA8CE8CBD6A43FC40B70442F625815EFEE6803AC49AC5B3"
+                   },
+                   {
+                       "file":  "tile_01_07.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "4F11030D9E972C24C58BA0218D87A7EFB65F3928183218F07AD2880DE6C83988"
+                   },
+                   {
+                       "file":  "tile_01_08.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "A095900268EEF24014A297486FB45AA919F97A1EA271BCC01910D2C316FD9B58"
+                   },
+                   {
+                       "file":  "tile_01_09.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "2BEE1C7D4EEE5D1831D2DEE2B7C6EEF9619859F2403AE11782DB8BDA881E5D87"
+                   },
+                   {
+                       "file":  "tile_01_10.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "59753F003FC0116186074F30B48680A7813DDD1B00AF9A7381B689A39DDC84E2"
+                   },
+                   {
+                       "file":  "tile_02_00.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "5991557B90B230E554CD5934A128E27E4D8E344DC0C6D9F0CC16C9343BE0330B"
+                   },
+                   {
+                       "file":  "tile_02_01.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "BFE0C98C504F7060945E4E3BC591E989077334F802D81AD4866A20DCDB16AEBD"
+                   },
+                   {
+                       "file":  "tile_02_02.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "93A118F9074D39013826E22E2FC50180362582FA0AE4E1A8FA4972EB17267D56"
+                   },
+                   {
+                       "file":  "tile_02_03.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "5D172A19C65A153179BC86A284E2980933052D52A743FD3F7ACE951DFD31BC01"
+                   },
+                   {
+                       "file":  "tile_02_04.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "7EB9F73FFEB8401A3707622D1948475ABAC9217B0E61F3EE811211505F629E8A"
+                   },
+                   {
+                       "file":  "tile_02_05.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "4567ED43E55AF528760F363927E0DAAFFDFEFCC730E999FBAED14BBB7978E1FC"
+                   },
+                   {
+                       "file":  "tile_02_09.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "153D54B142919B4FCA27175CA47D45C1E8E55870DD0E01CCD3570021468B3ADE"
+                   },
+                   {
+                       "file":  "tile_02_10.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "DC2A0A9A79C41E9EEA7E1A4578B414129297606E8613F99F0401ED15562B19B3"
+                   },
+                   {
+                       "file":  "tile_03_00.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "B8F43080551EE447B15F28C80867806C840C7F7A1AB7108BC6984B38B4F3DE8B"
+                   },
+                   {
+                       "file":  "tile_03_01.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "54687B78D809A4EBA9F5CFFFA6895F08D097BF96D3E69659246C110409DCEFD9"
+                   },
+                   {
+                       "file":  "tile_03_02.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "C1B6C2C2163840A28767855DD69A4EAAB3C4DD4723959E6B66939089141525AE"
+                   },
+                   {
+                       "file":  "tile_03_08.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "8D2B36BFD229D5E5CB9B080127FD9D899D0F60B96981B3A5EFF025473312F539"
+                   },
+                   {
+                       "file":  "tile_03_09.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "E9A3D28B162F70AB922216BC34763C61CB2547A94CEF3287AD38CCF7379B5B77"
+                   },
+                   {
+                       "file":  "tile_03_10.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "FFAA738ED5F2B10C2D6EFAB0E4F748C150A68C09A178D607AADC4AD526396564"
+                   },
+                   {
+                       "file":  "tile_04_00.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "02D9AA4FD14696FEDA37B5A72E567F653FC185E0F37055838236EBFBD8097090"
+                   },
+                   {
+                       "file":  "tile_04_01.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "B54D52683710AF56BB8E0A6FD27CC7C344F4F8FAFB48FD2B8D9B5EFE6FA5878B"
+                   },
+                   {
+                       "file":  "tile_04_02.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "11BBC5AA43BEE6F743901A84478620E149EE61FFB3969A1CB6B6F769F3D956D1"
+                   },
+                   {
+                       "file":  "tile_04_06.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "839D2885759CA9554005B45E1AF51B15A0CB084BEEA6CC208B636300FEBDB99D"
+                   },
+                   {
+                       "file":  "tile_04_07.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "127739C60A47F59ABAC0458511435FD339FD89B63420E8689C0843B00AE84DFB"
+                   },
+                   {
+                       "file":  "tile_04_08.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "5506A1552EBF039E2488AB5063E232AD2B4BD3415C1417F7015D2208F692873F"
+                   },
+                   {
+                       "file":  "tile_04_09.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "8C10162AF7BB937EA9FC0DF8D2603054A57D96968E3C2BB6B66CF737F4D8BDD5"
+                   },
+                   {
+                       "file":  "tile_04_10.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "C06D917429D725D5A8B204636FBB553518E28987F19E31598DF3547E9862A558"
+                   },
+                   {
+                       "file":  "tile_05_00.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "0EA2704B7FEDECE5A9BC4DC267A30EEE5520B9A8A394CDC3A1E6FCC1648047D7"
+                   },
+                   {
+                       "file":  "tile_05_01.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "AD887C0AE0F8AF25EBCBC6DFDA727F3C7E1D537B35F9331FC1F920B78144550E"
+                   },
+                   {
+                       "file":  "tile_05_02.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "74176A789CD190A210F7FD9BEB342A1696D5D51D87F3E2EAA44C9519778B682E"
+                   },
+                   {
+                       "file":  "tile_05_06.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "0AAF34FAA0D4B9B02F775DC7B1F4A5F1BB75378860CB67B4FB89B2CF64214B8D"
+                   },
+                   {
+                       "file":  "tile_05_07.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "7D17BCE88BAB9E276E1A1D6C6B04483D317DBEF456805E158E98E6F4827D031C"
+                   },
+                   {
+                       "file":  "tile_05_08.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "A7661163A8D1D1093ABAFBDBE48271BB5BACEA213E6C108227FAA402E3B1A36E"
+                   },
+                   {
+                       "file":  "tile_05_09.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "D8167624AAD2255CF21187C2116081EEF24993B828062D05CE72A38772944A2C"
+                   },
+                   {
+                       "file":  "tile_06_00.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "C57736E7B330CE4233C28D6753E1FAC11D801C01B8C5565357A67B5124FAED92"
+                   },
+                   {
+                       "file":  "tile_06_01.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "B8F0C5D0796A4F3249A2BC0467F132B57151BC3BB118A75530AFC4DB5ED36970"
+                   },
+                   {
+                       "file":  "tile_06_02.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "2E307401077F5E4381EFC1A4D7DE282F2E31CC012AB01805C01021AC89228738"
+                   },
+                   {
+                       "file":  "tile_06_03.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "92F4FEC4ED331BB191F3839DB0F49594A4B84E3482819E15F43F703AB60B13D7"
+                   },
+                   {
+                       "file":  "tile_06_06.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "3EBCA48F0E082B513ADE18FD27FBF8A40476CBDF8AB7D0AEEE09A99AAA246459"
+                   },
+                   {
+                       "file":  "tile_06_07.png",
+                       "width":  1254,
+                       "height":  1254,
+                       "sha256":  "C03C927E9084D455684B270770C16F9A3BCFEECF868FB08D8080EFE747719F3F"
+                   }
+               ]
+}

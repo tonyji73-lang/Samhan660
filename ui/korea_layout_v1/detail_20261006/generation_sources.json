@@ -1,0 +1,42 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-06",
+  "sources": [
+    {
+      "name": "sea_0_800",
+      "path": "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-b336f1e3-5c24-4bf9-af0e-622b30e68023.png"
+    },
+    {
+      "name": "sea_0_1100",
+      "path": "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-fdd09331-246f-472e-8268-1ebd39f517d6.png"
+    },
+    {
+      "name": "bohai_0_0",
+      "path": "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-583fe6d7-8552-46e8-b045-2487cac6a1de.png"
+    },
+    {
+      "name": "bohai_325_0",
+      "path": "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-9923b7f3-5a11-43dd-b24f-8da79c9c496b.png"
+    },
+    {
+      "name": "bohai_650_0",
+      "path": "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-8b8506f7-b91f-4f95-a080-127dd9f42a47.png"
+    },
+    {
+      "name": "bohai_0_325",
+      "path": "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-dced9648-96fa-4734-800a-91ee32dc3134.png"
+    },
+    {
+      "name": "bohai_325_325",
+      "path": "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-3118b3f6-4697-498e-8573-e036b5199d3e.png"
+    },
+    {
+      "name": "bohai_0_650",
+      "path": "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-f01a358d-301f-4414-b63e-5f3c1a504abe.png"
+    },
+    {
+      "name": "bohai_325_650",
+      "path": "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-5120d8b6-cbcc-439d-ae0d-1b375d8ac6ab.png"
+    }
+  ]
+}

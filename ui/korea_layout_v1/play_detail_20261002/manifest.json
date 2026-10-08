@@ -1,0 +1,144 @@
+{
+    "created":  "2026-10-02",
+    "generator":  "built-in image_gen",
+    "source":  "../assets/korea_approved_1254.png",
+    "usage":  "Fine texture frequencies only, original geography reconstructed by detail.gdshader; not registered replacement terrain. Existing Jeju and south_v3 detail preserved.",
+    "prompt":  "Identity-preserve super-resolution of exact 350x350 play terrain crops. Preserve normalized coast/river/ridge positions, crop and green/gold hand-painted map style. Resolve fine trees, rocks and fields. No text, buildings or new geographical features. Requested 2048 square; actual output 1254 square.",
+    "assets":  [
+                   {
+                       "file":  "west.png",
+                       "source_rect_px":  [
+                                              300,
+                                              300,
+                                              350,
+                                              350
+                                          ],
+                       "size_px":  [
+                                       1254,
+                                       1254
+                                   ],
+                       "generation_file":  "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-0847dab2-0471-4843-8c77-d234537b1a51.png",
+                       "sha256":  "90AE58963247A64BCC4D0CF667EDD22397F67214F42D221D1B92175B0E4BDA33"
+                   },
+                   {
+                       "file":  "northwest.png",
+                       "source_rect_px":  [
+                                              0,
+                                              0,
+                                              350,
+                                              350
+                                          ],
+                       "size_px":  [
+                                       1254,
+                                       1254
+                                   ],
+                       "generation_file":  "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-69df0ad3-0d8d-47e3-ac6e-7bee3a81970f.png",
+                       "sha256":  "5AFEE539B925739B3B034348F7140AD9B8E5F33A84C4B7A766BACC36602CD8F3"
+                   },
+                   {
+                       "file":  "north.png",
+                       "source_rect_px":  [
+                                              300,
+                                              0,
+                                              350,
+                                              350
+                                          ],
+                       "size_px":  [
+                                       1254,
+                                       1254
+                                   ],
+                       "generation_file":  "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-951e088d-9e42-496d-8ea7-45560a3f6c4d.png",
+                       "sha256":  "D9D28030270B8EA049CAFA5F153E5009DB73DE8FA63B17E4A9AFAA954E7AE698"
+                   },
+                   {
+                       "file":  "northeast.png",
+                       "source_rect_px":  [
+                                              600,
+                                              0,
+                                              350,
+                                              350
+                                          ],
+                       "size_px":  [
+                                       1254,
+                                       1254
+                                   ],
+                       "generation_file":  "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-4a5c8286-f689-4a3d-a82a-aa3bb0ad4ef8.png",
+                       "sha256":  "17867D8CE69146B62BE58D928EBC15D0A1D3A8D8EE25C9A4F0E31335170A758C"
+                   },
+                   {
+                       "file":  "east.png",
+                       "source_rect_px":  [
+                                              600,
+                                              300,
+                                              350,
+                                              350
+                                          ],
+                       "size_px":  [
+                                       1254,
+                                       1254
+                                   ],
+                       "generation_file":  "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-9a3cf5d4-a228-4a5e-8e83-bd12d5786955.png",
+                       "sha256":  "7AA711450B7B72D5DFF71EE0A65D740EA45CA5F2DF5DD5E39121347D471B50F1"
+                   },
+                   {
+                       "file":  "southwest.png",
+                       "source_rect_px":  [
+                                              300,
+                                              600,
+                                              350,
+                                              350
+                                          ],
+                       "size_px":  [
+                                       1254,
+                                       1254
+                                   ],
+                       "generation_file":  "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-d17d6dd4-d2f7-40ae-8637-b7a2aa57eb59.png",
+                       "sha256":  "B1CC0BE3BF29D716231485DC3C150C90E909D9B7D4A64A66742DCA0A684DEED1"
+                   },
+                   {
+                       "file":  "southeast.png",
+                       "source_rect_px":  [
+                                              600,
+                                              600,
+                                              350,
+                                              350
+                                          ],
+                       "size_px":  [
+                                       1254,
+                                       1254
+                                   ],
+                       "generation_file":  "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-36e1c1b4-1155-458e-b70b-c47922561418.png",
+                       "sha256":  "307633D6E344B557F07366041F4EDDF8C08FF2A0B7A35F9095AE5B18AF1EB690"
+                   },
+                   {
+                       "file":  "south.png",
+                       "source_rect_px":  [
+                                              300,
+                                              900,
+                                              350,
+                                              350
+                                          ],
+                       "size_px":  [
+                                       1254,
+                                       1254
+                                   ],
+                       "generation_file":  "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-167eda02-a674-4d1c-9fa5-3d87d51191bf.png",
+                       "sha256":  "40E02686F2A63B44CE961E9B6569B0B5DB6729BC972F7A92E8BCA4A7DF67ECE8"
+                   },
+                   {
+                       "file":  "south_coast.png",
+                       "source_rect_px":  [
+                                              600,
+                                              900,
+                                              350,
+                                              350
+                                          ],
+                       "size_px":  [
+                                       1254,
+                                       1254
+                                   ],
+                       "generation_file":  "C:\\Users\\지용훈\\.codex\\generated_images\\01a0e6e7-f7c4-7502-84f1-554603cffc93\\exec-3a5eb20d-7dbe-4b82-b39d-2cc0f3d9c5e0.png",
+                       "sha256":  "DF4579DDDDFA30427E6CC5C8352A40F3E23852151AC5A627365303965C5853D2"
+                   }
+               ]
+}

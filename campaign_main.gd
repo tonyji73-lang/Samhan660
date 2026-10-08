@@ -1,10 +1,17 @@
 extends Control
+
+const FlowReport=preload("res://ui/living_city_v1/campaign_flow_report.gd")
+const FlowOverlay=preload("res://ui/living_city_v1/campaign_flow_overlay.gd")
+var flow_overlay: Control
+var flow_season_messages: Array[String]=[]
 const Invasions=preload("res://invasion_orders.gd")
 const InvasionOverlay=preload("res://invasion_overlay.gd")
 var invasion_overlay: Control
 var invasion_button: Button
 const Merit=preload("res://battle_merit.gd")
-const MeritOverlay=preload("res://battle_merit_overlay.gd")
+const MeritOverlay=preload("res://ui/living_city_v1/battle_results_overlay.gd")
+const SortieOverlay=preload("res://ui/living_city_v1/sortie_overlay.gd")
+var sortie_overlay: Control
 var merit_overlay: Control
 var pending_merit_battles: Array[String]=[]
 const Ending=preload("res://campaign_ending.gd")
@@ -32,7 +39,7 @@ var power_dialog: AcceptDialog
 var power_request_id: String=""
 var power_successors: OptionButton
 var power_details: Label
-const PoliticsOverlay=preload("res://noble_politics_overlay.gd")
+const PoliticsOverlay=preload("res://ui/living_city_v1/court_overlay.gd")
 const Supply = preload("res://supply_transport.gd")
 const SupplyOverlay = preload("res://supply_transport_overlay.gd")
 var supply_overlay: Control
@@ -56,7 +63,7 @@ const SamhanStrategySystems = preload("res://samhan_strategy_systems.gd")
 const ProductionSystem = preload("res://production_system.gd")
 const ProductionData = preload("res://production_data.gd")
 const ProductionOverlay = preload("res://production_overlay.gd")
-const DiplomacyOverlay = preload("res://diplomacy_overlay.gd")
+const DiplomacyOverlay = preload("res://ui/living_city_v1/diplomacy_overlay.gd")
 const IronSupplyData = preload("res://iron_supply_data.gd")
 const EventPresentation = preload("res://cutscenes/event_presentation.gd")
 const BountifulHarvest = preload("res://bountiful_harvest.gd")
@@ -331,9 +338,11 @@ func _ready() -> void:
 	recruitment_overlay=RecruitmentOverlay.new()
 	production_layer.add_child(recruitment_overlay)
 	recruitment_overlay.visibility_changed.connect(_sync_modal_map_input)
+	flow_overlay=FlowOverlay.new(); production_layer.add_child(flow_overlay); flow_overlay.visibility_changed.connect(_sync_modal_map_input)
 	army_overlay=ArmyOverlay.new(); production_layer.add_child(army_overlay); army_overlay.visibility_changed.connect(_sync_modal_map_input)
 	politics_overlay=PoliticsOverlay.new(); production_layer.add_child(politics_overlay); politics_overlay.visibility_changed.connect(_sync_modal_map_input)
 	merit_overlay=MeritOverlay.new(); production_layer.add_child(merit_overlay); merit_overlay.visibility_changed.connect(_sync_modal_map_input)
+	sortie_overlay=SortieOverlay.new(); production_layer.add_child(sortie_overlay); sortie_overlay.visibility_changed.connect(_sync_modal_map_input)
 	invasion_overlay=InvasionOverlay.new(); production_layer.add_child(invasion_overlay); invasion_overlay.visibility_changed.connect(_sync_modal_map_input)
 	invasion_button=Button.new(); invasion_button.text="침공 예고"; navigation_menu.get_parent().add_child(invasion_button); invasion_button.pressed.connect(open_invasions)
 	navigation_menu.get_popup().add_item("침공 예고·방어 대응",13)
@@ -436,7 +445,11 @@ func _present_campaign_opening() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if flow_overlay!=null and flow_overlay.visible and event.is_action_pressed("ui_cancel"):
+		flow_overlay.close(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and settlement_overlay != null and settlement_overlay.visible and not settlement_overlay.busy():
+		if not attack_source_id.is_empty():
+			settlement_overlay.cancel_attack_preview(); get_viewport().set_input_as_handled(); return
 		settlement_overlay.open_menu(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and invasion_overlay!=null and invasion_overlay.visible:
 		invasion_overlay.hide(); get_viewport().set_input_as_handled(); return
@@ -445,7 +458,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and army_overlay!=null and army_overlay.visible:
 		army_overlay.hide(); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and supply_overlay!=null and supply_overlay.visible:
-		supply_overlay.hide(); get_viewport().set_input_as_handled(); return
+		close_preparation_destination(supply_overlay); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and industry_overlay!=null and industry_overlay.visible:
 		close_preparation_destination(industry_overlay); get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") and recruitment_overlay!=null and recruitment_overlay.visible:
@@ -453,7 +466,7 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		return
 	if event.is_action_pressed("ui_cancel") and domestic_overlay!=null and domestic_overlay.visible:
-		domestic_overlay.hide()
+		domestic_overlay.back()
 		get_viewport().set_input_as_handled()
 		return
 	if event_presentation != null and event_presentation.active:
@@ -672,6 +685,8 @@ func _open_diplomacy() -> void:
 func _sync_modal_map_input() -> void:
 	map_area.modal_input_locked = (power_dialog!=null and power_dialog.visible) or Ending.finished(strategy_state) or (ending_load_dialog!=null and ending_load_dialog.visible) or (ending_save_dialog!=null and ending_save_dialog.visible) or production_overlay.visible or diplomacy_overlay.visible or (domestic_overlay!=null and domestic_overlay.visible) or (recruitment_overlay!=null and recruitment_overlay.visible) or (industry_overlay!=null and industry_overlay.visible) or (supply_overlay!=null and supply_overlay.visible) or (army_overlay!=null and army_overlay.visible) or (politics_overlay!=null and politics_overlay.visible) or (playability_dialog!=null and playability_dialog.visible)
 	map_area.modal_input_locked=map_area.modal_input_locked or (merit_overlay!=null and merit_overlay.visible)
+	map_area.modal_input_locked=map_area.modal_input_locked or (sortie_overlay!=null and sortie_overlay.visible)
+	map_area.modal_input_locked=map_area.modal_input_locked or (flow_overlay!=null and flow_overlay.visible)
 	map_area.modal_input_locked=map_area.modal_input_locked or (invasion_overlay!=null and invasion_overlay.visible)
 	map_area.modal_input_locked = map_area.modal_input_locked or (settlement_overlay != null and settlement_overlay.visible)
 	if map_area.modal_input_locked:
@@ -701,6 +716,16 @@ func get_diplomacy_envoys() -> Array[Dictionary]:
 	for id: String in officer_registry.get("people", {}):
 		var checked: Dictionary = strategy.get_diplomatic_envoy(strategy_state, player_faction, id, provinces, {}, {})
 		if checked.ok: result.append(checked.envoy)
+	return result
+
+
+func get_diplomacy_envoy_candidates() -> Array[Dictionary]:
+	var result: Array[Dictionary]=[]
+	for id: String in officer_registry.get("people",{}):
+		var person: Dictionary=get_officer(id)
+		if person.get("faction_id","")!=player_faction_id or not person.get("alive",true): continue
+		var checked: Dictionary=strategy.get_diplomatic_envoy(strategy_state,player_faction,id,provinces,{},{} )
+		person=person.duplicate(true); person["available"]=checked.ok; person["reason"]=checked.get("reason",""); result.append(person)
 	return result
 
 
@@ -1126,7 +1151,7 @@ func close_preparation_destination(overlay: Control) -> void:
 	if preparation_return.is_empty(): overlay.hide(); return
 	var previous: Dictionary=preparation_return.duplicate()
 	preparation_return={}
-	production_overlay.hide(); industry_overlay.hide()
+	production_overlay.hide(); industry_overlay.hide(); supply_overlay.hide()
 	if not Economy.validate(strategy_state,provinces,player_faction_id,player_faction_id,previous.city).ok: return
 	open_army(previous.city)
 	army_overlay.rebuild(previous.unit)
@@ -1441,14 +1466,21 @@ func _on_attack_button_pressed() -> void:
 		log_label.text = "아군 영지는 공격할 수 없습니다."
 		return
 
-	var source_food_stock: int = int(
-		provinces[attack_source_id].get("food_stock", 0)
-	)
-	if source_food_stock < ATTACK_FOOD_COST:
-		log_label.text = "공격에 필요한 군량 %d이 부족합니다." % ATTACK_FOOD_COST
-		return
+	sortie_overlay.open(self,attack_source_id,selected_province_id)
 
-	resolve_attack(attack_source_id, selected_province_id)
+
+func get_sortie_quote(source: String, target: String) -> Dictionary:
+	var ids: Array=Army.attack_units(strategy_state,source,player_faction_id)
+	var commander: Dictionary=get_best_commander(source,"attack")
+	var validation: Dictionary=Economy.validate(strategy_state,provinces,player_faction_id,player_faction_id,source,0,ATTACK_FOOD_COST)
+	var reason: String=str(validation.get("reason",""))
+	if not provinces.has(target) or not province_connections.get(source,[]).has(target): reason="연결된 목표를 선택하세요."
+	elif provinces[target].faction==player_faction: reason="아군 도시는 공격할 수 없습니다."
+	elif not validate_attack_staff(source).ok: reason=validate_attack_staff(source).reason
+	elif Army.count(strategy_state,Army.at_city(strategy_state,source,player_faction_id,true))<3000: reason="공격하려면 최소 3,000명의 병력이 필요합니다."
+	elif ids.is_empty(): reason="훈련·예약·군권 상태를 확인하고 출정 가능한 부대를 준비하세요."
+	elif not Power.attack_reason(self,source,str(commander.get("officer_id",""))).is_empty(): reason=Power.attack_reason(self,source,str(commander.get("officer_id","")))
+	return {"ok":reason.is_empty(),"reason":reason,"units":ids,"commander":commander,"troops":Army.count(strategy_state,ids),"food":int(provinces.get(source,{}).get("food_stock",0))}
 
 
 func is_selected_province_player_owned() -> bool:
@@ -1980,6 +2012,11 @@ func _on_recruit_button_pressed() -> void:
 	recruitment_overlay.open(self,selected_province_id)
 
 func _on_end_turn_button_pressed() -> void:
+	if flow_overlay!=null and flow_overlay.visible: return
+	if sortie_overlay!=null and sortie_overlay.visible: return
+	var court_pending: Dictionary=officer_registry.get("politics",{}).get("pending",{})
+	if court_pending.get("faction_id","")==player_faction_id:
+		_show_court_demand(); return
 	if invasion_overlay!=null and invasion_overlay.visible: return
 	if merit_overlay!=null and merit_overlay.visible: return
 	if Ending.finished(strategy_state) or ending_busy: return
@@ -1996,6 +2033,9 @@ func _on_end_turn_button_pressed() -> void:
 	if event_presentation != null and event_presentation.active:
 		return
 	ending_busy=true
+	var report_gold_before: int=gold
+	flow_season_messages.clear()
+	var report_jobs_before: Dictionary=strategy_state.get("domestic",{}).get("jobs",{}).duplicate(true)
 	var season_changed: bool = _advance_month()
 
 	officer_registry["clock_month"]=year*12+month
@@ -2051,6 +2091,11 @@ func _on_end_turn_button_pressed() -> void:
 	_present_pending_choice()
 	ending_busy=false
 	Power.finish_month(self)
+	var report_messages: Array[String]=economy_messages.duplicate()
+	report_messages.append_array(flow_season_messages)
+	for detail: String in [transfer_message,public_order_message,ai_message]:
+		if not detail.is_empty(): report_messages.append(detail)
+	FlowReport.record(self,report_gold_before,report_messages,report_jobs_before)
 	_show_pending_merit.call_deferred()
 	evaluate_campaign_ending.call_deferred("month_complete")
 
@@ -2065,7 +2110,15 @@ func _present_pending_choice(resuming: bool = false) -> void:
 		event_presentation.play_choice(pending, resuming)
 	elif officer_registry.has("politics") and player_faction_id==officer_registry.politics.faction_id:
 		var demand: Dictionary=officer_registry.politics.pending if resuming else Noble.propose(self)
-		if not demand.is_empty(): event_presentation.play_choice(demand,resuming)
+		if not demand.is_empty(): _show_court_demand.call_deferred()
+
+func _show_court_demand(_event_id: String="") -> void:
+	var pending: Dictionary=officer_registry.get("politics",{}).get("pending",{})
+	if pending.get("faction_id","")!=player_faction_id: return
+	if event_presentation.active:
+		if not event_presentation.event_finished.is_connected(_show_court_demand): event_presentation.event_finished.connect(_show_court_demand,CONNECT_ONE_SHOT)
+		return
+	open_politics(); politics_overlay.show_issue("demand",pending.occurrence_id)
 
 
 func get_event_choice_reason(event_id: String, occurrence: String, choice: String) -> String:
@@ -2139,6 +2192,7 @@ func _process_strategy_season() -> String:
 		Economy.post(strategy_state,Economy.resolve(strategy_state,faction),int(gold_delta[faction]),"trade",year*12+month)
 
 	var messages: Array = result.get("messages", [])
+	flow_season_messages.assign(messages)
 	if messages.is_empty():
 		return ""
 	return combine_messages(messages)
@@ -2603,6 +2657,7 @@ func _write_campaign_save(save_path: String) -> bool:
 	return true
 
 func _on_load_button_pressed(save_path: String = SAVE_PATH) -> void:
+	if sortie_overlay!=null: sortie_overlay.hide()
 	if invasion_overlay!=null: invasion_overlay.hide()
 	preparation_return={}
 	pending_merit_battles.clear()
@@ -2966,6 +3021,7 @@ func _queue_ending_check(source: String) -> void:
 
 func show_ending_result() -> void:
 	if ending_dialog==null or not Ending.finished(strategy_state): return
+	if sortie_overlay!=null: sortie_overlay.hide()
 	if event_presentation!=null and event_presentation.active: return
 	open_politics()
 	politics_overlay.hide()
@@ -3052,20 +3108,9 @@ func show_power_transfer(id: String) -> void:
 	var row: Dictionary=requests.get(id,{})
 	if row.is_empty(): log_label.text="진행 중인 권력 인계 협의가 없습니다."; return
 	power_request_id=id
-	for overlay: Control in [politics_overlay,army_overlay,domestic_overlay,industry_overlay,production_overlay,diplomacy_overlay]:
-		if overlay!=null: overlay.hide()
-	power_details.text=Power.describe(self,row)
-	power_dialog.get_ok_button().text="닫기" if row.get("applied",false) else "닫기·기존 권한 유지"
-	for button: Node in power_dialog.find_children("*","Button",true,false):
-		if button.has_meta("power_choice"): button.disabled=row.status not in ["offered","waiting","successor_needed"] or (button.get_meta("power_choice")=="wait" and row.status!="offered")
-	power_successors.clear(); power_successors.add_item("후임 재지정 (기존 인계 기한 유지)")
-	power_successors.visible=row.status in ["waiting","successor_needed"] and row.request.kind in ["governor","commander"]
-	if power_successors.visible:
-		power_successors.add_item("공석으로 인계"); power_successors.set_item_metadata(1,"")
-		var successor_city: String=row.city if row.request.kind=="governor" else str(strategy_state.unit_rosters.get(row.request.target,{}).get("location",row.city))
-		for person: String in get_city_officer_ids(successor_city):
-			power_successors.add_item(get_officer(person).name); power_successors.set_item_metadata(power_successors.item_count-1,person)
-	power_dialog.popup_centered(Vector2i(1050,650))
+	power_dialog.hide()
+	open_politics()
+	politics_overlay.show_issue("power",id)
 
 func _show_deferred_power(_event_id: String) -> void:
 	show_power_transfer.call_deferred(power_request_id)

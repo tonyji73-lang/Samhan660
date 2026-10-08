@@ -97,7 +97,10 @@ func census_case(scenario: Dictionary, mode: String) -> void:
 func _run() -> void:
 	create_timer(180.0).timeout.connect(func(): push_error("OFFICER TIMEOUT"); quit(2))
 	DirAccess.make_dir_recursive_absolute(OUT)
-	check(Catalog.definitions().size()==69,"71 DB entries consolidate to 69 templates")
+	var legacy_templates := 0
+	for definition: Dictionary in Catalog.definitions().values():
+		if definition.origin != "fictional": legacy_templates += 1
+	check(legacy_templates==69,"69 original templates preserved alongside explicit fictional additions")
 	check(Catalog.resolve("고교쿠 천황")==Catalog.resolve("사이메이 천황") and Catalog.resolve("나카노오에 황자")==Catalog.resolve("덴지 천황"),"sourced Japanese title aliases share identity")
 	check(Catalog.resolve("문무왕")==Catalog.resolve("김법민") and Catalog.resolve("무열왕")==Catalog.resolve("김춘추"),"Korean royal title aliases")
 	var combinations: int = 0
@@ -125,6 +128,15 @@ func _run() -> void:
 	quit(0 if failures==0 else 1)
 
 func generated_actions() -> void:
+	# Isolated shortage fixture: the new distributed roster normally has no vacancies.
+	# Keep the existing annual recruitment cap/identity/transfer coverage meaningful.
+	for person: Dictionary in c.officer_registry.people.values():
+		if person.origin == "fictional" and person.faction_id == "silla":
+			person.active = false
+			person.location = ""
+	for post: String in c.officer_registry.posts.keys():
+		var id: String = c.officer_registry.posts[post]
+		if id.begins_with("fictional:silla:"): c.officer_registry.posts.erase(post)
 	c.strategy.auto_fill_officer_shortages(c.strategy_state,c.year,c.provinces,c.officers_by_province,Scenarios.get_scenario(c.scenario_id))
 	var r: Dictionary = c.officer_registry
 	var generated: Array[String] = []

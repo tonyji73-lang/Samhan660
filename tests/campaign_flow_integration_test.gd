@@ -1,0 +1,28 @@
+extends "res://tests/project_foundation_test.gd"
+func _run() -> void:
+	create_timer(90).timeout.connect(func(): quit(2))
+	root.set_meta("new_game_settings",{"faction":"silla","play_style":"historical","difficulty":"normal","scenario_id":"silla_equilibrium_632","scenario_year":632,"scenario_season":0})
+	change_scene_to_file("res://campaign_main.tscn"); await settle(); c=current_scene; await finish_events()
+	var before: String=JSON.stringify(c.OfficerRegistry.export_strategy(c.strategy_state))
+	c.flow_overlay.open(c); await settle()
+	check(c.flow_overlay.visible and c.settlement_overlay.busy(),"report locks active city input")
+	check(JSON.stringify(c.OfficerRegistry.export_strategy(c.strategy_state))==before,"old-save empty report view is read only")
+	check(c.flow_overlay.history.item_count==1,"no fabricated reports before first monthly settlement")
+	c.flow_overlay.navigate("production"); await settle()
+	check(c.production_overlay.visible and not c.flow_overlay.visible,"report route opens existing production controller")
+	check(c.production_overlay.manager_button.get_index()<c.production_overlay.details.get_index(),"manager action precedes long reference details")
+	check(c.production_overlay.research_button.get_index()<c.production_overlay.details.get_index(),"research prerequisite action precedes details")
+	check(c.production_overlay.building_button.get_index()<c.production_overlay.details.get_index(),"building prerequisite action precedes details")
+	c.production_overlay.hide(); await settle(); var money: int=c.gold
+	c._on_end_turn_button_pressed(); await finish_events(); await settle()
+	var reports: Array=c.strategy_state.get("ui_month_reports",[])
+	check(reports.size()==1,"real month pipeline records one report")
+	check(reports[0].gold_before==money and reports[0].gold_after==c.gold,"report uses actual treasury settlement snapshots")
+	c.flow_overlay.open(c); await settle(); var count: int=reports.size(); c.flow_overlay.close(); c.flow_overlay.open(c)
+	check(reports.size()==count,"reopening report never reprocesses month")
+	var path: String="user://flow_integration_%d_%d.json" % [int(Time.get_unix_time_from_system()),OS.get_process_id()]
+	c.flow_overlay.close(); check(not FileAccess.file_exists(path) and c._on_save_button_pressed(path),"integration save uses new native slot")
+	var expected: Array=JSON.parse_string(JSON.stringify(reports))
+	c._on_load_button_pressed(path); await settle()
+	check(JSON.parse_string(JSON.stringify(c.strategy_state.ui_month_reports))==expected,"native save load preserves report entries exactly")
+	print("V1.10 flow integration: %d checks / %d failures" % [checks,failures]); quit(failures)

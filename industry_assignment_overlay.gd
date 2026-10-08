@@ -1,5 +1,8 @@
 extends Control
 
+const LivingStyle = preload("res://ui/living_city_v1/industry_style.gd")
+var heading: Label
+
 var campaign: Node
 var city: String
 var kind: String
@@ -26,15 +29,18 @@ func _ready() -> void:
 	var style:=StyleBoxFlat.new(); style.bg_color=Color("241f17"); style.border_color=Color("c8a75c"); style.set_border_width_all(1)
 	for side: String in ["left","right","top","bottom"]: style.set("content_margin_"+side,18)
 	panel.add_theme_stylebox_override("panel",style)
+	LivingStyle.frame(panel)
 	var box:=VBoxContainer.new(); box.add_theme_constant_override("separation",10); panel.add_child(box)
-	status=Label.new(); box.add_child(status)
+	var header:=HBoxContainer.new(); box.add_child(header)
+	heading=LivingStyle.heading(); header.add_child(heading)
+	status=Label.new(); header.add_child(status)
 	kind_selector=OptionButton.new(); box.add_child(kind_selector)
 	for kind_label: String in ["건설 업무","연구 업무","도시 생산 관리"]: kind_selector.add_item(kind_label)
 	kind_selector.item_selected.connect(func(n): kind=["build","research","production"][n]; last_job=""; rebuild())
 	city_selector=OptionButton.new(); box.add_child(city_selector); city_selector.item_selected.connect(func(n): city=str(city_selector.get_item_metadata(n)); rebuild_officers(); refresh())
 	requirement_selector=OptionButton.new(); box.add_child(requirement_selector); requirement_selector.item_selected.connect(func(n): requirement=str(requirement_selector.get_item_metadata(n)); refresh())
 	officer_selector=OptionButton.new(); box.add_child(officer_selector); officer_selector.item_selected.connect(func(_n): refresh())
-	var scroll:=ScrollContainer.new(); scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL; box.add_child(scroll)
+	var scroll:=ScrollContainer.new(); scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL; scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED; box.add_child(scroll)
 	details=Label.new(); details.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; details.size_flags_horizontal=Control.SIZE_EXPAND_FILL; scroll.add_child(details)
 	execute_button=button(box,"업무 접수 · 견적 비용 지불",execute)
 	assign_button=button(box,"선택한 담당자·거점으로 변경/재개 · 재결제 없음",assign_officer)
@@ -44,6 +50,10 @@ func _ready() -> void:
 	preparation_back=button(box,"선택한 부대 준비로 돌아가기",func(): campaign.close_preparation_destination(self))
 	close_button=button(box,"닫기 (Esc)",func(): campaign.close_preparation_destination(self))
 	for control: Control in [status,kind_selector,city_selector,requirement_selector,officer_selector,details,execute_button,assign_button,pause_button,cancel_button,close_button]: control.add_theme_font_size_override("font_size",21)
+	LivingStyle.primary(execute_button)
+	for selector: OptionButton in [kind_selector,city_selector,requirement_selector,officer_selector]:
+		selector.fit_to_longest_item=false
+		selector.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 	hide()
 
 func button(parent: Node, text: String, callable: Callable) -> Button:
@@ -93,7 +103,10 @@ func refresh() -> void:
 		for recent: Dictionary in campaign.Industry.jobs(campaign.strategy_state).values():
 			if recent.kind==kind and recent.city_id==city and recent.get("requirement_id","")==requirement and recent.get("faction_id","")==campaign.player_faction_id: last_job=recent.id
 	var q: Dictionary=campaign.Industry.quote(campaign.strategy_state,campaign.provinces,campaign.strategy,campaign.player_faction_id,city,kind,requirement,selected_id(),campaign.year*12+campaign.month,campaign.scenario_id,campaign.iron_supply_rules)
-	status.text="%s · %s · 국고 %d" % [campaign.provinces.get(city,{}).get("name",city),["건설","연구","생산 관리"][["build","research","production"].find(kind)],campaign.gold]
+	heading.text="%s · %s" % [campaign.provinces.get(city,{}).get("name",city),["건설","연구","생산 관리"][["build","research","production"].find(kind)]]
+	heading.tooltip_text=heading.text
+	status.text="국고 %d" % campaign.gold
+	officer_selector.tooltip_text=officer_selector.text
 	var p: Dictionary=campaign.get_officer(selected_id())
 	var amount: int=campaign.Industry.effective_work(campaign.strategy_state,city,p,kind)
 	details.text="선택 담당자: %s · 정치 %d / 지력 %d\n효율 E %d · 월 작업량 %d\n" % [p.get("name","미선택"),p.get("politics",0),p.get("intelligence",0),campaign.Industry.efficiency(p,kind),amount]

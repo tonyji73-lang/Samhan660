@@ -99,16 +99,7 @@ func _place(parent: Node, child: Control, rectangle: Rect2) -> void:
 
 
 func _style(fill: Color, border: Color, border_width: int = 1) -> StyleBoxFlat:
-	var style_box := StyleBoxFlat.new()
-	style_box.bg_color = fill
-	style_box.border_color = border
-	style_box.set_border_width_all(border_width)
-	style_box.set_corner_radius_all(3)
-	style_box.content_margin_left = 14.0
-	style_box.content_margin_right = 14.0
-	style_box.content_margin_top = 8.0
-	style_box.content_margin_bottom = 8.0
-	return style_box
+	return Atlas.panel(fill, border, border_width)
 
 
 func _panel(parent: Node, rectangle: Rect2, fill: Color, border: Color = Color.TRANSPARENT) -> Panel:
@@ -217,7 +208,10 @@ func _render() -> void:
 	_panel(_stage, _box("hero"), Color(0.96, 0.93, 0.86, 0.08))
 	_build_map(art)
 	_texture(_stage, _load_texture(art.get("portrait")), _box("portrait"), false)
-	_panel(_stage, _box("right"), Atlas.PAPER)
+	_panel(_stage, _box("right"), Atlas.SURFACE, Atlas.LINE)
+	_panel(_stage, Rect2(0, 88, 1920, 92), Atlas.SURFACE, Atlas.LINE)
+	for x: float in [294.0, 622.0, 1128.0, 1534.0]:
+		_panel(_stage, Rect2(x, 900, 1, 156), Atlas.LINE)
 	_build_declaration(art, backdrop)
 	_build_header()
 	_build_timeline()
@@ -268,6 +262,7 @@ func _build_header() -> void:
 	back_button.size = _box("back").size
 	var caption := str(_model.get("year_label", "")) + " · " + str(_model.get("scenario_title", ""))
 	var scenario_label := _label(_stage, caption, _box("title"), 22, MUTED)
+	scenario_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	scenario_label.tooltip_text = caption
 
 
@@ -342,9 +337,11 @@ func _build_timeline() -> void:
 
 func _build_factions() -> void:
 	_faction_scroll = _scroll(_stage, _box("factions"))
-	var flow := HFlowContainer.new()
+	_faction_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	_faction_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	var flow := HBoxContainer.new()
 	flow.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	flow.add_theme_constant_override("h_separation", 8)
+	flow.add_theme_constant_override("separation", 12)
 	flow.add_theme_constant_override("v_separation", 10)
 	_faction_scroll.add_child(flow)
 	for entry: Dictionary in _model.get("factions", []):
@@ -352,7 +349,7 @@ func _build_factions() -> void:
 		var selected := entry_id == str(_model.get("faction_id", ""))
 		var button := _button(flow, str(entry.get("label", "")), "faction:" + entry_id, selected,
 			bool(entry.get("enabled", false)), func() -> void: faction_requested.emit(entry_id), 25)
-		button.custom_minimum_size = Vector2(148, 52)
+		button.custom_minimum_size = Vector2(200, 52)
 		button.tooltip_text = "아직 오픈되지 않았습니다" if not bool(entry.get("enabled", false)) else str(entry.get("reason", ""))
 		button.clip_text = true
 
@@ -374,9 +371,14 @@ func _build_details() -> void:
 	column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	column.add_theme_constant_override("separation", 10)
 	_details.add_child(column)
+	var facts_scroll := _scroll(_stage, _box("facts"))
+	var facts_column := VBoxContainer.new()
+	facts_column.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	facts_column.add_theme_constant_override("separation", 12)
+	facts_scroll.add_child(facts_column)
 	for pair: Array in [["군주", _model.get("leader", "")], ["수도", _model.get("capital", "")], ["주요 인물", _model.get("key_people", "")]]:
 		if not str(pair[1]).is_empty():
-			var info := _detail_text(column, str(pair[0]) + "    " + str(pair[1]), 24, IVORY)
+			var info := _detail_text(facts_column, str(pair[0]) + "    " + str(pair[1]), 22, IVORY)
 			if pair[0] == "주요 인물":
 				info.mouse_filter = Control.MOUSE_FILTER_PASS
 				info.tooltip_text = str(_model.get("key_people_detail", ""))
@@ -385,9 +387,9 @@ func _build_details() -> void:
 		_detail_text(column, subtitle, 24, GOLD)
 	var description := str(_model.get("description", ""))
 	if not description.is_empty():
-		_detail_text(column, description, 24, MUTED)
+		_detail_text(column, description, 22, MUTED)
 	for entry: Dictionary in _model.get("starting_facts", []):
-		_detail_text(column, str(entry.get("label", "")) + "  " + str(entry.get("value", "")), 24, MUTED)
+		_detail_text(column, str(entry.get("label", "")) + "  " + str(entry.get("value", "")), 22, MUTED)
 
 
 func _build_choices(list_key: String, selected_key: String, caption: String, outgoing: Signal) -> void:

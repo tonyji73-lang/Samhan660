@@ -289,7 +289,7 @@ void fragment() {
 
 
 const DEFAULT_MAP_TEXTURE_PATH: String = (
-	WorldMapData.MAP_TEXTURE_PATH
+	"res://ui/korea_layout_v1/terrain_refresh_20261001/east_asia.png"
 )
 
 const MAP_TEXTURE_SIZE: Vector2 = WorldMapData.MAP_TEXTURE_SIZE
@@ -536,6 +536,7 @@ var outside_border_lines: Array = []
 var strategic_lines: Array = []
 var city_labels: Dictionary = {}
 var map_zoom: float = MAP_MIN_ZOOM
+var fit_entire_world: bool = false
 var map_pan_offset: Vector2 = Vector2.ZERO
 var map_dragging: bool = false
 var cutscene_input_locked: bool = false
@@ -697,6 +698,9 @@ func _configure_map_background() -> void:
 
 	map_background.modulate = Color.WHITE
 	map_background.self_modulate = Color.WHITE
+	var registration := ShaderMaterial.new()
+	registration.shader = preload("res://ui/korea_layout_v1/terrain_refresh_20261001/world_registration.gdshader")
+	map_background.material = registration
 
 	# TODO: MAP_BRIGHTNESS_SHADER_CODE 자체는 문법상 문제가 없는데, 이
 	# 환경(Godot 4.7 + D3D12 렌더러로 추정)에서 셰이더 컴파일이 실패해서
@@ -1475,6 +1479,24 @@ func _get_portrait_texture(
 	if portrait_cache.has(general_name):
 		return portrait_cache[general_name]
 
+	var portrait_catalog = preload("res://officer_catalog.gd")
+	var portrait_id: String = portrait_catalog.resolve(general_name)
+	var definition: Dictionary = portrait_catalog.definitions().get(portrait_id, {})
+	var portrait_spec: Dictionary = definition.get("portrait", {})
+	if not portrait_spec.is_empty():
+		var atlas_path: String = portrait_spec.get("atlas", "")
+		if ResourceLoader.exists(atlas_path):
+			var atlas: Texture2D = load(atlas_path)
+			var columns: int = portrait_spec.get("columns", 4)
+			var rows: int = portrait_spec.get("rows", 4)
+			var cell: int = portrait_spec.get("cell", 0)
+			var cell_size := atlas.get_size() / Vector2(columns, rows)
+			var portrait := AtlasTexture.new()
+			portrait.atlas = atlas
+			portrait.region = Rect2(Vector2(cell % columns, cell / columns) * cell_size, cell_size)
+			portrait.filter_clip = true
+			portrait_cache[general_name] = portrait
+			return portrait
 	var portrait_path: String = ""
 	if PORTRAIT_PATHS.has(general_name):
 		portrait_path = str(PORTRAIT_PATHS[general_name])
@@ -1668,6 +1690,8 @@ func _get_base_map_rect() -> Rect2:
 		available_size.x / texture_size.x,
 		available_size.y / texture_size.y
 	)
+	if fit_entire_world:
+		texture_scale = minf(available_size.x / texture_size.x, available_size.y / texture_size.y)
 	var displayed_size: Vector2 = texture_size * texture_scale
 	var displayed_position: Vector2 = (
 		available_size - displayed_size

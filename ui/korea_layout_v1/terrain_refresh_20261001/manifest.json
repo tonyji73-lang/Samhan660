@@ -1,0 +1,74 @@
+﻿{
+    "created":  "2026-10-01",
+    "generator":  "built-in image_gen",
+    "source":  "../assets/korea_approved_1254.png",
+    "source_sha256":  "36594c1d1ee0cbcd80a175d72790d3e22423103cf81d6b191f8bf2d317e1f246",
+    "assets":  [
+                   {
+                       "file":  "northwest.png",
+                       "size":  [
+                                    1254,
+                                    1254
+                                ],
+                       "sha256":  "FC587EFB31F418304CE8A42DBC32B07167539A0146150C37717D33694853249C",
+                       "source_rect_px":  [
+                                              0,
+                                              0,
+                                              650,
+                                              650
+                                          ]
+                   },
+                   {
+                       "file":  "northeast.png",
+                       "size":  [
+                                    1254,
+                                    1254
+                                ],
+                       "sha256":  "FC98CE1F2357EE4F928A076FFD951F0F8B42064F403A4C77176DD8B0CBBB368B",
+                       "source_rect_px":  [
+                                              604,
+                                              0,
+                                              650,
+                                              650
+                                          ]
+                   },
+                   {
+                       "file":  "southwest.png",
+                       "size":  [
+                                    1254,
+                                    1254
+                                ],
+                       "sha256":  "0D205662493E36961B747D47A0AF57A1B173E52DD6B147ED32A16F70B04881A3",
+                       "source_rect_px":  [
+                                              0,
+                                              604,
+                                              650,
+                                              650
+                                          ]
+                   },
+                   {
+                       "file":  "southeast.png",
+                       "size":  [
+                                    1254,
+                                    1254
+                                ],
+                       "sha256":  "02A48AC3D2AB08F9C0A75357E12448524F04DC20ACE2AFFD03A243DE20811316",
+                       "source_rect_px":  [
+                                              604,
+                                              604,
+                                              650,
+                                              650
+                                          ]
+                   },
+                   {
+                       "file":  "east_asia.png",
+                       "size":  [
+                                    1536,
+                                    1024
+                                ],
+                       "sha256":  "A0224428DDFC5EAD170495363B8BC58A0F3A1C5399796216F6CDB926811DAE53"
+                   }
+               ],
+    "integration":  "Generated high-frequency terrain detail over original geography; existing south_v3 and Jeju retained. World artwork uses separate display-only island UV correction.",
+    "limits":  "Not surveyed geography. River/coast guard is visual only, not a gameplay land mask. Finite texture density; maximum zoom is not guaranteed native-sharp."
+}

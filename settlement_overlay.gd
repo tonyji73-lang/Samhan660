@@ -7,6 +7,7 @@ var _design_stage: Control
 var _city_panel: PanelContainer
 var _comparison_panel: PanelContainer
 var _modal_shield: Control
+var save_menu: Control
 var save_picker: FileDialog
 var review_tools: bool = "--map-review" in OS.get_cmdline_user_args()
 var campaign: Node
@@ -32,6 +33,8 @@ var resources: Label
 var command_status: Label
 var last_action: String = ""
 var opened_once: bool = false
+var attack_bar: Panel
+var attack_route: Label
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -57,19 +60,17 @@ func _ready() -> void:
 	var top := _atlas_panel(Rect2(0, 0, 1920, 80), false)
 	header = label(top, "", 26)
 	header.position = Vector2(28, 14)
-	header.size = Vector2(800, 52)
+	header.size = Vector2(600, 52)
 	header.clip_text = true
 	resources = label(top, "", 23)
-	resources.position = Vector2(834, 14)
-	resources.size = Vector2(370, 52)
+	resources.position = Vector2(650, 14)
+	resources.size = Vector2(570, 52)
 	resources.clip_text = true
 	threat = button(top, "침공 예고", func(): suspend(); campaign.open_invasions(), "invasions")
 	_position_button(threat, Rect2(1232, 16, 200, 48), "warning-circle")
 	var menu_button := button(top, "저장·메뉴", open_menu, "menu")
-	_position_button(menu_button, Rect2(1452, 16, 196, 48), "floppy-disk")
-	var close_button := button(top, "전체 지도", func(): map.fit_all(), "overview")
-	_position_button(close_button, Rect2(1668, 16, 220, 48), "list")
-	var nav_panel := _atlas_panel(Rect2(24, 106, 926, 64))
+	_position_button(menu_button, Rect2(1668, 16, 220, 48), "floppy-disk")
+	var nav_panel := _atlas_panel(Rect2(374, 986, 926, 64))
 	var nav := HBoxContainer.new()
 	nav.position = Vector2(6, 6)
 	nav.size = Vector2(914, 52)
@@ -99,9 +100,18 @@ func _ready() -> void:
 	_position_button(end_turn, Rect2(1640, 984, 248, 68), "arrow-right")
 	end_turn.icon_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	end_turn.add_theme_font_size_override("font_size", 28)
+	var report_button:=button(_design_stage,"월 보고·다음 행동",func():
+		if not busy(): campaign.flow_overlay.open(campaign),"report")
+	_position_button(report_button,Rect2(1316,984,308,68),"book-open")
+	attack_bar=_atlas_panel(Rect2(520,910,1368,64))
+	attack_route=label(attack_bar,"",22); attack_route.position=Vector2(18,4); attack_route.size=Vector2(690,56); attack_route.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	var confirm_attack:=button(attack_bar,"출정 조건 확인",func(): campaign._on_attack_button_pressed(),"attack_preview")
+	confirm_attack.position=Vector2(728,6); confirm_attack.size=Vector2(300,52)
+	var cancel_attack:=button(attack_bar,"준비 취소 (Esc)",cancel_attack_preview,"attack_cancel")
+	cancel_attack.position=Vector2(1044,6); cancel_attack.size=Vector2(306,52); attack_bar.hide()
 	command_status = label(_design_stage, "", 20)
-	command_status.position = Vector2(24,984)
-	command_status.size = Vector2(1540,68)
+	command_status.position = Vector2(24,106)
+	command_status.size = Vector2(1270,36)
 	command_status.clip_text = true
 	command_status.add_theme_color_override("font_color", Atlas.WHITE)
 	command_status.add_theme_color_override("font_shadow_color", Atlas.INK)
@@ -125,6 +135,8 @@ func _ready() -> void:
 		if id == 15:
 			save_picker.current_file = "campaign_%d_%02d.json" % [campaign.year, campaign.month]
 			save_picker.popup_centered(Vector2i(1000,650)))
+	save_menu = preload("res://ui/light_atlas_v1/save_menu.gd").new()
+	add_child(save_menu)
 	resized.connect(_fit_atlas_stage)
 	_fit_atlas_stage()
 	hide()
@@ -266,6 +278,7 @@ func label(parent: Node, text: String, font_size: int) -> Label:
 	return result
 
 func open() -> void:
+	_activate_play_map()
 	active = true
 	suspended = false
 	show()
@@ -279,10 +292,24 @@ func open() -> void:
 	campaign.province_panel.hide()
 	campaign._sync_modal_map_input()
 
+func _activate_play_map() -> void:
+	campaign.get_node("MainVBox").hide()
+	campaign.map_area.set_process(false)
+	campaign.map_area.set_process_input(false)
+	_set_event_map(map, true)
+
+func _set_event_map(target: Control, is_atlas: bool) -> void:
+	if campaign.event_presentation == null: return
+	var adapter: Node2D = campaign.event_presentation.adapter
+	if adapter == null: return
+	adapter.map = target
+	adapter.atlas = is_atlas
+	if adapter.get_parent() != target: adapter.reparent(target, false)
+
 func open_menu() -> void:
 	if busy(): return
 	suspend()
-	campaign.navigation_menu.show_popup()
+	save_menu.open_menu(campaign.navigation_menu.get_popup(), buttons.menu)
 
 func export_view() -> Dictionary:
 	var camera: Dictionary = map.get_view_state()
@@ -291,6 +318,7 @@ func export_view() -> Dictionary:
 	return {"camera":camera, "card_visible":_city_panel.visible}
 
 func restore_view(state: Dictionary, city: String) -> void:
+	_activate_play_map()
 	active = true
 	show()
 	accept_selection(city)
@@ -311,6 +339,9 @@ func suspend() -> void:
 	campaign._sync_modal_map_input()
 
 func busy() -> bool:
+	if save_menu != null and save_menu.visible: return true
+	if campaign.get("flow_overlay")!=null and campaign.flow_overlay.visible: return true
+	if campaign.get("sortie_overlay")!=null and campaign.sortie_overlay.visible: return true
 	if save_picker != null and save_picker.visible: return true
 	if campaign.navigation_menu.get_popup().visible: return true
 	var confirmation: Node = campaign.navigation_menu.get_node_or_null("ConfirmationDialog")
@@ -361,18 +392,24 @@ func refresh() -> void:
 	if not campaign.provinces.has(selected): return
 	var p: Dictionary = campaign.provinces[selected]
 	header.text = "삼한 660  |  %s    %d년 %d월" % [campaign.player_faction, campaign.year, campaign.month]
-	resources.text = "금 %s · 군량 %s" % [String.num_int64(campaign.gold), String.num_int64(campaign.food)]
+	resources.text = "국가 금 %s · 전국 군량 %s" % [String.num_int64(campaign.gold), String.num_int64(campaign.food)]
 	command_status.text = campaign.log_label.text
 	command_status.tooltip_text = command_status.text
 	city_title.text = str(p.name)
 	city_info.text = "%s 영토\n태수  %s\n인접 거점 %d곳 · 치안 %d · 성벽 %d" % [p.faction, p.governor, campaign.province_connections.get(selected, []).size(), p.public_order, p.fortress]
 	var owned: bool = p.faction == campaign.player_faction
+	attack_bar.visible=not campaign.attack_source_id.is_empty()
+	if attack_bar.visible:
+		var source: String=campaign.attack_source_id
+		attack_route.text="출발 %s → %s\n%s" % [campaign.provinces[source].name,p.name,"인접한 적 도시를 선택하세요." if selected==source else campaign.log_label.text]
+		buttons.attack_preview.disabled=selected==source or campaign.attack_button.disabled
 	var production: Array[String] = []
 	if owned:
 		for id: String in campaign.strategy_state.get("city_production", {}).get(selected, {}):
 			var order: Dictionary = campaign.strategy_state.city_production[selected][id]
 			if order.get("enabled", false): production.append(str(campaign.ProductionData.RECIPES[id].name) + " · " + str(order.status))
-	statistics.text = "주둔 병력  %d명\n군량  %d / %d\n생산  %s" % [p.troops, p.food_stock, p.granary_capacity, ("없음" if production.is_empty() else " / ".join(production)) if owned else "아군 도시에서 확인"]
+	var food_summary := "%d / %d" % [p.food_stock,p.granary_capacity] if p.has("food_stock") and p.has("granary_capacity") else "도시 군량 자료 없음"
+	statistics.text = "주둔 병력  %d명\n군량  %s\n생산  %s" % [p.troops, food_summary, ("없음" if production.is_empty() else " / ".join(production)) if owned else "아군 도시에서 확인"]
 	statistics.tooltip_text = statistics.text
 	if owned and map.map_zoom >= 4.2:
 		var tasks: Array[String] = []
@@ -462,16 +499,19 @@ func action(kind: String) -> void:
 		"production": campaign._on_city_card_production_requested(selected)
 		"research": campaign.open_industry(selected, "research")
 		"politics":
-			campaign.open_politics()
-			var targets: OptionButton = campaign.politics_overlay.targets
-			for n: int in range(targets.item_count):
-				var item: Dictionary = targets.get_item_metadata(n)
-				if item.kind == "governor" and item.city == selected:
-					targets.select(n)
-					campaign.politics_overlay.populate()
-					break
+			campaign.open_domestic("agriculture")
+			if campaign.domestic_overlay.visible:
+				campaign.domestic_overlay._set_mode(true)
 
 func advance() -> void:
 	if busy(): return
 	campaign._on_end_turn_button_pressed()
 	refresh()
+
+func cancel_attack_preview() -> void:
+	var source: String=campaign.attack_source_id
+	if source.is_empty(): return
+	# Reuse the existing cancel branch; no separate combat or resource command.
+	campaign.select_province(source,false)
+	campaign._on_attack_button_pressed()
+	accept_selection(source)

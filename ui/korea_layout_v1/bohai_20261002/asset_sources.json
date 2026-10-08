@@ -1,0 +1,27 @@
+{
+    "date":  "2026-10-02",
+    "tool":  "built-in image_gen",
+    "coordinate_system":  "existing play atlas pixels; not GIS",
+    "assets":  [
+                   {
+                       "sha256":  "F8C38A3382E183D5D2E865BD7364B6DE35FB22D9906E2C7F70EB4466DAC5877A",
+                       "file":  "bohai.png",
+                       "bytes":  2878020
+                   },
+                   {
+                       "sha256":  "9F91D5AFA8D3EF9F0F45E21E2E6DB9B6B4232139D50F175DF4839F0D2AC33644",
+                       "file":  "bohai_join.png",
+                       "bytes":  2719536
+                   },
+                   {
+                       "sha256":  "00768E3D074A69F87290BA6F4AD3BE8775D1E12D198F7406DC066992246029D7",
+                       "file":  "dalian.png",
+                       "bytes":  2826225
+                   },
+                   {
+                       "sha256":  "5CFEE3BD0CB6C04F5C357F91A233492C965BB10F1F3D3B8DEA831990FC76E87A",
+                       "file":  "yantai.png",
+                       "bytes":  2963837
+                   }
+               ]
+}

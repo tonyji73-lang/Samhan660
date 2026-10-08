@@ -1,0 +1,5501 @@
+{
+	"definitions": {
+		"historical:001": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"선덕여왕",
+				"덕만",
+				"덕만공주"
+			],
+			"base_stats": {
+				"authority": 94,
+				"intelligence": 91,
+				"leadership": 76,
+				"politics": 93,
+				"war": 48
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 586,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "confirmed",
+				"game_year": 647,
+				"source": "https://encykorea.aks.ac.kr/Article/E0028652",
+				"year": 647
+			},
+			"display_name": "선덕여왕",
+			"family_id": "",
+			"identity_source": "https://encykorea.aks.ac.kr/Article/E0028652",
+			"legacy_values": {
+				"선덕여왕": {
+					"authority": 94,
+					"birth_year": 586,
+					"death_year": 647,
+					"intelligence": 91,
+					"leadership": 76,
+					"name": "선덕여왕",
+					"politics": 93,
+					"war": 48
+				}
+			},
+			"officer_id": "historical:001",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:002": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"알천"
+			],
+			"base_stats": {
+				"authority": 85,
+				"intelligence": 76,
+				"leadership": 86,
+				"politics": 78,
+				"war": 84
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 577,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 686,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "알천",
+			"family_id": "",
+			"legacy_values": {
+				"알천": {
+					"authority": 85,
+					"birth_year": 577,
+					"death_year": 686,
+					"intelligence": 76,
+					"leadership": 86,
+					"name": "알천",
+					"politics": 78,
+					"war": 84
+				}
+			},
+			"officer_id": "historical:002",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:003": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"김춘추",
+				"태종무열왕",
+				"무열왕"
+			],
+			"base_stats": {
+				"authority": 95,
+				"intelligence": 95,
+				"leadership": 75,
+				"politics": 98,
+				"war": 60
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 603,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 661,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "김춘추",
+			"family_id": "",
+			"identity_source": "https://encykorea.aks.ac.kr/Article/E0059042",
+			"legacy_values": {
+				"김춘추": {
+					"authority": 95,
+					"birth_year": 603,
+					"death_year": 661,
+					"intelligence": 95,
+					"leadership": 75,
+					"name": "김춘추",
+					"politics": 98,
+					"war": 60
+				}
+			},
+			"officer_id": "historical:003",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:004": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"김유신"
+			],
+			"base_stats": {
+				"authority": 91,
+				"intelligence": 84,
+				"leadership": 95,
+				"politics": 73,
+				"war": 93
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 595,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 673,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "김유신",
+			"family_id": "",
+			"legacy_values": {
+				"김유신": {
+					"authority": 91,
+					"birth_year": 595,
+					"death_year": 673,
+					"intelligence": 84,
+					"leadership": 95,
+					"name": "김유신",
+					"politics": 73,
+					"war": 93
+				}
+			},
+			"officer_id": "historical:004",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:005": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"김법민",
+				"문무왕"
+			],
+			"base_stats": {
+				"authority": 95,
+				"intelligence": 90,
+				"leadership": 88,
+				"politics": 92,
+				"war": 80
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 626,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "confirmed",
+				"game_year": 681,
+				"source": "https://encykorea.aks.ac.kr/Article/E0019473",
+				"year": 681
+			},
+			"display_name": "김법민",
+			"family_id": "",
+			"identity_source": "https://encykorea.aks.ac.kr/Article/E0019473",
+			"legacy_values": {
+				"김법민": {
+					"authority": 95,
+					"birth_year": 626,
+					"death_year": 681,
+					"intelligence": 90,
+					"leadership": 88,
+					"name": "김법민",
+					"politics": 92,
+					"war": 80
+				}
+			},
+			"officer_id": "historical:005",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:006": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"김흠순"
+			],
+			"base_stats": {
+				"authority": 83,
+				"intelligence": 78,
+				"leadership": 86,
+				"politics": 72,
+				"war": 84
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 598,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 680,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "김흠순",
+			"family_id": "",
+			"legacy_values": {
+				"김흠순": {
+					"authority": 83,
+					"birth_year": 598,
+					"death_year": 680,
+					"intelligence": 78,
+					"leadership": 86,
+					"name": "김흠순",
+					"politics": 72,
+					"war": 84
+				}
+			},
+			"officer_id": "historical:006",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:007": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"김인문"
+			],
+			"base_stats": {
+				"authority": 85,
+				"intelligence": 88,
+				"leadership": 82,
+				"politics": 90,
+				"war": 76
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 629,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 694,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "김인문",
+			"family_id": "",
+			"legacy_values": {
+				"김인문": {
+					"authority": 85,
+					"birth_year": 629,
+					"death_year": 694,
+					"intelligence": 88,
+					"leadership": 82,
+					"name": "김인문",
+					"politics": 90,
+					"war": 76
+				}
+			},
+			"officer_id": "historical:007",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:008": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"품일"
+			],
+			"base_stats": {
+				"authority": 80,
+				"intelligence": 75,
+				"leadership": 85,
+				"politics": 68,
+				"war": 88
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 620,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 685,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "품일",
+			"family_id": "",
+			"legacy_values": {
+				"품일": {
+					"authority": 80,
+					"birth_year": 620,
+					"death_year": 685,
+					"intelligence": 75,
+					"leadership": 85,
+					"name": "품일",
+					"politics": 68,
+					"war": 88
+				}
+			},
+			"officer_id": "historical:008",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:009": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"관창"
+			],
+			"base_stats": {
+				"authority": 74,
+				"intelligence": 55,
+				"leadership": 72,
+				"politics": 45,
+				"war": 90
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 645,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 660,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "관창",
+			"family_id": "",
+			"legacy_values": {
+				"관창": {
+					"authority": 74,
+					"birth_year": 645,
+					"death_year": 660,
+					"intelligence": 55,
+					"leadership": 72,
+					"name": "관창",
+					"politics": 45,
+					"war": 90
+				}
+			},
+			"officer_id": "historical:009",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:010": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"설오유"
+			],
+			"base_stats": {
+				"authority": 81,
+				"intelligence": 73,
+				"leadership": 87,
+				"politics": 64,
+				"war": 88
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 640,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 683,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "설오유",
+			"family_id": "",
+			"legacy_values": {
+				"설오유": {
+					"authority": 81,
+					"birth_year": 640,
+					"death_year": 683,
+					"intelligence": 73,
+					"leadership": 87,
+					"name": "설오유",
+					"politics": 64,
+					"war": 88
+				}
+			},
+			"officer_id": "historical:010",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:011": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"김원술"
+			],
+			"base_stats": {
+				"authority": 78,
+				"intelligence": 69,
+				"leadership": 84,
+				"politics": 55,
+				"war": 89
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 655,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 675,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "김원술",
+			"family_id": "",
+			"legacy_values": {
+				"김원술": {
+					"authority": 78,
+					"birth_year": 655,
+					"death_year": 675,
+					"intelligence": 69,
+					"leadership": 84,
+					"name": "김원술",
+					"politics": 55,
+					"war": 89
+				}
+			},
+			"officer_id": "historical:011",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:012": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"무왕"
+			],
+			"base_stats": {
+				"authority": 94,
+				"intelligence": 88,
+				"leadership": 82,
+				"politics": 91,
+				"war": 76
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 580,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 641,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "무왕",
+			"family_id": "",
+			"legacy_values": {
+				"무왕": {
+					"authority": 94,
+					"birth_year": 580,
+					"death_year": 641,
+					"intelligence": 88,
+					"leadership": 82,
+					"name": "무왕",
+					"politics": 91,
+					"war": 76
+				}
+			},
+			"officer_id": "historical:012",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:013": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"의자왕"
+			],
+			"base_stats": {
+				"authority": 90,
+				"intelligence": 75,
+				"leadership": 70,
+				"politics": 80,
+				"war": 65
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 593,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 660,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "의자왕",
+			"family_id": "",
+			"legacy_values": {
+				"의자왕": {
+					"authority": 90,
+					"birth_year": 593,
+					"death_year": 660,
+					"intelligence": 75,
+					"leadership": 70,
+					"name": "의자왕",
+					"politics": 80,
+					"war": 65
+				}
+			},
+			"officer_id": "historical:013",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:014": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"윤충"
+			],
+			"base_stats": {
+				"authority": 84,
+				"intelligence": 80,
+				"leadership": 90,
+				"politics": 68,
+				"war": 89
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 618,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 660,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "윤충",
+			"family_id": "",
+			"legacy_values": {
+				"윤충": {
+					"authority": 84,
+					"birth_year": 618,
+					"death_year": 660,
+					"intelligence": 80,
+					"leadership": 90,
+					"name": "윤충",
+					"politics": 68,
+					"war": 89
+				}
+			},
+			"officer_id": "historical:014",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:015": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"성충"
+			],
+			"base_stats": {
+				"authority": 86,
+				"intelligence": 94,
+				"leadership": 74,
+				"politics": 92,
+				"war": 58
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 615,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "confirmed",
+				"game_year": 660,
+				"source": "https://encykorea.aks.ac.kr/Article/E0029661",
+				"year": 656
+			},
+			"display_name": "성충",
+			"family_id": "",
+			"legacy_values": {
+				"성충": {
+					"authority": 86,
+					"birth_year": 615,
+					"death_year": 660,
+					"intelligence": 94,
+					"leadership": 74,
+					"name": "성충",
+					"politics": 92,
+					"war": 58
+				}
+			},
+			"officer_id": "historical:015",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:016": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"흥수"
+			],
+			"base_stats": {
+				"authority": 82,
+				"intelligence": 93,
+				"leadership": 78,
+				"politics": 90,
+				"war": 65
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 590,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 660,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "흥수",
+			"family_id": "",
+			"legacy_values": {
+				"흥수": {
+					"authority": 82,
+					"birth_year": 590,
+					"death_year": 660,
+					"intelligence": 93,
+					"leadership": 78,
+					"name": "흥수",
+					"politics": 90,
+					"war": 65
+				}
+			},
+			"officer_id": "historical:016",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:017": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"계백"
+			],
+			"base_stats": {
+				"authority": 88,
+				"intelligence": 76,
+				"leadership": 94,
+				"politics": 62,
+				"war": 95
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 595,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 660,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "계백",
+			"family_id": "",
+			"legacy_values": {
+				"계백": {
+					"authority": 88,
+					"birth_year": 595,
+					"death_year": 660,
+					"intelligence": 76,
+					"leadership": 94,
+					"name": "계백",
+					"politics": 62,
+					"war": 95
+				}
+			},
+			"officer_id": "historical:017",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:018": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"부여태"
+			],
+			"base_stats": {
+				"authority": 70,
+				"intelligence": 60,
+				"leadership": 75,
+				"politics": 55,
+				"war": 78
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 615,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 660,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "부여태",
+			"family_id": "",
+			"legacy_values": {
+				"부여태": {
+					"authority": 70,
+					"birth_year": 615,
+					"death_year": 660,
+					"intelligence": 60,
+					"leadership": 75,
+					"name": "부여태",
+					"politics": 55,
+					"war": 78
+				}
+			},
+			"officer_id": "historical:018",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:019": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"부여풍"
+			],
+			"base_stats": {
+				"authority": 91,
+				"intelligence": 79,
+				"leadership": 73,
+				"politics": 82,
+				"war": 66
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 623,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 669,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "부여풍",
+			"family_id": "",
+			"legacy_values": {
+				"부여풍": {
+					"authority": 91,
+					"birth_year": 623,
+					"death_year": 669,
+					"intelligence": 79,
+					"leadership": 73,
+					"name": "부여풍",
+					"politics": 82,
+					"war": 66
+				}
+			},
+			"officer_id": "historical:019",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:020": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"복신"
+			],
+			"base_stats": {
+				"authority": 89,
+				"intelligence": 84,
+				"leadership": 91,
+				"politics": 71,
+				"war": 88
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 592,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 663,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "복신",
+			"family_id": "",
+			"legacy_values": {
+				"복신": {
+					"authority": 89,
+					"birth_year": 592,
+					"death_year": 663,
+					"intelligence": 84,
+					"leadership": 91,
+					"name": "복신",
+					"politics": 71,
+					"war": 88
+				}
+			},
+			"officer_id": "historical:020",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:021": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"흑치상지"
+			],
+			"base_stats": {
+				"authority": 85,
+				"intelligence": 81,
+				"leadership": 92,
+				"politics": 65,
+				"war": 90
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 630,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "confirmed",
+				"game_year": 689,
+				"source": "https://encykorea.aks.ac.kr/Article/E0065916",
+				"year": 689
+			},
+			"display_name": "흑치상지",
+			"family_id": "",
+			"legacy_values": {
+				"흑치상지": {
+					"authority": 85,
+					"birth_year": 630,
+					"death_year": 689,
+					"intelligence": 81,
+					"leadership": 92,
+					"name": "흑치상지",
+					"politics": 65,
+					"war": 90
+				}
+			},
+			"officer_id": "historical:021",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:022": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"지수신"
+			],
+			"base_stats": {
+				"authority": 82,
+				"intelligence": 78,
+				"leadership": 88,
+				"politics": 61,
+				"war": 87
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 630,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 690,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "지수신",
+			"family_id": "",
+			"legacy_values": {
+				"지수신": {
+					"authority": 82,
+					"birth_year": 630,
+					"death_year": 690,
+					"intelligence": 78,
+					"leadership": 88,
+					"name": "지수신",
+					"politics": 61,
+					"war": 87
+				}
+			},
+			"officer_id": "historical:022",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:023": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"영류왕"
+			],
+			"base_stats": {
+				"authority": 92,
+				"intelligence": 86,
+				"leadership": 78,
+				"politics": 90,
+				"war": 68
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 586,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 642,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "영류왕",
+			"family_id": "",
+			"legacy_values": {
+				"영류왕": {
+					"authority": 92,
+					"birth_year": 586,
+					"death_year": 642,
+					"intelligence": 86,
+					"leadership": 78,
+					"name": "영류왕",
+					"politics": 90,
+					"war": 68
+				}
+			},
+			"officer_id": "historical:023",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:024": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"보장왕"
+			],
+			"base_stats": {
+				"authority": 84,
+				"intelligence": 76,
+				"leadership": 65,
+				"politics": 78,
+				"war": 52
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 623,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 682,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "보장왕",
+			"family_id": "",
+			"legacy_values": {
+				"보장왕": {
+					"authority": 84,
+					"birth_year": 623,
+					"death_year": 682,
+					"intelligence": 76,
+					"leadership": 65,
+					"name": "보장왕",
+					"politics": 78,
+					"war": 52
+				}
+			},
+			"officer_id": "historical:024",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:025": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"연개소문"
+			],
+			"base_stats": {
+				"authority": 98,
+				"intelligence": 88,
+				"leadership": 96,
+				"politics": 82,
+				"war": 95
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 603,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "estimated",
+				"game_year": 665,
+				"range": [
+					665,
+					666
+				],
+				"source": "https://contents.nahf.or.kr/item/level.do?levelId=gt.d_0007_0010_0020_0030",
+				"year": 665
+			},
+			"display_name": "연개소문",
+			"family_id": "",
+			"legacy_values": {
+				"연개소문": {
+					"authority": 98,
+					"birth_year": 603,
+					"death_year": 665,
+					"intelligence": 88,
+					"leadership": 96,
+					"name": "연개소문",
+					"politics": 82,
+					"war": 95
+				}
+			},
+			"officer_id": "historical:025",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:026": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"양만춘"
+			],
+			"base_stats": {
+				"authority": 88,
+				"intelligence": 85,
+				"leadership": 94,
+				"politics": 70,
+				"war": 89
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 605,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 667,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "양만춘",
+			"family_id": "",
+			"legacy_values": {
+				"양만춘": {
+					"authority": 88,
+					"birth_year": 605,
+					"death_year": 667,
+					"intelligence": 85,
+					"leadership": 94,
+					"name": "양만춘",
+					"politics": 70,
+					"war": 89
+				}
+			},
+			"officer_id": "historical:026",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:027": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"고연무"
+			],
+			"base_stats": {
+				"authority": 82,
+				"intelligence": 75,
+				"leadership": 86,
+				"politics": 65,
+				"war": 87
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 634,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 683,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "고연무",
+			"family_id": "",
+			"legacy_values": {
+				"고연무": {
+					"authority": 82,
+					"birth_year": 634,
+					"death_year": 683,
+					"intelligence": 75,
+					"leadership": 86,
+					"name": "고연무",
+					"politics": 65,
+					"war": 87
+				}
+			},
+			"officer_id": "historical:027",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:028": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"연남생"
+			],
+			"base_stats": {
+				"authority": 82,
+				"intelligence": 76,
+				"leadership": 86,
+				"politics": 68,
+				"war": 84
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 634,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 679,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "연남생",
+			"family_id": "",
+			"legacy_values": {
+				"연남생": {
+					"authority": 82,
+					"birth_year": 634,
+					"death_year": 679,
+					"intelligence": 76,
+					"leadership": 86,
+					"name": "연남생",
+					"politics": 68,
+					"war": 84
+				}
+			},
+			"officer_id": "historical:028",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:029": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"안승"
+			],
+			"base_stats": {
+				"authority": 91,
+				"intelligence": 82,
+				"leadership": 76,
+				"politics": 84,
+				"war": 70
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 653,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 699,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "안승",
+			"family_id": "",
+			"legacy_values": {
+				"안승": {
+					"authority": 91,
+					"birth_year": 653,
+					"death_year": 699,
+					"intelligence": 82,
+					"leadership": 76,
+					"name": "안승",
+					"politics": 84,
+					"war": 70
+				}
+			},
+			"officer_id": "historical:029",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:030": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"검모잠"
+			],
+			"base_stats": {
+				"authority": 86,
+				"intelligence": 78,
+				"leadership": 90,
+				"politics": 62,
+				"war": 91
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 623,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 670,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "검모잠",
+			"family_id": "",
+			"legacy_values": {
+				"검모잠": {
+					"authority": 86,
+					"birth_year": 623,
+					"death_year": 670,
+					"intelligence": 78,
+					"leadership": 90,
+					"name": "검모잠",
+					"politics": 62,
+					"war": 91
+				}
+			},
+			"officer_id": "historical:030",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:031": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"당 고종"
+			],
+			"base_stats": {
+				"authority": 98,
+				"intelligence": 85,
+				"leadership": 73,
+				"politics": 91,
+				"war": 55
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 628,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 683,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "당 고종",
+			"family_id": "",
+			"legacy_values": {
+				"당 고종": {
+					"authority": 98,
+					"birth_year": 628,
+					"death_year": 683,
+					"intelligence": 85,
+					"leadership": 73,
+					"name": "당 고종",
+					"politics": 91,
+					"war": 55
+				}
+			},
+			"officer_id": "historical:031",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:032": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"고간"
+			],
+			"base_stats": {
+				"authority": 84,
+				"intelligence": 80,
+				"leadership": 88,
+				"politics": 72,
+				"war": 86
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 617,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 680,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "고간",
+			"family_id": "",
+			"legacy_values": {
+				"고간": {
+					"authority": 84,
+					"birth_year": 617,
+					"death_year": 680,
+					"intelligence": 80,
+					"leadership": 88,
+					"name": "고간",
+					"politics": 72,
+					"war": 86
+				}
+			},
+			"officer_id": "historical:032",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:033": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"이근행"
+			],
+			"base_stats": {
+				"authority": 83,
+				"intelligence": 76,
+				"leadership": 90,
+				"politics": 61,
+				"war": 89
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 625,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 682,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "이근행",
+			"family_id": "",
+			"legacy_values": {
+				"이근행": {
+					"authority": 83,
+					"birth_year": 625,
+					"death_year": 682,
+					"intelligence": 76,
+					"leadership": 90,
+					"name": "이근행",
+					"politics": 61,
+					"war": 89
+				}
+			},
+			"officer_id": "historical:033",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:034": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"설인귀"
+			],
+			"base_stats": {
+				"authority": 90,
+				"intelligence": 80,
+				"leadership": 94,
+				"politics": 63,
+				"war": 95
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 614,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 683,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "설인귀",
+			"family_id": "",
+			"legacy_values": {
+				"설인귀": {
+					"authority": 90,
+					"birth_year": 614,
+					"death_year": 683,
+					"intelligence": 80,
+					"leadership": 94,
+					"name": "설인귀",
+					"politics": 63,
+					"war": 95
+				}
+			},
+			"officer_id": "historical:034",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:035": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"유인원"
+			],
+			"base_stats": {
+				"authority": 84,
+				"intelligence": 82,
+				"leadership": 86,
+				"politics": 76,
+				"war": 82
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 619,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 670,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "유인원",
+			"family_id": "",
+			"legacy_values": {
+				"유인원": {
+					"authority": 84,
+					"birth_year": 619,
+					"death_year": 670,
+					"intelligence": 82,
+					"leadership": 86,
+					"name": "유인원",
+					"politics": 76,
+					"war": 82
+				}
+			},
+			"officer_id": "historical:035",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:036": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"유인궤"
+			],
+			"base_stats": {
+				"authority": 90,
+				"intelligence": 91,
+				"leadership": 92,
+				"politics": 88,
+				"war": 84
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 602,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 685,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "유인궤",
+			"family_id": "",
+			"legacy_values": {
+				"유인궤": {
+					"authority": 90,
+					"birth_year": 602,
+					"death_year": 685,
+					"intelligence": 91,
+					"leadership": 92,
+					"name": "유인궤",
+					"politics": 88,
+					"war": 84
+				}
+			},
+			"officer_id": "historical:036",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:037": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"예군"
+			],
+			"base_stats": {
+				"authority": 78,
+				"intelligence": 86,
+				"leadership": 72,
+				"politics": 88,
+				"war": 68
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 613,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 678,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "예군",
+			"family_id": "",
+			"legacy_values": {
+				"예군": {
+					"authority": 78,
+					"birth_year": 613,
+					"death_year": 678,
+					"intelligence": 86,
+					"leadership": 72,
+					"name": "예군",
+					"politics": 88,
+					"war": 68
+				}
+			},
+			"officer_id": "historical:037",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:038": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"당 태종"
+			],
+			"base_stats": {
+				"authority": 99,
+				"intelligence": 94,
+				"leadership": 92,
+				"politics": 96,
+				"war": 88
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 598,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 649,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "당 태종",
+			"family_id": "",
+			"legacy_values": {
+				"당 태종": {
+					"authority": 99,
+					"birth_year": 598,
+					"death_year": 649,
+					"intelligence": 94,
+					"leadership": 92,
+					"name": "당 태종",
+					"politics": 96,
+					"war": 88
+				}
+			},
+			"officer_id": "historical:038",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:039": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"이세적"
+			],
+			"base_stats": {
+				"authority": 91,
+				"intelligence": 88,
+				"leadership": 94,
+				"politics": 78,
+				"war": 90
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 594,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 669,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "이세적",
+			"family_id": "",
+			"legacy_values": {
+				"이세적": {
+					"authority": 91,
+					"birth_year": 594,
+					"death_year": 669,
+					"intelligence": 88,
+					"leadership": 94,
+					"name": "이세적",
+					"politics": 78,
+					"war": 90
+				}
+			},
+			"officer_id": "historical:039",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:040": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"소정방"
+			],
+			"base_stats": {
+				"authority": 90,
+				"intelligence": 84,
+				"leadership": 94,
+				"politics": 68,
+				"war": 91
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 591,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 667,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "소정방",
+			"family_id": "",
+			"legacy_values": {
+				"소정방": {
+					"authority": 90,
+					"birth_year": 591,
+					"death_year": 667,
+					"intelligence": 84,
+					"leadership": 94,
+					"name": "소정방",
+					"politics": 68,
+					"war": 91
+				}
+			},
+			"officer_id": "historical:040",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:041": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"조메이 천황"
+			],
+			"base_stats": {
+				"authority": 94,
+				"intelligence": 78,
+				"leadership": 65,
+				"politics": 82,
+				"war": 45
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 593,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 641,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "조메이 천황",
+			"family_id": "",
+			"legacy_values": {
+				"조메이 천황": {
+					"authority": 94,
+					"birth_year": 593,
+					"death_year": 641,
+					"intelligence": 78,
+					"leadership": 65,
+					"name": "조메이 천황",
+					"politics": 82,
+					"war": 45
+				}
+			},
+			"officer_id": "historical:041",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:042": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"고교쿠 천황",
+				"사이메이 천황"
+			],
+			"base_stats": {
+				"authority": 96,
+				"intelligence": 86,
+				"leadership": 72,
+				"politics": 90,
+				"war": 48
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 594,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 661,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "고교쿠 천황",
+			"family_id": "",
+			"identity_source": "https://manyo-hyakka.pref.nara.jp/db/dicDetail?cls=d_utabito&dataId=316",
+			"legacy_values": {
+				"고교쿠 천황": {
+					"authority": 96,
+					"birth_year": 594,
+					"death_year": 661,
+					"intelligence": 86,
+					"leadership": 72,
+					"name": "고교쿠 천황",
+					"politics": 90,
+					"war": 48
+				},
+				"사이메이 천황": {
+					"authority": 97,
+					"birth_year": 594,
+					"death_year": 661,
+					"intelligence": 88,
+					"leadership": 78,
+					"name": "사이메이 천황",
+					"politics": 91,
+					"war": 52
+				}
+			},
+			"officer_id": "historical:042",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:043": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"나카노오에 황자",
+				"덴지 천황"
+			],
+			"base_stats": {
+				"authority": 95,
+				"intelligence": 92,
+				"leadership": 86,
+				"politics": 94,
+				"war": 75
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 626,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 672,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "나카노오에 황자",
+			"family_id": "",
+			"identity_source": "https://manyo-hyakka.pref.nara.jp/db/dicDetail?cls=d_utabito&dataId=488",
+			"legacy_values": {
+				"나카노오에 황자": {
+					"authority": 95,
+					"birth_year": 626,
+					"death_year": 672,
+					"intelligence": 92,
+					"leadership": 86,
+					"name": "나카노오에 황자",
+					"politics": 94,
+					"war": 75
+				},
+				"덴지 천황": {
+					"authority": 97,
+					"birth_year": 626,
+					"death_year": 672,
+					"intelligence": 92,
+					"leadership": 86,
+					"name": "덴지 천황",
+					"politics": 95,
+					"war": 74
+				}
+			},
+			"officer_id": "historical:043",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:044": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"소가노 에미시"
+			],
+			"base_stats": {
+				"authority": 87,
+				"intelligence": 88,
+				"leadership": 72,
+				"politics": 92,
+				"war": 62
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 587,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 645,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "소가노 에미시",
+			"family_id": "",
+			"legacy_values": {
+				"소가노 에미시": {
+					"authority": 87,
+					"birth_year": 587,
+					"death_year": 645,
+					"intelligence": 88,
+					"leadership": 72,
+					"name": "소가노 에미시",
+					"politics": 92,
+					"war": 62
+				}
+			},
+			"officer_id": "historical:044",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:045": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"소가노 이루카"
+			],
+			"base_stats": {
+				"authority": 85,
+				"intelligence": 86,
+				"leadership": 78,
+				"politics": 84,
+				"war": 70
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 645,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "소가노 이루카",
+			"family_id": "",
+			"legacy_values": {
+				"소가노 이루카": {
+					"authority": 85,
+					"birth_year": 0,
+					"death_year": 645,
+					"intelligence": 86,
+					"leadership": 78,
+					"name": "소가노 이루카",
+					"politics": 84,
+					"war": 70
+				}
+			},
+			"officer_id": "historical:045",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:046": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"아베노 히라후"
+			],
+			"base_stats": {
+				"authority": 82,
+				"intelligence": 77,
+				"leadership": 88,
+				"politics": 65,
+				"war": 84
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 664,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "아베노 히라후",
+			"family_id": "",
+			"legacy_values": {
+				"아베노 히라후": {
+					"authority": 82,
+					"birth_year": 0,
+					"death_year": 664,
+					"intelligence": 77,
+					"leadership": 88,
+					"name": "아베노 히라후",
+					"politics": 65,
+					"war": 84
+				}
+			},
+			"officer_id": "historical:046",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:047": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"오토모노 후케이"
+			],
+			"base_stats": {
+				"authority": 82,
+				"intelligence": 76,
+				"leadership": 87,
+				"politics": 63,
+				"war": 85
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 672,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "오토모노 후케이",
+			"family_id": "",
+			"legacy_values": {
+				"오토모노 후케이": {
+					"authority": 82,
+					"birth_year": 0,
+					"death_year": 672,
+					"intelligence": 76,
+					"leadership": 87,
+					"name": "오토모노 후케이",
+					"politics": 63,
+					"war": 85
+				}
+			},
+			"officer_id": "historical:047",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:048": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"이남"
+			],
+			"base_stats": {
+				"authority": 94,
+				"intelligence": 84,
+				"leadership": 91,
+				"politics": 80,
+				"war": 88
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 645,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "이남",
+			"family_id": "",
+			"legacy_values": {
+				"이남": {
+					"authority": 94,
+					"birth_year": 0,
+					"death_year": 645,
+					"intelligence": 84,
+					"leadership": 91,
+					"name": "이남",
+					"politics": 80,
+					"war": 88
+				}
+			},
+			"officer_id": "historical:048",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:049": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"발작"
+			],
+			"base_stats": {
+				"authority": 83,
+				"intelligence": 68,
+				"leadership": 84,
+				"politics": 58,
+				"war": 88
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 646,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "발작",
+			"family_id": "",
+			"legacy_values": {
+				"발작": {
+					"authority": 83,
+					"birth_year": 0,
+					"death_year": 646,
+					"intelligence": 68,
+					"leadership": 84,
+					"name": "발작",
+					"politics": 58,
+					"war": 88
+				}
+			},
+			"officer_id": "historical:049",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:050": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"포룬 일테베르"
+			],
+			"base_stats": {
+				"authority": 88,
+				"intelligence": 76,
+				"leadership": 86,
+				"politics": 74,
+				"war": 84
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "포룬 일테베르",
+			"family_id": "",
+			"legacy_values": {
+				"포룬 일테베르": {
+					"authority": 88,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 76,
+					"leadership": 86,
+					"name": "포룬 일테베르",
+					"politics": 74,
+					"war": 84
+				}
+			},
+			"officer_id": "historical:050",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:051": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"비속독 일테베르"
+			],
+			"base_stats": {
+				"authority": 86,
+				"intelligence": 72,
+				"leadership": 84,
+				"politics": 70,
+				"war": 82
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "비속독 일테베르",
+			"family_id": "",
+			"legacy_values": {
+				"비속독 일테베르": {
+					"authority": 86,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 72,
+					"leadership": 84,
+					"name": "비속독 일테베르",
+					"politics": 70,
+					"war": 82
+				}
+			},
+			"officer_id": "historical:051",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:052": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"독해지 일테베르"
+			],
+			"base_stats": {
+				"authority": 87,
+				"intelligence": 78,
+				"leadership": 83,
+				"politics": 82,
+				"war": 80
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "독해지 일테베르",
+			"family_id": "",
+			"legacy_values": {
+				"독해지 일테베르": {
+					"authority": 87,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 78,
+					"leadership": 83,
+					"name": "독해지 일테베르",
+					"politics": 82,
+					"war": 80
+				}
+			},
+			"officer_id": "historical:052",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:053": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"사결 수장"
+			],
+			"base_stats": {
+				"authority": 78,
+				"intelligence": 68,
+				"leadership": 80,
+				"politics": 60,
+				"war": 84
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "사결 수장",
+			"family_id": "",
+			"legacy_values": {
+				"사결 수장": {
+					"authority": 78,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 68,
+					"leadership": 80,
+					"name": "사결 수장",
+					"politics": 60,
+					"war": 84
+				}
+			},
+			"officer_id": "historical:053",
+			"origin": "placeholder",
+			"political_group_id": ""
+		},
+		"historical:054": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"다람갈 수장"
+			],
+			"base_stats": {
+				"authority": 79,
+				"intelligence": 70,
+				"leadership": 81,
+				"politics": 62,
+				"war": 83
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "다람갈 수장",
+			"family_id": "",
+			"legacy_values": {
+				"다람갈 수장": {
+					"authority": 79,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 70,
+					"leadership": 81,
+					"name": "다람갈 수장",
+					"politics": 62,
+					"war": 83
+				}
+			},
+			"officer_id": "historical:054",
+			"origin": "placeholder",
+			"political_group_id": ""
+		},
+		"historical:055": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"복골 수장"
+			],
+			"base_stats": {
+				"authority": 80,
+				"intelligence": 66,
+				"leadership": 82,
+				"politics": 58,
+				"war": 86
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "복골 수장",
+			"family_id": "",
+			"legacy_values": {
+				"복골 수장": {
+					"authority": 80,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 66,
+					"leadership": 82,
+					"name": "복골 수장",
+					"politics": 58,
+					"war": 86
+				}
+			},
+			"officer_id": "historical:055",
+			"origin": "placeholder",
+			"political_group_id": ""
+		},
+		"historical:056": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"발야고 수장"
+			],
+			"base_stats": {
+				"authority": 81,
+				"intelligence": 65,
+				"leadership": 83,
+				"politics": 57,
+				"war": 87
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "발야고 수장",
+			"family_id": "",
+			"legacy_values": {
+				"발야고 수장": {
+					"authority": 81,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 65,
+					"leadership": 83,
+					"name": "발야고 수장",
+					"politics": 57,
+					"war": 87
+				}
+			},
+			"officer_id": "historical:056",
+			"origin": "placeholder",
+			"political_group_id": ""
+		},
+		"historical:057": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"아질 수장"
+			],
+			"base_stats": {
+				"authority": 76,
+				"intelligence": 67,
+				"leadership": 78,
+				"politics": 59,
+				"war": 82
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "아질 수장",
+			"family_id": "",
+			"legacy_values": {
+				"아질 수장": {
+					"authority": 76,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 67,
+					"leadership": 78,
+					"name": "아질 수장",
+					"politics": 59,
+					"war": 82
+				}
+			},
+			"officer_id": "historical:057",
+			"origin": "placeholder",
+			"political_group_id": ""
+		},
+		"historical:058": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"계필 수장"
+			],
+			"base_stats": {
+				"authority": 82,
+				"intelligence": 72,
+				"leadership": 84,
+				"politics": 66,
+				"war": 88
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "계필 수장",
+			"family_id": "",
+			"legacy_values": {
+				"계필 수장": {
+					"authority": 82,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 72,
+					"leadership": 84,
+					"name": "계필 수장",
+					"politics": 66,
+					"war": 88
+				}
+			},
+			"officer_id": "historical:058",
+			"origin": "placeholder",
+			"political_group_id": ""
+		},
+		"historical:059": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"동라 수장"
+			],
+			"base_stats": {
+				"authority": 79,
+				"intelligence": 70,
+				"leadership": 82,
+				"politics": 61,
+				"war": 85
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "동라 수장",
+			"family_id": "",
+			"legacy_values": {
+				"동라 수장": {
+					"authority": 79,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 70,
+					"leadership": 82,
+					"name": "동라 수장",
+					"politics": 61,
+					"war": 85
+				}
+			},
+			"officer_id": "historical:059",
+			"origin": "placeholder",
+			"political_group_id": ""
+		},
+		"historical:060": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"혼 수장"
+			],
+			"base_stats": {
+				"authority": 77,
+				"intelligence": 69,
+				"leadership": 79,
+				"politics": 60,
+				"war": 83
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "혼 수장",
+			"family_id": "",
+			"legacy_values": {
+				"혼 수장": {
+					"authority": 77,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 69,
+					"leadership": 79,
+					"name": "혼 수장",
+					"politics": 60,
+					"war": 83
+				}
+			},
+			"officer_id": "historical:060",
+			"origin": "placeholder",
+			"political_group_id": ""
+		},
+		"historical:061": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"나카토미노 가마타리"
+			],
+			"base_stats": {
+				"authority": 91,
+				"intelligence": 94,
+				"leadership": 68,
+				"politics": 96,
+				"war": 55
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 614,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 669,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "나카토미노 가마타리",
+			"family_id": "",
+			"legacy_values": {
+				"나카토미노 가마타리": {
+					"authority": 91,
+					"birth_year": 614,
+					"death_year": 669,
+					"intelligence": 94,
+					"leadership": 68,
+					"name": "나카토미노 가마타리",
+					"politics": 96,
+					"war": 55
+				}
+			},
+			"officer_id": "historical:061",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:062": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"아즈미노 히라후"
+			],
+			"base_stats": {
+				"authority": 82,
+				"intelligence": 78,
+				"leadership": 87,
+				"politics": 67,
+				"war": 84
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 663,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "아즈미노 히라후",
+			"family_id": "",
+			"legacy_values": {
+				"아즈미노 히라후": {
+					"authority": 82,
+					"birth_year": 0,
+					"death_year": 663,
+					"intelligence": 78,
+					"leadership": 87,
+					"name": "아즈미노 히라후",
+					"politics": 67,
+					"war": 84
+				}
+			},
+			"officer_id": "historical:062",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:063": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"에치노 다쿠쓰"
+			],
+			"base_stats": {
+				"authority": 80,
+				"intelligence": 75,
+				"leadership": 86,
+				"politics": 62,
+				"war": 84
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "에치노 다쿠쓰",
+			"family_id": "",
+			"legacy_values": {
+				"에치노 다쿠쓰": {
+					"authority": 80,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 75,
+					"leadership": 86,
+					"name": "에치노 다쿠쓰",
+					"politics": 62,
+					"war": 84
+				}
+			},
+			"officer_id": "historical:063",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:064": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"온가"
+			],
+			"base_stats": {
+				"authority": 85,
+				"intelligence": 76,
+				"leadership": 82,
+				"politics": 73,
+				"war": 84
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "온가",
+			"family_id": "",
+			"legacy_values": {
+				"온가": {
+					"authority": 85,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 76,
+					"leadership": 82,
+					"name": "온가",
+					"politics": 73,
+					"war": 84
+				}
+			},
+			"officer_id": "historical:064",
+			"origin": "historical",
+			"political_group_id": ""
+		},
+		"historical:065": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"에미시 수장 미상"
+			],
+			"base_stats": {
+				"authority": 81,
+				"intelligence": 72,
+				"leadership": 80,
+				"politics": 68,
+				"war": 82
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "에미시 수장 미상",
+			"family_id": "",
+			"legacy_values": {
+				"에미시 수장 미상": {
+					"authority": 81,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 72,
+					"leadership": 80,
+					"name": "에미시 수장 미상",
+					"politics": 68,
+					"war": 82
+				}
+			},
+			"officer_id": "historical:065",
+			"origin": "placeholder",
+			"political_group_id": ""
+		},
+		"historical:066": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"고시 수장 미상"
+			],
+			"base_stats": {
+				"authority": 80,
+				"intelligence": 75,
+				"leadership": 79,
+				"politics": 73,
+				"war": 76
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "고시 수장 미상",
+			"family_id": "",
+			"legacy_values": {
+				"고시 수장 미상": {
+					"authority": 80,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 75,
+					"leadership": 79,
+					"name": "고시 수장 미상",
+					"politics": 73,
+					"war": 76
+				}
+			},
+			"officer_id": "historical:066",
+			"origin": "placeholder",
+			"political_group_id": ""
+		},
+		"historical:067": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"쓰쿠시 수장 미상"
+			],
+			"base_stats": {
+				"authority": 84,
+				"intelligence": 83,
+				"leadership": 79,
+				"politics": 86,
+				"war": 74
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "쓰쿠시 수장 미상",
+			"family_id": "",
+			"legacy_values": {
+				"쓰쿠시 수장 미상": {
+					"authority": 84,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 83,
+					"leadership": 79,
+					"name": "쓰쿠시 수장 미상",
+					"politics": 86,
+					"war": 74
+				}
+			},
+			"officer_id": "historical:067",
+			"origin": "placeholder",
+			"political_group_id": ""
+		},
+		"historical:068": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"기비 수장 미상"
+			],
+			"base_stats": {
+				"authority": 83,
+				"intelligence": 82,
+				"leadership": 80,
+				"politics": 84,
+				"war": 72
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "기비 수장 미상",
+			"family_id": "",
+			"legacy_values": {
+				"기비 수장 미상": {
+					"authority": 83,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 82,
+					"leadership": 80,
+					"name": "기비 수장 미상",
+					"politics": 84,
+					"war": 72
+				}
+			},
+			"officer_id": "historical:068",
+			"origin": "placeholder",
+			"political_group_id": ""
+		},
+		"historical:069": {
+			"activity_note": "Explicit start roster; exact city assignments are game design assumptions",
+			"aliases": [
+				"하야토 수장 미상"
+			],
+			"base_stats": {
+				"authority": 80,
+				"intelligence": 67,
+				"leadership": 82,
+				"politics": 56,
+				"war": 88
+			},
+			"birth": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"death": {
+				"certainty": "unknown",
+				"game_year": 0,
+				"source": "legacy game representative year; not verified",
+				"year": 0
+			},
+			"display_name": "하야토 수장 미상",
+			"family_id": "",
+			"legacy_values": {
+				"하야토 수장 미상": {
+					"authority": 80,
+					"birth_year": 0,
+					"death_year": 0,
+					"intelligence": 67,
+					"leadership": 82,
+					"name": "하야토 수장 미상",
+					"politics": 56,
+					"war": 88
+				}
+			},
+			"officer_id": "historical:069",
+			"origin": "placeholder",
+			"political_group_id": ""
+		}
+	},
+	"legacy_campaign": {
+		"계백": {
+			"authority": 88,
+			"intelligence": 76,
+			"leadership": 94,
+			"name": "계백",
+			"politics": 62,
+			"war": 95
+		},
+		"고연무": {
+			"authority": 75,
+			"intelligence": 72,
+			"leadership": 82,
+			"name": "고연무",
+			"politics": 60,
+			"war": 85
+		},
+		"관창": {
+			"authority": 74,
+			"intelligence": 55,
+			"leadership": 72,
+			"name": "관창",
+			"politics": 45,
+			"war": 90
+		},
+		"김법민": {
+			"authority": 95,
+			"intelligence": 90,
+			"leadership": 88,
+			"name": "김법민",
+			"politics": 92,
+			"war": 80
+		},
+		"김유신": {
+			"authority": 91,
+			"intelligence": 84,
+			"leadership": 95,
+			"name": "김유신",
+			"politics": 73,
+			"war": 93
+		},
+		"김인문": {
+			"authority": 85,
+			"intelligence": 88,
+			"leadership": 82,
+			"name": "김인문",
+			"politics": 90,
+			"war": 76
+		},
+		"김춘추": {
+			"authority": 95,
+			"intelligence": 95,
+			"leadership": 75,
+			"name": "김춘추",
+			"politics": 98,
+			"war": 60
+		},
+		"김흠순": {
+			"authority": 83,
+			"intelligence": 78,
+			"leadership": 86,
+			"name": "김흠순",
+			"politics": 72,
+			"war": 84
+		},
+		"부여태": {
+			"authority": 70,
+			"intelligence": 60,
+			"leadership": 75,
+			"name": "부여태",
+			"politics": 55,
+			"war": 78
+		},
+		"양만춘": {
+			"authority": 88,
+			"intelligence": 85,
+			"leadership": 94,
+			"name": "양만춘",
+			"politics": 70,
+			"war": 89
+		},
+		"연개소문": {
+			"authority": 98,
+			"intelligence": 88,
+			"leadership": 96,
+			"name": "연개소문",
+			"politics": 82,
+			"war": 95
+		},
+		"연남생": {
+			"authority": 82,
+			"intelligence": 76,
+			"leadership": 86,
+			"name": "연남생",
+			"politics": 68,
+			"war": 84
+		},
+		"의자왕": {
+			"authority": 90,
+			"intelligence": 75,
+			"leadership": 70,
+			"name": "의자왕",
+			"politics": 80,
+			"war": 65
+		},
+		"품일": {
+			"authority": 80,
+			"intelligence": 75,
+			"leadership": 85,
+			"name": "품일",
+			"politics": 68,
+			"war": 88
+		},
+		"흑치상지": {
+			"authority": 85,
+			"intelligence": 81,
+			"leadership": 92,
+			"name": "흑치상지",
+			"politics": 65,
+			"war": 90
+		},
+		"흥수": {
+			"authority": 82,
+			"intelligence": 93,
+			"leadership": 78,
+			"name": "흥수",
+			"politics": 90,
+			"war": 65
+		}
+	},
+	"scenarios": {
+		"baekgang_663": {
+			"entries": [
+				{
+					"catalog_id": "historical:005",
+					"desired_location": "geumseong",
+					"display_name": "김법민",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:005",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:004",
+					"desired_location": "geumseong",
+					"display_name": "김유신",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:004",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:007",
+					"desired_location": "geumseong",
+					"display_name": "김인문",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:007",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:006",
+					"desired_location": "gukwon",
+					"display_name": "김흠순",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "gukwon",
+					"officer_id": "historical:006",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:008",
+					"desired_location": "sabeol",
+					"display_name": "품일",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "sabeol",
+					"officer_id": "historical:008",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:019",
+					"desired_location": "gosa",
+					"display_name": "부여풍",
+					"exception": "",
+					"faction_id": "baekje_revival",
+					"location": "gosa",
+					"officer_id": "historical:019",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:020",
+					"desired_location": "gosa",
+					"display_name": "복신",
+					"exception": "same-year death: July start before resolution; no automatic death rule",
+					"faction_id": "baekje_revival",
+					"location": "gosa",
+					"officer_id": "historical:020",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:021",
+					"desired_location": "imjonseong",
+					"display_name": "흑치상지",
+					"exception": "",
+					"faction_id": "baekje_revival",
+					"location": "imjonseong",
+					"officer_id": "historical:021",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:022",
+					"desired_location": "imjonseong",
+					"display_name": "지수신",
+					"exception": "",
+					"faction_id": "baekje_revival",
+					"location": "imjonseong",
+					"officer_id": "historical:022",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:024",
+					"desired_location": "pyongyang",
+					"display_name": "보장왕",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "pyongyang",
+					"officer_id": "historical:024",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:025",
+					"desired_location": "pyongyang",
+					"display_name": "연개소문",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "pyongyang",
+					"officer_id": "historical:025",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:028",
+					"desired_location": "pyongyang",
+					"display_name": "연남생",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "pyongyang",
+					"officer_id": "historical:028",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:026",
+					"desired_location": "ansi",
+					"display_name": "양만춘",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "ansi",
+					"officer_id": "historical:026",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:027",
+					"desired_location": "gungnae",
+					"display_name": "고연무",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "gungnae",
+					"officer_id": "historical:027",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:031",
+					"desired_location": "changan",
+					"display_name": "당 고종",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:031",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:039",
+					"desired_location": "",
+					"display_name": "이세적",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:039",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:040",
+					"desired_location": "",
+					"display_name": "소정방",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:040",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:036",
+					"desired_location": "",
+					"display_name": "유인궤",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:036",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:035",
+					"desired_location": "",
+					"display_name": "유인원",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:035",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:034",
+					"desired_location": "",
+					"display_name": "설인귀",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:034",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:032",
+					"desired_location": "",
+					"display_name": "고간",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:032",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:033",
+					"desired_location": "",
+					"display_name": "이근행",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:033",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:037",
+					"desired_location": "",
+					"display_name": "예군",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:037",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:043",
+					"desired_location": "asuka",
+					"display_name": "나카노오에 황자",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:043",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:061",
+					"desired_location": "",
+					"display_name": "나카토미노 가마타리",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:061",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:047",
+					"desired_location": "",
+					"display_name": "오토모노 후케이",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:047",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:063",
+					"desired_location": "",
+					"display_name": "에치노 다쿠쓰",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:063",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:062",
+					"desired_location": "",
+					"display_name": "아즈미노 히라후",
+					"exception": "same-year death: July start before resolution; no automatic death rule",
+					"faction_id": "tsukushi",
+					"location": "",
+					"officer_id": "historical:062",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:051",
+					"desired_location": "steppe_huihe",
+					"display_name": "비속독 일테베르",
+					"exception": "",
+					"faction_id": "huihe",
+					"location": "steppe_huihe",
+					"officer_id": "historical:051",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:055",
+					"desired_location": "steppe_pugu",
+					"display_name": "복골 수장",
+					"exception": "",
+					"faction_id": "pugu",
+					"location": "steppe_pugu",
+					"officer_id": "placeholder:baekgang_663:pugu",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:059",
+					"desired_location": "steppe_tongluo",
+					"display_name": "동라 수장",
+					"exception": "",
+					"faction_id": "tongluo",
+					"location": "steppe_tongluo",
+					"officer_id": "placeholder:baekgang_663:tongluo",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:056",
+					"desired_location": "steppe_bayegu",
+					"display_name": "발야고 수장",
+					"exception": "",
+					"faction_id": "bayegu",
+					"location": "steppe_bayegu",
+					"officer_id": "placeholder:baekgang_663:bayegu",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:053",
+					"desired_location": "steppe_sijie",
+					"display_name": "사결 수장",
+					"exception": "",
+					"faction_id": "sijie",
+					"location": "steppe_sijie",
+					"officer_id": "placeholder:baekgang_663:sijie",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:058",
+					"desired_location": "steppe_qibi",
+					"display_name": "계필 수장",
+					"exception": "",
+					"faction_id": "qibi",
+					"location": "steppe_qibi",
+					"officer_id": "placeholder:baekgang_663:qibi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:060",
+					"desired_location": "steppe_hun",
+					"display_name": "혼 수장",
+					"exception": "",
+					"faction_id": "hun",
+					"location": "steppe_hun",
+					"officer_id": "placeholder:baekgang_663:hun",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:054",
+					"desired_location": "steppe_duolange",
+					"display_name": "다람갈 수장",
+					"exception": "",
+					"faction_id": "duolange",
+					"location": "steppe_duolange",
+					"officer_id": "placeholder:baekgang_663:duolange",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:057",
+					"desired_location": "steppe_adie",
+					"display_name": "아질 수장",
+					"exception": "",
+					"faction_id": "adie",
+					"location": "steppe_adie",
+					"officer_id": "placeholder:baekgang_663:adie",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:067",
+					"desired_location": "tsukushi",
+					"display_name": "쓰쿠시 수장 미상",
+					"exception": "",
+					"faction_id": "tsukushi",
+					"location": "",
+					"officer_id": "placeholder:baekgang_663:tsukushi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:068",
+					"desired_location": "kibi",
+					"display_name": "기비 수장 미상",
+					"exception": "",
+					"faction_id": "kibi",
+					"location": "",
+					"officer_id": "placeholder:baekgang_663:kibi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:046",
+					"desired_location": "koshi",
+					"display_name": "아베노 히라후",
+					"exception": "",
+					"faction_id": "koshi_abe",
+					"location": "",
+					"officer_id": "historical:046",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:064",
+					"desired_location": "emishi_aguta",
+					"display_name": "온가",
+					"exception": "",
+					"faction_id": "emishi",
+					"location": "",
+					"officer_id": "historical:064",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:069",
+					"desired_location": "hayato",
+					"display_name": "하야토 수장 미상",
+					"exception": "",
+					"faction_id": "hayato",
+					"location": "",
+					"officer_id": "placeholder:baekgang_663:hayato",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				}
+			],
+			"excluded": {
+				"historical:001": "before_start_death:confirmed",
+				"historical:002": "not_in_start_activity_roster",
+				"historical:003": "past_legacy_game_death_unverified",
+				"historical:009": "past_legacy_game_death_unverified",
+				"historical:010": "not_in_start_activity_roster",
+				"historical:011": "not_in_start_activity_roster",
+				"historical:012": "past_legacy_game_death_unverified",
+				"historical:013": "past_legacy_game_death_unverified",
+				"historical:014": "past_legacy_game_death_unverified",
+				"historical:015": "before_start_death:confirmed",
+				"historical:016": "past_legacy_game_death_unverified",
+				"historical:017": "past_legacy_game_death_unverified",
+				"historical:018": "past_legacy_game_death_unverified",
+				"historical:023": "past_legacy_game_death_unverified",
+				"historical:029": "not_in_start_activity_roster",
+				"historical:030": "not_in_start_activity_roster",
+				"historical:038": "past_legacy_game_death_unverified",
+				"historical:041": "past_legacy_game_death_unverified",
+				"historical:042": "past_legacy_game_death_unverified",
+				"historical:044": "past_legacy_game_death_unverified",
+				"historical:045": "past_legacy_game_death_unverified",
+				"historical:048": "past_legacy_game_death_unverified",
+				"historical:049": "past_legacy_game_death_unverified",
+				"historical:050": "not_in_start_activity_roster",
+				"historical:052": "not_in_start_activity_roster"
+			},
+			"factions": {
+				"adie": "아질",
+				"baekje_revival": "백제부흥군",
+				"bayegu": "발야고",
+				"duolange": "다람갈",
+				"emishi": "에미시 연맹",
+				"goguryeo": "고구려",
+				"hayato": "하야토 부족연맹",
+				"huihe": "회흘(위구르)",
+				"hun": "혼",
+				"kibi": "기비 호족연합",
+				"koshi_abe": "고시 아베 수군",
+				"pugu": "복골",
+				"qibi": "계필",
+				"sijie": "사결",
+				"silla": "신라",
+				"tang": "당",
+				"tongluo": "동라",
+				"tsukushi": "쓰쿠시 해상세력",
+				"yamato": "왜(야마토 조정)"
+			},
+			"mode_policy": "same historical and fictional initial roster; gameplay changes persist",
+			"year": 663
+		},
+		"baekje_fall_660": {
+			"entries": [
+				{
+					"catalog_id": "historical:003",
+					"desired_location": "geumseong",
+					"display_name": "김춘추",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:003",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:004",
+					"desired_location": "geumseong",
+					"display_name": "김유신",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:004",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:007",
+					"desired_location": "geumseong",
+					"display_name": "김인문",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:007",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:005",
+					"desired_location": "gukwon",
+					"display_name": "김법민",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "gukwon",
+					"officer_id": "historical:005",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:006",
+					"desired_location": "gukwon",
+					"display_name": "김흠순",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "gukwon",
+					"officer_id": "historical:006",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:008",
+					"desired_location": "sabeol",
+					"display_name": "품일",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "sabeol",
+					"officer_id": "historical:008",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:009",
+					"desired_location": "sabeol",
+					"display_name": "관창",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "sabeol",
+					"officer_id": "historical:009",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:013",
+					"desired_location": "sabi",
+					"display_name": "의자왕",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "sabi",
+					"officer_id": "historical:013",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:016",
+					"desired_location": "sabi",
+					"display_name": "흥수",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "sabi",
+					"officer_id": "historical:016",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:020",
+					"desired_location": "sabi",
+					"display_name": "복신",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "sabi",
+					"officer_id": "historical:020",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:037",
+					"desired_location": "sabi",
+					"display_name": "예군",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "sabi",
+					"officer_id": "historical:037",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:017",
+					"desired_location": "gosa",
+					"display_name": "계백",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "gosa",
+					"officer_id": "historical:017",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:018",
+					"desired_location": "gosa",
+					"display_name": "부여태",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "gosa",
+					"officer_id": "historical:018",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:014",
+					"desired_location": "ungjin",
+					"display_name": "윤충",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "ungjin",
+					"officer_id": "historical:014",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:021",
+					"desired_location": "imjonseong",
+					"display_name": "흑치상지",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "imjonseong",
+					"officer_id": "historical:021",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:022",
+					"desired_location": "imjonseong",
+					"display_name": "지수신",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "imjonseong",
+					"officer_id": "historical:022",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:019",
+					"desired_location": "",
+					"display_name": "부여풍",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "",
+					"officer_id": "historical:019",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:024",
+					"desired_location": "pyongyang",
+					"display_name": "보장왕",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "pyongyang",
+					"officer_id": "historical:024",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:025",
+					"desired_location": "pyongyang",
+					"display_name": "연개소문",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "pyongyang",
+					"officer_id": "historical:025",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:028",
+					"desired_location": "pyongyang",
+					"display_name": "연남생",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "pyongyang",
+					"officer_id": "historical:028",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:026",
+					"desired_location": "ansi",
+					"display_name": "양만춘",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "ansi",
+					"officer_id": "historical:026",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:027",
+					"desired_location": "gungnae",
+					"display_name": "고연무",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "gungnae",
+					"officer_id": "historical:027",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:031",
+					"desired_location": "changan",
+					"display_name": "당 고종",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:031",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:039",
+					"desired_location": "",
+					"display_name": "이세적",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:039",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:040",
+					"desired_location": "",
+					"display_name": "소정방",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:040",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:036",
+					"desired_location": "",
+					"display_name": "유인궤",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:036",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:035",
+					"desired_location": "",
+					"display_name": "유인원",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:035",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:034",
+					"desired_location": "",
+					"display_name": "설인귀",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:034",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:032",
+					"desired_location": "",
+					"display_name": "고간",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:032",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:033",
+					"desired_location": "",
+					"display_name": "이근행",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:033",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:042",
+					"desired_location": "asuka",
+					"display_name": "사이메이 천황",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:042",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:043",
+					"desired_location": "",
+					"display_name": "나카노오에 황자",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:043",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:061",
+					"desired_location": "",
+					"display_name": "나카토미노 가마타리",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:061",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:047",
+					"desired_location": "",
+					"display_name": "오토모노 후케이",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:047",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:063",
+					"desired_location": "",
+					"display_name": "에치노 다쿠쓰",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:063",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:062",
+					"desired_location": "",
+					"display_name": "아즈미노 히라후",
+					"exception": "",
+					"faction_id": "tsukushi",
+					"location": "",
+					"officer_id": "historical:062",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:050",
+					"desired_location": "steppe_huihe",
+					"display_name": "포룬 일테베르",
+					"exception": "",
+					"faction_id": "huihe",
+					"location": "steppe_huihe",
+					"officer_id": "historical:050",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:055",
+					"desired_location": "steppe_pugu",
+					"display_name": "복골 수장",
+					"exception": "",
+					"faction_id": "pugu",
+					"location": "steppe_pugu",
+					"officer_id": "placeholder:baekje_fall_660:pugu",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:059",
+					"desired_location": "steppe_tongluo",
+					"display_name": "동라 수장",
+					"exception": "",
+					"faction_id": "tongluo",
+					"location": "steppe_tongluo",
+					"officer_id": "placeholder:baekje_fall_660:tongluo",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:056",
+					"desired_location": "steppe_bayegu",
+					"display_name": "발야고 수장",
+					"exception": "",
+					"faction_id": "bayegu",
+					"location": "steppe_bayegu",
+					"officer_id": "placeholder:baekje_fall_660:bayegu",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:053",
+					"desired_location": "steppe_sijie",
+					"display_name": "사결 수장",
+					"exception": "",
+					"faction_id": "sijie",
+					"location": "steppe_sijie",
+					"officer_id": "placeholder:baekje_fall_660:sijie",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:058",
+					"desired_location": "steppe_qibi",
+					"display_name": "계필 수장",
+					"exception": "",
+					"faction_id": "qibi",
+					"location": "steppe_qibi",
+					"officer_id": "placeholder:baekje_fall_660:qibi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:060",
+					"desired_location": "steppe_hun",
+					"display_name": "혼 수장",
+					"exception": "",
+					"faction_id": "hun",
+					"location": "steppe_hun",
+					"officer_id": "placeholder:baekje_fall_660:hun",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:054",
+					"desired_location": "steppe_duolange",
+					"display_name": "다람갈 수장",
+					"exception": "",
+					"faction_id": "duolange",
+					"location": "steppe_duolange",
+					"officer_id": "placeholder:baekje_fall_660:duolange",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:057",
+					"desired_location": "steppe_adie",
+					"display_name": "아질 수장",
+					"exception": "",
+					"faction_id": "adie",
+					"location": "steppe_adie",
+					"officer_id": "placeholder:baekje_fall_660:adie",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:067",
+					"desired_location": "tsukushi",
+					"display_name": "쓰쿠시 수장 미상",
+					"exception": "",
+					"faction_id": "tsukushi",
+					"location": "",
+					"officer_id": "placeholder:baekje_fall_660:tsukushi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:068",
+					"desired_location": "kibi",
+					"display_name": "기비 수장 미상",
+					"exception": "",
+					"faction_id": "kibi",
+					"location": "",
+					"officer_id": "placeholder:baekje_fall_660:kibi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:046",
+					"desired_location": "koshi",
+					"display_name": "아베노 히라후",
+					"exception": "",
+					"faction_id": "koshi_abe",
+					"location": "",
+					"officer_id": "historical:046",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:064",
+					"desired_location": "emishi_aguta",
+					"display_name": "온가",
+					"exception": "",
+					"faction_id": "emishi",
+					"location": "",
+					"officer_id": "historical:064",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:069",
+					"desired_location": "hayato",
+					"display_name": "하야토 수장 미상",
+					"exception": "",
+					"faction_id": "hayato",
+					"location": "",
+					"officer_id": "placeholder:baekje_fall_660:hayato",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				}
+			],
+			"excluded": {
+				"historical:001": "before_start_death:confirmed",
+				"historical:002": "not_in_start_activity_roster",
+				"historical:010": "not_in_start_activity_roster",
+				"historical:011": "not_in_start_activity_roster",
+				"historical:012": "past_legacy_game_death_unverified",
+				"historical:015": "before_start_death:confirmed",
+				"historical:023": "past_legacy_game_death_unverified",
+				"historical:029": "not_in_start_activity_roster",
+				"historical:030": "not_in_start_activity_roster",
+				"historical:038": "past_legacy_game_death_unverified",
+				"historical:041": "past_legacy_game_death_unverified",
+				"historical:044": "past_legacy_game_death_unverified",
+				"historical:045": "past_legacy_game_death_unverified",
+				"historical:048": "past_legacy_game_death_unverified",
+				"historical:049": "past_legacy_game_death_unverified",
+				"historical:051": "not_in_start_activity_roster",
+				"historical:052": "not_in_start_activity_roster"
+			},
+			"factions": {
+				"adie": "아질",
+				"baekje": "백제",
+				"bayegu": "발야고",
+				"duolange": "다람갈",
+				"emishi": "에미시 연맹",
+				"goguryeo": "고구려",
+				"hayato": "하야토 부족연맹",
+				"huihe": "회흘(위구르)",
+				"hun": "혼",
+				"kibi": "기비 호족연합",
+				"koshi_abe": "고시 아베 수군",
+				"pugu": "복골",
+				"qibi": "계필",
+				"sijie": "사결",
+				"silla": "신라",
+				"tang": "당",
+				"tongluo": "동라",
+				"tsukushi": "쓰쿠시 해상세력",
+				"yamato": "왜(야마토 조정)"
+			},
+			"mode_policy": "same historical and fictional initial roster; gameplay changes persist",
+			"year": 660
+		},
+		"goguryeo_coup_642": {
+			"entries": [
+				{
+					"catalog_id": "historical:001",
+					"desired_location": "geumseong",
+					"display_name": "선덕여왕",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:001",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:003",
+					"desired_location": "geumseong",
+					"display_name": "김춘추",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:003",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:004",
+					"desired_location": "geumseong",
+					"display_name": "김유신",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:004",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:006",
+					"desired_location": "gukwon",
+					"display_name": "김흠순",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "gukwon",
+					"officer_id": "historical:006",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:002",
+					"desired_location": "gukwon",
+					"display_name": "알천",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "gukwon",
+					"officer_id": "historical:002",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:008",
+					"desired_location": "sabeol",
+					"display_name": "품일",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "sabeol",
+					"officer_id": "historical:008",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:013",
+					"desired_location": "sabi",
+					"display_name": "의자왕",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "sabi",
+					"officer_id": "historical:013",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:016",
+					"desired_location": "sabi",
+					"display_name": "흥수",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "sabi",
+					"officer_id": "historical:016",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:015",
+					"desired_location": "sabi",
+					"display_name": "성충",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "sabi",
+					"officer_id": "historical:015",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:020",
+					"desired_location": "sabi",
+					"display_name": "복신",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "sabi",
+					"officer_id": "historical:020",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:017",
+					"desired_location": "gosa",
+					"display_name": "계백",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "gosa",
+					"officer_id": "historical:017",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:018",
+					"desired_location": "gosa",
+					"display_name": "부여태",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "gosa",
+					"officer_id": "historical:018",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:014",
+					"desired_location": "ungjin",
+					"display_name": "윤충",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "ungjin",
+					"officer_id": "historical:014",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:024",
+					"desired_location": "pyongyang",
+					"display_name": "보장왕",
+					"exception": "ruler at coup start; game birth 623 is unverified, not a service-age cutoff",
+					"faction_id": "goguryeo",
+					"location": "pyongyang",
+					"officer_id": "historical:024",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:025",
+					"desired_location": "pyongyang",
+					"display_name": "연개소문",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "pyongyang",
+					"officer_id": "historical:025",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:026",
+					"desired_location": "ansi",
+					"display_name": "양만춘",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "ansi",
+					"officer_id": "historical:026",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:038",
+					"desired_location": "changan",
+					"display_name": "당 태종",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:038",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:039",
+					"desired_location": "",
+					"display_name": "이세적",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:039",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:040",
+					"desired_location": "",
+					"display_name": "소정방",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:040",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:036",
+					"desired_location": "",
+					"display_name": "유인궤",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:036",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:034",
+					"desired_location": "",
+					"display_name": "설인귀",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:034",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:042",
+					"desired_location": "asuka",
+					"display_name": "고교쿠 천황",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:042",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:044",
+					"desired_location": "",
+					"display_name": "소가노 에미시",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:044",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:045",
+					"desired_location": "",
+					"display_name": "소가노 이루카",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:045",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:043",
+					"desired_location": "",
+					"display_name": "나카노오에 황자",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:043",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:061",
+					"desired_location": "",
+					"display_name": "나카토미노 가마타리",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:061",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:048",
+					"desired_location": "steppe_duolange",
+					"display_name": "이남",
+					"exception": "",
+					"faction_id": "xueyantuo",
+					"location": "",
+					"officer_id": "historical:048",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:049",
+					"desired_location": "",
+					"display_name": "발작",
+					"exception": "",
+					"faction_id": "xueyantuo",
+					"location": "",
+					"officer_id": "historical:049",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:050",
+					"desired_location": "",
+					"display_name": "포룬 일테베르",
+					"exception": "",
+					"faction_id": "xueyantuo",
+					"location": "",
+					"officer_id": "historical:050",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:067",
+					"desired_location": "tsukushi",
+					"display_name": "쓰쿠시 수장 미상",
+					"exception": "",
+					"faction_id": "tsukushi",
+					"location": "",
+					"officer_id": "placeholder:goguryeo_coup_642:tsukushi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:068",
+					"desired_location": "kibi",
+					"display_name": "기비 수장 미상",
+					"exception": "",
+					"faction_id": "kibi",
+					"location": "",
+					"officer_id": "placeholder:goguryeo_coup_642:kibi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:066",
+					"desired_location": "koshi",
+					"display_name": "고시 수장 미상",
+					"exception": "",
+					"faction_id": "koshi_abe",
+					"location": "",
+					"officer_id": "placeholder:goguryeo_coup_642:koshi_abe",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:065",
+					"desired_location": "emishi_aguta",
+					"display_name": "에미시 수장 미상",
+					"exception": "",
+					"faction_id": "emishi",
+					"location": "",
+					"officer_id": "placeholder:goguryeo_coup_642:emishi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:069",
+					"desired_location": "hayato",
+					"display_name": "하야토 수장 미상",
+					"exception": "",
+					"faction_id": "hayato",
+					"location": "",
+					"officer_id": "placeholder:goguryeo_coup_642:hayato",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				}
+			],
+			"excluded": {
+				"historical:005": "not_in_start_activity_roster",
+				"historical:007": "not_in_start_activity_roster",
+				"historical:009": "unborn_by_legacy_game_estimate",
+				"historical:010": "not_in_start_activity_roster",
+				"historical:011": "unborn_by_legacy_game_estimate",
+				"historical:012": "past_legacy_game_death_unverified",
+				"historical:019": "not_in_start_activity_roster",
+				"historical:021": "not_in_start_activity_roster",
+				"historical:022": "not_in_start_activity_roster",
+				"historical:023": "not_in_start_activity_roster",
+				"historical:027": "not_in_start_activity_roster",
+				"historical:028": "not_in_start_activity_roster",
+				"historical:029": "unborn_by_legacy_game_estimate",
+				"historical:030": "not_in_start_activity_roster",
+				"historical:031": "not_in_start_activity_roster",
+				"historical:032": "not_in_start_activity_roster",
+				"historical:033": "not_in_start_activity_roster",
+				"historical:035": "not_in_start_activity_roster",
+				"historical:037": "not_in_start_activity_roster",
+				"historical:041": "past_legacy_game_death_unverified",
+				"historical:046": "not_in_start_activity_roster",
+				"historical:047": "not_in_start_activity_roster",
+				"historical:051": "not_in_start_activity_roster",
+				"historical:052": "not_in_start_activity_roster",
+				"historical:062": "not_in_start_activity_roster",
+				"historical:063": "not_in_start_activity_roster",
+				"historical:064": "not_in_start_activity_roster"
+			},
+			"factions": {
+				"baekje": "백제",
+				"emishi": "에미시 연맹",
+				"goguryeo": "고구려",
+				"hayato": "하야토 부족연맹",
+				"kibi": "기비 호족연합",
+				"koshi_abe": "고시 호족권",
+				"silla": "신라",
+				"tang": "당",
+				"tsukushi": "쓰쿠시 해상세력",
+				"xueyantuo": "설연타",
+				"yamato": "왜(야마토)"
+			},
+			"mode_policy": "same historical and fictional initial roster; gameplay changes persist",
+			"year": 642
+		},
+		"silla_equilibrium_632": {
+			"entries": [
+				{
+					"catalog_id": "historical:001",
+					"desired_location": "geumseong",
+					"display_name": "선덕여왕",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:001",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:003",
+					"desired_location": "geumseong",
+					"display_name": "김춘추",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:003",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:004",
+					"desired_location": "geumseong",
+					"display_name": "김유신",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:004",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:006",
+					"desired_location": "gukwon",
+					"display_name": "김흠순",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "gukwon",
+					"officer_id": "historical:006",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:002",
+					"desired_location": "sabeol",
+					"display_name": "알천",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "sabeol",
+					"officer_id": "historical:002",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:012",
+					"desired_location": "sabi",
+					"display_name": "무왕",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "sabi",
+					"officer_id": "historical:012",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:013",
+					"desired_location": "sabi",
+					"display_name": "의자왕",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "sabi",
+					"officer_id": "historical:013",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:016",
+					"desired_location": "sabi",
+					"display_name": "흥수",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "sabi",
+					"officer_id": "historical:016",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:015",
+					"desired_location": "sabi",
+					"display_name": "성충",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "sabi",
+					"officer_id": "historical:015",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:017",
+					"desired_location": "gosa",
+					"display_name": "계백",
+					"exception": "",
+					"faction_id": "baekje",
+					"location": "gosa",
+					"officer_id": "historical:017",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:023",
+					"desired_location": "pyongyang",
+					"display_name": "영류왕",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "pyongyang",
+					"officer_id": "historical:023",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:025",
+					"desired_location": "pyongyang",
+					"display_name": "연개소문",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "pyongyang",
+					"officer_id": "historical:025",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:026",
+					"desired_location": "ansi",
+					"display_name": "양만춘",
+					"exception": "",
+					"faction_id": "goguryeo",
+					"location": "ansi",
+					"officer_id": "historical:026",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:038",
+					"desired_location": "changan",
+					"display_name": "당 태종",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:038",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:039",
+					"desired_location": "",
+					"display_name": "이세적",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:039",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:040",
+					"desired_location": "",
+					"display_name": "소정방",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:040",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:036",
+					"desired_location": "",
+					"display_name": "유인궤",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:036",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:041",
+					"desired_location": "asuka",
+					"display_name": "조메이 천황",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:041",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:042",
+					"desired_location": "",
+					"display_name": "고교쿠 천황",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:042",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:044",
+					"desired_location": "",
+					"display_name": "소가노 에미시",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:044",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:045",
+					"desired_location": "",
+					"display_name": "소가노 이루카",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:045",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:048",
+					"desired_location": "steppe_duolange",
+					"display_name": "이남",
+					"exception": "",
+					"faction_id": "xueyantuo",
+					"location": "",
+					"officer_id": "historical:048",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:050",
+					"desired_location": "",
+					"display_name": "포룬 일테베르",
+					"exception": "",
+					"faction_id": "xueyantuo",
+					"location": "",
+					"officer_id": "historical:050",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:067",
+					"desired_location": "tsukushi",
+					"display_name": "쓰쿠시 수장 미상",
+					"exception": "",
+					"faction_id": "tsukushi",
+					"location": "",
+					"officer_id": "placeholder:silla_equilibrium_632:tsukushi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:068",
+					"desired_location": "kibi",
+					"display_name": "기비 수장 미상",
+					"exception": "",
+					"faction_id": "kibi",
+					"location": "",
+					"officer_id": "placeholder:silla_equilibrium_632:kibi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:066",
+					"desired_location": "koshi",
+					"display_name": "고시 수장 미상",
+					"exception": "",
+					"faction_id": "koshi_abe",
+					"location": "",
+					"officer_id": "placeholder:silla_equilibrium_632:koshi_abe",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:065",
+					"desired_location": "emishi_aguta",
+					"display_name": "에미시 수장 미상",
+					"exception": "",
+					"faction_id": "emishi",
+					"location": "",
+					"officer_id": "placeholder:silla_equilibrium_632:emishi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:069",
+					"desired_location": "hayato",
+					"display_name": "하야토 수장 미상",
+					"exception": "",
+					"faction_id": "hayato",
+					"location": "",
+					"officer_id": "placeholder:silla_equilibrium_632:hayato",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				}
+			],
+			"excluded": {
+				"historical:005": "not_in_start_activity_roster",
+				"historical:007": "not_in_start_activity_roster",
+				"historical:008": "not_in_start_activity_roster",
+				"historical:009": "unborn_by_legacy_game_estimate",
+				"historical:010": "unborn_by_legacy_game_estimate",
+				"historical:011": "unborn_by_legacy_game_estimate",
+				"historical:014": "not_in_start_activity_roster",
+				"historical:018": "not_in_start_activity_roster",
+				"historical:019": "not_in_start_activity_roster",
+				"historical:020": "not_in_start_activity_roster",
+				"historical:021": "not_in_start_activity_roster",
+				"historical:022": "not_in_start_activity_roster",
+				"historical:024": "not_in_start_activity_roster",
+				"historical:027": "unborn_by_legacy_game_estimate",
+				"historical:028": "unborn_by_legacy_game_estimate",
+				"historical:029": "unborn_by_legacy_game_estimate",
+				"historical:030": "not_in_start_activity_roster",
+				"historical:031": "not_in_start_activity_roster",
+				"historical:032": "not_in_start_activity_roster",
+				"historical:033": "not_in_start_activity_roster",
+				"historical:034": "not_in_start_activity_roster",
+				"historical:035": "not_in_start_activity_roster",
+				"historical:037": "not_in_start_activity_roster",
+				"historical:043": "not_in_start_activity_roster",
+				"historical:046": "not_in_start_activity_roster",
+				"historical:047": "not_in_start_activity_roster",
+				"historical:049": "not_in_start_activity_roster",
+				"historical:051": "not_in_start_activity_roster",
+				"historical:052": "not_in_start_activity_roster",
+				"historical:061": "not_in_start_activity_roster",
+				"historical:062": "not_in_start_activity_roster",
+				"historical:063": "not_in_start_activity_roster",
+				"historical:064": "not_in_start_activity_roster"
+			},
+			"factions": {
+				"baekje": "백제",
+				"emishi": "에미시 연맹",
+				"goguryeo": "고구려",
+				"hayato": "하야토 부족연맹",
+				"kibi": "기비 호족연합",
+				"koshi_abe": "고시 호족권",
+				"silla": "신라",
+				"tang": "당",
+				"tsukushi": "쓰쿠시 해상세력",
+				"xueyantuo": "설연타",
+				"yamato": "왜(야마토)"
+			},
+			"mode_policy": "same historical and fictional initial roster; gameplay changes persist",
+			"year": 632
+		},
+		"silla_tang_war_670": {
+			"entries": [
+				{
+					"catalog_id": "historical:005",
+					"desired_location": "geumseong",
+					"display_name": "김법민",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:005",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:004",
+					"desired_location": "geumseong",
+					"display_name": "김유신",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:004",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:007",
+					"desired_location": "geumseong",
+					"display_name": "김인문",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "geumseong",
+					"officer_id": "historical:007",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:006",
+					"desired_location": "gukwon",
+					"display_name": "김흠순",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "gukwon",
+					"officer_id": "historical:006",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:008",
+					"desired_location": "sabeol",
+					"display_name": "품일",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "sabeol",
+					"officer_id": "historical:008",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:010",
+					"desired_location": "bukhansan",
+					"display_name": "설오유",
+					"exception": "",
+					"faction_id": "silla",
+					"location": "bukhansan",
+					"officer_id": "historical:010",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:029",
+					"desired_location": "gosa",
+					"display_name": "안승",
+					"exception": "",
+					"faction_id": "goguryeo_revival",
+					"location": "geummajeo",
+					"officer_id": "historical:029",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:027",
+					"desired_location": "geummajeo",
+					"display_name": "고연무",
+					"exception": "",
+					"faction_id": "goguryeo_revival",
+					"location": "geummajeo",
+					"officer_id": "historical:027",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:030",
+					"desired_location": "hwanghae",
+					"display_name": "검모잠",
+					"exception": "same-year death: opening before internal conflict; no automatic death rule",
+					"faction_id": "goguryeo_revival",
+					"location": "hwanghae",
+					"officer_id": "historical:030",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:031",
+					"desired_location": "changan",
+					"display_name": "당 고종",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:031",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:036",
+					"desired_location": "",
+					"display_name": "유인궤",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:036",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:034",
+					"desired_location": "",
+					"display_name": "설인귀",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:034",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:032",
+					"desired_location": "",
+					"display_name": "고간",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:032",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:033",
+					"desired_location": "",
+					"display_name": "이근행",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:033",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:037",
+					"desired_location": "",
+					"display_name": "예군",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:037",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:021",
+					"desired_location": "",
+					"display_name": "흑치상지",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:021",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:028",
+					"desired_location": "",
+					"display_name": "연남생",
+					"exception": "",
+					"faction_id": "tang",
+					"location": "",
+					"officer_id": "historical:028",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:043",
+					"desired_location": "asuka",
+					"display_name": "덴지 천황",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:043",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:047",
+					"desired_location": "",
+					"display_name": "오토모노 후케이",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:047",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:063",
+					"desired_location": "",
+					"display_name": "에치노 다쿠쓰",
+					"exception": "",
+					"faction_id": "yamato",
+					"location": "",
+					"officer_id": "historical:063",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": false
+				},
+				{
+					"catalog_id": "historical:051",
+					"desired_location": "steppe_huihe",
+					"display_name": "비속독 일테베르",
+					"exception": "",
+					"faction_id": "huihe",
+					"location": "steppe_huihe",
+					"officer_id": "historical:051",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:055",
+					"desired_location": "steppe_pugu",
+					"display_name": "복골 수장",
+					"exception": "",
+					"faction_id": "pugu",
+					"location": "steppe_pugu",
+					"officer_id": "placeholder:silla_tang_war_670:pugu",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:059",
+					"desired_location": "steppe_tongluo",
+					"display_name": "동라 수장",
+					"exception": "",
+					"faction_id": "tongluo",
+					"location": "steppe_tongluo",
+					"officer_id": "placeholder:silla_tang_war_670:tongluo",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:056",
+					"desired_location": "steppe_bayegu",
+					"display_name": "발야고 수장",
+					"exception": "",
+					"faction_id": "bayegu",
+					"location": "steppe_bayegu",
+					"officer_id": "placeholder:silla_tang_war_670:bayegu",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:053",
+					"desired_location": "steppe_sijie",
+					"display_name": "사결 수장",
+					"exception": "",
+					"faction_id": "sijie",
+					"location": "steppe_sijie",
+					"officer_id": "placeholder:silla_tang_war_670:sijie",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:058",
+					"desired_location": "steppe_qibi",
+					"display_name": "계필 수장",
+					"exception": "",
+					"faction_id": "qibi",
+					"location": "steppe_qibi",
+					"officer_id": "placeholder:silla_tang_war_670:qibi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:060",
+					"desired_location": "steppe_hun",
+					"display_name": "혼 수장",
+					"exception": "",
+					"faction_id": "hun",
+					"location": "steppe_hun",
+					"officer_id": "placeholder:silla_tang_war_670:hun",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:054",
+					"desired_location": "steppe_duolange",
+					"display_name": "다람갈 수장",
+					"exception": "",
+					"faction_id": "duolange",
+					"location": "steppe_duolange",
+					"officer_id": "placeholder:silla_tang_war_670:duolange",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:057",
+					"desired_location": "steppe_adie",
+					"display_name": "아질 수장",
+					"exception": "",
+					"faction_id": "adie",
+					"location": "steppe_adie",
+					"officer_id": "placeholder:silla_tang_war_670:adie",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:067",
+					"desired_location": "tsukushi",
+					"display_name": "쓰쿠시 수장 미상",
+					"exception": "",
+					"faction_id": "tsukushi",
+					"location": "",
+					"officer_id": "placeholder:silla_tang_war_670:tsukushi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:068",
+					"desired_location": "kibi",
+					"display_name": "기비 수장 미상",
+					"exception": "",
+					"faction_id": "kibi",
+					"location": "",
+					"officer_id": "placeholder:silla_tang_war_670:kibi",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:066",
+					"desired_location": "koshi",
+					"display_name": "고시 수장 미상",
+					"exception": "",
+					"faction_id": "koshi_abe",
+					"location": "",
+					"officer_id": "placeholder:silla_tang_war_670:koshi_abe",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:064",
+					"desired_location": "emishi_aguta",
+					"display_name": "온가",
+					"exception": "",
+					"faction_id": "emishi",
+					"location": "",
+					"officer_id": "historical:064",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				},
+				{
+					"catalog_id": "historical:069",
+					"desired_location": "hayato",
+					"display_name": "하야토 수장 미상",
+					"exception": "",
+					"faction_id": "hayato",
+					"location": "",
+					"officer_id": "placeholder:silla_tang_war_670:hayato",
+					"placement_note": "explicit game start assignment; not evidence of a historical posting",
+					"ruler": true
+				}
+			],
+			"excluded": {
+				"historical:001": "before_start_death:confirmed",
+				"historical:002": "not_in_start_activity_roster",
+				"historical:003": "past_legacy_game_death_unverified",
+				"historical:009": "past_legacy_game_death_unverified",
+				"historical:011": "not_in_start_activity_roster",
+				"historical:012": "past_legacy_game_death_unverified",
+				"historical:013": "past_legacy_game_death_unverified",
+				"historical:014": "past_legacy_game_death_unverified",
+				"historical:015": "before_start_death:confirmed",
+				"historical:016": "past_legacy_game_death_unverified",
+				"historical:017": "past_legacy_game_death_unverified",
+				"historical:018": "past_legacy_game_death_unverified",
+				"historical:019": "past_legacy_game_death_unverified",
+				"historical:020": "past_legacy_game_death_unverified",
+				"historical:022": "not_in_start_activity_roster",
+				"historical:023": "past_legacy_game_death_unverified",
+				"historical:024": "not_in_start_activity_roster",
+				"historical:025": "before_start_death:estimated",
+				"historical:026": "past_legacy_game_death_unverified",
+				"historical:035": "not_in_start_activity_roster",
+				"historical:038": "past_legacy_game_death_unverified",
+				"historical:039": "past_legacy_game_death_unverified",
+				"historical:040": "past_legacy_game_death_unverified",
+				"historical:041": "past_legacy_game_death_unverified",
+				"historical:042": "past_legacy_game_death_unverified",
+				"historical:044": "past_legacy_game_death_unverified",
+				"historical:045": "past_legacy_game_death_unverified",
+				"historical:046": "past_legacy_game_death_unverified",
+				"historical:048": "past_legacy_game_death_unverified",
+				"historical:049": "past_legacy_game_death_unverified",
+				"historical:050": "not_in_start_activity_roster",
+				"historical:052": "not_in_start_activity_roster",
+				"historical:061": "past_legacy_game_death_unverified",
+				"historical:062": "past_legacy_game_death_unverified"
+			},
+			"factions": {
+				"adie": "아질",
+				"bayegu": "발야고",
+				"duolange": "다람갈",
+				"emishi": "에미시 연맹",
+				"goguryeo_revival": "고구려부흥군",
+				"hayato": "하야토 부족연맹",
+				"huihe": "회흘(위구르)",
+				"hun": "혼",
+				"kibi": "기비 호족연합",
+				"koshi_abe": "고시 호족권",
+				"pugu": "복골",
+				"qibi": "계필",
+				"sijie": "사결",
+				"silla": "신라",
+				"tang": "당",
+				"tongluo": "동라",
+				"tsukushi": "쓰쿠시 해상세력",
+				"yamato": "왜(야마토 조정)"
+			},
+			"mode_policy": "same historical and fictional initial roster; gameplay changes persist",
+			"year": 670
+		}
+	},
+	"source_counts": {
+		"campaign": 16,
+		"canonical_templates": 69,
+		"scenario": 71
+	},
+	"stat_changes": [
+		{
+			"name": "고연무",
+			"new": 86,
+			"old": 82,
+			"rule": "scenario database",
+			"stat": "leadership"
+		},
+		{
+			"name": "고연무",
+			"new": 87,
+			"old": 85,
+			"rule": "scenario database",
+			"stat": "war"
+		},
+		{
+			"name": "고연무",
+			"new": 75,
+			"old": 72,
+			"rule": "scenario database",
+			"stat": "intelligence"
+		},
+		{
+			"name": "고연무",
+			"new": 65,
+			"old": 60,
+			"rule": "scenario database",
+			"stat": "politics"
+		},
+		{
+			"name": "고연무",
+			"new": 82,
+			"old": 75,
+			"rule": "scenario database",
+			"stat": "authority"
+		},
+		{
+			"name": "사이메이 천황",
+			"new": 72,
+			"old": 78,
+			"rule": "one person; earliest-title base, no title stat bonus",
+			"stat": "leadership"
+		},
+		{
+			"name": "사이메이 천황",
+			"new": 48,
+			"old": 52,
+			"rule": "one person; earliest-title base, no title stat bonus",
+			"stat": "war"
+		},
+		{
+			"name": "사이메이 천황",
+			"new": 86,
+			"old": 88,
+			"rule": "one person; earliest-title base, no title stat bonus",
+			"stat": "intelligence"
+		},
+		{
+			"name": "사이메이 천황",
+			"new": 90,
+			"old": 91,
+			"rule": "one person; earliest-title base, no title stat bonus",
+			"stat": "politics"
+		},
+		{
+			"name": "사이메이 천황",
+			"new": 96,
+			"old": 97,
+			"rule": "one person; earliest-title base, no title stat bonus",
+			"stat": "authority"
+		},
+		{
+			"name": "덴지 천황",
+			"new": 75,
+			"old": 74,
+			"rule": "one person; earliest-title base, no title stat bonus",
+			"stat": "war"
+		},
+		{
+			"name": "덴지 천황",
+			"new": 94,
+			"old": 95,
+			"rule": "one person; earliest-title base, no title stat bonus",
+			"stat": "politics"
+		},
+		{
+			"name": "덴지 천황",
+			"new": 95,
+			"old": 97,
+			"rule": "one person; earliest-title base, no title stat bonus",
+			"stat": "authority"
+		}
+	],
+	"version": 1
+}

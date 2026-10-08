@@ -1,6 +1,16 @@
 extends Control
 
 const Data = preload("res://production_data.gd")
+const LivingStyle = preload("res://ui/living_city_v1/industry_style.gd")
+const UI = preload("res://ui/living_city_v1/military_style.gd")
+const Supply = preload("res://supply_transport.gd")
+var local_stock: Label
+var production_status: Label
+var arrivals: Label
+var transport_source: OptionButton
+var transport_button: Button
+var readiness_summary: Label
+var heading: Label
 var selected_recipe_id: String = "iron_sword"
 var recipe_selector: OptionButton
 
@@ -21,11 +31,13 @@ var extra_building_buttons: VBoxContainer
 var industry_button: Button
 var manager_button: Button
 var preparation_back: Button
+var close_button: Button
 
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_STOP
+	theme = UI.City.make_theme()
 	var shade := ColorRect.new()
 	shade.color = Color(0.02, 0.02, 0.02, 0.85)
 	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -33,12 +45,12 @@ func _ready() -> void:
 	var panel := PanelContainer.new()
 	add_child(panel)
 	panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	panel.set_anchor(SIDE_LEFT, 0.12, true)
-	panel.set_anchor(SIDE_TOP, 0.08, true)
-	panel.set_anchor(SIDE_RIGHT, 0.88, true)
-	panel.set_anchor(SIDE_BOTTOM, 0.92, true)
+	panel.set_anchor(SIDE_LEFT, 0.04, true)
+	panel.set_anchor(SIDE_TOP, 0.035, true)
+	panel.set_anchor(SIDE_RIGHT, 0.96, true)
+	panel.set_anchor(SIDE_BOTTOM, 0.965, true)
 	var style := StyleBoxFlat.new()
-	style.bg_color = Color("241f17")
+	style.bg_color = UI.City.PAPER
 	style.border_color = Color("c8a75c")
 	style.set_border_width_all(1)
 	style.content_margin_left = 20
@@ -46,36 +58,55 @@ func _ready() -> void:
 	style.content_margin_top = 16
 	style.content_margin_bottom = 16
 	panel.add_theme_stylebox_override("panel", style)
+	LivingStyle.frame(panel)
 	var layout := VBoxContainer.new()
 	layout.add_theme_constant_override("separation", 12)
 	panel.add_child(layout)
 	var header := HBoxContainer.new()
 	layout.add_child(header)
+	heading = LivingStyle.heading()
+	heading.add_theme_color_override("font_color",UI.City.INK)
+	header.add_child(heading)
 	summary = Label.new()
 	summary.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	summary.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	header.add_child(summary)
-	var close_button := Button.new()
+	close_button = Button.new()
 	close_button.text = "닫기 (Esc)"
 	close_button.pressed.connect(func(): campaign.close_preparation_destination(self))
 	header.add_child(close_button)
 	preparation_back=_button(layout,"선택한 부대 준비로 돌아가기",func(): campaign.close_preparation_destination(self))
+	var columns:=HBoxContainer.new(); columns.add_theme_constant_override("separation",22); columns.size_flags_vertical=Control.SIZE_EXPAND_FILL; layout.add_child(columns)
+	var warehouse:=VBoxContainer.new(); warehouse.size_flags_horizontal=Control.SIZE_EXPAND_FILL; warehouse.size_flags_stretch_ratio=0.38; columns.add_child(warehouse)
+	var logistics:=UI.scroll(warehouse)
+	local_stock=UI.label(UI.section(logistics,"현지에서 사용 가능"),"")
+	production_status=UI.label(UI.section(logistics,"진행 중 생산"),"")
+	var incoming:=UI.section(logistics,"도착 예정 수송")
+	arrivals=UI.label(incoming,"")
+	UI.label(incoming,"이동 중 화물은 현지 재고에 포함하지 않습니다.",20)
+	var transport:=UI.section(logistics,"부족 물자 수송")
+	UI.label(transport,"출발 도시를 고르고 기존 수송 화면에서 화물과 견적을 확인하세요.",20)
+	transport_source=OptionButton.new(); transport_source.clip_text=true; transport.add_child(transport_source)
+	transport_button=_button(transport,"선택 도시 → 이 도시 수송",_open_transport)
+	var work:=VBoxContainer.new(); work.size_flags_horizontal=Control.SIZE_EXPAND_FILL; work.size_flags_stretch_ratio=0.62; work.add_theme_constant_override("separation",12); columns.add_child(work)
+	UI.label(work,"생산 품목 선택",27)
 	recipe_selector = OptionButton.new()
 	for id: String in Data.RECIPE_ORDER:
 		recipe_selector.add_item(str(Data.RECIPES[id].name))
 		recipe_selector.set_item_metadata(recipe_selector.item_count - 1, id)
 	recipe_selector.select(Data.RECIPE_ORDER.find(selected_recipe_id))
 	recipe_selector.item_selected.connect(_on_recipe_selected)
-	layout.add_child(recipe_selector)
+	work.add_child(recipe_selector)
 	all_items_toggle = CheckButton.new()
 	all_items_toggle.text = "전체 품목 보기"
 	all_items_toggle.toggled.connect(_on_all_items_toggled)
-	layout.add_child(all_items_toggle)
+	work.add_child(all_items_toggle)
 	var scroll := ScrollContainer.new()
 	scroll_container = scroll
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
-	layout.add_child(scroll)
+	scroll.follow_focus=true
+	work.add_child(scroll)
 	var body := VBoxContainer.new()
 	body.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	body.add_theme_constant_override("separation", 12)
@@ -91,11 +122,17 @@ func _ready() -> void:
 	building_button = _button(body, "", _build)
 	extra_building_buttons = VBoxContainer.new()
 	body.add_child(extra_building_buttons)
-	start_button = _button(body, "매월 생산 시작", _start)
-	stop_button = _button(body, "생산 중지", _stop)
+	# Keep existing requirement buttons and callbacks, ahead of the long reference text.
+	for control: Control in [manager_button,research_button,extra_research_buttons,building_button,extra_building_buttons,industry_button]:
+		body.move_child(control,body.get_child_count()-1)
+	body.move_child(details,body.get_child_count()-1)
+	readiness_summary=UI.label(work,"")
+	start_button = _button(work, "매월 생산 시작", _start)
+	UI.City.button(start_button,false,true)
+	stop_button = _button(work, "생산 중지", _stop)
 	result_label = Label.new()
 	result_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	body.add_child(result_label)
+	work.add_child(result_label)
 	catalog_label = Label.new()
 	catalog_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	catalog_label.hide()
@@ -107,6 +144,8 @@ func _button(parent: Node, text_value: String, callback: Callable) -> Button:
 	var button := Button.new()
 	button.text = text_value
 	button.custom_minimum_size.y = 38
+	button.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	UI.City.button(button)
 	button.pressed.connect(callback)
 	parent.add_child(button)
 	return button
@@ -120,7 +159,7 @@ func open_for_province(campaign_node: Node, city_id: String) -> void:
 	_set_catalog_visible(false)
 	refresh()
 	show()
-	start_button.grab_focus()
+	recipe_selector.grab_focus()
 
 
 func refresh() -> void:
@@ -129,7 +168,10 @@ func refresh() -> void:
 	if model.is_empty():
 		hide()
 		return
-	summary.text = "%s 생산 · %d년 %d월 · 국가 금 %d" % [model["name"], model["year"], model["month"], model["gold"]]
+	heading.text = "%s 군수 · 생산" % model["name"]
+	heading.tooltip_text = heading.text
+	summary.text = "%d년 %d월 · 국가 금 %d" % [model["year"], model["month"], model["gold"]]
+	_refresh_logistics(model)
 	var recipe: Dictionary = Data.RECIPES[selected_recipe_id]
 	var lines: Array[String] = ["공정별 예약: " + str(model["reservations"]), "\n도시 재고"]
 	for item_id: String in Data.ITEMS:
@@ -172,9 +214,46 @@ func refresh() -> void:
 	_render_requirements(research_button, extra_research_buttons, model["research_options"], "research")
 	_render_requirements(building_button, extra_building_buttons, model["building_options"], "build")
 	start_button.disabled = not bool(model["can_start"]) or bool(model["enabled"])
+	readiness_summary.text="실행 정보 · "+("가동 예약 중" if model["enabled"] else "확정 시 가동 예약")+"\n"+("현재 조건 충족 · 다음 월 정산" if str(model["reason"]).is_empty() else "생산 보류 · "+str(model["reason"]))
+	start_button.text="매월 생산 예약 확정"
 	stop_button.disabled = not bool(model["owned"]) or not bool(model["enabled"])
 	catalog_label.text = _catalog_text(model["inventory"])
 	_set_catalog_visible(all_items_toggle.button_pressed)
+	UI.wire_focus.call_deferred(self)
+
+func _refresh_logistics(model: Dictionary) -> void:
+	var inventory: Dictionary=model["inventory"]
+	local_stock.text="%s 창고\n군량  %d\n철  %d\n무기  %d묶음\n\n국가 금은 공용 국고이며 위 물자는 현지 창고 재고입니다." % [model["name"],int(inventory.get("grain",0)),int(inventory.get("iron",0)),int(inventory.get("sword",0))]
+	var running: Array[String]=[]
+	for rid: String in Data.RECIPE_ORDER:
+		var order: Dictionary=campaign.strategy_state.get("city_production",{}).get(province_id,{}).get(rid,{})
+		if order.get("enabled",false): running.append(str(Data.RECIPES[rid].name)+" · 가동\n"+str(order.get("reason","")))
+	production_status.text="가동 중인 생산 없음" if running.is_empty() else "\n".join(running)
+	var incoming: Array[String]=[]
+	for order: Dictionary in campaign.strategy_state.get("supply_transport",{}).get("orders",{}).values():
+		if order.get("target","")!=province_id or order.get("faction_id","")!=campaign.player_faction_id or not Supply.active(order): continue
+		var reason: String=Supply.remaining_reason(campaign.strategy_state,campaign.provinces,order)
+		var remaining: int=order.path.size()-int(order.index)-1
+		var stamp: int=campaign.year*12+campaign.month+remaining
+		var when: String="예정 %d년 %d월" % [int((stamp-1)/12.0),(stamp-1)%12+1] if reason.is_empty() else "도착 보류 · "+reason
+		incoming.append("%s → %s\n군량 %d · 철 %d · 무기 %d\n%s" % [campaign.provinces.get(order.source,{}).get("name",order.source),model["name"],order.cargo.get("grain",0),order.cargo.get("iron",0),order.cargo.get("sword",0),when])
+	arrivals.text="도착 예정 화물 없음" if incoming.is_empty() else "\n\n".join(incoming)
+	var selected: String=str(transport_source.get_item_metadata(transport_source.selected)) if transport_source.selected>=0 else ""
+	transport_source.clear()
+	for source: String in Supply.Economy.city_ids(campaign.strategy_state,campaign.provinces):
+		if source==province_id or Supply.owner(campaign.strategy_state,campaign.provinces,source)!=campaign.player_faction_id: continue
+		transport_source.add_item(str(campaign.provinces[source].name)); transport_source.set_item_metadata(transport_source.item_count-1,source)
+		if source==selected: transport_source.select(transport_source.item_count-1)
+	transport_button.disabled=transport_source.item_count==0
+
+func _open_transport() -> void:
+	if transport_source.selected<0: return
+	var source: String=str(transport_source.get_item_metadata(transport_source.selected))
+	campaign.open_supply(source)
+	var panel: Node=campaign.supply_overlay
+	for n: int in range(panel.destination.item_count):
+		if str(panel.destination.get_item_metadata(n))==province_id: panel.destination.select(n); break
+	panel.refresh()
 
 
 func _render_requirements(primary: Button, extra: VBoxContainer, options: Array, action: String) -> void:

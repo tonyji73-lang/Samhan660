@@ -6,7 +6,10 @@ signal settlement_selected(province_id: String)
 
 const RESOURCE_DIR: String = "res://ui/korea_layout_v1/"
 const MAP_ZOOM_STEP: float = 1.2
-const MIN_ZOOM: float = 0.8
+const MIN_ZOOM: float = 0.25
+const WORLD_BOUNDS := Rect2(-900, -700, 3300, 2200)
+const UnifiedGround = preload("res://ui/korea_layout_v1/unified_world_20261002/unified_ground.gd")
+var unified_ground: Control
 const MAX_ZOOM: float = 12.0
 const DETAIL_THRESHOLD: float = 18.0
 const SPRITE_PIVOT: Vector2 = Vector2(0.5, 0.67)
@@ -14,6 +17,7 @@ const DETAIL_DIR = RESOURCE_DIR + "central_east/"
 const FullR3 = preload("res://ui/korea_layout_v1/full_r3_v1/terrain_layers.gd")
 var full_r3 = FullR3.new()
 var terrain_canvas: Control
+var refreshed_detail: Control
 var south_v3: Control
 var detail_comparison: bool = false
 const CorrectedDetail = preload("res://ui/korea_layout_v1/central_east/integration/central_east_display_layer.gd")
@@ -57,6 +61,7 @@ var _layout: Dictionary = {}
 var _sites: Dictionary = {}
 var _ids: Array[String] = []
 var _live: Dictionary = {}
+var _reference_sites: Dictionary = {}
 var _unknown_live_ids: Array[String] = []
 var _terrain: Texture2D
 var _fortress: Texture2D
@@ -84,7 +89,12 @@ func _ready() -> void:
 			_layout_ok = _terrain.get_size().is_equal_approx(_image_size)
 	if not _layout_ok:
 		push_error("Approved Korea map: layout or approved assets could not be loaded.")
+	_load_external_sites()
 	_refresh_marker_data()
+	unified_ground = UnifiedGround.new()
+	unified_ground.show_behind_parent = true
+	add_child(unified_ground)
+	unified_ground.configure(_terrain)
 	_load_detail_candidate()
 	full_r3.configure()
 	terrain_canvas=preload("res://ui/korea_layout_v1/south_v3/integration/terrain_canvas.gd").new()
@@ -92,6 +102,9 @@ func _ready() -> void:
 	terrain_canvas.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	terrain_canvas.show_behind_parent=true
 	add_child(terrain_canvas)
+	refreshed_detail = preload("res://ui/korea_layout_v1/terrain_refresh_20261001/detail_layer.gd").new()
+	terrain_canvas.add_child(refreshed_detail)
+	refreshed_detail.configure(_terrain)
 	south_v3=preload("res://ui/korea_layout_v1/south_v3/integration/south_v3_layer.gd").new()
 	terrain_canvas.add_child(south_v3)
 	south_v3.configure(full_r3)
@@ -120,6 +133,15 @@ func _load_detail_candidate() -> void:
 	else:
 		_r3_fill._texture = _texture_with_mipmaps(DETAIL_DIR+"assets/central_east_detail_r3.png")
 
+func _load_external_sites() -> void:
+	# Presentation coordinates only; the campaign still owns all travel/game data.
+	var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(UnifiedGround.DIR + "manifest.json"))
+	var templates: Dictionary = preload("res://world_map_data.gd").PROVINCE_TEMPLATES
+	for id: String in manifest.sites:
+		if _sites.has(id) or not templates.has(id): continue
+		_sites[id] = {"id": id, "name": templates[id].name, "render_xy": manifest.sites[id], "sprite_width_native": 24.0, "marker_only": id.begins_with("steppe_"), "tier": "capital" if id in ["changan", "asuka"] else "standard"}
+		_ids.append(id)
+
 func detail_auto_allowed() -> bool:
 	# Replacing a file or toggling one flag alone cannot approve an unregistered candidate.
 	return _detail_registration_valid and bool(_detail_manifest.get("production_auto_switch_allowed",false)) and _detail_manifest.get("status","")=="registered" and _detail_manifest.get("registered_detail_sha256","")==_detail_hash
@@ -132,6 +154,11 @@ func detail_weight() -> float:
 func terrain_pixel_scale() -> float:
 	var pixel_transform := get_viewport().get_final_transform()*get_global_transform_with_canvas()
 	return _fit_scale()*map_zoom*pixel_transform.x.length()
+
+func _max_zoom() -> float:
+	# 1254-pixel details cover 350 native pixels. Do not magnify their texels.
+	var pixel_transform := get_viewport().get_final_transform()*get_global_transform_with_canvas()
+	return clampf(3.5 / maxf(0.0001,_fit_scale()*pixel_transform.x.length()),MIN_ZOOM,MAX_ZOOM)
 
 func detail_diagnostics() -> Dictionary:
 	var detail_scale: float=terrain_pixel_scale()*264.0/1536.0
@@ -234,7 +261,19 @@ func set_live_provinces(provinces: Dictionary) -> void:
 			"faction": str(province.get("faction", "")),
 			"troops": int(province.get("troops", 0)),
 		}
+	_reference_sites.clear()
+	var year_value: int = int(campaign.year) if is_instance_valid(campaign) else 632
+	var references: Dictionary = preload("res://world_map_data.gd").get_scenario_provinces(year_value)
+	for id: String in _ids:
+		if not _live.has(id) and references.has(id):
+			_reference_sites[id] = {"name": str(references[id].name) + " · " + str(references[id].faction), "faction": str(references[id].faction)}
 	queue_redraw()
+
+func _get_tooltip(at_position: Vector2) -> String:
+	for id: String in _reference_sites:
+		if anchor(id).distance_to(at_position) < 28.0:
+			return str(_reference_sites[id].name) + "\n참고 지명 · 현재 캠페인의 명령 대상 영지가 아닙니다."
+	return ""
 
 
 func _refresh_marker_data() -> void:
@@ -302,7 +341,7 @@ func anchor(province_id: String) -> Vector2:
 
 func _set_map_zoom(requested_zoom: float, focus_local: Vector2) -> void:
 	var focal_point: Vector2 = local_to_map(focus_local)
-	map_zoom = clampf(requested_zoom, MIN_ZOOM, MAX_ZOOM)
+	map_zoom = clampf(requested_zoom, MIN_ZOOM, _max_zoom())
 	map_pan_offset += focus_local - map_to_local(focal_point)
 	_layout_city_buttons()
 
@@ -310,7 +349,7 @@ func _set_map_zoom(requested_zoom: float, focus_local: Vector2) -> void:
 func focus_on_province(province_id: String, requested_zoom: float = 4.2) -> void:
 	if not has_site_id(province_id):
 		return
-	map_zoom = clampf(requested_zoom, MIN_ZOOM, MAX_ZOOM)
+	map_zoom = clampf(requested_zoom, MIN_ZOOM, _max_zoom())
 	map_pan_offset = Vector2.ZERO
 	map_pan_offset = size * 0.5 - anchor(province_id)
 	_layout_city_buttons()
@@ -321,17 +360,23 @@ func focus_region() -> void:
 
 
 func fit_all() -> void:
-	map_zoom = 1.0
-	map_pan_offset = Vector2.ZERO
+	map_zoom = minf(size.x / WORLD_BOUNDS.size.x, size.y / WORLD_BOUNDS.size.y) / _fit_scale()
+	map_pan_offset = (_image_size * 0.5 - WORLD_BOUNDS.get_center()) * _fit_scale() * map_zoom
 	_layout_city_buttons()
 
 
 func _layout_city_buttons() -> void:
 	# Name retained for older host callers; there are no overlapping Button nodes.
-	map_zoom = clampf(map_zoom, MIN_ZOOM, MAX_ZOOM)
-	var surplus: Vector2 = (_image_size * _fit_scale() * map_zoom - size) * 0.5
-	map_pan_offset.x = clampf(map_pan_offset.x, -maxf(0.0, surplus.x), maxf(0.0, surplus.x))
-	map_pan_offset.y = clampf(map_pan_offset.y, -maxf(0.0, surplus.y), maxf(0.0, surplus.y))
+	map_zoom = clampf(map_zoom, MIN_ZOOM, _max_zoom())
+	var scale_value: float = _fit_scale() * map_zoom
+	var center: Vector2 = local_to_map(size * 0.5)
+	var half_view: Vector2 = size * 0.5 / scale_value
+	for axis in range(2):
+		if half_view[axis] * 2.0 >= WORLD_BOUNDS.size[axis]:
+			center[axis] = WORLD_BOUNDS.get_center()[axis]
+		else:
+			center[axis] = clampf(center[axis], WORLD_BOUNDS.position[axis] + half_view[axis], WORLD_BOUNDS.end[axis] - half_view[axis])
+	map_pan_offset = (_image_size * 0.5 - center) * scale_value
 	queue_redraw()
 
 
@@ -347,7 +392,7 @@ func restore_view_state(view_state: Dictionary) -> void:
 	var native_point := Vector2(float(center_value[0]), float(center_value[1]))
 	if not native_point.is_finite():
 		return
-	map_zoom = clampf(float(view_state.get("zoom", 1.0)), MIN_ZOOM, MAX_ZOOM)
+	map_zoom = clampf(float(view_state.get("zoom", 1.0)), MIN_ZOOM, _max_zoom())
 	map_pan_offset = Vector2.ZERO
 	map_pan_offset = size * 0.5 - map_to_local(native_point)
 	var restored_selection: String = str(view_state.get("selected", selected))
@@ -473,14 +518,12 @@ func set_territory_geometry(polygons: Dictionary, terrain_sha256: String) -> boo
 
 
 func _faction_color(province_id: String) -> Color:
-	return faction_colors.get(str(_live[province_id]["faction"]), Color("bdb49c"))
+	return faction_colors.get(str(_live.get(province_id,_reference_sites.get(province_id,{})).get("faction","")), Color("bdb49c"))
 
 
 func _draw_terrain(canvas: Control) -> void:
-	canvas.draw_rect(Rect2(Vector2.ZERO, size), Color("073047"))
 	if not _layout_ok:
 		return
-	canvas.draw_texture_rect(_terrain, _get_displayed_map_rect(), false)
 	var weight: float = detail_weight()
 	# Full-region review and old r2/r3 comparison are mutually exclusive.
 	full_r3.last_drawn.clear()
@@ -494,23 +537,29 @@ func _draw_terrain(canvas: Control) -> void:
 		var world := _get_displayed_map_rect()
 		canvas.draw_texture_rect(_detail_texture,Rect2(world.position+_detail_rect.position/_image_size*world.size,_detail_rect.size/_image_size*world.size),false,Color(1,1,1,weight))
 	south_v3.size=size
+	refreshed_detail.size=size
+	refreshed_detail.sync(_get_displayed_map_rect(),terrain_pixel_scale(),not corrected_comparison and not detail_comparison and weight<=0 and not full_r3.review and not full_r3.south_v2_review and not full_r3.suppressed)
 	south_v3.sync(_get_displayed_map_rect(),terrain_pixel_scale(),not corrected_comparison and not detail_comparison and weight<=0 and not full_r3.south_v2_review and not full_r3.review and not full_r3.suppressed)
 
 func _draw() -> void:
+	if unified_ground:
+		unified_ground.size = size
+		unified_ground.sync(_get_displayed_map_rect(), terrain_pixel_scale())
 	if terrain_canvas:
 		terrain_canvas.size=size
 		terrain_canvas.queue_redraw()
 	if not _layout_ok:return
+	_draw_region_names()
 	_draw_territories()
 	_draw_support_route()
 	var rendered: Array[Dictionary] = []
 	var area := Rect2(Vector2.ZERO, size)
 	for province_id: String in _ids:
-		if not _live.has(province_id):
+		if not _live.has(province_id) and not _reference_sites.has(province_id):
 			continue
 		var position_value: Vector2 = anchor(province_id)
 		var width_value: float = _sprite_width(province_id)
-		var is_detail: bool = not bool(_sites[province_id]["marker_only"]) and width_value >= DETAIL_THRESHOLD
+		var is_detail: bool = _live.has(province_id) and not bool(_sites[province_id]["marker_only"]) and width_value >= DETAIL_THRESHOLD
 		var body := Rect2(position_value - Vector2.ONE * 7.0, Vector2.ONE * 14.0)
 		if is_detail:
 			body = Rect2(position_value - SPRITE_PIVOT * width_value, Vector2.ONE * width_value)
@@ -519,6 +568,15 @@ func _draw() -> void:
 		_draw_site(province_id, position_value, width_value, is_detail)
 		rendered.append({"id": province_id, "position": position_value, "width": width_value, "detail": is_detail, "body": body})
 	_draw_labels(rendered)
+
+func _draw_region_names() -> void:
+	if terrain_pixel_scale() > 0.85: return
+	var font: Font = map_label_font if map_label_font != null else get_theme_default_font()
+	for region: Array in [["당",Vector2(-530,600)],["몽골 지역 · 북방 초원",Vector2(-130,-320)],["왜",Vector2(1700,650)]]:
+		var point := map_to_local(region[1])
+		var caption: String = region[0]
+		draw_string_outline(font,point,caption,HORIZONTAL_ALIGNMENT_LEFT,-1,22,4,Color("102c32"))
+		draw_string(font,point,caption,HORIZONTAL_ALIGNMENT_LEFT,-1,22,Color("f5e4b9"))
 
 
 func _draw_site(province_id: String, center: Vector2, width_value: float, detail: bool) -> void:
@@ -569,7 +627,7 @@ func _draw_labels(rendered: Array[Dictionary]) -> void:
 	var available := Rect2(Vector2.ONE * 3, size - Vector2.ONE * 6)
 	for item: Dictionary in ordered:
 		var province_id: String = str(item["id"])
-		var caption: String = str(_live[province_id]["name"])
+		var caption: String = str(_live.get(province_id,_reference_sites.get(province_id,{})).get("name",province_id))
 		var center: Vector2 = item["position"]
 		var width_value: float = float(item["width"])
 		var detail: bool = bool(item["detail"])

@@ -36,7 +36,7 @@ func _ready() -> void:
 	cancel_button=button(actions,"첫 이동 전 취소·환불",func(): submit("cancel"))
 	reroute_button=button(actions,"선택 목적지로 재지정·비용 지불",func(): submit("reroute"))
 	unload_button=button(actions,"현재 아군 도시에 하역",func(): submit("unload"))
-	close_button=button(box,"닫기 (Esc)",hide)
+	close_button=button(box,"닫기 (Esc)",func(): campaign.close_preparation_destination(self))
 	add_theme_font_size_override("font_size",18); hide()
 
 func button(parent: Node, text: String, callback: Callable) -> Button:
