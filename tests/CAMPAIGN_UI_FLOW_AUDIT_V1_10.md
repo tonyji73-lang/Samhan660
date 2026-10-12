@@ -298,3 +298,10 @@ Godot와 Windows export template은 모두 **4.7.2.stable / x86_64 / Windows Des
 ## 2026-10-08 후속: 남은 자료 전체 커밋·푸시 요청
 - 사용자가 GitHub Desktop의 남은2769개 변경 화면과 함께 commit and push를 요청. 앞선 제외 방침 대신 남은 초상 초안·검수 캡처/로그/ZIP·자동 생성 번역 파일·보관 소스를 모두 포함하도록 범위를 명시적으로 확대.
 - 원본 파일은 삭제·이동하지 않음. 파일 합계1302.6MiB, 최대 단일 파일17.4MiB. 텍스트1381개에서 대표적인 인증키/개인키 형식 검사 일치0건. 새 게임 코드 수정이나 테스트 재실행은 없음.
+
+## 2026-10-12 완료: 군수 시안 3번 적용
+- `army_readiness_overlay.gd`, 새 `ui/living_city_v1/military_overview_layout.gd`: 현지 창고·생산·도착 예정 수송을 세 구역으로 표시하고, 하단 부대 현황과 우측 장비 지급/훈련을 연결. 기존 한지·금색 선택·붉은 확정 버튼·제목 서체를 재사용. 편성·해산·합류·이동·출정은 ‘편성·이동·상세’에서 유지. 인사 3번은 적용 보류 유지.
+- 실제 창고와 생산 중단 사유, 수송 주문을 조회. 장비 지급 전후와 훈련 비용/진척은 기존 견적·명령을 사용. 창고·대장간·수송 삽화 3장과 제작 정보는 `ui/living_city_v1/assets/military_overview/`; 도시 실경이나 가동 증거가 아닌 공통 삽화.
+- 이번 직접 실행: Godot4.7.2 D3D12 실제 GUI `tests/military_overview_ui_test.gd` 최종49/49, headless `tests/army_readiness_test.gd`337/337. 중간 실패/반복 실행은 합산하지 않음. 720p/1080p, 장비 수량 미리보기·초기화의 상태 불변, 생산·수송 왕복, 상세 Esc, Tab/Shift+Tab/Enter, 정상 플레이 저장에서 장비 1묶음→100명분 지급 1회·훈련 접수·월 진척 확인. 기존 저장 SHA-256 동일, 새 저장 쓰기 없음.
+- 실행: Godot `--path . --script tests/military_overview_ui_test.gd --log-file .godot/military-overview-review/gui-final.log -- --prepared-save=user://military_preparation_progress_1789548784_18616.json`; 마지막 인자는 기존 정상 플레이 검수 저장이 있을 때만 사용하는 선택 입력. 기본 새 캠페인 검사는 인자 없이 실행 가능. 화면·로그: `.godot/military-overview-review/`의 `overview-{1280,1920}.png`, `training-{1280,1920}.png`, `normal-*.png`, `gui-final.log`, `army-regression.log`.
+- 화면 확인 중 장식이 상·하단 내용을 가리는 순서와 지급 미리보기의 과도한 간격 수정. 최초 720p 경계 검사 실패는 논리 viewport와 실제 창 크기 혼용을 고쳐 해결. 미검증: 별도 PC·Windows DPI·배포 실행본·모든 세력/수송 상태. 전체 빌드/ZIP 없음. 기존 다른 미커밋 작업·저장·자료 보존; 이번 군수 변경만 사용자 요청에 따라 커밋·푸시 대상. 다음은 사용자 군수 화면 검토 후 인사 3번의 적용 승인 여부에 따라 진행.

@@ -1,0 +1,24 @@
+{
+    "date":  "2026-10-12",
+    "tool":  "image_gen",
+    "purpose":  "군수 시안 3번의 창고·생산·수송 구역 삽화",
+    "note":  "게임용 삽화. 실제 도시 실경이나 현재 재고량·생산 가동의 증거로 사용하지 않음.",
+    "base_prompt":  "Production game illustration asset ONLY, no UI, no text, no frames. Landscape3:2 composition, crisp painterly realistic historical strategy art with gold sunlight, aged timber and brown-earth tones, inspired by the corresponding small illustration in the provided selected UI reference. 7th century Korean inspired game setting, illustrative not archaeological reconstruction. Entire subject centered with margins for modest responsive crop. ",
+    "assets":  [
+                   {
+                       "file":  "warehouse.png",
+                       "subject":  "Grain bags, crates and weapon racks in a historical warehouse",
+                       "source":  "exec-9096146c-8a8d-42b3-8868-266e73058af4.png"
+                   },
+                   {
+                       "file":  "forge.png",
+                       "subject":  "Artisan, anvil and charcoal forge; contextual illustration, not evidence of active production",
+                       "source":  "exec-009b0fe9-8021-4498-9a2f-0d8ba96ccda1.png"
+                   },
+                   {
+                       "file":  "transport.png",
+                       "subject":  "Loaded ox cart approaching a town gate",
+                       "source":  "exec-35b5c860-e204-4dea-a4a0-a2882b315dea.png"
+                   }
+               ]
+}

@@ -2,6 +2,28 @@ extends Control
 const Army=preload("res://army_readiness.gd")
 const Guide=preload("res://military_preparation_guide.gd")
 const UI=preload("res://ui/living_city_v1/military_style.gd")
+const Supply=preload("res://supply_transport.gd")
+const Production=preload("res://production_system.gd")
+const ProductionData=preload("res://production_data.gd")
+var stage: Control
+var header: Label
+var screen_title: Label
+var overview: Control
+var training_surface: Control
+var management_panel: Control
+var local_stock: Label
+var production_status: Label
+var production_art: TextureRect
+var arrivals: Label
+var equip_stock: Label
+var action_title: Label
+var status: Label
+var transport_button: Button
+var manage_button: Button
+var reset_button: Button
+var metric_labels: Dictionary={}
+var metric_bars: Dictionary={}
+var navigation: Dictionary={}
 var mode: String="formation"
 var unit_list: VBoxContainer
 var candidate_list: VBoxContainer
@@ -42,75 +64,18 @@ var move_button: Button
 var attack_button: Button
 var close_button: Button
 func _ready() -> void:
-	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT); mouse_filter=Control.MOUSE_FILTER_STOP
-	var shade:=ColorRect.new(); shade.color=Color(0,0,0,0.8); shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT); add_child(shade)
-	var panel:=PanelContainer.new(); add_child(panel); panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	panel.set_anchor(SIDE_LEFT,0.04,true); panel.set_anchor(SIDE_RIGHT,0.96,true); panel.set_anchor(SIDE_TOP,0.035,true); panel.set_anchor(SIDE_BOTTOM,0.965,true)
-	theme=UI.City.make_theme()
-	var style:=UI.City.panel(true); style.set_content_margin_all(24); panel.add_theme_stylebox_override("panel",style); UI.Industry.frame(panel)
-	var box:=VBoxContainer.new(); box.add_theme_constant_override("separation",16); panel.add_child(box)
-	result=UI.Industry.heading(); box.add_child(result)
-	var tabs:=HBoxContainer.new(); box.add_child(tabs)
-	for key: String in ["formation","training"]:
-		mode_buttons[key]=button(tabs,{"formation":"편성 · 장비 지급","training":"훈련 · 지휘관"}[key],func(): show_mode(key))
-		mode_buttons[key].size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	var columns:=HBoxContainer.new(); columns.size_flags_vertical=Control.SIZE_EXPAND_FILL; columns.add_theme_constant_override("separation",18); box.add_child(columns)
-	var left:=VBoxContainer.new(); left.size_flags_horizontal=Control.SIZE_EXPAND_FILL; left.size_flags_stretch_ratio=0.25; columns.add_child(left)
-	var middle:=VBoxContainer.new(); middle.size_flags_horizontal=Control.SIZE_EXPAND_FILL; middle.size_flags_stretch_ratio=0.40; columns.add_child(middle)
-	var right:=VBoxContainer.new(); right.size_flags_horizontal=Control.SIZE_EXPAND_FILL; right.size_flags_stretch_ratio=0.35; columns.add_child(right)
-	unit_list=UI.scroll(left)
-	var commander:=UI.section(left,"현재 지휘관")
-	commander_portrait=UI.portrait(commander,null,Vector2(140,140)); commander_name=UI.label(commander,"미지정")
-	selector=OptionButton.new(); add_child(selector); selector.hide(); selector.item_selected.connect(func(_n): refresh())
-	officers=OptionButton.new(); add_child(officers); officers.hide(); officers.item_selected.connect(func(_n): refresh())
-	var selection:=UI.section(middle,"선택 부대")
-	unit_summary=UI.label(selection,"")
-	formation_box=UI.scroll(middle)
-	var edit:=UI.section(formation_box,"편성 조정")
-	UI.label(edit,"인원을 정한 뒤 명령을 확정하세요.",21)
-	var row:=HBoxContainer.new(); edit.add_child(row)
-	amount=SpinBox.new(); amount.custom_minimum_size.x=170; amount.min_value=1; amount.max_value=100000; amount.value=1000; row.add_child(amount)
-	split_button=button(row,"명 분리 편성",func(): run("split"))
-	disband_button=button(edit,"선택 인원 현지 해산",func(): run("disband"))
-	amount.value_changed.connect(func(_v): refresh())
-	join_selector=OptionButton.new(); join_selector.clip_text=true; edit.add_child(join_selector)
-	merge_button=button(edit,"선택한 부대에 합류·보충",func(): run("merge"))
-	var movement:=UI.section(formation_box,"이동 · 출정")
-	destination=OptionButton.new(); movement.add_child(destination)
-	move_button=button(movement,"선택 부대 이동",func(): run("move"))
-	attack_button=button(movement,"도시 가용 부대 출정",func(): hide(); campaign.select_province(city); campaign._on_attack_button_pressed())
-	training_box=UI.scroll(middle); candidate_list=training_box
-	var execute:=UI.section(right,"실행 정보")
-	execute.get_parent().size_flags_vertical=Control.SIZE_EXPAND_FILL
-	var execute_scroll:=UI.scroll(execute)
-	formation_actions=VBoxContainer.new(); execute_scroll.add_child(formation_actions)
-	UI.label(formation_actions,"장비 지급 견적",27)
-	bundles=SpinBox.new(); bundles.min_value=1; bundles.max_value=10000; bundles.value=10; formation_actions.add_child(bundles); bundles.value_changed.connect(func(_v): refresh())
-	UI.label(formation_actions,"묶음 · 1묶음 = 100명분",21)
-	equip_summary=UI.label(formation_actions,"")
-	equip_button=button(formation_actions,"장비 지급 확정",func(): run("equip")); UI.City.button(equip_button,false,true)
-	training_actions=VBoxContainer.new(); execute_scroll.add_child(training_actions)
-	training_summary=UI.label(training_actions,"")
-	commander_button=button(training_actions,"선택 후보를 지휘관으로 임명",func(): run("commander"))
-	train_button=button(training_actions,"훈련 시작 · 담당자 교체",func(): run("train")); UI.City.button(train_button,false,true)
-	stop_button=button(training_actions,"훈련 중지",func(): run("stop"))
-	cancel_selection=button(training_actions,"후보 선택 취소",func(): select_officer(selection_before))
-	var links:=UI.section(execute_scroll,"부족 물자 준비")
-	for key: String in ["production","build","research"]:
-		preparation_buttons[key]=button(links,{"production":"장비 생산 보기","build":"시설 건설 보기","research":"기술 연구 보기"}[key],func(): campaign.open_preparation_destination(city,id(),officer(),key))
-	preparation=UI.label(execute_scroll,"",20)
-	details=UI.label(UI.section(formation_box,"세부 기록"),"",20)
-	close_button=button(box,"닫기 (Esc)",hide)
-	show_mode("formation"); hide()
+	preload("res://ui/living_city_v1/military_overview_layout.gd").build(self)
 func button(parent: Node,text: String,callback: Callable) -> Button:
 	var b:=Button.new(); b.text=text; b.size_flags_horizontal=Control.SIZE_EXPAND_FILL; b.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART; parent.add_child(b); UI.City.button(b); b.pressed.connect(callback); return b
 func open(c: Node,city_id: String) -> void:
-	campaign=c; city=city_id; rebuild(); selection_before=officer(); show(); result.text="부대 편성·장비·훈련 · "+str(c.provinces[city].name); mode_buttons[mode].grab_focus()
+	campaign=c; city=city_id; rebuild(); selection_before=officer(); show(); result.text=""; mode_buttons[mode].grab_focus()
 
 func show_mode(value: String) -> void:
 	mode=value
-	formation_box.get_parent().visible=mode=="formation"; training_box.get_parent().visible=mode=="training"
+	overview.visible=mode=="formation"; training_surface.visible=mode=="training"
 	formation_actions.visible=mode=="formation"; training_actions.visible=mode=="training"
+	equip_button.visible=mode=="formation"; train_button.visible=mode=="training"; reset_button.visible=mode=="formation"
+	action_title.text="장비 지급" if mode=="formation" else "훈련 · 지휘관"
 	for key: String in mode_buttons: UI.City.button(mode_buttons[key],mode==key)
 	if campaign!=null: selection_before=officer(); refresh()
 
@@ -140,13 +105,15 @@ func rebuild(selected: String="") -> void:
 	refresh()
 func refresh() -> void:
 	if campaign==null: return
-	UI.wire_focus.call_deferred(self)
-	_render_units()
+	UI.wire_focus.call_deferred(management_panel if management_panel.visible else self)
+	refresh_logistics()
 	preparation_model=Guide.model(campaign,city,id(),officer())
 	preparation.text=preparation_model.text+"\n\n부대 상세"
 	var u: Dictionary=Army.units(campaign.strategy_state).get(id(),{})
 	if u.is_empty():
 		details.text="주둔 부대 없음"; unit_summary.text=details.text; equip_summary.text="선택할 부대가 없습니다."; training_summary.text=equip_summary.text
+		status.text="이 도시에 주둔 부대가 없습니다."; metric_labels.equipment.text="장비 · —"; metric_labels.training.text="숙련도 · —"
+		metric_bars.equipment.value=0; metric_bars.training.value=0
 		commander_portrait.texture=null; commander_name.text="미지정"
 		for b: Button in [split_button,merge_button,disband_button,equip_button,train_button,stop_button,commander_button,move_button,attack_button]: b.disabled=true
 		_render_candidates(); return
@@ -168,15 +135,19 @@ func refresh() -> void:
 	var eq: Dictionary=Army.equip_quote(campaign.strategy_state,campaign.provinces,campaign.player_faction_id,id(),int(bundles.value))
 	equip_button.disabled=not eq.ok
 	stop_button.disabled=active_job.is_empty(); move_button.disabled=destination.item_count==0
-	unit_summary.text="%s · %s\n병력 %d명  /  장비 충족 %.1f%%\n장비 %d명분 · 현재 숙련도 %.1f" % [id(),{"infantry":"보병","archer":"궁병","cavalry":"기병"}.get(u.kind,u.kind),u.troops,Army.ratio(u)*100,u.equipment,Army.training(u)]
+	unit_summary.text="%s · %s · 병력 %d명" % [{"infantry":"보병","archer":"궁병","cavalry":"기병"}.get(u.kind,u.kind),id(),u.troops]
+	metric_labels.equipment.text="장비 %d / %d명분 (%.0f%%)" % [u.equipment,u.troops,Army.ratio(u)*100]
+	metric_labels.training.text="숙련도 %.1f / 목표 %d" % [Army.training(u),Army.RULES.target]
+	metric_bars.equipment.value=Army.ratio(u)*100
+	metric_bars.training.max_value=Army.RULES.target; metric_bars.training.value=Army.training(u)
 	commander_portrait.texture=UI.texture(campaign,str(u.commander_id)); commander_name.text=str(campaign.get_officer(u.commander_id).get("name","미지정"))
 	# Preview only the delta returned by the existing acceptance quote.
 	var maximum: int=mini(stock,ceili(float(maxi(0,int(u.troops)-int(u.equipment)))/int(Army.RULES.bundle_persons)))
 	var max_quote: Dictionary=Army.equip_quote(campaign.strategy_state,campaign.provinces,campaign.player_faction_id,id(),maximum)
-	equip_summary.text="현지 창고  %d묶음\n현재 지급 가능  %d묶음\n" % [stock,maximum if max_quote.ok else 0]
+	equip_summary.text="현재 지급 가능 %d묶음\n" % [maximum if max_quote.ok else 0]
 	if eq.ok:
-		equip_summary.text+="\n확정 후 현지 창고\n%d → %d묶음\n\n부대 장비\n%d → %d명분\n병력 %d명 유지\n\n" % [stock,stock-int(eq.bundles),u.equipment,int(u.equipment)+int(eq.persons),u.troops]
-	equip_summary.text+="지급 가능 · 확정 시에만 재고 차감" if eq.ok else str(eq.reason)
+		equip_summary.text+="현지 창고  %d → %d묶음\n부대 장비  %d → %d명분\n지급 후 부족  %d명분\n병력 %d명 유지" % [stock,stock-int(eq.bundles),u.equipment,int(u.equipment)+int(eq.persons),maxi(0,int(u.troops)-int(u.equipment)-int(eq.persons)),u.troops]
+	else: equip_summary.text+=str(eq.reason)
 	training_summary.text="현재 숙련도  %.1f / 목표 %d\n%s\n" % [Army.training(u),Army.RULES.target,"진행 중" if not active_job.is_empty() else str({"completed":"훈련 완료","stopped":"중지"}.get(job.get("status",""),"접수 전"))]
 	if not job.is_empty(): training_summary.text+="현재 담당 %s · 누적 납부 금 %d\n" % [campaign.get_officer(str(job.get("officer_id",""))).get("name","없음"),int(job.get("cost_paid",0))]
 	# Duration/cost text is the existing preparation model, never a second formula.
@@ -184,6 +155,7 @@ func refresh() -> void:
 	for line: String in guide_lines:
 		if line.begins_with("훈련 ") or line.begins_with("월 금"): training_summary.text+="\n"+line
 	training_summary.text+="\n\n"+("확정 후 다음 월부터 지불·훈련" if q.ok else str(q.reason))
+	status.text=("확정 시에만 현지 재고가 차감됩니다." if eq.ok else str(eq.reason)) if mode=="formation" else ("확정 후 다음 월부터 지불·훈련" if q.ok else str(q.reason))
 	_render_candidates()
 
 func _render_units() -> void:
@@ -233,6 +205,75 @@ func run(action: String) -> void:
 	Army.sync(state,campaign.provinces); campaign.update_top_bar(); rebuild(uid); selection_before=officer()
 	var message: String=str(q.get("reason",""))
 	result.text="부대 명령 · "+("처리 완료" if message.is_empty() else message)
+
+func fit_stage() -> void:
+	if stage==null: return
+	var factor: float=minf(size.x/1920.0,size.y/1080.0)
+	stage.scale=Vector2.ONE*factor; stage.position=(size-Vector2(1920,1080)*factor)/2
+
+func refresh_logistics() -> void:
+	var province: Dictionary=campaign.provinces[city]
+	header.text="%s · %s  |  %d년 %d월   국고 %d" % [campaign.player_faction,province.name,campaign.year,campaign.month,campaign.gold]
+	screen_title.text=str(province.name)+" · 군수"
+	var inventory: Dictionary=Production.get_inventory_view(campaign.strategy_state,campaign.provinces,city)
+	local_stock.text="군량\n%d\n\n철\n%d\n\n무기 %d묶음" % [inventory.get("grain",0),inventory.get("iron",0),inventory.get("sword",0)]
+	equip_stock.text="현지 무기 재고 (%s) · %d묶음" % [province.name,inventory.get("sword",0)]
+	var running: Array[String]=[]
+	for recipe: String in ProductionData.RECIPE_ORDER:
+		var order: Dictionary=campaign.strategy_state.get("city_production",{}).get(city,{}).get(recipe,{})
+		if not order.get("enabled",false): continue
+		var model: Dictionary=campaign.get_production_view_model(city,recipe)
+		var reason: String=str(model.get("reason",""))
+		running.append(str(ProductionData.RECIPES[recipe].name)+"\n"+("가동 예약 · 다음 월 정산" if reason.is_empty() else "생산 보류 · "+reason))
+	production_status.text="가동 예약 중인 생산 없음" if running.is_empty() else "\n\n".join(running)
+	production_art.modulate=Color(0.6,0.6,0.6) if running.is_empty() else Color.WHITE
+	var incoming: Array[String]=[]
+	for order: Dictionary in campaign.strategy_state.get("supply_transport",{}).get("orders",{}).values():
+		if order.get("target","")!=city or order.get("faction_id","")!=campaign.player_faction_id or not Supply.active(order): continue
+		var reason: String=Supply.remaining_reason(campaign.strategy_state,campaign.provinces,order)
+		incoming.append("%s → %s\n군량 %d · 철 %d · 무기 %d묶음\n%s" % [campaign.provinces.get(order.source,{}).get("name",order.source),province.name,order.cargo.get("grain",0),order.cargo.get("iron",0),order.cargo.get("sword",0),"이동 중" if reason.is_empty() else "도착 보류 · "+reason])
+	arrivals.text="도착 예정 화물 없음" if incoming.is_empty() else "\n\n".join(incoming)
+	transport_button.disabled=transport_source().is_empty()
+
+func transport_source() -> String:
+	for source: String in Supply.Economy.city_ids(campaign.strategy_state,campaign.provinces):
+		if source!=city and Supply.owner(campaign.strategy_state,campaign.provinces,source)==campaign.player_faction_id: return source
+	return ""
+
+func open_transport() -> void:
+	var source: String=transport_source()
+	if source.is_empty(): return
+	var context: Dictionary={"city":city,"unit":id(),"officer":officer()}
+	campaign.open_supply(source)
+	if not campaign.supply_overlay.visible: return
+	hide(); campaign.preparation_return=context
+	for n: int in range(campaign.supply_overlay.destination.item_count):
+		if str(campaign.supply_overlay.destination.get_item_metadata(n))==city:
+			campaign.supply_overlay.destination.select(n); break
+	campaign.supply_overlay.refresh()
+
+func open_management() -> void:
+	management_panel.show(); management_panel.move_to_front()
+	UI.wire_focus(management_panel); amount.get_line_edit().grab_focus()
+
+func close_management() -> void:
+	management_panel.hide(); UI.wire_focus(self); manage_button.grab_focus()
+
+func _input(event: InputEvent) -> void:
+	if visible and management_panel!=null and management_panel.visible and event.is_action_pressed("ui_cancel"):
+		close_management(); get_viewport().set_input_as_handled()
+
+func navigate(target: String) -> void:
+	if target=="army": return
+	hide()
+	match target:
+		"domestic","personnel":
+			campaign.domestic_overlay.open(campaign,city,"agriculture")
+			if target=="personnel": campaign.domestic_overlay._set_mode(true)
+		"production","build","research": campaign.open_preparation_destination(city,id(),officer(),target)
+		"court": campaign.open_politics()
+		"diplomacy": campaign._open_diplomacy()
+		"month": campaign._on_end_turn_button_pressed()
 
 func origin_text(origins: Dictionary) -> String:
 	var pieces: Array[String]=[]
